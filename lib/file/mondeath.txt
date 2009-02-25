@@ -1,0 +1,17 @@
+N:2:Sauron, the Sorcerer
+says, 'I will revive as long as the one ring exists.'
+
+N:18:Grip, Farmer Maggot's dog
+N:19:Wolf, Farmer Maggot's dog
+N:20:Fang, Farmer Maggot's dog
+
+N:23:Smeagol
+says, 'We hates, hates, hatesss!'
+
+N:771:Saruman of Many Colours
+#指輪物語でのセリフのパロディ
+#元は「あんたの慈悲を憎む。あんたを憎む！では、わしは行く。」
+#「あんたの無慈悲を憎む。あんたを憎む！では、わしは逝く。」
+
+N:*:Default
+shouts, 'AAAARRRGGGHHH!!!'

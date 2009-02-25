@@ -1,0 +1,23 @@
+# File: q_info.txt
+
+# Includes all the quest files
+
+# Quest feature preferences
+%:q_pref.txt
+
+# Sauron
+?:[EQU $QUEST_NUMBER 1]
+%:q_sauron.txt
+
+# Morgoth
+?:[EQU $QUEST_NUMBER 2]
+%:q_morgoth.txt
+
+# Random quests (always adressed with number 40)
+?:[EQU $QUEST_NUMBER 40]
+%:q_random.txt
+
+# The Avenge
+?:[EQU $QUEST_NUMBER 89]
+%:q_avenge.txt
+

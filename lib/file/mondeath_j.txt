@@ -1,0 +1,18 @@
+N:2:Sauron, the Sorcerer
+「一つの指輪がある限り、私は甦る！」
+の身体は黒い風となり、暗闇の中に渦巻いて消えた。
+
+N:18:Grip, Farmer Maggot's dog
+N:19:Wolf, Farmer Maggot's dog
+N:20:Fang, Farmer Maggot's dog
+
+N:23:Smeagol
+「にくむ、にくむ、にくむぅぅぅ！」
+
+N:132:Saruman of Many Colours
+#指輪物語でのセリフのパロディ
+#元は「あんたの慈悲を憎む。あんたを憎む！では、わしは行く。」
+「あんたの無慈悲を憎む。あんたを憎む！では、わしは逝く。」
+
+N:*:Default
+「グアァァァ！」

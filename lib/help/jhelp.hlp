@@ -1,0 +1,31 @@
+[ オンラインヘルプシステムへようこそ ]
+  参照したいオンラインヘルプの番号を押して下さい:
+
+  (0) 全体的な情報
+  (1) キャラクター作成
+  (2) キャラクターの特性
+  (3) コマンド
+  (4) 街
+  (5) ダンジョン
+  (6) アイテム
+  (7) モンスター
+  (8) 攻撃
+  (9) 防御
+  (a) オプション
+  (b) バージョン履歴
+  (e) 英語版ヘルプ
+
+  (?) ヘルプシステムの使用法
+***** [0] jgeneral.txt
+***** [1] jbirth.txt
+***** [2] jcharattr.txt
+***** [3] jcommand.txt
+***** [4] jtown.txt
+***** [5] jdungeon.txt
+***** [6] jobjects.txt
+***** [7] jmonster.txt
+***** [8] jattack.txt
+***** [9] jdefend.txt
+***** [a] joption.txt
+***** [b] jversion.txt
+***** [e] help.hlp

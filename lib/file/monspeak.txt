@@ -1,0 +1,486 @@
+# This is the file for allowing uniques to speak their "own" lines.
+# Deleting this file will have no real effect on the game.  Modifying it may
+# cause STRANGE unique lines to come up if the format's wrong, but shouldn't
+# crash anything.  The format goes like so:
+# 
+# N:45:whoever this is
+# 3
+# says line 1
+# says line 2
+# says line 3
+#
+# The number after the N: is the "monster index number" obtained from
+# r_info.txt.  The text field after that number isn't actually used--it's
+# just there to help humans edit the file.  The numbers on lines by
+# themselves are the number of lines that the monster has.  Getting these
+# numbers wrong won't crash anything, but will produce strange lines.
+#
+# A '*' in the number field is a wildcard and applies to any monster.
+# It should only be placed at the end of the file, since all 'N:' lines
+# after it will be ignored.
+#
+# Two or more monsters can share lines; just put their N: lines in a
+# contiguous block.
+#
+# To stop a certain monster from having unique lines, put a # in front of
+# its N: line.
+#
+# Entries by Matt Graham, Andrew Hill, and Topi Ylinen
+
+N:7:Farmer Maggot
+seems sad about something.
+#J:は何か悲しそうだ。
+asks if you have seen his dogs.
+#J:は彼の犬を見なかったかと聞いている。
+tells you to get off his land.
+#J:は「わしの土地から出ていけ」と言っている。
+says, "Grip! Fang! Wolf! Come on, lads!"
+#J:「かみつき！きば！おおかみ！みんな来い！」
+says, "They won't harm you -- not unless I tell 'em to!"
+#J:「あいつらは噛みついたりせんよ。わしが命令せんかぎりな！」
+says, "Here, Grip! Fang! Heel!"
+#J:「ここだ、かみつき！きば！来い！」
+exclaims, "Well, if that isn't queerer than ever?"
+asks, "Were you coming to visit me?"
+#J:「わしに会いにきたのかい？」
+says, "I'll not light my lanterns till I turn for home."
+#J:「わしは家に帰るまでランターンに火を灯さないようにしよう。」
+says, "I see you are in some kind of trouble."
+#J:「何かやっかい事に巻き込まれたようじゃな。」
+yells, "Hallo there!"
+says, "It's been a queer day, and no mistake."
+
+
+N:18:Grip, Farmer Maggot's dog
+N:19:Wolf, Farmer Maggot's dog
+N:20:Fang, Farmer Maggot's dog
+chases its tail.
+#J:は自分の尻尾を追いかけた。
+barks loudly.
+#J:はうるさく吠えた。
+froths at the mouth.
+#J:は泡をふいている。
+wags its tail.
+#J:は尻尾をふっている。
+rolls over.
+#J:はごろんと寝ころんだ。
+growls.
+#J:はうなった。
+
+#J:#スメアゴル語は 日本の第一人者 Tessi さんに監修していただきました。
+N:23:Smeagol
+mutters, 'My precious, wheres my precious?'
+#J:#「いとしいしと、どこにいるのいとしいしと」
+#J:#ゴクリは一人のときは口調が荒いので
+#J:#「いとしいしと、どこだよ、いとしいしと？」でもいいかもしれません
+#J:「いとしいしと、どこだよ、いとしいしと？」
+screams, 'Nasty Hobbitsisisisis...'
+#J:#「しどいホビットさんたちだよ！」
+#J:#「しどいホビット」のときは
+#J:#「さん」はつかないことのほうがおおいきがします．
+#J:#「しどいホビットだ！」もしくは「しどいホビットだ！---ス、ス、ス---」
+#J:#というかんじでしょうか
+#J:「しどいホビットだ！---ス、ス、ス---」
+says, 'Come on, quickly, follow Smeagol'
+#J:#「そら、早く！スメアゴルについてくるのよ」
+#J:#'follow Smeagol'は「スメアゴルについておいで！」
+#J:#みたいなかんじでもいいかもしれません
+#J:「そら、早く！スメアゴルについておいで！」
+says, 'Nasty Bagginis, stole my precious.'
+#J:「しどいバギンズ！いとしいしとを盗んだよ。」
+says, 'She will kill them oh yes she will precious.'
+#J:#「あのしとがきっとやっつけてくれるよ、そうよ、やっつけるよ、いとしいしと」
+#J:#'She'にたいして日本語では「おばば」とかいてあるところと「あのしと」
+#J:#とかいてあるところがありました
+#J:#というわけでどっちでもいいとおもいます
+#J:#あと，'oh yes'は「ああ、そうよ」でもいいかもしれません
+#J:「あのしとがきっとやっつけてくれるよ、ああ、そうよ、やっつけるよ、いとしいしと」
+says, 'Whats has its got in its pocketses, hmmm?'
+#J:「ポケットのなかには何がある？んん？」
+sniggers.
+#J:はクスクス笑った。
+grovels.
+#J:は四ん這いで歩いている。
+picks his nose.
+#J:は鼻をほじっている。
+pines for his precious.
+#J:はいとしいしとを恋しがっている。
+searches his pockets.
+#J:はポケットの中を探している。
+eats some slimy creatures.
+#J:は何かベトベトした生き物を食べている。
+shouts, 'No Master Hobbitsisisisis!'
+#J:「よくないよ！ホビットの旦那！」
+cries, 'The ring was ours for agesisisisis!'
+#J:「あの指輪はずーーっとわしらの物だった！」
+says, 'Smeagol sneeking! ME! Shneekingsisis!'
+#J:「スメアゴル近くにいるよ！近くよ！ス、ス、ス」
+says, 'Every way is guarded, silly foolsis!'
+whines, 'Weees wants some fishises.'
+#J:「わしら魚が食いたい」
+whimpers, 'We've lost itses we have.'
+#J:「わしらずっと持ってたものをなくしてしまったよ。」
+says, 'He'll eastus all the world if he getsitses it.'
+says, 'No food, no rest; Smeagol a SNEAK!'
+#J:# Tessi さん訳
+#J:「食べるものない、休みない．スメアゴルこそこそやるね」
+says, 'What a dainty little dish you will be for her.'
+#J:「おまえはあのしとのおいしいごちそうになるよ」
+says, 'Hobbitses always SOOOO Polite.'
+#J:# Tessi さん訳
+#J:「ホビットさんはいつだってとても礼儀がある」
+screams, 'Stop, Thief!'
+#J:「止まれ！どろぼう！」
+says, 'Makeses him drop his weapon precious.'
+#J:「あいつに武器を落させるんだよ、いとしいしと。」
+grovels, 'He has only four fingers on the black hand.'
+#J:# Tessi さん訳
+#J:「あいつの黒い手には四本しか指がないよ」
+growls, 'Not nice Hobbits, not sensible!'
+#J:# Tessi さん訳
+#J:「よくないホビットだよ．物わかりよくないよ」
+says, 'If you findesis it, give it us back.'
+#J:「もし見つけたら、わしらに返しなよ。」
+
+N:35:Wormtongue, Agent of Saruman
+whines and sniggers.
+#J:は卑屈に笑っている。
+whispers nasty things.
+#J:は卑劣な事を呟いた。
+says, 'I'll slaughter you slowly...'
+#J:「ゆっくり殺してやる、、、」
+says, 'Lathspell I name you, Ill-news; and Ill-news is an ill guest they say.'
+#J:「ひとつあんたのことをラススペルとお呼びしよう。つまり凶報ということですな。」
+says, 'Forbid his staff!'
+#J:「その者に杖を持たせるな！」
+yells, 'You lie!'
+#J:は「うそだ！」と叫んだ。
+says, 'Let me go, let me go!  I know the way!'
+#J:「行かせて下さい、行かせて下さい！どうやって行くかわかってます！」
+says, 'My messages are useless now!'
+#J:「わたくしのことずかった用件は今となってはむだです。」
+says, 'No no!'
+#J:「いやだ！いやだ！」
+hisses, 'You told me to; you made me do it!'
+#J:「あんたがいいつけたんだ、あんたがさせたんだ！」
+
+N:40:Radbug, the Snaga
+N:41:Lagduf, the Snaga
+N:42:Muzgash, the Snaga
+N:47:Grishnakh, the Hill Orc
+N:48:Golfimbul, the Hill Orc Chief
+N:53:Ufthak of Cirith Ungol
+N:67:Gorbag, the Orc Captain
+N:74:Shagrat, the Orc Captain
+N:91:Bolg, Son of Azog
+N:98:Ugluk, the Uruk
+N:99:Lugdush, the Uruk
+N:108:Azog, King of the Uruk-Hai
+fingers his blade and grins evilly.
+#J:は武器に手をかけてにやりと笑った。
+snickers, 'Now, I strike a blow for *our* side!'
+says, 'Orcs don't get no respect... I'm gonna change that!'
+calls your mother nasty names.
+says, 'I'll bet your innards would taste real sweet...'
+#J:「貴様のハラワタはきっとおいしいだろうな」
+belches and spits.
+#J:はげっぷをしてつばを吐きかけた。
+scratches his armpits.
+#J:はわきの下を掻いた。
+says, 'I love the smell of fresh blood.'
+says, 'Yeeha! Another idiot to slaughter!'
+#J:「もう一匹大バカ野郎が殺されに来やがった！」
+hawks a loogie in your direction.
+farts thunderously.
+wonders aloud how many experience points you're worth.
+says, 'I love being psychotic!'
+#J:「俺はブチキレんのが大好きなんだぜ！」
+says, 'My brain's on fire with the feeling to kill!'
+#J:「俺のノーミソは貴様を殺す思いで焼け付きそうだぜ！」
+says, 'I shall torture you slowly.'
+#J:「貴様をゆっくり拷問してやる。」
+calls you a scum-sucking pig-dog.
+#J:はあなたのことを腐れカス野郎のケツの毛と呼んでいる。
+says, 'I shall have my way with your women!'
+says, 'You're not so tough, buttmunch!'
+says, 'Heh-heh, heh-heh, killing people is cool.'
+#J:「へへ、へへ。人を殺すのは楽しいなあ。」
+
+N:116:Bert the Stone Troll
+N:117:Bill the Stone Troll
+N:118:Tom the Stone Troll
+complains, 'What's a burrahobbit got to do with my pocket, anyways?'
+#J:「そのシノビットが、なんでおれのふところを、ねらったんだ、こら」
+rejoices, 'No more roast mutton! Roast adventurer today!'
+#J:は「羊のあぶり肉はもうやめだ！今日は冒険者のあぶり肉だ！」と喜んでいる。
+says, 'That'll teach yer!'
+#J:「すこしはこりるがいいぞや」
+says, 'I won't take that from you!'
+#J:「とんまはおかえしすらあ！」
+
+N:137:Smaug the Golden
+speaks, 'I smell you and I feel your air. I hear your breath. Come along!'
+#J:「におうぞ、きさまの空気が分かるわい。息づかいも聞こえるな。こっちへ来い！」
+says, 'If you get off alive, you will be lucky.'
+#J:「きさまが生きてここを出られたら幸運だと思え。」
+grimaces.
+#J:は顔をしかめている。
+laughs with a devastating sound which shakes the ground.
+#J:は大地を揺るがす恐ろしい声で笑った。
+asks, 'Where are those who dare approach me?'
+#J:「おれに近づく愚か者はどこだ？」
+gloats, 'I am old and strong, strong, strong.'
+#J:「今俺は年老いて、強いのだ。覚えておけ、おれは何よりも強いのだぞ。」
+boasts, 'My armour is like tenfold shields, no blade can pierce me.'
+#J:「俺のうろこは十重の盾、どんな剣も通しはしない。」
+boasts, 'My teeth are swords, my claws are spears, my breath is death.'
+#J:「俺の歯は剣、爪は槍、吐く息は、すなわち死だ！」
+
+N:142:Glaurung, Father of the Dragons
+N:147:Ancalagon the Black
+#J:「汝、破滅を逃るること能わず。」
+#J:「愚かなる定命の者よ。余の炎で灰燼に帰すがよい。」
+
+N:151:Draugluin, Sire of All Werewolves
+N:152:Carcharoth, the Jaws of Thirst
+barks and bellows frighteningly!
+says, 'Oh good, another chew toy!'
+says, 'Yummy! I was getting tired of chicken...'
+#J:「ゴクッ！チキンには飽きてたところだ！」
+lets out an earsplitting howl.
+#J:は耳をつんざく声で吠えた。
+drools all over the dungeon.
+#J:は迷宮中によだれをたらした。
+lifts his leg at the nearest wall.
+#J:は壁に向かって片足を上げた。
+says, 'Bad adventurer! No more living for you!'
+#J:「行儀の悪い冒険者だ！お前の命はおあずけだ！」
+snarls and howls.
+#J:はうなって吠えた。
+
+N:144:The Mouth of Sauron
+N:154:Gothmog, the High Captain of Balrogs
+brags, 'My power is beyond compare!'
+snorts, 'A mere mortal dares challenge my might? HA!'
+#J:「貴様ごとき定命の者が私に挑むとはな、ハッ！」
+says, 'Not another one! I just finished chewing on the last!'
+#J:「また来たか！さっきの奴を噛み終ったばかりだぞ！」
+wonders aloud how many XP you're worth.
+leafs through 'Evil Geniuses For Dummies'.
+mutters, 'Another damn loser to kill...'
+#J:「もう一匹ウジ虫が殺されに来たか...」
+says, 'Hell shall claim your remains!'
+says, 'Another 12 skulls and I get that reward from the Boss!'
+#J:「あと１２個の頭蓋骨で俺のボスから褒美がもらえるんだ！」
+yawns at your pathetic efforts to kill him.
+says, 'Minions, slaughter this fool!'
+#J:「しもべどもよ、この馬鹿者を始末しろ！」
+says, 'Set thine house in order, for thou shalt die...'
+#J:「汝の家を整えよ、汝死す定めなれば。」
+says, 'I'm no god... God has MERCY!'
+#J:「私は神ではない...神なら慈悲を持っている！」
+
+N:*:Default lines
+cackles evilly.
+#J:は邪悪に笑っている。
+cackles diabolically.
+#J:は悪魔のように笑っている。
+says: 'Surrender, miserable flea!'
+#J:「降伏しろ、哀れなザコめ！」
+says: 'Come get some!'
+#J:「かかって来い！」
+says: 'Let's rock!'
+#J:「さあ、死闘だ！」
+laughs devilishly.
+#J:は悪魔のように笑った。
+says: 'Flee while you can, gnat!'
+#J:「逃げ回れ！羽虫！」
+says: 'You are about to die, maggot!'
+#J:「お前は死ぬのだ、ウジ虫め！」
+says: 'Read your prayers!'
+#J:「祈りを読み上げるがいい！」
+hisses: 'Die!'
+#J:「死ね！」
+says: 'You don't have a chance, moron!'
+#J:「貴様に勝機は無いぞ、低脳！」
+says: 'Fear my wrath, fool!'
+#J:「我が怒りを思い知れ！バカめ！」
+says: 'Feel my fury, dolt!'
+#J:「我が怒りを思い知れ！マヌケが！」
+says: 'Groo is a genius, compared to you!'
+#J:「グルーはお前と比べたら賢い！」
+gives you a contemptuous glance.
+#J:は軽蔑的なまなざしを向けている。
+says: 'Prepare to meet your Maker, fool!'
+#J:「貴様の創造主に会う準備をするがいい、愚か者！」
+says: 'Perish, mortal!'
+#J:「消え去れ、死すべき者よ！」
+says: 'Your puny efforts make me laugh!'
+#J:「お前の貧相な努力は片腹痛いわ！」
+says: 'Drop dead, wimp!'
+#J:「雑魚が！死骸を落すがいい！」
+says: 'You should have fled while you had the chance.'
+#J:「チャンスがあるうちにさっさと逃げておけばいいものを」
+screams: 'Die by my hand!'
+#J:「我が手によって死ね！」
+says: 'Your last wish, punk?'
+#J:「最期の望みはなんだ、チンピラよ？」
+says: 'Your death shall be a slow, painful one.'
+#J:「貴様の死はゆっくりと、苦痛に満ちたものになるだろう」
+says: 'Your head shall be my next trophy.'
+#J:「貴様の頭が俺の次のトロフィーだ。」
+screams: 'You are DOOMED!'
+#J:「貴様の運命もこれまでだ！！」
+grins sadistically.
+#J:は残虐な笑みを浮かべた。
+says: 'This dungeon shall be your TOMB!'
+#J:「この階がお前の墓場だ！」
+laughs fiendishly.
+#J:は悪魔のように笑った。
+says: 'Your fate is sealed, worm.'
+#J:「貴様の行く末は封印されているぞ、虫ケラ」
+says: 'Resistance is useless.'
+#J:「抵抗は無駄だ」
+says: 'Hell shall soon claim your remains.'
+says: 'Thou shalt repent of thy cunning.'
+#J:「汝、自らの狡を悔い改めるベし」
+says: 'Verily, thou shalt be one dead cretin.'
+#J:「まこと、汝一体の死せる白痴であるべし」
+says: 'Surrender or die!'
+#J:「降参するか、死ぬかだ！」
+says: 'Savor thy breath, it be thine last.'
+#J:「息を味わっておけ、汝の最期の時だ」
+says: 'Prepare do die, miscreant!'
+#J:「死に備えよ！極悪非道の者よ！」
+says: 'You're history, dude!'
+#J:「貴様は御陀仏だ！」
+says: 'Feeling lucky, punk?'
+#J:「命を賭けてみるか、チンピラ野郎？」
+says: 'You're toast!'
+#J:「完全に貴様の負けだ！」
+says: 'You're dead meat.'
+#J:「貴様は死肉だ」
+says: 'Make my day.'
+#J:「楽しませてみろ」
+says: 'I shall flatten you!'
+#J:「私が貴様を潰す！」
+says: 'I could spare you, but why?'
+#J:「私は貴様を生かしておくこともできる、が、そんな理由はないな」
+says: 'Take this, you sissy!'
+#J:「これでもくらえ、弱虫め！」
+says: 'Nothing can save you now!'
+#J:「もはや貴様を護る物は何もないぞ！」
+says: 'This dungeon ain't big enough for the both of us.'
+#J:「この迷宮は我等両方ともが居られるほど大きくはないのだよ」
+says: 'I'm gonna break your face!'
+#J:「貴様の顔を叩き壊してやろう！」
+says: 'I hope you enjoy pain!'
+#J:「苦痛を楽しんでくれるといいんだがな！」
+says: 'Give me your best blow!'
+#J:「最高の一撃をくれてみろ！」
+says: 'Draw, if you are a man!'
+#J:「男なら剣を抜け！」
+says: 'A time to die, fool!'
+#J:「死ぬ時が来たぞ！マヌケめ！」
+bellows frighteningly!
+#J:は恐るべき怒声をあげた！
+says: 'You will never leave this dungeon alive!'
+#J:「この階から生きて出られると思うな！」
+says: 'You'll leave this dungeon only in a wooden box!'
+#J:「貴様がここを出るには棺桶に入って出るしかないぞ！」
+says: 'Your mother wears army boots!'
+#J:「貴様の母親はアーミーブーツを履いているぞ！」
+says: 'Drop that weapon, NOW!'
+#J:「武器を置け！今すぐに！」
+says: 'Life ain't for you, and I'm the cure!'
+#J:「命は貴様のためにならん。私が治してやろう！」
+says: 'Resistance is futile. You will be terminated.'
+#J:「抵抗は無駄だ。貴様は抹殺される」
+says: 'Sight and smell of this, it gets me going.'
+#J:「この光景と匂い、たまらないぜ。」
+says: 'Victim is your name and you shall fall.'
+#J:「生贄が貴様の名であり、貴様は倒れるだろう」
+says: 'Stepping out? You'll feel our hell on your back!'
+#J:「逃げ出すのか？貴様は背後に地獄を感じるだろう！」
+says: 'Now I will waste my hate on you.'
+#J:「今こそ憎しみを貴様に費やすとしよう」
+says: 'Don't tread on me!'
+says: 'So be it! Threaten no more!'
+says: 'Kill for gain or shoot to maim, but I don't need a reason.'
+#J:「奪うために殺すか、台無しにするために撃つか。だが、私は理由を必要としない」
+says: 'You'll die as you lived, in a flash of the blade.'
+#J:「貴様は剣の閃きの中、生きてきたように死ぬだろう」
+says: 'You'd better stand cos there's no turning back.'
+#J:「立ち止まるといいだろう、帰る道などないのだからな」
+says: 'I just want to see your blood, I just want to stand and stare.'
+#J:「私は貴様の血が見たいだけ、じっくりとねめつけたいだけだ」
+says: 'I've been looking so long for you; you won't get away from my grasp.'
+#J:「私は長い間貴様を追い続けてきた。貴様は私の手から逃れることはできん」
+says: 'I'm coming after you; you can kiss your arse goodbye.'
+#J:「今行くぞ。自分のケツにさよならのキスでもするんだな」
+says: 'It's official; you suck!'
+#J:「貴様はクソだ。これ定説」
+sings: 'I hate you, you hate me, we're a helluva family.'
+#J:「♪アイヘイチュー、ユーヘイトミー、ウィーアーヘラヴァファミリー」
+says: 'A mere mortal dares challenge *ME*?!'
+#J:「ただ定命にすぎない輩が*私*に挑戦するとはな！？」
+says: 'There is no escape and that's for sure.'
+#J:「逃げ道などない、それは確かだ」
+says: 'This is the end; I won't take anymore.'
+#J:「これで終わりだ。もうこれ以上付き合いきれん」
+says: 'Say goodbye to the world you live in.'
+#J:「貴様の生きている世界にさよならを言え」
+says: 'You've always been taking, but now you're giving.'
+#J:「貴様は今まで奪ってきたが今度は奪われる番だ！」
+says: 'My brain's on fire with the feeling to kill.'
+#J:「俺の頭は貴様を殺す思いで焼け付きそうだぜ！」
+says: 'Don't try running away, because you're the one I'll find.'
+#J:「逃げようなどとしないことだ、なぜなら貴様は私が捕まえるはずの大事な獲物なのだ」
+says: 'I was looking for you to start up a fight.'
+#J:「戦いを始めようと貴様を探していたぞ」
+says: 'My innocent victims are slaughtered with wrath and despise!'
+#J:「私の罪無き生贄どもは憤怒と軽蔑をもってなぶり殺されているぞ！」
+says: 'I have found you, and there is no place to run.'
+#J:「見つけたぞ、そしてどこにも逃げ場はない」
+says: 'My blood lust defies all my needs.'
+#J:「私の渇血は他の全ての欲望を霞ませる」
+says: 'And damn'd be him that first cries: Hold, enough!'
+#J:「そして彼の非難されるは最初の叫び：待ってくれ、もう充分だ！」
+says: 'I can smell your blood, human!'
+#J:「私は貴様の血の臭いを嗅ぎつけられるぞ！人間よ！」
+says: 'Has your folly led to this?'
+#J:「貴様の愚行がこの有り様を導いたのかね？」
+wonders aloud how many experience points you're worth...
+#J:はあなたが何ポイントの経験値になるだろう、とあからさまに訊いている。
+says: 'Pride yourself on this, that you were slain by a champion.'
+#J:「一流の闘士に倒されることを貴様の誇りにするがいい」
+thunders: 'May heaven have mercy on your soul, for I will have none.'
+#J:「貴様の魂に天の慈悲を！私は慈悲など持ってないからな！」
+screams for your blood!
+#J:はあなたの血を求めて叫んだ！
+sighs: 'They send a poorer grade of adventurers down each year than the last.'
+#J:は溜息をついた：「やつらは年々質の下がった冒険者を送りこんできやがるなあ」
+says: 'Your life-blood will baptise my blade!'
+#J:「貴様の鮮血で私の剣を洗礼するとしよう！」
+shouts: 'You will serve me in Valhalla!'
+#J:は叫んだ：「貴様はヴァルハラで私に仕えるのだ！」
+snickers: 'Mommy's not here to save you now!'
+#J:はクスクス笑った：「ママはここには助けにこないぞ！」
+says: 'You're almost not worth killing...almost!'
+#J:「貴様はほとんど殺す価値も無い……ほとんどな！」
+leaps towards you with death in its eye.
+#J:は死神を目に宿らせ、あなたに向かって跳躍した。
+sings: 'Cuts yer if ye stand, shoot yer if ye run.'
+#J:「♪立ち向かうなら　斬捨てる　走り逃げるなら　撃ち殺す」
+says: 'Another adventurer?  I just got through picking my teeth with the last.'
+#J:「別の冒険者？さっき最後のやつを食い終ったところだぞ」
+says: 'Your two ears will decorate my belt.'
+#J:「貴様の二つの耳は私のベルトを飾ることになるぞ」
+says: 'I love all that blood.'
+#J:「私はそれほどまでに血が大好きなのだ」
+says: 'I don't want to hurt you, I only want to kill you.'
+#J:「貴様を痛めつけたいわけじゃない、ただ殺したいだけだ」
+says: 'I like killing people, because it's so much fun.'
+#J:「私は人を殺すのが好きだ、とても楽しいからな」
+screams: 'I'm out to destroy and I will cut you down!'
+#J:は叫んだ：「私は破壊するために現れた、貴様を斬り捨てる！」

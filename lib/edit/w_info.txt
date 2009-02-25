@@ -1,0 +1,26 @@
+# File: w_info.txt
+
+# Defines the layout of the wilderness
+
+# W:F:letter:wilderness_type:level:town_number:road:name
+
+# Road Flags: Sum of NORTH 1, SOUTH 2, EAST 4, WEST 8
+
+?:[EQU $WILDERNESS NONE]
+
+# Edge of the world
+W:F:#:0
+
+# Town 1
+W:F:1:1:0:1:0:Town:цо╬Е
+
+# Wilderness layout
+W:D:###
+W:D:#1#
+W:D:###
+
+# Starting position
+W:P:1:1
+
+?:1
+

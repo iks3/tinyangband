@@ -1,0 +1,246 @@
+# This is the file for allowing uniques to speak their "own" lines
+# when in fear.
+#
+# Deleting this file will have no real effect on the game.  Modifying it may
+# cause STRANGE unique lines to come up if the format's wrong, but shouldn't
+# crash anything.  The format goes like so:
+# 
+# N:45:whoever this is
+# 3
+# says line 1
+# says line 2
+# says line 3
+#
+# The number after the N: is the "monster index number" obtained from
+# r_info.txt.  The text field after that number isn't actually used--it's
+# just there to help humans edit the file.  The numbers on lines by
+# themselves are the number of lines that the monster has.  Getting these
+# numbers wrong won't crash anything, but will produce strange lines.
+#
+# A '*' in the number field is a wildcard and applies to any monster.
+# It should only be placed at the end of the file, since all 'N:' lines
+# after it will be ignored.
+#
+# Two or more monsters can share lines; just put their N: lines in a
+# contiguous block.
+#
+# To stop a certain monster from having unique lines, put a # in front of
+# its N: line.
+#
+# Entries by Matt Graham, Andrew Hill, and Topi Ylinen
+
+N:7:Farmer Maggot
+screams, 'Don't hurt a poor helpless hobbit!'
+#J:は叫んだ。「この哀れで無抵抗なホビットを殺さないでくれ！」
+yells, 'Where are my vicious dogs when I need them?'
+#J:は叫んだ。「あの困った犬どもはこの大事な時にどこにいるんだ！」
+
+N:18:Grip, Farmer Maggot's dog
+N:19:Wolf, Farmer Maggot's dog
+N:20:Fang, Farmer Maggot's dog
+whimpers.
+#J:はクンクン鳴いた。
+pines.
+limps away, howling.
+#J:は片足を引きずってほえた。
+howls.
+#J:はうなった。
+looks at you sadly.
+#J:は悲しそうにあなたを見た。
+
+#J:#スメアゴル語は 日本の第一人者 Tessi さんに監修していただきました。
+N:23:Smeagol
+says, 'Don't hurt us, mastersisis.'
+#J:#'Don't hurt us'は「しどいことしないでくれよう」
+#J:#だとおもうんですが'mastersisis'みたいな表現は見当たりませんでした
+#J:#'-- sss --'みたいのはあるんですが...
+#J:#訳すとしたら「旦那、---ス、ス、ス---」か「旦那」でしょうか？
+#J:「しどいことしないでくれよう、旦那、---ス、ス、ス---」
+says, 'Poor Smeagol, poor Smeagol.'
+#J:# Tessi さん訳
+#J:「かわいそうなスメアゴル、かわいそうなスメアゴル。」
+says, 'No AH! Don't hurtsis us.'
+#J:「あぁ！いやだよう、しどいことしないでくれよう。」
+
+N:35:Wormtongue, Agent of Saruman
+begs you to spare his miserable life.
+#J:は哀れっぽく命乞いをした。
+whines, 'This is not my fault!'
+#J:は哀れっぽく泣いた。「私のせいではない！」
+screams, 'Help! Help!'
+#J:は叫んだ。「助けて！助けて！」
+
+N:40:Radbug, the Snaga
+N:41:Lagduf, the Snaga
+N:42:Muzgash, the Snaga
+N:47:Grishnakh, the Hill Orc
+N:48:Golfimbul, the Hill Orc Chief
+N:53:Ufthak of Cirith Ungol
+N:67:Gorbag, the Orc Captain
+N:74:Shagrat, the Orc Captain
+N:91:Bolg, Son of Azog
+N:98:Ugluk, the Uruk
+N:99:Lugdush, the Uruk
+N:108:Azog, King of the Uruk-Hai
+screams, 'Hey, orcs have rights too!'
+#J:は叫んだ。「おい！オークにも権利があるんだぞ！」
+says, 'You're just prejudiced against orc-kind, aren't you?'
+#J:「おまえはオークに対して偏見を持ってるだけなんじゃないか？」
+begs, 'Spare me and I'll get you Ringil! Really!'
+#J:「助けてくれ！『リンギル』をやるから！ホントだ！」
+says, 'Next time, I'm bringing more Uruks with me!'
+#J:「今度はもっとウルクをたくさん連れてくるからな！」
+says, 'Don't hate me because I'm ugly!'
+#J:「醜いからって憎まないでくれ！」
+whimpers and grovels.
+#J:はシクシク泣いてひれ伏した。
+
+N:116:Bert the Stone Troll
+N:117:Bill the Stone Troll
+N:118:Tom the Stone Troll
+says, 'Now, stop it!'
+yells, 'Ey, watch it, you cheeky sod!'
+screams, 'Me mates'll settle yer hash!'
+#J:「俺のダチがおめえを八裂きにするぜ！」
+
+# Saruman's first line is a paraphrase from LoTR when he insults Theoden.
+
+N:132:Saruman of Many Colours
+says, 'Wait! Look behind you!'
+#J:「待て！後ろを見てみろ！」
+howls, 'Wormtongue! Where are you, you bastard?'
+#J:「ヘビの舌！どこへ行った！この間抜けめ！」
+
+N:137:Smaug the Golden
+groans in disbelief.
+roars furiously.
+#J:#Bard の射た黒い矢でスマウグは死にます。
+howls, 'Black Arrow? NOOOO!'
+#J:「黒い矢？やめてくれ〜〜！」
+howls, 'This CAN'T be happening!'
+#J:「そんなバカな！」
+
+N:142:Glaurung, Father of the Dragons
+writhes as he spouts black blood from many wounds.
+#J:は大量の傷口から黒い血を吹き出してのたうち回った。
+says, 'I shall be avenged!'
+#J:「覚えておれ！」
+
+N:147:Ancalagon the Black
+writhes as he spouts acidic blood from many wounds.
+says, 'My friends the Wyrms of Power will get you!'
+
+N:148:The Witch-King of Angmar
+wails, 'Nooooo!'
+
+N:151:Draugluin, Sire of All Werewolves
+N:152:Carcharoth, the Jaws of Thirst
+cringes and whimpers.
+#J:縮みあがってクンクン鳴いた。
+says, 'Look, I promise I won't bite the mailman anymore!'
+#J:「もう郵便配達人を噛まないと約束する！」
+says, 'Hey, put that rolled-up newspaper down!'
+#J:「おい！その丸めた新聞紙を振りかざすのはやめてくれ！」
+
+N:154:Gothmog, the High Captain of Balrogs
+screams, 'This CAN'T be happening!'
+#J:「そんなバカな！」
+shouts, 'Kill me if you want, the Boss will getcha!'
+#J:「殺すなら殺せ！ボスが黙っちゃいないぞ！」
+
+N:*:Default lines
+says: 'I am too young to die.'
+#J:「俺の人生はまだまだ長いんだ。」
+says: 'Ok, ok! I get: no more pals.'
+#J:「OK, OK, 分かったよ。もう仲間呼ばない。」
+screams: 'Help, ho!'
+screams: 'What ho! Help!'
+says: 'You will pay for this!'
+#J:「憶えてろよ！」
+says: 'Violence is no solution!'
+#J:「暴力は何の解決にもならないぞ！」
+says: 'I thought you liked me.'
+says: 'Such senseless violence! I don't understand it!'
+#J:「なんてばかげた暴力だ！俺には理解できん！」
+screams: 'Ho! Murder! Murder!'
+#J:「うわぁ。人殺し！人殺し！」
+says: 'Look, behind you!'
+screams: 'Run away!'
+#J:「逃げろ！」
+screams: 'Run to the hills! Run for your lives!'
+says: 'Wait! Spare me and I'll make you rich! Money isn't a problem!'
+#J:「待て！助けてくれれば金持ちにしてやる！いくらでもやるぞ！」
+says: 'I'll be back...'
+says: 'Hey -- I've got lawyers!'
+#J:「おい！弁護士を呼ぶぞ！」
+says: 'All my possession for a moment of time!'
+says: 'Hey, it was only a joke, all right?'
+#J:「はは、ちょっとした冗談だよ。分かるだろ？」
+says: 'Stop!'
+#J:「待て！」
+says: 'Cut it out, will you?'
+#J:「やめてくれ！たのむ。」
+says: 'I will not kneel. Strike!'
+screams: 'Cowards! Why did you not protect me?'
+#J:「臆病者どもめ！なぜ私を守らなかったんだ！」
+screams: 'Idiots! I am surrounded by incompetent idiots!'
+says: 'I don't wanna die, I'm a god, why can't I live on?'
+yells: 'Someone call the Gendarmes!'
+#J:「だれか憲兵を呼べ！」
+screams: 'Keep that lunatic away from me!'
+#J:「あのキチガイを俺に近付けるな！」
+shouts: 'Drop that weapon, now!'
+#J:「武器を捨てろ！今すぐに！」
+says: 'Fool! You don't know what you're doing!'
+#J:「バカ者！自分が何をやっているか分かってるのか！」
+screams for help!
+#J:は助けを求めて叫んだ。
+begs for mercy.
+#J:は慈悲を乞うた。
+sobs.
+#J:はベソをかいている。
+screams: 'Help! The maniac's murdering me!'
+#J:「助けてくれ！イカレた奴が俺を殺そうとしてる！」
+says: 'Just what is it you want? Money? Babes? I can arrange it...'
+#J:「何が望みだ？金か？女か？何でも用意するぞ...」
+says: 'Wait! Let's make a deal!'
+#J:「待て！取り引きをしよう！」
+says: 'Just can't stop this surmounting terror!'
+says: 'If there is a God, then why has he let me die?'
+#J:「もし神がいるなら、なぜ私を助けてくれないんだ？」
+says: 'I know where I'm going -- out!'
+says: 'No hope, no life, just pain and fear.'
+#J:「望みはない、命もない、ただ苦痛と恐怖だけだ。」
+says: 'I am a fugitive, hunted down like game.'
+says: 'You'll live to regret this blasphemous offence!'
+says: 'All my life's blood is slowly draining away...'
+asks: 'Should we be fighting at all?'
+#J:「俺たちはそもそも闘う必要があるのか？」
+asks: 'What are we fighting for?'
+#J:「俺たちは何のために闘っているんだ？」
+asks you: 'Can you say you are proud of what you've done?'
+#J:「自分のしている事に誇りを持っていると言えるか？」
+says: 'Every minute I get weaker...'
+says: 'All my life I've run away...'
+says: 'All that I see, absolute horror!'
+says: 'I have fallen prey to failure.'
+says: 'Just leave me alone!'
+#J:「ほっといてくれ！」
+says: 'Please, save me!'
+#J:「おねがいだ、助けてくれ。」
+says: 'You've won a battle, but I'll win the war!'
+says: 'You've won this round, next time it's *my* turn!'
+says: 'Another time, another battlefield, *my* victory.'
+says: 'I've got to keep running.'
+says: 'It's all so futile!'
+says: 'Cowards live to fight another day.'
+#J:#以下３行、メタリカ、fade to black という曲の歌詞らしい
+says: 'Life it seems will fade away, drifting further every day.'
+says: 'Emptiness is filling me, to the point of agony.'
+says: 'Cannot stand this hell I feel!'
+cries: 'Someone help me, oh please God help me!'
+#J:「だれか、助けてくれ！ おお神よ、お願いだから助けてくれ！」
+cries: 'Please! I have a mate and six siblings!'
+#J:「お願いだ！私には妻と6人の子供がいるんだ！」
+cries: 'Mama, they try and break me!'
+#J:「ママ！やつらが僕を殺そうとするよ！」

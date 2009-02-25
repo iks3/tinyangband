@@ -1,0 +1,7 @@
+# File: t_info_j.txt
+
+# Includes the town definitions
+
+# Preferences for the town features
+%:t_pref.txt
+%:t_basic.txt
