@@ -509,6 +509,12 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 		}
 		else if (randart)
 		{
+			do
+			{
+				object_prep(q_ptr, k_id);
+				apply_magic(q_ptr, object_level, FALSE, FALSE, FALSE, FALSE);
+			}
+			while (q_ptr->name1 || q_ptr->name2 || q_ptr->art_name || cursed_p(q_ptr));
 			(void)create_artifact(q_ptr, FALSE);
 			retval = 3;
 		}
