@@ -33,13 +33,6 @@ collecting scroll
 # Pick up important magical potions.
 # And inscribe {!k} on it to protect from accidental destruction.
 #
-potion of strength#!k
-potion of wisdom#!k
-potion of dexterity#!k
-potion of constitution#!k
-potion of intelligence#!k
-potion of Charisma#!k
-potion of life#!k!q
 potion of *healing*#!k
 potion of healing#!k
 potion of resistance#!k
@@ -76,10 +69,9 @@ unidentified dice boosted weapons
 #
 # Pick up high level spellbooks, and inscribe on it.
 #
-first realm's third spellbooks#@mc!k
+first realm's second spellbooks#@mc!k
 
 #
 # Inscribe on low level spellbooks.
 #
-~first realm's second spellbooks#@mb!k
 ~first realm's first spellbooks#@ma!k
