@@ -3385,18 +3385,16 @@ static void store_sell(void)
 	/* Prepare a prompt */
 	if (cur_store_num == STORE_HOME)
 #ifdef JP
-	q = "どのアイテムを置きますか? ";
+		q = "どのアイテムを置きますか? ";
 #else
 		q = "Drop which item? ";
 #endif
-
 	else
 #ifdef JP
 		q = "どのアイテムを売りますか? ";
 #else
 		q = "Sell which item? ";
 #endif
-
 
 	/* Only allow items the store will buy */
 	item_tester_hook = store_will_buy;
@@ -3440,8 +3438,6 @@ static void store_sell(void)
 #else
 		msg_print("Hmmm, it seems to be cursed.");
 #endif
-
-
 		/* Nope */
 		return;
 	}
@@ -3497,14 +3493,12 @@ static void store_sell(void)
 #else
 			msg_print("Your home is full.");
 #endif
-
 		else
 #ifdef JP
 			msg_print("すいませんが、店にはもう置く場所がありません。");
 #else
 			msg_print("I have not the room in my store to keep it.");
 #endif
-
 		return;
 	}
 
@@ -3580,16 +3574,15 @@ static void store_sell(void)
 
 			/* Describe the result (in message buffer) */
 #ifdef JP
-msg_format("%sを $%ldで売却しました。", o_name, (long)price);
+			msg_format("%sを $%ldで売却しました。", o_name, (long)price);
 #else
 			msg_format("You sold %s for %ld gold.", o_name, (long)price);
 #endif
 
-
 			if (!((o_ptr->tval == TV_FIGURINE) && (value > 0)))
 			{
-			 /* Analyze the prices (and comment verbally) unless a figurine*/
-			purchase_analyze(price, value, dummy);
+				/* Analyze the prices (and comment verbally) unless a figurine*/
+				purchase_analyze(price, value, dummy);
 			}
 
 			/*
@@ -3622,6 +3615,9 @@ msg_format("%sを $%ldで売却しました。", o_name, (long)price);
 				store_top = (item_pos / 12) * 12;
 				display_inventory();
 			}
+
+			/* swap hands when two handed combat */
+			if (item == INVEN_WIELD) swap_wielding_hands();
 		}
 	}
 
@@ -3656,9 +3652,10 @@ msg_format("%sを $%ldで売却しました。", o_name, (long)price);
 			store_top = (item_pos / 12) * 12;
 			display_inventory();
 		}
-	}
 
-	if (item == INVEN_WIELD) swap_wielding_hands();
+		/* swap hands when two handed combat */
+		if (item == INVEN_WIELD) swap_wielding_hands();
+	}
 }
 
 
