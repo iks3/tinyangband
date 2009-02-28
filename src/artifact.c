@@ -202,7 +202,7 @@ static void curse_artifact(object_type * o_ptr)
 }
 
 
-static void random_plus(object_type * o_ptr)
+void random_plus(object_type * o_ptr)
 {
 	int this_type = (o_ptr->tval < TV_BOOTS ? 24 : 20);
 
@@ -1126,7 +1126,46 @@ static void random_slay(object_type *o_ptr)
 }
 
 
-static void give_activation_power(object_type *o_ptr)
+void one_brand(object_type *o_ptr)
+{
+	switch(randint0(6))
+	{
+	case 0: o_ptr->art_flags1 |= TR1_BRAND_ACID; break;
+	case 1: o_ptr->art_flags1 |= TR1_BRAND_ELEC; break;
+	case 2: o_ptr->art_flags1 |= TR1_BRAND_COLD; break;
+	case 3: o_ptr->art_flags1 |= TR1_BRAND_FIRE; break;
+	case 4: o_ptr->art_flags1 |= TR1_BRAND_POIS; break;
+	default:
+		switch(randint0(4))
+		{
+		case 0: o_ptr->art_flags1 |= TR1_CHAOTIC; break;
+		case 1: o_ptr->art_flags1 |= TR1_IMPACT; break;
+		case 2: o_ptr->art_flags1 |= TR1_VORPAL; break;
+		default: o_ptr->art_flags1 |= TR1_VAMPIRIC; break;
+		}
+	}
+}
+
+
+void one_slay(object_type *o_ptr)
+{
+	switch(randint0(8))
+	{
+	case 0: o_ptr->art_flags1 |= TR1_SLAY_HUMAN; break;
+	case 1: o_ptr->art_flags1 |= TR1_SLAY_ANIMAL; break;
+	case 2: o_ptr->art_flags1 |= TR1_SLAY_UNDEAD; break;
+	case 3: o_ptr->art_flags1 |= TR1_SLAY_DEMON; break;
+	case 4: o_ptr->art_flags1 |= TR1_SLAY_ORC; break;
+	case 5: o_ptr->art_flags1 |= TR1_SLAY_TROLL; break;
+	case 6: o_ptr->art_flags1 |= TR1_SLAY_GIANT; break;
+	case 7: o_ptr->art_flags1 |= ((one_in_(7)) ? TR1_KILL_DRAGON : TR1_SLAY_DRAGON); break;
+	default: /* Evil slaying is not branded */
+		o_ptr->art_flags1 |= TR1_SLAY_EVIL;
+	}
+}
+
+
+void give_activation_power(object_type *o_ptr)
 {
 	int type = 0, chance = 0;
 

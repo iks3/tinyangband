@@ -2165,6 +2165,10 @@
 #define TRG_XTRA_D_RES          0x00000100L     /* Extra dragon resistance */
 #define TRG_XTRA_RES            0x00000200L     /* Extra resistance */
 #define TRG_FIXED_FLAVOR        0x00000400L
+#define TRG_XTRA_PLUS           0x00000800L     /* Extra status plus */
+#define TRG_XTRA_BRAND          0x00001000L     /* Extra brand */
+#define TRG_XTRA_SLAY           0x00002000L     /* Extra sray */
+#define TRG_XTRA_ACT            0x00004000L     /* Extra activation */
 
 
 /*

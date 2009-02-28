@@ -3608,6 +3608,9 @@ void apply_magic(object_type *o_ptr, int lev, bool okay, bool good, bool great, 
 		/* Hack -- acquire "cursed" flag */
 		if (e_ptr->flags3 & (TR3_CURSED)) o_ptr->ident |= (IDENT_CURSED);
 
+		/* Paranoia: reset artifact bias */
+		artifact_bias = 0;
+
 		if (e_ptr->gen_flags & (TRG_ONE_SUSTAIN)) one_sustain(o_ptr);
 		if (e_ptr->gen_flags & (TRG_XTRA_POWER)) one_ability(o_ptr);
 		if (e_ptr->gen_flags & (TRG_XTRA_H_RES)) one_high_resistance(o_ptr);
@@ -3615,6 +3618,10 @@ void apply_magic(object_type *o_ptr, int lev, bool okay, bool good, bool great, 
 		if (e_ptr->gen_flags & (TRG_XTRA_D_RES)) one_dragon_ele_resistance(o_ptr);
 		if (e_ptr->gen_flags & (TRG_XTRA_L_RES)) one_lordly_high_resistance(o_ptr);
 		if (e_ptr->gen_flags & (TRG_XTRA_RES)) one_resistance(o_ptr);
+		if (e_ptr->gen_flags & (TRG_XTRA_PLUS)) { random_plus(o_ptr); artifact_bias = 0; }
+		if (e_ptr->gen_flags & (TRG_XTRA_BRAND)) one_brand(o_ptr);
+		if (e_ptr->gen_flags & (TRG_XTRA_SLAY)) one_slay(o_ptr);
+		if (e_ptr->gen_flags & (TRG_XTRA_ACT)) { give_activation_power(o_ptr); artifact_bias = 0; }
 
 		/* Hack -- apply extra penalties if needed */
 		if (cursed_p(o_ptr) || broken_p(o_ptr))
