@@ -2023,6 +2023,60 @@ static void player_flags(u32b *f1, u32b *f2, u32b *f3)
 			(*f2) |= TR2_FREE_ACT;
 		}
 	}
+
+	/* Valar */
+	switch (p_ptr->valar_patron)
+	{
+	case VAR_MANWE:
+		(*f2) |= TR2_RES_ELEC;
+		(*f2) |= TR2_FREE_ACT;
+		break;
+	case VAR_ULMO:
+		(*f2) |= TR2_RES_FIRE;
+		if (p_ptr->lev >= 25) (*f2) |= TR2_RES_SOUND;
+		break;
+	case VAR_AULE:
+		/* Nothing */
+		break;
+	case VAR_OROME:
+		(*f1) |= TR1_SPEED;
+		break;
+	case VAR_MANDOS:
+		(*f2) |= TR2_HOLD_LIFE;
+		break;
+	case VAR_IRMO:
+		(*f3) |= TR3_SEE_INVIS;
+		break;
+	case VAR_TULKAS:
+		/* To-Dam and To-Hit */
+		break;
+	case VAR_VARDA:
+		(*f3) |= TR3_LITE;
+		break;
+	case VAR_YAVANNA:
+		(*f2) |= TR2_RES_ACID;
+		if (p_ptr->lev >= 30) (*f2) |= TR2_REFLECT;
+		break;
+	case VAR_NIENNA:
+		(*f3) |= TR3_WARNING;
+		if (p_ptr->lev >= 25) (*f2) |= TR2_RES_CONF;
+		break;
+	case VAR_ESTE:
+		(*f2) |= TR2_SUST_CON;
+		if (p_ptr->lev >= 20) (*f2) |= TR2_RES_BLIND;
+		break;
+	case VAR_VAIRE:
+		(*f1) |= TR1_STEALTH;
+		(*f2) |= TR2_RES_COLD;
+		break;
+	case VAR_VANA:
+		(*f3) |= TR3_REGEN;
+		(*f3) |= TR3_SLOW_DIGEST;
+		break;
+	case VAR_NESSA:
+		(*f1) |= TR1_STEALTH;
+		break;
+	}
 }
 
 
