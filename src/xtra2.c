@@ -4460,7 +4460,8 @@ void gain_level_reward(int chosen_reward)
 #endif
 			for (i = 0; i < 3; i++)
 			{
-				if (do_cmd_wishing(25, TRUE, TRUE, TRUE) != -1) break;
+				int lev = 1 + (p_ptr->lev * 2/ 3);
+				if (do_cmd_wishing(lev, TRUE, TRUE, TRUE) != -1) break;
 			}
 			break;
 		case REW_PROTEVIL:
