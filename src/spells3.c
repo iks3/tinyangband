@@ -3477,7 +3477,7 @@ static void spell_info(char *p, int spell, int realm)
 					case  4: sprintf(p, " µ÷Î¥:%d", plev * 5); break;
 					case  5: sprintf(p, " Â»½ý:3d5+%d", plev + orb); break;
 
-					case 11: sprintf(p, " Â»½ý:%dd8", 11 + ((plev - 5)/4)); break;
+					case 11: sprintf(p, " Â»½ý:%d", 70 + plev * 2); break;
 					case 12: strcpy (p, " ´ü´Ö:25+d30"); break;
 					case 13: sprintf(p, " ´ü´Ö:%d+d%d", plev, plev + 20); break;
 					case 15: sprintf(p, " Â»½ý:%d", 111 + 5 * plev); break;
@@ -3488,7 +3488,7 @@ static void spell_info(char *p, int spell, int realm)
 					case  4: sprintf(p, " range %d", plev * 5); break;
 					case  5: sprintf(p, " dam 3d5+%d", plev + orb); break;
 
-					case 11: sprintf(p, " dam %dd8", 11 + ((plev - 5)/4)); break;
+					case 11: sprintf(p, " dam %d", 70 + plev * 2); break;
 					case 12: strcpy (p, " dur 25+d30"); break;
 					case 13: sprintf(p, " dur %d+d%d", plev, plev + 20); break;
 					case 15: sprintf(p, " dam %d", 111 + 5 * plev); break;
