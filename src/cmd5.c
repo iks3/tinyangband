@@ -49,7 +49,7 @@ static const char *spell_tips[MAX_REALM][MAX_SPELLS] =
 		"壁を溶かして床にする。",
 		"地上にいるときはダンジョンの最深階へ、ダンジョンにいるときは地上へと移動する。",
 		"アイテムを1つ識別する。",
-		"純粋な魔力のビームを放つ。",
+		"生物に有効な強力な矢を放つ。",
 		"一定時間、テレパシー能力を得る。",
 		"一定時間、加速する。",
 		"近くの全てのモンスター、罠、扉、階段、財宝、そしてアイテムを感知する。",
@@ -88,7 +88,7 @@ static const char *spell_tips[MAX_REALM][MAX_SPELLS] =
 		"Turns one rock square to mud.",
 		"Recalls player from dungeon to town, or from town to the deepest level of dungeon.",
 		"Identifies an item.",
-		"Fires a beam of magic.",
+		"Fires a beam of drain life.",
 		"Gives telepathy for a while.",
 		"Hastes you for a while.",
 		"Detects all monsters, traps, doors, stairs, treasures and items in your vicinity.",
@@ -873,9 +873,9 @@ static bool cast_sorcery_spell(int spell)
 		break;
 	case 10: /* Identify */
 		return ident_spell();
-	case 11: /* Doom Bolt -- always beam in 2.0.7 or later */
+	case 11: /* Bolt of Drain Life */
 		if (!get_aim_dir(&dir)) return FALSE;
-		fire_beam(GF_MANA, dir, damroll(11 + ((plev - 5) / 4), 8));
+		fire_bolt(GF_OLD_DRAIN, dir, 70 + p_ptr->lev * 2);
 		break;
 	case 12: /* Sense Minds */
 		(void)set_tim_esp(p_ptr->tim_esp + randint1(30) + 25);
