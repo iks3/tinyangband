@@ -674,7 +674,7 @@ B:HIT:HURT:1d8
 F:EMPTY_MIND | COLD_BLOOD | OPEN_DOOR | BASH_DOOR |
 F:EVIL | UNDEAD | IM_COLD |
 F:IM_POIS |
-F:NO_CONF | NO_SLEEP | NO_FEAR
+F:NO_STUN | NO_CONF | NO_SLEEP | NO_FEAR
 D:$It is an animated human skeleton.
 D:生命を吹き込まれた人間の骸骨だ。
 
@@ -1952,7 +1952,7 @@ B:HIT:HURT:2d6
 B:HIT:HURT:2d6
 F:EMPTY_MIND | BASH_DOOR | CAN_SWIM |
 F:IM_ELEC | IM_COLD |
-F:NO_CONF | NO_SLEEP | NO_FEAR | NONLIVING
+F:NO_STUN | NO_CONF | NO_SLEEP | NO_FEAR | NONLIVING
 D:$A shambling humanoid monster with long scars.
 D:よろめき歩く、体中傷だらけの人間型モンスターだ。
 
@@ -2032,7 +2032,7 @@ F:FORCE_SLEEP |
 F:EMPTY_MIND | COLD_BLOOD | BASH_DOOR |
 F:IM_FIRE | IM_COLD | IM_ELEC | IM_POIS |
 F:HURT_ROCK | NONLIVING |
-F:NO_CONF | NO_SLEEP | NO_FEAR
+F:NO_STUN | NO_CONF | NO_SLEEP | NO_FEAR
 S:1_IN_4 |
 S:SLOW | CONF | BO_ACID
 D:$A stumpy figure carved from stone, with glittering eyes.
@@ -2308,7 +2308,7 @@ B:HIT:HURT:1d10
 F:COLD_BLOOD | EMPTY_MIND | BASH_DOOR |
 F:IM_FIRE | IM_COLD | IM_ELEC | IM_POIS |
 F:HURT_ROCK |
-F:NO_CONF | NO_SLEEP | NO_FEAR | NONLIVING
+F:NO_STUN | NO_CONF | NO_SLEEP | NO_FEAR | NONLIVING
 D:$It is a massive animated statue.
 D:それは生命を吹き込まれた堂々たる石像だ。
 
@@ -2536,7 +2536,7 @@ B:GAZE:LOSE_STR
 F:EMPTY_MIND | COLD_BLOOD | BASH_DOOR | NONLIVING | NEVER_MOVE |
 F:IM_FIRE | IM_COLD | IM_ELEC | IM_POIS | EVIL |
 F:HURT_ROCK | HURT_LITE |
-F:NO_CONF | NO_SLEEP | NO_FEAR | RES_TELE
+F:NO_STUN | NO_CONF | NO_SLEEP | NO_FEAR | RES_TELE
 S:1_IN_6 |
 S:SHRIEK | S_MONSTER | S_MONSTERS | HOLD | CONF | MIND_BLAST | DRAIN_MANA
 D:$A figure carved from stone, with three vulture faces. Their eyes glow 
@@ -2972,7 +2972,7 @@ B:CRUSH:HURT:12d12
 F:FORCE_SLEEP |
 F:EMPTY_MIND | COLD_BLOOD | BASH_DOOR |
 F:IM_FIRE | IM_COLD | IM_ELEC | IM_POIS |
-F:NO_CONF | NO_SLEEP | NO_FEAR | NONLIVING
+F:NO_STUN | NO_CONF | NO_SLEEP | NO_FEAR | NONLIVING
 S:1_IN_4 |
 S:BR_POIS
 D:$It is a massive metal statue that moves steadily towards you.
@@ -3208,7 +3208,7 @@ F:FORCE_MAXHP |
 F:EMPTY_MIND | COLD_BLOOD | BASH_DOOR |
 F:IM_FIRE | IM_COLD | IM_ELEC |
 F:IM_POIS | NONLIVING | REFLECTING |
-F:NO_CONF | NO_SLEEP | NO_FEAR
+F:NO_STUN | NO_CONF | NO_SLEEP | NO_FEAR
 D:$An enormous construct resembling a titan made from stone.  It strides 
 D:$purposefully towards you, swinging its slow fists with earth-shattering 
 D:$power.
