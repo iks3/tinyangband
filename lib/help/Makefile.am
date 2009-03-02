@@ -7,14 +7,11 @@ angband_files = \
 	jcommand.txt jdefend.txt jdungeon.txt jgeneral.txt \
 	jhelp.hlp jhelpinfo.txt jmonster.txt jobjects.txt \
 	joption.txt jpref.txt jspecial.hlp jtown.txt jversion.txt \
-	arena.txt attack.hlp attack.txt birth.hlp birth.txt \
-	bldg.txt charattr.hlp charattr.txt command.hlp command.txt \
-	commdesc.hlp commdesc.txt defend.hlp defend.txt \
-	dungeon.hlp dungeon.txt gambling.txt general.hlp general.txt \
-	help.hlp helpinfo.txt magic.hlp magic.txt \
-	objects.hlp objects.txt option.hlp option.txt \
-	pref.hlp pref.txt readme.txt spoiler.hlp tang.txt \
-	town.hlp town.txt version.txt
+	arena.txt bldg.txt gambling.txt \
+	attack.txt birth.txt charattr.txt \
+	command.txt defend.txt dungeon.txt general.txt \
+	help.hlp helpinfo.txt monster.txt objects.txt \
+	option.txt pref.txt special.hlp town.txt version.txt \
 
 EXTRA_DIST = \
   $(angband_files)
