@@ -641,7 +641,7 @@ void do_cmd_quaff_potion(void)
  */
 static void do_cmd_read_scroll_aux(int item)
 {
-	int         k, used_up, ident, lev, aware;
+	int         used_up, ident, lev, aware;
 	object_type *o_ptr;
 	char        Rumor[1024];
 
@@ -883,8 +883,7 @@ static void do_cmd_read_scroll_aux(int item)
 
 		case SV_SCROLL_PROTECTION_FROM_EVIL:
 		{
-			k = 3 * p_ptr->lev;
-			if (set_protevil(p_ptr->protevil + randint1(25) + k)) ident = TRUE;
+			if (set_protevil(p_ptr->protevil + randint1(12) + 12)) ident = TRUE;
 			break;
 		}
 
