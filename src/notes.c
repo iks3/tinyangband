@@ -158,6 +158,13 @@ void add_note(cptr note, char code)
 			strnfmt(buf, 255, "%s %s : Snatched %s's body.\n", g_time, depths, note);
 #endif
 			break;
+		case 'r': /* reward from valar */
+#ifdef JP
+			strnfmt(buf, 255, "%s %s : パトロンの報酬で、%s\n", g_time, depths, note);
+#else
+			strnfmt(buf, 255, "%s %s : The patron rewards you with %s.\n", g_time, depths, note);
+#endif
+			break;
 		case 'd': /* Died (Killed) */
 #ifdef JP
 			strnfmt(buf, 255, "%s %s : %s に殺された。\n", g_time, depths, note);
