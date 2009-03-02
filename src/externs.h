@@ -1243,7 +1243,7 @@ extern void one_ele_resistance(object_type *o_ptr);
 extern void one_dragon_ele_resistance(object_type *o_ptr);
 extern void one_resistance(object_type *o_ptr);
 extern void one_ability(object_type *o_ptr);
-extern void random_plus(object_type * o_ptr);
+extern void one_plus(object_type *o_ptr);
 extern void one_brand(object_type *o_ptr);
 extern void one_slay(object_type *o_ptr);
 extern void give_activation_power(object_type *o_ptr);

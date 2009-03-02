@@ -3618,7 +3618,7 @@ void apply_magic(object_type *o_ptr, int lev, bool okay, bool good, bool great, 
 		if (e_ptr->gen_flags & (TRG_XTRA_D_RES)) one_dragon_ele_resistance(o_ptr);
 		if (e_ptr->gen_flags & (TRG_XTRA_L_RES)) one_lordly_high_resistance(o_ptr);
 		if (e_ptr->gen_flags & (TRG_XTRA_RES)) one_resistance(o_ptr);
-		if (e_ptr->gen_flags & (TRG_XTRA_PLUS)) { random_plus(o_ptr); artifact_bias = 0; }
+		if (e_ptr->gen_flags & (TRG_XTRA_PLUS)) one_plus(o_ptr);
 		if (e_ptr->gen_flags & (TRG_XTRA_BRAND)) one_brand(o_ptr);
 		if (e_ptr->gen_flags & (TRG_XTRA_SLAY)) one_slay(o_ptr);
 		if (e_ptr->gen_flags & (TRG_XTRA_ACT)) { give_activation_power(o_ptr); artifact_bias = 0; }

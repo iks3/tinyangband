@@ -411,6 +411,21 @@ void random_plus(object_type * o_ptr)
 	}
 }
 
+void one_plus(object_type *o_ptr)
+{
+	switch (randint0(9))
+	{
+	case 0: o_ptr->art_flags1 |= TR1_STR; break;
+	case 1: o_ptr->art_flags1 |= TR1_INT; break;
+	case 2: o_ptr->art_flags1 |= TR1_WIS; break;
+	case 3: o_ptr->art_flags1 |= TR1_DEX; break;
+	case 4: o_ptr->art_flags1 |= TR1_CON; break;
+	case 5: o_ptr->art_flags1 |= TR1_CHR; break;
+	case 6: o_ptr->art_flags1 |= TR1_SEARCH; break;
+	case 7: o_ptr->art_flags1 |= TR1_INFRA; break;
+	case 8: o_ptr->art_flags1 |= TR1_TUNNEL; break;
+	}
+}
 
 static void random_resistance(object_type * o_ptr, int specific)
 {
