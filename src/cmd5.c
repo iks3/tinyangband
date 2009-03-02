@@ -888,8 +888,8 @@ static bool cast_sorcery_spell(int spell)
 		break;
 	case 15: /* Hell Fire */
 		if (!get_aim_dir(&dir)) return FALSE;
-		fire_ball(GF_HELL_FIRE, dir, 111 + (plev * 5), 4);
-		take_hit(10 + randint1(20), "¼öÊ¸¤ò¾§¤¨¤¿ÈèÏ«");
+		fire_ball(GF_HELL_FIRE, dir, 111 + (plev * 6), 4);
+		take_hit(7 + randint1(13), "¼öÊ¸¤ò¾§¤¨¤¿ÈèÏ«");
 		break;
 	default:
 #ifdef JP
