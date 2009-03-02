@@ -1905,8 +1905,9 @@
 #define GF_JUMP_ATTACK  92
 #define GF_GENOCIDE     93
 #define GF_SOFTEN       94
+#define GF_DIST_ATTACK  95
 
-#define MAX_GF				95
+#define MAX_GF				96
 
 
 /*

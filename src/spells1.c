@@ -567,6 +567,7 @@ static bool project_f(int who, int r, int y, int x, int dam, int typ)
 		case GF_DOMINATION:
 		case GF_JUMP:
 		case GF_JUMP_ATTACK:
+		case GF_DIST_ATTACK:
 		{
 			break;
 		}
@@ -3893,6 +3894,24 @@ note_dies = "はドロドロに溶けた！";
 				dam = 0;
 			}
 
+			break;
+		}
+
+		case GF_DIST_ATTACK:
+		{
+			if (seen) obvious = TRUE;
+			skipped = TRUE;
+
+			if (c_ptr->m_idx)
+				py_attack(y, x);
+			else
+			{
+#ifdef JP
+				msg_print("攻撃は空を切った。");
+#else
+				msg_print("You attack the empty air.");
+#endif
+			}
 			break;
 		}
 

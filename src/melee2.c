@@ -2354,7 +2354,11 @@ static void process_monster(int m_idx)
 		int d = 1;
 
 		/* Make a "saving throw" against stun */
+#ifdef TINYANGBAND
+		if (randint0(750) <= r_ptr->level * r_ptr->level)
+#else
 		if (randint0(5000) <= r_ptr->level * r_ptr->level)
+#endif
 		{
 			/* Recover fully */
 			d = m_ptr->stunned;

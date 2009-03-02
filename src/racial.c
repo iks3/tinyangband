@@ -390,13 +390,10 @@ static bool do_cmd_shield_bash(void)
 		bash_dam = damroll(o_ptr->dd, o_ptr->ds);
 
 		/* Multiply by quality and experience factors */
-		bash_dam *= bash_quality / 20 + p_ptr->lev / 7;
+		bash_dam *= bash_quality / 30;
 
-		/* Strength bonus. */
-		bash_dam += (adj_str_td[p_ptr->stat_ind[A_STR]] - 128);
-
-		/* Paranoia. */
-		if (bash_dam > 125) bash_dam = 125;
+		/* Add damage bonus */
+		bash_dam += p_ptr->to_d;
 
 		/* Encourage the player to keep wearing that heavy shield. */
 		if (randint1(bash_dam) > 30 + randint1(bash_dam / 2))
@@ -423,14 +420,16 @@ static bool do_cmd_shield_bash(void)
 			return (TRUE);
 		}
 
-		/* Stunning. Must be stunned. */
+		if (!m_ptr->stunned && !(r_ptr->flags3 & RF3_NO_STUN))
+		{
+			/* Stunning. Must be stunned. */
 #ifdef JP
-		msg_format("%^sはフラフラになった。", m_name);
+			msg_format("%^sはフラフラになった。", m_name);
 #else
-		msg_format("%^s is stunned.", m_name);
+			msg_format("%^s is stunned.", m_name);
 #endif
-		m_ptr->stunned += randint0(p_ptr->lev / 5) + 4;
-		if (m_ptr->stunned > 24) m_ptr->stunned = 24;
+			m_ptr->stunned += (u16b)(1 + randint1(bash_quality / 40));
+		}
 
 		/* Confusion. */
 		if (bash_quality + p_ptr->lev > randint1(200 + r_ptr->level * 4) &&
@@ -475,6 +474,7 @@ static bool do_cmd_shield_bash(void)
 	/* Monster is not dead */
 	return (TRUE);
 }
+
 
 /* Mei-kyo-Shi-Sui */
 static bool do_cmd_restore_mana(void)
@@ -926,9 +926,16 @@ static bool cmd_racial_power_aux(s32b command)
 		switch (p_ptr->pclass)
 		{
 			case CLASS_WARRIOR:
-			case CLASS_PALADIN:
-			case CLASS_WARRIOR_MAGE:
 				if (!do_cmd_shield_bash()) return FALSE;
+				break;
+			case CLASS_PALADIN:
+				psychometry();
+				break;
+			case CLASS_WARRIOR_MAGE:
+				project_length = 2;
+				if (!get_aim_dir(&dir)) return FALSE;
+				project_hook(GF_DIST_ATTACK, dir, 0, (PROJECT_STOP | PROJECT_KILL));
+				project_length = 0;
 				break;
 			case CLASS_MAGE:
 			case CLASS_PRIEST:
@@ -1111,14 +1118,35 @@ void do_cmd_racial_power(void)
 	switch (p_ptr->pclass)
 	{
 		case CLASS_WARRIOR:
-		case CLASS_PALADIN:
-		case CLASS_WARRIOR_MAGE:
 #ifdef JP
 			strcpy(power_desc[num].name, "シールド・バッシュ");
 #else
 			strcpy(power_desc[num].name, "Shield bashing");
 #endif
-
+			power_desc[num].level = 1;
+			power_desc[num].cost = 15;
+			power_desc[num].stat = A_DEX;
+			power_desc[num].fail = 0;
+			power_desc[num++].number = -3;
+			break;
+		case CLASS_PALADIN:
+#ifdef JP
+			strcpy(power_desc[num].name, "呪い識別");
+#else
+			strcpy(power_desc[num].name, "Identify curse");
+#endif
+			power_desc[num].level = 5;
+			power_desc[num].cost = 10;
+			power_desc[num].stat = A_WIS;
+			power_desc[num].fail = 9;
+			power_desc[num++].number = -3;
+			break;
+		case CLASS_WARRIOR_MAGE:
+#ifdef JP
+			strcpy(power_desc[num].name, "遠方攻撃");
+#else
+			strcpy(power_desc[num].name, "Distance attack");
+#endif
 			power_desc[num].level = 1;
 			power_desc[num].cost = 15;
 			power_desc[num].stat = A_DEX;
