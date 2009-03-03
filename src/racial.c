@@ -889,7 +889,18 @@ static bool cmd_racial_power_aux(s32b command)
 			msg_print("A Elbereth Gilthoniel!!");
 #endif
 			(void)set_afraid(0);
-			(void)set_hero(10 + randint1(10));
+			if (p_ptr->protevil)
+			{
+#ifdef JP
+				msg_print("あなたはすでに守られている。");
+#else
+				msg_print("You are already protected.");
+#endif
+			}
+			else
+			{
+				(void)set_protevil(8 + randint1(8));
+			}
 			break;
 		case VAR_YAVANNA:
 			(void)lite_area(0, 0);
@@ -1353,14 +1364,14 @@ void do_cmd_racial_power(void)
 			break;
 	case VAR_VARDA:
 #ifdef JP
-			strcpy(power_desc[num].name, "士気高揚");
+			strcpy(power_desc[num].name, "対邪悪結界");
 #else
-			strcpy(power_desc[num].name, "Heroism");
+			strcpy(power_desc[num].name, "Protection from evil");
 #endif
 			power_desc[num].level = 7;
-			power_desc[num].cost = 10;
+			power_desc[num].cost = 15;
 			power_desc[num].stat = A_WIS;
-			power_desc[num].fail = 12;
+			power_desc[num].fail = 15;
 			power_desc[num++].number = -10;
 			break;
 	case VAR_YAVANNA:
