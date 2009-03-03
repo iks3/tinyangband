@@ -2335,6 +2335,9 @@ static void calc_torch(void)
 	/* but does glow as an intrinsic.                  */
 	if (p_ptr->cur_lite == 0 && p_ptr->lite) p_ptr->cur_lite = 1;
 
+	/* Varda gives you extra light */
+	if (p_ptr->valar_patron == VAR_VARDA) p_ptr->cur_lite *= 3;
+
 	/* end experimental mods */
 
 	/* Reduce lite when running if requested */
