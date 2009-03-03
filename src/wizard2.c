@@ -107,6 +107,20 @@ static int strrncmp(cptr s1, cptr s2, int len)
 }
 
 
+static int ego_slot(object_type *o_ptr)
+{
+	int slot = wield_slot(o_ptr);
+
+	if (slot > -1) return slot;
+
+	if ((o_ptr->tval == TV_SHOT) ||
+		(o_ptr->tval == TV_ARROW) ||
+		(o_ptr->tval == TV_BOLT))
+		return (INVEN_AMMO);
+
+	return (-1);
+}
+
 static void wishing_puff_of_smoke(void)
 {
 #ifdef JP
@@ -366,7 +380,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 #endif
 				{
 					/* check slot */
-					if (wield_slot(q_ptr) != e_ptr->slot) continue;
+					if (ego_slot(q_ptr) != e_ptr->slot) continue;
 
 					/* memorize egos have same name */
 					e_id[e_num++] = k;
