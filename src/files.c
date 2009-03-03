@@ -2030,6 +2030,7 @@ static void player_flags(u32b *f1, u32b *f2, u32b *f3)
 	case VAR_MANWE:
 		(*f2) |= TR2_RES_ELEC;
 		(*f2) |= TR2_FREE_ACT;
+		if (p_ptr->lev >= 30) (*f2) |= TR2_IM_ELEC;
 		break;
 	case VAR_ULMO:
 		(*f2) |= TR2_RES_FIRE;
@@ -2043,9 +2044,10 @@ static void player_flags(u32b *f1, u32b *f2, u32b *f3)
 		break;
 	case VAR_MANDOS:
 		(*f2) |= TR2_HOLD_LIFE;
+		(*f3) |= TR3_SEE_INVIS;
 		break;
 	case VAR_IRMO:
-		(*f3) |= TR3_SEE_INVIS;
+		/* Nothing */
 		break;
 	case VAR_TULKAS:
 		/* To-Dam and To-Hit */

@@ -2669,6 +2669,7 @@ void calc_bonuses(void)
 		case VAR_MANWE:
 			p_ptr->resist_elec = TRUE;
 			p_ptr->free_act = TRUE;
+			if (p_ptr->lev >= 30) p_ptr->immune_elec = TRUE;
 			break;
 		case VAR_ULMO:
 			p_ptr->resist_fire = TRUE;
@@ -2682,9 +2683,10 @@ void calc_bonuses(void)
 			break;
 		case VAR_MANDOS:
 			p_ptr->hold_life = TRUE;
+			p_ptr->see_inv = TRUE;
 			break;
 		case VAR_IRMO:
-			p_ptr->see_inv = TRUE;
+			/* Nothing */
 			break;
 		case VAR_TULKAS:
 			p_ptr->to_d += 1 + (p_ptr->lev / 5);
