@@ -218,13 +218,21 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 
 
 	/*** evaluate header strings ****/
-#ifdef JP
+
 	/* wishing blessed object ? */
+#ifdef JP
 	if (!strncmp(str, "祝福された", 10))
 	{
 		str = ltrim(str+10);
 		blessed = TRUE;
 	}
+#else
+	if (!strncmp(str, "blessed", 7))
+	{
+		str = ltrim(str+7);
+		blessed = TRUE;
+	}
+#endif
 
 	/* wishing fixed object ? */
 	for (i = 0; fixed_str[i] != NULL; i++)
@@ -237,6 +245,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 		}
 	}
 
+#ifdef JP
 	/* wishing preserve artifacts ? */
 	if (!strncmp(str, "★", 2))
 	{
@@ -541,11 +550,8 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 		k_ptr = &k_info[k_id];
 		object_level = k_ptr->level;
 
-		/* make object */
-		object_prep(q_ptr, k_id);
-
 		/* Wish staff of wishing */
-		if ((q_ptr->tval == TV_STAFF) && (q_ptr->sval == SV_STAFF_WISHING))
+		if ((k_ptr->tval == TV_STAFF) && (k_ptr->sval == SV_STAFF_WISHING))
 		{
 #ifdef JP
 			msg_print("その願いはすでにかなっている。");
@@ -569,7 +575,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 
 			if ((must) || (ok && !a_ptr->cur_num))
 			{
-				/* Apply magic */
+				object_prep(q_ptr, k_id);
 				apply_magic(q_ptr, -1, TRUE, TRUE, TRUE, FALSE);
 			}
 			else /* Not ok */
@@ -611,24 +617,23 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 
 				for (i = 0; i < max_roll; i++)
 				{
+					object_prep(q_ptr, k_id);
 					(void)apply_magic(q_ptr, object_level, FALSE, TRUE, TRUE, FALSE);
 
-					if (q_ptr->name1)	/* Paranoia */
-					{
-						object_prep(q_ptr, k_id);
-						continue;
-					}
+					/* Paranoia */
+					if (q_ptr->name1) continue;
 
 					/* wishing a random ego */
 					if (wish_ego) break;
 
+					/* Match test */
 					for (k = 0; k < e_num; k++)
 					{
 						if (q_ptr->name2 == e_id[k]) break;
 					}
-					if (k < e_num) break;
 
-					object_prep(q_ptr, k_id);
+					/* Matched */
+					if (k < e_num) break;
 				}
 
 				if (i == max_roll)
@@ -653,7 +658,13 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 		/* Normal items */
 		else
 		{
-			apply_magic(q_ptr, -1, FALSE, FALSE, FALSE, FALSE);
+			/* Try to make an uncursed object */
+			for (i = 0; i < 100; i++)
+			{
+				object_prep(q_ptr, k_id);
+				apply_magic(q_ptr, -1, FALSE, FALSE, FALSE, FALSE);
+				if (!cursed_p(q_ptr)) break;
+			}
 		}
 
 		/* Blessed */
