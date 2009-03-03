@@ -3142,7 +3142,7 @@ option_type option_info[] =
 	"ignore_unview",                "視界外のモンスターの行動を表示しない" },
 #else
 	{ &ignore_unview,               FALSE, 3, 2, 16,
-	"ignore_unview",                "Ignore whenever any monster does" },
+	"ignore_unview",                "Ignore whatever monsters do when out of sight" },
 #endif
 
 	/*** Disturbance ***/
@@ -3572,7 +3572,7 @@ option_type option_info[] =
 	"dump_abilities",               "銘のあるアイテムの能力をダンプに出力する" },
 #else
 	{ &dump_abilities,              TRUE, 9, 7, 30,
-	"dump_abilities",               "Dump all abilities of items own names" },
+	"dump_abilities",               "Dump full information for all named items" },
 #endif
 
 #ifdef JP
@@ -3604,7 +3604,7 @@ option_type option_info[] =
 	"record_artifact",              "アーティファクトの入手を記録する" },
 #else
 	{ &record_artifact,             TRUE, 9, 7, 26,
-	"record_artifact",              "Record founded artifacts" },
+	"record_artifact",              "Record artifacts found" },
 #endif
 
 #ifdef JP
@@ -3612,7 +3612,7 @@ option_type option_info[] =
 	"record_randart",               "ランダムアーティファクトの入手を記録する" },
 #else
 	{ &record_randart,              TRUE, 9, 7, 25,
-	"record_randart",               "Record founded random artifacts" },
+	"record_randart",               "Record random artifacts found" },
 #endif
 
 #ifdef JP
