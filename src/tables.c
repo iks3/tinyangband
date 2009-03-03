@@ -2210,10 +2210,10 @@ cptr spell_names[MAX_REALM][MAX_SPELLS] =
 		"Cure Critical Wounds",
 		"Remove Curse",
 		"Restoration",
-		"Sence Surrounding",
+		"Sense Surrounding",
 		"Dispel Evil",
 		"Healing",
-		"Bless Waepon",
+		"Bless Weapon",
 		"Starburst",
 #endif
 	},
