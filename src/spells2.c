@@ -3002,7 +3002,7 @@ bool earthquake_aux(int cy, int cx, int r, int m_idx)
 #else
 			msg_print("You are severely crushed!");
 #endif
-			damage = 300;
+			damage = 150 + randint1(100);
 		}
 
 		/* Destroy the grid, and push the player to safety */
@@ -3039,7 +3039,7 @@ bool earthquake_aux(int cy, int cx, int r, int m_idx)
 #else
 					msg_print("You are crushed between the floor and ceiling!");
 #endif
-					damage = damroll(10, 4);
+					damage = damroll(20, 4);
 					(void)set_stun(p_ptr->stun + randint1(50));
 					break;
 				}
