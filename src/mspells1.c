@@ -854,6 +854,9 @@ bool make_attack_spell(int m_idx)
 	/* Damage of spell */
 	int dam;
 
+	/* Powerful */
+	bool powerful = (r_ptr->flags2 & RF2_POWERFUL) ? TRUE : FALSE;
+
 	/* Cannot cast spells when confused */
 	if (m_ptr->confused) {m_ptr->target_y = 0;m_ptr->target_x = 0;return (FALSE);}
 
@@ -1588,6 +1591,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts an acid ball.", m_name);
 #endif
 			dam = randint1(rlev * 3) + 15;
+			if (powerful) dam *= 2;
 			breath(y, x, m_idx, GF_ACID, dam, 2, FALSE);
 			update_smart_learn(m_idx, DRS_ACID);
 			break;
@@ -1605,6 +1609,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a lightning ball.", m_name);
 #endif
 			dam = randint1(rlev * 3 / 2) + 8;
+			if (powerful) dam *= 2;
 			breath(y, x, m_idx, GF_ELEC, dam, 2, FALSE);
 			update_smart_learn(m_idx, DRS_ELEC);
 			break;
@@ -1622,6 +1627,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a fire ball.", m_name);
 #endif
 			dam = randint1(rlev * 7 / 2) + 10;
+			if (powerful) dam *= 2;
 			breath(y, x, m_idx, GF_FIRE, dam, 2, FALSE);
 			update_smart_learn(m_idx, DRS_FIRE);
 			break;
@@ -1639,6 +1645,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a frost ball.", m_name);
 #endif
 			dam = randint1(rlev * 3 / 2) + 10;
+			if (powerful) dam *= 2;
 			breath(y, x, m_idx, GF_COLD, dam, 2, FALSE);
 			update_smart_learn(m_idx, DRS_COLD);
 			break;
@@ -1656,6 +1663,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a stinking cloud.", m_name);
 #endif
 			dam = damroll(12, 2);
+			if (powerful) dam *= 2;
 			breath(y, x, m_idx, GF_POIS, dam, 2, FALSE);
 			update_smart_learn(m_idx, DRS_POIS);
 			break;
@@ -1673,6 +1681,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a nether ball.", m_name);
 #endif
 			dam = 50 + damroll(10, 10) + rlev;
+			if (powerful) dam += rlev * 2;
 			breath(y, x, m_idx, GF_NETHER, dam, 2, FALSE);
 			update_smart_learn(m_idx, DRS_NETH);
 			break;
@@ -1694,6 +1703,7 @@ bool make_attack_spell(int m_idx)
 			msg_print("You are engulfed in a whirlpool.");
 #endif
 			dam = randint1(rlev * 2) + 50;
+			if (powerful) dam += randint0(rlev * 2);
 			breath(y, x, m_idx, GF_WATER, dam, 4, FALSE);
 			break;
 		}
@@ -2045,6 +2055,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a acid bolt.", m_name);
 #endif
 			dam = damroll(7, 8) + (rlev / 3);
+			if (powerful) dam *= 2;
 			bolt(m_idx, GF_ACID, dam);
 			update_smart_learn(m_idx, DRS_ACID);
 			update_smart_learn(m_idx, DRS_REFLECT);
@@ -2064,6 +2075,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a lightning bolt.", m_name);
 #endif
 			dam = damroll(4, 8) + (rlev / 3);
+			if (powerful) dam *= 2;
 			bolt(m_idx, GF_ELEC, dam);
 			update_smart_learn(m_idx, DRS_ELEC);
 			update_smart_learn(m_idx, DRS_REFLECT);
@@ -2083,6 +2095,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a fire bolt.", m_name);
 #endif
 			dam = damroll(9, 8) + (rlev / 3);
+			if (powerful) dam *= 2;
 			bolt(m_idx, GF_FIRE, dam);
 			update_smart_learn(m_idx, DRS_FIRE);
 			update_smart_learn(m_idx, DRS_REFLECT);
@@ -2102,6 +2115,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a frost bolt.", m_name);
 #endif
 			dam = damroll(6, 8) + (rlev / 3);
+			if (powerful) dam *= 2;
 			bolt(m_idx, GF_COLD, dam);
 			update_smart_learn(m_idx, DRS_COLD);
 			update_smart_learn(m_idx, DRS_REFLECT);
@@ -2111,7 +2125,20 @@ bool make_attack_spell(int m_idx)
 		/* RF5_BO_POIS */
 		case 128+20:
 		{
-			/* XXX XXX XXX */
+			if (!direct) break;
+			disturb(1, 0);
+#ifdef JP
+			if (blind) msg_format("%^sが何かをつぶやいた。", m_name);
+			else msg_format("%^sがポイズン・ボルトの呪文を唱えた。", m_name);
+#else
+			if (blind) msg_format("%^s mumbles.", m_name);
+			else msg_format("%^s casts a poison bolt.", m_name);
+#endif
+			dam = damroll(5, 8) + (rlev / 3);
+			if (powerful) dam *= 2;
+			bolt(m_idx, GF_POIS, dam);
+			update_smart_learn(m_idx, DRS_POIS);
+			update_smart_learn(m_idx, DRS_REFLECT);
 			break;
 		}
 
@@ -2128,6 +2155,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a nether bolt.", m_name);
 #endif
 			dam = 30 + damroll(5, 5) + (rlev * 3) / 2;
+			if (powerful) dam += (rlev * 3) / 2;
 			bolt(m_idx, GF_NETHER, dam);
 			update_smart_learn(m_idx, DRS_NETH);
 			update_smart_learn(m_idx, DRS_REFLECT);
@@ -2147,6 +2175,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a water bolt.", m_name);
 #endif
 			dam = damroll(10, 10) + rlev;
+			if (powerful) dam += rlev;
 			bolt(m_idx, GF_WATER, dam);
 			update_smart_learn(m_idx, DRS_REFLECT);
 			break;
@@ -2183,6 +2212,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts a plasma bolt.", m_name);
 #endif
 			dam = 10 + damroll(8, 7) + rlev;
+			if (powerful) dam += rlev;
 			bolt(m_idx, GF_PLASMA, dam);
 			update_smart_learn(m_idx, DRS_REFLECT);
 			break;
@@ -2201,6 +2231,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s casts an ice bolt.", m_name);
 #endif
 			dam = damroll(6, 6) + rlev;
+			if (powerful) dam += rlev;
 			bolt(m_idx, GF_ICE, dam);
 			update_smart_learn(m_idx, DRS_COLD);
 			update_smart_learn(m_idx, DRS_REFLECT);
