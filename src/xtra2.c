@@ -4324,10 +4324,7 @@ void gain_level_reward(int chosen_reward)
 			msg_print("'Stay, mortal, and let me mold thee.'");
 			reward = "increasing a stat.";
 #endif
-			if (one_in_(3) && !(valar_stats[p_ptr->valar_patron] < 0))
-				do_inc_stat(valar_stats[p_ptr->valar_patron]);
-			else
-				do_inc_stat(randint0(6));
+			do_inc_stat(randint0(6));
 			break;
 		case REW_AUGM_ABL:
 #ifdef JP
