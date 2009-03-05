@@ -1392,7 +1392,7 @@ void do_cmd_racial_power(void)
 #else
 			strcpy(power_desc[num].name, "Sorrowful song");
 #endif
-			power_desc[num].level = 15;
+			power_desc[num].level = 7;
 			power_desc[num].cost = 5;
 			power_desc[num].stat = A_CHR;
 			power_desc[num].fail = 9;
