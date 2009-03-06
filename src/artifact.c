@@ -2123,7 +2123,7 @@ bool activate_random_artifact(object_type * o_ptr)
 #ifdef JP
 			msg_print("おどろおどろしい音が鳴り渡った...");
 #else
-			msg_print("You wind a mighty blast; your enemies tremble!");
+			msg_print("You blow a mighty blast; your enemies tremble!");
 #endif
 			(void)turn_monsters((3 * p_ptr->lev / 2) + 10);
 			o_ptr->timeout = randint0(40) + 40;
@@ -2135,7 +2135,7 @@ bool activate_random_artifact(object_type * o_ptr)
 #ifdef JP
 			msg_print("おどろおどろしい音が鳴り渡った...");
 #else
-			msg_print("You wind a mighty blast; your enemies tremble!");
+			msg_print("You blow a mighty blast; your enemies tremble!");
 #endif
 			turn_monsters(40 + p_ptr->lev);
 			o_ptr->timeout = 3 * (p_ptr->lev + 10);

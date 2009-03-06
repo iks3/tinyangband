@@ -1668,11 +1668,10 @@ bool set_tim_sh_elec(int v)
 		if (!p_ptr->tim_sh_elec)
 		{
 #ifdef JP
-msg_print("体が電撃のオーラで覆われた。");
+			msg_print("体が電撃のオーラで覆われた。");
 #else
-			msg_print("You have enveloped by electorical aura!");
+			msg_print("You have been enveloped by electorical aura!");
 #endif
-
 			notice = TRUE;
 		}
 	}
@@ -1683,11 +1682,10 @@ msg_print("体が電撃のオーラで覆われた。");
 		if (p_ptr->tim_sh_elec)
 		{
 #ifdef JP
-msg_print("電撃のオーラが消えた。");
+			msg_print("電撃のオーラが消えた。");
 #else
-			msg_print("Electorical aura disappeared.");
+			msg_print("Your electorical aura has disappeared.");
 #endif
-
 			notice = TRUE;
 		}
 	}
@@ -1731,11 +1729,10 @@ bool set_tim_sh_cold(int v)
 		if (!p_ptr->tim_sh_cold)
 		{
 #ifdef JP
-msg_print("体が冷気のオーラで覆われた。");
+			msg_print("体が冷気のオーラで覆われた。");
 #else
-			msg_print("You have enveloped by icy aura!");
+			msg_print("You have been enveloped by icy aura!");
 #endif
-
 			notice = TRUE;
 		}
 	}
@@ -1746,11 +1743,10 @@ msg_print("体が冷気のオーラで覆われた。");
 		if (p_ptr->tim_sh_cold)
 		{
 #ifdef JP
-msg_print("冷気のオーラが消えた。");
+			msg_print("冷気のオーラが消えた。");
 #else
-			msg_print("Icy aura disappeared.");
+			msg_print("Your icy aura disappeared.");
 #endif
-
 			notice = TRUE;
 		}
 	}
