@@ -1028,7 +1028,7 @@ static int vault_aux_race;
 static char vault_aux_char;
 
 /* Breath mask for "monster pit (dragon)" */
-static u32b vault_aux_dragon_mask4;
+//static u32b vault_aux_dragon_mask4;
 
 
 /*
@@ -1222,7 +1222,8 @@ static bool vault_aux_dragon(int r_idx)
 	if (!(r_ptr->flags3 & RF3_DRAGON)) return (FALSE);
 
 	/* Hack -- Require correct "breath attack" */
-	if (r_ptr->flags4 != vault_aux_dragon_mask4) return (FALSE);
+	/* No more so many type dragons.  -- dis */
+    //if (r_ptr->flags4 != vault_aux_dragon_mask4) return (FALSE);
 
 	/* Decline undead */
 	if (r_ptr->flags3 & RF3_UNDEAD) return (FALSE);
@@ -1285,7 +1286,7 @@ static void vault_prep_symbol(void)
 	vault_aux_char = r_info[r_idx].d_char;
 }
 
-
+#if 0
 /*
  * Helper function for "monster pit (dragon)"
  */
@@ -1357,7 +1358,7 @@ static void vault_prep_dragon(void)
 		}
 	}
 }
-
+#endif
 
 typedef struct vault_aux_type vault_aux_type;
 
@@ -1572,14 +1573,14 @@ static vault_aux_type pit_types[] =
 	{"トロル",       vault_aux_troll,   NULL,              20, 4},
 	{"ジャイアント", vault_aux_giant,   NULL,              40, 4},
 	{"クローン",     vault_aux_symbol,  vault_prep_symbol, 55, 3},
-	{"ドラゴン",     vault_aux_dragon,  vault_prep_dragon, 70, 4},
+	{"ドラゴン",     vault_aux_dragon,  NULL, 70, 4},
 	{"デーモン",     vault_aux_demon,   NULL,              80, 4},
 #else
 	{"orc",          vault_aux_orc,     NULL,               5, 4},
 	{"troll",        vault_aux_troll,   NULL,              20, 4},
 	{"giant",        vault_aux_giant,   NULL,              40, 4},
 	{"clone",        vault_aux_symbol,  vault_prep_symbol, 55, 3},
-	{"dragon",       vault_aux_dragon,  vault_prep_dragon, 70, 4},
+	{"dragon",       vault_aux_dragon,  NULL, 70, 4},
 	{"demon",        vault_aux_demon,   NULL,              80, 4},
 #endif
 	{NULL,           NULL,              NULL,               0, 0},
