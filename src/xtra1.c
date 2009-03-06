@@ -3535,7 +3535,7 @@ void calc_bonuses(void)
 
 	/* Assume okay */
 	p_ptr->icky_wield = FALSE;
-
+#ifndef TINYANGBAND
 	/* Extra bonus for warriors... */
 	if (p_ptr->pclass == CLASS_WARRIOR)
 	{
@@ -3545,7 +3545,7 @@ void calc_bonuses(void)
 		dis_to_h += (p_ptr->lev / 5);
 		dis_to_d += (p_ptr->lev / 5);
 	}
-
+#endif
 	/* Priest weapon penalty for non-blessed edged weapons */
 	if (p_ptr->pclass == CLASS_PRIEST)
 	{
