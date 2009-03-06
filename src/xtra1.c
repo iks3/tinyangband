@@ -3415,13 +3415,16 @@ void calc_bonuses(void)
 			/* Extra shots */
 			p_ptr->num_fire += (extra_shots * 100);
 
-			/*
-			 * Addendum -- also "Reward" high level warriors,
-			 * with _any_ missile weapon -- TY
-			 */
-			if (p_ptr->pclass == CLASS_WARRIOR &&
-			   (p_ptr->tval_ammo <= TV_BOLT) &&
-			   (p_ptr->tval_ammo >= TV_SHOT))
+			/* Warriors are good at crossbow shooting */
+			if ((p_ptr->pclass == CLASS_WARRIOR) &&
+			   (p_ptr->tval_ammo == TV_BOLT))
+			{
+				p_ptr->num_fire += (p_ptr->lev * 2);
+			}
+
+			/* Warrior-mages are also good at shooting as Rangers */
+			if ((p_ptr->pclass == CLASS_WARRIOR_MAGE) &&
+				((p_ptr->tval_ammo == TV_SHOT) || (p_ptr->tval_ammo == TV_ARROW)))
 			{
 				p_ptr->num_fire += (p_ptr->lev * 2);
 			}
