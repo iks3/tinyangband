@@ -2718,7 +2718,8 @@ void calc_bonuses(void)
 			break;
 		case VAR_VAIRE:
 			p_ptr->resist_cold = TRUE;
-			p_ptr->skill_stl += 1 + (p_ptr->lev / 7);
+			p_ptr->ac += 1 + (p_ptr->lev / 3);
+			p_ptr->dis_ac += 1 + (p_ptr->lev / 3);
 			break;
 		case VAR_VANA:
 			p_ptr->regenerate = TRUE;
