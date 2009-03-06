@@ -1722,6 +1722,9 @@ static void compare_weapon_aux1(object_type *o_ptr, int col, int r)
 	/* Get the flags of the weapon */
 	object_flags(o_ptr, &f1, &f2, &f3);
 
+	/* Extra brands */
+	if (p_ptr->tim_brand) f1 |= p_ptr->xtra_brand;
+
 	/* Print the relevant lines */
 #ifdef JP
 	if (f1 & TR1_SLAY_HUMAN)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "ПЭДж:",  TERM_YELLOW);

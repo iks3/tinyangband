@@ -76,6 +76,12 @@ sprintf(Liferating, "現在の体力ランクは %d/100です。", percent);
 		f3 |= t3;
 	}
 
+	/* Extra brands */
+	if (p_ptr->tim_brand)
+	{
+		f1 |= p_ptr->xtra_brand;
+	}
+
 	/* Racial powers... */
 	switch (p_ptr->prace)
 	{

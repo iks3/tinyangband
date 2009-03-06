@@ -985,9 +985,10 @@ static void rd_extra(void)
 	rd_s16b(&p_ptr->tim_might);
 	rd_s16b(&p_ptr->tim_xtra2);
 	rd_s16b(&p_ptr->tim_xtra3);
-	rd_s16b(&p_ptr->tim_xtra4);
-	rd_s16b(&p_ptr->tim_xtra5);
-	rd_s16b(&p_ptr->tim_xtra6);
+
+	rd_s16b(&p_ptr->tim_brand);
+	rd_u32b(&p_ptr->xtra_brand);
+
 	rd_s16b(&p_ptr->valar_patron);
 	rd_u32b(&p_ptr->muta);
 

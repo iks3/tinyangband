@@ -999,12 +999,11 @@ struct player_type
 	s16b resist_magic;  /* Timed Resist Magic (later) */
 	s16b tim_radar;     /* Timed Radar Eye */
 	s16b tim_might;     /* Timed Extra Might */
-
 	s16b tim_xtra2;     /* Later */
 	s16b tim_xtra3;     /* Later */
-	s16b tim_xtra4;     /* Later */
-	s16b tim_xtra5;     /* Later */
-	s16b tim_xtra6;     /* Later */
+
+	s16b tim_brand;
+	u32b xtra_brand;
 
 	s16b valar_patron;  /* Old one */
 

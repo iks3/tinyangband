@@ -2203,6 +2203,11 @@ msg_print("あまりにも空腹で気絶してしまった。");
 		(void)set_tim_might(p_ptr->tim_might - 1);
 	}
 
+	if (p_ptr->tim_brand)
+	{
+		(void)set_tim_brand(p_ptr->tim_brand - 1, 0);
+	}
+
 	/*** Poison and Stun and Cut ***/
 
 	/* Poison */

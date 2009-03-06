@@ -1057,9 +1057,9 @@ static void wr_extra(void)
 	wr_s16b(p_ptr->tim_might);
 	wr_s16b(p_ptr->tim_xtra2);
 	wr_s16b(p_ptr->tim_xtra3);
-	wr_s16b(p_ptr->tim_xtra4);
-	wr_s16b(p_ptr->tim_xtra5);
-	wr_s16b(p_ptr->tim_xtra6);
+
+	wr_s16b(p_ptr->tim_brand);
+	wr_u32b(p_ptr->xtra_brand);
 
 	wr_s16b(p_ptr->valar_patron);
 	wr_u32b(p_ptr->muta);

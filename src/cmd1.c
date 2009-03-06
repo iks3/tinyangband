@@ -175,6 +175,9 @@ s16b tot_dam_aux(object_type *o_ptr, int tdam, monster_type *m_ptr)
 	/* Extract the flags */
 	object_flags(o_ptr, &f1, &f2, &f3);
 
+	/* Extra brands */
+	if (p_ptr->tim_brand) f1 |= p_ptr->xtra_brand;
+
 	/* Some "weapons" and "ammo" do extra damage */
 	switch (o_ptr->tval)
 	{

@@ -1173,6 +1173,7 @@ extern bool set_tim_infra(int v);
 extern bool set_tim_radar(int v);
 extern bool set_tim_might(int v);
 extern bool set_tim_regen(int v);
+extern bool set_tim_brand(int v, u32b flg);
 extern bool set_tim_sh_fire(int v);
 extern bool set_tim_sh_elec(int v);
 extern bool set_tim_sh_cold(int v);

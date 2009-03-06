@@ -1523,6 +1523,72 @@ msg_print("素早く回復する感じがなくなった。");
 }
 
 
+bool set_tim_brand(int v, u32b flg)
+{
+	bool notice = FALSE;
+
+	/* Hack -- Force good values */
+	v = (v > 10000) ? 10000 : (v < 0) ? 0 : v;
+
+	/* Open */
+	if (v)
+	{
+		if (!p_ptr->tim_brand)
+		{
+#ifdef JP
+			msg_print("あなたの武器が輝いた！");
+#else
+			msg_print("Your weapon glows brightly!");
+#endif
+			notice = TRUE;
+		}
+	}
+
+	/* Shut */
+	else
+	{
+		if (p_ptr->tim_brand)
+		{
+#ifdef JP
+			msg_print("武器の輝きがなくなった。");
+#else
+			msg_print("The shine of your weapon was lost.");
+#endif
+			notice = TRUE;
+		}
+	}
+
+	/* Use the value */
+	p_ptr->tim_brand = v;
+
+	if (p_ptr->tim_brand)
+		p_ptr->xtra_brand |= flg;
+	else
+		p_ptr->xtra_brand = 0L;
+
+	/* Redraw status bar*/
+	p_ptr->redraw |= (PR_STATUS);
+
+	/* Nothing to notice */
+	if (!notice) return (FALSE);
+
+	/* Disturb */
+	if (disturb_state) disturb(0, 0);
+
+	/* Recalculate bonuses */
+	p_ptr->update |= (PU_BONUS);
+
+	/* Update the monsters */
+	p_ptr->update |= (PU_MONSTERS);
+
+	/* Handle stuff */
+	handle_stuff();
+
+	/* Result */
+	return (TRUE);
+}
+
+
 /*
  * Set "p_ptr->tim_sh_fire", notice observable changes
  */

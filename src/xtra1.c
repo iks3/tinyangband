@@ -257,6 +257,7 @@ static void prt_stat(int stat)
 #define BAR_RUNESWORD 38
 #define BAR_ANTIMULTI 39
 #define BAR_VAMPIRIC 40
+#define BAR_BRAND 41
 
 
 static struct {
@@ -307,6 +308,7 @@ static struct {
 	{TERM_L_DARK, "·õ", "Ëâ·õ²½"},
 	{TERM_L_DARK, "¿£", "È¿Áý¿£"},
 	{TERM_RED, "µÛ", "µÛ·ìÂÇ·â"},
+	{TERM_L_BLUE, "Â°", "Â°À­ÂÇ·â"},
 	{0, NULL, NULL}
 };
 #else
@@ -352,6 +354,7 @@ static struct {
 	{TERM_L_DARK, "Rs", "RuneSword"},
 	{TERM_L_DARK, "AMl", "AntiMulti"},
 	{TERM_RED, "Vm", "Vampiric"},
+	{TERM_L_BLUE, "Brn", "XtraBrand"},
 	{0, NULL, NULL}
 };
 #endif
@@ -466,6 +469,9 @@ static void prt_status(void)
 
 	/* Extra Might */
 	if (p_ptr->tim_might) ADD_FLG(BAR_EXMIGHT);
+
+	/* Extra Brand */
+	if (p_ptr->tim_brand) ADD_FLG(BAR_BRAND);
 
 	/* Calcurate length */
 	for (i = 0; bar[i].sstr; i++)

@@ -841,9 +841,10 @@ static bool cmd_racial_power_aux(s32b command)
 		{
 		case VAR_MANWE:
 			{
-				int n = 20 + randint1(20);
+				int n = 10 + randint1(10);
 				(void)set_tim_sh_elec(n);
 				(void)set_tim_sh_cold(n);
+				(void)set_tim_brand(n, (TR1_BRAND_ELEC | TR1_BRAND_COLD));
 			}
 			break;
 		case VAR_ULMO:
