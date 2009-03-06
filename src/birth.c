@@ -3648,7 +3648,7 @@ void player_birth(void)
 	prt("冥王モルゴスが虚空より舞い戻った！                          ", row++, 10);
 	prt("モルゴスは闇の力でかつての手下どもを蘇らせ、闇の軍勢を率いて", row++, 10);
 	prt("再びアングバンドの要塞に立てこもろうとしている。まだ、その力", row++, 10);
-	prt("は完全ではないが、時が経てば世界を闇に多い尽くす程の力を取り", row++, 10);
+	prt("は完全ではないが、時が経てば世界を闇に覆い尽くす程の力を取り", row++, 10);
 	prt("戻すだろう。                                                ", row++, 10);
 	prt("神々は、この不測の事態に対して、大いなる軍勢を派遣しようとし", row++, 10);
 	prt("ている。このままでは中つ国はめちゃめちゃになってしまうだろう。", row++, 10);
@@ -3673,16 +3673,35 @@ void player_birth(void)
 	prt("[ 何かキーを押してください。]", row, 25);
 #else
 	prt("Morgoth, Lord of Darkness, returned from the void!!", row++, 10);
-	prt("He revived his servants. He tries to lead his troops and to", row++, 10);
-	prt("be confined to his fortress 'Angband' again. His power is ", row++, 10);
-	prt("not complete yet, but he will regain his huge power if time", row++, 10);
-	prt("passed.", row++, 10);
-	prt("Valar decided to send their great troops. So, the Middle-", row++, 10);
-	prt("Earth will be confused.", row++, 10);
-	prt(format("Your valar %s, worried this trouble, ordered you to",
+	prt("He has revived his former servants with the power of darkness", row++, 10);
+	prt("and is leading his dread troops to try to once again and to", row++, 10);
+	prt("hold his fortress 'Angband'. His power is not complete yet, ", row++, 10);
+	prt("but with the passage of time he will no doubt regain the power", row++, 10);
+	prt("to overwhelm the world with darkness. ", row++, 10);
+	prt("The Valar, in face of this unforseen situation have decided to", row++, 10);
+	prt("send their armies in in great force.  The great battle in the", row++, 10);
+	prt("offing would doubless throw the Middle-Earth into chaos.", row++, 10);
+	prt(format("Your valar %s, troubled by this, has ordered you in",
 		valar_patrons[p_ptr->valar_patron]), row++, 10);
-	prt("kill Morgoth. You must enter the cave and defeat Morgoth", row++, 10);
-	prt("who lurks at recesses of the cave.", row++, 10);
+	prt("secret on a mission to kill Morgoth. You must enter the cave and", row++, 10);
+	prt("defeat Morgoth who lurks at recesses of the cave before he", row++, 10);
+	prt("regains his great power.", row++, 10);
+	switch(p_ptr->prace)
+	{
+	case RACE_HALF_ORC:
+		row++;
+		prt("As a half-orc you were born into this situation.", row++, 10);
+		prt("The armies of darkness managed to piss you off and", row++, 10);
+		prt("now you're going to crush them into the ground!", row++, 10);
+		break;
+	case RACE_BARBARIAN:
+		row++;
+		prt("Because many of babarians followed in the past ", row++, 10);
+		prt("your tribe is looked on with suspicion.  Defeat ", row++, 10);
+		prt("Morgoth, Lord of Darkness, and clear your people's", row++, 10);
+		prt("honour!", row++, 10);
+		break;
+	}
 	row++;
 	prt("[ Hit Any Key ]", row, 32);
 #endif
