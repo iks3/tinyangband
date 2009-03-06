@@ -2821,7 +2821,11 @@ bool summon_specific(int who, int y1, int x1, int lev, int type, bool group, boo
 	get_mon_num_prep(summon_specific_okay, get_monster_hook2(y, x));
 
 	/* Pick a monster, using the level calculation */
+#ifdef TINYANGBAND
+	r_idx = get_mon_num((dun_level + lev) / 2 + 2);
+#else
 	r_idx = get_mon_num((dun_level + lev) / 2 + 5);
+#endif
 
 	/* Handle failure */
 	if (!r_idx) return (FALSE);
