@@ -73,7 +73,7 @@ void place_random_stairs(int y, int x)
 		up_stairs = FALSE;
 
 	/* Bottom */
-	if (dun_level >= MAX_DEPTH - 1)
+	if (dun_level >= TINY_MAX_DEPTH - 1)
 		down_stairs = FALSE;
 
 	/* Quest-level */

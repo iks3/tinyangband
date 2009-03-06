@@ -522,7 +522,7 @@ void teleport_player_level(void)
 		/* Leaving */
 		p_ptr->leaving = TRUE;
 	}
-	else if (quest_number(dun_level) || (dun_level >= MAX_DEPTH - 1))
+	else if (quest_number(dun_level) || (dun_level >= TINY_MAX_DEPTH - 1))
 	{
 #ifdef JP
 		msg_print("あなたは天井を突き破って宙へ浮いていく。");
@@ -1582,7 +1582,7 @@ msg_print("効果がありません！");
 		/* Town/wilderness or Ironman */
 		cave_set_feat(py, px, FEAT_MORE);
 	}
-	else if (quest_number(dun_level) || (dun_level >= MAX_DEPTH - 1))
+	else if (quest_number(dun_level) || (dun_level >= TINY_MAX_DEPTH - 1))
 	{
 		/* Quest level */
 		cave_set_feat(py, px, FEAT_LESS);

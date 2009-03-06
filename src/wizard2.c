@@ -2102,7 +2102,7 @@ static void do_cmd_wiz_jump(void)
 		char	tmp_val[160];
 
 		/* Prompt */
-		sprintf(ppp, "Jump to level (0-%d): ", MAX_DEPTH-1);
+		sprintf(ppp, "Jump to level (0-%d): ", TINY_MAX_DEPTH-1);
 
 		/* Default */
 		sprintf(tmp_val, "%d", dun_level);
@@ -2118,7 +2118,7 @@ static void do_cmd_wiz_jump(void)
 	if (command_arg < 0) command_arg = 0;
 
 	/* Paranoia */
-	if (command_arg > MAX_DEPTH - 1) command_arg = MAX_DEPTH - 1;
+	if (command_arg > TINY_MAX_DEPTH - 1) command_arg = TINY_MAX_DEPTH - 1;
 
 	/* Accept request */
 	msg_format("You jump to dungeon level %d.", command_arg);

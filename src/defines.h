@@ -268,7 +268,7 @@
  */
 #define MAX_DEPTH       128
 #ifdef TINYANGBAND
-#define TINY_MAX_DEPTH   50
+#define TINY_MAX_DEPTH   40
 #define MORGOTH_DEPTH    27
 #endif
 

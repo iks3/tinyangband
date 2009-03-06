@@ -139,9 +139,9 @@ static bool alloc_stairs(int feat, int num, int walls)
 		if ((dun_level > 1) && quest_number(dun_level)) return TRUE;
 
 		/* No downstairs at the bottom */
-		if (dun_level >= MAX_DEPTH - 1) return TRUE;
+		if (dun_level >= TINY_MAX_DEPTH - 1) return TRUE;
 
-		if ((dun_level < MAX_DEPTH - 2) && !quest_number(dun_level + 1))
+		if ((dun_level < TINY_MAX_DEPTH - 2) && !quest_number(dun_level + 1))
 			more_num = (randint1(num) + 1) / 2;
 	}
 
@@ -635,7 +635,7 @@ static bool cave_gen(void)
 		int feat1, feat2;
 
 		/* Choose water or lava */
-		if (randint1(MAX_DEPTH) - 1 > dun_level)
+		if (randint1(TINY_MAX_DEPTH) - 1 > dun_level)
 		{
 			feat1 = FEAT_DEEP_WATER;
 			feat2 = FEAT_SHAL_WATER;

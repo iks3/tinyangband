@@ -482,15 +482,14 @@ static void sense_magic(void)
 static void pattern_teleport(void)
 {
 	int min_level = 0;
-	int max_level = 99;
+	int max_level = TINY_MAX_DEPTH - 1;
 
 	/* Ask for level */
 #ifdef JP
-if (get_check("レベル・テレポートしますか？"))
+	if (get_check("レベル・テレポートしますか？"))
 #else
 	if (get_check("Teleport level? "))
 #endif
-
 	{
 		char	ppp[80];
 		char	tmp_val[160];
@@ -500,18 +499,17 @@ if (get_check("レベル・テレポートしますか？"))
 			min_level = dun_level;
 
 		/* Maximum level */
-		if (dun_level > 100)
-			max_level = MAX_DEPTH - 1;
-		else if (dun_level == 100)
-			max_level = 100;
+		if (dun_level > MORGOTH_DEPTH)
+			max_level = MORGOTH_DEPTH - 1;
+		else if (dun_level == MORGOTH_DEPTH)
+			max_level = MORGOTH_DEPTH;
 
 		/* Prompt */
 #ifdef JP
-sprintf(ppp, "テレポート先:(%d-%d)", min_level, max_level);
+		sprintf(ppp, "テレポート先:(%d-%d)", min_level, max_level);
 #else
 		sprintf(ppp, "Teleport to level (%d-%d): ", min_level, max_level);
 #endif
-
 
 		/* Default */
 		sprintf(tmp_val, "%d", dun_level);
@@ -523,11 +521,10 @@ sprintf(ppp, "テレポート先:(%d-%d)", min_level, max_level);
 		command_arg = atoi(tmp_val);
 	}
 #ifdef JP
-else if (get_check("通常テレポート？"))
+	else if (get_check("通常テレポート？"))
 #else
 	else if (get_check("Normal teleport? "))
 #endif
-
 	{
 		teleport_player(200);
 		return;
@@ -545,11 +542,10 @@ else if (get_check("通常テレポート？"))
 
 	/* Accept request */
 #ifdef JP
-msg_format("%d 階にテレポートしました。", command_arg);
+	msg_format("%d 階にテレポートしました。", command_arg);
 #else
 	msg_format("You teleport to dungeon level %d.", command_arg);
 #endif
-
 
 	if (autosave_l) do_cmd_save_game(TRUE);
 
