@@ -863,6 +863,7 @@ static bool cmd_racial_power_aux(s32b command)
 			(void)sleep_monsters();
 			break;
 		case VAR_TULKAS:
+			if (command == -10)
 			{
 				int y, x;
 				cave_type       *c_ptr;
@@ -881,6 +882,11 @@ static bool cmd_racial_power_aux(s32b command)
 					if (c_ptr->m_idx && (m_ptr->ml || cave_floor_bold(y, x)))
 						py_attack(y, x);
 				}
+			}
+			else if (command == -11)
+			{
+				(void)set_afraid(0);
+				(void)set_hero(15 + randint1(15));
 			}
 			break;
 		case VAR_VARDA:
@@ -1362,6 +1368,16 @@ void do_cmd_racial_power(void)
 			power_desc[num].stat = A_STR;
 			power_desc[num].fail = (warrior ? 9 : 15);
 			power_desc[num++].number = -10;
+#ifdef JP
+			strcpy(power_desc[num].name, "ªŒµ§π‚Õ»");
+#else
+			strcpy(power_desc[num].name, "Heroism");
+#endif
+			power_desc[num].level = 7;
+			power_desc[num].cost = 10;
+			power_desc[num].stat = A_WIS;
+			power_desc[num].fail = 12;
+			power_desc[num++].number = -11;
 			break;
 	case VAR_VARDA:
 #ifdef JP
