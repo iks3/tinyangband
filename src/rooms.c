@@ -46,7 +46,9 @@ static room_info_type room_info_normal[ROOM_T_MAX] =
 	{{  0,  1,  1,  1,  2,  2,  3,  5,  6,  8, 10}, 10}, /* LESSER_V  */
 	{{  0,  0,  1,  1,  1,  2,  2,  3,  4,  5,  6}, 20}, /* GREATER_V */
 	{{  0,100,200,300,400,500,600,700,800,900,999},  5}, /* FRACAVE   */
+#if 0
 	{{  0,  1,  1,  1,  1,  1,  1,  2,  2,  3,  3}, 10}, /* RANDOM_V  */
+#endif
 	{{  0,  4,  8, 12, 16, 20, 24, 28, 32, 36, 40},  3}, /* OVAL      */
 	{{  1,  6, 12, 18, 24, 30, 36, 42, 48, 54, 60}, 10}, /* CRYPT     */
 	{{  0,100,200,300,400,500,600,700,800,900,999},  5}, /* FRAC_F    */
@@ -59,7 +61,9 @@ static room_info_type room_info_normal[ROOM_T_MAX] =
 static byte room_build_order[ROOM_T_MAX] = {
 	ROOM_T_GREATER_VAULT,
 	ROOM_T_ARCADE,
-	//ROOM_T_RANDOM_VAULT,
+#if 0
+	ROOM_T_RANDOM_VAULT,
+#endif
 	ROOM_T_LESSER_VAULT,
 	ROOM_T_PIT,
 	ROOM_T_NEST,
@@ -1027,9 +1031,10 @@ static int vault_aux_race;
 /* Race index for "monster pit (symbol clone)" */
 static char vault_aux_char;
 
+#if 0
 /* Breath mask for "monster pit (dragon)" */
-//static u32b vault_aux_dragon_mask4;
-
+static u32b vault_aux_dragon_mask4;
+#endif
 
 /*
  * Helper monster selection function
@@ -1220,11 +1225,11 @@ static bool vault_aux_dragon(int r_idx)
 
 	/* Require dragon */
 	if (!(r_ptr->flags3 & RF3_DRAGON)) return (FALSE);
-
+#if 0
 	/* Hack -- Require correct "breath attack" */
 	/* No more so many type dragons.  -- dis */
-    //if (r_ptr->flags4 != vault_aux_dragon_mask4) return (FALSE);
-
+    if (r_ptr->flags4 != vault_aux_dragon_mask4) return (FALSE);
+#endif
 	/* Decline undead */
 	if (r_ptr->flags3 & RF3_UNDEAD) return (FALSE);
 
@@ -5164,7 +5169,9 @@ static bool room_build(int typ)
 	case ROOM_T_LESSER_VAULT:  return build_type7();
 	case ROOM_T_GREATER_VAULT: return build_type8();
 	case ROOM_T_FRACAVE:       return build_type9();
-	//case ROOM_T_RANDOM_VAULT:  return build_type10();
+#if 0
+	case ROOM_T_RANDOM_VAULT:  return build_type10();
+#endif
 	case ROOM_T_OVAL:          return build_type11();
 	case ROOM_T_CRYPT:         return build_type12();
 	case ROOM_T_FRAC_FEAT:     return build_type13();
@@ -5285,8 +5292,9 @@ void generate_rooms(void)
 			break;
 
 		case ROOM_T_GREATER_VAULT:
-//		case ROOM_T_RANDOM_VAULT:
-
+#if 0
+		case ROOM_T_RANDOM_VAULT:
+#endif
 			/* Largest room */
 			i -= 3;
 			break;
