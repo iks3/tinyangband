@@ -49,10 +49,9 @@ extern void build_cavern(void);
 #define ROOM_T_CRYPT         11 /* Crypts (22x22) */
 #define ROOM_T_FRAC_FEAT     12 /* Large with feature (50x36) */
 #define ROOM_T_INNER_WALLS   13 /* Large version 2 (33x11) */
-#define ROOM_T_PARALLELAGRAM 14 /* Parallelagram room (37x15) */
-#define ROOM_T_ARCADE        15 /* Underground arcade (44x14) */
+#define ROOM_T_ARCADE        14 /* Underground arcade (44x14) */
 
-#define ROOM_T_MAX 16
+#define ROOM_T_MAX 15
 
 
 /*
