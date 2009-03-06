@@ -425,6 +425,13 @@ void generate_fill(int y1, int x1, int y2, int x2, int feat)
 		{
 			/* Hack - only draw on cave[][] */
 			cave[y][x].feat = feat;
+
+#ifdef TINYANGBAND
+			if ((dun_level >= 20) && (one_in_(7)))
+			{
+				cave[y][x].feat = (one_in_(7) ? FEAT_DEEP_LAVA : FEAT_SHAL_LAVA);
+			}
+#endif
 		}
 	}
 }

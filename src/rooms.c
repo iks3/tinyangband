@@ -472,6 +472,7 @@ static bool build_type1(void)
 	/* Generate inner floors */
 	generate_fill(y1, x1, y2, x2, FEAT_FLOOR);
 
+
 	/* Hack -- Occasional pillar room */
 	if (one_in_(20))
 	{
@@ -2890,6 +2891,12 @@ static bool generate_fracave(int y0, int x0, int xsize, int ysize, int cutoff, b
 				/* Set appropriate flags */
 				if (light) cave[y0 + y - yhsize][x0 + x - xhsize].info |= (CAVE_GLOW);
 				if (room) cave[y0 + y - yhsize][x0 + x - xhsize].info |= (CAVE_ROOM);
+#ifdef TINYANGBAND
+				if ((dun_level >= 20) && (one_in_(7)))
+				{
+					cave[y0 + y - yhsize][x0 + x - xhsize].feat = (one_in_(7) ? FEAT_DEEP_LAVA : FEAT_SHAL_LAVA);
+				}
+#endif
 			}
 			else if ((cave[y0 + y - yhsize][x0 + x - xhsize].feat == FEAT_WALL_OUTER) &&
 				 (cave[y0 + y - yhsize][x0 + x - xhsize].info & CAVE_ICKY))
