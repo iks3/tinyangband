@@ -44,14 +44,13 @@ extern void build_cavern(void);
 #define ROOM_T_LESSER_VAULT   6 /* Lesser vault (33x22) */
 #define ROOM_T_GREATER_VAULT  7 /* Greater vault (66x44) */
 #define ROOM_T_FRACAVE        8 /* Fractal cave (42x24) */
-#define ROOM_T_RANDOM_VAULT   9 /* Random vault (44x22) */
-#define ROOM_T_OVAL          10 /* Circular rooms (22x22) */
-#define ROOM_T_CRYPT         11 /* Crypts (22x22) */
-#define ROOM_T_FRAC_FEAT     12 /* Large with feature (50x36) */
-#define ROOM_T_INNER_WALLS   13 /* Large version 2 (33x11) */
-#define ROOM_T_ARCADE        14 /* Underground arcade (44x14) */
+#define ROOM_T_OVAL           9 /* Circular rooms (22x22) */
+#define ROOM_T_CRYPT         10 /* Crypts (22x22) */
+#define ROOM_T_FRAC_FEAT     11 /* Large with feature (50x36) */
+#define ROOM_T_INNER_WALLS   12 /* Large version 2 (33x11) */
+#define ROOM_T_ARCADE        13 /* Underground arcade (44x14) */
 
-#define ROOM_T_MAX 15
+#define ROOM_T_MAX 14
 
 
 /*

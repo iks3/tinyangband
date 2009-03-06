@@ -59,7 +59,7 @@ static room_info_type room_info_normal[ROOM_T_MAX] =
 static byte room_build_order[ROOM_T_MAX] = {
 	ROOM_T_GREATER_VAULT,
 	ROOM_T_ARCADE,
-	ROOM_T_RANDOM_VAULT,
+	//ROOM_T_RANDOM_VAULT,
 	ROOM_T_LESSER_VAULT,
 	ROOM_T_PIT,
 	ROOM_T_NEST,
@@ -3401,7 +3401,7 @@ static void fill_treasure(int x1, int x2, int y1, int y2, int difficulty)
 	}
 }
 
-
+#if 0
 /*
  * This function creates a random vault that looks like a collection of bubbles.
  * It works by getting a set of coordinates that represent the center of each
@@ -3518,8 +3518,9 @@ static void build_bubble_vault(int x0, int y0, int xsize, int ysize)
 	fill_treasure(x0 - xhsize + 1, x0 - xhsize + xsize - 2,
 		 y0 - yhsize + 1, y0 - yhsize + ysize - 2, randint1(5));
 }
+#endif
 
-
+#if 0
 /*
  * Overlay a rectangular room given its bounds
  * This routine is used by build_room_vault
@@ -3577,8 +3578,9 @@ static void build_room(int x1, int x2, int y1, int y2)
 		}
 	}
 }
+#endif
 
-
+#if 0
 /* Create a random vault that looks like a collection of overlapping rooms */
 
 static void build_room_vault(int x0, int y0, int xsize, int ysize)
@@ -3625,8 +3627,9 @@ if (cheat_room) msg_print("婶舶术杆");
 	/* Fill with monsters and treasure, high difficulty */
 	fill_treasure(x0 - xhsize + 1, x0 - xhsize + xsize - 1, y0 - yhsize + 1, y0 - yhsize + ysize - 1, randint1(5) + 5);
 }
+#endif
 
-
+#if 0
 /* Create a random vault out of a fractal cave */
 static void build_cave_vault(int x0, int y0, int xsiz, int ysiz)
 {
@@ -3681,6 +3684,9 @@ if (cheat_room) msg_print("贫发术杆");
 	fill_treasure(x0 - xhsize + 1, x0 - xhsize + xsize - 1, y0 - yhsize + 1, y0 - yhsize + ysize - 1, randint1(5));
 }
 
+#endif
+
+#if 0
 /*
  * maze vault -- rectangular labyrinthine rooms
  *
@@ -3782,8 +3788,9 @@ static void r_visit(int y1, int x1, int y2, int x2,
 		} /* end switch */
 	}
 }
+#endif
 
-
+#if 0
 static void build_maze_vault(int x0, int y0, int xsize, int ysize)
 {
 	int dy, dx;
@@ -3831,8 +3838,9 @@ static void build_maze_vault(int x0, int y0, int xsize, int ysize)
 	/* rnfree(visited, num_vertices * sizeof(int)); */
 	C_FREE(visited, num_vertices, int);
 }
+#endif
 
-
+#if 0
 /*
  * Build a "mini" checkerboard vault
  *
@@ -3921,7 +3929,7 @@ static void build_mini_c_vault(int x0, int y0, int xsize, int ysize)
 	/* rnfree(visited, num_vertices * sizeof(int)); */
 	C_FREE(visited, num_vertices, int);
 }
-
+#endif
 
 /*
  * Build a town/ castle by using a recursive algorithm.
@@ -4091,7 +4099,7 @@ static void build_recursive_room(int x1, int y1, int x2, int y2, int power)
 	}
 }
 
-
+#if 0
 /* Build a castle */
 
 /*
@@ -4132,7 +4140,7 @@ static void build_castle_vault(int x0, int y0, int xsize, int ysize)
 	/* Fill with monsters and treasure, low difficulty */
 	fill_treasure(x1, x2, y1, y2, randint1(3));
 }
-
+#endif
 
 /*
  * Add outer wall to a floored region
@@ -4212,7 +4220,7 @@ static int dist2(int x1, int y1, int x2, int y2,
 	/* 128/181 is approx. 1/sqrt(2) */
 }
 
-
+#if 0
 /*
  * Build target vault.
  * This is made by two concentric "crypts" with perpendicular
@@ -4316,8 +4324,9 @@ static void build_target_vault(int x0, int y0, int xsize, int ysize)
 	/* Fill with stuff - medium difficulty */
 	fill_treasure(x0 - rad, x0 + rad, y0 - rad, y0 + rad, rand_range(3, 6));
 }
+#endif
 
-
+#if 0
 #ifdef ALLOW_CAVERNS_AND_LAKES
 /*
  * This routine uses a modified version of the lake code to make a
@@ -4410,8 +4419,9 @@ if (cheat_room) msg_print("エレメント术杆");
 		      y0 - yhsize + 1, y0 - yhsize + ysize - 1, randint1(5));
 }
 #endif /* ALLOW_CAVERNS_AND_LAKES */
+#endif
 
-
+#if 0
 /*
  * This makes a vault that has many micro-rooms.
  */
@@ -4480,8 +4490,9 @@ static void build_micro_room_vault(int x0, int y0, int xsize, int ysize)
 	/* Fill with monsters and treasure, low difficulty */
 	fill_treasure(x1, x2, y1, y2, randint1(5));
 }
+#endif
 
-
+#if 0
 /*
  * Random vaults
  */
@@ -4526,7 +4537,7 @@ static bool build_type10(void)
 
 	return TRUE;
 }
-
+#endif
 
 /*
  * Build an vertical oval room.
@@ -4556,7 +4567,8 @@ static bool build_type11(void)
 			if (distance(y0, x0, y, x) <= rad - 1)
 			{
 				/* inside- so is floor */
-				cave[y][x].feat = FEAT_FLOOR;
+	
+    			cave[y][x].feat = FEAT_FLOOR;
 			}
 			else if (distance(y0, x0, y, x) <= rad + 1)
 			{
@@ -5152,7 +5164,7 @@ static bool room_build(int typ)
 	case ROOM_T_LESSER_VAULT:  return build_type7();
 	case ROOM_T_GREATER_VAULT: return build_type8();
 	case ROOM_T_FRACAVE:       return build_type9();
-	case ROOM_T_RANDOM_VAULT:  return build_type10();
+	//case ROOM_T_RANDOM_VAULT:  return build_type10();
 	case ROOM_T_OVAL:          return build_type11();
 	case ROOM_T_CRYPT:         return build_type12();
 	case ROOM_T_FRAC_FEAT:     return build_type13();
@@ -5273,7 +5285,7 @@ void generate_rooms(void)
 			break;
 
 		case ROOM_T_GREATER_VAULT:
-		case ROOM_T_RANDOM_VAULT:
+//		case ROOM_T_RANDOM_VAULT:
 
 			/* Largest room */
 			i -= 3;
