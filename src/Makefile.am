@@ -26,8 +26,8 @@ tinyangband_SOURCES = \
 EXTRA_tinyangband_SOURCES = \
 	angband.rc ang_eng.rc angband.ico angband.xpm maid-x11.c \
 	main-mac-carbon.c main-mac.c main-mac.new main-win.c \
-	Makefile.cyg makefile.bcc makefile.dos makefile.ibm \
-	makefile.org makefile.std readdib.c readdib.h wall.bmp
+	Makefile.cyg makefile.bcc makefile.org makefile.std \
+	readdib.c readdib.h wall.bmp
 
 install-exec-hook:
 if SET_GID
