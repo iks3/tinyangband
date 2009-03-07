@@ -438,7 +438,7 @@ C:0:0:0:3
 F:STEALTH
 
 N:47:エルフの
-E:of Free Action
+E:of Elvenkind
 X:35:15
 W:0:6:0:1000
 C:0:0:0:1
