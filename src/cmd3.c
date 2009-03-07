@@ -383,7 +383,7 @@ sprintf(dummy, "本当に%s{呪われている}を使いますか？", o_name);
 #else
 			msg_print("You completed your quest!");
 #endif
-			sound(SOUND_QUEST);
+	  		sound(SOUND_LEVEL); /* (Sound substitute) No quest sound */
 			msg_print(NULL);
 		}
 	}
@@ -452,6 +452,7 @@ sprintf(dummy, "本当に%s{呪われている}を使いますか？", o_name);
 	msg_format("%s %s (%c).", act, o_name, index_to_label(slot));
 #endif
 
+    sound(SOUND_WIELD);
 
 	/* Cursed! */
 	if (cursed_p(o_ptr))
@@ -462,7 +463,8 @@ sprintf(dummy, "本当に%s{呪われている}を使いますか？", o_name);
 #else
 		msg_print("Oops! It feels deathly cold!");
 #endif
-
+		sound(SOUND_CURSED);
+	  
 		/* Note the curse */
 		o_ptr->ident |= (IDENT_SENSE);
 	}
@@ -846,7 +848,7 @@ void do_cmd_destroy(void)
 	msg_format("You destroy %s.", o_name);
 #endif
 
-	sound(SOUND_DESTITEM);
+	sound(SOUND_DESTROY);
 
 	if (high_level_book(o_ptr))
 	{

@@ -254,11 +254,11 @@ void mon_take_hit_mon(int m_idx, int dam, bool *fear, cptr note, int who)
 			/* Make a sound */
 			if (!monster_living(r_ptr))
 			{
-				sound(SOUND_N_KILL);
+				/* sound(SOUND_N_KILL); */ /* No sound for not kill */
 			}
 			else
 			{
-				sound(SOUND_KILL);
+ 				sound(SOUND_KILL); /* Normalkill */
 			}
 
 			if (known)
@@ -277,21 +277,19 @@ void mon_take_hit_mon(int m_idx, int dam, bool *fear, cptr note, int who)
 				else if (!monster_living(r_ptr))
 				{
 #ifdef JP
-msg_format("%^sは破壊された。", m_name);
+					msg_format("%^sは破壊された。", m_name);
 #else
 					msg_format("%^s is destroyed.", m_name);
 #endif
-
 				}
 				/* Death by normal attack -- living monster */
 				else
 				{
 #ifdef JP
-msg_format("%^sは殺された。", m_name);
+					msg_format("%^sは殺された。", m_name);
 #else
 					msg_format("%^s is killed.", m_name);
 #endif
-
 				}
 			}
 
@@ -2120,7 +2118,7 @@ msg_format("%sは%^sの攻撃をかわした。", t_name,m_name);
 
 	if (explode)
 	{
-		sound(SOUND_EXPLODE);
+		sound(SOUND_BR_FIRE); /* (Sound substitute) No sound for explode, use breathe fire */
 
 		/* Cancel Invulnerability */
 		if (m_ptr->invulner) m_ptr->invulner = 0;
@@ -2600,6 +2598,7 @@ static void process_monster(int m_idx)
 				if (m_ptr->ml)
 				{
 					r_ptr->r_flags2 |= (RF2_MULTIPLY);
+                    sound(SOUND_MULTIPLY);
 				}
 
 				/* Multiplying takes energy */

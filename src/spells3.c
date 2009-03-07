@@ -2226,6 +2226,23 @@ bool ident_spell(void)
 	/* Description */
 	object_desc(o_name, o_ptr, 0);
 
+	/* Possibly play a sound depending on object quality. */
+    if (o_ptr->pval < 0)
+    {
+                /* This is a bad item. */
+                sound(SOUND_IDENT_BAD);
+    }
+    else if (o_ptr->name1 != 0)
+    {
+                /* We have a good artifact. */
+                sound(SOUND_IDENT_ART);
+    }
+    else if (o_ptr->name2 != 0)
+    {
+                /* We have a good ego item. */
+                sound(SOUND_IDENT_EGO);
+    }
+
 	/* Describe */
 	if (item >= INVEN_WIELD)
 	{
@@ -2448,6 +2465,23 @@ bool identify_fully(void)
 
 	/* Description */
 	object_desc(o_name, o_ptr, 0);
+
+	/* Possibly play a sound depending on object quality. */
+    if (o_ptr->pval < 0)
+    {
+                /* This is a bad item. */
+                sound(SOUND_IDENT_BAD);
+    }
+    else if (o_ptr->name1 != 0)
+    {
+                /* We have a good artifact. */
+                sound(SOUND_IDENT_ART);
+    }
+    else if (o_ptr->name2 != 0)
+    {
+                /* We have a good ego item. */
+                sound(SOUND_IDENT_EGO);
+    }
 
 	/* Describe */
 	if (item >= INVEN_WIELD)

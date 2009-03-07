@@ -3149,75 +3149,161 @@ extern int PlayerUID;
  *
  * Some "sound" constants for "Term_xtra(TERM_XTRA_SOUND, val)"
  */
-#define SOUND_HIT        1
-#define SOUND_MISS       2
-#define SOUND_FLEE       3
-#define SOUND_DROP       4
-#define SOUND_KILL       5
-#define SOUND_LEVEL      6
-#define SOUND_DEATH      7
-#define SOUND_STUDY      8
-#define SOUND_TELEPORT   9
-#define SOUND_SHOOT     10
-#define SOUND_QUAFF     11
-#define SOUND_ZAP       12
-#define SOUND_WALK      13
-#define SOUND_TPOTHER   14
-#define SOUND_HITWALL   15
-#define SOUND_EAT       16
-#define SOUND_STORE1    17
-#define SOUND_STORE2    18
-#define SOUND_STORE3    19
-#define SOUND_STORE4    20
-#define SOUND_DIG       21
-#define SOUND_OPENDOOR  22
-#define SOUND_SHUTDOOR  23
-#define SOUND_TPLEVEL   24
-#define SOUND_SCROLL	25
-#define SOUND_BUY	    26
-#define SOUND_SELL	    27
-#define SOUND_WARN	    28
-#define SOUND_ROCKET    29 /* Somebody's shooting rockets */
-#define SOUND_N_KILL    30 /* The player kills a non-living/undead monster */
-#define SOUND_U_KILL    31 /* The player kills a unique */
-#define SOUND_QUEST     32 /* The player has just completed a quest */
-#define SOUND_HEAL      33 /* The player was healed a little bit */
-#define SOUND_X_HEAL    34 /* The player was healed full health */
-#define SOUND_BITE      35 /* A monster bites you */
-#define SOUND_CLAW      36 /* A monster claws you */
-#define SOUND_M_SPELL   37 /* A monster casts a miscellaneous spell */
-#define SOUND_SUMMON    38 /* A monster casts a summoning spell  */
-#define SOUND_BREATH    39 /* A monster breathes */
-#define SOUND_BALL      40 /* A monster casts a ball / bolt spell */
-#define SOUND_M_HEAL    41 /* A monster heals itself somehow */
-#define SOUND_ATK_SPELL 42 /* A monster casts a misc. offensive spell */
-#define SOUND_EVIL      43 /* Something nasty has just happened! */
-#define SOUND_TOUCH     44 /* A monster touches you */
-#define SOUND_STING     45 /* A monster stings you */
-#define SOUND_CRUSH     46 /* A monster crushes / envelopes you */
-#define SOUND_SLIME     47 /* A monster drools/spits/etc on you */
-#define SOUND_WAIL      48 /* A monster wails */
-#define SOUND_WINNER    49 /* Just won the game! */
-#define SOUND_FIRE      50 /* An item was burned  */
-#define SOUND_ACID      51 /* An item was destroyed by acid */
-#define SOUND_ELEC      52 /* An item was destroyed by electricity */
-#define SOUND_COLD      53 /* An item was shattered */
-#define SOUND_ILLEGAL   54 /* Illegal command attempted */
-#define SOUND_FAIL      55 /* Fail to get a spell off / activate an item */
-#define SOUND_WAKEUP    56 /* A monster wakes up */
-#define SOUND_INVULN    57 /* Invulnerability! */
-#define SOUND_FALL      58 /* Falling through a trapdoor... */
-#define SOUND_PAIN      59 /* A monster is in pain! */
-#define SOUND_DESTITEM  60 /* An item was destroyed by misc. means */
-#define SOUND_MOAN      61 /* A monster makes a moan/beg/insult attack */
-#define SOUND_SHOW      62 /* A monster makes a "show" attack */
-#define SOUND_UNUSED    63 /* (no sound for gaze attacks) */
-#define SOUND_EXPLODE   64 /* Something (or somebody) explodes */
+#define SOUND_HIT            1
+#define SOUND_MISS           2
+#define SOUND_FLEE           3
+#define SOUND_DROP           4
+#define SOUND_KILL           5
+#define SOUND_LEVEL          6
+#define SOUND_DEATH          7
+#define SOUND_STUDY          8
+#define SOUND_TELEPORT       9
+#define SOUND_SHOOT          10
+#define SOUND_QUAFF          11
+#define SOUND_ZAP_ROD        12
+#define SOUND_WALK           13
+#define SOUND_TPOTHER        14
+#define SOUND_HITWALL        15
+#define SOUND_EAT            16
+#define SOUND_STORE1         17
+#define SOUND_STORE2         18
+#define SOUND_STORE3         19
+#define SOUND_STORE4         20
+#define SOUND_DIG            21
+#define SOUND_OPENDOOR       22
+#define SOUND_SHUTDOOR       23
+#define SOUND_TPLEVEL        24
+#define SOUND_BELL           25
+#define SOUND_NOTHING_TO_OPEN  26
+#define SOUND_LOCKPICK_FAIL  27
+#define SOUND_STAIRS_DOWN    28
+#define SOUND_HITPOINT_WARN  29
+#define SOUND_ACT_ARTIFACT   30
+#define SOUND_USE_STAFF      31
+#define SOUND_DESTROY        32
+#define SOUND_MON_HIT        33
+#define SOUND_MON_TOUCH      34
+#define SOUND_MON_PUNCH      35
+#define SOUND_MON_KICK       36
+#define SOUND_MON_CLAW       37
+#define SOUND_MON_BITE       38
+#define SOUND_MON_STING      39
+#define SOUND_MON_BUTT       40
+#define SOUND_MON_CRUSH      41
+#define SOUND_MON_ENGULF     42
+#define SOUND_MON_CRAWL      43
+#define SOUND_MON_DROOL      44
+#define SOUND_MON_SPIT       45
+#define SOUND_MON_GAZE       46
+#define SOUND_MON_WAIL       47
+#define SOUND_MON_SPORE      48
+#define SOUND_MON_BEG        49
+#define SOUND_MON_INSULT     50
+#define SOUND_MON_MOAN       51
+#define SOUND_RECOVER        52
+#define SOUND_BLIND          53
+#define SOUND_CONFUSED       54
+#define SOUND_POISONED       55
+#define SOUND_AFRAID         56
+#define SOUND_PARALYZED      57
+#define SOUND_DRUGGED        58
+#define SOUND_SPEED          59
+#define SOUND_SLOW           60
+#define SOUND_SHIELD         61
+#define SOUND_BLESSED        62
+#define SOUND_HERO           63
+#define SOUND_BERSERK        64
+#define SOUND_PROT_EVIL      65
+#define SOUND_INVULN         66
+#define SOUND_SEE_INVIS      67
+#define SOUND_INFRARED       68
+#define SOUND_RES_ACID       69
+#define SOUND_RES_ELEC       70
+#define SOUND_RES_FIRE       71
+#define SOUND_RES_COLD       72
+#define SOUND_RES_POIS       73
+#define SOUND_STUN           74
+#define SOUND_CUT            75
+#define SOUND_STAIRS_UP      76
+#define SOUND_STORE_ENTER    77
+#define SOUND_STORE_LEAVE    78
+#define SOUND_STORE_HOME     79
+#define SOUND_MONEY1         80
+#define SOUND_MONEY2         81
+#define SOUND_MONEY3         82
+#define SOUND_SHOOT_HIT      83
+#define SOUND_STORE5         84
+#define SOUND_LOCKPICK       85
+#define SOUND_DISARM         86
+#define SOUND_IDENT_BAD      87
+#define SOUND_IDENT_EGO      88
+#define SOUND_IDENT_ART      89
+#define SOUND_BR_ELEMENTS    90
+#define SOUND_BR_FROST       91
+#define SOUND_BR_ELEC        92
+#define SOUND_BR_ACID        93
+#define SOUND_BR_GAS         94
+#define SOUND_BR_FIRE        95
+#define SOUND_BR_CONF        96
+#define SOUND_BR_DISENCHANT  97
+#define SOUND_BR_CHAOS       98
+#define SOUND_BR_SHARDS      99
+#define SOUND_BR_SOUND       100
+#define SOUND_BR_LIGHT       101
+#define SOUND_BR_DARK        102
+#define SOUND_BR_NETHER      103
+#define SOUND_BR_NEXUS       104
+#define SOUND_BR_TIME        105
+#define SOUND_BR_INERTIA     106
+#define SOUND_BR_GRAVITY     107
+#define SOUND_BR_PLASMA      108
+#define SOUND_BR_FORCE       109
+#define SOUND_SUM_MONSTER    110
+#define SOUND_SUM_ANGEL      111
+#define SOUND_SUM_UNDEAD     112
+#define SOUND_SUM_ANIMAL     113
+#define SOUND_SUM_SPIDER     114
+#define SOUND_SUM_HOUND      115
+#define SOUND_SUM_HYDRA      116
+#define SOUND_SUM_DEMON      117
+#define SOUND_SUM_DRAGON     118
+#define SOUND_SUM_HI_UNDEAD  119
+#define SOUND_SUM_HI_DRAGON  120
+#define SOUND_SUM_HI_DEMON   121
+#define SOUND_SUM_WRAITH     122
+#define SOUND_SUM_UNIQUE     123
+#define SOUND_WIELD          124
+#define SOUND_CURSED         125
+#define SOUND_PSEUDOID       126
+#define SOUND_HUNGRY         127
+#define SOUND_NOTICE         128
+#define SOUND_AMBIENT_DAY    129
+#define SOUND_AMBIENT_NITE   130
+#define SOUND_AMBIENT_DNG1   131
+#define SOUND_AMBIENT_DNG2   132
+#define SOUND_AMBIENT_DNG3   133
+#define SOUND_AMBIENT_DNG4   134
+#define SOUND_AMBIENT_DNG5   135
+#define SOUND_CREATE_TRAP    136
+#define SOUND_SHRIEK         137
+#define SOUND_CAST_FEAR      138
+#define SOUND_HIT_GOOD       139
+#define SOUND_HIT_GREAT      140
+#define SOUND_HIT_SUPERB     141
+#define SOUND_HIT_HI_GREAT   142
+#define SOUND_HIT_HI_SUPERB  143
+#define SOUND_SPELL          144
+#define SOUND_PRAYER         145
+#define SOUND_KILL_UNIQUE    146
+#define SOUND_KILL_KING      147
+#define SOUND_DRAIN_STAT     148
+#define SOUND_MULTIPLY       149
+
 
 /*
  * Mega-Hack -- maximum known sounds
  */
-#define SOUND_MAX 65
+#define SOUND_MAX 150
 
 /*
  * Hack -- attempt to reduce various values

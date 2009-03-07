@@ -300,7 +300,7 @@ bool monst_spell_monst(int m_idx)
 				}
 			}
 
-			sound(SOUND_ROCKET);
+ 			sound(SOUND_MISS); /* (Sound substitute) Throwing rocks isn't a 'rocket' sound anyway */ 
 			dam = (rlev * 4) + damroll(10, 10);
 			monst_breath_monst(m_idx, y, x, GF_SHARDS, dam, 1, FALSE);
 			update_smart_learn(m_idx, DRS_SHARD);
@@ -356,7 +356,7 @@ bool monst_spell_monst(int m_idx)
 				}
 			}
 
-			sound(SOUND_ROCKET);
+ 			sound(SOUND_MISS); /* (Sound substitute) HACK! No rocket sound available, use arrow miss */ 
 			dam = (m_ptr->hp / 4) > 800 ? 800 : (m_ptr->hp / 4);
 			monst_breath_monst(m_idx, y, x, GF_ROCKET, dam, 2, FALSE);
 			break;
@@ -495,7 +495,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_ACID);
 			}
 
 			dam = (m_ptr->hp / 3) > 1200 ? 1200 : (m_ptr->hp / 3);
@@ -524,7 +524,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_ELEC);
 			}
 
 			dam = (m_ptr->hp / 3) > 1200 ? 1200 : (m_ptr->hp / 3);
@@ -553,7 +553,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_FIRE);
 			}
 
 			dam = (m_ptr->hp / 3) > 1200 ? 1200 : (m_ptr->hp / 3);
@@ -582,7 +582,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_FROST);
 			}
 
 			dam = (m_ptr->hp / 3) > 1200 ? 1200 : (m_ptr->hp / 3);
@@ -612,7 +612,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_GAS);
 			}
 
 			dam = (m_ptr->hp / 3) > 800 ? 800 : (m_ptr->hp / 3);
@@ -641,7 +641,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_NETHER);
 			}
 
 			dam = (m_ptr->hp / 6) > 500 ? 500 : (m_ptr->hp / 6);
@@ -670,7 +670,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_LIGHT);
 			}
 
 			dam = (m_ptr->hp / 6) > 400 ? 400 : (m_ptr->hp / 6);
@@ -699,7 +699,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_DARK);
 			}
 
 			dam = (m_ptr->hp / 6) > 400 ? 400 : (m_ptr->hp / 6);
@@ -728,7 +728,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_CONF);
 			}
 
 			dam = (m_ptr->hp / 6) > 400 ? 400 : (m_ptr->hp / 6);
@@ -757,7 +757,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_SOUND);
 			}
 
 			dam = (m_ptr->hp / 6) > 400 ? 400 : (m_ptr->hp / 6);
@@ -786,7 +786,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_CHAOS);
 			}
 
 			dam = (m_ptr->hp / 6) > 500 ? 500 : (m_ptr->hp / 6);
@@ -815,7 +815,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_DISENCHANT);
 			}
 
 			dam = (m_ptr->hp / 6) > 500 ? 500 : (m_ptr->hp / 6);
@@ -844,7 +844,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_NEXUS);
 			}
 
 			dam = (m_ptr->hp / 3) > 250 ? 250 : (m_ptr->hp / 3);
@@ -873,7 +873,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_TIME);
 			}
 
 			dam = (m_ptr->hp / 3) > 150 ? 150 : (m_ptr->hp / 3);
@@ -902,7 +902,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_INERTIA);
 			}
 
 			dam = (m_ptr->hp / 6) > 200 ? 200 : (m_ptr->hp / 6);
@@ -932,7 +932,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_GRAVITY);
 			}
 
 			dam = (m_ptr->hp / 3) > 200 ? 200 : (m_ptr->hp / 3);
@@ -961,7 +961,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_SHARDS);
 			}
 
 			dam = (m_ptr->hp / 6) > 400 ? 400 : (m_ptr->hp / 6);
@@ -990,7 +990,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_PLASMA);
 			}
 
 			dam = (m_ptr->hp / 6) > 150 ? 150 : (m_ptr->hp / 6);
@@ -1019,7 +1019,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_FORCE);
 			}
 
 			dam = (m_ptr->hp / 6) > 200 ? 200 : (m_ptr->hp / 6);
@@ -1048,7 +1048,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_FIRE); /* (Sound substitute)  No sound for breathe mana */
 			}
 
 			dam = (m_ptr->hp / 3) > 250 ? 250 : (m_ptr->hp / 3);
@@ -1104,7 +1104,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_GAS); /* (Sound substitute) No sound for toxic */
 			}
 
 			dam = (m_ptr->hp / 3) > 800 ? 800 : (m_ptr->hp / 3);
@@ -1160,7 +1160,7 @@ bool monst_spell_monst(int m_idx)
 					mon_fight = TRUE;
 				}
 
-				sound(SOUND_BREATH);
+				sound(SOUND_BR_DISENCHANT); /* (Sound substitute)  No sound for disintegrate */
 			}
 
 			dam = (m_ptr->hp / 3) > 150 ? 150 : (m_ptr->hp / 3);
@@ -2038,6 +2038,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s casts a fearful illusion in front of %s.", m_name, t_name);
 #endif
+	  				sound(SOUND_CAST_FEAR);
 				}
 				else
 				{
@@ -2664,7 +2665,7 @@ bool monst_spell_monst(int m_idx)
 					msg_format("%^s magically summons %s %s.", m_name, m_poss,
 								  ((r_ptr->flags1 & RF1_UNIQUE) ? "minions" : "kin"));
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_MONSTER); /* HACK! Should be specific sound to monster type */
 				}
 				else
 				{
@@ -2700,7 +2701,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons Cyberdemons!", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_HI_DEMON);
 				}
 				else
 				{
@@ -2733,7 +2734,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons help!", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_MONSTER); /* HACK! Should be specific sound for monster type */
 				}
 				else
 				{
@@ -2766,7 +2767,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons monsters!", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_MONSTER); /* HACK! Should be specific sound for monster type */
 				}
 				else
 				{
@@ -2800,7 +2801,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons ants.", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_SPIDER); /* Ants, not spider, but closest */
 				}
 				else
 				{
@@ -2834,7 +2835,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons spiders.", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_SPIDER);
 				}
 				else
 				{
@@ -2868,7 +2869,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons hounds.", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_HOUND);
 				}
 				else
 				{
@@ -2902,7 +2903,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons hydras.", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_HYDRA);
 				}
 				else
 				{
@@ -2936,7 +2937,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons an angel!", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_ANGEL);
 				}
 				else
 				{
@@ -2970,7 +2971,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons a hellish adversary!", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_DEMON);
 				}
 				else
 				{
@@ -3004,7 +3005,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons undead.", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_UNDEAD);
 				}
 				else
 				{
@@ -3038,7 +3039,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons a dragon!", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_DRAGON);
 				}
 				else
 				{
@@ -3074,7 +3075,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons undead.", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_HI_UNDEAD);
 				}
 				else
 				{
@@ -3110,7 +3111,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons dragons!", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_HI_DRAGON);
 				}
 				else
 				{
@@ -3144,7 +3145,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons a hellish adversary!", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_HI_DEMON);
 				}
 				else
 				{
@@ -3178,7 +3179,7 @@ bool monst_spell_monst(int m_idx)
 #else
 					msg_format("%^s magically summons special opponents!", m_name);
 #endif
-					sound(SOUND_SUMMON);
+					sound(SOUND_SUM_UNIQUE);
 				}
 				else
 				{

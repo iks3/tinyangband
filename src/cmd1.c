@@ -110,6 +110,7 @@ static s16b critical_norm(int weight, int chance, int dam)
 #else
 			msg_print("It was a good hit!");
 #endif
+	  		sound(SOUND_HIT_GOOD);
 			dam = 2 * dam + 5;
 		}
 		else if (k < 700)
@@ -119,6 +120,7 @@ static s16b critical_norm(int weight, int chance, int dam)
 #else
 			msg_print("It was a great hit!");
 #endif
+	  		sound(SOUND_HIT_GREAT);
 			dam = 3 * dam + 10;
 		}
 		else if (k < 900)
@@ -128,6 +130,7 @@ static s16b critical_norm(int weight, int chance, int dam)
 #else
 			msg_print("It was a superb hit!");
 #endif
+	  		sound(SOUND_HIT_SUPERB);
 			dam = 4 * dam + 10;
 		}
 		else if (k < 1300)
@@ -137,6 +140,7 @@ static s16b critical_norm(int weight, int chance, int dam)
 #else
 			msg_print("It was a *GREAT* hit!");
 #endif
+	  		sound(SOUND_HIT_HI_GREAT);
 			dam = 4 * dam + 20;
 		}
 		else
@@ -147,6 +151,7 @@ static s16b critical_norm(int weight, int chance, int dam)
 			msg_print("It was a *SUPERB* hit!");
 #endif
 			dam = ((7 * dam) / 2) + 25;
+	  		sound(SOUND_HIT_HI_SUPERB);
 		}
 	}
 
@@ -590,7 +595,7 @@ void py_pickup_aux(int o_idx)
 #else
 			msg_print("You completed your quest!");
 #endif
-			sound(SOUND_QUEST);
+	  		sound(SOUND_LEVEL); /* (Sound substitute) No quest sound */
 			msg_print(NULL);
 		}
 	}
@@ -681,8 +686,18 @@ void carry(int pickup)
 				   (long)o_ptr->pval, o_name);
 #endif
 
-
-			sound(SOUND_SELL);
+			if(o_ptr->pval<200)
+			{
+				   sound(SOUND_MONEY1);
+            } 
+            else if(o_ptr->pval<600)
+			{ 
+				   sound(SOUND_MONEY2);
+            } 
+            else
+			{ 
+				   sound(SOUND_MONEY3);
+            } 
 
 			/* Collect the gold */
 			p_ptr->au += o_ptr->pval;
@@ -833,7 +848,7 @@ static void hit_trap(void)
 				msg_print("You have fallen through a trap door!");
 #endif
 
-				sound(SOUND_FALL);
+/* 				sound(SOUND_FALL); */ /* No fall sound */
 				dam = damroll(2, 8);
 #ifdef JP
 				name = "落し戸";
@@ -2877,7 +2892,7 @@ msg_print("何かにぶちあたった。");
 		lite_spot(oy, ox);
 
 		/* Sound */
-		/* sound(SOUND_WALK); */
+		/* sound(SOUND_WALK); /* Why disabled ? */
 
 		/* Check for new panel (redraw map) */
 		verify_panel();
@@ -2960,7 +2975,7 @@ msg_print("何かにぶちあたった。");
 #else
 				msg_print("You accomplished your quest!");
 #endif
-				sound(SOUND_QUEST);
+	  			sound(SOUND_LEVEL); /* (Sound substitute) No quest sound */
 				msg_print(NULL);
 			}
 

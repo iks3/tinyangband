@@ -118,6 +118,7 @@ void do_cmd_go_up(void)
 #else
 			msg_print("You enter a maze of up staircases.");
 #endif
+	  		sound(SOUND_STAIRS_UP);
 		}
 
 		if (autosave_l) do_cmd_save_game(TRUE);
@@ -258,12 +259,14 @@ void do_cmd_go_down(void)
 			msg_print("You deliberately jump through the trap door.");
 #endif
 		else /* Success */
+		{
 #ifdef JP
 			msg_print("階段を下りて新たなる迷宮へと足を踏み入れた。");
 #else
 			msg_print("You enter a maze of down staircases.");
 #endif
-
+	  		sound(SOUND_STAIRS_DOWN);
+	  	}
 		if (autosave_l) do_cmd_save_game(TRUE);
 
 		/* Go down */
@@ -577,7 +580,7 @@ static void chest_trap(int y, int x, s16b o_idx)
 #endif
 
 		o_ptr->pval = 0;
-		sound(SOUND_EXPLODE);
+		sound(SOUND_BR_FIRE); /* No explode sound - use breath fire instead */
 #ifdef JP
 		take_hit(damroll(5, 8), "爆発する箱");
 #else
@@ -636,7 +639,7 @@ static bool do_cmd_open_chest(int y, int x, s16b o_idx)
 #else
 			msg_print("You have picked the lock.");
 #endif
-
+	  		sound(SOUND_LOCKPICK);
 			gain_exp(1);
 			flag = TRUE;
 		}
@@ -858,7 +861,7 @@ static bool do_cmd_open_aux(int y, int x)
 #else
 			msg_print("You have picked the lock.");
 #endif
-
+	  		sound(SOUND_LOCKPICK);
 
 			/* Open the door */
 			cave_set_feat(y, x, FEAT_OPEN);
@@ -985,6 +988,7 @@ void do_cmd_open(void)
 #else
 			msg_print("You see nothing there to open.");
 #endif
+	  		sound(SOUND_NOTHING_TO_OPEN);
 
 		}
 
@@ -1722,7 +1726,7 @@ bool easy_open_door(int y, int x)
 #else
 			msg_print("You have picked the lock.");
 #endif
-
+	  		sound(SOUND_LOCKPICK);
 
 			/* Open the door */
 			cave_set_feat(y, x, FEAT_OPEN);
@@ -1749,6 +1753,7 @@ bool easy_open_door(int y, int x)
 #else
 			msg_print("You failed to pick the lock.");
 #endif
+	  		sound(SOUND_LOCKPICK_FAIL);
 
 		}
 	}
@@ -1848,7 +1853,7 @@ static bool do_cmd_disarm_chest(int y, int x, s16b o_idx)
 #else
 		msg_print("You have disarmed the chest.");
 #endif
-
+	  	sound(SOUND_DISARM);
 		gain_exp(o_ptr->pval);
 		o_ptr->pval = (0 - o_ptr->pval);
 	}
@@ -1876,7 +1881,7 @@ static bool do_cmd_disarm_chest(int y, int x, s16b o_idx)
 		msg_print("You set off a trap!");
 #endif
 
-		sound(SOUND_FAIL);
+ 		sound(SOUND_STORE2);  /* (Sound substitute) HACK! No fail sound, use strore 2*/
 		chest_trap(y, x, o_idx);
 	}
 
@@ -1949,7 +1954,7 @@ static bool do_cmd_disarm_aux(int y, int x, int dir)
 #else
 		msg_format("You have disarmed the %s.", name);
 #endif
-
+	  	sound(SOUND_DISARM);
 
 		/* Reward */
 		gain_exp(power);
@@ -2729,7 +2734,7 @@ void do_cmd_stay(int pickup)
 #else
 			msg_print("You accomplished your quest!");
 #endif
-			sound(SOUND_QUEST);
+	  		sound(SOUND_LEVEL); /* (Sound substitute) No quest sound */
 			msg_print(NULL);
 		}
 
@@ -3012,7 +3017,7 @@ static s16b critical_shot(object_type *o_ptr, int chance,
 #endif
 		}
 	}
-
+	sound(SOUND_SHOOT_HIT);
 	return (dam);
 }
 

@@ -2023,7 +2023,7 @@ bool activate_random_artifact(object_type * o_ptr)
 #else
 			msg_print("You launch a rocket!");
 #endif
-			sound(SOUND_ROCKET);
+ 			sound(SOUND_MISS); /* (Sound substitute) HACK! No rocket sound available, use arrow miss */ 
 			fire_ball(GF_ROCKET, dir, 120 + plev, 2);
 			o_ptr->timeout = 400;
 			break;
@@ -2061,7 +2061,7 @@ bool activate_random_artifact(object_type * o_ptr)
 #else
 			msg_print("You breathe the elements.");
 #endif
-			sound(SOUND_BREATH);
+			sound(SOUND_BR_ELEMENTS);
 			fire_ball(GF_MISSILE, dir, 300, -4);
 			o_ptr->timeout = 500;
 			break;

@@ -261,6 +261,7 @@ static void sense_inventory(void)
 					((o_ptr->number == 1) ? "is" : "are"),
 					game_inscriptions[feel]);
 #endif
+            sound(SOUND_PSEUDOID);
 		}
 
 		/* Message (inventory) */
@@ -275,6 +276,7 @@ static void sense_inventory(void)
 				   ((o_ptr->number == 1) ? "is" : "are"),
 					   game_inscriptions[feel]);
 #endif
+            sound(SOUND_PSEUDOID);
 		}
 
 		/* We have "felt" it */
@@ -442,6 +444,7 @@ static void sense_magic(void)
 					((o_ptr->number == 1) ? "is" : "are"),
 					game_inscriptions[feel]);
 #endif
+            sound(SOUND_PSEUDOID);
 		}
 
 		/* Message (inventory) */
@@ -456,6 +459,7 @@ static void sense_magic(void)
 				   ((o_ptr->number == 1) ? "is" : "are"),
 					   game_inscriptions[feel]);
 #endif
+            sound(SOUND_PSEUDOID);
 		}
 
 		/* We have "felt" it */
@@ -490,6 +494,7 @@ static void pattern_teleport(void)
 #else
 	if (get_check("Teleport level? "))
 #endif
+
 	{
 		char	ppp[80];
 		char	tmp_val[160];
@@ -818,7 +823,7 @@ static void notice_lite_change(object_type *o_ptr)
 	{
 		disturb(0, 0);
 #ifdef JP
-msg_print("明かりが消えてしまった！");
+	msg_print("明かりが消えてしまった！");
 #else
 		msg_print("Your light has gone out!");
 #endif
@@ -830,7 +835,7 @@ msg_print("明かりが消えてしまった！");
 	{
 		if (disturb_minor) disturb(0, 0);
 #ifdef JP
-msg_print("明かりが微かになってきている。");
+	msg_print("明かりが微かになってきている。");
 #else
 		msg_print("Your light is growing faint.");
 #endif
@@ -1062,6 +1067,55 @@ static void recharged_notice(object_type *o_ptr)
 	}
 }
 
+static void play_ambient_sound(void)
+{
+        /* Town sound */
+        if (dun_level == 0) 
+        {
+                /* Hack - is it daytime or nighttime? */
+                if (turn % (10L * TOWN_DAWN) < TOWN_DAWN / 2)
+                {
+                        /* It's day. */
+                        sound(SOUND_AMBIENT_DAY);
+                } 
+                else 
+                {
+                        /* It's night. */
+                        sound(SOUND_AMBIENT_NITE);
+                }
+                
+        }
+
+        /* Dungeon level 1-5 */
+        else if (dun_level <= 5) 
+        {
+                sound(SOUND_AMBIENT_DNG1);
+        }
+
+        /* Dungeon level 6-10 */
+        else if (dun_level <= 10) 
+        {
+                sound(SOUND_AMBIENT_DNG2);
+        }
+
+        /* Dungeon level 11-15 */
+        else if (dun_level <= 15) 
+        {
+                sound(SOUND_AMBIENT_DNG3);
+        }
+
+        /* Dungeon level 16-20 */
+        else if (dun_level <= 20) 
+        {
+                sound(SOUND_AMBIENT_DNG4);
+        }
+
+        /* Dungeon level 21- */
+        else  
+        {
+                sound(SOUND_AMBIENT_DNG5);
+        }
+}
 
 /*
  * Count number of adjacent monsters
@@ -1331,6 +1385,12 @@ static void process_world(void)
 
 	/*** Check the Time and Load ***/
 
+    /* Play an ambient sound at regular intervals. */
+    if (!(turn % ((10L * TOWN_DAWN) / 4)))
+    {
+          play_ambient_sound(); /* Is this reached? */
+    }
+
 	if (!(turn % 1000))
 	{
 		/* Check time and load */
@@ -1347,8 +1407,8 @@ static void process_world(void)
 
 				/* Message */
 #ifdef JP
-msg_print("アングバンドへの門が閉じかかっています...");
-msg_print("ゲームを終了するかセーブするかして下さい。");
+				msg_print("アングバンドへの門が閉じかかっています...");
+				msg_print("ゲームを終了するかセーブするかして下さい。");
 #else
 				msg_print("The gates to ANGBAND are closing...");
 				msg_print("Please finish up and/or save your game.");
@@ -1361,7 +1421,7 @@ msg_print("ゲームを終了するかセーブするかして下さい。");
 			{
 				/* Message */
 #ifdef JP
-msg_print("今、アングバンドへの門が閉ざされました。");
+				msg_print("今、アングバンドへの門が閉ざされました。");
 #else
 				msg_print("The gates to ANGBAND are now closed.");
 #endif
@@ -1411,7 +1471,7 @@ msg_print("今、アングバンドへの門が閉ざされました。");
 			{
 				/* Message */
 #ifdef JP
-msg_print("夜が明けた。");
+				msg_print("夜が明けた。");
 #else
 				msg_print("The sun has risen.");
 #endif
@@ -1442,7 +1502,7 @@ msg_print("夜が明けた。");
 			{
 				/* Message */
 #ifdef JP
-msg_print("日が沈んだ。");
+				msg_print("日が沈んだ。");
 #else
 				msg_print("The sun has fallen.");
 #endif
@@ -1500,7 +1560,7 @@ msg_print("日が沈んだ。");
 
 		/* Message */
 #ifdef JP
-if (cheat_xtra) msg_print("報酬をリセット");
+		if (cheat_xtra) msg_print("報酬をリセット");
 #else
 		if (cheat_xtra) msg_print("Rewards reset.");
 #endif
@@ -1529,7 +1589,7 @@ if (cheat_xtra) msg_print("報酬をリセット");
 	{
 		/* Take damage */
 #ifdef JP
-take_hit(1, "毒");
+		take_hit(1, "毒");
 #else
 		take_hit(1, "poison");
 #endif
@@ -1547,8 +1607,8 @@ take_hit(1, "毒");
 			{
 				/* Take damage */
 #ifdef JP
-msg_print("日光があなたのアンデッドの肉体を焼き焦がした！");
-take_hit(1, "日光");
+				msg_print("日光があなたのアンデッドの肉体を焼き焦がした！");
+				take_hit(1, "日光");
 #else
 				msg_print("The sun's rays scorch your undead flesh!");
 				take_hit(1, "sunlight");
@@ -1571,7 +1631,7 @@ take_hit(1, "日光");
 			object_desc(o_name, o_ptr, OD_OMIT_PREFIX | OD_NAME_ONLY);
 
 #ifdef JP
-msg_format("%sがあなたのアンデッドの肉体を焼き焦がした！", o_name);
+			msg_format("%sがあなたのアンデッドの肉体を焼き焦がした！", o_name);
 #else
 			msg_format("The %s scorches your undead flesh!", o_name);
 #endif
@@ -1583,7 +1643,7 @@ msg_format("%sがあなたのアンデッドの肉体を焼き焦がした！", o_name);
 			object_desc(o_name, o_ptr, OD_NAME_ONLY);
 
 #ifdef JP
-sprintf(ouch, "%sを装備したダメージ", o_name);
+			sprintf(ouch, "%sを装備したダメージ", o_name);
 #else
 			sprintf(ouch, "wielding %s", o_name);
 #endif
@@ -1605,8 +1665,8 @@ sprintf(ouch, "%sを装備したダメージ", o_name);
 		{
 			/* Take damage */
 #ifdef JP
-msg_print("溶岩で火傷した！");
-take_hit(damage, "浅い溶岩流");
+			msg_print("溶岩で火傷した！");
+			take_hit(damage, "浅い溶岩流");
 #else
 			msg_print("The lava burns you!");
 			take_hit(damage, "shallow lava");
@@ -1631,8 +1691,8 @@ take_hit(damage, "浅い溶岩流");
 			damage = damage / 5;
 
 #ifdef JP
-message = "熱で火傷した！";
-hit_from = "深い溶岩流の上に浮遊したダメージ";
+			message = "熱で火傷した！";
+			hit_from = "深い溶岩流の上に浮遊したダメージ";
 #else
 			message = "The heat burns you!";
 			hit_from = "flying over deep lava";
@@ -1642,8 +1702,8 @@ hit_from = "深い溶岩流の上に浮遊したダメージ";
 		else
 		{
 #ifdef JP
-message = "溶岩で火傷した！";
-hit_from = "深い溶岩流";
+			message = "溶岩で火傷した！";
+			hit_from = "深い溶岩流";
 #else
 			message = "The lava burns you!";
 			hit_from = "deep lava";
@@ -1701,8 +1761,8 @@ hit_from = "深い溶岩流";
 			if (p_ptr->pass_wall)
 			{
 #ifdef JP
-msg_print("体の分子が分解した気がする！");
-dam_desc = "密度";
+				msg_print("体の分子が分解した気がする！");
+				dam_desc = "密度";
 #else
 				msg_print("Your molecules feel disrupted!");
 				dam_desc = "density";
@@ -1712,8 +1772,8 @@ dam_desc = "密度";
 			else
 			{
 #ifdef JP
-msg_print("崩れた岩に押し潰された！");
-dam_desc = "硬い岩";
+				msg_print("崩れた岩に押し潰された！");
+				dam_desc = "硬い岩";
 #else
 				msg_print("You are being crushed!");
 				dam_desc = "solid rock";
@@ -1748,7 +1808,7 @@ dam_desc = "硬い岩";
 					case 0:
 					{
 #ifdef JP
-msg_print("遠くで不気味な鐘の音が鳴った。");
+						msg_print("遠くで不気味な鐘の音が鳴った。");
 #else
 						msg_print("You hear a distant bell toll ominously.");
 #endif
@@ -1758,7 +1818,7 @@ msg_print("遠くで不気味な鐘の音が鳴った。");
 					case 1:
 					{
 #ifdef JP
-msg_print("遠くで鐘が二回鳴った。");
+						msg_print("遠くで鐘が二回鳴った。");
 #else
 						msg_print("A distant bell sounds twice.");
 #endif
@@ -1768,7 +1828,7 @@ msg_print("遠くで鐘が二回鳴った。");
 					case 2:
 	{
 #ifdef JP
-msg_print("遠くで鐘が三回鳴った。");
+						msg_print("遠くで鐘が三回鳴った。");
 #else
 						msg_print("A distant bell sounds three times.");
 #endif
@@ -1778,7 +1838,7 @@ msg_print("遠くで鐘が三回鳴った。");
 					case 3:
 					{
 #ifdef JP
-msg_print("遠くで鐘が四回鳴った。");
+						msg_print("遠くで鐘が四回鳴った。");
 #else
 						msg_print("A distant bell tolls four times.");
 #endif
@@ -1795,7 +1855,7 @@ msg_print("遠くで鐘が四回鳴った。");
 
 				disturb(1, 0);
 #ifdef JP
-msg_print("遠くで鐘が何回も鳴り、死んだような静けさの中へ消えていった。");
+				msg_print("遠くで鐘が何回も鳴り、死んだような静けさの中へ消えていった。");
 #else
 				msg_print("A distant bell tolls many times, fading into an deathly silence.");
 #endif
@@ -1828,7 +1888,7 @@ msg_print("遠くで鐘が何回も鳴り、死んだような静けさの中へ消えていった。");
 
 		/* Take damage */
 #ifdef JP
-take_hit(i, "致命傷");
+		take_hit(i, "致命傷");
 #else
 		take_hit(i, "a fatal wound");
 #endif
@@ -1880,7 +1940,7 @@ take_hit(i, "致命傷");
 
 		/* Take damage */
 #ifdef JP
-if (!p_ptr->invuln) take_hit(i, "空腹");
+		if (!p_ptr->invuln) take_hit(i, "空腹");
 #else
 		if (!p_ptr->invuln) take_hit(i, "starvation");
 #endif
@@ -1915,7 +1975,7 @@ if (!p_ptr->invuln) take_hit(i, "空腹");
 			{
 				/* Message */
 #ifdef JP
-msg_print("あまりにも空腹で気絶してしまった。");
+				msg_print("あまりにも空腹で気絶してしまった。");
 #else
 				msg_print("You faint from the lack of food.");
 #endif
@@ -2471,7 +2531,7 @@ msg_print("あまりにも空腹で気絶してしまった。");
 					/* msg_print("Teleport aborted.") */ ;
 				}
 #ifdef JP
-else if (get_check("テレポートしますか？"))
+				else if (get_check("テレポートしますか？"))
 #else
 				else if (get_check("Teleport? "))
 #endif
@@ -2613,7 +2673,7 @@ else if (get_check("テレポートしますか？"))
 			if (dun_level || p_ptr->inside_quest)
 			{
 #ifdef JP
-msg_print("上に引っ張りあげられる感じがする！");
+				msg_print("上に引っ張りあげられる感じがする！");
 #else
 				msg_print("You feel yourself yanked upwards!");
 #endif
@@ -2628,7 +2688,7 @@ msg_print("上に引っ張りあげられる感じがする！");
 			else
 			{
 #ifdef JP
-msg_print("下に引きずり降ろされる感じがする！");
+				msg_print("下に引きずり降ろされる感じがする！");
 #else
 				msg_print("You feel yourself yanked downwards!");
 #endif
@@ -2889,7 +2949,7 @@ static void process_command(void)
 			{
 				wizard = FALSE;
 #ifdef JP
-msg_print("ウィザードモード解除。");
+				msg_print("ウィザードモード解除。");
 #else
 				msg_print("Wizard mode off.");
 #endif
@@ -2899,7 +2959,7 @@ msg_print("ウィザードモード解除。");
 			{
 				wizard = TRUE;
 #ifdef JP
-msg_print("ウィザードモード突入。");
+				msg_print("ウィザードモード突入。");
 #else
 				msg_print("Wizard mode on.");
 #endif
@@ -3270,7 +3330,7 @@ msg_print("ウィザードモード突入。");
 			else
 			{
 #ifdef JP
-msg_print("アリーナが魔法を吸収した！");
+				msg_print("アリーナが魔法を吸収した！");
 #else
 				msg_print("The arena absorbs all attempted magic!");
 #endif
@@ -3302,7 +3362,7 @@ msg_print("アリーナが魔法を吸収した！");
 			else
 			{
 #ifdef JP
-msg_print("アリーナでは真っ向勝負だ！");
+				msg_print("アリーナでは真っ向勝負だ！");
 #else
 				msg_print("You're in the arena now. This is hand-to-hand!");
 #endif
@@ -3320,7 +3380,7 @@ msg_print("アリーナでは真っ向勝負だ！");
 			else
 			{
 #ifdef JP
-msg_print("アリーナでは真っ向勝負だ！");
+				msg_print("アリーナでは真っ向勝負だ！");
 #else
 				msg_print("You're in the arena now. This is hand-to-hand!");
 #endif
@@ -3338,7 +3398,7 @@ msg_print("アリーナでは真っ向勝負だ！");
 			else
 			{
 #ifdef JP
-msg_print("アリーナが魔法を吸収した！");
+				msg_print("アリーナが魔法を吸収した！");
 #else
 				msg_print("The arena absorbs all attempted magic!");
 #endif
@@ -3362,7 +3422,7 @@ msg_print("アリーナが魔法を吸収した！");
 			else
 			{
 #ifdef JP
-msg_print("アリーナが魔法を吸収した！");
+				msg_print("アリーナが魔法を吸収した！");
 #else
 				msg_print("The arena absorbs all attempted magic!");
 #endif
@@ -3380,7 +3440,7 @@ msg_print("アリーナが魔法を吸収した！");
 			else
 			{
 #ifdef JP
-msg_print("アリーナが魔法を吸収した！");
+				msg_print("アリーナが魔法を吸収した！");
 #else
 				msg_print("The arena absorbs all attempted magic!");
 #endif
@@ -3398,7 +3458,7 @@ msg_print("アリーナが魔法を吸収した！");
 			else
 			{
 #ifdef JP
-msg_print("アリーナが魔法を吸収した！");
+				msg_print("アリーナが魔法を吸収した！");
 #else
 				msg_print("The arena absorbs all attempted magic!");
 #endif
@@ -3420,7 +3480,7 @@ msg_print("アリーナが魔法を吸収した！");
 			else
 			{
 #ifdef JP
-msg_print("アリーナが魔法を吸収した！");
+				msg_print("アリーナが魔法を吸収した！");
 #else
 				msg_print("The arena absorbs all attempted magic!");
 #endif
@@ -3438,7 +3498,7 @@ msg_print("アリーナが魔法を吸収した！");
 			else
 			{
 #ifdef JP
-msg_print("アリーナが魔法を吸収した！");
+				msg_print("アリーナが魔法を吸収した！");
 #else
 				msg_print("The arena absorbs all attempted magic!");
 #endif
@@ -3687,7 +3747,7 @@ msg_print("アリーナが魔法を吸収した！");
 			if (randint1(2) == 1)
 			{
 				char error_m[1024];
-				sound(SOUND_ILLEGAL);
+ 				sound(SOUND_BELL);  /* bell is the default system error sound */
 #ifdef JP
 				if (!get_rnd_line("error_j.txt", 0, error_m))
 #else
@@ -3698,7 +3758,7 @@ msg_print("アリーナが魔法を吸収した！");
 			}
 			else
 #ifdef JP
-prt(" '?' でヘルプが表示されます。", 0, 0);
+				prt(" '?' でヘルプが表示されます。", 0, 0);
 #else
 				prt("Type '?' for help.", 0, 0);
 #endif

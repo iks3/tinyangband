@@ -3155,7 +3155,7 @@ msg_format("%s(%c)を購入する。", o_name, I2A(item));
 				say_comment_1();
 
 				/* Make a sound */
-				sound(SOUND_BUY);
+				sound(SOUND_STORE5);
 
 				/* Be happy */
 				decrease_insults();
@@ -3527,8 +3527,8 @@ static void store_sell(void)
 			/* Say "okay" */
 			say_comment_1();
 
-			/* Make a sound */
-			sound(SOUND_SELL);
+			/* Make a sound */ 
+			sound(SOUND_STORE5);
 
 			/* Be happy */
 			decrease_insults();

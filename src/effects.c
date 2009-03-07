@@ -33,11 +33,11 @@ bool set_blind(int v)
 		if (!p_ptr->blind)
 		{
 #ifdef JP
-msg_print("目が見えなくなってしまった！");
+			msg_print("目が見えなくなってしまった！");
 #else
 			msg_print("You are blind!");
 #endif
-
+	  		sound(SOUND_BLIND);
 			notice = TRUE;
 		}
 	}
@@ -48,11 +48,11 @@ msg_print("目が見えなくなってしまった！");
 		if (p_ptr->blind)
 		{
 #ifdef JP
-msg_print("やっと目が見えるようになった！");
+			msg_print("やっと目が見えるようになった！");
 #else
 			msg_print("You can see again.");
 #endif
-
+	  		sound(SOUND_RECOVER);
 			notice = TRUE;
 		}
 	}
@@ -102,11 +102,11 @@ bool set_confused(int v)
 		if (!p_ptr->confused)
 		{
 #ifdef JP
-msg_print("あなたは混乱した！");
+			msg_print("あなたは混乱した！");
 #else
 			msg_print("You are confused!");
 #endif
-
+	  		sound(SOUND_CONFUSED);
 			notice = TRUE;
 		}
 	}
@@ -117,11 +117,11 @@ msg_print("あなたは混乱した！");
 		if (p_ptr->confused)
 		{
 #ifdef JP
-msg_print("やっと混乱がおさまった。");
+			msg_print("やっと混乱がおさまった。");
 #else
 			msg_print("You feel less confused now.");
 #endif
-
+	  		sound(SOUND_RECOVER);
 			notice = TRUE;
 		}
 	}
@@ -162,11 +162,11 @@ bool set_poisoned(int v)
 		if (!p_ptr->poisoned)
 		{
 #ifdef JP
-msg_print("毒に侵されてしまった！");
+			msg_print("毒に侵されてしまった！");
 #else
 			msg_print("You are poisoned!");
 #endif
-
+	  		sound(SOUND_POISONED);
 			notice = TRUE;
 		}
 	}
@@ -177,11 +177,11 @@ msg_print("毒に侵されてしまった！");
 		if (p_ptr->poisoned)
 		{
 #ifdef JP
-msg_print("やっと毒の痛みがなくなった。");
+			msg_print("やっと毒の痛みがなくなった。");
 #else
 			msg_print("You are no longer poisoned.");
 #endif
-
+	  		sound(SOUND_RECOVER);
 			notice = TRUE;
 		}
 	}
@@ -222,11 +222,11 @@ bool set_afraid(int v)
 		if (!p_ptr->afraid)
 		{
 #ifdef JP
-msg_print("何もかも恐くなってきた！");
+			msg_print("何もかも恐くなってきた！");
 #else
 			msg_print("You are terrified!");
 #endif
-
+	  		sound(SOUND_AFRAID);
 			notice = TRUE;
 		}
 	}
@@ -237,11 +237,11 @@ msg_print("何もかも恐くなってきた！");
 		if (p_ptr->afraid)
 		{
 #ifdef JP
-msg_print("やっと恐怖を振り払った。");
+			msg_print("やっと恐怖を振り払った。");
 #else
 			msg_print("You feel bolder now.");
 #endif
-
+	  		sound(SOUND_RECOVER);
 			notice = TRUE;
 		}
 	}
@@ -282,11 +282,11 @@ bool set_paralyzed(int v)
 		if (!p_ptr->paralyzed)
 		{
 #ifdef JP
-msg_print("体が麻痺してしまった！");
+			msg_print("体が麻痺してしまった！");
 #else
 			msg_print("You are paralyzed!");
 #endif
-
+	  		sound(SOUND_PARALYZED);
 			notice = TRUE;
 		}
 	}
@@ -297,11 +297,11 @@ msg_print("体が麻痺してしまった！");
 		if (p_ptr->paralyzed)
 		{
 #ifdef JP
-msg_print("やっと動けるようになった。");
+			msg_print("やっと動けるようになった。");
 #else
 			msg_print("You can move again.");
 #endif
-
+	  		sound(SOUND_RECOVER);
 			notice = TRUE;
 		}
 	}
@@ -347,11 +347,11 @@ bool set_image(int v)
 		if (!p_ptr->image)
 		{
 #ifdef JP
-msg_print("ワーオ！何もかも虹色に見える！");
+			msg_print("ワーオ！何もかも虹色に見える！");
 #else
 			msg_print("Oh, wow! Everything looks so cosmic now!");
 #endif
-
+	  		sound(SOUND_DRUGGED);
 			notice = TRUE;
 		}
 	}
@@ -362,11 +362,11 @@ msg_print("ワーオ！何もかも虹色に見える！");
 		if (p_ptr->image)
 		{
 #ifdef JP
-msg_print("やっとはっきりと物が見えるようになった。");
+			msg_print("やっとはっきりと物が見えるようになった。");
 #else
 			msg_print("You can see clearly again.");
 #endif
-
+	  		sound(SOUND_RECOVER);
 			notice = TRUE;
 		}
 	}
@@ -416,11 +416,11 @@ bool set_fast(int v)
 		if (!p_ptr->fast)
 		{
 #ifdef JP
-msg_print("素早く動けるようになった！");
+			msg_print("素早く動けるようになった！");
 #else
 			msg_print("You feel yourself moving faster!");
 #endif
-
+	  		sound(SOUND_SPEED);
 			notice = TRUE;
 		}
 	}
@@ -431,7 +431,7 @@ msg_print("素早く動けるようになった！");
 		if (p_ptr->fast)
 		{
 #ifdef JP
-msg_print("動きの素早さがなくなったようだ。");
+			msg_print("動きの素早さがなくなったようだ。");
 #else
 			msg_print("You feel yourself slow down.");
 #endif
@@ -479,11 +479,11 @@ bool set_slow(int v)
 		if (!p_ptr->slow)
 		{
 #ifdef JP
-msg_print("体の動きが遅くなってしまった！");
+			msg_print("体の動きが遅くなってしまった！");
 #else
 			msg_print("You feel yourself moving slower!");
 #endif
-
+	  		sound(SOUND_SLOW);
 			notice = TRUE;
 		}
 	}
@@ -494,11 +494,11 @@ msg_print("体の動きが遅くなってしまった！");
 		if (p_ptr->slow)
 		{
 #ifdef JP
-msg_print("動きの遅さがなくなったようだ。");
+			msg_print("動きの遅さがなくなったようだ。");
 #else
 			msg_print("You feel yourself speed up.");
 #endif
-
+	  		sound(SOUND_RECOVER);
 			notice = TRUE;
 		}
 	}
@@ -542,11 +542,11 @@ bool set_shield(int v)
 		if (!p_ptr->shield)
 		{
 #ifdef JP
-msg_print("肌が石になった。");
+			msg_print("肌が石になった。");
 #else
 			msg_print("Your skin turns to stone.");
 #endif
-
+	  		sound(SOUND_SHIELD);
 			notice = TRUE;
 		}
 	}
@@ -557,7 +557,7 @@ msg_print("肌が石になった。");
 		if (p_ptr->shield)
 		{
 #ifdef JP
-msg_print("肌が元に戻った。");
+			msg_print("肌が元に戻った。");
 #else
 			msg_print("Your skin returns to normal.");
 #endif
@@ -669,7 +669,7 @@ bool set_musou(int v)
 		if (!p_ptr->musou)
 		{
 #ifdef JP
-msg_print("あらゆることに対して耐性がついた気がする！");
+			msg_print("あらゆることに対して耐性がついた気がする！");
 #else
 			msg_print("You feel resistance!");
 #endif
@@ -684,7 +684,7 @@ msg_print("あらゆることに対して耐性がついた気がする！");
 		if (p_ptr->musou)
 		{
 #ifdef JP
-msg_print("あらゆることに対する耐性が薄れた気がする。");
+			msg_print("あらゆることに対する耐性が薄れた気がする。");
 #else
 			msg_print("You feel less resistantce");
 #endif
@@ -736,6 +736,7 @@ bool set_blessed(int v)
 #else
 			msg_print("You feel righteous!");
 #endif
+	  		sound(SOUND_BLESSED);
 			notice = TRUE;
 		}
 	}
@@ -793,11 +794,11 @@ bool set_hero(int v)
 		if (!p_ptr->hero)
 		{
 #ifdef JP
-msg_print("ヒーローになった気がする！");
+			msg_print("ヒーローになった気がする！");
 #else
 			msg_print("You feel like a hero!");
 #endif
-
+	  		sound(SOUND_HERO);
 			notice = TRUE;
 		}
 	}
@@ -808,7 +809,7 @@ msg_print("ヒーローになった気がする！");
 		if (p_ptr->hero)
 		{
 #ifdef JP
-msg_print("ヒーローの気分が消え失せた。");
+			msg_print("ヒーローの気分が消え失せた。");
 #else
 			msg_print("The heroism wears off.");
 #endif
@@ -863,6 +864,7 @@ bool set_shero(int v)
 #else
 			msg_print("You feel like a killing machine!");
 #endif
+	  		sound(SOUND_HERO); /* (Sound substitute) no sound for beserk */
 			notice = TRUE;
 		}
 	}
@@ -923,11 +925,11 @@ bool set_protevil(int v)
 		if (!p_ptr->protevil)
 		{
 #ifdef JP
-msg_print("邪悪なる存在から守られているような感じがする！");
+			msg_print("邪悪なる存在から守られているような感じがする！");
 #else
 			msg_print("You feel safe from evil!");
 #endif
-
+	  		sound(SOUND_PROT_EVIL);
 			notice = TRUE;
 		}
 	}
@@ -938,7 +940,7 @@ msg_print("邪悪なる存在から守られているような感じがする！");
 		if (p_ptr->protevil)
 		{
 #ifdef JP
-msg_print("邪悪なる存在から守られている感じがなくなった。");
+			msg_print("邪悪なる存在から守られている感じがなくなった。");
 #else
 			msg_print("You no longer feel safe from evil.");
 #endif
@@ -1065,7 +1067,7 @@ bool set_invuln(int v)
 #else
 			msg_print("Invulnerability!");
 #endif
-
+	  		sound(SOUND_INVULN);
 			notice = TRUE;
 
 			/* Redraw map */
@@ -1145,7 +1147,7 @@ bool set_tim_esp(int v)
 		if (!p_ptr->tim_esp)
 		{
 #ifdef JP
-msg_print("意識が広がった気がする！");
+			msg_print("意識が広がった気がする！");
 #else
 			msg_print("You feel your consciousness expand!");
 #endif
@@ -1160,7 +1162,7 @@ msg_print("意識が広がった気がする！");
 		if (p_ptr->tim_esp)
 		{
 #ifdef JP
-msg_print("意識は元に戻った。");
+			msg_print("意識は元に戻った。");
 #else
 			msg_print("Your consciousness contracts again.");
 #endif
@@ -1211,11 +1213,11 @@ bool set_tim_invis(int v)
 		if (!p_ptr->tim_invis)
 		{
 #ifdef JP
-msg_print("目が非常に敏感になった気がする！");
+			msg_print("目が非常に敏感になった気がする！");
 #else
 			msg_print("Your eyes feel very sensitive!");
 #endif
-
+	  		sound(SOUND_SEE_INVIS);
 			notice = TRUE;
 		}
 	}
@@ -1226,7 +1228,7 @@ msg_print("目が非常に敏感になった気がする！");
 		if (p_ptr->tim_invis)
 		{
 #ifdef JP
-msg_print("目の敏感さがなくなったようだ。");
+			msg_print("目の敏感さがなくなったようだ。");
 #else
 			msg_print("Your eyes feel less sensitive.");
 #endif
@@ -1277,11 +1279,11 @@ bool set_tim_infra(int v)
 		if (!p_ptr->tim_infra)
 		{
 #ifdef JP
-msg_print("目がランランと輝き始めた！");
+			msg_print("目がランランと輝き始めた！");
 #else
 			msg_print("Your eyes begin to tingle!");
 #endif
-
+	  		sound(SOUND_INFRARED);
 			notice = TRUE;
 		}
 	}
@@ -1292,7 +1294,7 @@ msg_print("目がランランと輝き始めた！");
 		if (p_ptr->tim_infra)
 		{
 #ifdef JP
-msg_print("目の輝きがなくなった。");
+			msg_print("目の輝きがなくなった。");
 #else
 			msg_print("Your eyes stop tingling.");
 #endif
@@ -1473,7 +1475,7 @@ bool set_tim_regen(int v)
 		if (!p_ptr->tim_regen)
 		{
 #ifdef JP
-msg_print("回復力が増した！");
+			msg_print("回復力が増した！");
 #else
 			msg_print("You feel yourself regenerating quickly!");
 #endif
@@ -1488,7 +1490,7 @@ msg_print("回復力が増した！");
 		if (p_ptr->tim_regen)
 		{
 #ifdef JP
-msg_print("素早く回復する感じがなくなった。");
+			msg_print("素早く回復する感じがなくなった。");
 #else
 			msg_print("You feel yourself regenerating slowly.");
 #endif
@@ -1605,7 +1607,7 @@ bool set_tim_sh_fire(int v)
 		if (!p_ptr->tim_sh_fire)
 		{
 #ifdef JP
-msg_print("体が炎のオーラで覆われた。");
+			msg_print("体が炎のオーラで覆われた。");
 #else
 			msg_print("You have enveloped by fiery aura!");
 #endif
@@ -1620,7 +1622,7 @@ msg_print("体が炎のオーラで覆われた。");
 		if (p_ptr->tim_sh_fire)
 		{
 #ifdef JP
-msg_print("炎のオーラが消えた。");
+			msg_print("炎のオーラが消えた。");
 #else
 			msg_print("Fiery aura disappeared.");
 #endif
@@ -1672,6 +1674,7 @@ bool set_tim_sh_elec(int v)
 #else
 			msg_print("You have been enveloped by electorical aura!");
 #endif
+
 			notice = TRUE;
 		}
 	}
@@ -1686,6 +1689,7 @@ bool set_tim_sh_elec(int v)
 #else
 			msg_print("Your electorical aura has disappeared.");
 #endif
+
 			notice = TRUE;
 		}
 	}
@@ -1733,6 +1737,7 @@ bool set_tim_sh_cold(int v)
 #else
 			msg_print("You have been enveloped by icy aura!");
 #endif
+
 			notice = TRUE;
 		}
 	}
@@ -1747,6 +1752,7 @@ bool set_tim_sh_cold(int v)
 #else
 			msg_print("Your icy aura disappeared.");
 #endif
+
 			notice = TRUE;
 		}
 	}
@@ -1790,11 +1796,11 @@ bool set_oppose_acid(int v)
 		if (!p_ptr->oppose_acid)
 		{
 #ifdef JP
-msg_print("酸への耐性がついた気がする！");
+			msg_print("酸への耐性がついた気がする！");
 #else
 			msg_print("You feel resistant to acid!");
 #endif
-
+			sound(SOUND_RES_ACID);
 			notice = TRUE;
 		}
 	}
@@ -1805,7 +1811,7 @@ msg_print("酸への耐性がついた気がする！");
 		if (p_ptr->oppose_acid)
 		{
 #ifdef JP
-msg_print("酸への耐性が薄れた気がする。");
+			msg_print("酸への耐性が薄れた気がする。");
 #else
 			msg_print("You feel less resistant to acid.");
 #endif
@@ -1850,11 +1856,11 @@ bool set_oppose_elec(int v)
 		if (!p_ptr->oppose_elec)
 		{
 #ifdef JP
-msg_print("電撃への耐性がついた気がする！");
+			msg_print("電撃への耐性がついた気がする！");
 #else
 			msg_print("You feel resistant to electricity!");
 #endif
-
+			sound(SOUND_RES_ELEC);
 			notice = TRUE;
 		}
 	}
@@ -1865,7 +1871,7 @@ msg_print("電撃への耐性がついた気がする！");
 		if (p_ptr->oppose_elec)
 		{
 #ifdef JP
-msg_print("電撃への耐性が薄れた気がする。");
+			msg_print("電撃への耐性が薄れた気がする。");
 #else
 			msg_print("You feel less resistant to electricity.");
 #endif
@@ -1910,11 +1916,11 @@ bool set_oppose_fire(int v)
 		if (!p_ptr->oppose_fire)
 		{
 #ifdef JP
-msg_print("火への耐性がついた気がする！");
+			msg_print("火への耐性がついた気がする！");
 #else
 			msg_print("You feel resistant to fire!");
 #endif
-
+			sound(SOUND_RES_FIRE);
 			notice = TRUE;
 		}
 	}
@@ -1925,7 +1931,7 @@ msg_print("火への耐性がついた気がする！");
 		if (p_ptr->oppose_fire)
 		{
 #ifdef JP
-msg_print("火への耐性が薄れた気がする。");
+			msg_print("火への耐性が薄れた気がする。");
 #else
 			msg_print("You feel less resistant to fire.");
 #endif
@@ -1970,11 +1976,11 @@ bool set_oppose_cold(int v)
 		if (!p_ptr->oppose_cold)
 		{
 #ifdef JP
-msg_print("冷気への耐性がついた気がする！");
+			msg_print("冷気への耐性がついた気がする！");
 #else
 			msg_print("You feel resistant to cold!");
 #endif
-
+			sound(SOUND_RES_COLD);
 			notice = TRUE;
 		}
 	}
@@ -1985,7 +1991,7 @@ msg_print("冷気への耐性がついた気がする！");
 		if (p_ptr->oppose_cold)
 		{
 #ifdef JP
-msg_print("冷気への耐性が薄れた気がする。");
+			msg_print("冷気への耐性が薄れた気がする。");
 #else
 			msg_print("You feel less resistant to cold.");
 #endif
@@ -2030,11 +2036,11 @@ bool set_oppose_pois(int v)
 		if (!p_ptr->oppose_pois)
 		{
 #ifdef JP
-msg_print("毒への耐性がついた気がする！");
+			msg_print("毒への耐性がついた気がする！");
 #else
 			msg_print("You feel resistant to poison!");
 #endif
-
+			sound(SOUND_RES_POIS);
 			notice = TRUE;
 		}
 	}
@@ -2045,7 +2051,7 @@ msg_print("毒への耐性がついた気がする！");
 		if (p_ptr->oppose_pois)
 		{
 #ifdef JP
-msg_print("毒への耐性が薄れた気がする。");
+			msg_print("毒への耐性が薄れた気がする。");
 #else
 			msg_print("You feel less resistant to poison.");
 #endif
@@ -2145,31 +2151,31 @@ bool set_stun(int v)
 			/* Stun */
 			case 1:
 #ifdef JP
-msg_print("意識がもうろうとしてきた。");
+			msg_print("意識がもうろうとしてきた。");
 #else
 			msg_print("You have been stunned.");
 #endif
-
+			sound(SOUND_STUN);
 			break;
 
 			/* Heavy stun */
 			case 2:
 #ifdef JP
-msg_print("意識がひどくもうろうとしてきた。");
+			msg_print("意識がひどくもうろうとしてきた。");
 #else
 			msg_print("You have been heavily stunned.");
 #endif
-
+			sound(SOUND_STUN);
 			break;
 
 			/* Knocked out */
 			case 3:
 #ifdef JP
-msg_print("頭がクラクラして意識が遠のいてきた。");
+			msg_print("頭がクラクラして意識が遠のいてきた。");
 #else
 			msg_print("You have been knocked out.");
 #endif
-
+			sound(SOUND_STUN);
 			break;
 		}
 
@@ -2219,10 +2225,11 @@ msg_print("頭がクラクラして意識が遠のいてきた。");
 			/* None */
 			case 0:
 #ifdef JP
-msg_print("やっと朦朧状態から回復した。");
+			msg_print("やっと朦朧状態から回復した。");
 #else
 			msg_print("You are no longer stunned.");
 #endif
+			sound(SOUND_RECOVER);
 
 			if (disturb_state) disturb(0, 0);
 			break;
@@ -2374,71 +2381,71 @@ bool set_cut(int v)
 			/* Graze */
 			case 1:
 #ifdef JP
-msg_print("かすり傷を負ってしまった。");
+			msg_print("かすり傷を負ってしまった。");
 #else
 			msg_print("You have been given a graze.");
 #endif
-
+			sound(SOUND_CUT);
 			break;
 
 			/* Light cut */
 			case 2:
 #ifdef JP
-msg_print("軽い傷を負ってしまった。");
+			msg_print("軽い傷を負ってしまった。");
 #else
 			msg_print("You have been given a light cut.");
 #endif
-
+			sound(SOUND_CUT);
 			break;
 
 			/* Bad cut */
 			case 3:
 #ifdef JP
-msg_print("ひどい傷を負ってしまった。");
+			msg_print("ひどい傷を負ってしまった。");
 #else
 			msg_print("You have been given a bad cut.");
 #endif
-
+			sound(SOUND_CUT);
 			break;
 
 			/* Nasty cut */
 			case 4:
 #ifdef JP
-msg_print("大変な傷を負ってしまった。");
+			msg_print("大変な傷を負ってしまった。");
 #else
 			msg_print("You have been given a nasty cut.");
 #endif
-
+			sound(SOUND_CUT);
 			break;
 
 			/* Severe cut */
 			case 5:
 #ifdef JP
-msg_print("重大な傷を負ってしまった。");
+			msg_print("重大な傷を負ってしまった。");
 #else
 			msg_print("You have been given a severe cut.");
 #endif
-
+			sound(SOUND_CUT);
 			break;
 
 			/* Deep gash */
 			case 6:
 #ifdef JP
-msg_print("ひどい深手を負ってしまった。");
+			msg_print("ひどい深手を負ってしまった。");
 #else
 			msg_print("You have been given a deep gash.");
 #endif
-
+			sound(SOUND_CUT);
 			break;
 
 			/* Mortal wound */
 			case 7:
 #ifdef JP
-msg_print("致命的な傷を負ってしまった。");
+			msg_print("致命的な傷を負ってしまった。");
 #else
 			msg_print("You have been given a mortal wound.");
 #endif
-
+			sound(SOUND_CUT);
 			break;
 		}
 
@@ -2469,11 +2476,11 @@ msg_print("致命的な傷を負ってしまった。");
 			/* None */
 			case 0:
 #ifdef JP
-msg_print("やっと出血が止まった。");
+			msg_print("やっと出血が止まった。");
 #else
 			msg_print("You are no longer bleeding.");
 #endif
-
+			sound(SOUND_RECOVER);
 			if (disturb_state) disturb(0, 0);
 			break;
 		}
@@ -2617,50 +2624,51 @@ bool set_food(int v)
 			/* Weak */
 			case 1:
 #ifdef JP
-msg_print("まだ空腹で倒れそうだ。");
+			msg_print("まだ空腹で倒れそうだ。");
 #else
 			msg_print("You are still weak.");
 #endif
-
+			sound(SOUND_EAT);
 			break;
 
 			/* Hungry */
 			case 2:
 #ifdef JP
-msg_print("まだ空腹だ。");
+			msg_print("まだ空腹だ。");
 #else
 			msg_print("You are still hungry.");
 #endif
-
+			sound(SOUND_EAT);
 			break;
 
 			/* Normal */
 			case 3:
 #ifdef JP
-msg_print("空腹感がおさまった。");
+			msg_print("空腹感がおさまった。");
 #else
 			msg_print("You are no longer hungry.");
 #endif
-
+			sound(SOUND_EAT);
 			break;
 
 			/* Full */
 			case 4:
 #ifdef JP
-msg_print("満腹だ！");
+			msg_print("満腹だ！");
 #else
 			msg_print("You are full!");
 #endif
-
+			sound(SOUND_EAT);
 			break;
 
 			/* Bloated */
 			case 5:
 #ifdef JP
-msg_print("食べ過ぎだ！");
+			msg_print("食べ過ぎだ！");
 #else
 			msg_print("You have gorged yourself!");
 #endif
+			sound(SOUND_EAT);
 			break;
 		}
 
@@ -2677,50 +2685,52 @@ msg_print("食べ過ぎだ！");
 			/* Fainting / Starving */
 			case 0:
 #ifdef JP
-msg_print("あまりにも空腹で気を失ってしまった！");
+			msg_print("あまりにも空腹で気を失ってしまった！");
 #else
 			msg_print("You are getting faint from hunger!");
 #endif
-
+			sound(SOUND_HUNGRY);
 			break;
 
 			/* Weak */
 			case 1:
 #ifdef JP
-msg_print("お腹が空いて倒れそうだ。");
+			msg_print("お腹が空いて倒れそうだ。");
 #else
 			msg_print("You are getting weak from hunger!");
 #endif
-
+			sound(SOUND_HUNGRY);
 			break;
 
 			/* Hungry */
 			case 2:
 #ifdef JP
-msg_print("お腹が空いてきた。");
+			msg_print("お腹が空いてきた。");
 #else
 			msg_print("You are getting hungry.");
 #endif
-
+			sound(SOUND_HUNGRY);
 			break;
 
 			/* Normal */
 			case 3:
 #ifdef JP
-msg_print("満腹感がなくなった。");
+			msg_print("満腹感がなくなった。");
 #else
 			msg_print("You are no longer full.");
 #endif
+			sound(SOUND_NOTICE);
 
 			break;
 
 			/* Full */
 			case 4:
 #ifdef JP
-msg_print("やっとお腹がきつくなくなった。");
+			msg_print("やっとお腹がきつくなくなった。");
 #else
 			msg_print("You are no longer gorged.");
 #endif
+			sound(SOUND_NOTICE);
 
 			break;
 		}
@@ -2992,7 +3002,7 @@ bool hp_player(int num)
 #else
 			msg_print("You feel a little better.");
 #endif
-			sound(SOUND_HEAL);
+			sound(SOUND_RECOVER); /* (Sound substitute) No sound for heal, use recover */
 		}
 
 		/* Heal 5-14 */
@@ -3003,7 +3013,7 @@ bool hp_player(int num)
 #else
 			msg_print("You feel better.");
 #endif
-			sound(SOUND_HEAL);
+			sound(SOUND_RECOVER);
 		}
 
 		/* Heal 15-34 */
@@ -3014,7 +3024,7 @@ bool hp_player(int num)
 #else
 			msg_print("You feel much better.");
 #endif
-			sound(SOUND_HEAL);
+			sound(SOUND_RECOVER);
 		}
 
 		/* Heal 35+ */
@@ -3025,7 +3035,7 @@ bool hp_player(int num)
 #else
 			msg_print("You feel very good.");
 #endif
-			sound(SOUND_X_HEAL);
+			sound(SOUND_RECOVER); /* (Sound substitute) No sound for X_heal, use recover */
 		}
 
 		/* Notice */
@@ -3043,37 +3053,37 @@ bool hp_player(int num)
 static cptr desc_stat_pos[] =
 {
 #ifdef JP
-"強く",
+	"強く",
 #else
 	"strong",
 #endif
 
 #ifdef JP
-"知的に",
+	"知的に",
 #else
 	"smart",
 #endif
 
 #ifdef JP
-"賢く",
+	"賢く",
 #else
 	"wise",
 #endif
 
 #ifdef JP
-"器用に",
+	"器用に",
 #else
 	"dextrous",
 #endif
 
 #ifdef JP
-"健康に",
+	"健康に",
 #else
 	"healthy",
 #endif
 
 #ifdef JP
-"美しく"
+	"美しく"
 #else
 	"cute"
 #endif
@@ -3087,12 +3097,12 @@ static cptr desc_stat_pos[] =
 static cptr desc_stat_neg[] =
 {
 #ifdef JP
-"弱く",
-"無知に",
-"愚かに",
-"不器用に",
-"不健康に",
-"醜く"
+	"弱く",
+	"無知に",
+	"愚かに",
+	"不器用に",
+	"不健康に",
+	"醜く"
 #else
 	"weak",
 	"stupid",
@@ -3128,7 +3138,7 @@ bool do_dec_stat(int stat)
 	{
 		/* Message */
 #ifdef JP
-msg_format("%sなった気がしたが、すぐに元に戻った。",
+		msg_format("%sなった気がしたが、すぐに元に戻った。",
 #else
 		msg_format("You feel %s for a moment, but the feeling passes.",
 #endif
@@ -3144,11 +3154,11 @@ msg_format("%sなった気がしたが、すぐに元に戻った。",
 	{
 		/* Message */
 #ifdef JP
-msg_format("ひどく%sなった気がする。", desc_stat_neg[stat]);
+		msg_format("ひどく%sなった気がする。", desc_stat_neg[stat]);
 #else
 		msg_format("You feel very %s.", desc_stat_neg[stat]);
 #endif
-
+		sound(SOUND_DRAIN_STAT);
 
 		/* Notice effect */
 		return (TRUE);
@@ -3169,11 +3179,11 @@ bool do_res_stat(int stat)
 	{
 		/* Message */
 #ifdef JP
-msg_format("元通りに%sなった気がする。", desc_stat_pos[stat]);
+		msg_format("元通りに%sなった気がする。", desc_stat_pos[stat]);
 #else
 		msg_format("You feel less %s.", desc_stat_neg[stat]);
 #endif
-
+		sound(SOUND_RECOVER);
 
 		/* Notice */
 		return (TRUE);
@@ -3213,11 +3223,11 @@ bool do_inc_stat(int stat)
 	{
 		/* Message */
 #ifdef JP
-msg_format("元通りに%sなった気がする。", desc_stat_pos[stat]);
+		msg_format("元通りに%sなった気がする。", desc_stat_pos[stat]);
 #else
 		msg_format("You feel less %s.", desc_stat_neg[stat]);
 #endif
-
+		sound(SOUND_RECOVER);
 
 		/* Notice */
 		return (TRUE);
@@ -3238,11 +3248,11 @@ bool restore_level(void)
 	{
 		/* Message */
 #ifdef JP
-msg_print("生命力が戻ってきた気がする。");
+		msg_print("生命力が戻ってきた気がする。");
 #else
 		msg_print("You feel your life energies returning.");
 #endif
-
+		sound(SOUND_RECOVER);
 
 		/* Restore the experience */
 		p_ptr->exp = p_ptr->max_exp;
@@ -3318,17 +3328,18 @@ void do_poly_wounds(void)
 	if (!(wounds || hit_p || Nasty_effect)) return;
 
 #ifdef JP
-msg_print("傷がより軽いものに変化した。");
+	msg_print("傷がより軽いものに変化した。");
 #else
 	msg_print("Your wounds are polymorphed into less serious ones.");
 #endif
+	sound(SOUND_RECOVER);
 
 	hp_player(change);
 	if (Nasty_effect)
 	{
 #ifdef JP
-msg_print("新たな傷ができた！");
-take_hit(change / 2, "変化した傷");
+		msg_print("新たな傷ができた！");
+		take_hit(change / 2, "変化した傷");
 #else
 		msg_print("A new wound was created!");
 		take_hit(change / 2, "a polymorphed wound");
@@ -3348,7 +3359,7 @@ void do_poly_self(void)
 	int power = p_ptr->lev;
 
 #ifdef JP
-msg_print("あなたは変化の訪れを感じた...");
+	msg_print("あなたは変化の訪れを感じた...");
 #else
 	msg_print("You feel a change coming over you...");
 #endif
@@ -3374,7 +3385,7 @@ msg_print("あなたは変化の訪れを感じた...");
 				p_ptr->psex = SEX_FEMALE;
 				sp_ptr = &sex_info[p_ptr->psex];
 #ifdef JP
-sprintf(effect_msg, "女性の");
+				sprintf(effect_msg, "女性の");
 #else
 				sprintf(effect_msg, "female ");
 #endif
@@ -3385,7 +3396,7 @@ sprintf(effect_msg, "女性の");
 				p_ptr->psex = SEX_MALE;
 				sp_ptr = &sex_info[p_ptr->psex];
 #ifdef JP
-sprintf(effect_msg, "男性の");
+				sprintf(effect_msg, "男性の");
 #else
 				sprintf(effect_msg, "male ");
 #endif
@@ -3443,7 +3454,7 @@ sprintf(effect_msg, "男性の");
 
 			if (!lose_mutation(0))
 #ifdef JP
-msg_print("奇妙なくらい普通になった気がする。");
+				msg_print("奇妙なくらい普通になった気がする。");
 #else
 				msg_print("You feel oddly normal.");
 #endif
@@ -3539,7 +3550,7 @@ msg_print("奇妙なくらい普通になった気がする。");
 		power -= 20;
 
 #ifdef JP
-msg_print("内臓の構成が変化した！");
+		msg_print("内臓の構成が変化した！");
 #else
 		msg_print("Your internal organs are rearranged!");
 #endif
@@ -3552,8 +3563,8 @@ msg_print("内臓の構成が変化した！");
 		if (randint1(6) == 1)
 		{
 #ifdef JP
-msg_print("現在姿で生きていくのは困難なようだ！");
-take_hit(damroll(randint1(10), p_ptr->lev), "致命的な突然変異");
+			msg_print("現在姿で生きていくのは困難なようだ！");
+			take_hit(damroll(randint1(10), p_ptr->lev), "致命的な突然変異");
 #else
 			msg_print("You find living difficult in your present form!");
 			take_hit(damroll(randint1(10), p_ptr->lev), "a lethal mutation");
@@ -3696,6 +3707,7 @@ int take_hit(int damage, cptr hit_from)
 #else
 			msg_print("You die.");
 #endif
+			sound(SOUND_DEATH);
 			msg_print(NULL);
 		}
 		else
@@ -3713,6 +3725,7 @@ int take_hit(int damage, cptr hit_from)
 #endif
 				msg_print(death_message);
 		}
+		sound(SOUND_DEATH);
 
 		/* Dead */
 		return (damage);
@@ -3724,7 +3737,7 @@ int take_hit(int damage, cptr hit_from)
 		/* Hack -- bell on first notice */
 		if (alert_hitpoint && (old_chp > warning)) bell();
 
-		sound(SOUND_WARN);
+		sound(SOUND_HITPOINT_WARN);
 
 		/* Message */
 #ifdef JP

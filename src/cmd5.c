@@ -1066,7 +1066,7 @@ void do_cmd_cast(void)
 #else
 		msg_format("You failed to get the %s off!", prayer);
 #endif
-		sound(SOUND_FAIL);
+ 		sound(SOUND_STORE2);  /* (Sound substitute) HACK! No fail sound, use strore 2*/
 	}
 
 	/* Process spell */
@@ -1091,6 +1091,7 @@ void do_cmd_cast(void)
 		if (!cast) return;
 
 		/* A spell was cast */
+		sound(SOUND_SPELL);
 		if (!(increment ?
 		    (spell_worked2 & (1L << spell)) :
 		    (spell_worked1 & (1L << spell))))

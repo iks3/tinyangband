@@ -1099,7 +1099,7 @@ msg_print("巻物は煙を立てて消え去った！");
 		return;
 	}
 
-	sound(SOUND_SCROLL);
+ 	sound(SOUND_SPELL); /* No scroll sound, use spell sound */
 
 	/* Destroy a scroll in the pack */
 	if (item >= 0)
@@ -1268,7 +1268,7 @@ static void do_cmd_use_staff_aux(int item)
 #else
 		msg_print("You failed to use the staff properly.");
 #endif
-		sound(SOUND_FAIL);
+ 		sound(SOUND_STORE2);  /* (Sound substitute) HACK! No fail sound, use strore 2*/
 		return;
 	}
 
@@ -1291,7 +1291,7 @@ static void do_cmd_use_staff_aux(int item)
 
 
 	/* Sound */
-	sound(SOUND_ZAP);
+	sound(SOUND_USE_STAFF);
 
 
 	/* Analyze the staff */
@@ -1700,7 +1700,7 @@ static void do_cmd_aim_wand_aux(int item)
 #else
 		msg_print("You failed to use the wand properly.");
 #endif
-		sound(SOUND_FAIL);
+ 		sound(SOUND_STORE2);  /* (Sound substitute) HACK! No fail sound, use strore 2*/
 		return;
 	}
 
@@ -1723,7 +1723,7 @@ static void do_cmd_aim_wand_aux(int item)
 
 
 	/* Sound */
-	sound(SOUND_ZAP);
+	sound(SOUND_ZAP_ROD); /* No Zap sound, use zap_rod) */
 
 
 	/* XXX Hack -- Extract the "sval" effect */
@@ -1864,7 +1864,7 @@ static void do_cmd_aim_wand_aux(int item)
 
 		case SV_WAND_DRAGON_FIRE:
 		{
-			sound(SOUND_BREATH);
+			sound(SOUND_BR_FIRE);
 			fire_ball(GF_FIRE, dir, 200, -3);
 			ident = TRUE;
 			break;
@@ -1872,7 +1872,7 @@ static void do_cmd_aim_wand_aux(int item)
 
 		case SV_WAND_DRAGON_COLD:
 		{
-			sound(SOUND_BREATH);
+			sound(SOUND_BR_FROST);
 			fire_ball(GF_COLD, dir, 180, -3);
 			ident = TRUE;
 			break;
@@ -1880,36 +1880,40 @@ static void do_cmd_aim_wand_aux(int item)
 
 		case SV_WAND_DRAGON_BREATH:
 		{
-			sound(SOUND_BREATH);
 
 			switch (randint1(5))
 			{
 				case 1:
 				{
+					sound(SOUND_BR_ACID);
 					fire_ball(GF_ACID, dir, 240, -3);
 					break;
 				}
 
 				case 2:
 				{
+					sound(SOUND_BR_ELEC);
 					fire_ball(GF_ELEC, dir, 210, -3);
 					break;
 				}
 
 				case 3:
 				{
+					sound(SOUND_BR_FIRE);
 					fire_ball(GF_FIRE, dir, 240, -3);
 					break;
 				}
 
 				case 4:
 				{
+					sound(SOUND_BR_FROST);
 					fire_ball(GF_COLD, dir, 210, -3);
 					break;
 				}
 
 				default:
 				{
+					sound(SOUND_BR_GAS);
 					fire_ball(GF_POIS, dir, 180, -3);
 					break;
 				}
@@ -2051,7 +2055,7 @@ static void do_cmd_zap_rod_aux(int item)
 #else
 		msg_print("You failed to use the rod properly.");
 #endif
-		sound(SOUND_FAIL);
+ 		sound(SOUND_STORE2);  /* (Sound substitute) HACK! No fail sound, use strore 2*/
 		return;
 	}
 
@@ -2081,7 +2085,7 @@ static void do_cmd_zap_rod_aux(int item)
 	}
 
 	/* Sound */
-	sound(SOUND_ZAP);
+	sound(SOUND_ZAP_ROD);
 
 	/* Increase the timeout by the rod kind's pval. -LM- */
 	o_ptr->timeout += k_ptr->pval;
@@ -2363,7 +2367,7 @@ void ring_of_power(int dir)
 			msg_print("You are surrounded by a malignant aura.");
 #endif
 
-			sound(SOUND_EVIL);
+			sound(SOUND_DRAIN_STAT);  /* (Sound substitute) No sound for evil, use drain stat sound */
 
 			/* Decrease all stats (permanently) */
 			(void)dec_stat(A_STR, 50, TRUE);
@@ -2467,7 +2471,7 @@ static void do_cmd_activate_aux(int item)
 #else
 		msg_print("You failed to activate it properly.");
 #endif
-		sound(SOUND_FAIL);
+ 		sound(SOUND_STORE2);  /* (Sound substitute) HACK! No fail sound, use strore 2*/
 		return;
 	}
 
@@ -2491,7 +2495,7 @@ static void do_cmd_activate_aux(int item)
 #endif
 
 	/* Sound */
-	sound(SOUND_ZAP);
+	sound(SOUND_ACT_ARTIFACT);
 
 	/* Have specified activation */
 	if (o_ptr->xtra2)

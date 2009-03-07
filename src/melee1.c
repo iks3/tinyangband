@@ -340,7 +340,7 @@ bool make_attack_normal(int m_idx)
 #endif
 
 					touched = TRUE;
-					sound(SOUND_TOUCH);
+					sound(SOUND_MON_TOUCH);
 					break;
 				}
 
@@ -354,7 +354,7 @@ bool make_attack_normal(int m_idx)
 
 					touched = TRUE;
 					do_stun = 1;
-					sound(SOUND_HIT);
+					sound(SOUND_MON_PUNCH);
 					break;
 				}
 
@@ -382,7 +382,7 @@ bool make_attack_normal(int m_idx)
 
 					touched = TRUE;
 					do_cut = 1;
-					sound(SOUND_CLAW);
+					sound(SOUND_MON_CLAW);
 					break;
 				}
 
@@ -396,7 +396,7 @@ bool make_attack_normal(int m_idx)
 
 					do_cut = 1;
 					touched = TRUE;
-					sound(SOUND_BITE);
+					sound(SOUND_MON_BITE);
 					break;
 				}
 
@@ -409,7 +409,7 @@ bool make_attack_normal(int m_idx)
 #endif
 
 					touched = TRUE;
-					sound(SOUND_STING);
+					sound(SOUND_MON_STING);
 					break;
 				}
 
@@ -423,7 +423,7 @@ bool make_attack_normal(int m_idx)
 
 					do_cut = 1;
 					touched = TRUE;
-					sound(SOUND_HIT);
+					sound(SOUND_MON_HIT);
 					break;
 				}
 
@@ -437,7 +437,7 @@ bool make_attack_normal(int m_idx)
 
 					do_stun = 1;
 					touched = TRUE;
-					sound(SOUND_HIT);
+					sound(SOUND_MON_BUTT);
 					break;
 				}
 
@@ -451,7 +451,7 @@ bool make_attack_normal(int m_idx)
 
 					do_stun = 1;
 					touched = TRUE;
-					sound(SOUND_CRUSH);
+					sound(SOUND_MON_CRUSH);
 					break;
 				}
 
@@ -464,7 +464,7 @@ bool make_attack_normal(int m_idx)
 #endif
 
 					touched = TRUE;
-					sound(SOUND_CRUSH);
+					sound(SOUND_MON_ENGULF);
 					break;
 				}
 
@@ -478,7 +478,8 @@ bool make_attack_normal(int m_idx)
 #endif
 
 					touched = TRUE;
-					sound(SOUND_BUY); /* Note! This is "charges", not "charges at". */
+					sound(SOUND_STORE5); /* Note! This is "charges", not "charges at". */
+					/* Is that really right? */
 					break;
 				}
 
@@ -492,7 +493,7 @@ bool make_attack_normal(int m_idx)
 #endif
 
 					touched = TRUE;
-					sound(SOUND_SLIME);
+					sound(SOUND_MON_CRAWL);
 					break;
 				}
 
@@ -504,7 +505,7 @@ bool make_attack_normal(int m_idx)
 					act = "drools on you.";
 #endif
 
-					sound(SOUND_SLIME);
+					sound(SOUND_MON_DROOL);
 					break;
 				}
 
@@ -516,7 +517,7 @@ bool make_attack_normal(int m_idx)
 					act = "spits on you.";
 #endif
 
-					sound(SOUND_SLIME);
+					sound(SOUND_MON_SPIT);
 					break;
 				}
 
@@ -530,6 +531,7 @@ bool make_attack_normal(int m_idx)
 #endif
 
 					explode = TRUE;
+					sound(SOUND_BR_FIRE); /* (Sound substitute)  No sound for explode, use breath fire */
 					break;
 				}
 
@@ -540,7 +542,7 @@ bool make_attack_normal(int m_idx)
 #else
 					act = "gazes at you.";
 #endif
-
+					sound(SOUND_MON_GAZE);
 					break;
 				}
 
@@ -552,7 +554,7 @@ bool make_attack_normal(int m_idx)
 					act = "wails at you.";
 #endif
 
-					sound(SOUND_WAIL);
+					sound(SOUND_MON_WAIL);
 					break;
 				}
 
@@ -564,7 +566,7 @@ bool make_attack_normal(int m_idx)
 					act = "releases spores at you.";
 #endif
 
-					sound(SOUND_SLIME);
+					sound(SOUND_MON_SPORE);
 					break;
 				}
 
@@ -572,9 +574,9 @@ bool make_attack_normal(int m_idx)
 				{
 #ifdef JP
 				omit_mname = -1;
-					act = "が XXX4 を発射した。";
+					act = "が XXX4 を発射した。";  
 #else
-					act = "projects XXX4's at you.";
+					act = "projects XXX4's at you."; /* What's this? */
 #endif
 
 					break;
@@ -588,7 +590,7 @@ bool make_attack_normal(int m_idx)
 					act = "begs you for money.";
 #endif
 
-					sound(SOUND_MOAN);
+					sound(SOUND_MON_BEG);
 					break;
 				}
 
@@ -598,7 +600,7 @@ bool make_attack_normal(int m_idx)
 				omit_mname = -1;
 #endif
 					act = desc_insult[randint0(8)];
-					sound(SOUND_MOAN);
+					sound(SOUND_MON_INSULT);
 					break;
 				}
 
@@ -608,7 +610,7 @@ bool make_attack_normal(int m_idx)
 				omit_mname = -1;
 #endif
 					act = desc_moan[randint0(4)];
-					sound(SOUND_MOAN);
+					sound(SOUND_MON_MOAN);
 					break;
 				}
 
@@ -625,7 +627,7 @@ bool make_attack_normal(int m_idx)
 					else
 						act = "sings 'I love you, you love me.'";
 #endif
-					sound(SOUND_SHOW);
+/* 					sound(SOUND_SHOW); */ /* No sound for show */
 					break;
 				}
 			}
@@ -1836,7 +1838,7 @@ msg_print("生命力が体から吸い取られた気がする！");
 
 			if (explode)
 			{
-				sound(SOUND_EXPLODE);
+				sound(SOUND_BR_FIRE); /* (Sound substitute) No sound for explode, use breathe fire */
 
 				if (mon_take_hit(m_idx, m_ptr->hp + 1, &fear, NULL))
 				{

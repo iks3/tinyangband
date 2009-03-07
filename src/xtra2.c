@@ -443,7 +443,7 @@ void check_quest_completion(monster_type *m_ptr)
 #else
 						msg_print("You just completed your quest!");
 #endif
-						sound(SOUND_QUEST);
+	  					sound(SOUND_LEVEL); /* (Sound substitute) No quest sound */
 						msg_print(NULL);
 					}
 
@@ -492,7 +492,7 @@ void check_quest_completion(monster_type *m_ptr)
 #else
 						msg_print("You just completed your quest!");
 #endif
-						sound(SOUND_QUEST);
+	  					sound(SOUND_LEVEL); /* (Sound substitute) No quest sound */
 						msg_print(NULL);
 					}
 				}
@@ -545,7 +545,7 @@ void check_quest_completion(monster_type *m_ptr)
 #else
 						msg_print("You just completed your quest!");
 #endif
-						sound(SOUND_QUEST);
+	  					sound(SOUND_LEVEL); /* (Sound substitute) No quest sound */
 						msg_print(NULL);
 					}
 
@@ -591,7 +591,7 @@ void check_quest_completion(monster_type *m_ptr)
 #else
 						msg_print("You just completed your quest!");
 #endif
-						sound(SOUND_QUEST);
+	  					sound(SOUND_LEVEL); /* (Sound substitute) No quest sound */
 						msg_print(NULL);
 					}
 					quest[i].cur_num = 0;
@@ -730,7 +730,7 @@ void monster_death(int m_idx, bool drop_item_okay)
 			int d_side = r_ptr->blow[i].d_side;
 			int damage = damroll(d_dice, d_side);
 
-			sound(SOUND_EXPLODE);
+			sound(SOUND_BR_FIRE); /* (Sound substitute) No sound for explode, use fire */
 			project(m_idx, 3, y, x, damage, typ, flg);
 			break;
 		}
@@ -1196,8 +1196,20 @@ bool mon_take_hit(int m_idx, int dam, bool *fear, cptr note)
 			}
 		}
 
-		/* Make a sound */
-		sound(SOUND_KILL);
+
+        /* Play a special sound if the monster was unique */
+        if ((r_ptr->flags1 & RF1_UNIQUE) && !(m_ptr->smart & SM_CLONED))
+        {
+                /* Mega-Hack -- Morgoth -- see monster_death() */
+                if (r_ptr->flags1 & RF1_DROP_CHOSEN)
+                         sound(SOUND_KILL_KING);
+                else
+                         sound(SOUND_KILL_UNIQUE);
+        } 
+		else 
+        {
+		 	 sound(SOUND_KILL);
+	    }
 
 		/* Death by Missile/Spell attack */
 		if (note)

@@ -1879,6 +1879,7 @@ static s16b m_bonus(int max, int level)
 {
 	int bonus, stand, extra, value;
 
+
 	/* Paranoia -- enforce maximal "level" */
 	if (level > TINY_MAX_DEPTH - 1) level = TINY_MAX_DEPTH - 1;
 
@@ -4322,7 +4323,7 @@ if (wizard) msg_print("(床スペースがない)");
 				msg_format("The %s%s burns in the lava.",
 					o_name, (plural ? "" : "s"));
 #endif
-				sound(SOUND_FIRE);
+				sound(SOUND_BR_FIRE); /* (Sound substitute) No sound for fire */
 			}
 
 			/* Debug */
@@ -6007,7 +6008,7 @@ bool process_warning(int xx, int yy)
 			else strcpy(o_name, "body"); /* Warning ability without item */
 			msg_format("Your %s pulsates sharply!", o_name);
 #endif
-			sound(SOUND_WARN);
+			sound(SOUND_HITPOINT_WARN);
 			disturb(0, 0);
 			return TRUE;
 		}
@@ -6027,7 +6028,7 @@ bool process_warning(int xx, int yy)
 		else strcpy(o_name, "body"); /* Warning ability without item */
 		msg_format("Your %s pulsates!", o_name);
 #endif
-		sound(SOUND_WARN);
+		sound(SOUND_HITPOINT_WARN);
 		disturb(0, 0);
 		return TRUE;
 	}

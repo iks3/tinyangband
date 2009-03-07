@@ -1119,7 +1119,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 					note_kill = (plural ? " melt!" : " melts!");
 #endif
-					sound_kill = SOUND_ACID;
+					sound_kill = SOUND_BR_ACID; /* (Sound substitute) No sound for acid */
 					if (f3 & (TR3_IGNORE_ACID)) ignore = TRUE;
 				}
 				break;
@@ -1136,7 +1136,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 					note_kill = (plural ? " are destroyed!" : " is destroyed!");
 #endif
-					sound_kill = SOUND_ELEC;
+					sound_kill = SOUND_BR_ELEC; /* (Sound substitute) No sound for elec */
 					if (f3 & (TR3_IGNORE_ELEC)) ignore = TRUE;
 				}
 				break;
@@ -1153,7 +1153,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 					note_kill = (plural ? " burn up!" : " burns up!");
 #endif
-					sound_kill = SOUND_FIRE;
+					sound_kill = SOUND_BR_FIRE; /* (Sound substitute) No sound for fire */
 					if (f3 & (TR3_IGNORE_FIRE)) ignore = TRUE;
 				}
 				break;
@@ -1170,7 +1170,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 					note_kill = (plural ? " shatter!" : " shatters!");
 #endif
-					sound_kill = SOUND_COLD;
+					sound_kill = SOUND_BR_FROST; /* (Sound substitute) No sound for cold */
 					if (f3 & (TR3_IGNORE_COLD)) ignore = TRUE;
 				}
 				break;
@@ -1187,7 +1187,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 					note_kill = (plural ? " burn up!" : " burns up!");
 #endif
-					sound_kill = SOUND_FIRE;
+					sound_kill = SOUND_BR_FIRE; /* (Sound substitute) No sound for fire */
 					if (f3 & (TR3_IGNORE_FIRE)) ignore = TRUE;
 				}
 				if (hates_elec(o_ptr))
@@ -1199,7 +1199,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 					note_kill = (plural ? " are destroyed!" : " is destroyed!");
 #endif
-					sound_kill = SOUND_ELEC;
+					sound_kill = SOUND_BR_ELEC; /* (Sound substitute) No sound for elec */
 					if (f3 & (TR3_IGNORE_ELEC)) ignore = TRUE;
 				}
 				break;
@@ -1216,7 +1216,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 					note_kill = (plural ? " burn up!" : " burns up!");
 #endif
-					sound_kill = SOUND_FIRE;
+					sound_kill = SOUND_BR_FIRE; /* (Sound substitute) No sound for fire */
 					if (f3 & (TR3_IGNORE_FIRE)) ignore = TRUE;
 				}
 				if (hates_cold(o_ptr))
@@ -1228,7 +1228,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 					note_kill = (plural ? " shatter!" : " shatters!");
 #endif
-					sound_kill = SOUND_COLD;
+					sound_kill = SOUND_BR_FROST; /* (Sound substitute) No sound for cold */
 					if (f3 & (TR3_IGNORE_COLD)) ignore = TRUE;
 				}
 				break;
@@ -1248,7 +1248,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 					note_kill = (plural ? " shatter!" : " shatters!");
 #endif
-					sound_kill = SOUND_COLD;
+					sound_kill = SOUND_BR_FROST; /* (Sound substitute) No sound for cold */
 				}
 				break;
 			}
@@ -1262,7 +1262,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 				note_kill = (plural ? " are destroyed!" : " is destroyed!");
 #endif
-				sound_kill = SOUND_DESTITEM;
+				sound_kill = SOUND_DESTROY;
 				break;
 			}
 
@@ -1274,7 +1274,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 				note_kill = (plural ? " evaporate!" : " evaporates!");
 #endif
-				sound_kill = SOUND_DESTITEM;
+				sound_kill = SOUND_DESTROY;
 				break;
 			}
 
@@ -1286,7 +1286,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 				note_kill = (plural ? " are destroyed!" : " is destroyed!");
 #endif
-				sound_kill = SOUND_DESTITEM;
+				sound_kill = SOUND_DESTROY;
 				if (f2 & (TR2_RES_CHAOS)) ignore = TRUE;
 				break;
 			}
@@ -1303,7 +1303,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #else
 					note_kill = (plural ? " are destroyed!" : " is destroyed!");
 #endif
-					sound_kill = SOUND_DESTITEM;
+					sound_kill = SOUND_DESTROY;
 				}
 				break;
 			}
@@ -1414,7 +1414,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 #ifdef JP
 						msg_print("像が活力を帯びたような気がした。");
 #else
-						msg_print("You feel the statue has worn energies.");
+						msg_print("You feel life energy pour into the statue.");
 #endif
 
 						if (!success)

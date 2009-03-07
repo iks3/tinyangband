@@ -1047,6 +1047,7 @@ bool make_attack_spell(int m_idx)
 #else
 			msg_format("%^s makes a high pitched shriek.", m_name);
 #endif
+	  		sound(SOUND_SHRIEK);
 			aggravate_monsters(m_idx);
 			break;
 		}
@@ -1062,7 +1063,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s shouts, 'Haa!!'.", m_name);
 			else msg_format("%^s throws a large rock.", m_name);
 #endif
-			sound(SOUND_ROCKET);
+ 			sound(SOUND_MISS); /* (Sound substitute) Throwing a rock isn't a rocket sound anyway */ 
 			dam = (rlev * 4) + damroll(10, 10);
 			breath(y, x, m_idx, GF_SHARDS, dam, 1, FALSE);
 			update_smart_learn(m_idx, DRS_SHARD);
@@ -1097,7 +1098,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s shoots something.", m_name);
 			else msg_format("%^s fires a rocket.", m_name);
 #endif
-			sound(SOUND_ROCKET);
+ 			sound(SOUND_MISS); /* (Sound substitute) HACK! No rocket sound available, use arrow miss */ 
 			dam = (m_ptr->hp / 4) > 800 ? 800 : (m_ptr->hp / 4);
 			breath(y, x, m_idx, GF_ROCKET, dam, 2, FALSE);
 			update_smart_learn(m_idx, DRS_SHARD);
@@ -2268,6 +2269,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles, and you hear scary noises.", m_name);
 			else msg_format("%^s casts a fearful illusion.", m_name);
 #endif
+	  		sound(SOUND_CAST_FEAR);
 
 			if (p_ptr->resist_fear)
 			{
@@ -2546,7 +2548,7 @@ bool make_attack_spell(int m_idx)
 #endif
 			}
 
-			sound(SOUND_M_HEAL);
+			sound(SOUND_RECOVER); /* No sound for M_HEAL, use recover sound */
 
 			/* Redraw (later) if needed */
 			if (p_ptr->health_who == m_idx) p_ptr->redraw |= (PR_HEALTH);
@@ -2727,6 +2729,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles, and then cackles evilly.", m_name);
 			else msg_format("%^s casts a spell and cackles evilly.", m_name);
 #endif
+	  		sound(SOUND_CREATE_TRAP);
 			(void)trap_creation();
 			break;
 		}
@@ -2787,8 +2790,113 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s magically summons %s %s.", m_name, m_poss,
 				((r_ptr->flags1) & RF1_UNIQUE ? "minions" : "kin"));
 #endif
-			sound(SOUND_SUMMON);
 			summon_kin_type = r_ptr->d_char; /* Big hack */
+			switch(summon_kin_type) /* Try to split up sounds by type */
+			{
+                  case 'A':
+                  {                 
+                       sound(SOUND_SUM_ANGEL);
+                       break;
+                  }
+                  case 'B':
+                  case 'J':
+                  case 'R':
+                  case 'q':
+                  case 'r':
+                  case 'b':
+                  case 'f':
+                  {                 
+                       sound(SOUND_SUM_ANIMAL);
+                       break;
+                  }
+                  case 'C':
+                  case 'Z':
+                  {                 
+                       sound(SOUND_SUM_HOUND);
+                       break;
+                  }
+                  case 'D':
+                  {                 
+                       sound(SOUND_SUM_HI_DRAGON);
+                       break;
+                  }
+                  case 'E':
+                  case 'H':
+                  case 'O':
+                  case 'm':
+                  case 'P':
+                  case 'n':
+                  case 'v':
+                  case 'o':
+                  case 'w':
+                  case 'p':
+                  case 'Q':
+                  case 'T':
+                  case 'X':
+                  case 'Y':
+                  case 'e':
+                  case 'g':
+                  case 'h':
+                  case 'y':
+                  case 't':
+                  case 'i':
+                  case 'j':
+                  case 'k':
+                  {                 
+                       sound(SOUND_SUM_MONSTER);
+                       break;
+                  }
+                  case 's':
+                  case 'z':
+                  case 'G':
+                  case 'V':
+                  {                 
+                       sound(SOUND_SUM_UNDEAD);
+                       break;
+                  }
+                  case 'K':
+                  case 'F':
+                  case 'I':
+                  case 'S':
+                  case 'a':
+                  case 'c':
+                  case 'l':
+                  {                 
+                       sound(SOUND_SUM_SPIDER);
+                       break;
+                  }
+                  case 'M':
+                  {                 
+                       sound(SOUND_SUM_HYDRA);
+                       break;
+                  }
+                  case 'L':
+                  case 'W':
+                  {                 
+                       sound(SOUND_SUM_HI_UNDEAD);
+                       break;
+                  }
+                  case 'U':
+                  {                 
+                       sound(SOUND_SUM_HI_DEMON);
+                       break;
+                  }
+                  case 'd':
+                  {                 
+                       sound(SOUND_SUM_DRAGON);
+                       break;
+                  } 
+                  case 'u':
+                  {                 
+                       sound(SOUND_SUM_DEMON);
+                       break;
+                  } 
+                  default:
+                  {                 
+			           sound(SOUND_SUM_MONSTER);
+                       break;
+                  }
+			}   
 
 			for (k = 0; k < 6; k++)
 			{
@@ -2815,7 +2923,7 @@ bool make_attack_spell(int m_idx)
 			else msg_format("%^s magically summons Cyberdemons!", m_name);
 			if (blind && count) msg_print("You hear heavy steps nearby.");
 #endif
-			sound(SOUND_SUMMON);
+            sound(SOUND_SUM_HI_DEMON);
 			summon_cyber(m_idx, y, x);
 			break;
 		}
@@ -2831,7 +2939,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons help!", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_MONSTER); /* HACK Should be sound specific for monster type */
 
 			for (k = 0; k < 1; k++)
 			{
@@ -2856,7 +2964,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons monsters!", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_MONSTER); /* HACK! Should be specific sound for monster type */
 
 			for (k = 0; k < 8; k++)
 			{
@@ -2881,7 +2989,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons ants.", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_SPIDER); /* Ants, not spider, but closest */
 
 			for (k = 0; k < 6; k++)
 			{
@@ -2906,7 +3014,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons spiders.", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_SPIDER); 
 
 			for (k = 0; k < 6; k++)
 			{
@@ -2931,7 +3039,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons hounds.", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_HOUND);
 
 			for (k = 0; k < 6; k++)
 			{
@@ -2956,7 +3064,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons hydras.", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_HYDRA);
 
 			for (k = 0; k < 6; k++)
 			{
@@ -2981,7 +3089,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons an angel!", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_ANGEL);
 
 			for (k = 0; k < 1; k++)
 			{
@@ -3006,7 +3114,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons a hellish adversary!", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_DEMON);
 
 			for (k = 0; k < 1; k++)
 			{
@@ -3031,7 +3139,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons an undead adversary!", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_UNDEAD);
 
 			for (k = 0; k < 1; k++)
 			{
@@ -3056,7 +3164,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons a dragon!", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_DRAGON);
 
 			for (k = 0; k < 1; k++)
 			{
@@ -3081,7 +3189,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons greater undead!", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_HI_UNDEAD);
 
 			for (k = 0; k < 8; k++)
 			{
@@ -3106,7 +3214,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons ancient dragons!", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_HI_DRAGON);
 
 			for (k = 0; k < 8; k++)
 			{
@@ -3131,7 +3239,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons a hellish adversary!", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_HI_DEMON);
 
 			for (k = 0; k < 1; k++)
 			{
@@ -3156,7 +3264,7 @@ bool make_attack_spell(int m_idx)
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons special opponents!", m_name);
 #endif
-			sound(SOUND_SUMMON);
+			sound(SOUND_SUM_UNIQUE);
 
 			for (k = 0; k < 8; k++)
 			{
