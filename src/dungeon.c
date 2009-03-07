@@ -1073,7 +1073,7 @@ static void play_ambient_sound(void)
         if (dun_level == 0) 
         {
                 /* Hack - is it daytime or nighttime? */
-                if (turn % (10L * TOWN_DAWN) < TOWN_DAWN / 2)
+                if (turn % (10L * TOWN_DAWN) < (10L * TOWN_DAWN) / 2)
                 {
                         /* It's day. */
                         sound(SOUND_AMBIENT_DAY);
@@ -1386,9 +1386,9 @@ static void process_world(void)
 	/*** Check the Time and Load ***/
 
     /* Play an ambient sound at regular intervals. */
-    if (!(turn % ((10L * TOWN_DAWN) / 4)))
+    if (!(turn % (TOWN_DAWN / 4)))
     {
-          play_ambient_sound(); /* Is this reached? */
+          play_ambient_sound();
     }
 
 	if (!(turn % 1000))
