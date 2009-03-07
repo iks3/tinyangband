@@ -465,7 +465,9 @@ static grouper group_artifact[] =
 	{ TV_SWORD,             "Edged Weapons" },
 	{ TV_POLEARM,           "Polearms" },
 	{ TV_HAFTED,            "Hafted Weapons" },
+	{ TV_DIGGING,           "Shovels/Picks" },
 	{ TV_BOW,               "Bows" },
+	{ TV_ARROW,             "Ammo" },
 
 	{ TV_SOFT_ARMOR,        "Body Armor" },
 	{ TV_HARD_ARMOR,        NULL },
