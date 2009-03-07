@@ -869,7 +869,7 @@ static bool cmd_racial_power_aux(s32b command)
 				cave_type       *c_ptr;
 				monster_type    *m_ptr;
 
-				for (dir = 0; dir <= 9; dir++)
+				for (dir = 1; dir <= 9; dir++)
 				{
 					y = py + ddy[dir];
 					x = px + ddx[dir];
@@ -910,7 +910,27 @@ static bool cmd_racial_power_aux(s32b command)
 			}
 			break;
 		case VAR_YAVANNA:
-			(void)lite_area(0, 0);
+			if (command == -10)
+			{
+				for (dir = 1; dir <= 9; dir++)
+				{
+					int y = py + ddy[dir];
+					int x = px + ddx[dir];
+
+					if (cave_floor_bold(y, x))
+					{
+						cave[y][x].feat = FEAT_GRASS;
+						cave[y][x].info |= (CAVE_GLOW);
+						note_spot(y, x);
+						lite_spot(y, x);
+					}
+				}
+			}
+			else if (command == -11)
+			{
+				(void)project_hack(GF_LITE_WEAK, plev * 2);
+				(void)lite_area(0, 0);
+			}
 			break;
 		case VAR_NIENNA:
 			(void)project_hack(GF_DISP_ALL, plev);
@@ -1340,7 +1360,7 @@ void do_cmd_racial_power(void)
 			strcpy(power_desc[num].name, "Dispel undead");
 #endif
 			power_desc[num].level = 10;
-			power_desc[num].cost = 15;
+			power_desc[num].cost = 10;
 			power_desc[num].stat = A_WIS;
 			power_desc[num].fail = 10;
 			power_desc[num++].number = -10;
@@ -1393,15 +1413,25 @@ void do_cmd_racial_power(void)
 			break;
 	case VAR_YAVANNA:
 #ifdef JP
-			strcpy(power_desc[num].name, "ライト・エリア");
+			strcpy(power_desc[num].name, "草地生成");
 #else
-			strcpy(power_desc[num].name, "Light Area");
+			strcpy(power_desc[num].name, "Create grass");
+#endif
+			power_desc[num].level = 1;
+			power_desc[num].cost = 2;
+			power_desc[num].stat = A_DEX;
+			power_desc[num].fail = 6;
+			power_desc[num++].number = -10;
+#ifdef JP
+			strcpy(power_desc[num].name, "フラッシュ・ライト");
+#else
+			strcpy(power_desc[num].name, "Flash Light");
 #endif
 			power_desc[num].level = 5;
 			power_desc[num].cost = 5;
 			power_desc[num].stat = A_CHR;
 			power_desc[num].fail = 6;
-			power_desc[num++].number = -10;
+			power_desc[num++].number = -11;
 			break;
 	case VAR_NIENNA:
 #ifdef JP
