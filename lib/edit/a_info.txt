@@ -985,7 +985,7 @@ D:であったフェアノールの韋駄天の靴で、モルゴスに
 D:隷属させられた中つ国を奪い返す彼の英雄的挑戦の助けとなった。
 
 #JT# ダルイサリオンから変更
-N:52:踊り手ネッサの
+N:52:踊り手ネスサの
 E:of Nessa
 I:30:2:5
 W:10:25:10:200000
@@ -994,7 +994,7 @@ A:83
 F:HIDE_TYPE | SPEED | DEX | CHR | ACTIVATE | FREE_ACT |
 F:RES_NETHER | SUST_CHR | SUST_CON
 D:$A pair of shoes of Nessa.
-D:ヴァエリアの一人、踊り手ネッサの靴だ。この軽い靴を履けば、鹿のように
+D:ヴァエリアの一人、踊り手ネスサの靴だ。この軽い靴を履けば、鹿のように
 D:しなやかに、矢のように早く駆けることができる。
 
 # The Pair of Metal Shod Boots of Thror
