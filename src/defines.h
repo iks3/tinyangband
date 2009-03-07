@@ -51,7 +51,7 @@
 #define FAKE_VERSION   0
 #define FAKE_VER_MAJOR 0
 #define FAKE_VER_MINOR 0
-#define FAKE_VER_PATCH 1
+#define FAKE_VER_PATCH 2
 
 #define ANGBAND_2_8_1
 #define ZANGBAND

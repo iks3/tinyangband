@@ -1,5 +1,10 @@
 === TinyAngband History and Information ===
 
+--- 0.0.2 ---
+Help files are translated (Thanks to PaulBlay)
+Many improving of game balances
+And bug fix.
+
 --- 0.0.1 ---
 8x8 tiles
 bug fix, etc.
