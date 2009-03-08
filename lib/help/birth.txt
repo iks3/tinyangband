@@ -1,46 +1,50 @@
 === Creating a Character ====
 
-You should create your character when you start TinyAngband game.
-When you create it, you must set following attributes.
+The first thing you need to do when playing TinyAngband is create your 
+character.  In creating him, you must set following attributes.
 (1) Sex
 (2) Race
 (3) Class
 
 --- Sex ---
 
-Male, female or random ? You know, random is not sex.
+Male, female or random. (Although 'random' isn't a sex ...)
 
 --- Race ---
 
-Some races are in TinyAngband. You may select your favorite race.
-It is better to select a race that fits a class you want to play.
+There are a number of races in TinyAngband, as far as possible they 
+have been cut down to ones appearing in the Lord of the Rings. You 
+may select your race according to taste but I think it's best to pick
+a race that works well with the class you want to play.
 
 --- Class ---
 
-Here is major 6 classes. You may select your favorite class.
+Here are 6 well known classes. You may select your favorite class.
 
 Warrior
-     Easiest class, imho. He/she is good at melee attack and shooting.
-     He/she has large amout of HP, so you can survive easy.
+     Easiest class, imho. Good at melee attack and shooting and with 
+     a lot of HP, which makes it easier to survive.
 
 Mage
-     This spell caster can travel safety in the cave if you could 
-     get over early levels.
+     This spell caster can travel safely in the cave if you can get 
+     through the early levels alive.  Suitable for more experienced
+     players.
 
 Priest
-     He/she is very powerful and safety because of life spells.
-     If you put too much confidence in him/her, he/she dies quickly.
+     Life spells make the Priest a powerful and safe seeming option 
+     once past the early levels, but you get overconfident you can 
+     easily snuff it.
 
-Paradin
-     He/she is minor warrior, but his/her adventure become safety
-     when he/she gets large amount of wisdom. Be careful about traps.
+Paladin
+     A weak warrior, but given high enough wisdom can be a very safe
+     class.  Be careful of traps.
 
 Warrior-Mage
-     He/she is good adventurer if you support him/her with his/her
-     spells.
+     Make decent adventurers if you use spells well to support them.
 
 Archers
-     You can win easy if you are professional player.
+     I think the experienced player will find this class easy to win
+     with.
 
 --- Magic Realm ---
 
@@ -52,22 +56,26 @@ Sorcery: Mages and Warrior-Mages can cast.
 --- Stats ---
 
 TinyAngband system rolls your character's stats automatically.
-If you dissatisfy them, push 'r' to reroll it.
+If you dislike them, push 'r' to reroll.
 
 --- Patron ---
 
-When autorolling, your patron is also decided automatically from 14 
-patrons.
-If you dissatisfy him/her, (omittied
+When rolling you stats, your patron is also decided automatically from 
+14 patrons.
+If you dislike (... ditto ...)
 
 --- Undo ---
 
-Push 'S' to start creating a charactore again.
+Push 'S' to start creating a character again.
 
 --- Quick Start ---
 
-If you want to create same character as previous character, answer 'Y'.
+If you want to create a character the same as a previous character, answer 'Y'.
 
 --- Startup Options ---
 
-You must not set them especially.
+No particular need to set these.
+
+-- 
+Updated      : XAngband DevTeam
+Late Updated : 8 March, 2009

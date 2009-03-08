@@ -1,21 +1,55 @@
 === Attacking ===
 
---- Melee attack ---
+--- Melee attacks ---
 
-If you walk toward a monster, you can attack it by your weapon.
-If your to-hit bonus is larger, you can hit it more.
-If its AC is larger, it can avoid your attacks easier.
+If you walk into a monster, you can attack it with your weapon.
+Your chance to hit is determined by your 'to hit' bonus from 
+equipment etc. and the monster's AC. The higher the 'to-hit' bonus 
+the easier it is to hit, the higher the monster's AC is the harder.
+
+On hitting the damage is decided by the weapon's dice, 'to damage' 
+bonus after adjustment for AC protection.  'Slay' effects and 
+any elemental branding are included in the calculations.  'Slay'
+and elemental effects only apply to the dice part.
 
 Weapons that are heavy and have large dice is good for melee attacks.
 
+There are also 'critical hits' that depend both on the 'to hit' 
+bonus and on the weight of the weapon.  This also applies to the 
+dice portion only.  The heavier the weapon the harder the critical
+hits are.
+
+Thus the heavier, and the larger the base dice, the stronger the 
+weapon is (although you should also take into account how many blows
+it can deal).
+
+
 --- Shooting ---
 
-When you equip a sling, a bow or a crossbow, you can fire a shot an 
-arrow or a bolt.
+If you fire an arrow or shot with sling, bow or crossbow equiped 
+you carry out a ranged attack.  Note that this is NOT the same as 
+the 'throw' command.
+
+Whether you hit depends both on the missile weapon equiped and 
+on the ammunition used, but damage is only dependent on the 
+missile.  
+
+By moving the target off-position it is possible to hit monsters
+in the missile's path (even if they are out of sight, invisible, 
+etc.)
+
 
 --- Spell casting ---
 
 If you cast attack spells, you can attack monsters by spells.
-There are bolts, beams, and balls in attack spells.
+Well, obviously.  
 
-You can attack monsters by magic devices as same as attack spells.
+Ball, beam and breath attacks pass over monsters but 
+a bolt spell will stop as it hits the first monster in the way.
+
+There are also some rods and wands that attack in the same way
+as attack spells.
+
+-- 
+Updated      : XAngband DevTeam
+Late Updated : 8 March, 2009

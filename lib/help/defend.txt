@@ -5,9 +5,35 @@
 AC means both of avoidance and defence power.
 When you depend on melee attacks, you should keep high AC.
 
+AC(Armor Class) is a value determined both by dexterity and
+equipment bonuses.  It indicates both ability to absorb damage
+from hits and to avoid being hit.
+
+If AC is high you don't just find it easy to avoid hits from
+the enemy the 'un-branded' (non-elemental) damage from hits
+is also reduced.
+
+For melee classes like warriors its best to have high AC.
+
+
 --- Resistance ---
 
-Resistances prevent dameges by spells or breathes according to their 
-types.
+Resistance applies not just to branded melee attacks, but also shows
+protection from magic and breath attacks.  Damage from attack types
+you have resistance to are reduced by on half to two thirds.
 
-If you have no resistance, you can die easily.
+You can also prevent secondary effects from branded attacks.  
+Avoiding confusion, making it less likely that items burn, etc.
+
+Finally the five basic resistances Acid, Cold, Electricity, Flame and 
+Poision can have double-resistances by using magic or potion effects
+on top of those provided by equipment.  Very useful indeed.
+
+--- Magic Defence ---
+
+If your magic defence is high you will be able to better block 
+effects like curses and 'hand of destruction'.
+
+-- 
+Updated      : XAngband DevTeam
+Late Updated : 8 March, 2009

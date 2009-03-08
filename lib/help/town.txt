@@ -1,7 +1,7 @@
 === The Town and Wilderness ===
 
-The Town is a base of your adventure and is also useful place.
-Move on a character if you want to enter shops.
+The Town is a base of your adventure and is also handy location.
+Move your character onto a symbol to enter the shop there.
 
 --- Shops ---
 
@@ -11,17 +11,32 @@ Move on a character if you want to enter shops.
 4   Temple. You can buy healing potions and some scrolls.
 5   Alchemy shop. You can buy scrolls.
 6   Magic user shop. You can buy common magic devices and rings, etc.
-7   Black Market. You must pay more money! But it is important.
+7   Black Market. You must pay more money! But it's a vital place.
 8   Home. Your home, or storehouse.
-9   Atelier. Do you like statues ??
+9   Atelier. Do you like statues?? 
 +   Other buildings.
 >   The Cave. Enter and kill Morgoth!
 
 --- Other buildings ---
 
 Inn: Eating and sleeping.
-Casino: Enjoying.
+Casino: Playing.
 Weaponmaster: Enchanting weapons and armors.
 Hunters guild: Enchanting fire weapons.
-Magicmaster: Charging, percepting, and recalling.
-Inner Temple: Restoreration.
+Magicmaster: Charging, identifying, and recalling.
+Inner Temple: Restoration.
+
+--- FAQ ---
+
+Q. There's no wilderness?
+A. Correct, there also is only one town.
+
+Q. There aren't any fixed quests?
+A. That's right. You just have to kill Sauron and Morgoth.
+
+Q. It's a pain in the butt town-scumming the black market.
+A. Put up with it.
+
+-- 
+Updated      : XAngband DevTeam
+Late Updated : 8 March, 2009

@@ -1,17 +1,19 @@
 === Options ===
 
-Introduces only important options.
-
+Press the '=' key to set options.  Just the important options are
+explained below.  There's no need to worry about options not mentioned.
 
 --- Option Set 1 -- Input Options ---
 
 Rogue-like commands    [rogue_like_commands]
-    Selects the "roguelike" command set (see "command.txt" for info).
-  
+    Selects the "roguelike" command set (see "command.txt"[1] for info).
+
 Activate quick messages    [quick_messages]
     Allows the use of any keypress as a response to the "-more-" prompt
     (useful for monster farming). Allows most keys to mean "no" to any
-    "[y/n]" prompt.
+    "[y/n]" prompt.  If not set '-more-' must be cleared by ENTER.
+    If you tend die a lot from pressing keys like mad this might be 
+    good to say 'NO' to.
 
 Automatically clear '-more-' prompts    [auto_more]
     Automatically skips the "-more-" prompt. Skip no "[Y/N]" prompt.
@@ -20,9 +22,9 @@ Automatically clear '-more-' prompts    [auto_more]
 --- Option Set 2 -- Output Options ---
 
 Center map while walking (*slow*)    [center_player]
-     The map always centers on the player with this option on. With it off, it
-     is divided into 25 sections, with coordinates (0,0) to (4,4), and will 
-     show one section at a time.
+     The map always centers on the player with this option on. With 
+     it off, it is divided into 25 sections, with coordinates (0,0) 
+     to (4,4), and will show one section at a time.
 
 Describe obj's all resistances by abbreviation  [abbrev_all]
     When an *identified* equipment is displayed, an abbreviation
@@ -83,3 +85,38 @@ Ignore quick_message when hitpoint warning    [prompt_hitpoint]
 
 Don't skip -more- if you're hurt    [stop_more]
     Doesn't allow -more- to be skipped if you have taken damage.
+
+--- D -- Base Delay ---
+
+The "delay_factor" value, if non-zero, is used to "slow down" the game.
+Experts should set this to 8ms or so - it will be easier to notice
+damage from breath and magic attacks.
+
+--- P -- Auto-picker/destroyer ---
+
+Auto-picker/destroyer editor
+    This starts a text editor with contextual help for editing the pref file
+    that determines how the auto-picker and auto-destroyer functions work.
+
+--- B - Birth Options ---
+
+Browse only.  These are set during character creation.
+
+(Ironman)
+    These settings are used by 'ironmen' so I think no explanation is 
+    required.
+
+Use Autoroller (autoroller)
+    Please select 'YES'.  If your machine is just too slow, or if you are
+    masochistic enough to want to play with a total wimp then you can 
+    select 'NO'.
+
+Run auto-roller slowly    [delay_autoroll]
+    If you have display trouble because your PC is too slow to cope then
+    you can select 'NO'.  Nowadays machines should have no trouble.
+
+***** [1] jcommand.txt
+
+-- 
+Updated      : XAngband DevTeam
+Late Updated : 8 March, 2009

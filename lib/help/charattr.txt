@@ -4,25 +4,27 @@
 
 6 stats are important.
 
-Str: Affects blows and damages of melee attacks, and weights you can have.
-Int: Affects MP and cast ability of Sorcery, and using magic devices.
-Wis: Affects MP and cast ability of Life, and magical deffence.
-Dex: Affects blows and accuracy of melee attacks, and AC.
+Str: Affects blows and damages of melee attacks, and weight you can carry.
+Int: Affects MP and ability to cast for Sorcery, and using magic devices.
+Wis: Affects MP and ability of cast for Life, and magical deffence.
+Dex: Affects number of blows and accuracy of melee attacks, and AC.
 Con: Affects your HP.
 Chr: Shopping.
 
 --- Experience ---
 
-Your character levels up when he/she gets much EXP.
-He/she gain more HP and MP, one stat, and your patron reward you.
+Your character levels up when they gets enough EXP.
+They'll gain more HP and MP, increase one stat, and receive a reward from 
+their patron.
 
 --- Money (AU) ---
 
-Value of your golds and other metals or jewels.
+Value of your gold and other precious metals and jewels.
 
 --- AC (Armor Class) ---
 
-Quality of avoidance and deffence of melee attacks.
+Affects both ability to avoid and defend against blows.  When high you are
+well protected from melee attacks.
 
 --- HP (Hit Point) ---
 
@@ -30,8 +32,15 @@ When HP become less than 0, you die.
 
 --- SP (Spell Point) ---
 
-Need to cast spells.
+Magic power.  You need it to cast spells.
 
 --- Other attributes ---
 
-Omitted. :-)
+There are various other attributes, particularly of note are ...
+
+Stealth: When high monsters are slow to wake up.
+Speed: When high you can move faster than the enemy.
+
+-- 
+Updated      : XAngband DevTeam
+Late Updated : 8 March, 2009

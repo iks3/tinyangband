@@ -1,5 +1,10 @@
 === The Dungeon ===
 
+If you go down the town staircase, '>', that's the dungeon.  Just keep
+heading down.
+
+When you've bought equipment don't forget to put it on with the 
+'w'ield/wear command.
 
 --- Features that do not block line of sight ---
  
@@ -20,16 +25,39 @@
   +   A locked door                   *   Treasure in wall / Pattern
   +   A jammed door                   :   A pile of rubble
 
+
 --- Other characters ---
 
-Monsters, golds or objects. 'L'ook them.
+Monsters, golds or objects. 'L'ook at them if you don't know what 
+they are.
+
+
+--- Secret doors, traps ---
+
+Symbols are also hidden in the wall and floor. Use the 's' command,
+spells and magic items to find them.
+
 
 --- Feeling ---
 
 Bad feelings are also good feelings.
 
+Often it will be because of a unique or out of depth monsters but
+there will also often be an ego item or artifact dropped on the 
+floor.
+
+
 --- Random Quests ---
 
-Unique monsters gaurd a floor at every 5 floors.
-You try to defeat them once. If you succeed, you can get some excellent
-objects.
+At fixed intervals the floor is guarded by a unique monster.  
+if you defeat them you'll get some excellent items.  However if you
+run away (go to another floor0 you will not get the reward but will
+avoid that quest.
+
+Random quests are generated on the 25th, 20th, 15th, 10th and 5th 
+floors.  Depending on the number chosen when you created your 
+character they are set from the deepest floor up.
+
+-- 
+Updated      : XAngband DevTeam
+Late Updated : 8 March, 2009

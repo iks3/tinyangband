@@ -17,32 +17,77 @@
 
 --- Inventory ---
 
-You can have objects in your sack, and can wield some objects on your 
-body. If your inventory is full, you can pick up no more objects on a 
-floor.
+You can keep objects in your backpack, and wear or wield more objects 
+on your person. The backpack can hold only 23 different items, and 
+there are 12 'slots' in your equipment list. 
+
+When your inventory is full you can't pick up anything from the floor
+and if you take off an item of equipment it falls to the ground.
+
+To empty your backpack, use items, throw them away, sell them or 
+leave them at home.
+
+Also if you have several of the same object type they may 'stack' 
+together in one inventory slot (potions, ammo, rings, etc.)
+
+Depending on the local geography objects may get lost or burnt up when
+they drop onto the ground, so take care.
 
 --- Perception ---
 
-You can know about objects with perception.
-If you want to know about them perfectly, do *perception*.
+When you've just picked up an item if you don't identify it you'll 
+know practically nothing about its capabilities.  There are times
+you can work it out by using them but in general it's best to 
+not to risk it.
+
+Item identificaton can be done by the identify spell, scroll, or 
+staff.  Also with *identify* scrolls you can find out absolutely
+everything about its abilities.  With *identify* you can use the 
+'I' command[1] to check back on that information.
+
 
 --- Abilities of objects ---
 
-[A/The/Number] Object's name (+Hit, +Dam) [+AC] (+skill)
 
 Do *perception* for more informations.
 
+Weapons and armor, rings and amulets display their bonus values
+in the following way:
+
+[A/The/Number] Object's name (+Hit, +Dam) [AC base, +AC] (+skill)
+
+To hit bonus, damage bonus are applied to melee and ranged 
+attacks. Base AC and AC bonus are added to the AC value.
+Ability bonuses increas (or decrease if negative) some attribute.
+For more detail use *identify*.
+
 --- inscription ---
 
-Some inscription is very helpful.
+Some inscription can be very helpful.
 
-@f0  -> When 'f' command, it can be selected by pushing '0'.
-=g   -> Automatically picking up.
-!x   -> When x command, it confirms.
-!!   -> Informs recharging complete.
-%    -> Shows extra abilities of an object.
-%all -> Shows all abilities of an object.
+@f0  -> Item is selected with 'f' command by pressing '0'.
+=g   -> Is automatically picked up.
+!x   -> Using the x command produces a prompt for confirmation.
+!!   -> Informs when recharging is complete.
+%    -> Shows extra abilities of an object (as abbreviations).
+%all -> Shows all abilities of an object (as abbreviations).
+.    -> Stops prompting for teleport (not on cursed items)
+
+Ex: @f0-g -> Selected as ammo with 0, walk over it to 
+   automatically pick it up again.
+Ex: !d!k!v!! -> Checks if you really want to drop / kill / 
+   throw it. Lets you know when it is recharged.
 
 --- Curse ---
 
 When your equipments are cursed, you gain some penalties.
+
+Items can have curses, or be cursed.  When cursed there may be
+penalties to the 'to hit' value, AC etc.  I recommend 'remove
+curse' at such times.
+
+***** [1] command.txt
+
+-- 
+Updated      : XAngband DevTeam
+Late Updated : 8 March, 2009

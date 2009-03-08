@@ -1,47 +1,61 @@
-TinyAngband is a variant that aims at winning in a short time.
-It based on XAngband, but many features were deleted.
-Morgoth the Lord of Darkness, you know you must defeat, is at 27th
-floor.
+TinyAngband is a variant aimed at quick victory. It based on XAngband,
+but many features have been removed.  Your ultimate enemy, Morgoth the
+Lord of Darkness, is on the 27th floor.
 
-=== Purposes of this game ===
+=== Game objectives ===
 
 1. Go to the general store.
 2. Buy a Lantern.
 3. Kill Morgoth.
 
-If you kill Morgoth, you will win. Then you may do Qy@.
+If you kill Morgoth, you will win. Then you may do retire with Qy@.
 
 
 --- An Overview ---
 
-Angband variants is very fun, and they often steal our time very much.
-We are often tired of adventures, especially search of excellent 
-objects. If you play TinyAngband, you can win in a short time with 
-enough adventures.
+Roguelike games have come to be quite well known, and this is another
+such.  Angband variants are great fun, and they often take a lot of 
+our time and it's not uncommon to lose interest half-way through.
+If you play TinyAngband, you can win in a short time while still 
+facing many adventures along the way.
 
-At first, you should make your charactor.
-Select a race and a class. A magic realm is decided depend on your 
-class.
+First off you need to make your character.  Select a race and a class. 
+At present your magic realm is pretty much decided for you depending
+on your class.
 
-Autoroller runs to decide stats of your charactor and decides your
-valar patron. If you are displeased with him/her, push 'r' to reroll.
+Unlike other games there is no autoroller.  Your character has 
+attribute requirements that depend on the class chosen and is rolled
+up to meet them.  Your valar patron is also chosen at this time, if
+you are displeased with him or her, then push 'r' to reroll.
 
-After you input a name and a personal history of your charctor,
+After you input a name and a personal history for your character,
 the game will start.
 
-In you first play, you should set options, especially auto destroy 
-options and warning options.
+When you first play, you should set options, especially auto-destroy 
+options and HP warning options.  For people who tend to careless 
+deaths setting the base delay to 8ms or so might stop you getting 
+killed by magic as often.
 
 Then, go to the general store ('1' on the screen).
 
-After buying a lantern, go down the dungeon. Quest monsters are in 5th,
-10th, 15th, 20th and 25th floor.
+After buying a lantern, all you have to do is dive. If you had 5 
+random quests then quest monsters will be waiting on the 5th, 10th, 
+15th, 20th and 25th floor.
 
 If you defeat Sauron at 26th floor, the stair to 27th floor will 
 appear. Go down and kill morgoth at 27th floor.
 
-When Current HP become under 0, your charactor die. Play next game.
+You can keep on playing after you win, but there isn't really much to
+say for it so you should probably use the retire command (Qy@)
+
+When your Current HP drops under 0, your charactor dies. Give up and 
+play again with a new character.
 
 --- Developers ---
-Mainly iks maintain TinyAngband.
-Many Japanese IRC #gridbug guys help it.
+iks is the main maintainer of TinyAngband.
+Many Japanese IRC #gridbug guys have helped out (particularly with 
+gameplay testing).
+
+-- 
+Updated      : XAngband DevTeam
+Late Updated : 8 March, 2009
