@@ -30,10 +30,10 @@ static const char *spell_tips[MAX_REALM][MAX_SPELLS] =
 		"体力を大幅に回復させ、負傷と朦朧状態も全快する。",
 		"アイテムにかかった弱い呪いを解除する。",
 		"すべてのステータスと経験値を回復する。",
-		"邪悪なモンスターの攻撃を防ぐバリアを張る。",
 		"周辺の地形を感知する。",
 		"視界内の全ての邪悪なモンスターにダメージを与える。",
 		"極めて強力な回復呪文で、負傷と朦朧状態も全快する。",
+		"武器を祝福する。強力な呪いのかかった武器には抵抗される。アーティファクトを祝福しようとして失敗すると劣化する。",
 		"閃光の球を放つ。",
 	},
 	{
@@ -69,10 +69,10 @@ static const char *spell_tips[MAX_REALM][MAX_SPELLS] =
 		"Heals cut, stun and HP greatly.",
 		"Removes normal curses from equipped items.",
 		"Restores all stats and experience.",
-		"Gives aura which protect you from evil monster's physical attack.",
 		"Maps nearby area.",
 		"Damages all evil monsters in sight.",
 		"Much powerful healing magic, and heals cut and stun completely.",
+		"Blesses a weapon. Heavy cursed weapons resist it. Artifacts are disenchanted when blessing is failed.",
 		"Fires a ball of light.",
 	},
 	{
