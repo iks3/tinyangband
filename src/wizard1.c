@@ -2577,7 +2577,7 @@ static void spoil_mon_info(cptr fname)
 			for (i = 0; i < vn; i++)
 			{
 #ifdef JP
-				if ( n != 0 ) spoil_out("、");
+				if ( i != 0 ) spoil_out("、");
 #else
 				if (!i) spoil_out(" which ");
 				else if (i < vn-1) spoil_out(", ");
@@ -2888,7 +2888,7 @@ static void spoil_mon_info(cptr fname)
 			for (i = 0; i < vn; i++)
 			{
 #ifdef JP
-				if ( n != 0 ) spoil_out("し、");
+				if ( i != 0 ) spoil_out("し、");
 #else
 				if (!i) spoil_out(" cannot be ");
 				else if (i < vn-1) spoil_out(", ");
