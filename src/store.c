@@ -2940,12 +2940,159 @@ static bool sell_haggle(object_type *o_ptr, s32b *price)
 
 
 /*
+ * Return the quantity of a given item in the pack.
+ * Code taken from Angband 3.1.0 under Angband license
+ */
+static int find_inven(object_type *o_ptr)
+{
+	int j;
+	int num = 0;
+ 
+	/* Similar slot? */
+	for (j = 0; j < INVEN_PACK; j++)
+	{
+		object_type *j_ptr = &inventory[j];
+
+		/* Require identical object types */
+		if (!j_ptr->k_idx || o_ptr->k_idx != j_ptr->k_idx) continue;
+
+		/* Analyze the items */
+		switch (o_ptr->tval)
+		{
+			/* Chests */
+			case TV_CHEST:
+			{
+				/* Never okay */
+				return 0;
+			}
+
+			/* Food and Potions and Scrolls */
+			case TV_FOOD:
+			case TV_POTION:
+			case TV_SCROLL:
+			{
+				/* Assume okay */
+				break;
+			}
+
+			/* Staves and Wands */
+			case TV_STAFF:
+			case TV_WAND:
+			{
+				/* Assume okay */
+				break;
+			}
+
+			/* Rods */
+			case TV_ROD:
+			{
+				/* Assume okay */
+				break;
+			}
+
+			/* Weapons and Armor */
+			case TV_BOW:
+			case TV_DIGGING:
+			case TV_HAFTED:
+			case TV_POLEARM:
+			case TV_SWORD:
+			case TV_BOOTS:
+			case TV_GLOVES:
+			case TV_HELM:
+			case TV_CROWN:
+			case TV_SHIELD:
+			case TV_CLOAK:
+			case TV_SOFT_ARMOR:
+			case TV_HARD_ARMOR:
+			case TV_DRAG_ARMOR:
+			{
+				/* Fall through */
+			}
+
+			/* Rings, Amulets, Lites */
+			case TV_RING:
+			case TV_AMULET:
+			case TV_LITE:
+			{
+				/* Require both items to be known */
+				if (!object_known_p(o_ptr) || !object_known_p(j_ptr)) continue;
+
+				/* Fall through */
+			}
+
+			/* Missiles */
+			case TV_BOLT:
+			case TV_ARROW:
+			case TV_SHOT:
+			{
+				/* Require identical knowledge of both items */
+				if (object_known_p(o_ptr) != object_known_p(j_ptr)) continue;
+
+				/* Require identical "bonuses" */
+				if (o_ptr->to_h != j_ptr->to_h) continue;
+				if (o_ptr->to_d != j_ptr->to_d) continue;
+				if (o_ptr->to_a != j_ptr->to_a) continue;
+
+				/* Require identical "pval" code */
+				if (o_ptr->pval != j_ptr->pval) continue;
+
+				/* Require identical "artifact" names */
+				if (o_ptr->name1 != j_ptr->name1) continue;
+
+				/* Require identical "ego-item" names */
+				if (o_ptr->name2 != j_ptr->name2) continue;
+
+				/* Lites must have same amount of fuel */
+				else if (o_ptr->timeout != j_ptr->timeout && o_ptr->tval == TV_LITE)
+					continue;
+
+				/* Require identical "values" */
+				if (o_ptr->ac != j_ptr->ac) continue;
+				if (o_ptr->dd != j_ptr->dd) continue;
+				if (o_ptr->ds != j_ptr->ds) continue;
+
+				/* Probably okay */
+				break;
+			}
+
+			/* Various */
+			default:
+			{
+				/* Require knowledge */
+				if (!object_known_p(o_ptr) || !object_known_p(j_ptr)) continue;
+
+				/* Probably okay */
+				break;
+			}
+		}
+
+
+		/* Different pseudo-ID statuses preclude combination */
+		if (o_ptr->feeling != j_ptr->feeling) continue;
+
+
+		/* Different flags */ 
+		if (o_ptr->art_flags1 != j_ptr->art_flags1 ||
+			o_ptr->art_flags2 != j_ptr->art_flags2 ||
+			o_ptr->art_flags3 != j_ptr->art_flags3)
+			continue;
+
+		/* They match, so add up */
+		num += j_ptr->number;
+	}
+
+	return num;
+}
+
+
+/*
  * Buy an item from a store 			-RAK-
  */
 static void store_purchase(void)
 {
 	int i, amt, choice;
 	int item, item_new;
+	int num;
 
 	s32b price, best;
 
@@ -3040,11 +3187,10 @@ static void store_purchase(void)
 	if (!inven_carry_okay(j_ptr))
 	{
 #ifdef JP
-msg_print("そんなにアイテムを持てない。");
+		msg_print("そんなにアイテムを持てない。");
 #else
 		msg_print("You cannot carry that many different items.");
 #endif
-
 		return;
 	}
 
@@ -3059,15 +3205,57 @@ msg_print("そんなにアイテムを持てない。");
 		    (o_ptr->ident & IDENT_FIXED))
 		{
 #ifdef JP
-msg_format("一つにつき $%ldです。", (long)(best));
+			msg_format("一つにつき $%ldです。", (long)(best));
 #else
 			msg_format("That costs %ld gold per item.", (long)(best));
 #endif
-
 		}
 
+		if (cur_store_num == STORE_HOME)
+		{
+			amt = o_ptr->number;
+		}
+		else
+		{
+			/* Check if the player can afford any at all */
+			if ((u32b)p_ptr->au < (u32b)best)
+			{
+				/* Tell the user */
+#ifdef JP
+				msg_print("お金が足りません。"); /* Even if haggling was on this money is not sufficient to buy one */
+#else
+				msg_print("You do not have enough gold for this item.");
+#endif
+				/* Abort now */
+				return;
+			}
+	
+			/* Work out how many the player can afford */
+			amt = p_ptr->au / best; /* Can this overflow ? */
+
+			/* Paranoia version below */
+			if (amt > o_ptr->number) amt = o_ptr->number;
+		}
+
+		/* Find the number of this item in the inventory */
+		if (!object_aware_p(o_ptr))
+			num = 0;
+		else
+			num = find_inven(o_ptr);
+
+#ifdef JP
+		strnfmt(o_name, sizeof(o_name), "いくつですか？(%s最大 %d個) ",  
+			(num ? format("現在 %d個，", num) : ""),
+			amt); 
+#else
+		strnfmt(o_name, sizeof(o_name), "%s how many%s? (%smax %d) ",
+			(cur_store_num == STORE_HOME) ? "Take" : "Buy",
+			(num ? format("you have %d, ", num) : ""),
+			amt);
+#endif
+
 		/* Get a quantity */
-		amt = get_quantity(NULL, o_ptr->number);
+		amt = get_quantity(o_name, amt);
 
 		/* Allow user abort */
 		if (amt <= 0) return;
