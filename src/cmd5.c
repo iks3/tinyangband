@@ -139,8 +139,8 @@ static int get_spell(int *sn, cptr prompt, int sval, bool known, int use_realm)
 	cptr        p = ((mp_ptr->spell_type == ST_PRAYER) ? "prayer" : "spell");
 #endif
 
-#ifdef ALLOW_REPEAT /* TNB */
 
+	/* Repeat previous command */
 	/* Get the spell, if available */
 	if (repeat_pull(sn))
 	{
@@ -151,8 +151,6 @@ static int get_spell(int *sn, cptr prompt, int sval, bool known, int use_realm)
 			return (TRUE);
 		}
 	}
-
-#endif /* ALLOW_REPEAT -- TNB */
 
 	/* Extract spells */
 	for (spell = 0; spell < 32; spell++)
@@ -331,11 +329,8 @@ static int get_spell(int *sn, cptr prompt, int sval, bool known, int use_realm)
 	/* Save the choice */
 	(*sn) = spell;
 
-#ifdef ALLOW_REPEAT /* TNB */
-
+	/* Remember the command for repeating */
 	repeat_push(*sn);
-
-#endif /* ALLOW_REPEAT -- TNB */
 
 	/* Success */
 	return (TRUE);

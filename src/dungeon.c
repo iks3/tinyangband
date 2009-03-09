@@ -2913,12 +2913,8 @@ static void process_command(void)
 {
 	int old_now_message = p_ptr->now_message;
 
-#ifdef ALLOW_REPEAT /* TNB */
-
 	/* Handle repeating the last command */
 	repeat_check();
-
-#endif /* ALLOW_REPEAT -- TNB */
 
 	/* Reset current message line */
 	p_ptr->now_message = 0;

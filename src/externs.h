@@ -1317,15 +1317,11 @@ extern  u32b _fcreator;
 #endif
 
 
-#ifdef ALLOW_REPEAT /* TNB */
-
 /* util.c */
 extern void repeat_push(int what);
 extern bool repeat_pull(int *what);
 extern void repeat_check(void);
 extern void roff_to_buf(const char * str, int wlen, char *tbuf, size_t bufsize);
-
-#endif /* ALLOW_REPEAT -- TNB */
 
 #ifdef ALLOW_EASY_OPEN /* TNB */
 

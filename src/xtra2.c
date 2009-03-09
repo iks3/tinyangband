@@ -3441,8 +3441,7 @@ bool get_aim_dir(int *dp)
 	/* Hack -- auto-target if requested */
 	if (use_old_target && target_okay()) dir = 5;
 	
-#ifdef ALLOW_REPEAT /* TNB */
-
+	/* Repeat previous command */
 	if (repeat_pull(dp))
 	{
 		/* Confusion? */
@@ -3454,8 +3453,6 @@ bool get_aim_dir(int *dp)
 			dir = *dp;
 		}
 	}
-
-#endif /* ALLOW_REPEAT -- TNB */
 
 	/* Ask until satisfied */
 	while (!dir)
@@ -3553,11 +3550,8 @@ msg_print("あなたは混乱している。");
 	/* Save direction */
 	(*dp) = dir;
 
-#ifdef ALLOW_REPEAT /* TNB */
-
+	/* Remember the command for repeating */
 	repeat_push(command_dir);
-
-#endif /* ALLOW_REPEAT -- TNB */
 
 	/* A "valid" direction was entered */
 	return (TRUE);
@@ -3585,14 +3579,11 @@ bool get_rep_dir_aux(int *dp, bool under)
 {
 	int dir;
 
-#ifdef ALLOW_REPEAT /* TNB */
-
+	/* Repeat previous command */
 	if (repeat_pull(dp))
 	{
 		return (TRUE);
 	}
-
-#endif /* ALLOW_REPEAT -- TNB */
 
 	/* Initialize */
 	(*dp) = 0;
@@ -3655,11 +3646,8 @@ msg_print("あなたは混乱している。");
 	/* Save direction */
 	(*dp) = dir;
 
-#ifdef ALLOW_REPEAT /* TNB */
-
+	/* Remember the command for repeating */
 	repeat_push(dir);
-
-#endif /* ALLOW_REPEAT -- TNB */
 
 	/* Success */
 	return (TRUE);

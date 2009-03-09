@@ -3529,12 +3529,9 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 	char tmp_val[160];
 	char out_val[160];
 
-#ifdef ALLOW_REPEAT
-
+	/* Tags for repeat */
 	static char prev_tag = '\0';
 	char cur_tag = '\0';
-
-#endif /* ALLOW_REPEAT */
 
 #ifdef ALLOW_EASY_FLOOR /* TNB */
 
@@ -3547,8 +3544,7 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 	if (mode & USE_INVEN) inven = TRUE;
 	if (mode & USE_FLOOR) floor = TRUE;
 
-#ifdef ALLOW_REPEAT
-
+	/* Repeat previous command */
 	/* Get the item index */
 	if (repeat_pull(cp))
 	{
@@ -3615,8 +3611,6 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 			}
 		}
 	}
-
-#endif /* ALLOW_REPEAT */
 
 
 	/* Paranoia XXX XXX XXX */
@@ -4029,9 +4023,7 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 				(*cp) = k;
 				item = TRUE;
 				done = TRUE;
-#ifdef ALLOW_REPEAT
-				cur_tag = which;
-#endif /* ALLOW_REPEAT */
+				cur_tag = which; /* for repeat */
 				break;
 			}
 
@@ -4136,9 +4128,7 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 					(*cp) = k;
 					item = TRUE;
 					done = TRUE;
-#ifdef ALLOW_REPEAT
-					cur_tag = which;
-#endif /* ALLOW_REPEAT */
+					cur_tag = which; /* for repeat */
 					break;
 				}
 
@@ -4233,10 +4223,9 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 
 	if (item)
 	{
-#ifdef ALLOW_REPEAT
+		/* Remember the command for repeating */
 		repeat_push(*cp);
 		if (command_cmd) prev_tag = cur_tag;
-#endif /* ALLOW_REPEAT */
 
 		command_cmd = 0; /* Hack -- command_cmd is no longer effective */
 	}
@@ -4454,11 +4443,11 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 
 	int floor_num, floor_list[23], floor_top = 0;
 
-#ifdef ALLOW_REPEAT
-
+	/* Tags for repeat */
 	static char prev_tag = '\0';
 	char cur_tag = '\0';
 
+	/* Repeat previous command */
 	/* Get the item index */
 	if (repeat_pull(cp))
 	{
@@ -4540,8 +4529,6 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 			}
 		}
 	}
-
-#endif /* ALLOW_REPEAT */
 
 
 	/* Paranoia XXX XXX XXX */
@@ -5123,9 +5110,7 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 				(*cp) = k;
 				item = TRUE;
 				done = TRUE;
-#ifdef ALLOW_REPEAT
-				cur_tag = which;
-#endif /* ALLOW_REPEAT */
+				cur_tag = which; /* for repeat */
 				break;
 			}
 #if 0
@@ -5267,9 +5252,7 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 						(*cp) = k;
 						item = TRUE;
 						done = TRUE;
-#ifdef ALLOW_REPEAT
-						cur_tag = which;
-#endif /* ALLOW_REPEAT */
+						cur_tag = which; /* for repeat */
 						break;
 					}
 				}
@@ -5285,9 +5268,7 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 						(*cp) = k;
 						item = TRUE;
 						done = TRUE;
-#ifdef ALLOW_REPEAT
-						cur_tag = which;
-#endif /* ALLOW_REPEAT */
+						cur_tag = which; /* for repeat */
 						break;
 					}
 				}
@@ -5396,10 +5377,9 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 
 	if (item)
 	{
-#ifdef ALLOW_REPEAT
+		/* Remember the command for repeating */
 		repeat_push(*cp);
 		if (command_cmd) prev_tag = cur_tag;
-#endif /* ALLOW_REPEAT */
 
 		command_cmd = 0; /* Hack -- command_cmd is no longer effective */
 	}

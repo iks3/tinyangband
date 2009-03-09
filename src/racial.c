@@ -1560,145 +1560,144 @@ void do_cmd_racial_power(void)
 #endif
 		I2A(0), (num <= 26) ? I2A(num - 1) : '0' + num - 27);
 
-#ifdef ALLOW_REPEAT
-	if (!repeat_pull(&i) || i<0 || i>=num) {
-#endif /* ALLOW_REPEAT */
-
-	/* Get a spell from the user */
-	choice = always_show_list ? ESCAPE : 1;
-	while (!flag)
+	/* Repeat previous command or get new choice */
+	if (!repeat_pull(&i) ||  i< 0 || i >= num)
 	{
-		if( choice==ESCAPE ) choice = ' '; 
-		else if( !get_com(out_val, &choice) )break; 
-
-		/* Request redraw */
-		if ((choice == ' ') || (choice == '*') || (choice == '?'))
+		/* Get a spell from the user */
+		choice = always_show_list ? ESCAPE : 1;
+		while (!flag)
 		{
-			/* Show the list */
-			if (!redraw)
+			if( choice==ESCAPE ) choice = ' '; 
+			else if( !get_com(out_val, &choice) )break; 
+
+			/* Request redraw */
+			if ((choice == ' ') || (choice == '*') || (choice == '?'))
 			{
-				byte y = 1, x = 0;
-				int ctr = 0;
-				char dummy[80];
-				char letter;
-				int x1, y1;
-
-				strcpy(dummy, "");
-
-				/* Show list */
-				redraw = TRUE;
-
-				/* Save the screen */
-				screen_save();
-
-				/* Print header(s) */
-				if (num < 17)
-#ifdef JP
-					prt("                            Lv   MP 失率", y++, x);
-#else
-					prt("                            Lv Cost Fail", y++, x);
-#endif
-				else
-#ifdef JP
-					prt("                            Lv   MP 失率                            Lv   MP 失率", y++, x);
-#else
-					prt("                            Lv Cost Fail                            Lv Cost Fail", y++, x);
-#endif
-
-				/* Print list */
-				while (ctr < num)
+				/* Show the list */
+				if (!redraw)
 				{
-					/* letter/number for power selection */
-					if (ctr < 26)
-						letter = I2A(ctr);
-					else
-						letter = '0' + ctr - 26;
-					x1 = ((ctr < 17) ? x : x + 40);
-					y1 = ((ctr < 17) ? y + ctr : y + ctr - 17);
+					byte y = 1, x = 0;
+					int ctr = 0;
+					char dummy[80];
+					char letter;
+					int x1, y1;
 
-					sprintf(dummy, " %c) %-23.23s %2d %4d %3d%%", letter, power_desc[ctr].name, power_desc[ctr].level, power_desc[ctr].cost, 100 - racial_chance(&power_desc[ctr]));
-					prt(dummy, y1, x1);
-					ctr++;
-				}
-			}
+					strcpy(dummy, "");
 
-			/* Hide the list */
-			else
-			{
-				/* Hide list */
-				redraw = FALSE;
+						/* Show list */
+						redraw = TRUE;
 
-				/* Restore the screen */
-				screen_load();
-			}
+						/* Save the screen */
+						screen_save();
 
-			/* Redo asking */
-			continue;
-		}
-
-		if (choice == '\r' && num == 1)
-		{
-			choice = 'a';
-		}
-
-		if (isalpha(choice))
-		{
-			/* Note verify */
-			ask = (isupper(choice));
-
-			/* Lowercase */
-			if (ask) choice = tolower(choice);
-
-			/* Extract request */
-			i = (islower(choice) ? A2I(choice) : -1);
-		}
-		else
-		{
-			ask = FALSE; /* Can't uppercase digits */
-
-			i = choice - '0' + 26;
-		}
-
-		/* Totally Illegal */
-		if ((i < 0) || (i >= num))
-		{
-			bell();
-			continue;
-		}
-
-		/* Verify it */
-		if (ask)
-		{
-			char tmp_val[160];
-
-			/* Prompt */
+						/* Print header(s) */
+						if (num < 17)
 #ifdef JP
-			(void) strnfmt(tmp_val, 78, "%sを使いますか？ ", power_desc[i].name);
+							prt("                            Lv   MP 失率", y++, x);
 #else
-			(void)strnfmt(tmp_val, 78, "Use %s? ", power_desc[i].name);
+							prt("                            Lv Cost Fail", y++, x);
+#endif
+						else
+#ifdef JP
+							prt("                            Lv   MP 失率                            Lv   MP 失率", y++, x);
+#else
+							prt("                            Lv Cost Fail                            Lv Cost Fail", y++, x);
 #endif
 
-			/* Belay that order */
-			if (!get_check(tmp_val)) continue;
-		}
+						/* Print list */
+						while (ctr < num)
+						{
+							/* letter/number for power selection */
+							if (ctr < 26)
+								letter = I2A(ctr);
+							else
+								letter = '0' + ctr - 26;
+							x1 = ((ctr < 17) ? x : x + 40);
+							y1 = ((ctr < 17) ? y + ctr : y + ctr - 17);
 
-		/* Stop the loop */
-		flag = TRUE;
+							sprintf(dummy, " %c) %-23.23s %2d %4d %3d%%", letter, power_desc[ctr].name, power_desc[ctr].level, power_desc[ctr].cost, 100 - racial_chance(&power_desc[ctr]));
+							prt(dummy, y1, x1);
+							ctr++;
+						}
+					}
+
+					/* Hide the list */
+					else
+					{
+						/* Hide list */
+						redraw = FALSE;
+
+						/* Restore the screen */
+						screen_load();
+					}
+
+					/* Redo asking */
+					continue;
+				}
+
+				if (choice == '\r' && num == 1)
+				{
+					choice = 'a';
+				}
+
+				if (isalpha(choice))
+				{
+					/* Note verify */
+					ask = (isupper(choice));
+
+					/* Lowercase */
+					if (ask) choice = tolower(choice);
+
+					/* Extract request */
+					i = (islower(choice) ? A2I(choice) : -1);
+				}
+				else
+				{
+					ask = FALSE; /* Can't uppercase digits */
+
+					i = choice - '0' + 26;
+				}
+
+				/* Totally Illegal */
+				if ((i < 0) || (i >= num))
+				{
+					bell();
+					continue;
+				}
+
+				/* Verify it */
+				if (ask)
+				{
+					char tmp_val[160];
+
+					/* Prompt */
+#ifdef JP
+					(void) strnfmt(tmp_val, 78, "%sを使いますか？ ", power_desc[i].name);
+#else
+					(void)strnfmt(tmp_val, 78, "Use %s? ", power_desc[i].name);
+#endif
+
+					/* Belay that order */
+					if (!get_check(tmp_val)) continue;
+				}
+
+				/* Stop the loop */
+				flag = TRUE;
+			}
+
+			/* Restore the screen */
+			if (redraw) screen_load();
+
+			/* Abort if needed */
+			if (!flag)
+			{
+				energy_use = 0;
+				return;
+			}
+
+		/* Remember the command for repeating */
+		repeat_push(i);
 	}
-
-	/* Restore the screen */
-	if (redraw) screen_load();
-
-	/* Abort if needed */
-	if (!flag)
-	{
-		energy_use = 0;
-		return;
-	}
-
-#ifdef ALLOW_REPEAT
-	repeat_push(i); } /* if (!repeat_pull(&i) || ...) */
-#endif /* ALLOW_REPEAT */
 
 	switch (racial_aux(&power_desc[i]))
 	{
