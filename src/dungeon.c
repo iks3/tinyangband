@@ -862,7 +862,7 @@ void leave_quest_check(void)
 }
 
 
-static bool item_tester_hook_psychometry(object_type *o_ptr)
+static bool item_tester_hook_psychometry(const object_type *o_ptr)
 {
 	return (!object_known_p(o_ptr) && 
 		((o_ptr->feeling == FEEL_NONE) || (o_ptr->feeling == FEEL_UNCURSED)));

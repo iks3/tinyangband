@@ -1855,7 +1855,7 @@ static void list_weapon(object_type *o_ptr, int row, int col)
 /*
  * Hook to specify "ego"
  */
-static bool item_tester_hook_ego_item(object_type *o_ptr)
+static bool item_tester_hook_ego_item(const object_type *o_ptr)
 {
 	if (!o_ptr->name2) return (FALSE);
 
@@ -1875,7 +1875,7 @@ static bool item_tester_hook_ego_item(object_type *o_ptr)
 /*
  * Hook to specify "weapon"
  */
-bool item_tester_hook_melee_weapon(object_type *o_ptr)
+bool item_tester_hook_melee_weapon(const object_type *o_ptr)
 {
 	switch (o_ptr->tval)
 	{
@@ -1895,7 +1895,7 @@ bool item_tester_hook_melee_weapon(object_type *o_ptr)
 /*
  * Hook to specify "ammo"
  */
-static bool item_tester_hook_ammo(object_type *o_ptr)
+static bool item_tester_hook_ammo(const object_type *o_ptr)
 {
 	switch (o_ptr->tval)
 	{
@@ -2131,7 +2131,7 @@ static bool forge_ego_item(void)
 /*
  * Hook to specify "broken weapon"
  */
-static bool item_tester_hook_broken_weapon(object_type *o_ptr)
+static bool item_tester_hook_broken_weapon(const object_type *o_ptr)
 {
 	if (o_ptr->tval != TV_SWORD) return FALSE;
 

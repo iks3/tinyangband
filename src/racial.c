@@ -504,7 +504,7 @@ static bool do_cmd_restore_mana(void)
 	return TRUE;
 }
 
-static bool item_tester_hook_bows_and_ammos(object_type *o_ptr)
+static bool item_tester_hook_bows_and_ammos(const object_type *o_ptr)
 {
 	switch (o_ptr->tval)
 	{
@@ -618,7 +618,7 @@ static bool do_cmd_identify_bows_and_ammos(void)
 	return (TRUE);
 }
 
-static bool item_tester_hook_arrow(object_type *o_ptr)
+static bool item_tester_hook_arrow(const object_type *o_ptr)
 {
 	if (o_ptr->tval == TV_ARROW) return (TRUE);
 
@@ -755,7 +755,7 @@ static bool do_cmd_arrow_rain(void)
 
 
 #ifndef TINYANGBAND
-static bool item_tester_hook_devices(object_type *o_ptr)
+static bool item_tester_hook_devices(const object_type *o_ptr)
 {
 	switch (o_ptr->tval)
 	{

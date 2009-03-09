@@ -764,7 +764,7 @@ void object_known(object_type *o_ptr)
 /*
  * The player is now aware of the effects of the given object.
  */
-void object_aware(object_type *o_ptr)
+void object_aware(const object_type *o_ptr)
 {
 	/* Fully aware of the effects */
 	k_info[o_ptr->k_idx].aware = TRUE;
@@ -774,7 +774,7 @@ void object_aware(object_type *o_ptr)
 /*
  * Something has been "sampled"
  */
-void object_tried(object_type *o_ptr)
+void object_tried(const object_type *o_ptr)
 {
 	/* Mark it as tried (even if "aware") */
 	k_info[o_ptr->k_idx].tried = TRUE;
@@ -785,7 +785,7 @@ void object_tried(object_type *o_ptr)
  * Return the "value" of an "unknown" item
  * Make a guess at the value of non-aware items
  */
-static s32b object_value_base(object_type *o_ptr)
+static s32b object_value_base(const object_type *o_ptr)
 {
 	/* Aware item -- use template cost */
 	if (object_aware_p(o_ptr)) return (get_object_cost(o_ptr));
@@ -829,7 +829,7 @@ static s32b object_value_base(object_type *o_ptr)
 
 
 /* Return the value of the flags the object has... */
-s32b flag_cost(object_type * o_ptr, int plusses)
+s32b flag_cost(const object_type * o_ptr, int plusses)
 {
 	s32b total = 0;
 	u32b f1, f2, f3;
@@ -1086,7 +1086,7 @@ s32b flag_cost(object_type * o_ptr, int plusses)
  *
  * Every wearable item with a "pval" bonus is worth extra (see below).
  */
-s32b object_value_real(object_type *o_ptr)
+s32b object_value_real(const object_type *o_ptr)
 {
 	s32b value;
 
@@ -1332,7 +1332,7 @@ s32b object_value_real(object_type *o_ptr)
  * Note that discounted items stay discounted forever, even if
  * the discount is "forgotten" by the player via memory loss.
  */
-s32b object_value(object_type *o_ptr)
+s32b object_value(const object_type *o_ptr)
 {
 	s32b value;
 
@@ -1456,7 +1456,7 @@ void reduce_charges(object_type *o_ptr, int amt)
  *  Return maximum number of stack.
  */
 
-int object_similar_part(object_type *o_ptr, object_type *j_ptr)
+int object_similar_part(const object_type *o_ptr, const object_type *j_ptr)
 {
 	/* Default maximum number of stack */
 	int max_num = MAX_STACK_SIZE;
@@ -1654,7 +1654,7 @@ int object_similar_part(object_type *o_ptr, object_type *j_ptr)
  *  Determine if an item can absorb a second item.
  */
 
-bool object_similar(object_type *o_ptr, object_type *j_ptr)
+bool object_similar(const object_type *o_ptr, const object_type *j_ptr)
 {
 	int total = o_ptr->number + j_ptr->number;
 
@@ -1785,7 +1785,7 @@ void object_wipe(object_type *o_ptr)
 /*
  * Prepare an object based on an existing object
  */
-void object_copy(object_type *o_ptr, object_type *j_ptr)
+void object_copy(const object_type *o_ptr, object_type *j_ptr)
 {
 	/* Copy the structure */
 	COPY(o_ptr, j_ptr, object_type);
@@ -4885,7 +4885,7 @@ void floor_item_optimize(int item)
 /*
  * Check if we have space for an item in the pack without overflow
  */
-bool inven_carry_okay(object_type *o_ptr)
+bool inven_carry_okay(const object_type *o_ptr)
 {
 	int j;
 

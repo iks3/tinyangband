@@ -452,7 +452,7 @@ static bool autopick_new_entry(autopick_type *entry, cptr str, bool allow_defaul
 /*
  * Favorite weapons
  */
-static bool object_is_favorite(object_type *o_ptr)
+static bool object_is_favorite(const object_type *o_ptr)
 {
 	/* Only melee weapons match */
 	if (!(o_ptr->tval == TV_POLEARM ||
@@ -488,7 +488,7 @@ static bool object_is_favorite(object_type *o_ptr)
  * Rare weapons/aromors
  * including Blade of Chaos, Dragon armors, etc.
  */
-static bool object_is_rare(object_type *o_ptr)
+static bool object_is_rare(const object_type *o_ptr)
 {
 	switch (o_ptr->tval)
 	{
@@ -546,7 +546,7 @@ static bool object_is_rare(object_type *o_ptr)
 /*
  * Check if an object is weapon (including bows and ammo)
  */
-static bool object_is_weapon(object_type *o_ptr)
+static bool object_is_weapon(const object_type *o_ptr)
 {
 	if (TV_WEAPON_BEGIN <= o_ptr->tval && o_ptr->tval <= TV_WEAPON_END) return TRUE;
 
@@ -557,7 +557,7 @@ static bool object_is_weapon(object_type *o_ptr)
 /*
  * Check if an object is weapon (including bows and ammo)
  */
-static bool object_is_weapon_ammo(object_type *o_ptr)
+static bool object_is_weapon_ammo(const object_type *o_ptr)
 {
 	if (TV_MISSILE_BEGIN <= o_ptr->tval && o_ptr->tval <= TV_WEAPON_END) return TRUE;
 
@@ -568,7 +568,7 @@ static bool object_is_weapon_ammo(object_type *o_ptr)
 /*
  * Check if an object is ammo
  */
-static bool object_is_ammo(object_type *o_ptr)
+static bool object_is_ammo(const object_type *o_ptr)
 {
 	if (TV_MISSILE_BEGIN <= o_ptr->tval && o_ptr->tval <= TV_MISSILE_END) return TRUE;
 
@@ -579,7 +579,7 @@ static bool object_is_ammo(object_type *o_ptr)
 /*
  * Check if an object is armour
  */
-static bool object_is_armour(object_type *o_ptr)
+static bool object_is_armour(const object_type *o_ptr)
 {
 	if (TV_ARMOR_BEGIN <= o_ptr->tval && o_ptr->tval <= TV_ARMOR_END) return TRUE;
 
@@ -590,7 +590,7 @@ static bool object_is_armour(object_type *o_ptr)
 /*
  * Check if an object is weapon, armour or ammo
  */
-static bool object_is_weapon_armour_ammo(object_type *o_ptr)
+static bool object_is_weapon_armour_ammo(const object_type *o_ptr)
 {
 	if (object_is_weapon_ammo(o_ptr) || object_is_armour(o_ptr)) return TRUE;
 
@@ -601,7 +601,7 @@ static bool object_is_weapon_armour_ammo(object_type *o_ptr)
 /*
  * Melee weapons
  */
-static bool object_is_melee_weapon(object_type *o_ptr)
+static bool object_is_melee_weapon(const object_type *o_ptr)
 {
 	if (TV_DIGGING <= o_ptr->tval && o_ptr->tval <= TV_SWORD) return TRUE;
 
@@ -612,7 +612,7 @@ static bool object_is_melee_weapon(object_type *o_ptr)
 /*
  * Equipment including all wearable objects and ammo
  */
-static bool object_is_equipment(object_type *o_ptr)
+static bool object_is_equipment(const object_type *o_ptr)
 {
 	if (TV_EQUIP_BEGIN <= o_ptr->tval && o_ptr->tval <= TV_EQUIP_END) return TRUE;
 
@@ -623,7 +623,7 @@ static bool object_is_equipment(object_type *o_ptr)
 /*
  * Check if an object is artifact
  */
-static bool object_is_artifact(object_type *o_ptr)
+static bool object_is_artifact(const object_type *o_ptr)
 {
 	if (artifact_p(o_ptr) || o_ptr->art_name) return TRUE;
 
@@ -634,7 +634,7 @@ static bool object_is_artifact(object_type *o_ptr)
 /*
  * Check if an object is neither artifact, ego, nor 'smith' object
  */
-static bool object_is_nameless(object_type *o_ptr)
+static bool object_is_nameless(const object_type *o_ptr)
 {
 	if (!object_is_artifact(o_ptr) && !ego_item_p(o_ptr)) return TRUE;
 
@@ -645,7 +645,7 @@ static bool object_is_nameless(object_type *o_ptr)
 /*
  * Get auto-picker entry from o_ptr.
  */
-static void autopick_entry_from_object(autopick_type *entry, object_type *o_ptr)
+static void autopick_entry_from_object(autopick_type *entry, const object_type *o_ptr)
 {
 	/* Assume that object name is to be added */
 	bool name = TRUE;
@@ -1233,7 +1233,7 @@ static cptr autopick_line_from_entry_kill(autopick_type *entry)
  * A function for Auto-picker/destroyer
  * Examine whether the object matches to the entry
  */
-static bool is_autopick_aux(object_type *o_ptr, autopick_type *entry, cptr o_name)
+static bool is_autopick_aux(const object_type *o_ptr, autopick_type *entry, cptr o_name)
 {
 	int j;
 	cptr ptr = entry->name;
@@ -1647,7 +1647,7 @@ static bool is_autopick_aux(object_type *o_ptr, autopick_type *entry, cptr o_nam
  * A function for Auto-picker/destroyer
  * Examine whether the object matches to the list of keywords or not.
  */
-int is_autopick(object_type *o_ptr)
+int is_autopick(const object_type *o_ptr)
 {
 	int i;
 	char o_name[MAX_NLEN];

@@ -507,7 +507,7 @@ static char *object_desc_num(char *t, uint n)
  *（cmd1.c で流用するために object_desc_japanese から移動した。）
  */
 
-char *object_desc_kosuu(char *t, object_type *o_ptr)
+char *object_desc_kosuu(char *t, const object_type *o_ptr)
 {
 	t = object_desc_num(t, o_ptr->number);
 
@@ -816,7 +816,7 @@ static bool have_flag_of(flag_insc_table *fi_ptr, u32b flag[])
 	return FALSE;
 }
 
-static char *get_ability_abbreviation(char *ptr, object_type *o_ptr, bool kanji, bool all, bool special)
+static char *get_ability_abbreviation(char *ptr, const object_type *o_ptr, bool kanji, bool all, bool special)
 {
 	char *prev_ptr = ptr;
 	bool tele = FALSE;
@@ -951,7 +951,7 @@ static char *get_ability_abbreviation(char *ptr, object_type *o_ptr, bool kanji,
 /*
  *  Get object inscription with auto inscription of object flags.
  */
-static void get_inscription(char *buff, object_type *o_ptr)
+static void get_inscription(char *buff, const object_type *o_ptr)
 {
 	cptr insc = quark_str(o_ptr->inscription);
 	char *ptr = buff;
@@ -1070,7 +1070,7 @@ static void get_inscription(char *buff, object_type *o_ptr)
  *   OD_NO_FLAVOR        : Allow to hidden flavor
  *   OD_FORCE_FLAVOR     : Get un-shuffled flavor name
  */
-void object_desc(char *buf, object_type *o_ptr, u32b mode)
+void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 {
 	/* Extract object kind name */
 	cptr            kindname = get_object_name(o_ptr);

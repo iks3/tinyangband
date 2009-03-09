@@ -1601,7 +1601,7 @@ msg_print("効果がありません！");
 /*
  * Hook to specify "weapon"
  */
-bool item_tester_hook_weapon(object_type *o_ptr)
+bool item_tester_hook_weapon(const object_type *o_ptr)
 {
 	switch (o_ptr->tval)
 	{
@@ -1625,7 +1625,7 @@ bool item_tester_hook_weapon(object_type *o_ptr)
 /*
  * Hook to specify "weapon" except ammo
  */
-static bool item_tester_hook_weapon_except_ammo(object_type *o_ptr)
+static bool item_tester_hook_weapon_except_ammo(const object_type *o_ptr)
 {
 	switch (o_ptr->tval)
 	{
@@ -1646,7 +1646,7 @@ static bool item_tester_hook_weapon_except_ammo(object_type *o_ptr)
 /*
  * Hook to specify "armour"
  */
-bool item_tester_hook_armour(object_type *o_ptr)
+bool item_tester_hook_armour(const object_type *o_ptr)
 {
 	switch (o_ptr->tval)
 	{
@@ -1671,7 +1671,7 @@ bool item_tester_hook_armour(object_type *o_ptr)
 /*
  * Check if an object is weapon or armour (but not arrow, bolt, or shot)
  */
-bool item_tester_hook_weapon_armour(object_type *o_ptr)
+bool item_tester_hook_weapon_armour(const object_type *o_ptr)
 {
 	return (item_tester_hook_weapon(o_ptr) ||
 		item_tester_hook_armour(o_ptr));
@@ -2158,7 +2158,7 @@ bool identify_item(object_type *o_ptr)
 }
 
 
-static bool item_tester_hook_identify(object_type *o_ptr)
+static bool item_tester_hook_identify(const object_type *o_ptr)
 {
 	return (bool)!object_known_p(o_ptr);
 }
@@ -2395,7 +2395,7 @@ bool mundane_spell(bool equip)
 }
 
 
-static bool item_tester_hook_identify_fully(object_type *o_ptr)
+static bool item_tester_hook_identify_fully(const object_type *o_ptr)
 {
 	return (bool)(!object_known_p(o_ptr) || !(o_ptr->ident & IDENT_MENTAL));
 }
@@ -2526,7 +2526,7 @@ bool identify_fully(void)
 /*
  * Hook for "get_item()".  Determine if something is rechargable.
  */
-bool item_tester_hook_recharge(object_type *o_ptr)
+bool item_tester_hook_recharge(const object_type *o_ptr)
 {
 	/* Can not recharge a staff of wishing */
 	if ((o_ptr->tval == TV_STAFF) && (o_ptr->sval == SV_STAFF_WISHING)) return (FALSE);
@@ -3670,7 +3670,7 @@ put_str("Lv   MP 失率 効果", y, x + 35);
  * Does a given class of objects (usually) hate acid?
  * Note that acid can either melt or corrode something.
  */
-bool hates_acid(object_type *o_ptr)
+bool hates_acid(const object_type *o_ptr)
 {
 	/* Analyze the type */
 	switch (o_ptr->tval)
@@ -3724,7 +3724,7 @@ bool hates_acid(object_type *o_ptr)
 /*
  * Does a given object (usually) hate electricity?
  */
-bool hates_elec(object_type *o_ptr)
+bool hates_elec(const object_type *o_ptr)
 {
 	switch (o_ptr->tval)
 	{
@@ -3744,7 +3744,7 @@ bool hates_elec(object_type *o_ptr)
  * Hafted/Polearm weapons have wooden shafts.
  * Arrows/Bows are mostly wooden.
  */
-bool hates_fire(object_type *o_ptr)
+bool hates_fire(const object_type *o_ptr)
 {
 	/* Analyze the type */
 	switch (o_ptr->tval)
@@ -3791,7 +3791,7 @@ bool hates_fire(object_type *o_ptr)
 /*
  * Does a given object (usually) hate cold?
  */
-bool hates_cold(object_type *o_ptr)
+bool hates_cold(const object_type *o_ptr)
 {
 	switch (o_ptr->tval)
 	{

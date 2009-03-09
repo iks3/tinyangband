@@ -604,7 +604,7 @@ static bool store_check_num(object_type *o_ptr)
 }
 
 
-static bool is_blessed(object_type *o_ptr)
+static bool is_blessed(const object_type *o_ptr)
 {
 	u32b f1, f2, f3;
 	object_flags(o_ptr, &f1, &f2, &f3);
@@ -619,7 +619,7 @@ static bool is_blessed(object_type *o_ptr)
  *
  * Note that a shop-keeper must refuse to buy "worthless" items
  */
-static bool store_will_buy(object_type *o_ptr)
+static bool store_will_buy(const object_type *o_ptr)
 {
 	/* Hack -- The Home is simple */
 	if (cur_store_num == STORE_HOME) return (TRUE);
