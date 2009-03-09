@@ -1814,7 +1814,7 @@ static void display_player_various(void)
 
 	/* Shooting Skill (with current bow and normal missile) */
 	o_ptr = &inventory[INVEN_BOW];
-	tmp = p_ptr->to_h + o_ptr->to_h;
+	tmp = p_ptr->to_b + o_ptr->to_h;
 	xthb = p_ptr->skill_thb + (tmp * BTH_PLUS_ADJ);
 
 	/* If the player is wielding one? */
@@ -3284,7 +3284,7 @@ static void display_player_middle(void)
 	o_ptr = &inventory[INVEN_BOW];
 
 	/* Base skill */
-	show_tohit = p_ptr->dis_to_h;
+	show_tohit = p_ptr->dis_to_b;
 	show_todam = 0;
 
 	/* Apply range weapon bonuses */

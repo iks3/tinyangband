@@ -2446,19 +2446,6 @@ static sint add_special_melee_skill(byte pclass, s16b weight, object_type *o_ptr
 	return (add_skill);
 }
 
-/* Calculate all class and race-based bonuses and penalties to missile Skill -LM- */
-static sint add_special_missile_skill(byte pclass)
-{
-	int add_skill = 0;
-
-	switch (pclass)
-	{
-	default:
-		break;
-	}
-	return (add_skill);
-}
-
 
 /*
  * Calculate the players current "state", taking into account
@@ -2526,6 +2513,7 @@ void calc_bonuses(void)
 	/* Clear the Displayed/Real Bonuses */
 	p_ptr->dis_to_h = p_ptr->to_h = 0;
 	p_ptr->dis_to_d = p_ptr->to_d = 0;
+	p_ptr->dis_to_b = p_ptr->to_b = 0;
 	p_ptr->dis_to_a = p_ptr->to_a = 0;
 
 	/* Start with "normal" speed */
@@ -2878,6 +2866,8 @@ void calc_bonuses(void)
 			p_ptr->free_act = TRUE;
 			p_ptr->to_h += 5;
 			p_ptr->dis_to_h +=5;
+			p_ptr->to_b += 5;
+			p_ptr->dis_to_b +=5;
 			p_ptr->skill_stl += 1;
 		}
 
@@ -3134,6 +3124,8 @@ void calc_bonuses(void)
 	{
 		p_ptr->to_h -= 20;
 		p_ptr->dis_to_h -= 20;
+		p_ptr->to_b -= 20;
+		p_ptr->dis_to_b -= 20;
 		p_ptr->to_d -= 20;
 		p_ptr->dis_to_d -= 20;
 	}
@@ -3141,6 +3133,8 @@ void calc_bonuses(void)
 	{
 		p_ptr->to_h -= 5;
 		p_ptr->dis_to_h -= 5;
+		p_ptr->to_b -= 5;
+		p_ptr->dis_to_b -= 5;
 		p_ptr->to_d -= 5;
 		p_ptr->dis_to_d -= 5;
 	}
@@ -3170,6 +3164,8 @@ void calc_bonuses(void)
 		p_ptr->dis_to_a += 5;
 		p_ptr->to_h += 10;
 		p_ptr->dis_to_h += 10;
+		p_ptr->to_b += 10;
+		p_ptr->dis_to_b += 10;
 	}
 
 	/* Temporary shield */
@@ -3234,6 +3230,8 @@ void calc_bonuses(void)
 	{
 		p_ptr->to_h += 12;
 		p_ptr->dis_to_h += 12;
+		p_ptr->to_b += 12;
+		p_ptr->dis_to_b += 12;
 	}
 
 	/* Temporary "Beserk" */
@@ -3241,6 +3239,8 @@ void calc_bonuses(void)
 	{
 		p_ptr->to_h += 24;
 		p_ptr->dis_to_h += 24;
+		p_ptr->to_h -= 10;
+		p_ptr->dis_to_h -= 10;
 		p_ptr->to_a -= 10;
 		p_ptr->dis_to_a -= 10;
 	}
@@ -3375,8 +3375,8 @@ void calc_bonuses(void)
 	if (hold < o_ptr->weight / 10)
 	{
 		/* Hard to wield a heavy bow */
-		p_ptr->to_h += 2 * (hold - o_ptr->weight / 10);
-		p_ptr->dis_to_h += 2 * (hold - o_ptr->weight / 10);
+		p_ptr->to_b += 2 * (hold - o_ptr->weight / 10);
+		p_ptr->dis_to_b += 2 * (hold - o_ptr->weight / 10);
 
 		/* Heavy Bow */
 		p_ptr->heavy_shoot = TRUE;
@@ -3441,8 +3441,10 @@ void calc_bonuses(void)
 			}
 		}
 	}
-	/* Add all class-specific adjustments to missile Skill. -LM- */
-	p_ptr->skill_thb += add_special_missile_skill(p_ptr->pclass);
+
+	/* Final shooting to-hit bonus (Dex and armors) */
+	p_ptr->to_b += to_h;
+	p_ptr->dis_to_b += dis_to_h;
 
 	/* Assume not heavy */
 	p_ptr->heavy_wield = FALSE;
