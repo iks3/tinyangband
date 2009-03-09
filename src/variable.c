@@ -276,7 +276,7 @@ bool alert_trap_detect;         /* Alert when leaving trap detected area */
 
 /* Option Set 3 -- Game-Play */
 
-bool auto_haggle;			/* Auto-haggle in stores */
+bool confirm_store;			/* Confirm buying or selling in stores */
 
 bool auto_scum;				/* Auto-scum for good levels */
 

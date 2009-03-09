@@ -2729,6 +2729,14 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
+	{ &confirm_store,               TRUE,  1, 1, 0,
+	"confirm_store",                "店での売買時に確認をする" },
+#else
+	{ &confirm_store,               TRUE,  1, 1, 0,
+	"confirm_store",                "Confirm buying or selling in stores" },
+#endif
+
+#ifdef JP
 	{ &command_menu,                TRUE, 1, 2, 5,
 	"command_menu",                 "メニューによるコマンド選択を有効にする" },
 #else
@@ -3680,14 +3688,6 @@ option_type option_info[] =
 #else
 	{ &show_details,                TRUE, 0, 0, 13,
 	"show_details",                 "Show details in certain sub-windows" },
-#endif
-
-#ifdef JP
-	{ &auto_haggle,                 TRUE,  0, 1, 0,
-	"auto_haggle",                  "店で値切り交渉をしない" },
-#else
-	{ &auto_haggle,                 TRUE,  0, 1, 0,
-	"auto_haggle",                  "Auto-haggle in stores" },
 #endif
 
 #ifdef JP
