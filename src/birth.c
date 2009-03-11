@@ -2226,7 +2226,7 @@ void player_outfit(void)
 	/* Hack -- Give the player some torches */
 	object_prep(q_ptr, lookup_kind(TV_LITE, SV_LITE_TORCH));
 	q_ptr->number = (byte)rand_range(3, 7);
-	q_ptr->xtra3 = rand_range(3, 7) * 500;
+	q_ptr->xtra3 = FUEL_TORCH / 2;
 	add_outfit(q_ptr);
 
 	/* Get local object */
