@@ -3070,7 +3070,7 @@ N:313:星
 E:& Star~
 G:*:y
 I:39:5:0
-W:20:0:5:25000
+W:15:0:5:25000
 P:0:1d1:0:0:0
 F:INSTA_ART
 
@@ -3081,7 +3081,7 @@ N:314:石
 E:& Stone~
 G:*:R
 I:39:6:0
-W:25:0:5:60000
+W:20:0:5:60000
 P:0:1d1:0:0:0
 F:INSTA_ART
 
@@ -3091,7 +3091,7 @@ N:315:石
 E:& stone~
 G:*:y
 I:39:7:0
-W:25:0:10:60000
+W:22:0:10:60000
 P:0:1d1:0:0:0
 F:INSTA_ART
 
@@ -3111,7 +3111,7 @@ N:317:アミュレット:卍の
 E:& Amulet~:Swastika
 G:":v
 I:40:11:0
-W:25:0:3:90000
+W:20:0:3:90000
 F:INSTA_ART
 
 # The Necklace of the Dwarves -- see artifact list
@@ -3120,7 +3120,7 @@ N:318:頸飾り:プラチナの
 E:& Necklace~:Platinum
 G:":w
 I:40:12:0
-W:25:0:3:75000
+W:22:0:3:75000
 F:INSTA_ART
 
 # The Torque of Boromir
@@ -3165,7 +3165,7 @@ N:323:指輪:ディリシウムの
 E:& Ring~:Dilithium
 G:=:W
 I:45:33:0
-W:25:0:2:150000
+W:22:0:2:150000
 F:INSTA_ART
 
 # The Ring of Power (Narya) -- see artifact list
