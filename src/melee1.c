@@ -833,11 +833,10 @@ bool make_attack_normal(int m_idx)
 						{
 							/* Saving throw message */
 #ifdef JP
-						msg_print("しかし素早く財布を守った！");
+							msg_print("しかし素早く財布を守った！");
 #else
 							msg_print("You quickly protect your money pouch!");
 #endif
-
 
 							/* Occasional blink anyway */
 							if (randint0(3)) blinked = TRUE;
@@ -854,33 +853,51 @@ bool make_attack_normal(int m_idx)
 							if (gold <= 0)
 							{
 #ifdef JP
-							msg_print("しかし何も盗まれなかった。");
+								msg_print("しかし何も盗まれなかった。");
 #else
 								msg_print("Nothing was stolen.");
 #endif
 
 							}
-							else if (p_ptr->au)
-							{
-#ifdef JP
-							msg_print("財布が軽くなった気がする。");
-							msg_format("$%ld のお金が盗まれた！", (long)gold);
-#else
-								msg_print("Your purse feels lighter.");
-								msg_format("%ld coins were stolen!", (long)gold);
-#endif
-							}
 							else
 							{
-#ifdef JP
-							msg_print("財布が軽くなった気がする。");
-							msg_print("お金が全部盗まれた！");
-#else
-								msg_print("Your purse feels lighter.");
-								msg_print("All of your coins were stolen!");
-#endif
-							}
+								object_type *i_ptr; 
+								object_type object_type_body; 
 
+								/* Get local object */ 
+								i_ptr = &object_type_body; 
+
+								/* Wipe the object */ 
+								object_wipe(i_ptr); 
+
+								/* Prepare a gold object */ 
+								object_prep(i_ptr, OBJ_GOLD_LIST + 3);
+								i_ptr->pval = gold; 
+
+								/* Carry the object */ 
+								(void)monster_carry(m_idx, i_ptr); 
+
+								if (p_ptr->au)
+								{
+#ifdef JP
+									msg_print("財布が軽くなった気がする。");
+									msg_format("$%ld のお金が盗まれた！", (long)gold);
+#else
+									msg_print("Your purse feels lighter.");
+									msg_format("%ld coins were stolen!", (long)gold);
+#endif
+								}
+								else
+								{
+#ifdef JP
+									msg_print("財布が軽くなった気がする。");
+									msg_print("お金が全部盗まれた！");
+#else
+									msg_print("Your purse feels lighter.");
+									msg_print("All of your coins were stolen!");
+#endif
+								}
+							}
 							/* Redraw gold */
 							p_ptr->redraw |= (PR_GOLD);
 

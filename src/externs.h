@@ -793,6 +793,7 @@ extern void update_smart_learn(int m_idx, int what);
 extern bool place_monster_one(int y, int x, int r_idx, bool slp, bool friendly, bool pet);
 extern bool player_place(int y, int x);
 extern void monster_drop_carried_objects(monster_type *m_ptr);
+extern s16b monster_carry(int m_idx, object_type *j_ptr);
 
 /* object1.c */
 extern void reset_visuals(void);

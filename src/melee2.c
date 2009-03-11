@@ -3319,23 +3319,11 @@ static void process_monster(int m_idx)
 #endif
 						}
 
-						/* Excise the object */
+						/* Excise the object from floor */
 						excise_object_idx(this_o_idx);
 
-						/* Forget mark */
-						o_ptr->marked &= OM_TOUCHED;
-
-						/* Forget location */
-						o_ptr->iy = o_ptr->ix = 0;
-
-						/* Memorize monster */
-						o_ptr->held_m_idx = m_idx;
-
-						/* Build a stack */
-						o_ptr->next_o_idx = m_ptr->hold_o_idx;
-
-						/* Carry object */
-						m_ptr->hold_o_idx = this_o_idx;
+						/* Carry the object */
+						(void)monster_carry(m_idx, o_ptr);
 					}
 
 					/* Destroy the item if not a pet */

@@ -3796,3 +3796,74 @@ void monster_drop_carried_objects(monster_type *m_ptr)
 	/* Forget objects */
 	m_ptr->hold_o_idx = 0;
 }
+ 
+ 
+/*
+ * Make a monster carry an object
+ * Taken from Angband 3.1.0 under the Angband license
+ */
+s16b monster_carry(int m_idx, object_type *j_ptr)
+{
+        s16b o_idx;
+ 
+        s16b this_o_idx, next_o_idx = 0;
+ 
+        monster_type *m_ptr = &m_list[m_idx];
+
+
+        /* Scan objects already being held for combination */
+        for (this_o_idx = m_ptr->hold_o_idx; this_o_idx; this_o_idx = next_o_idx)
+        {
+                object_type *o_ptr;
+
+                /* Get the object */
+                o_ptr = &o_list[this_o_idx];
+
+                /* Get the next object */
+                next_o_idx = o_ptr->next_o_idx;
+
+                /* Check for combination */
+                if (object_similar(o_ptr, j_ptr))
+                {
+                        /* Combine the items */
+                        object_absorb(o_ptr, j_ptr);
+
+                        /* Result */
+                        return (this_o_idx);
+                }
+        }
+
+
+        /* Make an object */
+        o_idx = o_pop();
+
+        /* Success */
+        if (o_idx)
+        {
+                object_type *o_ptr;
+
+                /* Get new object */
+                o_ptr = &o_list[o_idx];
+
+                /* Copy object */
+                object_copy(o_ptr, j_ptr);
+
+                /* Forget mark */
+                o_ptr->marked = OM_TOUCHED;
+
+                /* Forget location */
+                o_ptr->iy = o_ptr->ix = 0;
+
+                /* Link the object to the monster */
+                o_ptr->held_m_idx = m_idx;
+
+                /* Link the object to the pile */
+                o_ptr->next_o_idx = m_ptr->hold_o_idx;
+
+                /* Link the monster to the object */
+                m_ptr->hold_o_idx = o_idx;
+        }
+
+        /* Result */
+        return (o_idx);
+}
