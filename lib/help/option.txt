@@ -2,6 +2,8 @@
 
 Press the '=' key to set options.  Just the important options are
 explained below.  There's no need to worry about options not mentioned.
+After setting your options press '|' (from the TinyAngband Options 
+screen) to save them as the default for future characters.
 
 --- Option Set 1 -- Input Options ---
 
