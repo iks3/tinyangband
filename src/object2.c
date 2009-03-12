@@ -6016,8 +6016,7 @@ bool process_warning(int xx, int yy)
 	else old_damage /= 2;
 
 	c_ptr = &cave[yy][xx];
-	if (((is_trap(c_ptr->feat) && !easy_disarm) || (c_ptr->feat == FEAT_INVIS)) 
-		&& !one_in_(13))
+	if ((c_ptr->feat == FEAT_INVIS) && !one_in_(13))
 	{
 		o_ptr = choose_warning_item();
 		if (o_ptr) object_desc(o_name, o_ptr, OD_OMIT_PREFIX | OD_NAME_ONLY);

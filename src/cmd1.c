@@ -2689,10 +2689,8 @@ void move_player(int dir, int do_pickup)
 		}
 	}
 
-#ifdef ALLOW_EASY_DISARM /* TNB */
-
 	/* Disarm a visible trap */
-	else if ((do_pickup != easy_disarm) && is_trap(c_ptr->feat))
+	else if (!do_pickup && is_trap(c_ptr->feat))
 	{
 		bool ignore = FALSE;
 		switch (c_ptr->feat)
@@ -2732,8 +2730,6 @@ void move_player(int dir, int do_pickup)
 			return;
 		}
 	}
-
-#endif /* ALLOW_EASY_DISARM -- TNB */
 
 	/* Player can not walk through "walls" unless in wraith form...*/
 	else if (!cave_floor_bold(y, x) && !p_can_pass_walls)
@@ -2921,16 +2917,7 @@ msg_print("何かにぶちあたった。");
 		}
 
 		/* Handle "objects" */
-
-#ifdef ALLOW_EASY_DISARM /* TNB */
-
 		carry(do_pickup != always_pickup);
-
-#else /* ALLOW_EASY_DISARM -- TNB */
-
-		carry(do_pickup);
-
-#endif /* ALLOW_EASY_DISARM -- TNB */
 
 		/* Handle "store doors" */
 		if ((c_ptr->feat >= FEAT_SHOP_HEAD) &&
@@ -3869,15 +3856,7 @@ void run_step(int dir)
 	energy_use = 100;
 
 	/* Move the player, using the "pickup" flag */
-#ifdef ALLOW_EASY_DISARM /* TNB */
-
 	move_player(find_current, FALSE);
-
-#else /* ALLOW_EASY_DISARM -- TNB */
-
-	move_player(find_current, always_pickup);
-
-#endif /* ALLOW_EASY_DISARM -- TNB */
 }
 
 
@@ -4011,7 +3990,7 @@ void travel_step(void)
 	}
 
 	travel.dir = dir;
-	move_player(dir, easy_disarm);
+	move_player(dir, FALSE);
 	travel.run = old_run;
 
 	if ((py == travel.y) && (px == travel.x))

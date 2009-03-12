@@ -674,8 +674,6 @@ static bool do_cmd_open_chest(int y, int x, s16b o_idx)
 }
 
 
-#if defined(ALLOW_EASY_OPEN) || defined(ALLOW_EASY_DISARM) /* TNB */
-
 /*
  * Return TRUE if the given feature is an open door
  */
@@ -793,8 +791,6 @@ static int coords_to_dir(int y, int x)
 
 	return d[dx + 1][dy + 1];
 }
-
-#endif /* defined(ALLOW_EASY_OPEN) || defined(ALLOW_EASY_DISARM) -- TNB */
 
 
 /*
@@ -1899,15 +1895,7 @@ static bool do_cmd_disarm_chest(int y, int x, s16b o_idx)
  *
  * Returns TRUE if repeated commands may continue
  */
-#ifdef ALLOW_EASY_DISARM /* TNB */
-
 bool do_cmd_disarm_aux(int y, int x, int dir)
-
-#else /* ALLOW_EASY_DISARM -- TNB */
-
-static bool do_cmd_disarm_aux(int y, int x, int dir)
-
-#endif /* ALLOW_EASY_DISARM -- TNB */
 {
 	int i, j, power;
 
@@ -1965,17 +1953,8 @@ static bool do_cmd_disarm_aux(int y, int x, int dir)
 		/* Remove the trap */
 		cave_set_feat(y, x, FEAT_FLOOR);
 
-#ifdef ALLOW_EASY_DISARM /* TNB */
-
 		/* Move the player onto the trap */
-		move_player(dir, easy_disarm);
-
-#else /* ALLOW_EASY_DISARM -- TNB */
-
-		/* move the player onto the trap grid */
 		move_player(dir, FALSE);
-
-#endif /* ALLOW_EASY_DISARM -- TNB */
 	}
 
 	/* Failure -- Keep trying */
@@ -2006,18 +1985,8 @@ static bool do_cmd_disarm_aux(int y, int x, int dir)
 		msg_format("You set off the %s!", name);
 #endif
 
-
-#ifdef ALLOW_EASY_DISARM /* TNB */
-
-		/* Move the player onto the trap */
-		move_player(dir, easy_disarm);
-
-#else /* ALLOW_EASY_DISARM -- TNB */
-
 		/* Move the player onto the trap */
 		move_player(dir, FALSE);
-
-#endif /* ALLOW_EASY_DISARM -- TNB */
 	}
 
 	/* Result */
@@ -2038,29 +2007,21 @@ void do_cmd_disarm(void)
 
 	bool more = FALSE;
 
-#ifdef ALLOW_EASY_DISARM /* TNB */
+	int num_traps, num_chests;
 
-	/* Option: Pick a direction */
-	if (easy_disarm)
+	/* Count visible traps */
+	num_traps = count_dt(&y, &x, is_trap, TRUE);
+
+	/* Count chests (trapped) */
+	num_chests = count_chests(&y, &x, TRUE);
+
+	/* See if only one target */
+	if (num_traps || num_chests)
 	{
-		int num_traps, num_chests;
-
-		/* Count visible traps */
-		num_traps = count_dt(&y, &x, is_trap, TRUE);
-
-		/* Count chests (trapped) */
-		num_chests = count_chests(&y, &x, TRUE);
-
-		/* See if only one target */
-		if (num_traps || num_chests)
-		{
-			bool too_many = (num_traps && num_chests) || (num_traps > 1) ||
-			    (num_chests > 1);
-			if (!too_many) command_dir = coords_to_dir(y, x);
-		}
+		bool too_many = (num_traps && num_chests) || (num_traps > 1) ||
+			(num_chests > 1);
+		if (!too_many) command_dir = coords_to_dir(y, x);
 	}
-
-#endif /* ALLOW_EASY_DISARM -- TNB */
 
 	/* Allow repeated command */
 	if (command_arg)

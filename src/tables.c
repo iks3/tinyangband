@@ -2817,16 +2817,6 @@ option_type option_info[] =
 	"easy_open",                    "Automatically open doors" },
 #endif
 #endif /* ALLOW_EASY_OPEN */
-	
-#ifdef ALLOW_EASY_DISARM
-#ifdef JP
-	{ &easy_disarm,                 TRUE, 1, 5, 8,
-	"easy_disarm",                  "自動的に罠を解除する" },
-#else
-	{ &easy_disarm,                 TRUE, 1, 5, 8,
-	"easy_disarm",                  "Automatically disarm traps" },
-#endif
-#endif /* ALLOW_EASY_DISARM */
 
 #ifdef ALLOW_EASY_FLOOR /* TNB */
 #ifdef JP
