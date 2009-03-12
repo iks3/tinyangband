@@ -4284,7 +4284,7 @@ msg_format("%^sは恐怖して逃げ出した！", m_name);
 		if (!who)
 		{
 			/* Set counter target to !los player */
-			if (!projectable(m_ptr->fy, m_ptr->fx, py, px) && !(flg & PROJECT_NO_COUNTER))
+			if (!(flg & PROJECT_NO_COUNTER))
 			{
 				m_ptr->target_y = py;
 				m_ptr->target_x = px;

@@ -3777,7 +3777,7 @@ int do_cmd_fire_aux(int item, object_type *j_ptr)
 					}
 
 					/* Damaged monster can counter if projectable */
-					if (ironman_hengband && !projectable(m_ptr->fy, m_ptr->fx, py, px))
+					if (ironman_hengband)
 					{
 						m_ptr->target_y = py;
 						m_ptr->target_x = px;
