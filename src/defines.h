@@ -1393,6 +1393,7 @@
 #define SV_WAND_HASTE_MONSTER            1
 #define SV_WAND_CLONE_MONSTER            2
 #define SV_WAND_TELEPORT_AWAY            3
+#define SV_WAND_DISARMING                4
 #define SV_WAND_ANNIHILATION             5
 #define SV_WAND_STONE_TO_MUD             6
 #define SV_WAND_LITE                     7

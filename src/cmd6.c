@@ -1762,6 +1762,12 @@ static void do_cmd_aim_wand_aux(int item)
 			break;
 		}
 
+		case SV_WAND_DISARMING:
+		{
+			if (disarm_trap(dir)) ident = TRUE;
+			break;
+		}
+
 		case SV_WAND_ANNIHILATION:
 		{
 			if (annihilation(250, dir)) ident = TRUE;
