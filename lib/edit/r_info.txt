@@ -2858,7 +2858,7 @@ F:ONLY_ITEM | DROP_2D2 | DROP_GOOD |
 F:WEIRD_MIND | OPEN_DOOR | BASH_DOOR |
 F:ANIMAL | NO_CONF | NO_SLEEP | IM_FIRE | IM_ACID | IM_POIS
 S:1_IN_2 |
-S:S_ANT | S_KIN | BR_ACID
+S:S_KIN | BR_ACID
 D:$She's upset because you hurt her children.
 D:彼女は激怒しているが、それはあなたが彼女の子供を傷つけたからだ。
 

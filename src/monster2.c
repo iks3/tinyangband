@@ -2718,8 +2718,14 @@ static bool summon_specific_okay(int r_idx)
 
 		case SUMMON_KIN:
 		{
+			int pr_idx = 0;
+			if (summon_specific_who > 0)
+			{
+				pr_idx = m_list[summon_specific_who].r_idx;
+			}
 			okay = ((r_ptr->d_char == summon_kin_type) &&
-			       !(r_ptr->flags1 & RF1_UNIQUE));
+			       !(r_ptr->flags1 & RF1_UNIQUE) &&
+				   (r_idx != pr_idx));
 			break;
 		}
 
