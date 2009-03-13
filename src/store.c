@@ -1437,10 +1437,7 @@ static void display_entry(int pos)
 	/* Describe an item in the home */
 	if (cur_store_num == STORE_HOME)
 	{
-		maxwid = 75;
-
-		/* Leave room for weights, if necessary -DRS- */
-		if (show_weights) maxwid -= 10;
+		maxwid = 65;
 
 		/* Describe the object */
 		object_desc(o_name, o_ptr, 0);
@@ -1448,29 +1445,18 @@ static void display_entry(int pos)
 		c_put_str(tval_to_attr[o_ptr->tval], o_name, i+6, cur_col);
 
 		/* Show weights */
-		if (show_weights)
-		{
-			/* Only show the weight of an individual item */
-			int wgt = o_ptr->weight;
 #ifdef JP
-			sprintf(out_val, "%3d.%1d kg", lbtokg1(wgt), lbtokg2(wgt) );
-			put_str(out_val, i+6, 67);
+		show_weight(o_ptr, TRUE, i + 6, 67);
 #else
-			(void)sprintf(out_val, "%3d.%d lb", wgt / 10, wgt % 10);
-			put_str(out_val, i+6, 68);
+		show_weight(o_ptr, TRUE, i + 6, 68);
 #endif
-
-		}
 	}
 
 	/* Describe an item (fully) in a store */
 	else
 	{
 		/* Must leave room for the "price" */
-		maxwid = 65;
-
-		/* Leave room for weights, if necessary -DRS- */
-		if (show_weights) maxwid -= 7;
+		maxwid = 58;
 
 		/* Describe the object (fully) */
 		object_desc(o_name, o_ptr, 0);
@@ -1478,19 +1464,11 @@ static void display_entry(int pos)
 		c_put_str(tval_to_attr[o_ptr->tval], o_name, i+6, cur_col);
 
 		/* Show weights */
-		if (show_weights)
-		{
-			/* Only show the weight of an individual item */
-			int wgt = o_ptr->weight;
 #ifdef JP
-			sprintf(out_val, "%3d.%1d", lbtokg1(wgt), lbtokg2(wgt) );
-			put_str(out_val, i+6, 60);
+		show_weight(o_ptr, FALSE, i + 6, 60);
 #else
-			(void)sprintf(out_val, "%3d.%d", wgt / 10, wgt % 10);
-			put_str(out_val, i+6, 61);
+		show_weight(o_ptr, FALSE, i + 6, 61);
 #endif
-
-		}
 
 		/* Display a cost */
 
@@ -1609,15 +1587,11 @@ static void display_store(void)
 
 
 		/* If showing weights, show label */
-		if (show_weights)
-		{
 #ifdef JP
-			put_str("重さ", 5, 72);
+		put_str("重さ", 5, 72);
 #else
-			put_str("Weight", 5, 70);
+		put_str("Weight", 5, 70);
 #endif
-
-		}
 	}
 
 	/* Normal stores */
@@ -1643,15 +1617,11 @@ static void display_store(void)
 
 
 		/* If showing weights, show label */
-		if (show_weights)
-		{
 #ifdef JP
-			put_str("重さ", 5, 62);
+		put_str("重さ", 5, 62);
 #else
-			put_str("Weight", 5, 60);
+		put_str("Weight", 5, 60);
 #endif
-
-		}
 
 		/* Label the asking price (in stores) */
 #ifdef JP

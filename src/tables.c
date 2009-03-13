@@ -2863,14 +2863,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &show_weights,                TRUE, 2, 0, 11,
-	"show_weights",                 "アイテム一覧で重量を表示する" },
-#else
-	{ &show_weights,                TRUE, 2, 0, 11,
-	"show_weights",                 "Show weights in object listings" },
-#endif
-
-#ifdef JP
 	{ &show_choices,                TRUE, 2, 0, 12,
 	"show_choices",                 "持ち物/装備ウィンドウに選択アイテム表示" },
 #else

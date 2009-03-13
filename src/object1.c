@@ -2451,6 +2451,20 @@ bool item_tester_okay(const object_type *o_ptr)
 }
 
 
+void show_weight(const object_type *o_ptr, bool label, int row, int col)
+{
+	char tmp_val[80];
+	int wgt = o_ptr->weight * o_ptr->number;
+
+#ifdef JP
+	sprintf(tmp_val, "%3d.%1d%s", lbtokg1(wgt), lbtokg2(wgt),
+		(label) ? " kg" : "");
+#else
+	sprintf(tmp_val, "%3d.%1d%s", wgt / 10, wgt % 10,
+		(label) ? " lb" : "");
+#endif
+	prt(tmp_val, row, col);
+}
 
 
 /*
@@ -2527,17 +2541,7 @@ void display_inven(void)
 		Term_erase(3+n, i, 255);
 
 		/* Display the weight if needed */
-		if (show_weights && o_ptr->weight)
-		{
-			int wgt = o_ptr->weight * o_ptr->number;
-#ifdef JP
-			sprintf(tmp_val, "%3d.%1d kg", lbtokg1(wgt), lbtokg2(wgt) );
-#else
-			sprintf(tmp_val, "%3d.%1d lb", wgt / 10, wgt % 10);
-#endif
-
-			prt(tmp_val, i, wid - 9);
-		}
+		if (o_ptr->weight) show_weight(o_ptr, TRUE, i, wid - 9);
 	}
 
 	/* Erase the rest of the window */
@@ -2612,17 +2616,7 @@ void display_equip(void)
 		Term_erase(3+n, i - INVEN_WIELD, 255);
 
 		/* Display the weight (if needed) */
-		if (show_weights && o_ptr->weight)
-		{
-			int wgt = o_ptr->weight * o_ptr->number;
-#ifdef JP
-			sprintf(tmp_val, "%3d.%1d kg", lbtokg1(wgt), lbtokg2(wgt));
-#else
-			sprintf(tmp_val, "%3d.%1d lb", wgt / 10, wgt % 10);
-#endif
-
-			prt(tmp_val, i - INVEN_WIELD, wid - (show_labels ? 28 : 9));
-		}
+		if (o_ptr->weight) show_weight(o_ptr, TRUE, i - INVEN_WIELD, wid - (show_labels ? 28 : 9));
 
 		/* Display the slot description (if needed) */
 		if (show_labels)
@@ -2940,10 +2934,7 @@ void show_inven(void)
 	len = wid - col - 1;
 
 	/* Maximum space allowed for descriptions */
-	lim = wid - 4;
-
-	/* Require space for weight (if needed) */
-	if (show_weights) lim -= 9;
+	lim = wid - 13;
 
 	/* Require space for icon */
 	if (show_inven_graph)
@@ -2993,10 +2984,7 @@ void show_inven(void)
 		(void)strcpy(out_desc[k], o_name);
 
 		/* Find the predicted "line length" */
-		l = strlen(out_desc[k]) + 5;
-
-		/* Be sure to account for the weight */
-		if (show_weights) l += 9;
+		l = strlen(out_desc[k]) + 14;
 
 		/* Account for icon if displayed */
 		if (show_inven_graph)
@@ -3056,17 +3044,7 @@ void show_inven(void)
 		c_put_str(out_color[j], out_desc[j], j + 1, cur_col);
 
 		/* Display the weight if needed */
-		if (show_weights)
-		{
-			int wgt = o_ptr->weight * o_ptr->number;
-#ifdef JP
-			sprintf(tmp_val, "%3d.%1d kg", lbtokg1(wgt), lbtokg2(wgt) );
-#else
-			(void)sprintf(tmp_val, "%3d.%1d lb", wgt / 10, wgt % 10);
-#endif
-
-			prt(tmp_val, j + 1, wid - 9);
-		}
+		show_weight(o_ptr, TRUE, j + 1, wid - 9);
 	}
 
 	/* Make a "shadow" below the list (only if needed) */
@@ -3104,7 +3082,11 @@ void show_equip(void)
 	len = wid - col - 1;
 
 	/* Maximum space allowed for descriptions */
-	lim = wid - 4;
+#ifdef JP
+	lim = wid - 14;
+#else
+	lim = wid - 13;
+#endif
 
 	/* Require space for labels (if needed) */
 #ifdef JP
@@ -3112,15 +3094,6 @@ void show_equip(void)
 #else
 	if (show_labels) lim -= (14 + 2);
 #endif
-
-
-	/* Require space for weight (if needed) */
-#ifdef JP
-	if (show_weights) lim -= 10;
-#else
-	if (show_weights) lim -= 9;
-#endif
-
 
 	if (show_equip_graph) lim -= 2;
 
@@ -3152,9 +3125,9 @@ void show_equip(void)
 
 		/* Extract the maximal length (see below) */
 #ifdef JP
-		l = strlen(out_desc[k]) + (2 + 1);
+		l = strlen(out_desc[k]) + (2 + 1) + 9;
 #else
-		l = strlen(out_desc[k]) + (2 + 3);
+		l = strlen(out_desc[k]) + (2 + 3) + 9;
 #endif
 
 
@@ -3164,10 +3137,6 @@ void show_equip(void)
 #else
 		if (show_labels) l += (14 + 2);
 #endif
-
-
-		/* Increase length for weight (if needed) */
-		if (show_weights) l += 9;
 
 		if (show_equip_graph) l += 2;
 
@@ -3252,17 +3221,7 @@ void show_equip(void)
 		}
 
 		/* Display the weight if needed */
-		if (show_weights)
-		{
-			int wgt = o_ptr->weight * o_ptr->number;
-#ifdef JP
-			sprintf(tmp_val, "%3d.%1d kg", lbtokg1(wgt), lbtokg2(wgt) );
-#else
-			(void)sprintf(tmp_val, "%3d.%d lb", wgt / 10, wgt % 10);
-#endif
-
-			prt(tmp_val, j + 1, wid - 9);
-		}
+		show_weight(o_ptr, TRUE, j + 1, wid - 9);
 	}
 
 	/* Make a "shadow" below the list (only if needed) */
@@ -4324,10 +4283,7 @@ void show_floor(int y, int x)
 	len = 20;
 
 	/* Maximum space allowed for descriptions */
-	lim = wid - 4;
-
-	/* Require space for weight (if needed) */
-	if (show_weights) lim -= 9;
+	lim = wid - 13;
 
 	/* Scan for objects in the grid, using item_tester_okay() */
 	(void)scan_floor(floor_list, &floor_num, y, x, 0x03);
@@ -4353,10 +4309,7 @@ void show_floor(int y, int x)
 		strcpy(out_desc[k], o_name);
 
 		/* Find the predicted "line length" */
-		l = strlen(out_desc[k]) + 5;
-
-		/* Be sure to account for the weight */
-		if (show_weights) l += 9;
+		l = strlen(out_desc[k]) + 14;
 
 		if (o_ptr->tval != TV_GOLD) dont_need_to_show_weights = FALSE;
 
@@ -4367,7 +4320,7 @@ void show_floor(int y, int x)
 		k++;
 	}
 
-	if (show_weights && dont_need_to_show_weights) len -= 9;
+	if (dont_need_to_show_weights) len -= 9;
 
 	/* Find the column to start in */
 	col = (len > wid - 4) ? 0 : (wid - len - 1);
@@ -4396,17 +4349,7 @@ void show_floor(int y, int x)
 		c_put_str(out_color[j], out_desc[j], j + 1, col + 3);
 
 		/* Display the weight if needed */
-		if (show_weights && (o_ptr->tval != TV_GOLD))
-		{
-			int wgt = o_ptr->weight * o_ptr->number;
-#ifdef JP
-			sprintf(tmp_val, "%3d.%1d kg", lbtokg1(wgt), lbtokg2(wgt) );
-#else
-			sprintf(tmp_val, "%3d.%1d lb", wgt / 10, wgt % 10);
-#endif
-
-			prt(tmp_val, j + 1, wid - 9);
-		}
+		if (o_ptr->tval != TV_GOLD) show_weight(o_ptr, TRUE, j + 1, wid - 9);
 	}
 
 	/* Make a "shadow" below the list (only if needed) */
