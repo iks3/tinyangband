@@ -3288,7 +3288,7 @@ void display_spell_list(void)
 
 		/* Reset numbers */
 		bn = 0;
-		obn = 0;
+		obn = -1;
 		sn = 0;
 
 		/* Reset vertical */
@@ -3301,7 +3301,7 @@ void display_spell_list(void)
 		x = 27 * (j % 3);
 
 		/* Scan spells */
-		for (i = 0; i < 32; i++)
+		for (i = 0; i < MAX_SPELLS; i++)
 		{
 			byte a = TERM_WHITE;
 
@@ -3323,11 +3323,10 @@ void display_spell_list(void)
 			{
 				/* Illegible */
 #ifdef JP
-strcpy(name, "(判読不能)");
+				strcpy(name, "(判読不能)");
 #else
 				strcpy(name, "(illegible)");
 #endif
-
 
 				/* Unusable */
 				a = TERM_L_DARK;
@@ -3361,8 +3360,9 @@ strcpy(name, "(判読不能)");
 			}
 
 			/* Dump the spell --(-- */
-			sprintf(out_val, "%c/%c) %-20.20s",
-				I2A(bn), I2A(sn), name);
+			sprintf(out_val, "%3s %c) %-20.20s",
+				((bn != obn) ? format("[%1c]", I2A(bn)) : "   "),
+				I2A(sn), name);
 
 			/* Track maximum */
 			m[j] = y + n;
