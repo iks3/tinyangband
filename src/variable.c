@@ -274,8 +274,6 @@ bool confirm_store;			/* Confirm buying or selling in stores */
 
 bool auto_scum;				/* Auto-scum for good levels */
 
-bool stack_allow_items;		/* Allow weapons and armor to stack */
-
 bool expand_look;			/* Expand the power of the look command */
 bool expand_list;			/* Expand the power of the list commands */
 

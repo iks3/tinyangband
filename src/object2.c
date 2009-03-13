@@ -1552,9 +1552,6 @@ int object_similar_part(const object_type *o_ptr, const object_type *j_ptr)
 		case TV_HARD_ARMOR:
 		case TV_DRAG_ARMOR:
 		{
-			/* Require permission */
-			if (!stack_allow_items) return 0;
-
 			/* Fall through */
 		}
 

@@ -3008,14 +3008,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &stack_allow_items,           TRUE, 3, 1, 2,
-	"stack_allow_items",            "同種の武器や防具をまとめる" },
-#else
-	{ &stack_allow_items,           TRUE, 3, 1, 2,
-	"stack_allow_items",            "Allow weapons and armor to stack" },
-#endif
-
-#ifdef JP
 	{ &expand_look,                 TRUE, 3, 1, 4,
 	"expand_look",                  "「回りを調べる」コマンドを拡張する" },
 #else
