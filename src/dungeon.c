@@ -4015,6 +4015,11 @@ static void process_player(void)
 			else
 				p_ptr->energy_need += energy_use;
 
+			/* Show objects on floor in subwinodw*/
+			look_y = py;
+			look_x = px;
+			p_ptr->window |= (PW_FLOOR);
+
 			/* Hack -- constant hallucination */
 			if (p_ptr->image) p_ptr->redraw |= (PR_MAP);
 

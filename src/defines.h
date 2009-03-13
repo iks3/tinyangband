@@ -1767,7 +1767,7 @@
 #define PW_OBJECT       0x00000200L     /* Display object recall */
 #define PW_DUNGEON      0x00000400L     /* Display dungeon view */
 #define PW_SNAPSHOT     0x00000800L     /* Display snap-shot */
-/* xxx */
+#define PW_FLOOR        0x00001000L     /* Display objects on floor */
 /* xxx */
 #define PW_BORG_1       0x00004000L     /* Display borg messages */
 #define PW_BORG_2       0x00008000L     /* Display borg status */

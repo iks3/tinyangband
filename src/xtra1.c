@@ -1712,6 +1712,40 @@ static void fix_object(void)
 
 
 /*
+ * Hack -- display objects on floor in sub-windows
+ */
+static void fix_floor(void)
+{
+	int j;
+
+	/* Scan windows */
+	for (j = 0; j < 8; j++)
+	{
+		term *old = Term;
+
+		/* No window */
+		if (!angband_term[j]) continue;
+
+		/* No relevant flags */
+		if (!(window_flag[j] & (PW_FLOOR))) continue;
+
+		/* Activate */
+		Term_activate(angband_term[j]);
+
+		/* Display objects */
+		clear_from(0);
+		show_floor(look_y, look_x);
+
+		/* Fresh */
+		Term_fresh();
+
+		/* Restore */
+		Term_activate(old);
+	}
+}
+
+
+/*
  * Calculate number of spells player should have, and forget,
  * or remember, spells until that number is properly reflected.
  *
@@ -4232,6 +4266,13 @@ void window_stuff(void)
 	{
 		p_ptr->window &= ~(PW_OBJECT);
 		fix_object();
+	}
+
+	/* Display objects on floor */
+	if (p_ptr->window & (PW_FLOOR))
+	{
+		p_ptr->window &= ~(PW_FLOOR);
+		fix_floor();
 	}
 }
 

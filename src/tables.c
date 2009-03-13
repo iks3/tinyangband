@@ -2617,6 +2617,7 @@ cptr window_flag_desc[32] =
 	"アイテムの詳細",
 	"自分の周囲を表示", 
 	"記念撮影",
+	"床上のアイテム",
 #else
 	"Display messages",
 	"Display overhead view",
@@ -2624,8 +2625,8 @@ cptr window_flag_desc[32] =
 	"Display object recall",
 	"Display dungeon view",
 	"Display snap-shot",
+	"Display objs on floor",
 #endif
-	NULL,
 	NULL,
 #ifdef JP
 	"ボーグ・メッセージ",

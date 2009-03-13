@@ -1230,3 +1230,7 @@ bool browsing_movie;
 /* for travel */
 travel_type travel;
 #endif
+
+/* for subwinows */
+int look_x = 0;
+int look_y = 0;

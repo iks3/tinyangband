@@ -3211,6 +3211,12 @@ strcpy(info, "q止 p自 o現 +次 -前");
 
 				/* Use that grid */
 				m = i;
+
+				/* Show objects on floor in subwindow */
+				look_y = temp_y[i];
+				look_x = temp_x[i];
+				p_ptr->window |= (PW_FLOOR);
+				handle_stuff();
 			}
 		}
 
@@ -3380,12 +3386,20 @@ strcpy(info, "q止 t決 p自 m近 +次 -前");
 				/* Slide into legality */
 				if (y >= cur_hgt-1) y = cur_hgt- 2;
 				else if (y <= 0) y = 1;
+
+				/* Show objects on floor in subwindow */
+				look_y = y;
+				look_x = x;
+				p_ptr->window |= (PW_FLOOR);
+				handle_stuff();
 			}
 		}
 	}
 
 	/* Forget */
 	temp_n = 0;
+	look_y = py;
+	look_x = px;
 
 	/* Clear the top line */
 	prt("", 0, 0);
@@ -3400,7 +3414,7 @@ strcpy(info, "q止 t決 p自 m近 +次 -前");
 	p_ptr->redraw |= (PR_MAP);
 
 	/* Window stuff */
-	p_ptr->window |= (PW_OVERHEAD);
+	p_ptr->window |= (PW_OVERHEAD | PW_FLOOR);
 
 	/* Handle stuff */
 	handle_stuff();

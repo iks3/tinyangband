@@ -377,7 +377,7 @@ void do_cmd_redraw(void)
 	p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_SPELL | PW_PLAYER | PW_STATS);
 
 	/* Window stuff */
-	p_ptr->window |= (PW_MESSAGE | PW_OVERHEAD | PW_DUNGEON | PW_MONSTER | PW_OBJECT);
+	p_ptr->window |= (PW_MESSAGE | PW_OVERHEAD | PW_DUNGEON | PW_MONSTER | PW_OBJECT | PW_FLOOR);
 
 	/* Update playtime */
 	update_playtime();
@@ -1764,7 +1764,7 @@ void do_cmd_options(void)
 				p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_SPELL |
 						  PW_PLAYER | PW_STATS | PW_MESSAGE | PW_OVERHEAD |
 						  PW_MONSTER | PW_OBJECT | PW_SNAPSHOT |
-						  PW_BORG_1 | PW_BORG_2 | PW_DUNGEON);
+						  PW_FLOOR | PW_BORG_1 | PW_BORG_2 | PW_DUNGEON);
 				break;
 			}
 

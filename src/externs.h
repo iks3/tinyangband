@@ -475,6 +475,8 @@ extern bool disturb_trap_detect;
 extern bool alert_trap_detect;
 extern bool allow_debug_opts;
 extern bool reset_concent;   /* Concentration reset flag */
+extern int look_x;
+extern int look_y;
 
 /* autopick.c */
 extern void autopick_load_pref(bool disp_mes);
