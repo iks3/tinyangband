@@ -576,7 +576,7 @@ static void do_cmd_quaff_potion_aux(int item)
 	}
 
 	/* Window stuff */
-	p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_PLAYER);
+	p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_PLAYER | PW_STATS);
 
 	/* Potions can feed the player */
 	switch (p_ptr->prace)

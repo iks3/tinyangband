@@ -1158,7 +1158,7 @@ void do_cmd_cast(void)
 	p_ptr->redraw |= (PR_MANA);
 
 	/* Window stuff */
-	p_ptr->window |= (PW_PLAYER);
+	p_ptr->window |= (PW_PLAYER | PW_STATS);
 	p_ptr->window |= (PW_SPELL);
 }
 

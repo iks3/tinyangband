@@ -735,7 +735,7 @@ msg_format("%s(%c)は劣化してしまった！",
 	p_ptr->update |= (PU_BONUS);
 
 	/* Window stuff */
-	p_ptr->window |= (PW_EQUIP | PW_PLAYER);
+	p_ptr->window |= (PW_EQUIP | PW_PLAYER | PW_STATS);
 
 	/* Notice */
 	return (TRUE);
@@ -1522,7 +1522,7 @@ msg_format("%sを＄%d の金に変えた。", o_name, price);
 		p_ptr->redraw |= (PR_GOLD);
 
 		/* Window stuff */
-		p_ptr->window |= (PW_PLAYER);
+		p_ptr->window |= (PW_PLAYER | PW_STATS);
 
 	}
 
@@ -1820,7 +1820,7 @@ bool enchant(object_type *o_ptr, int n, int eflag)
 	p_ptr->notice |= (PN_COMBINE | PN_REORDER);
 
 	/* Window stuff */
-	p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_PLAYER);
+	p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_PLAYER | PW_STATS);
 
 	/* Success */
 	return (TRUE);
@@ -2131,7 +2131,7 @@ bool identify_item(object_type *o_ptr)
 	p_ptr->notice |= (PN_COMBINE | PN_REORDER);
 
 	/* Window stuff */
-	p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_PLAYER);
+	p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_PLAYER | PW_STATS);
 
 	/*
 	 * If the item was an artifact, and if the
@@ -3074,7 +3074,7 @@ bool bless_weapon(void)
 	p_ptr->update |= (PU_BONUS);
 
 	/* Window stuff */
-	p_ptr->window |= (PW_EQUIP | PW_PLAYER);
+	p_ptr->window |= (PW_EQUIP | PW_PLAYER | PW_STATS);
 
 	return TRUE;
 }
@@ -4013,7 +4013,7 @@ msg_format("%sがダメージを受けた！", o_name);
 	p_ptr->update |= (PU_BONUS);
 
 	/* Window stuff */
-	p_ptr->window |= (PW_EQUIP | PW_PLAYER);
+	p_ptr->window |= (PW_EQUIP | PW_PLAYER | PW_STATS);
 
 	/* Item was damaged */
 	return (TRUE);
@@ -4288,7 +4288,7 @@ msg_format("恐怖の暗黒オーラがあなたの%sを包み込んだ！", o_name);
 		p_ptr->update |= (PU_MANA);
 
 		/* Window stuff */
-		p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_PLAYER);
+		p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_PLAYER | PW_STATS);
 	}
 
 	return (TRUE);
@@ -4366,7 +4366,7 @@ msg_format("恐怖の暗黒オーラがあなたの%sを包み込んだ！", o_name);
 		p_ptr->update |= (PU_MANA);
 
 		/* Window stuff */
-		p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_PLAYER);
+		p_ptr->window |= (PW_INVEN | PW_EQUIP | PW_PLAYER | PW_STATS);
 	}
 
 	/* Notice */

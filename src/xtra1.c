@@ -1491,7 +1491,7 @@ static void fix_spell(void)
 /*
  * Hack -- display character in sub-windows
  */
-static void fix_player(void)
+static void fix_player(int mode)
 {
 	int j;
 
@@ -1504,7 +1504,7 @@ static void fix_player(void)
 		if (!angband_term[j]) continue;
 
 		/* No relevant flags */
-		if (!(window_flag[j] & (PW_PLAYER))) continue;
+		if (!(window_flag[j] & (PW_PLAYER | PW_STATS))) continue;
 
 		/* Activate */
 		Term_activate(angband_term[j]);
@@ -1513,7 +1513,7 @@ static void fix_player(void)
 		update_playtime();
 
 		/* Display player */
-		display_player(0);
+		display_player(mode);
 
 		/* Fresh */
 		Term_fresh();
@@ -2150,7 +2150,7 @@ static void calc_mana(void)
 		p_ptr->redraw |= (PR_MANA);
 
 		/* Window stuff */
-		p_ptr->window |= (PW_PLAYER);
+		p_ptr->window |= (PW_PLAYER | PW_STATS);
 		p_ptr->window |= (PW_SPELL);
 	}
 
@@ -2259,7 +2259,7 @@ static void calc_hitpoints(void)
 		p_ptr->redraw |= (PR_HP);
 
 		/* Window stuff */
-		p_ptr->window |= (PW_PLAYER);
+		p_ptr->window |= (PW_PLAYER | PW_STATS);
 	}
 }
 
@@ -3040,7 +3040,7 @@ void calc_bonuses(void)
 			p_ptr->redraw |= (PR_STATS);
 
 			/* Window stuff */
-			p_ptr->window |= (PW_PLAYER);
+			p_ptr->window |= (PW_PLAYER | PW_STATS);
 		}
 
 
@@ -3066,7 +3066,7 @@ void calc_bonuses(void)
 			p_ptr->redraw |= (PR_STATS);
 
 			/* Window stuff */
-			p_ptr->window |= (PW_PLAYER);
+			p_ptr->window |= (PW_PLAYER | PW_STATS);
 		}
 
 
@@ -3110,7 +3110,7 @@ void calc_bonuses(void)
 			}
 
 			/* Window stuff */
-			p_ptr->window |= (PW_PLAYER);
+			p_ptr->window |= (PW_PLAYER | PW_STATS);
 		}
 	}
 
@@ -3352,7 +3352,7 @@ void calc_bonuses(void)
 		p_ptr->redraw |= (PR_ARMOR);
 
 		/* Window stuff */
-		p_ptr->window |= (PW_PLAYER);
+		p_ptr->window |= (PW_PLAYER | PW_STATS);
 	}
 
 
@@ -4189,7 +4189,14 @@ void window_stuff(void)
 	if (p_ptr->window & (PW_PLAYER))
 	{
 		p_ptr->window &= ~(PW_PLAYER);
-		fix_player();
+		fix_player(0);
+	}
+
+	/* Display stats and resistances */
+	if (p_ptr->window & (PW_STATS))
+	{
+		p_ptr->window &= ~(PW_STATS);
+		fix_player(2);
 	}
 
 	/* Display overhead view */
