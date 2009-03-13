@@ -3218,14 +3218,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &alert_failure,               FALSE, 4, 0, 27,
-	"alert_failure",                "様々なミスを警告するときにビープを鳴らす" },
-#else
-	{ &alert_failure,               FALSE, 4, 0, 27,
-	"alert_failure",                "Alert user to various failures" },
-#endif
-
-#ifdef JP
 	{ &disturb_trap_detect,         TRUE, 4, 2, 11,
 	"disturb_trap_detect",          "トラップ感知範囲外に出る直前に行動を中止する" },
 #else
@@ -3297,14 +3289,6 @@ option_type option_info[] =
 #else
 	{ &flush_disturb,               FALSE, 5, 1, 21,
 	"flush_disturb",                "Flush input whenever disturbed" },
-#endif
-
-#ifdef JP
-	{ &flush_command,               FALSE, 5, 1, 22,
-	"flush_command",                "コマンド前に常に入力をクリアする" },
-#else
-	{ &flush_command,               FALSE, 5, 1, 22,
-	"flush_command",                "Flush input before every command" },
 #endif
 
 #ifdef JP

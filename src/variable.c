@@ -251,7 +251,6 @@ bool disturb_minor;			/* Disturb whenever boring things happen */
 bool disturb_other;			/* Disturb whenever various things happen */
 
 bool alert_hitpoint;		/* Alert user to critical hitpoints */
-bool alert_failure;		/* Alert user to various failures */
 bool last_words;		/* Get last words upon dying */
 bool speak_unique;		/* Speaking uniques + shopkeepers */
 bool ignore_unview;		/* Ignore messages whenever any monster does */
@@ -321,7 +320,6 @@ bool avoid_other;			/* Avoid processing special colors */
 
 bool flush_failure;			/* Flush input on any failure */
 bool flush_disturb;			/* Flush input on disturbance */
-bool flush_command;			/* Flush input before every command */
 
 bool fresh_before;			/* Flush output before normal commands */
 bool fresh_after;			/* Flush output after normal commands */
