@@ -246,7 +246,6 @@ extern bool skip_mutations;     /* Skip mutations screen in 'C'haracter display 
 extern bool plain_descriptions;
 extern bool stupid_monsters;
 extern bool auto_destroy;
-extern bool wear_confirm;
 extern bool confirm_stairs;
 extern bool disturb_pets;
 extern bool view_perma_grids;

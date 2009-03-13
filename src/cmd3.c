@@ -331,7 +331,7 @@ void do_cmd_wield(void)
 		return;
 	}
 
-	if (cursed_p(o_ptr) && wear_confirm &&
+	if (cursed_p(o_ptr) &&
 	    (object_known_p(o_ptr) || (o_ptr->ident & IDENT_SENSE)))
 	{
 		char dummy[512];
@@ -340,12 +340,10 @@ void do_cmd_wield(void)
 		object_desc(o_name, o_ptr, OD_OMIT_PREFIX | OD_NAME_ONLY);
 
 #ifdef JP
-sprintf(dummy, "本当に%s{呪われている}を使いますか？", o_name);
+		sprintf(dummy, "本当に%s{呪われている}を使いますか？", o_name);
 #else
 		sprintf(dummy, "Really use the %s {cursed}? ", o_name);
 #endif
-
-
 		if (!get_check(dummy))
 			return;
 	}

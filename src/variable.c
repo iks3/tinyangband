@@ -268,7 +268,6 @@ bool plain_descriptions;	/* Plain object descriptions */
 bool stupid_monsters;		/* Monsters use old AI */
 bool auto_destroy;		/* Known worthless items are destroyed without confirmation */
 bool confirm_stairs;		/* Prompt before staircases... */
-bool wear_confirm;		/* Confirm before putting on known cursed items */
 bool disturb_pets;		/* Pets moving nearby disturb us */
 bool disturb_trap_detect;       /* Disturb when leaving trap detected area */
 bool alert_trap_detect;         /* Alert when leaving trap detected area */

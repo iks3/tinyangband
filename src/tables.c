@@ -2793,14 +2793,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &wear_confirm,                TRUE, 1, 5, 4,
-	"confirm_wear",                 "呪われた物を装備する時確認する" },
-#else
-	{ &wear_confirm,                TRUE, 1, 5, 4,
-	"confirm_wear",                 "Confirm to wear/wield known cursed items" },
-#endif
-
-#ifdef JP
 	{ &confirm_stairs,              TRUE, 1, 5, 5,
 	"confirm_stairs",               "別の階に行く時確認する" },
 #else
