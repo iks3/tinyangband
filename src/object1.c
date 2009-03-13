@@ -2615,15 +2615,12 @@ void display_equip(void)
 		/* Erase the rest of the line */
 		Term_erase(3+n, i - INVEN_WIELD, 255);
 
-		/* Display the weight (if needed) */
-		if (o_ptr->weight) show_weight(o_ptr, TRUE, i - INVEN_WIELD, wid - (show_labels ? 28 : 9));
+		/* Display the weight */
+		if (o_ptr->weight) show_weight(o_ptr, TRUE, i - INVEN_WIELD, wid - 28);
 
-		/* Display the slot description (if needed) */
-		if (show_labels)
-		{
-			Term_putstr(wid - 20, i - INVEN_WIELD, -1, TERM_WHITE, " <-- ");
-			prt(mention_use(i), i - INVEN_WIELD, wid - 15);
-		}
+		/* Display the slot description */
+		Term_putstr(wid - 20, i - INVEN_WIELD, -1, TERM_WHITE, " <-- ");
+		prt(mention_use(i), i - INVEN_WIELD, wid - 15);
 	}
 
 	/* Erase the rest of the window */
@@ -3083,16 +3080,9 @@ void show_equip(void)
 
 	/* Maximum space allowed for descriptions */
 #ifdef JP
-	lim = wid - 14;
+	lim = wid - 23;
 #else
-	lim = wid - 13;
-#endif
-
-	/* Require space for labels (if needed) */
-#ifdef JP
-	if (show_labels) lim -= (7 + 2);
-#else
-	if (show_labels) lim -= (14 + 2);
+	lim = wid - 29;
 #endif
 
 	if (show_equip_graph) lim -= 2;
@@ -3125,17 +3115,9 @@ void show_equip(void)
 
 		/* Extract the maximal length (see below) */
 #ifdef JP
-		l = strlen(out_desc[k]) + (2 + 1) + 9;
+		l = strlen(out_desc[k]) + (2 + 1) + 9 + 9;
 #else
-		l = strlen(out_desc[k]) + (2 + 3) + 9;
-#endif
-
-
-		/* Increase length for labels (if needed) */
-#ifdef JP
-		if (show_labels) l += (7 + 2);
-#else
-		if (show_labels) l += (14 + 2);
+		l = strlen(out_desc[k]) + (2 + 3) + 9 + 16;
 #endif
 
 		if (show_equip_graph) l += 2;
@@ -3193,32 +3175,20 @@ void show_equip(void)
 			cur_col += 2;
 		}
 
-		/* Use labels */
-		if (show_labels)
-		{
-			/* Mention the use */
+		/* Mention the use */
 #ifdef JP
-			(void)sprintf(tmp_val, "%-7s: ", mention_use(i));
+		(void)sprintf(tmp_val, "%-7s: ", mention_use(i));
 #else
-			(void)sprintf(tmp_val, "%-14s: ", mention_use(i));
+		(void)sprintf(tmp_val, "%-14s: ", mention_use(i));
 #endif
+		put_str(tmp_val, j+1, cur_col);
 
-			put_str(tmp_val, j+1, cur_col);
-
-			/* Display the entry itself */
+		/* Display the entry itself */
 #ifdef JP
-			c_put_str(out_color[j], out_desc[j], j+1, cur_col + 9);
+		c_put_str(out_color[j], out_desc[j], j+1, cur_col + 9);
 #else
-			c_put_str(out_color[j], out_desc[j], j+1, cur_col + 16);
+		c_put_str(out_color[j], out_desc[j], j+1, cur_col + 16);
 #endif
-		}
-
-		/* No labels */
-		else
-		{
-			/* Display the entry itself */
-			c_put_str(out_color[j], out_desc[j], j+1, cur_col);
-		}
 
 		/* Display the weight if needed */
 		show_weight(o_ptr, TRUE, j + 1, wid - 9);

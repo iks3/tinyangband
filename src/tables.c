@@ -2855,14 +2855,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &show_labels,                 TRUE, 2, 0, 10,
-	"show_labels",                  "装備一覧で装備場所を表示する" },
-#else
-	{ &show_labels,                 TRUE, 2, 0, 10,
-	"show_labels",                  "Show labels in object listings" },
-#endif
-
-#ifdef JP
 	{ &show_choices,                TRUE, 2, 0, 12,
 	"show_choices",                 "持ち物/装備ウィンドウに選択アイテム表示" },
 #else

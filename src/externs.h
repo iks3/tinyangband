@@ -267,7 +267,6 @@ extern bool dungeon_align;
 extern bool dungeon_stair;
 extern bool smart_learn;
 extern bool smart_cheat;
-extern bool show_labels;
 extern bool show_choices;
 extern bool show_details;
 extern bool cheat_peek;
