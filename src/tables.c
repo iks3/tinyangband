@@ -2745,14 +2745,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &other_query_flag,            FALSE, 1, 0, 2,
-	"other_query_flag",             "床上のアイテムを使用するときに確認する" },
-#else
-	{ &other_query_flag,            FALSE, 1, 0, 2,
-	"other_query_flag",             "Prompt for floor item selection" },
-#endif
-
-#ifdef JP
 	{ &always_pickup,               FALSE, 1, 0, 5,
 	"always_pickup",                "常にアイテムを拾う" },
 #else

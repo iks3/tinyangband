@@ -200,7 +200,6 @@ extern bool show_store_graph;
 extern bool show_equip_graph;
 extern bool rogue_like_commands;
 extern bool quick_messages;
-extern bool other_query_flag;
 extern bool carry_query_flag;
 extern bool always_pickup;
 extern bool use_old_target;

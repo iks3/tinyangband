@@ -3889,13 +3889,6 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 						/* Special index */
 						k = 0 - this_o_idx;
 
-						/* Verify the item (if required) */
-#ifdef JP
-						if (other_query_flag && !verify("本当に", k)) continue;
-#else
-						if (other_query_flag && !verify("Try", k)) continue;
-#endif
-
 						/* Allow player to "refuse" certain actions */
 						if (!get_item_allow(k)) continue;
 
@@ -4932,12 +4925,6 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 						/* Special index */
 						k = 0 - floor_list[0];
 
-						/* Verify the item (if required) */
-#ifdef JP
-						if (other_query_flag && !verify("本当に", k)) continue;
-#else
-						if (other_query_flag && !verify("Try", k)) continue;
-#endif
 						/* Allow player to "refuse" certain actions */
 						if (!get_item_allow(k))
 						{

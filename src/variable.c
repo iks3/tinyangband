@@ -209,7 +209,6 @@ bool superb_shot = FALSE;
 
 bool rogue_like_commands;	/* Rogue-like commands */
 bool quick_messages;		/* Activate quick messages */
-bool other_query_flag;		/* Prompt for various information */
 bool carry_query_flag;		/* Prompt before picking things up */
 bool use_old_target;		/* Use old target by default */
 bool always_pickup;			/* Pick things up by default */
