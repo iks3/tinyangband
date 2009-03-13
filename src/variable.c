@@ -1210,7 +1210,6 @@ bool terrain_streams;         /* Create terrain 'streamers' in the dungeon */
 bool munchkin_death;          /* Ask for saving death */
 bool ironman_rooms;           /* Always generate very unusual rooms */
 bool ironman_nightmare;	      /* Play the game in Nightmare mode */
-bool maximize_mode;
 bool preserve_mode;
 bool autoroller;
 bool fast_autoroller;

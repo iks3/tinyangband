@@ -1003,7 +1003,7 @@ static void rd_extra(void)
 
 	rd_byte(&tmp8u); /* oops */
 	rd_byte(&p_ptr->searching);
-	rd_byte(&maximize_mode);
+	rd_byte(&tmp8u); /* maximize_mode was deleted */
 	rd_byte(&preserve_mode);
 	rd_byte(&tmp8u);
 

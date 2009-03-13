@@ -3400,14 +3400,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &maximize_mode,               TRUE, 6, 6, 13,
-	"maximize_mode",                "最大化モード使用" },
-#else
-	{ &maximize_mode,               TRUE, 6, 6, 13,
-	"maximize_mode",                "Maximize stats" },
-#endif
-
-#ifdef JP
 	{ &preserve_mode,               TRUE, 6, 6, 14,
 	"preserve_mode",                "保存モード使用" },
 #else

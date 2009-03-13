@@ -2616,12 +2616,8 @@ static void display_player_stat_info(void)
 		if ((p_ptr->stat_max[i] > 18) && (p_ptr->stat_top[i] <= 18))
 			e_adj = p_ptr->stat_top[i] - (p_ptr->stat_max[i] - 18) / 10 - 19;
 
-		/* Deduct class and race bonuses if in maximize */
-		if (maximize_mode)
-		{
-			e_adj -= rp_ptr->r_adj[i];
-			e_adj -= cp_ptr->c_adj[i];
-		}
+		e_adj -= rp_ptr->r_adj[i];
+		e_adj -= cp_ptr->c_adj[i];
 
 		/* Reduced name of stat */
 #ifdef JP
@@ -3978,19 +3974,6 @@ errr file_character(cptr name, bool full)
 	fprintf(fff, "\n\n  [その他の情報]\n");
 #else
 	fprintf(fff, "\n\n  [Miscellaneous information]\n");
-#endif
-
-	if (maximize_mode)
-#ifdef JP
-		fprintf(fff, "\n 最大化モード:       ON");
-#else
-		fprintf(fff, "\n Maximize Mode:      ON");
-#endif
-	else
-#ifdef JP
-		fprintf(fff, "\n 最大化モード:       OFF");
-#else
-		fprintf(fff, "\n Maximize Mode:      OFF");
 #endif
 
 	if (preserve_mode)
@@ -5545,7 +5528,6 @@ long total_points(void)
 	long mult = 100;
 
 	if (preserve_mode) mult -= 10; /* Penalize preserve, maximize modes */
-	if (maximize_mode) mult -= 15;
 	if (X_stupid_monsters) mult -= 20; /* AI is not that big a deal (yet) */
 #ifndef TINYANGBAND
 	/* Not too much of a reward since some people like playing with this. */

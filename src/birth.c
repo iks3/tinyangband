@@ -1493,21 +1493,9 @@ static int adjust_stat(int value, int amount, int auto_roll)
 			{
 				value++;
 			}
-			else if (maximize_mode)
+			else
 			{
 				value += 10;
-			}
-			else if (value < 18+70)
-			{
-				value += ((auto_roll ? 15 : randint1(15)) + 5);
-			}
-			else if (value < 18+90)
-			{
-				value += ((auto_roll ? 6 : randint1(6)) + 2);
-			}
-			else if (value < 18+100)
-			{
-				value++;
 			}
 		}
 	}
@@ -1543,7 +1531,7 @@ static void get_stats(void)
 
 			/* Save that value */
 			sum += val;
-			p_ptr->stat_cur[3*i] = p_ptr->stat_max[3*i] = (maximize_mode ? val : adjust_stat(val, rp_ptr->r_adj[3*i] + cp_ptr->c_adj[3*i], FALSE));
+			p_ptr->stat_cur[3*i] = p_ptr->stat_max[3*i] = val;
 
 			/* Extract 5 + 1d3 + 1d4 + 1d5 */
 			val = 5 + 3;
@@ -1553,7 +1541,7 @@ static void get_stats(void)
 
 			/* Save that value */
 			sum += val;
-			p_ptr->stat_cur[3*i+1] = p_ptr->stat_max[3*i+1] = (maximize_mode ? val : adjust_stat(val, rp_ptr->r_adj[3*i+1] + cp_ptr->c_adj[3*i+1], FALSE));
+			p_ptr->stat_cur[3*i+1] = p_ptr->stat_max[3*i+1] = val;
 
 			/* Extract 5 + 1d3 + 1d4 + 1d5 */
 			val = 5 + 3;
@@ -1563,7 +1551,7 @@ static void get_stats(void)
 
 			/* Save that value */
 			sum += val;
-			p_ptr->stat_cur[3*i+2] = p_ptr->stat_max[3*i+2] = (maximize_mode ? val : adjust_stat(val, rp_ptr->r_adj[3*i+2] + cp_ptr->c_adj[3*i+2], FALSE));
+			p_ptr->stat_cur[3*i+2] = p_ptr->stat_max[3*i+2] = val;
 		}
 
 		/* Verify totals */

@@ -469,7 +469,6 @@ extern bool terrain_streams;
 extern bool munchkin_death;
 extern bool ironman_rooms;
 extern bool ironman_nightmare;
-extern bool maximize_mode;
 extern bool preserve_mode;
 extern bool autoroller;
 extern bool use_transparency;
