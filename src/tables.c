@@ -3024,14 +3024,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &stack_allow_wands,           TRUE, 3, 1, 3,
-	"stack_allow_wands",            "同種のワンド/スタッフ/ロッドをまとめる" },
-#else
-	{ &stack_allow_wands,           TRUE, 3, 1, 3,
-	"stack_allow_wands",            "Allow wands/staffs/rods to stack" },
-#endif
-
-#ifdef JP
 	{ &expand_look,                 TRUE, 3, 1, 4,
 	"expand_look",                  "「回りを調べる」コマンドを拡張する" },
 #else

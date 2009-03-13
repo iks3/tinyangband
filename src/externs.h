@@ -254,7 +254,6 @@ extern bool flow_by_smell;
 extern bool track_follow;
 extern bool track_target;
 extern bool stack_allow_items;
-extern bool stack_allow_wands;
 extern bool stack_force_notes;
 extern bool stack_force_costs;
 extern bool view_reduce_lite;
