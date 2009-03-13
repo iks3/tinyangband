@@ -2191,7 +2191,7 @@ static void display_player_equippy(int y, int x)
 		if (!use_color) a = TERM_WHITE;
 
 		/* Clear the part of the screen */
-		if (!equippy_chars || !o_ptr->k_idx)
+		if (!o_ptr->k_idx)
 		{
 			c = ' ';
 			a = TERM_DARK;

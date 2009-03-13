@@ -276,7 +276,6 @@ extern bool small_levels;
 extern bool always_small_levels;
 extern bool empty_levels;
 extern bool player_symbols;
-extern bool equippy_chars;
 extern bool use_command;
 extern bool numpad_as_cursorkey;	/* Use numpad keys as cursor key in editor mode */
 extern bool center_player;

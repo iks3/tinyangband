@@ -2863,14 +2863,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &equippy_chars,               TRUE, 2, 1, 12,
-	"equippy_chars",                "ステータスに文字で装備を表示する" },
-#else
-	{ &equippy_chars,               TRUE, 2, 1, 12,
-	"equippy_chars",                "Display 'equippy' chars" },
-#endif
-
-#ifdef JP
 	{ &skip_mutations,              FALSE, 2, 5, 0,
 	"skip_mutations",               "'C'コマンドで突然変異を表示しない" },
 #else

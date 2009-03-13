@@ -257,7 +257,6 @@ bool small_levels;		/* Allow unusually small dungeon levels */
 bool always_small_levels;		/* Use always unusually small dungeon levels */
 bool empty_levels;		/* Allow empty 'arena' levels */
 bool player_symbols;		/* Use varying symbols for the player char */
-bool equippy_chars;		/* Back by popular demand... */
 bool skip_mutations;		/* Skip mutations screen even if we have it */
 bool plain_descriptions;	/* Plain object descriptions */
 bool stupid_monsters;		/* Monsters use old AI */
