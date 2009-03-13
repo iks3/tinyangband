@@ -1560,7 +1560,7 @@ void verify_panel(void)
 	if (max_pcol_min < 0) max_pcol_min = 0;
 
 		/* Center on player */
-	if (center_player && (!avoid_center || !running))
+	if (center_player)
 	{
 		/* Center vertically */
 		prow_min = y - hgt / 2;

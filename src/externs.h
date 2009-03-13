@@ -279,7 +279,6 @@ extern bool player_symbols;
 extern bool use_command;
 extern bool numpad_as_cursorkey;	/* Use numpad keys as cursor key in editor mode */
 extern bool center_player;
-extern bool avoid_center;
 extern bool abbrev_extra;	/* Describe obj's extra resistances by abbreviation */
 extern bool abbrev_all;	/* Describe obj's all resistances by abbreviation */
 extern bool exp_need;

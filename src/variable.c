@@ -1074,7 +1074,6 @@ bool easy_floor;
 bool use_command;
 bool numpad_as_cursorkey;	/* Use numpad keys as cursor key in editor mode */
 bool center_player;
-bool avoid_center;
 bool abbrev_extra;	/* Describe obj's extra resistances by abbreviation */
 bool abbrev_all;	/* Describe obj's all resistances by abbreviation */
 bool exp_need;

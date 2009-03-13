@@ -2887,14 +2887,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &avoid_center,                FALSE, 2, 5, 12,
-	"avoid_center",                 "走っている時は中心に置かない" },
-#else
-	{ &avoid_center,                FALSE, 2, 5, 12,
-	"avoid_center",                 "Avoid centering while running" },
-#endif
-
-#ifdef JP
 	{ &view_yellow_lite,            TRUE, 2, 1, 28,
 	"view_yellow_lite",             "明かりの範囲を特別な色で表示する" },
 #else
