@@ -203,7 +203,6 @@ extern bool quick_messages;
 extern bool other_query_flag;
 extern bool carry_query_flag;
 extern bool always_pickup;
-extern bool always_repeat;
 extern bool use_old_target;
 extern bool depth_in_feet;
 extern bool use_color;

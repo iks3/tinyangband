@@ -2777,14 +2777,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &always_repeat,               TRUE, 1, 0, 6,
-	"always_repeat",                "コマンド自動繰り返し" },
-#else
-	{ &always_repeat,               TRUE, 1, 0, 6,
-	"always_repeat",                "Repeat obvious commands" },
-#endif
-
-#ifdef JP
 	{ &auto_destroy,                TRUE, 1, 5, 3,
 	"auto_destroy",                 "「無価値」なアイテムを破壊する時確認しない" },
 #else

@@ -4359,7 +4359,7 @@ prt(format("²ó¿ô: %d", command_arg), 0, 0);
 	}
 
 	/* Hack -- Auto-repeat certain commands */
-	if (always_repeat && (command_arg <= 0))
+	if (command_arg <= 0)
 	{
 		/* Hack -- auto repeat certain commands */
 		if (my_strchr("TBDoc+", command_cmd))

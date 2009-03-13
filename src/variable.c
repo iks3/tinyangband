@@ -213,7 +213,6 @@ bool other_query_flag;		/* Prompt for various information */
 bool carry_query_flag;		/* Prompt before picking things up */
 bool use_old_target;		/* Use old target by default */
 bool always_pickup;			/* Pick things up by default */
-bool always_repeat;			/* Repeat obvious commands */
 bool depth_in_feet;			/* Show dungeon level in feet */
 
 bool stack_force_notes;		/* Merge inscriptions when stacking */
