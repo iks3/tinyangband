@@ -4020,7 +4020,7 @@ static void process_player(void)
 
 
 			/* Shimmer monsters if needed */
-			if (!avoid_other && shimmer_monsters)
+			if (shimmer_monsters)
 			{
 				/* Clear the flag */
 				shimmer_monsters = FALSE;

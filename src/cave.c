@@ -1033,18 +1033,8 @@ void map_info(int y, int x, byte *ap, char *cp, byte *tap, char *tcp)
 			/* Desired char */
 			c = r_ptr->x_char;
 
-			/* Ignore weird codes */
-			if (avoid_other)
-			{
-				/* Use char */
-				(*cp) = c;
-
-				/* Use attr */
-				(*ap) = a;
-			}
-
 			/* Mimics' colors vary */
-			else if (my_strchr("\"!=", c) && !(r_ptr->flags1 & RF1_UNIQUE))
+			if (my_strchr("\"!=", c) && !(r_ptr->flags1 & RF1_UNIQUE))
 			{
 				/* Use char */
 				(*cp) = c;

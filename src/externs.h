@@ -226,7 +226,6 @@ extern bool disturb_state;
 extern bool disturb_minor;
 extern bool disturb_other;
 extern bool avoid_abort;
-extern bool avoid_other;
 extern bool flush_disturb;
 extern bool flush_failure;
 extern bool fresh_before;

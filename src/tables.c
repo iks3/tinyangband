@@ -3244,14 +3244,6 @@ option_type option_info[] =
 #endif
 
 #ifdef JP
-	{ &avoid_other,                 FALSE, 5, 1, 19,
-	"avoid_other",                  "モンスターの特別な色を使用しない" },
-#else
-	{ &avoid_other,                 FALSE, 5, 1, 19,
-	"avoid_other",                  "Avoid processing special colors" },
-#endif
-
-#ifdef JP
 	{ &view_reduce_lite,            FALSE, 5, 1, 16,
 	"view_reduce_lite",             "走っているときは明かりの半径を減少する" },
 #else

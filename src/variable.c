@@ -316,7 +316,6 @@ bool view_reduce_lite;		/* Reduce lite-radius when running */
 bool view_reduce_view;		/* Reduce view-radius in town */
 
 bool avoid_abort;			/* Avoid checking for user abort */
-bool avoid_other;			/* Avoid processing special colors */
 
 bool flush_failure;			/* Flush input on any failure */
 bool flush_disturb;			/* Flush input on disturbance */
