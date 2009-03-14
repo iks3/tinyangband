@@ -11,7 +11,7 @@ angband_files = \
 	attack.txt birth.txt charattr.txt \
 	command.txt defend.txt dungeon.txt general.txt \
 	help.hlp helpinfo.txt monster.txt objects.txt \
-	option.txt pref.txt special.hlp town.txt version.txt
+	option.txt pref.txt town.txt version.txt
 
 EXTRA_DIST = \
   $(angband_files)
