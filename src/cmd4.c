@@ -1140,8 +1140,8 @@ void do_cmd_options_hitpoint_warning(cptr info)
 			{
 				if (k < 2)
 				{
-					if (k == 0 && hitpoint_warn > 0) hitpoint_warn--;
-					if (k == 1 && spellpoint_warn > 0) spellpoint_warn--;
+					if (k == 0 && hitpoint_warn > 1) hitpoint_warn--;
+					if (k == 1 && spellpoint_warn > 1) spellpoint_warn--;
 				}
 				else
 				{
