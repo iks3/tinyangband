@@ -1,5 +1,12 @@
 === TinyAngband History and Information ===
 
+--- 0.0.3 ---
+Fixing bug of hit bonus of fire weapons
+Auto weilding when birth
+Improving options
+Improving of game balances
+And bug fix.
+
 --- 0.0.2 ---
 Help files are translated (Thanks to PaulBlay)
 Many improving of game balances
