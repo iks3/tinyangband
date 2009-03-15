@@ -951,7 +951,7 @@ static bool cmd_racial_power_aux(s32b command)
 					int y = py + ddy[dir];
 					int x = px + ddx[dir];
 
-					if (cave_floor_bold(y, x))
+					if (cave_floor_bold(y, x) && !cave_perma_bold(y, x))
 					{
 						cave[y][x].feat = FEAT_GRASS;
 						cave[y][x].info |= (CAVE_GLOW);
