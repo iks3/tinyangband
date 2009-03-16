@@ -1754,7 +1754,7 @@ static bool purchase_haggle(object_type *o_ptr, s32b *price)
 		prt(format("提示価格: %d", offer), 1, 0);
 		prt("本当に買いますか？[Y/n] ", 0, 0);
 #else
-		prt(format("Offer: %d", offer), 0, 1);
+		prt(format("Offer: %d", offer), 1, 0);
 		prt(format("Really buy %s? ", ((o_ptr->number > 1) ? "them" : "it")), 0, 0);
 #endif
 		i = inkey();
@@ -1832,7 +1832,7 @@ static bool sell_haggle(object_type *o_ptr, s32b *price)
 		prt(format("提示価格: %d", offer), 1, 0);
 		prt("本当に売りますか？[Y/n] ", 0, 0);
 #else
-		prt(format("Offer: %d", offer), 0, 1);
+		prt(format("Offer: %d", offer), 1, 0);
 		prt(format("Really sell %s? ", ((o_ptr->number > 1) ? "them" : "it")), 0, 0);
 #endif
 		i = inkey();
