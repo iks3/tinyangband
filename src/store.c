@@ -2160,7 +2160,7 @@ static void store_purchase(void)
 			(num ? format("¸½ºß %d¸Ä¡¤", num) : ""),
 			amt); 
 #else
-		strnfmt(o_name, sizeof(o_name), "%s how many%s? (%smax %d) ",
+		strnfmt(o_name, sizeof(o_name), "%s how many? (%smax %d) ",
 			(cur_store_num == STORE_HOME) ? "Take" : "Buy",
 			(num ? format("you have %d, ", num) : ""),
 			amt);
