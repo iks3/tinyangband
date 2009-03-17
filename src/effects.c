@@ -3698,6 +3698,7 @@ int take_hit(int damage, cptr hit_from)
 
 		/* Flush input */
 		flush();
+		p_ptr->skip_more = FALSE;
 
 		/* Hack -- Note death */
 		if (!last_words)
@@ -3724,8 +3725,10 @@ int take_hit(int damage, cptr hit_from)
 			if (!get_rnd_line("death.txt", 0, death_message))
 #endif
 				msg_print(death_message);
+
+			sound(SOUND_DEATH);
+			msg_print(NULL);
 		}
-		sound(SOUND_DEATH);
 
 		/* Dead */
 		return (damage);
