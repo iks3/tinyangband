@@ -169,7 +169,7 @@ void add_note(cptr note, char code)
 #ifdef JP
 			strnfmt(buf, 255, "%s %s : %s に殺された。\n", g_time, depths, note);
 #else
-			strnfmt(buf, 255, "%s %s : %s Killed by %s.\n", g_time, depths, note);
+			strnfmt(buf, 255, "%s %s : Killed by %s.\n", g_time, depths, note);
 #endif
 			break;
 		case 'W': /* Cheat mode */
