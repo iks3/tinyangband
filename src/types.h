@@ -717,11 +717,6 @@ struct store_type
 	byte owner;				/* Owner index */
 	byte extra;				/* Unused for now */
 
-	s16b insult_cur;		/* Insult counter */
-
-	s16b good_buy;			/* Number of "good" buys */
-	s16b bad_buy;			/* Number of "bad" buys */
-
 	s32b store_open;		/* Closed until this turn */
 
 	s32b last_visit;		/* Last visited on this turn */

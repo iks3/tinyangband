@@ -736,8 +736,8 @@ static void wr_store(store_type *st_ptr)
 	/* Save the "open" counter */
 	wr_u32b(st_ptr->store_open);
 
-	/* Save the "insults" */
-	wr_s16b(st_ptr->insult_cur);
+	/* Old - Save the "insults" */
+	wr_s16b(0);
 
 	/* Save the current owner */
 	wr_byte(st_ptr->owner);
@@ -745,9 +745,9 @@ static void wr_store(store_type *st_ptr)
 	/* Save the stock size */
 	wr_byte(st_ptr->stock_num);
 
-	/* Save the "haggle" info */
-	wr_s16b(st_ptr->good_buy);
-	wr_s16b(st_ptr->bad_buy);
+	/* Old - Save the "haggle" info */
+	wr_s16b(0);
+	wr_s16b(0);
 
 	wr_s32b(st_ptr->last_visit);
 

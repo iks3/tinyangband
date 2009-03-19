@@ -574,14 +574,15 @@ static errr rd_store(int town_number, int store_number)
 	int j;
 
 	byte num;
+	s16b tmp16s;
 
 	/* Read the basic info */
 	rd_s32b(&st_ptr->store_open);
-	rd_s16b(&st_ptr->insult_cur);
+	rd_s16b(&tmp16s);
 	rd_byte(&st_ptr->owner);
 	rd_byte(&num);
-	rd_s16b(&st_ptr->good_buy);
-	rd_s16b(&st_ptr->bad_buy);
+	rd_s16b(&tmp16s);
+	rd_s16b(&tmp16s);
 
 	/* Read last visit */
 	rd_s32b(&st_ptr->last_visit);

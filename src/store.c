@@ -13,15 +13,18 @@
 #include "angband.h"
 
 
-static int cur_store_num = 0;
-static int store_top = 0;
-static store_type *st_ptr = NULL;
-static owner_type *ot_ptr = NULL;
+/* 
+ * Store current values to allow all functions in this file to access them.
+ */
+static int cur_store_num = 0; /* current "store number" */
+static int store_top = 0; /* current "store page" */
+static store_type *st_ptr = NULL; /* current "store pointer" */
+static owner_type *ot_ptr = NULL; /* current "owner type" */
 static s16b old_town_num = 0;
 static s16b inner_town_num = 0;
 #define RUMOR_CHANCE 8
 
-#define MAX_COMMENT_1	6
+#define MAX_COMMENT_1	6 /* Comments on agreeing price */
 
 static cptr comment_1[MAX_COMMENT_1] =
 {
@@ -43,17 +46,26 @@ static cptr comment_1[MAX_COMMENT_1] =
 
 };
 
-#ifdef JP
 /* ブラックマーケット追加メッセージ（承諾） */
+/* Add additional comments for black market (agreement) */
 static cptr comment_1_B[MAX_COMMENT_1] = {
+#ifdef JP
 	"まあ、それでいいや。",
 	"今日はそれで勘弁してやる。",
 	"分かったよ。",
 	"しょうがない。",
 	"それで我慢するよ。",
 	"こんなもんだろう。"
-};
+#else
+	"Well, 'spose that will do.",
+	"I'll let you off at that today.",
+	"OK, OK!",
+	"Got me over a barrel here.",
+	"It's that or nothing.",
+	"Close enough."
 #endif
+};
+
 
 
 /*
@@ -63,17 +75,15 @@ static void say_comment_1(void)
 {
 	char rumour[1024];
 
-#ifdef JP
-	/* ブラックマーケットのときは別のメッセージを出す */
-	if ( cur_store_num == STORE_BLACK ) {
+	/* Give separate message for black market */
+	if ( cur_store_num == STORE_BLACK )
+	{
 		msg_print(comment_1_B[randint0(MAX_COMMENT_1)]);
 	}
-	else{
+	else
+	{
 		msg_print(comment_1[randint0(MAX_COMMENT_1)]);
 	}
-#else
-	msg_print(comment_1[randint0(MAX_COMMENT_1)]);
-#endif
 
 	if ((randint1(RUMOR_CHANCE) == 1) && speak_unique)
 	{
@@ -89,14 +99,13 @@ static void say_comment_1(void)
 }
 
 
-
 /*
  * Messages for reacting to purchase prices.
  */
 
-#define MAX_COMMENT_7A	4
+#define MAX_COMMENT_2A	4
 
-static cptr comment_7a[MAX_COMMENT_7A] =
+static cptr comment_2a[MAX_COMMENT_2A] =
 {
 #ifdef JP
 	"うわああぁぁ！",
@@ -111,9 +120,9 @@ static cptr comment_7a[MAX_COMMENT_7A] =
 #endif
 };
 
-#define MAX_COMMENT_7B	4
+#define MAX_COMMENT_2B	4
 
-static cptr comment_7b[MAX_COMMENT_7B] =
+static cptr comment_2b[MAX_COMMENT_2B] =
 {
 #ifdef JP
 	"くそう！",
@@ -128,9 +137,9 @@ static cptr comment_7b[MAX_COMMENT_7B] =
 #endif
 };
 
-#define MAX_COMMENT_7C	4
+#define MAX_COMMENT_2C	4
 
-static cptr comment_7c[MAX_COMMENT_7C] =
+static cptr comment_2c[MAX_COMMENT_2C] =
 {
 #ifdef JP
 	"すばらしい！",
@@ -145,9 +154,9 @@ static cptr comment_7c[MAX_COMMENT_7C] =
 #endif
 };
 
-#define MAX_COMMENT_7D	4
+#define MAX_COMMENT_2D	4
 
-static cptr comment_7d[MAX_COMMENT_7D] =
+static cptr comment_2d[MAX_COMMENT_2D] =
 {
 #ifdef JP
 	"やっほぅ！",
@@ -174,7 +183,7 @@ static void purchase_analyze(s32b price, s32b value, s32b guess)
 	if ((value <= 0) && (price > value))
 	{
 		/* Comment */
-		msg_print(comment_7a[randint0(MAX_COMMENT_7A)]);
+		msg_print(comment_2a[randint0(MAX_COMMENT_2A)]);
 
 		/* Sound */
 		sound(SOUND_STORE1);
@@ -184,7 +193,7 @@ static void purchase_analyze(s32b price, s32b value, s32b guess)
 	else if ((value < guess) && (price > value))
 	{
 		/* Comment */
-		msg_print(comment_7b[randint0(MAX_COMMENT_7B)]);
+		msg_print(comment_2b[randint0(MAX_COMMENT_2B)]);
 
 		/* Sound */
 		sound(SOUND_STORE2);
@@ -194,7 +203,7 @@ static void purchase_analyze(s32b price, s32b value, s32b guess)
 	else if ((value > guess) && (value < (4 * guess)) && (price < value))
 	{
 		/* Comment */
-		msg_print(comment_7c[randint0(MAX_COMMENT_7C)]);
+		msg_print(comment_2c[randint0(MAX_COMMENT_2C)]);
 
 		/* Sound */
 		sound(SOUND_STORE3);
@@ -204,14 +213,12 @@ static void purchase_analyze(s32b price, s32b value, s32b guess)
 	else if ((value > guess) && (price < value))
 	{
 		/* Comment */
-		msg_print(comment_7d[randint0(MAX_COMMENT_7D)]);
+		msg_print(comment_2d[randint0(MAX_COMMENT_2D)]);
 
 		/* Sound */
 		sound(SOUND_STORE4);
 	}
 }
-
-
 
 
 /*
@@ -467,7 +474,6 @@ static void mass_produce(object_type *o_ptr)
 }
 
 
-
 /*
  * Determine if a store item can "absorb" another item
  *
@@ -611,7 +617,6 @@ static bool is_blessed(const object_type *o_ptr)
 	if (f3 & TR3_BLESSED) return (TRUE);
 	else return (FALSE);
 }
-
 
 
 /*
@@ -1391,7 +1396,6 @@ static void store_create(void)
 }
 
 
-
 /*
  * Re-displays a single store entry
  */
@@ -1586,7 +1590,7 @@ static void display_store(void)
 #endif
 
 
-		/* If showing weights, show label */
+		/* Show weight label */
 #ifdef JP
 		put_str("重さ", 5, 72);
 #else
@@ -1616,7 +1620,7 @@ static void display_store(void)
 #endif
 
 
-		/* If showing weights, show label */
+		/* Show weight label */
 #ifdef JP
 		put_str("重さ", 5, 62);
 #else
@@ -1638,7 +1642,6 @@ static void display_store(void)
 	/* Draw in the inventory */
 	display_inventory();
 }
-
 
 
 /*
@@ -1716,9 +1719,9 @@ static int get_stock(int *com_val, cptr pmt, int i, int j)
 }
 
 
-
 /*
  * Haggling routine 				-RAK-
+ *
  * Return TRUE if purchase is NOT successful
  * Modified not to haggle by TinyAngband
  */
@@ -1859,7 +1862,7 @@ static int find_inven(object_type *o_ptr)
 {
 	int j;
 	int num = 0;
- 
+
 	/* Similar slot? */
 	for (j = 0; j < INVEN_PACK; j++)
 	{
@@ -2046,30 +2049,31 @@ static void store_purchase(void)
 	if (i > 12) i = 12;
 
 	/* Prompt */
+	/* Different message for black market and home */
+	switch( cur_store_num )
+	{
+		case STORE_HOME:
 #ifdef JP
-	/* ブラックマーケットの時は別のメッセージ */
-	switch( cur_store_num ) {
-		case 7:
 			sprintf(out_val, "どのアイテムを取りますか? ");
+#else
+			sprintf(out_val, "Which item do you want to take? ");
+#endif
 			break;
-		case 6:
+		case STORE_BLACK:
+#ifdef JP
 			sprintf(out_val, "どれ? ");
+#else
+			sprintf(out_val, "Waddya want?");
+#endif
 			break;
 		default:
+#ifdef JP
 			sprintf(out_val, "どの品物が欲しいんだい? ");
+#else
+			sprintf(out_val, "Which item are you interested in? ");
+#endif
 			break;
 	}
-#else
-	if (cur_store_num == STORE_HOME)
-	{
-		sprintf(out_val, "Which item do you want to take? ");
-	}
-	else
-	{
-		sprintf(out_val, "Which item are you interested in? ");
-	}
-#endif
-
 
 	/* Get the item number to be bought */
 	if (!get_stock(&item, out_val, 0, i - 1)) return;
@@ -2108,13 +2112,15 @@ static void store_purchase(void)
 
 	/* Determine the "best" price (per item) */
 	best = price_item(j_ptr, ot_ptr->min_inflate, FALSE);
+	if (best >= 10L) best += best / 10; /* Sales tax */ 
+
 
 	/* Find out how many the player wants */
 	if (o_ptr->number > 1)
 	{
-		/* Hack -- note cost of "fixed" items */
+		/* Hack -- note cost of "fixed" items */ 
 		if ((cur_store_num != STORE_HOME) &&
-		    (o_ptr->ident & IDENT_FIXED))
+			(o_ptr->ident & IDENT_FIXED))
 		{
 #ifdef JP
 			msg_format("一つにつき $%ldです。", (long)(best));
@@ -2143,10 +2149,15 @@ static void store_purchase(void)
 			}
 	
 			/* Work out how many the player can afford */
-			amt = p_ptr->au / best; /* Can this overflow ? */
-
-			/* Paranoia version below */
-			if (amt > o_ptr->number) amt = o_ptr->number;
+			if((p_ptr->au / best) > o_ptr->number)
+			{
+				amt = o_ptr->number;
+			}
+			else
+			{
+				amt = p_ptr->au / best;
+			}
+	       
 		}
 
 		/* Find the number of this item in the inventory */
@@ -2325,7 +2336,6 @@ static void store_purchase(void)
 						msg_print("The shopkeeper retires.");
 #endif
 
-
 						/* Shuffle the store */
 						store_shuffle(cur_store_num);
 					}
@@ -2339,7 +2349,6 @@ static void store_purchase(void)
 #else
 						msg_print("The shopkeeper brings out some new stock.");
 #endif
-
 					}
 
 					/* New inventory */
@@ -2377,13 +2386,12 @@ static void store_purchase(void)
 			/* Player cannot afford it */
 			else
 			{
-				/* Simple message (no insult) */
+				/* Simple message */
 #ifdef JP
 				msg_print("お金が足りません。");
 #else
 				msg_print("You do not have enough gold.");
 #endif
-
 			}
 		}
 	}
@@ -2404,11 +2412,11 @@ static void store_purchase(void)
 
 		/* Message */
 #ifdef JP
-				msg_format("%s(%c)を取った。",
+		msg_format("%s(%c)を取った。",
 #else
 		msg_format("You have %s (%c).",
 #endif
- o_name, index_to_label(item_new));
+			 o_name, index_to_label(item_new));
 
 		/* Handle stuff */
 		handle_stuff();
@@ -2602,7 +2610,6 @@ static void store_sell(void)
 #else
 		msg_format("Selling %s (%c).", o_name, index_to_label(item));
 #endif
-
 		msg_print(NULL);
 
 		/* Haggle for it */
@@ -2721,7 +2728,6 @@ static void store_sell(void)
 		msg_format("You drop %s (%c).", o_name, index_to_label(item));
 #endif
 
-
 		/* Take it from the players inventory */
 		inven_item_increase(item, -amt);
 		inven_item_describe(item);
@@ -2763,18 +2769,16 @@ static void store_examine(void)
 	{
 		if (cur_store_num == STORE_HOME)
 #ifdef JP
-msg_print("我が家には何も置いてありません。");
+			msg_print("我が家には何も置いてありません。");
 #else
 			msg_print("Your home is empty.");
 #endif
-
 		else
 #ifdef JP
-msg_print("現在商品の在庫を切らしています。");
+			msg_print("現在商品の在庫を切らしています。");
 #else
 			msg_print("I am currently out of stock.");
 #endif
-
 		return;
 	}
 
@@ -2787,11 +2791,10 @@ msg_print("現在商品の在庫を切らしています。");
 
 	/* Prompt */
 #ifdef JP
-sprintf(out_val, "どれを調べますか？");
+	sprintf(out_val, "どれを調べますか？");
 #else
 	sprintf(out_val, "Which item do you want to examine? ");
 #endif
-
 
 	/* Get the item number to be examined */
 	if (!get_stock(&item, out_val, 0, i - 1)) return;
@@ -2807,11 +2810,10 @@ sprintf(out_val, "どれを調べますか？");
 	{
 		/* This can only happen in the home */
 #ifdef JP
-msg_print("このアイテムについて特に知っていることはない。");
+		msg_print("このアイテムについて特に知っていることはない。");
 #else
 		msg_print("You have no special knowledge about that item.");
 #endif
-
 		return;
 	}
 
@@ -2853,6 +2855,7 @@ static bool leave_store = FALSE;
  */
 static void store_process_command(void)
 {
+
 	/* Handle repeating the last command */
 	repeat_check();
 
@@ -2901,7 +2904,6 @@ static void store_process_command(void)
 #else
 				msg_print("Entire inventory is shown.");
 #endif
-
 			}
 			else
 			{
@@ -3015,7 +3017,6 @@ static void store_process_command(void)
 		}
 
 
-
 		/*** Use various objects ***/
 
 		/* Browse a book */
@@ -3038,7 +3039,6 @@ static void store_process_command(void)
 			do_cmd_uninscribe();
 			break;
 		}
-
 
 
 		/*** Help and Such ***/
@@ -3190,7 +3190,6 @@ static void store_process_command(void)
 #else
 			msg_print("That command does not work in stores.");
 #endif
-
 			break;
 		}
 	}
@@ -3228,7 +3227,6 @@ void do_cmd_store(void)
 #else
 		msg_print("You see no store here.");
 #endif
-
 		return;
 	}
 
@@ -3337,7 +3335,6 @@ void do_cmd_store(void)
 		prt(" ESC) Exit from Building.", 22, 0);
 #endif
 
-
 		/* Browse if necessary */
 		if (st_ptr->stock_num > 12)
 		{
@@ -3346,7 +3343,6 @@ void do_cmd_store(void)
 #else
 			prt(" SPACE) Next page of stock", 23, 0);
 #endif
-
 		}
 
 		/* Home commands */
@@ -3359,7 +3355,6 @@ void do_cmd_store(void)
 		   prt(" g) Get an item.", 22, 31);
 		   prt(" d) Drop an item.", 23, 31);
 #endif
-
 		}
 
 		/* Shop commands XXX XXX XXX */
@@ -3372,7 +3367,6 @@ void do_cmd_store(void)
 		   prt(" p) Purchase an item.", 22, 31);
 		   prt(" s) Sell an item.", 23, 31);
 #endif
-
 		}
 
 		/* Add in the eXamine option */
@@ -3386,7 +3380,7 @@ void do_cmd_store(void)
 #ifdef JP
 #if 0
 		/* 基本的なコマンドの追加表示 */
-
+		/* Add display of basic commands */ 
 		prt("i/e) 持ち物/装備の一覧", 22, 40);
 
 		if( rogue_like_commands == TRUE )
@@ -3439,7 +3433,6 @@ void do_cmd_store(void)
 				msg_print("Your pack is so full that you flee the store...");
 #endif
 
-
 				/* Leave */
 				leave_store = TRUE;
 			}
@@ -3453,7 +3446,6 @@ void do_cmd_store(void)
 #else
 				msg_print("Your pack is so full that you flee your home...");
 #endif
-
 
 				/* Leave */
 				leave_store = TRUE;
@@ -3477,7 +3469,6 @@ void do_cmd_store(void)
 				msg_print("Your pack overflows!");
 #endif
 
-
 				/* Get local object */
 				q_ptr = &forge;
 
@@ -3493,7 +3484,6 @@ void do_cmd_store(void)
 #else
 				msg_format("You drop %s (%c).", o_name, index_to_label(item));
 #endif
-
 
 				/* Remove it from the players inventory */
 				inven_item_increase(item, -255);
@@ -3564,7 +3554,6 @@ void do_cmd_store(void)
 }
 
 
-
 /*
  * Shuffle one of the stores.
  */
@@ -3594,11 +3583,7 @@ void store_shuffle(int which)
 
 
 	/* Reset the owner data */
-	st_ptr->insult_cur = 0;
 	st_ptr->store_open = 0;
-	st_ptr->good_buy = 0;
-	st_ptr->bad_buy = 0;
-
 
 	/* Hack -- discount all the items */
 	for (i = 0; i < st_ptr->stock_num; i++)
@@ -3621,7 +3606,6 @@ void store_shuffle(int which)
 #else
 		o_ptr->inscription = quark_add("on sale");
 #endif
-
 	}
 }
 
@@ -3643,9 +3627,6 @@ void store_maint(int town_num, int store_num)
 
 	/* Activate the owner */
 	ot_ptr = &owners[store_num][st_ptr->owner];
-
-	/* Store keeper forgives the player */
-	st_ptr->insult_cur = 0;
 
 	/* Mega-Hack -- prune the black market */
 	if (store_num == STORE_BLACK)
@@ -3727,9 +3708,6 @@ void store_init(int town_num, int store_num)
 
 	/* Initialize the store */
 	st_ptr->store_open = 0;
-	st_ptr->insult_cur = 0;
-	st_ptr->good_buy = 0;
-	st_ptr->bad_buy = 0;
 
 	/* Nothing in stock */
 	st_ptr->stock_num = 0;
