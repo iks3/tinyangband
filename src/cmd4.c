@@ -1518,7 +1518,7 @@ option_fields[OPT_NUM] =
 	{ 'p', "自動拾いエディタ", 12 },
 	{ 'd', " 基本ウェイト量", 13 },
 	{ 'a', "   自動セーブ    オプション", 14 },
-	{ 'w', "ウインドウフラグ", 15 },
+	{ 'w', "ウィンドウフラグ", 15 },
 	{ 's', "   設定の保存   ", 16 },
 
 	{ 'b', "      初期       オプション", 18 },
@@ -1536,7 +1536,7 @@ option_fields[OPT_NUM] =
 	{ 'd', "Base Delay Factor", 13 },
 	{ 'a', "Autosave Options", 14 },
 	{ 'w', "Window Flags", 15 },
-	{ 's', "Save to pref file", 15 },
+	{ 's', "Save to pref file", 16 },
 
 	{ 'b', "Birth Options (Browse Only)", 18 },
 	{ 'c', "Cheat Options", 19 },
