@@ -1278,7 +1278,7 @@ A:15/2
 F:BLOWS
 
 N:137:肉体強化:ミスリルの
-E:of Muscle:Mithril
+E:Muscle:Mithril
 G:=:B
 I:45:50:0
 W:15:0:2:10000
