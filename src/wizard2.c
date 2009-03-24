@@ -603,6 +603,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 			else /* Not ok */
 			{
 				wishing_puff_of_smoke();
+				return (3);
 			}
 
 			retval = 3;
