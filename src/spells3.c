@@ -3233,7 +3233,11 @@ s16b get_spell_chance(int fail, int min_lev, int mana_cost)
 	}
 
 	/* Hack -- Priest prayer penalty for "edged" weapons  -DGK */
-	if ((p_ptr->pclass == CLASS_PRIEST) && p_ptr->icky_wield) chance += 25;
+	if ((p_ptr->pclass == CLASS_PRIEST) && p_ptr->icky_wield)
+    {
+        chance += 25;
+        minfail = 25;
+    }
 
 	/* Minimum failure rate */
 	if (chance < minfail) chance = minfail;
