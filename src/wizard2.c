@@ -2296,8 +2296,8 @@ static void do_cmd_dump_options(void)
 		if (ot_ptr->o_var) exist[ot_ptr->o_set][ot_ptr->o_bit] = i + 1;
 	}
 
-	fprintf(fff, "[Option bits usage on XAngband %d.%d.%d]\n\n",
-	        VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
+	fprintf(fff, "[Option bits usage on %s %d.%d.%d]\n\n",
+	        VERSION_NAME, VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
 
 	fputs("Set - Bit (Page) Option Name\n", fff);
 	fputs("------------------------------------------------\n", fff);
