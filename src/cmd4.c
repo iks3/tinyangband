@@ -7779,9 +7779,9 @@ static void do_cmd_knowledge_notes(void)
 
 cptr inven_res_label = 
 #ifdef JP
- "                                ª¿≈≈≤–Œ‰∆«∏˜∞««ÀπÏπˆ∞¯∆ŸŒÙ Ã’…›Õ·„∆©Ãø¥∂æ√…¸…‚";
+ "                                ª¿≈≈≤–Œ‰∆«∂≤∞≈Ã’ÕπÏπˆ ·„∆©Ãø¥∂æ√…¸…‚";
 #else
- "                                AcElFiCoPoLiDkShSoNtNxCaDi BlFeCfFaSeHlEpSdRgLv";
+ "                                AcElFiCoPoFeDkBlCfSoNt FaSeHlEpSdRgLv";
 #endif
 
 /* XTRA HACK RESLIST */
@@ -7828,9 +7828,9 @@ static void do_cmd_knowledge_inven_aux(FILE *fff, object_type *o_ptr,
 		if (!(o_ptr->ident & (IDENT_MENTAL))) 
 		{
 #ifdef JP
-			fprintf(fff, "-------…‘Ã¿--------------- -------…‘Ã¿---------\n");
+			fprintf(fff, "--------…‘Ã¿---------- -----…‘Ã¿-----\n");
 #else
-			fprintf(fff, "-------unknown------------ -------unknown------\n");
+			fprintf(fff, "--------unknown------- -----unknown--\n");
 #endif
 		}
 		else {
@@ -7865,21 +7865,33 @@ static void do_cmd_knowledge_inven_aux(FILE *fff, object_type *o_ptr,
 			if (f[1] & TR2_RES_POIS) fprintf(fff, res);
 			else fprintf(fff, non);
 
+#if 0
 			if (f[1] & TR2_RES_LITE) fprintf(fff, res);
+			else fprintf(fff, non);
+#endif
+
+			if (f[1] & TR2_RES_FEAR) fprintf(fff, res);
 			else fprintf(fff, non);
 
 			if (f[1] & TR2_RES_DARK) fprintf(fff, res);
 			else fprintf(fff, non);
 
-			if (f[1] & TR2_RES_SHARDS) fprintf(fff, res);
+			if (f[1] & TR2_RES_BLIND) fprintf(fff, res);
 			else fprintf(fff, non);
 
+        	if (f[1] & TR2_RES_CONF) fprintf(fff, res);
+			else fprintf(fff, non);
+
+#if 0
+			if (f[1] & TR2_RES_SHARDS) fprintf(fff, res);
+			else fprintf(fff, non);
+#endif
 			if (f[1] & TR2_RES_SOUND) fprintf(fff, res);
 			else fprintf(fff, non);
 
 			if (f[1] & TR2_RES_NETHER) fprintf(fff, res);
 			else fprintf(fff, non);
-
+#if 0
 			if (f[1] & TR2_RES_NEXUS) fprintf(fff, res);
 			else fprintf(fff, non);
 
@@ -7888,18 +7900,9 @@ static void do_cmd_knowledge_inven_aux(FILE *fff, object_type *o_ptr,
 
 			if (f[1] & TR2_RES_DISEN) fprintf(fff, res);
 			else fprintf(fff, non);
-
+#endif
 			fprintf(fff," ");
-
-			if (f[1] & TR2_RES_BLIND) fprintf(fff, res);
-			else fprintf(fff, non);
-
-			if (f[1] & TR2_RES_FEAR) fprintf(fff, res);
-			else fprintf(fff, non);
-
-			if (f[1] & TR2_RES_CONF) fprintf(fff, res);
-			else fprintf(fff, non);
-
+		
 			if (f[1] & TR2_FREE_ACT) fprintf(fff, res);
 			else fprintf(fff, non);
 
