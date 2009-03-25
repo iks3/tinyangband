@@ -1210,16 +1210,9 @@ static void print_header(void)
 {
 	char buf[80];
 
-#ifndef FAKE_VERSION
-	sprintf(buf, "Artifact Spoilers for Angband Version %d.%d.%d",
-		VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
-	spoiler_underline(buf);
-#else /* FAKE_VERSION */
 	sprintf(buf, "Artifact Spoilers for %s Version %d.%d.%d",
 		VERSION_NAME, FAKE_VER_MAJOR, FAKE_VER_MINOR, FAKE_VER_PATCH);
 	spoiler_underline(buf);
-#endif /* FAKE_VERSION */
-
 }
 
 /*
@@ -1636,16 +1629,9 @@ static void spoil_mon_desc(cptr fname)
 	}
 
 	/* Dump the header */
-
-#ifndef FAKE_VERSION
-	fprintf(fff, "Monster Spoilers for Angband Version %d.%d.%d\n",
-		VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
-	fprintf(fff, "------------------------------------------\n\n");
-#else
 	fprintf(fff, "Monster Spoilers for %s Version %d.%d.%d\n",
 		VERSION_NAME, FAKE_VER_MAJOR, FAKE_VER_MINOR, FAKE_VER_PATCH);
 	fprintf(fff, "------------------------------------------\n\n");
-#endif
 
 	/* Dump the header */
 	fprintf(fff, "%-40.40s%4s%4s%6s%8s%4s  %11.11s\n",
@@ -1930,13 +1916,8 @@ static void spoil_mon_info(cptr fname)
 
 
 	/* Dump the header */
-#ifndef FAKE_VERSION
-	sprintf(buf, "Monster Spoilers for Angband Version %d.%d.%d\n",
-		VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
-#else
 	sprintf(buf, "Monster Spoilers for %s Version %d.%d.%d\n",
 		VERSION_NAME, FAKE_VER_MAJOR, FAKE_VER_MINOR, FAKE_VER_PATCH);
-#endif
 	spoil_out(buf);
 	spoil_out("------------------------------------------\n\n");
 

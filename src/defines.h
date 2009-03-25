@@ -48,7 +48,6 @@
 #define SAVEFILE_VERSION 5
 
 /* Added for ZAngband ( now used for TinyAngband ) */
-#define FAKE_VERSION   0
 #define FAKE_VER_MAJOR 0
 #define FAKE_VER_MINOR 0
 #define FAKE_VER_PATCH 3

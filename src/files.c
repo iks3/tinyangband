@@ -3835,20 +3835,13 @@ errr file_character(cptr name, bool full)
 		return (-1);
 	}
 
-
-#ifndef FAKE_VERSION
-	/* Begin dump */
-	fprintf(fff, "  [Zangband %d.%d.%d Character Dump]\n\n",
-			  VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
-#else
+	/* Dump the header */
 #ifdef JP
 	fprintf(fff, "  [%s %d.%d.%d キャラクタ情報]\n\n",
 		VERSION_NAME, FAKE_VER_MAJOR, FAKE_VER_MINOR, FAKE_VER_PATCH);
 #else
 	fprintf(fff, "  [%s %d.%d.%d Character Dump]\n\n",
 		VERSION_NAME, FAKE_VER_MAJOR, FAKE_VER_MINOR, FAKE_VER_PATCH);
-#endif
-
 #endif
 
 	/* Display player */
