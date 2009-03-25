@@ -240,9 +240,9 @@ static errr wr_savefile(void)
 	data_fd = -1;
 
 	/* Dump the version */
-	fake[0] = (byte)(FAKE_VER_MAJOR);
-	fake[1] = (byte)(FAKE_VER_MINOR);
-	fake[2] = (byte)(FAKE_VER_PATCH);
+	fake[0] = (byte)(VERSION_MAJOR);
+	fake[1] = (byte)(VERSION_MINOR);
+	fake[2] = (byte)(VERSION_PATCH);
 	fake[3] = (byte)(VERSION_EXTRA);
 
 
@@ -1382,11 +1382,11 @@ static bool wr_savefile_new(void)
 
 	/* Dump the file header */
 	xor_byte = 0;
-	wr_byte(FAKE_VER_MAJOR);
+	wr_byte(VERSION_MAJOR);
 	xor_byte = 0;
-	wr_byte(FAKE_VER_MINOR);
+	wr_byte(VERSION_MINOR);
 	xor_byte = 0;
-	wr_byte(FAKE_VER_PATCH);
+	wr_byte(VERSION_PATCH);
 	xor_byte = 0;
 
 	tmp8u = (byte)randint0(256);
@@ -2005,9 +2005,9 @@ bool load_player(void)
 	if (!err)
 	{
 		/* Give a conversion warning */
-		if ((FAKE_VER_MAJOR != sf_major) ||
-		    (FAKE_VER_MINOR != sf_minor) ||
-		    (FAKE_VER_PATCH != sf_patch))
+		if ((VERSION_MAJOR != sf_major) ||
+		    (VERSION_MINOR != sf_minor) ||
+		    (VERSION_PATCH != sf_patch))
 		{
 				/* Message */
 #ifdef JP

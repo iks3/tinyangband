@@ -400,9 +400,9 @@ static errr init_info_raw(int fd, header *head)
 static void init_header(header *head, int num, int len)
 {
 	/* Save the "version" */
-	head->v_major = FAKE_VER_MAJOR;
-	head->v_minor = FAKE_VER_MINOR;
-	head->v_patch = FAKE_VER_PATCH;
+	head->v_major = VERSION_MAJOR;
+	head->v_minor = VERSION_MINOR;
+	head->v_patch = VERSION_PATCH;
 	head->v_extra = 0;
 
 	/* Save the "record" information */

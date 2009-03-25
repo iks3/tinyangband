@@ -3892,10 +3892,10 @@ void do_cmd_version(void)
 	/* Silly message */
 #ifdef JP
 	msg_format("%s %d.%d.%d",
-		VERSION_NAME, FAKE_VER_MAJOR, FAKE_VER_MINOR, FAKE_VER_PATCH);
+		VERSION_NAME, VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
 #else
 	msg_format("You are playing %s %d.%d.%d.",
-		VERSION_NAME, FAKE_VER_MAJOR, FAKE_VER_MINOR, FAKE_VER_PATCH);
+		VERSION_NAME, VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
 #endif
 }
 

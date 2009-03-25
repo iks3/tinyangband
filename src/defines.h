@@ -39,18 +39,13 @@
 
 
 /*
- * Current version number of Angband: 2.8.1
+ * Current version number of TinyAngband
  */
-#define VERSION_MAJOR   2
-#define VERSION_MINOR   8
-#define VERSION_PATCH   1
+#define VERSION_MAJOR   0
+#define VERSION_MINOR   0
+#define VERSION_PATCH   3
 
 #define SAVEFILE_VERSION 5
-
-/* Added for ZAngband ( now used for TinyAngband ) */
-#define FAKE_VER_MAJOR 0
-#define FAKE_VER_MINOR 0
-#define FAKE_VER_PATCH 3
 
 #define TINYANGBAND
 

@@ -2297,7 +2297,7 @@ static void do_cmd_dump_options(void)
 	}
 
 	fprintf(fff, "[Option bits usage on XAngband %d.%d.%d]\n\n",
-	        FAKE_VER_MAJOR, FAKE_VER_MINOR, FAKE_VER_PATCH);
+	        VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
 
 	fputs("Set - Bit (Page) Option Name\n", fff);
 	fputs("------------------------------------------------\n", fff);

@@ -3838,10 +3838,10 @@ errr file_character(cptr name, bool full)
 	/* Dump the header */
 #ifdef JP
 	fprintf(fff, "  [%s %d.%d.%d キャラクタ情報]\n\n",
-		VERSION_NAME, FAKE_VER_MAJOR, FAKE_VER_MINOR, FAKE_VER_PATCH);
+		VERSION_NAME, VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
 #else
 	fprintf(fff, "  [%s %d.%d.%d Character Dump]\n\n",
-		VERSION_NAME, FAKE_VER_MAJOR, FAKE_VER_MINOR, FAKE_VER_PATCH);
+		VERSION_NAME, VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
 #endif
 
 	/* Display player */
@@ -4757,7 +4757,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 #else
 		prt(format("[%s %d.%d.%d, %s, Line %d/%d]",
 #endif
-			   VERSION_NAME, FAKE_VER_MAJOR, FAKE_VER_MINOR, FAKE_VER_PATCH,
+			   VERSION_NAME, VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH,
 			   caption, line, size), 0, 0);
 
 		/* Prompt -- menu screen */
