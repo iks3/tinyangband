@@ -2906,35 +2906,6 @@ static void windows_map_aux(void)
 	byte ta;
 	char tc;
 
-#ifndef ZANGBAND
-	s16b py = p_ptr->py;
-	s16b px = p_ptr->px;
-#endif /* ZANGBAND */
-
-#ifdef ZANGBAND_WILDERNESS
-
-	td->map_tile_wid = (td->tile_wid * td->cols) / MAX_WID;
-	td->map_tile_hgt = (td->tile_hgt * td->rows) / MAX_HGT;
-
-	/* Is the player in the wilderness? */
-	if (dun_level == 0)
-	{
-		/* Work out offset of corner of dungeon-sized segment of the wilderness */
-		min_x = wild_grid.x_min;
-		min_y = wild_grid.y_min;
-		max_x = wild_grid.x_max;
-		max_y = wild_grid.y_max;
-	}
-	else
-	{
-		min_x = 0;
-		min_y = 0;
-		max_x = cur_wid;
-		max_y = cur_hgt;
-	}
-
-#else /* ZANGBAND_WILDERNESS */
-
 	td->map_tile_wid = (td->tile_wid * td->cols) / cur_wid;
 	td->map_tile_hgt = (td->tile_hgt * td->rows) / cur_hgt;
 	
@@ -2942,8 +2913,6 @@ static void windows_map_aux(void)
 	min_y = 0;
 	max_x = cur_wid;
 	max_y = cur_hgt;
-
-#endif /* ZANGBAND_WILDERNESS */
 
 	/* Draw the map */
 	for (x = min_x; x < max_x; x++)
@@ -3823,11 +3792,7 @@ static void process_menus(WORD wCmd)
 				clear_mon_lite();
 
 				/* Save the game */
-#ifdef ZANGBAND
 				do_cmd_save_game(FALSE);
-#else /* ZANGBAND */
-				do_cmd_save_game();
-#endif /* ZANGBAND */
 			}
 			else
 			{
@@ -3953,11 +3918,6 @@ static void process_menus(WORD wCmd)
 				clear_mon_lite();
 
 				/* Save the game */
-#ifdef ZANGBAND
-				/* do_cmd_save_game(FALSE); */
-#else /* ZANGBAND */
-				/* do_cmd_save_game(); */
-#endif /* ZANGBAND */
 				Term_key_push(SPECIAL_KEY_QUIT);
 				break;
 			}

@@ -53,7 +53,6 @@
 #define FAKE_VER_MINOR 0
 #define FAKE_VER_PATCH 3
 
-#define ZANGBAND
 #define TINYANGBAND
 
 /*
