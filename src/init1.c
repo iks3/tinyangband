@@ -3279,7 +3279,7 @@ static errr process_dungeon_file_aux(char *buf, int ymin, int xmin, int ymax, in
 
 
 static char tmp[8];
-static cptr variant = "ZANGBAND";
+static cptr variant = VERSION_NAME;
 
 
 /*
