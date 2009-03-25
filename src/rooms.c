@@ -2002,7 +2002,7 @@ static void build_vault(int yval, int xval, int ymax, int xmax, cptr data,
 				/* Monster */
 				case '&':
 				{
-					monster_level = base_level + 5;
+					monster_level = base_level + 2;
 					place_monster(y, x, TRUE, TRUE);
 					monster_level = base_level;
 					break;
@@ -2011,7 +2011,7 @@ static void build_vault(int yval, int xval, int ymax, int xmax, cptr data,
 				/* Meaner monster */
 				case '@':
 				{
-					monster_level = base_level + 11;
+					monster_level = base_level + 5;
 					place_monster(y, x, TRUE, TRUE);
 					monster_level = base_level;
 					break;
@@ -2020,10 +2020,10 @@ static void build_vault(int yval, int xval, int ymax, int xmax, cptr data,
 				/* Meaner monster, plus treasure */
 				case '9':
 				{
-					monster_level = base_level + 9;
+					monster_level = base_level + 3;
 					place_monster(y, x, TRUE, TRUE);
 					monster_level = base_level;
-					object_level = base_level + 7;
+					object_level = base_level + 3;
 					place_object(y, x, TRUE, FALSE);
 					object_level = base_level;
 					break;
@@ -2032,10 +2032,10 @@ static void build_vault(int yval, int xval, int ymax, int xmax, cptr data,
 				/* Nasty monster and treasure */
 				case '8':
 				{
-					monster_level = base_level + 40;
+					monster_level = base_level + 12;
 					place_monster(y, x, TRUE, TRUE);
 					monster_level = base_level;
-					object_level = base_level + 20;
+					object_level = base_level + 8;
 					place_object(y, x, TRUE, TRUE);
 					object_level = base_level;
 					break;
@@ -2046,13 +2046,13 @@ static void build_vault(int yval, int xval, int ymax, int xmax, cptr data,
 				{
 					if (randint0(100) < 50)
 					{
-						monster_level = base_level + 3;
+						monster_level = base_level + 2;
 						place_monster(y, x, TRUE, TRUE);
 						monster_level = base_level;
 					}
 					if (randint0(100) < 50)
 					{
-						object_level = base_level + 7;
+						object_level = base_level + 4;
 						place_object(y, x, FALSE, FALSE);
 						object_level = base_level;
 					}
@@ -2089,7 +2089,7 @@ static void build_vault(int yval, int xval, int ymax, int xmax, cptr data,
 
 				case 'A':
 				{
-					object_level = base_level + 12;
+					object_level = base_level + 5;
 					place_object(y, x, TRUE, FALSE);
 					object_level = base_level;
 				}
