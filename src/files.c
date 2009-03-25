@@ -1785,10 +1785,10 @@ static cptr likert(int x, int y)
 			likert_color = TERM_L_BLUE;
 #ifdef JP
 			sprintf(dummy,"ÅÁÀâÅª [%d]", (int) ((((x / y) -17) * 5) / 2));
-#else
-			sprintf(dummy,"Legendary [%d]", (int)((((x / y) - 17) * 5) / 2));
-#endif
 			return dummy;
+#else
+			return ("Legendary");
+#endif
 		}
 	}
 }
