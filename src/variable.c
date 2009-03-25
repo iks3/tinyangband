@@ -66,10 +66,6 @@ byte sf_patch;			/* Savefile's "version_patch" */
 byte sf_extra;			/* Savefile's "version_extra" */
 u32b sf_version;		/* Savefile's "version" */
 
-byte k_major;           /* Savefile version for Kantangband / XAngband */
-byte k_minor;
-byte k_patch;
-
 /*
  * Savefile information
  */

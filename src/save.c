@@ -1947,9 +1947,9 @@ bool load_player(void)
 	{
 
 		/* Extract version */
-		k_major = vvv[0];
-		k_minor = vvv[1];
-		k_patch = vvv[2];
+		sf_major = vvv[0];
+		sf_minor = vvv[1];
+		sf_patch = vvv[2];
 		sf_extra = vvv[3];
 
 		/* Clear screen */
@@ -2005,9 +2005,9 @@ bool load_player(void)
 	if (!err)
 	{
 		/* Give a conversion warning */
-		if ((FAKE_VER_MAJOR != k_major) ||
-		    (FAKE_VER_MINOR != k_minor) ||
-		    (FAKE_VER_PATCH != k_patch))
+		if ((FAKE_VER_MAJOR != sf_major) ||
+		    (FAKE_VER_MINOR != sf_minor) ||
+		    (FAKE_VER_PATCH != sf_patch))
 		{
 				/* Message */
 #ifdef JP
@@ -2015,7 +2015,7 @@ bool load_player(void)
 #else
 			msg_format("Converted a %d.%d.%d savefile.",
 #endif
-			    k_major, k_minor, k_patch);
+			    sf_major, sf_minor, sf_patch);
 			msg_print(NULL);
 		}
 
@@ -2081,7 +2081,7 @@ bool load_player(void)
 #else
 	msg_format("Error (%s) reading %d.%d.%d savefile.",
 #endif
-		   what, k_major, k_minor, k_patch);
+		   what, sf_major, sf_minor, sf_patch);
 	msg_print(NULL);
 
 	/* Oops */

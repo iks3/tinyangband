@@ -88,16 +88,16 @@ static byte *obj_mem;
 static bool older_than(byte x, byte y, byte z)
 {
 	/* Much older, or much more recent */
-	if (k_major < x) return (TRUE);
-	if (k_major > x) return (FALSE);
+	if (sf_major < x) return (TRUE);
+	if (sf_major > x) return (FALSE);
 
 	/* Distinctly older, or distinctly more recent */
-	if (k_minor < y) return (TRUE);
-	if (k_minor > y) return (FALSE);
+	if (sf_minor < y) return (TRUE);
+	if (sf_minor > y) return (FALSE);
 
 	/* Barely older, or barely more recent */
-	if (k_patch < z) return (TRUE);
-	if (k_patch > z) return (FALSE);
+	if (sf_patch < z) return (TRUE);
+	if (sf_patch > z) return (FALSE);
 
 	/* Identical versions */
 	return (FALSE);
@@ -1538,7 +1538,7 @@ static errr rd_savefile_new_aux(void)
 #else
 	note(format("Loading a %d.%d.%d savefile...",
 #endif
-		k_major, k_minor, k_patch));
+		sf_major, sf_minor, sf_patch));
 
 	/* Strip the version bytes */
 	strip_bytes(4);
