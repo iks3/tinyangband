@@ -2746,14 +2746,17 @@ static void building_recharge_all(void)
 			break;
 
 		case TV_STAFF:
-			/* Price per charge ( = double the price paid by shopkeepers for the charge) */
-			price = (get_object_cost(o_ptr) / 10) * o_ptr->number;
+			if (o_ptr->sval != SV_STAFF_WISHING)
+			{
+				/* Price per charge ( = double the price paid by shopkeepers for the charge) */
+				price = (get_object_cost(o_ptr) / 10) * o_ptr->number;
 
-			/* Pay at least 10 gold per charge */
-			price = MAX(10, price);
+				/* Pay at least 10 gold per charge */
+				price = MAX(10, price);
 
-			/* Fully charge */
-			price = (k_ptr->pval - o_ptr->pval) * price;
+				/* Fully charge */
+				price = (k_ptr->pval - o_ptr->pval) * price;
+			}
 			break;
 
 		case TV_WAND:
@@ -2809,6 +2812,9 @@ static void building_recharge_all(void)
 
 		/* skip non magic device */
 		if (o_ptr->tval < TV_STAFF || o_ptr->tval > TV_ROD) continue;
+
+		/* skip staff of wishings */
+		if (o_ptr->tval == TV_STAFF && o_ptr->sval == SV_STAFF_WISHING) continue;
 
 		/* Identify it */
 		if (!object_known_p(o_ptr))
