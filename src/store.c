@@ -816,7 +816,8 @@ static bool store_will_buy(const object_type *o_ptr)
 				case TV_HAFTED:
 				case TV_POLEARM:
 				case TV_SWORD:
-					if (!(ego_item_p(o_ptr) || 
+					if (!object_known_p(o_ptr) ||
+						!(ego_item_p(o_ptr) || 
 						artifact_p(o_ptr) || 
 						o_ptr->art_name))
 						return (FALSE);
