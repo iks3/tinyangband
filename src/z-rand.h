@@ -90,7 +90,6 @@ extern byte quick_rand_place;
 /**** Available Functions ****/
 
 extern void Rand_state_init(u32b seed);
-extern s32b Rand_mod(s32b m);
 extern s32b Rand_div(u32b m);
 extern s16b randnor(int mean, int stand);
 extern s16b damroll(int num, int sides);
