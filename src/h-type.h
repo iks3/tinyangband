@@ -38,6 +38,10 @@
  * These limits should be verified and coded into "h-constant.h".
  */
 
+/* for 64bit systems */
+#ifdef HAVE_STDINT_H
+#include <stdint.h>
+#endif
 
 
 /*** Special 4 letter names for some standard types ***/
