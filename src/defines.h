@@ -3601,3 +3601,12 @@ extern int PlayerUID;
 #define REW_WISHING     16
 #define REW_PROTEVIL    17
 #define REW_AMULET      18
+
+/*
+  Language selection macro
+*/
+#ifdef JP
+#define _(JAPANESE,ENGLISH) (JAPANESE)
+#else
+#define _(JAPANESE,ENGLISH) (ENGLISH)
+#endif
