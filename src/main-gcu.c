@@ -1088,6 +1088,7 @@ errr init_gcu(int argc, char *argv[])
 	cbreak();
 	noecho();
 	nonl();
+	raw();
 
 	/* Extract the game keymap */
 	keymap_game_prepare();
