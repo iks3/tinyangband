@@ -3484,8 +3484,8 @@ static void spell_info(char *p, int spell, int realm)
 
 					case  8: strcpy (p, " ²óÉü:8d10"); break;
 					case 11: sprintf(p, " ´ü´Ö:%d+d25", plev * 3); break;
-					case 13: sprintf(p, " Â»½ý:%d", 3 * plev); break;
-					case 14: strcpy (p, " ²óÉü:200"); break;
+					case 12: sprintf(p, " Â»½ý:%d", 3 * plev); break;
+					case 13: strcpy (p, " ²óÉü:200"); break;
 					case 15: sprintf(p, " Â»½ý:%d", 100 + plev * 4); break;
 #else
 					case  1: strcpy (p, " heal 2d10"); break;
@@ -3496,8 +3496,8 @@ static void spell_info(char *p, int spell, int realm)
 
 					case  8: strcpy (p, " heal 8d10"); break;
 					case 11: sprintf(p, " dur %d+d25", plev * 3); break;
-					case 13: sprintf(p, " dam %d", 3 * plev); break;
-					case 14: strcpy (p, " heal 200"); break;
+					case 12: sprintf(p, " dam %d", 3 * plev); break;
+					case 13: strcpy (p, " heal 200"); break;
 					case 15: sprintf(p, " dam %d", 100 + plev * 4); break;
 #endif
 				}
