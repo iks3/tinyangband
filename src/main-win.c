@@ -1593,7 +1593,7 @@ static bool init_graphics(void)
 		char buf[1024];
 		int wid, hgt;
 		cptr name;
-
+#if 0
 		if (arg_graphics == GRAPHICS_ADAM_BOLT)
 		{
 			wid = 16;
@@ -1605,6 +1605,19 @@ static bool init_graphics(void)
 
 			use_transparency = TRUE;
 		}
+#else
+		if (arg_graphics == GRAPHICS_ADAM_BOLT)
+		{
+			wid = 24;
+			hgt = 24;
+
+			name = "24X24.BMP";
+
+			ANGBAND_GRAF = "old";
+
+			use_transparency = TRUE;
+		}
+#endif
 		else
 		{
 			wid = 8;
@@ -1633,17 +1646,39 @@ static bool init_graphics(void)
 		infGraph.CellWidth = wid;
 		infGraph.CellHeight = hgt;
 
-		if (arg_graphics == GRAPHICS_ADAM_BOLT)
+		//Make mask bitmap
+		//COLORREF 0x00020202 color is transparent
+		if (use_transparency)
 		{
-			/* Access the mask file */
-			path_build(buf, sizeof(buf), ANGBAND_DIR_XTRA_GRAF, "mask.bmp");
+			term_data *td = (term_data *)Term->data;
+			COLORREF defaultBgColor;
+			HDC hdc, hdcMask, hdcSrc, hdcDefaultMask;
+			HBITMAP hbmOld;
+			BITMAP bmSrc;
 
-			/* Load the bitmap or quit */
-			if (!ReadDIB(data[0].w, buf, &infMask))
-			{
-				plog_fmt("Cannot read bitmap file '%s'", buf);
-				return (FALSE);
-			}
+			hdc = GetDC(td->w);
+
+			//Make original bitmap handle
+			hdcSrc = CreateCompatibleDC(hdc);
+			hbmOld = (HBITMAP)SelectObject(hdcSrc, infGraph.hBitmap);
+			GetObject(infGraph.hBitmap, sizeof(BITMAP), &bmSrc);
+
+			//Change background color for transparency
+			defaultBgColor = SetBkColor(hdcSrc, (COLORREF)0x00020202);
+
+			//Make mask bitmap handle
+			hdcMask = CreateCompatibleDC(hdcSrc);
+			infMask.hBitmap = CreateBitmap(bmSrc.bmWidth, bmSrc.bmHeight, 1, 1, NULL);
+			hdcDefaultMask = (HDC)SelectObject(hdcMask, infMask.hBitmap);
+			BitBlt(hdcMask, 0, 0, bmSrc.bmWidth, bmSrc.bmHeight, hdcSrc, 0, 0, NOTSRCCOPY);
+
+			//Reset old Background Color
+			SetBkColor(hdcSrc, defaultBgColor);
+
+			SelectObject(hdcSrc, hbmOld);
+			DeleteDC(hdcSrc);
+			DeleteDC(hdcMask);
+			ReleaseDC(td->w, hdc);
 		}
 
 		/* Activate a palette */
@@ -2788,9 +2823,9 @@ static errr Term_pict_win(int x, int y, int n, const byte *ap, const char *cp, c
 
 	/* More info */
 	hdcSrc = CreateCompatibleDC(hdc);
-	hbmSrcOld = SelectObject(hdcSrc, infGraph.hBitmap);
+	hbmSrcOld = (HBITMAP)SelectObject(hdcSrc, infGraph.hBitmap);
 
-	if (arg_graphics == GRAPHICS_ADAM_BOLT)
+	if (use_transparency)
 	{
 		hdcMask = CreateCompatibleDC(hdc);
 		SelectObject(hdcMask, infMask.hBitmap);
@@ -2810,7 +2845,7 @@ static errr Term_pict_win(int x, int y, int n, const byte *ap, const char *cp, c
 		x1 = col * w1;
 		y1 = row * h1;
 
-		if (arg_graphics == GRAPHICS_ADAM_BOLT)
+		if (use_transparency)
 		{
 			x3 = (tcp[i] & 0x7F) * w1;
 			y3 = (tap[i] & 0x7F) * h1;
@@ -2873,7 +2908,7 @@ static errr Term_pict_win(int x, int y, int n, const byte *ap, const char *cp, c
 	SelectObject(hdcSrc, hbmSrcOld);
 	DeleteDC(hdcSrc);
 
-	if (arg_graphics == GRAPHICS_ADAM_BOLT)
+	if (use_transparency);
 	{
 		/* Release */
 		SelectObject(hdcMask, hbmSrcOld);
