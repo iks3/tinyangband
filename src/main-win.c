@@ -1677,6 +1677,7 @@ static bool init_graphics(void)
 
 			SelectObject(hdcSrc, hbmOld);
 			DeleteDC(hdcSrc);
+			SelectObject(hdcMask, hdcDefaultMask);
 			DeleteDC(hdcMask);
 			ReleaseDC(td->w, hdc);
 		}
@@ -2829,6 +2830,7 @@ static errr Term_pict_win(int x, int y, int n, const byte *ap, const char *cp, c
 	{
 		hdcMask = CreateCompatibleDC(hdc);
 		SelectObject(hdcMask, infMask.hBitmap);
+		SetTextColor(hdc, 0x00ffffff); /* Turn back text color white for bitblt of mask */
 	}
 
 	/* Draw attr/char pairs */
