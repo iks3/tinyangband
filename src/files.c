@@ -2287,12 +2287,11 @@ static void display_player_flag_aux(int row, int col, cptr header,
 	int     i;
 	u32b    f[3];
 	bool    vuln = FALSE;
+	byte    header_color = TERM_L_DARK;
+	int     header_col = col;
 
 	if ((vul_f & flag1) && !((im_f[0] | im_f[1] | im_f[2]) & flag1))
 		vuln = TRUE;
-
-	/* Header */
-	c_put_str(TERM_WHITE, header, row, col);
 
 	/* Advance */
 	col += strlen(header) + 1;
@@ -2313,8 +2312,16 @@ static void display_player_flag_aux(int row, int col, cptr header,
 		c_put_str((byte)(vuln ? TERM_RED : TERM_SLATE), ".", row, col);
 
 		/* Check flags */
-		if (f[n - 1] & flag1) c_put_str((byte)(vuln ? TERM_L_RED : TERM_WHITE), "+", row, col);
-		if (f[n - 1] & flag2) c_put_str(TERM_WHITE, "*", row, col);
+		if (f[n - 1] & flag1)
+		{
+			c_put_str((byte)(vuln ? TERM_L_RED : TERM_WHITE), "+", row, col);
+			header_color = TERM_WHITE;
+		}
+		if (f[n - 1] & flag2)
+		{
+			c_put_str(TERM_WHITE, "*", row, col);
+			header_color = TERM_WHITE;
+		}
 
 		/* Advance */
 		col++;
@@ -2327,20 +2334,39 @@ static void display_player_flag_aux(int row, int col, cptr header,
 	c_put_str((byte)(vuln ? TERM_RED : TERM_SLATE), ".", row, col);
 
 	/* Check flags */
-	if (f[n-1] & flag1) c_put_str((byte)(vuln ? TERM_L_RED : TERM_WHITE), "+", row, col);
+	if (f[n-1] & flag1)
+	{
+		c_put_str((byte)(vuln ? TERM_L_RED : TERM_WHITE), "+", row, col);
+		header_color = TERM_WHITE;
+	}
 
 	/* Tim player flags */
 	tim_player_flags(&f[0], &f[1], &f[2]);
 
 	/* Check flags */
-	if (f[n - 1] & flag1) c_put_str((byte)(vuln ? TERM_ORANGE : TERM_YELLOW), "#", row, col);
+	if (f[n - 1] & flag1)
+	{
+		c_put_str((byte)(vuln ? TERM_ORANGE : TERM_YELLOW), "#", row, col);
+		header_color = TERM_WHITE;
+	}
 
 	/* Immunity */
-	if (im_f[2] & flag1) c_put_str(TERM_YELLOW, "*", row, col);
-	if (im_f[1] & flag1) c_put_str(TERM_WHITE, "*", row, col);
+	if (im_f[2] & flag1)
+	{
+		c_put_str(TERM_YELLOW, "*", row, col);
+		header_color = TERM_WHITE;
+	}
+	if (im_f[1] & flag1)
+	{
+		c_put_str(TERM_WHITE, "*", row, col);
+		header_color = TERM_WHITE;
+	}
 
 	/* Vulnerability */
 	if (vuln) c_put_str(TERM_RED, "v", row, col + 1);
+
+	/* Header */
+	c_put_str(header_color, header, row, header_col);
 }
 
 
@@ -2367,31 +2393,17 @@ static void display_player_flag_info(void)
 
 	c_put_str(TERM_WHITE, "abcdefghijkl@", row++, col + 8);
 
-#ifdef JP
-	display_player_flag_aux(row++, col, "ÂÑ»À  :", 2, TR2_RES_ACID, TR2_IM_ACID, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÅÅ·â:", 2, TR2_RES_ELEC, TR2_IM_ELEC, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑ²Ð±ê:", 2, TR2_RES_FIRE, TR2_IM_FIRE, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÎäµ¤:", 2, TR2_RES_COLD, TR2_IM_COLD, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÆÇ  :", 2, TR2_RES_POIS, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑ¶²ÉÝ:", 2, TR2_RES_FEAR, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑ°Å¹õ:", 2, TR2_RES_DARK, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÌÕÌÜ:", 2, TR2_RES_BLIND, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑº®Íð:", 2, TR2_RES_CONF, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑ¹ì²»:", 2, TR2_RES_SOUND, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÃÏ¹ö:", 2, TR2_RES_NETHER, 0, im_f[1], vul_f[1]);
-#else
-	display_player_flag_aux(row++, col, "Acid  :", 2, TR2_RES_ACID, TR2_IM_ACID, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Elec  :", 2, TR2_RES_ELEC, TR2_IM_ELEC, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Fire  :", 2, TR2_RES_FIRE, TR2_IM_FIRE, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Cold  :", 2, TR2_RES_COLD, TR2_IM_COLD, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Poison:", 2, TR2_RES_POIS, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Fear  :", 2, TR2_RES_FEAR, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Dark  :", 2, TR2_RES_DARK, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Blind :", 2, TR2_RES_BLIND, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Conf  :", 2, TR2_RES_CONF, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Sound :", 2, TR2_RES_SOUND, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Nether:", 2, TR2_RES_NETHER, 0, im_f[1], vul_f[1]);
-#endif
+	display_player_flag_aux(row++, col, _("ÂÑ»À  :", "Acid  :"), 2, TR2_RES_ACID, TR2_IM_ACID, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("ÂÑÅÅ·â:", "Elec  :"), 2, TR2_RES_ELEC, TR2_IM_ELEC, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("ÂÑ²Ð±ê:", "Fire  :"), 2, TR2_RES_FIRE, TR2_IM_FIRE, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("ÂÑÎäµ¤:", "Cold  :"), 2, TR2_RES_COLD, TR2_IM_COLD, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("ÂÑÆÇ  :", "Poison:"), 2, TR2_RES_POIS, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("ÂÑ¶²ÉÝ:", "Fear  :"), 2, TR2_RES_FEAR, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("ÂÑ°Å¹õ:", "Dark  :"), 2, TR2_RES_DARK, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("ÂÑÌÕÌÜ:", "Blind :"), 2, TR2_RES_BLIND, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("ÂÑº®Íð:", "Conf  :"), 2, TR2_RES_CONF, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("ÂÑ¹ì²»:", "Sound :"), 2, TR2_RES_SOUND, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("ÂÑÃÏ¹ö:", "Nether:"), 2, TR2_RES_NETHER, 0, im_f[1], vul_f[1]);
 #else
 	row = 5;
 	col = 1;
