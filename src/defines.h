@@ -3410,6 +3410,7 @@ extern int PlayerUID;
 #define GRAPHICS_NONE       0
 #define GRAPHICS_ORIGINAL   1
 #define GRAPHICS_ADAM_BOLT  2
+#define GRAPHICS_24X24      3
 
 /*
  * Modes for the random name generator

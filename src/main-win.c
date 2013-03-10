@@ -194,7 +194,8 @@
 
 #define IDM_OPTIONS_NO_GRAPHICS     400
 #define IDM_OPTIONS_OLD_GRAPHICS    401
-#define IDM_OPTIONS_NEW_GRAPHICS    402
+#define IDM_OPTIONS_24X24_GRAPHICS  402
+#define IDM_OPTIONS_NEW_GRAPHICS    403
 #define IDM_OPTIONS_BIGTILE         409
 #define IDM_OPTIONS_SOUND           410
 #define IDM_OPTIONS_LOW_PRIORITY    420
@@ -1593,7 +1594,7 @@ static bool init_graphics(void)
 		char buf[1024];
 		int wid, hgt;
 		cptr name;
-#if 0
+
 		if (arg_graphics == GRAPHICS_ADAM_BOLT)
 		{
 			wid = 16;
@@ -1605,8 +1606,8 @@ static bool init_graphics(void)
 
 			use_transparency = TRUE;
 		}
-#else
-		if (arg_graphics == GRAPHICS_ADAM_BOLT)
+
+		else if (arg_graphics == GRAPHICS_24X24)
 		{
 			wid = 24;
 			hgt = 24;
@@ -1617,7 +1618,7 @@ static bool init_graphics(void)
 
 			use_transparency = TRUE;
 		}
-#endif
+
 		else
 		{
 			wid = 8;
@@ -3472,6 +3473,8 @@ static void setup_menus(void)
 		       MF_BYCOMMAND | MF_DISABLED | MF_GRAYED);
 	EnableMenuItem(hm, IDM_OPTIONS_OLD_GRAPHICS,
 		       MF_BYCOMMAND | MF_DISABLED | MF_GRAYED);
+	EnableMenuItem(hm, IDM_OPTIONS_24X24_GRAPHICS,
+		       MF_BYCOMMAND | MF_DISABLED | MF_GRAYED);
 	EnableMenuItem(hm, IDM_OPTIONS_NEW_GRAPHICS,
 		       MF_BYCOMMAND | MF_DISABLED | MF_GRAYED);
 	EnableMenuItem(hm, IDM_OPTIONS_BIGTILE,
@@ -3495,6 +3498,8 @@ static void setup_menus(void)
 		      (arg_graphics == GRAPHICS_NONE ? MF_CHECKED : MF_UNCHECKED));
 	CheckMenuItem(hm, IDM_OPTIONS_OLD_GRAPHICS,
 		      (arg_graphics == GRAPHICS_ORIGINAL ? MF_CHECKED : MF_UNCHECKED));
+	CheckMenuItem(hm, IDM_OPTIONS_24X24_GRAPHICS,
+		      (arg_graphics == GRAPHICS_24X24 ? MF_CHECKED : MF_UNCHECKED));
 	CheckMenuItem(hm, IDM_OPTIONS_NEW_GRAPHICS,
 		      (arg_graphics == GRAPHICS_ADAM_BOLT ? MF_CHECKED : MF_UNCHECKED));
 	CheckMenuItem(hm, IDM_OPTIONS_BIGTILE,
@@ -3516,6 +3521,8 @@ static void setup_menus(void)
 	EnableMenuItem(hm, IDM_OPTIONS_NO_GRAPHICS, MF_ENABLED);
 	/* Menu "Options", Item "Graphics" */
 	EnableMenuItem(hm, IDM_OPTIONS_OLD_GRAPHICS, MF_ENABLED);
+	/* Menu "Options", Item "Graphics" */
+	EnableMenuItem(hm, IDM_OPTIONS_24X24_GRAPHICS, MF_ENABLED);
 	/* Menu "Options", Item "Graphics" */
 	EnableMenuItem(hm, IDM_OPTIONS_NEW_GRAPHICS, MF_ENABLED);
 	/* Menu "Options", Item "Graphics" */
@@ -4218,6 +4225,45 @@ static void process_menus(WORD wCmd)
 			{
 				arg_graphics = GRAPHICS_ORIGINAL;
 
+				/* React to changes */
+				Term_xtra_win_react();
+
+				/* Hack -- Force redraw */
+				Term_key_push(KTRL('R'));
+			}
+
+			break;
+		}
+
+		case IDM_OPTIONS_24X24_GRAPHICS:
+		{
+			term_data *td = &data[0];
+
+			/* Paranoia */
+			if (!inkey_flag)
+			{
+				plog("You may not do that right now.");
+				break;
+			}
+
+			/* Toggle "arg_graphics" */
+			if (arg_graphics != GRAPHICS_24X24)
+			{
+				arg_graphics = GRAPHICS_24X24;
+
+#ifdef JP
+				/* Auto apply bigtile */
+				if (!arg_bigtile)
+				{
+					arg_bigtile = TRUE;
+
+					/* Activate */
+					Term_activate(&td->t);
+
+					/* Resize the term */
+					Term_resize(td->cols, td->rows);
+				}
+#endif
 				/* React to changes */
 				Term_xtra_win_react();
 
