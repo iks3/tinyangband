@@ -4027,7 +4027,7 @@ msg_format("%sがダメージを受けた！", o_name);
 /*
  * Hurt the player with Acid
  */
-int acid_dam(int dam, cptr kb_str)
+int acid_dam(int dam, cptr kb_str, int aura)
 {
 	int inv = (dam < 30) ? 1 : (dam < 60) ? 2 : 3;
 
@@ -4052,7 +4052,7 @@ int acid_dam(int dam, cptr kb_str)
 	dam = take_hit(dam, kb_str);
 
 	/* Inventory damage */
-	if (!(p_ptr->oppose_acid && p_ptr->resist_acid))
+	if (!aura && !(p_ptr->oppose_acid && p_ptr->resist_acid))
 		inven_damage(set_acid_destroy, inv);
 
 	return (dam);
@@ -4062,7 +4062,7 @@ int acid_dam(int dam, cptr kb_str)
 /*
  * Hurt the player with electricity
  */
-int elec_dam(int dam, cptr kb_str)
+int elec_dam(int dam, cptr kb_str, int aura)
 {
 	int inv = (dam < 30) ? 1 : (dam < 60) ? 2 : 3;
 
@@ -4084,7 +4084,7 @@ int elec_dam(int dam, cptr kb_str)
 	dam = take_hit(dam, kb_str);
 
 	/* Inventory damage */
-	if (!(p_ptr->oppose_elec && p_ptr->resist_elec))
+	if (!aura && !(p_ptr->oppose_elec && p_ptr->resist_elec))
 		inven_damage(set_elec_destroy, inv);
 
 	return (dam);
@@ -4094,7 +4094,7 @@ int elec_dam(int dam, cptr kb_str)
 /*
  * Hurt the player with Fire
  */
-int fire_dam(int dam, cptr kb_str)
+int fire_dam(int dam, cptr kb_str, int aura)
 {
 	int inv = (dam < 30) ? 1 : (dam < 60) ? 2 : 3;
 
@@ -4117,7 +4117,7 @@ int fire_dam(int dam, cptr kb_str)
 	dam = take_hit(dam, kb_str);
 
 	/* Inventory damage */
-	if (!(p_ptr->resist_fire && p_ptr->oppose_fire))
+	if (!aura && !(p_ptr->resist_fire && p_ptr->oppose_fire))
 		inven_damage(set_fire_destroy, inv);
 
 	return (dam);
@@ -4127,7 +4127,7 @@ int fire_dam(int dam, cptr kb_str)
 /*
  * Hurt the player with Cold
  */
-int cold_dam(int dam, cptr kb_str)
+int cold_dam(int dam, cptr kb_str, int aura)
 {
 	int inv = (dam < 30) ? 1 : (dam < 60) ? 2 : 3;
 
@@ -4150,7 +4150,7 @@ int cold_dam(int dam, cptr kb_str)
 	dam = take_hit(dam, kb_str);
 
 	/* Inventory damage */
-	if (!(p_ptr->resist_cold && p_ptr->oppose_cold))
+	if (!aura && !(p_ptr->resist_cold && p_ptr->oppose_cold))
 		inven_damage(set_cold_destroy, inv);
 
 	return (dam);

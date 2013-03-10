@@ -4432,7 +4432,7 @@ if (fuzzy) msg_print("»À¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 			if (fuzzy) msg_print("You are hit by acid!");
 #endif
 
-			get_damage = acid_dam(dam, killer);
+			get_damage = acid_dam(dam, killer, FALSE);
 			break;
 		}
 
@@ -4445,7 +4445,7 @@ if (fuzzy) msg_print("²Ð±ê¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 			if (fuzzy) msg_print("You are hit by fire!");
 #endif
 
-			get_damage = fire_dam(dam, killer);
+			get_damage = fire_dam(dam, killer, FALSE);
 			break;
 		}
 
@@ -4458,7 +4458,7 @@ if (fuzzy) msg_print("Îäµ¤¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 			if (fuzzy) msg_print("You are hit by cold!");
 #endif
 
-			get_damage = cold_dam(dam, killer);
+			get_damage = cold_dam(dam, killer, FALSE);
 			break;
 		}
 
@@ -4471,7 +4471,7 @@ if (fuzzy) msg_print("ÅÅ·â¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 			if (fuzzy) msg_print("You are hit by lightning!");
 #endif
 
-			get_damage = elec_dam(dam, killer);
+			get_damage = elec_dam(dam, killer, FALSE);
 			break;
 		}
 
@@ -5296,7 +5296,7 @@ if (fuzzy) msg_print("²¿¤«±Ô¤¯Îä¤¿¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 			if (fuzzy) msg_print("You are hit by something sharp and cold!");
 #endif
 
-			get_damage = cold_dam(dam, killer);
+			get_damage = cold_dam(dam, killer, FALSE);
 			if (!p_ptr->resist_shard)
 			{
 				(void)set_cut(p_ptr->cut + damroll(5, 8));
