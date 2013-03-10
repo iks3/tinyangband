@@ -1745,6 +1745,23 @@ static void fix_floor(void)
 }
 
 
+
+/*
+ * Caluculate exp factor for leveling up
+ */
+void calc_expfact(void)
+{
+	p_ptr->expfact = rp_ptr->r_exp + cp_ptr->c_exp;
+
+	/* Patron decrease 10% exp needs */
+	if (p_ptr->valar_patron == VAR_VANA)
+	{
+		p_ptr->expfact = p_ptr->expfact * 9 / 10;
+	}
+}
+
+
+
 /*
  * Calculate number of spells player should have, and forget,
  * or remember, spells until that number is properly reflected.
@@ -2152,6 +2169,14 @@ static void calc_mana(void)
 					break;
 				}
 			}
+		}
+
+		/* Patron gives bonus */
+		switch (p_ptr->valar_patron)
+		{
+		case VAR_NIENNA:
+			msp = (6 * msp) / 5;
+			break;
 		}
 	}
 

@@ -3608,7 +3608,7 @@ extern int PlayerUID;
 #define REW_AUGM_ABL    9
 #define REW_POTION      10
 #define REW_RE_CURSE    11
-#define REW_GENOCIDE    12
+#define REW_RES_POTION  12
 #define REW_MASS_GEN    13
 #define REW_HEAL        14
 #define REW_DISPEL_C    15

@@ -1131,6 +1131,7 @@ extern void prt_time(void);
 extern cptr map_name(void);
 extern void cnv_stat(int val, char *out_val);
 extern s16b modify_stat_value(int value, int amount);
+extern void calc_expfact(void);
 extern void notice_stuff(void);
 extern void update_stuff(void);
 extern void redraw_stuff(void);

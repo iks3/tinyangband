@@ -484,7 +484,7 @@ void do_cmd_wield(void)
 		rp_ptr = &race_info[p_ptr->prace];
 
 		/* Experience factor */
-		p_ptr->expfact = rp_ptr->r_exp + cp_ptr->c_exp;
+		calc_expfact();
 
 		/* Get new height and weight */
 		get_ahw(FALSE);

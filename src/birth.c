@@ -1566,7 +1566,7 @@ static void get_stats(void)
 static void get_extra(bool roll_hitdie)
 {
 	/* Experience factor */
-	p_ptr->expfact = rp_ptr->r_exp + cp_ptr->c_exp;
+	calc_expfact();
 
 	/* Hitdice */
 	p_ptr->hitdie = rp_ptr->r_mhp + cp_ptr->c_mhp;

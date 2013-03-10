@@ -3510,7 +3510,7 @@ void do_poly_self(void)
 		rp_ptr = &race_info[p_ptr->prace];
 
 		/* Experience factor */
-		p_ptr->expfact = rp_ptr->r_exp + cp_ptr->c_exp;
+		calc_expfact();
 
 		/* Calculate the height/weight for males */
 		if (p_ptr->psex == SEX_MALE)

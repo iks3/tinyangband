@@ -4206,71 +4206,37 @@ void gain_level_reward(int chosen_reward)
 	switch (chosen_reward ? chosen_reward : effect)
 	{
 		case REW_IGNORE:
-#ifdef JP
-			msg_format("%sはあなたを無視した。",
+			msg_format(_("%sはあなたを無視した。", "%s ignores you."),
 				valar_patrons[p_ptr->valar_patron]);
-			reward = "無視してもらった。";
-#else
-			msg_format("%s ignores you.",
-				valar_patrons[p_ptr->valar_patron]);
-			reward = "nothing";
-#endif
+			reward = _("無視してもらった。", "nothing");
 			break;
 		case REW_BLESS:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「汝に祝福あれ。」");
-			reward = "祝福された。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Let me bless thee.'");
-			reward = "blessing";
-#endif
+			msg_print(_("「汝に祝福あれ。」", "'Let me bless thee.'"));
+			reward = _("祝福された。", "blessing");
 			set_blessed(p_ptr->blessed + randint1(100) + 100);
 			break;
 		case REW_HERO:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「汝に勇気を与えよう。」");
-			reward = "勇気をもらった。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'I give thine courage.'");
-			reward = "heroism";
-#endif
+			msg_print(_("「汝に勇気を与えよう。」", "'I give thine courage.'"));
+			reward = _("勇気をもらった。", "heroism");
 			set_hero(p_ptr->hero + randint1(100) + 100);
 			break;
 		case REW_SPEED:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「汝に素早さを与えよう。」");
-			reward = "動きが速くなった。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'I give thine quickness.'");
-			reward = "temporary speed";
-#endif
+			msg_print(_("「汝に素早さを与えよう。」", "'I give thine quickness.'"));
+			reward = _("動きが速くなった。", "temporary speed");
 			set_slow(0);
 			set_fast(randint1(100) + 100);
 			break;
 		case REW_RESTORE:
-#ifdef JP
-			msg_format("%sの声がささやいた:",
+			msg_format(_("%sの声がささやいた:", "The voice of %s whispers:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「余が汝の身体を癒さん。」");
-			reward = "身体が癒された";
-#else
-			msg_format("The voice of %s whispers:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Let me cure thee.'");
-			reward = "curing";
-#endif
+			msg_print(_("「余が汝の身体を癒さん。」", "'Let me cure thee.'"));
+			reward = _("身体が癒された", "curing");
 			restore_level();
 			(void)set_poisoned(0);
 			(void)set_blind(0);
@@ -4285,90 +4251,51 @@ void gain_level_reward(int chosen_reward)
 			}
 			break;
 		case REW_ENLIGHT:
-#ifdef JP
-			msg_format("%sの声がささやいた:",
+			msg_format(_("%sの声がささやいた:", "The voice of %s whispers:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「余の見えしものを汝に見せようぞ。」");
-			reward = "階の情報を手に入れた。";
-#else
-			msg_format("The voice of %s whispers:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Let me show thee anything that i can look.'");
-			reward = "an enlightenment";
-#endif
+			msg_print(_("「汝に光あれ。」", "'Let there be light.'"));
+			reward = _("階の情報を手に入れた。", "an enlightenment");
 			wiz_lite();
 			break;
 		case REW_GREA_OBJ:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「我が与えし物を賢明に使うべし。」");
-			reward = "高級品のアイテムを手に入れた。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Use my gift wisely.'");
-			reward = "an excellent item";
-#endif
+			msg_print(_("「我が与えし物を賢明に使うべし。」", "'Use my gift wisely.'"));
+			reward = _("高級品のアイテムを手に入れた。", "an excellent item");
 			acquirement(py, px, 1, TRUE, FALSE);
 			break;
 		case REW_GREA_OBS:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「下僕よ、汝の献身への我が惜しみ無き報いを見るがよい。」");
-			reward = "高級品のアイテムを手に入れた。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Behold, mortal, how generously I reward thy loyalty.'");
-			reward = "excellent items";
-#endif
+			msg_print(_("「下僕よ、汝の献身への我が惜しみ無き報いを見るがよい。」",
+				"'Behold, mortal, how generously I reward thy loyalty.'"));
+			reward = _("高級品のアイテムを手に入れた。", "excellent items");
 			acquirement(py, px, randint1(2) + 1, TRUE, FALSE);
 			break;
 		case REW_GAIN_ABL:
-#ifdef JP
-			msg_format("%sの声が鳴り響いた:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「留まるのだ、下僕よ。余が汝の肉体を鍛えん。」");
-			reward = "能力値が1つ上がった。";
-#else
-			msg_format("The voice of %s rings out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Stay, mortal, and let me mold thee.'");
-			reward = "increasing a stat.";
-#endif
+			msg_print(_("「留まるのだ、下僕よ。余が汝の肉体を鍛えん。」",
+				"'Stay, mortal, and let me mold thee.'"));
+			reward = _("能力値が1つ上がった。", "increasing a stat.");
 			do_inc_stat(randint0(6));
 			break;
 		case REW_AUGM_ABL:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「我がささやかなる賜物を受けとるがよい！」");
-			reward = "全能力値が上がった。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Receive this modest gift from me!'");
-			reward = "increasing all stats";
-#endif
+			msg_print(_("「我がささやかなる賜物を受けとるがよい！」",
+				"'Receive this modest gift from me!'"));
+			reward = _("全能力値が上がった。", "increasing all stats");
 			for (i = 0; i < 6; i++)
 			{
 				(void)do_inc_stat(i);
 			}
 			break;
 	   case REW_HEAL:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「甦るがよい、我が下僕よ！」");
-			reward = "体力が回復した。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Rise, my servant!'");
-			reward = "healing";
-#endif
+			msg_print(_("「甦るがよい、我が下僕よ！」", "'Rise, my servant!'"));
+			reward = _("体力が回復した。", "healing");
 			restore_level();
 			(void)set_poisoned(0);
 			(void)set_blind(0);
@@ -4383,91 +4310,59 @@ void gain_level_reward(int chosen_reward)
 			}
 			break;
 		case REW_POTION:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「我がささやかなる賜物を受けとるがよい！」");
-			reward = "薬を1服もらった。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Receive this modest gift from me!'");
-			reward = "an potion";
-#endif
 			{
 				object_type forge;
 				object_type *q_ptr = &forge;
+
+				msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
+					valar_patrons[p_ptr->valar_patron]);
+				msg_print(_("「我がささやかなる賜物を受けとるがよい！」", "'Receive this modest gift from me!'"));
+				reward = _("薬を1服もらった。", "an potion");
 
 				object_prep(q_ptr, lookup_kind(TV_POTION, SV_POTION_HEALING));
 				(void)drop_near(q_ptr, -1, py, px);
 			}
 			break;
 		case REW_RE_CURSE:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「我、汝の呪いを消滅せん！」");
-			reward = "呪いが解かれた";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Let me remove all curses, thine!'");
-			reward = "removing curses";
-#endif
+			msg_print(_("「我、汝の呪いを消滅せん！」", "'Let me remove all curses, thine!'"));
+			reward = _("呪いが解かれた", "removing curses");
 			remove_all_curse();
 			break;
-		case REW_GENOCIDE:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「我、汝の敵を抹殺せん！」");
-			reward = "モンスターが抹殺された。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Let me relieve thee of thine oppressors!'");
-			reward = "genociding monsters";
-#endif
-			(void)genocide(0);
+		case REW_RES_POTION:
+			{
+				object_type forge;
+				object_type *q_ptr = &forge;
+
+				msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
+					valar_patrons[p_ptr->valar_patron]);
+				msg_print(_("「我がささやかなる賜物を受けとるがよい！」", "'Receive this modest gift from me!'"));
+				reward = _("薬を1服もらった。", "an potion");
+
+				object_prep(q_ptr, lookup_kind(TV_POTION, SV_POTION_RESISTANCE));
+				(void)drop_near(q_ptr, -1, py, px);
+			}
 			break;
 		case REW_MASS_GEN:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「我、汝の敵を抹殺せん！」");
-			reward = "モンスターが抹殺された。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Let me relieve thee of thine oppressors!'");
-			reward = "genociding nearby monsters";
-#endif
+			msg_print(_("「我、汝の敵を抹殺せん！」", "'Let me relieve thee of thine oppressors!'"));
+			reward = _("モンスターが抹殺された。", "genociding nearby monsters");
 			(void)mass_genocide(0);
 			break;
 		case REW_DISPEL_C:
-#ifdef JP
-			msg_format("%sの力が敵を攻撃するのを感じた！",
+			msg_format(_("%sの力が敵を攻撃するのを感じた！",
+				"You can feel the power of %s assault your enemies!"),
 				valar_patrons[p_ptr->valar_patron]);
-			reward = "周囲の敵が攻撃された。";
-#else
-			msg_format("You can feel the power of %s assault your enemies!",
-				valar_patrons[p_ptr->valar_patron]);
-			reward = "dispel monsters";
-#endif
+			reward = _("周囲の敵が攻撃された。", "dispel monsters");
 			(void)dispel_monsters(p_ptr->lev * 8);
 			break;
 		case REW_WISHING:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「汝の願い聞きいれようぞ！」");
-			reward = "願いを聞いてもらった。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Let me accept thine wish!'");
-			reward = "wishing";
-#endif
+			msg_print(_("「汝の願い聞きいれようぞ！」", "'Let me accept thine wish!'"));
+			reward = _("願いを聞いてもらった。", "wishing");
 			for (i = 0; i < 3; i++)
 			{
 				int lev = 1 + (p_ptr->lev * 2/ 3);
@@ -4475,34 +4370,21 @@ void gain_level_reward(int chosen_reward)
 			}
 			break;
 		case REW_PROTEVIL:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
+			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「邪悪より汝を護らん。」");
-			reward = "邪悪から護られた。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Let me protect thee from evilness.'");
-			reward = "protecting from evil";
-#endif
+			msg_print(_("「邪悪より汝を護らん。」", "'Let me protect thee from evilness.'"));
+			reward = _("邪悪から護られた。", "protecting from evil");
 			set_protevil(p_ptr->protevil + randint1(100) + 100);
 			break;
 		case REW_AMULET:
-#ifdef JP
-			msg_format("%sの声が響き渡った:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("「暗き中にも華やかであれ！」");
-			reward = "特別なアミュレットをもらった。";
-#else
-			msg_format("The voice of %s booms out:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print("'Be gorgeous, even if in darkness!'");
-			reward = "a special amulet";
-#endif
 			{
 				object_type forge;
 				object_type *q_ptr = &forge;
+
+				msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
+					valar_patrons[p_ptr->valar_patron]);
+				msg_print(_("「暗き中にも華やかであれ！」", "'Be gorgeous, even if in darkness!'"));
+				reward = _("特別なアミュレットをもらった。", "a special amulet");
 
 				object_prep(q_ptr, lookup_kind(TV_AMULET, SV_AMULET_ADORNMENT));
 				(void)create_artifact(q_ptr, FALSE);
@@ -4510,15 +4392,11 @@ void gain_level_reward(int chosen_reward)
 			}
 			break;
 		default:
-#ifdef JP
-			msg_format("%sの声がどもった:",
+			msg_format(_("%sの声がどもった:", "The voice of %s stammers:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_format("「あー、あー、答えは %d/%d。質問は何？」", type, effect);
-#else
-			msg_format("The voice of %s stammers:",
-				valar_patrons[p_ptr->valar_patron]);
-			msg_format("'Uh... uh... the answer's %d/%d, what's the question?'", type, effect);
-#endif
+			msg_format(_("「あー、あー、答えは %d/%d。質問は何？」",
+				"'Uh... uh... the answer's %d/%d, what's the question?'"),
+				type, effect);
 	}
 
 	if (reward && take_notes)
