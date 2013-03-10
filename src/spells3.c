@@ -4027,7 +4027,7 @@ msg_format("%sがダメージを受けた！", o_name);
 /*
  * Hurt the player with Acid
  */
-int acid_dam(int dam, cptr kb_str, int aura)
+int acid_dam(int dam, cptr kb_str, bool aura)
 {
 	int inv = (dam < 30) ? 1 : (dam < 60) ? 2 : 3;
 
@@ -4062,7 +4062,7 @@ int acid_dam(int dam, cptr kb_str, int aura)
 /*
  * Hurt the player with electricity
  */
-int elec_dam(int dam, cptr kb_str, int aura)
+int elec_dam(int dam, cptr kb_str, bool aura)
 {
 	int inv = (dam < 30) ? 1 : (dam < 60) ? 2 : 3;
 
@@ -4094,7 +4094,7 @@ int elec_dam(int dam, cptr kb_str, int aura)
 /*
  * Hurt the player with Fire
  */
-int fire_dam(int dam, cptr kb_str, int aura)
+int fire_dam(int dam, cptr kb_str, bool aura)
 {
 	int inv = (dam < 30) ? 1 : (dam < 60) ? 2 : 3;
 
@@ -4127,7 +4127,7 @@ int fire_dam(int dam, cptr kb_str, int aura)
 /*
  * Hurt the player with Cold
  */
-int cold_dam(int dam, cptr kb_str, int aura)
+int cold_dam(int dam, cptr kb_str, bool aura)
 {
 	int inv = (dam < 30) ? 1 : (dam < 60) ? 2 : 3;
 
