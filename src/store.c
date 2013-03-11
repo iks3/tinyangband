@@ -324,30 +324,19 @@ static void mass_produce(object_type *o_ptr)
 		case TV_FLASK:
 		case TV_LITE:
 		{
-#ifdef TINYANGBAND
 			if (cost <= 5L) size += randint1(5);
 			if (cost <= 20L) size += randint1(5);
-#else
-			if (cost <= 5L) size += damroll(3, 5);
-			if (cost <= 20L) size += damroll(3, 5);
-#endif
 			break;
 		}
 
 		case TV_POTION:
 		case TV_SCROLL:
 		{
-#ifdef TINYANGBAND
 			if (randint0(o_ptr->number) < 5)
 			{
 				if (cost <= 60L) size += randint1(2);
 			}
 			if (o_ptr->sval == SV_SCROLL_STAR_IDENTIFY) size += randint1(3);
-#else
-			if (cost <= 60L) size += damroll(3, 5);
-			if (cost <= 240L) size += damroll(1, 5);
-			if (o_ptr->sval == SV_SCROLL_STAR_IDENTIFY) size += damroll(3, 5);
-#endif
 			break;
 		}
 
@@ -373,11 +362,6 @@ static void mass_produce(object_type *o_ptr)
 		case TV_DIGGING:
 		case TV_BOW:
 		{
-#ifndef TINYANGBAND
-			if (o_ptr->name2) break;
-			if (cost <= 10L) size += damroll(3, 5);
-			if (cost <= 100L) size += damroll(3, 5);
-#endif
 			break;
 		}
 
@@ -386,25 +370,15 @@ static void mass_produce(object_type *o_ptr)
 		case TV_ARROW:
 		case TV_BOLT:
 		{
-#ifdef TINYANGBAND
-			if (cost <= 5L) size += damroll(2, 5);
+			if (cost <= 5L) size += damroll(3, 5);
 			if (cost <= 50L) size += damroll(2, 5);
 			if (cost <= 500L) size += damroll(2, 5);
-#else
-			if (cost <= 5L) size += damroll(5, 5);
-			if (cost <= 50L) size += damroll(5, 5);
-			if (cost <= 500L) size += damroll(5, 5);
-#endif
 			break;
 		}
 
 		case TV_FIGURINE:
 		case TV_STATUE:
 		{
-#ifndef TINYANGBAND
-			if (cost <= 100L) size += damroll(2, 2);
-			if (cost <= 1000L) size += damroll(2, 2);
-#endif
 			break;
 		}
 
@@ -460,11 +434,7 @@ static void mass_produce(object_type *o_ptr)
 	{
 		if (cheat_peek && discount)
 		{
-#ifdef JP
-			msg_print("ランダムアーティファクトは値引きなし。");
-#else
-			msg_print("No discount on random artifacts.");
-#endif
+			msg_print(_("ランダムアーティファクトは値引きなし。", "No discount on random artifacts."));
 		}
 		discount = 0;
 	}
@@ -1324,7 +1294,7 @@ static void store_create(void)
 			i = st_ptr->table[randint0(st_ptr->table_num)];
 
 			/* Hack -- fake level for apply_magic() */
-			level = rand_range(1, STORE_OBJ_LEVEL);
+			level = rand_range(STORE_MIN_LEVEL, STORE_MAX_LEVEL);
 		}
 
 
@@ -1335,17 +1305,7 @@ static void store_create(void)
 		object_prep(q_ptr, i);
 
 		/* Apply some "low-level" magic (no artifacts) */
-#if 0
-		if( cur_store_num == STORE_EGO )
-		{
-			apply_magic(q_ptr, level, FALSE, TRUE, TRUE, FALSE);
-
-			/* Random Artifacts should be rare */
-			if (q_ptr->art_name && !one_in_(4)) continue;
-		}
-		else
-#endif
-			apply_magic(q_ptr, level, FALSE, FALSE, FALSE, FALSE);
+		apply_magic(q_ptr, level, FALSE, FALSE, FALSE, FALSE);
 
 		/* Require valid object */
 		if (!store_will_buy(q_ptr)) continue;
@@ -1453,11 +1413,7 @@ static void display_entry(int pos)
 		c_put_str(tval_to_attr[o_ptr->tval], o_name, i+6, cur_col);
 
 		/* Show weights */
-#ifdef JP
-		show_weight(o_ptr, TRUE, i + 6, 67);
-#else
 		show_weight(o_ptr, TRUE, i + 6, 68);
-#endif
 	}
 
 	/* Describe an item (fully) in a store */
@@ -1472,11 +1428,7 @@ static void display_entry(int pos)
 		c_put_str(tval_to_attr[o_ptr->tval], o_name, i+6, cur_col);
 
 		/* Show weights */
-#ifdef JP
-		show_weight(o_ptr, FALSE, i + 6, 60);
-#else
 		show_weight(o_ptr, FALSE, i + 6, 61);
-#endif
 
 		/* Display a cost */
 
@@ -1515,31 +1467,16 @@ static void display_inventory(void)
 	for (i = k; i < store_bottom + 1; i++) prt("", i + 6, 0);
 
 	/* Assume "no current page" */
-#ifdef JP
 	put_str("          ", 5, 20);
-#else
-	put_str("        ", 5, 20);
-#endif
-
 
 	/* Visual reminder of "more items" */
 	if (st_ptr->stock_num > store_bottom)
 	{
 		/* Show "more" reminder (after the last item) */
-#ifdef JP
-		prt("-続く-", k + 6, 3);
-#else
-		prt("-more-", k + 6, 3);
-#endif
-
+		prt(_("-続く-", "-more-"), k + 6, 3);
 
 		/* Indicate the "current page" */
-#ifdef JP
-		put_str(format("(%dページ)", store_top / store_bottom + 1), 5, 20);
-#else
-		put_str(format("(Page %d)", store_top / store_bottom + 1), 5, 20);
-#endif
-
+		put_str(format(_("(%dページ)", "(Page %d)"), store_top / store_bottom + 1), 5, 20);
 	}
 }
 
@@ -1551,12 +1488,7 @@ static void store_prt_gold(void)
 {
 	char out_val[64];
 
-#ifdef JP
-	prt("手持ちのお金: ", 19 + xtra_stock, 53);
-#else
-	prt("Gold Remaining: ", 19 + xtra_stock, 53);
-#endif
-
+	prt(_("手持ちのお金: ", "Gold Remaining: "), 19 + xtra_stock, 53);
 
 	sprintf(out_val, "%9ld", (long)p_ptr->au);
 	prt(out_val, 19 + xtra_stock, 68);
@@ -1578,28 +1510,13 @@ static void display_store(void)
 	if (cur_store_num == STORE_HOME)
 	{
 		/* Put the owner name */
-#ifdef JP
-		strcpy(buf, "我が家"); 
-		put_str(buf, 3, 31);
-#else
-		put_str("Your Home", 3, 30);
-#endif
-
+		put_str(_("我が家", "Your Home"), 3, _(31, 30));
 
 		/* Label the item descriptions */
-#ifdef JP
-		put_str("アイテムの一覧", 5, 4);
-#else
-		put_str("Item Description", 5, 3);
-#endif
-
+		put_str(_("アイテムの一覧", "Item Description"), 5, _(4, 3));
 
 		/* Show weight label */
-#ifdef JP
-		put_str("重さ", 5, 72);
-#else
-		put_str("Weight", 5, 70);
-#endif
+		put_str(_("重さ", "Weight"), 5, _(72, 70));
 	}
 
 	/* Normal stores */
@@ -1617,27 +1534,13 @@ static void display_store(void)
 		prt(buf, 3, 50);
 
 		/* Label the item descriptions */
-#ifdef JP
-		put_str("商品の一覧", 5, 7);
-#else
-		put_str("Item Description", 5, 3);
-#endif
-
+		put_str(_("商品の一覧", "Item Description"), 5, _(7, 3));
 
 		/* Show weight label */
-#ifdef JP
-		put_str("重さ", 5, 62);
-#else
-		put_str("Weight", 5, 60);
-#endif
+		put_str(_("重さ", "Weight"), 5, _(62, 60));
 
 		/* Label the asking price (in stores) */
-#ifdef JP
-		put_str("価格", 5, 73);
-#else
-		put_str("Price", 5, 72);
-#endif
-
+		put_str(_("価格", "Price"), 5, _(73, 72));
 	}
 
 	/* Display the current gold */
@@ -1679,15 +1582,10 @@ static int get_stock(int *com_val, cptr pmt, int i, int j)
 	/* Build the prompt */
 	lo = I2A(i);
 	hi = (j > 25) ? toupper(I2A(j - 26)) : I2A(j);
-#ifdef JP
-	(void)sprintf(out_val, "(%s:%c-%c, ESCで中断) %s",
-		((cur_store_num == STORE_HOME) ? "アイテム" : "商品"), 
+	(void)sprintf(out_val,
+		_("(%s:%c-%c, ESCで中断) %s", "(%s %c-%c, ESC to exit) %s"),
+		_(((cur_store_num == STORE_HOME) ? "アイテム" : "商品"), "Items"),
 				  lo, hi, pmt);
-#else
-	(void)sprintf(out_val, "(Items %c-%c, ESC to exit) %s",
-				  lo, hi, pmt);
-#endif
-
 
 	/* Ask until done */
 	while (TRUE)
@@ -1747,11 +1645,7 @@ static bool purchase_haggle(object_type *o_ptr, s32b *price)
 	offer = price_item(o_ptr, ot_ptr->min_inflate, FALSE);
 
 	/* Message summary */
-#ifdef JP
-	msg_print("すんなりとこの金額にまとまった。");
-#else
-	msg_print("You quickly agree upon the price.");
-#endif
+	msg_print(_("すんなりとこの金額にまとまった。", "You quickly agree upon the price."));
 	msg_print(NULL);
 
 	/* Apply Sales Tax */
@@ -1809,11 +1703,7 @@ static bool sell_haggle(object_type *o_ptr, s32b *price)
 	if (offer >= purse)
 	{
 		/* Message */
-#ifdef JP
-		msg_print("即座にこの金額にまとまった。");
-#else
-		msg_print("You instantly agree upon the price.");
-#endif
+		msg_print(_("即座にこの金額にまとまった。", "You instantly agree upon the price."));
 		msg_print(NULL);
 
 		/* Offer full purse */
@@ -1824,11 +1714,7 @@ static bool sell_haggle(object_type *o_ptr, s32b *price)
 	else
 	{
 		/* Message summary */
-#ifdef JP
-		msg_print("すんなりとこの金額にまとまった。");
-#else
-		msg_print("You quickly agree upon the price.");
-#endif
+		msg_print(_("すんなりとこの金額にまとまった。", "You quickly agree upon the price."));
 		msg_print(NULL);
 
 		/* Apply Sales Tax */
@@ -2036,19 +1922,9 @@ static void store_purchase(void)
 	if (st_ptr->stock_num <= 0)
 	{
 		if (cur_store_num == STORE_HOME)
-#ifdef JP
-			msg_print("我が家には何も置いてありません。");
-#else
-			msg_print("Your home is empty.");
-#endif
-
+			msg_print(_("我が家には何も置いてありません。", "Your home is empty."));
 		else
-#ifdef JP
-			msg_print("現在商品の在庫を切らしています。");
-#else
-			msg_print("I am currently out of stock.");
-#endif
-
+			msg_print(_("現在商品の在庫を切らしています。", "I am currently out of stock."));
 		return;
 	}
 
@@ -2064,25 +1940,13 @@ static void store_purchase(void)
 	switch( cur_store_num )
 	{
 		case STORE_HOME:
-#ifdef JP
-			sprintf(out_val, "どのアイテムを取りますか? ");
-#else
-			sprintf(out_val, "Which item do you want to take? ");
-#endif
+			sprintf(out_val, _("どのアイテムを取りますか? ", "Which item do you want to take? "));
 			break;
 		case STORE_BLACK:
-#ifdef JP
-			sprintf(out_val, "どれ? ");
-#else
-			sprintf(out_val, "Waddya want?");
-#endif
+			sprintf(out_val, _("どれ? ", "Waddya want?"));
 			break;
 		default:
-#ifdef JP
-			sprintf(out_val, "どの品物が欲しいんだい? ");
-#else
-			sprintf(out_val, "Which item are you interested in? ");
-#endif
+			sprintf(out_val, _("どの品物が欲しいんだい? ", "Which item are you interested in? "));
 			break;
 	}
 
@@ -2113,11 +1977,7 @@ static void store_purchase(void)
 	/* Hack -- require room in pack */
 	if (!inven_carry_okay(j_ptr))
 	{
-#ifdef JP
-		msg_print("そんなにアイテムを持てない。");
-#else
-		msg_print("You cannot carry that many different items.");
-#endif
+		msg_print(_("そんなにアイテムを持てない。", "You cannot carry that many different items."));
 		return;
 	}
 
@@ -2133,11 +1993,7 @@ static void store_purchase(void)
 		if ((cur_store_num != STORE_HOME) &&
 			(o_ptr->ident & IDENT_FIXED))
 		{
-#ifdef JP
-			msg_format("一つにつき $%ldです。", (long)(best));
-#else
-			msg_format("That costs %ld gold per item.", (long)(best));
-#endif
+			msg_format(_("一つにつき $%ldです。", "That costs %ld gold per item."), (long)(best));
 		}
 
 		if (cur_store_num == STORE_HOME)
@@ -2150,11 +2006,9 @@ static void store_purchase(void)
 			if ((u32b)p_ptr->au < (u32b)best)
 			{
 				/* Tell the user */
-#ifdef JP
-				msg_print("お金が足りません。"); /* Even if haggling was on this money is not sufficient to buy one */
-#else
-				msg_print("You do not have enough gold for this item.");
-#endif
+				/* Even if haggling was on this money is not sufficient to buy one */
+				msg_print(_("お金が足りません。", "You do not have enough gold for this item."));
+
 				/* Abort now */
 				return;
 			}
@@ -2213,12 +2067,7 @@ static void store_purchase(void)
 	/* Hack -- require room in pack */
 	if (!inven_carry_okay(j_ptr))
 	{
-#ifdef JP
-		msg_print("ザックにそのアイテムを入れる隙間がない。");
-#else
-		msg_print("You cannot carry that many items.");
-#endif
-
+		msg_print(_("ザックにそのアイテムを入れる隙間がない。", "You cannot carry that many items."));
 		return;
 	}
 
@@ -2242,11 +2091,7 @@ static void store_purchase(void)
 			object_desc(o_name, j_ptr, 0);
 
 			/* Message */
-#ifdef JP
-			msg_format("%s(%c)を購入する。", o_name, I2A(item));
-#else
-			msg_format("Buying %s (%c).", o_name, I2A(item));
-#endif
+			msg_format(_("%s(%c)を購入する。", "Buying %s (%c)."), o_name, I2A(item));
 			msg_print(NULL);
 
 			/* Haggle for a final price */
@@ -2288,11 +2133,8 @@ static void store_purchase(void)
 				object_desc(o_name, j_ptr, 0);
 
 				/* Message */
-#ifdef JP
-				msg_format("%sを $%ldで購入しました。", o_name, (long)price);
-#else
-				msg_format("You bought %s for %ld gold.", o_name, (long)price);
-#endif
+				msg_format(_("%sを $%ldで購入しました。", "You bought %s for %ld gold."),
+					o_name, (long)price);
 
 				/* Erase the inscription */
 				j_ptr->inscription = 0;
@@ -2308,12 +2150,8 @@ static void store_purchase(void)
 				object_desc(o_name, &inventory[item_new], 0);
 
 				/* Message */
-#ifdef JP
-				msg_format("%s(%c)を手に入れた。", o_name, index_to_label(item_new));
-#else
-				msg_format("You have %s (%c).",
-						   o_name, index_to_label(item_new));
-#endif
+				msg_format(_("%s(%c)を手に入れた。", "You have %s (%c)."),
+					o_name, index_to_label(item_new));
 
 				/* Auto-inscription */
 				autopick_alter_item(item_new, FALSE);
@@ -2341,11 +2179,7 @@ static void store_purchase(void)
 					if (randint0(STORE_SHUFFLE) == 0)
 					{
 						/* Message */
-#ifdef JP
-						msg_print("店主は引退した。");
-#else
-						msg_print("The shopkeeper retires.");
-#endif
+						msg_print(_("店主は引退した。", "The shopkeeper retires."));
 
 						/* Shuffle the store */
 						store_shuffle(cur_store_num);
@@ -2355,11 +2189,8 @@ static void store_purchase(void)
 					else
 					{
 						/* Message */
-#ifdef JP
-						msg_print("店主は新たな在庫を取り出した。");
-#else
-						msg_print("The shopkeeper brings out some new stock.");
-#endif
+						msg_print(_("店主は新たな在庫を取り出した。",
+							"The shopkeeper brings out some new stock."));
 					}
 
 					/* New inventory */
@@ -2398,11 +2229,7 @@ static void store_purchase(void)
 			else
 			{
 				/* Simple message */
-#ifdef JP
-				msg_print("お金が足りません。");
-#else
-				msg_print("You do not have enough gold.");
-#endif
+				msg_print(_("お金が足りません。", "You do not have enough gold."));
 			}
 		}
 	}
@@ -2422,11 +2249,7 @@ static void store_purchase(void)
 		object_desc(o_name, &inventory[item_new], 0);
 
 		/* Message */
-#ifdef JP
-		msg_format("%s(%c)を取った。",
-#else
-		msg_format("You have %s (%c).",
-#endif
+		msg_format(_("%s(%c)を取った。", "You have %s (%c)."),
 			 o_name, index_to_label(item_new));
 
 		/* Handle stuff */
@@ -2493,35 +2316,22 @@ static void store_sell(void)
 
 	/* Prepare a prompt */
 	if (cur_store_num == STORE_HOME)
-#ifdef JP
-		q = "どのアイテムを置きますか? ";
-#else
-		q = "Drop which item? ";
-#endif
+		q = _("どのアイテムを置きますか? ", "Drop which item? ");
 	else
-#ifdef JP
-		q = "どのアイテムを売りますか? ";
-#else
-		q = "Sell which item? ";
-#endif
+		q = _("どのアイテムを売りますか? ", "Sell which item? ");
 
 	/* Only allow items the store will buy */
 	item_tester_hook = store_will_buy;
 
 	/* Get an item */
-#ifdef JP
-	/* 我が家でおかしなメッセージが出るオリジナルのバグを修正 */
 	if (cur_store_num == STORE_HOME)
 	{
-		s = "置けるアイテムを持っていません。";
+		s = _("置けるアイテムを持っていません。", "You have nothing that you put in.");
 	}
 	else
 	{
-		s = "欲しい物がないですねえ。";
+		s = _("欲しい物がないですねえ。", "You have nothing that I want.");
 	}
-#else
-	s = "You have nothing that I want.";
-#endif
 
 	if (!get_item(&item, q, s, (USE_EQUIP | USE_INVEN | USE_FLOOR))) return;
 
@@ -2542,11 +2352,8 @@ static void store_sell(void)
 	if ((item >= INVEN_WIELD) && cursed_p(o_ptr))
 	{
 		/* Oops */
-#ifdef JP
-		msg_print("ふーむ、どうやらそれは呪われているようだね。");
-#else
-		msg_print("Hmmm, it seems to be cursed.");
-#endif
+		msg_print(_("ふーむ、どうやらそれは呪われているようだね。", "Hmmm, it seems to be cursed."));
+
 		/* Nope */
 		return;
 	}
@@ -2597,17 +2404,10 @@ static void store_sell(void)
 	if (!store_check_num(q_ptr))
 	{
 		if (cur_store_num == STORE_HOME)
-#ifdef JP
-			msg_print("我が家にはもう置く場所がない。");
-#else
-			msg_print("Your home is full.");
-#endif
+			msg_print(_("我が家にはもう置く場所がない。", "Your home is full."));
 		else
-#ifdef JP
-			msg_print("すいませんが、店にはもう置く場所がありません。");
-#else
-			msg_print("I have not the room in my store to keep it.");
-#endif
+			msg_print(_("すいませんが、店にはもう置く場所がありません。",
+			"I have not the room in my store to keep it."));
 		return;
 	}
 
@@ -2616,11 +2416,8 @@ static void store_sell(void)
 	if (cur_store_num != STORE_HOME)
 	{
 		/* Describe the transaction */
-#ifdef JP
-		msg_format("%s(%c)を売却する。", o_name, index_to_label(item));
-#else
-		msg_format("Selling %s (%c).", o_name, index_to_label(item));
-#endif
+		msg_format(_("%s(%c)を売却する。", "Selling %s (%c)."),
+			o_name, index_to_label(item));
 		msg_print(NULL);
 
 		/* Haggle for it */
@@ -2678,11 +2475,8 @@ static void store_sell(void)
 			object_desc(o_name, q_ptr, 0);
 
 			/* Describe the result (in message buffer) */
-#ifdef JP
-			msg_format("%sを $%ldで売却しました。", o_name, (long)price);
-#else
-			msg_format("You sold %s for %ld gold.", o_name, (long)price);
-#endif
+			msg_format(_("%sを $%ldで売却しました。", "You sold %s for %ld gold."),
+				o_name, (long)price);
 
 			if (!((o_ptr->tval == TV_FIGURINE) && (value > 0)))
 			{
@@ -2733,11 +2527,7 @@ static void store_sell(void)
 		distribute_charges(o_ptr, q_ptr, amt);
 
 		/* Describe */
-#ifdef JP
-		msg_format("%sを置いた。(%c)", o_name, index_to_label(item));
-#else
-		msg_format("You drop %s (%c).", o_name, index_to_label(item));
-#endif
+		msg_format(_("%sを置いた。(%c)", "You drop %s (%c)."), o_name, index_to_label(item));
 
 		/* Take it from the players inventory */
 		inven_item_increase(item, -amt);
@@ -2779,17 +2569,9 @@ static void store_examine(void)
 	if (st_ptr->stock_num <= 0)
 	{
 		if (cur_store_num == STORE_HOME)
-#ifdef JP
-			msg_print("我が家には何も置いてありません。");
-#else
-			msg_print("Your home is empty.");
-#endif
+			msg_print(_("我が家には何も置いてありません。", "Your home is empty."));
 		else
-#ifdef JP
-			msg_print("現在商品の在庫を切らしています。");
-#else
-			msg_print("I am currently out of stock.");
-#endif
+			msg_print(_("現在商品の在庫を切らしています。", "I am currently out of stock."));
 		return;
 	}
 
@@ -2801,11 +2583,7 @@ static void store_examine(void)
 	if (i > store_bottom) i = store_bottom;
 
 	/* Prompt */
-#ifdef JP
-	sprintf(out_val, "どれを調べますか？");
-#else
-	sprintf(out_val, "Which item do you want to examine? ");
-#endif
+	sprintf(out_val, _("どれを調べますか？", "Which item do you want to examine? "));
 
 	/* Get the item number to be examined */
 	if (!get_stock(&item, out_val, 0, i - 1)) return;
@@ -2820,11 +2598,8 @@ static void store_examine(void)
 	if (!(o_ptr->ident & IDENT_MENTAL))
 	{
 		/* This can only happen in the home */
-#ifdef JP
-		msg_print("このアイテムについて特に知っていることはない。");
-#else
-		msg_print("You have no special knowledge about that item.");
-#endif
+		msg_print(_("このアイテムについて特に知っていることはない。",
+			"You have no special knowledge about that item."));
 		return;
 	}
 
@@ -2832,19 +2607,11 @@ static void store_examine(void)
 	object_desc(o_name, o_ptr, 0);
 
 	/* Describe */
-#ifdef JP
-	msg_format("%sを調べている...", o_name);
-#else
-	msg_format("Examining %s...", o_name);
-#endif
+	msg_format(_("%sを調べている...", "Examining %s..."), o_name);
 
 	/* Describe it fully */
 	if (!identify_fully_aux(o_ptr, TRUE))
-#ifdef JP
-		msg_print("特に変わったところはないようだ。");
-#else
-		msg_print("You see nothing special.");
-#endif
+		msg_print(_("特に変わったところはないようだ。", "You see nothing special."));
 
 	return;
 }
@@ -2890,11 +2657,7 @@ static void store_process_command(void)
 		case '-':
 		{
 			if (st_ptr->stock_num <= store_bottom) {
-#ifdef JP
-				msg_print("これで全部です。");
-#else
-				msg_print("Entire inventory is shown.");
-#endif
+				msg_print(_("これで全部です。", "Entire inventory is shown."));
 			}
 			else{
 				store_top -= store_bottom;
@@ -2910,11 +2673,7 @@ static void store_process_command(void)
 		{
 			if (st_ptr->stock_num <= store_bottom)
 			{
-#ifdef JP
-				msg_print("これで全部です。");
-#else
-				msg_print("Entire inventory is shown.");
-#endif
+				msg_print(_("これで全部です。", "Entire inventory is shown."));
 			}
 			else
 			{
@@ -2977,17 +2736,6 @@ static void store_process_command(void)
 			do_cmd_takeoff();
 			break;
 		}
-
-#if 0
-
-		/* Drop an item */
-		case 'd':
-		{
-			do_cmd_drop();
-			break;
-		}
-
-#endif
 
 		/* Destroy an item */
 		case 'k':
@@ -3196,11 +2944,7 @@ static void store_process_command(void)
 		/* Hack -- Unknown command */
 		default:
 		{
-#ifdef JP
-			msg_print("そのコマンドは店の中では使えません。");
-#else
-			msg_print("That command does not work in stores.");
-#endif
+			msg_print(_("そのコマンドは店の中では使えません。", "That command does not work in stores."));
 			break;
 		}
 	}
@@ -3241,11 +2985,7 @@ void do_cmd_store(void)
 	if (!((c_ptr->feat >= FEAT_SHOP_HEAD) &&
 		  (c_ptr->feat <= FEAT_SHOP_TAIL)))
 	{
-#ifdef JP
-		msg_print("ここには店がありません。");
-#else
-		msg_print("You see no store here.");
-#endif
+		msg_print(_("ここには店がありません。", "You see no store here."));
 		return;
 	}
 
@@ -3271,12 +3011,7 @@ void do_cmd_store(void)
 	if ((town[p_ptr->town_num].store[which].store_open >= turn) ||
 	    (ironman_shops))
 	{
-#ifdef JP
-		msg_print("ドアに鍵がかかっている。");
-#else
-		msg_print("The doors are locked.");
-#endif
-
+		msg_print(_("ドアに鍵がかかっている。", "The doors are locked."));
 		p_ptr->town_num = old_town_num;
 		return;
 	}
@@ -3348,84 +3083,45 @@ void do_cmd_store(void)
 
 
 		/* Basic commands */
-#ifdef JP
-		prt(" ESC) 建物から出る", 21 + xtra_stock, 0);
-#else
-		prt(" ESC) Exit from Building.", 21 + xtra_stock, 0);
-#endif
+		prt(_(" ESC) 建物から出る", " ESC) Exit from Building."), 21 + xtra_stock, 0);
 
 		/* Browse if necessary */
 		if (st_ptr->stock_num > store_bottom)
 		{
-#ifdef JP
-			prt(" -)前ページ", 22 + xtra_stock, 0);
-			prt(" スペース) 次ページ", 23 + xtra_stock, 0);
-#else
-			prt(" -) Previous page", 22 + xtra_stock, 0);
-			prt(" SPACE) Next page", 23 + xtra_stock, 0);
-#endif
+			prt(_(" -)前ページ", " -) Previous page"), 22 + xtra_stock, 0);
+			prt(_(" スペース) 次ページ", " SPACE) Next page"), 23 + xtra_stock, 0);
 		}
 
 		/* Home commands */
 		if (cur_store_num == STORE_HOME)
 		{
-#ifdef JP
-			prt("g) アイテムを取る", 21 + xtra_stock, 27);
-			prt("d) アイテムを置く", 22 + xtra_stock, 27);
-			prt("x) 家のアイテムを調べる", 23 + xtra_stock, 27);
-#else
-			prt("g) Get an item.", 21 + xtra_stock, 27);
-			prt("d) Drop an item.", 22 + xtra_stock, 27);
-			prt("x) eXamine an item in the home.", 23 + xtra_stock, 27);
-#endif
+			prt(_("g) アイテムを取る", "g) Get an item."), 21 + xtra_stock, 27);
+			prt(_("d) アイテムを置く", "d) Drop an item."), 22 + xtra_stock, 27);
+			prt(_("x) 家のアイテムを調べる", "x) eXamine an item in the home."), 23 + xtra_stock, 27);
 		}
 
 		/* Shop commands XXX XXX XXX */
 		else
 		{
-#ifdef JP
-			prt("p) 商品を買う", 21 + xtra_stock, 30);
-			prt("s) アイテムを売る", 22 + xtra_stock, 30);
-			prt("x) 商品を調べる", 23 + xtra_stock,30);
-#else
-			prt("p) Purchase an item.", 21 + xtra_stock, 30);
-			prt("s) Sell an item.", 22 + xtra_stock, 30);
-			prt("x) eXamine an item in the shop", 23 + xtra_stock,30);
-#endif
+			prt(_("p) 商品を買う", "p) Purchase an item."), 21 + xtra_stock, 30);
+			prt(_("s) アイテムを売る", "s) Sell an item."), 22 + xtra_stock, 30);
+			prt(_("x) 商品を調べる", "x) eXamine an item in the shop"), 23 + xtra_stock,30);
 		}
 
-#ifdef JP
 		/* 基本的なコマンドの追加表示 */
-
-		prt("i/e) 持ち物/装備の一覧", 21 + xtra_stock, 56);
-
-		if (rogue_like_commands)
-		{
-			prt("w/T) 装備する/はずす", 22 + xtra_stock, 56);
-		}
-		else
-		{
-			prt("w/t) 装備する/はずす", 22 + xtra_stock, 56);
-		}
-#else
-		prt("i/e) Inventry/Equipment list", 21 + xtra_stock, 56);
+		prt(_("i/e) 持ち物/装備の一覧", "i/e) Inventry/Equipment list"), 21 + xtra_stock, 56);
 
 		if (rogue_like_commands)
 		{
-			prt("w/T) Wear/Take off equipment", 22 + xtra_stock, 56);
+			prt(_("w/T) 装備する/はずす", "w/T) Wear/Take off equipment"), 22 + xtra_stock, 56);
 		}
 		else
 		{
-			prt("w/t) Wear/Take off equipment", 22 + xtra_stock, 56);
+			prt(_("w/t) 装備する/はずす", "w/t) Wear/Take off equipment"), 22 + xtra_stock, 56);
 		}
-#endif
+
 		/* Prompt */
-#ifdef JP
-		prt("コマンド:", 20 + xtra_stock, 0);
-#else
-		prt("You may: ", 20 + xtra_stock, 0);
-#endif
-
+		prt(_("コマンド:", "You may: "), 20 + xtra_stock, 0);
 
 		/* Get a command */
 		request_command(TRUE);
@@ -3453,11 +3149,8 @@ void do_cmd_store(void)
 			if (cur_store_num != STORE_HOME)
 			{
 				/* Message */
-#ifdef JP
-				msg_print("ザックからアイテムがあふれそうなので、あわてて店から出た...");
-#else
-				msg_print("Your pack is so full that you flee the store...");
-#endif
+				msg_print(_("ザックからアイテムがあふれそうなので、あわてて店から出た...",
+					"Your pack is so full that you flee the store..."));
 
 				/* Leave */
 				leave_store = TRUE;
@@ -3467,11 +3160,8 @@ void do_cmd_store(void)
 			else if (!store_check_num(o_ptr))
 			{
 				/* Message */
-#ifdef JP
-				msg_print("ザックからアイテムがあふれそうなので、あわてて家から出た...");
-#else
-				msg_print("Your pack is so full that you flee your home...");
-#endif
+				msg_print(_("ザックからアイテムがあふれそうなので、あわてて家から出た...",
+					"Your pack is so full that you flee your home..."));
 
 				/* Leave */
 				leave_store = TRUE;
@@ -3489,11 +3179,7 @@ void do_cmd_store(void)
 
 
 				/* Give a message */
-#ifdef JP
-				msg_print("ザックからアイテムがあふれてしまった！");
-#else
-				msg_print("Your pack overflows!");
-#endif
+				msg_print(_("ザックからアイテムがあふれてしまった！", "Your pack overflows!"));
 
 				/* Get local object */
 				q_ptr = &forge;
@@ -3505,11 +3191,7 @@ void do_cmd_store(void)
 				object_desc(o_name, q_ptr, 0);
 
 				/* Message */
-#ifdef JP
-				msg_format("%sが落ちた。(%c)", o_name, index_to_label(item));
-#else
-				msg_format("You drop %s (%c).", o_name, index_to_label(item));
-#endif
+				msg_format(_("%sが落ちた。(%c)", "You drop %s (%c)."), o_name, index_to_label(item));
 
 				/* Remove it from the players inventory */
 				inven_item_increase(item, -255);
