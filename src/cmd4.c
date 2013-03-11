@@ -7839,82 +7839,82 @@ static void do_cmd_knowledge_inven_aux(FILE *fff, object_type *o_ptr,
 
 			object_flags_known(o_ptr, &f[0], &f[1], &f[2]);
 
-			if (f[1] & TR2_IM_ACID) fprintf(fff, imm);
-			else if (f[1] & TR2_RES_ACID) fprintf(fff, res);
+			if (f[1] & TR2_IM_ACID) fputs(imm, fff);
+			else if (f[1] & TR2_RES_ACID) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[1] & TR2_IM_ELEC) fprintf(fff, imm);
-			else if (f[1] & TR2_RES_ELEC) fprintf(fff, res);
+			if (f[1] & TR2_IM_ELEC) fputs(imm, fff);
+			else if (f[1] & TR2_RES_ELEC) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[1] & TR2_IM_FIRE) fprintf(fff, imm);
-			else if (f[1] & TR2_RES_FIRE) fprintf(fff, res);
+			if (f[1] & TR2_IM_FIRE) fputs(imm, fff);
+			else if (f[1] & TR2_RES_FIRE) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[1] & TR2_IM_COLD) fprintf(fff, imm);
-			else if (f[1] & TR2_RES_COLD) fprintf(fff, res);
+			if (f[1] & TR2_IM_COLD) fputs(imm, fff);
+			else if (f[1] & TR2_RES_COLD) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[1] & TR2_RES_POIS) fprintf(fff, res);
+			if (f[1] & TR2_RES_POIS) fputs(res, fff);
 			else fputs(non, fff);
 
 #if 0
-			if (f[1] & TR2_RES_LITE) fprintf(fff, res);
+			if (f[1] & TR2_RES_LITE) fputs(res, fff);
 			else fputs(non, fff);
 #endif
 
-			if (f[1] & TR2_RES_FEAR) fprintf(fff, res);
+			if (f[1] & TR2_RES_FEAR) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[1] & TR2_RES_DARK) fprintf(fff, res);
+			if (f[1] & TR2_RES_DARK) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[1] & TR2_RES_BLIND) fprintf(fff, res);
+			if (f[1] & TR2_RES_BLIND) fputs(res, fff);
 			else fputs(non, fff);
 
-        	if (f[1] & TR2_RES_CONF) fprintf(fff, res);
+        	if (f[1] & TR2_RES_CONF) fputs(res, fff);
 			else fputs(non, fff);
 
 #if 0
-			if (f[1] & TR2_RES_SHARDS) fprintf(fff, res);
+			if (f[1] & TR2_RES_SHARDS) fputs(res, fff);
 			else fputs(non, fff);
 #endif
-			if (f[1] & TR2_RES_SOUND) fprintf(fff, res);
+			if (f[1] & TR2_RES_SOUND) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[1] & TR2_RES_NETHER) fprintf(fff, res);
+			if (f[1] & TR2_RES_NETHER) fputs(res, fff);
 			else fputs(non, fff);
 #if 0
-			if (f[1] & TR2_RES_NEXUS) fprintf(fff, res);
+			if (f[1] & TR2_RES_NEXUS) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[1] & TR2_RES_CHAOS) fprintf(fff, res);
+			if (f[1] & TR2_RES_CHAOS) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[1] & TR2_RES_DISEN) fprintf(fff, res);
+			if (f[1] & TR2_RES_DISEN) fputs(res, fff);
 			else fputs(non, fff);
 #endif
 			fprintf(fff," ");
 		
-			if (f[1] & TR2_FREE_ACT) fprintf(fff, res);
+			if (f[1] & TR2_FREE_ACT) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[2] & TR3_SEE_INVIS) fprintf(fff, res);
+			if (f[2] & TR3_SEE_INVIS) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[1] & TR2_HOLD_LIFE) fprintf(fff, res);
+			if (f[1] & TR2_HOLD_LIFE) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[2] & TR3_TELEPATHY) fprintf(fff, res);
+			if (f[2] & TR3_TELEPATHY) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[2] & TR3_SLOW_DIGEST) fprintf(fff, res);
+			if (f[2] & TR3_SLOW_DIGEST) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[2] & TR3_REGEN) fprintf(fff, res);
+			if (f[2] & TR3_REGEN) fputs(res, fff);
 			else fputs(non, fff);
 
-			if (f[2] & TR3_FEATHER) fprintf(fff, res);
+			if (f[2] & TR3_FEATHER) fputs(res, fff);
 			else fputs(non, fff);
 
 			fprintf(fff,"\n");
