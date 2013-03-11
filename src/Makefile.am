@@ -9,7 +9,7 @@ tinyangband_SOURCES = \
 	cmd1.c cmd2.c cmd3.c cmd4.c cmd5.c cmd6.c \
 	dungeon.c effects.c files.c flavor.c generate.c \
 	grid.c init1.c init2.c japanese.c load.c \
-	main.c main-cap.c main-gcu.c main-x11.c main-xaw.c \
+	main.c main-gcu.c main-x11.c \
 	melee1.c melee2.c monster1.c monster2.c \
 	mspells1.c mspells2.c mutation.c notes.c \
 	obj_kind.c object1.c object2.c racial.c rooms.c \
