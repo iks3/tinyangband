@@ -57,7 +57,7 @@ void output_note(char *final_note)
 	if (!fff) return;
 
 	/* Add note, and close note file */
-	fprintf(fff, final_note);
+	fputs(final_note, fff);
 
 	my_fclose(fff);
 }

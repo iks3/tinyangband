@@ -64,7 +64,7 @@ msg_format("%s%sの顔を見てしまった！",
 		if (one_in_(3))
 		{
 			msg_print(funny_comments[randint0(MAX_SAN_COMMENT)]);
-			p_ptr->image = p_ptr->image + randint1(r_ptr->level);
+			p_ptr->image = p_ptr->image + (s16b)randint1(r_ptr->level);
 		}
 
 		/* Never mind; we can't see it clearly enough */
@@ -989,9 +989,9 @@ static bool gamble_comm(int cmd)
 		/* Get the wager */
 		strcpy(out_val, "");
 #ifdef JP
-		sprintf(tmp_str,"賭け金 (1-%ld)？", maxbet);
+		sprintf(tmp_str,"賭け金 (1-%ld)？", (long int)maxbet);
 #else
-		sprintf(tmp_str,"Your wager (1-%ld) ? ", maxbet);
+		sprintf(tmp_str,"Your wager (1-%ld) ? ", (long int)maxbet);
 #endif
 
 		/*
@@ -1020,9 +1020,9 @@ static bool gamble_comm(int cmd)
 			else if (wager > maxbet)
 			{
 #ifdef JP
-				msg_format("%ldゴールドだけ受けよう。残りは取っときな。", maxbet);
+				msg_format("%ldゴールドだけ受けよう。残りは取っときな。", (long int)maxbet);
 #else
-				msg_format("I'll take %ld gold of that. Keep the rest.", maxbet);
+				msg_format("I'll take %ld gold of that. Keep the rest.", (long int)maxbet);
 #endif
 				wager = maxbet;
 			}
@@ -1041,22 +1041,22 @@ static bool gamble_comm(int cmd)
 			oldgold = p_ptr->au;
 
 #ifdef JP
-			sprintf(tmp_str, "ゲーム前の所持金: %9ld", oldgold);
+			sprintf(tmp_str, "ゲーム前の所持金: %9ld", (long int)oldgold);
 #else
-			sprintf(tmp_str, "Gold before game: %9ld", oldgold);
+			sprintf(tmp_str, "Gold before game: %9ld", (long int)oldgold);
 #endif
 			prt(tmp_str, 20, 2);
 
 #ifdef JP
-			sprintf(tmp_str, "現在の掛け金:     %9ld", wager);
+			sprintf(tmp_str, "現在の掛け金:     %9ld", (long int)wager);
 #else
-			sprintf(tmp_str, "Current Wager:    %9ld", wager);
+			sprintf(tmp_str, "Current Wager:    %9ld", (long int)wager);
 #endif
 			prt(tmp_str, 21, 2);
 
 			/* Prevent savefile-scumming of the casino */
 			Rand_quick = TRUE;
-			Rand_value = time(NULL);
+			Rand_value = (u32b)time(NULL);
 
 			do
 			{
@@ -1252,9 +1252,9 @@ static bool gamble_comm(int cmd)
 					prt("", 17, 37);
 				}
 #ifdef JP
-				sprintf(tmp_str, "現在の所持金:    %9ld", p_ptr->au);
+				sprintf(tmp_str, "現在の所持金:    %9ld", (long int)p_ptr->au);
 #else
-				sprintf(tmp_str, "Current Gold:     %9ld", p_ptr->au);
+				sprintf(tmp_str, "Current Gold:     %9ld", (long int)p_ptr->au);
 #endif
 				prt(tmp_str, 22, 2);
 #ifdef JP
@@ -2271,8 +2271,8 @@ static bool repair_broken_weapon(void)
 	k_ptr = &k_info[q_ptr->k_idx];
 	q_ptr->sval = new_sval;
 	q_ptr->weight = k_ptr->weight + o_ptr->weight - old_k_ptr->weight;
-	q_ptr->to_h += randint0(5);
-	q_ptr->to_d += randint0(5);
+	q_ptr->to_h += (s16b)randint0(5);
+	q_ptr->to_d += (s16b)randint0(5);
 	q_ptr->ac = k_ptr->ac + o_ptr->ac - old_k_ptr->ac;
 	q_ptr->dd = k_ptr->dd + o_ptr->dd - old_k_ptr->dd;
 	q_ptr->ds = k_ptr->ds + o_ptr->ds - old_k_ptr->ds;

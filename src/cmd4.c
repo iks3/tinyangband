@@ -4673,7 +4673,7 @@ void do_cmd_save_screen_html_aux(char *filename, int message)
 	tmpfff = my_fopen(buf, "r");
 	if (!tmpfff) {
 		for (i = 0; html_head[i]; i++)
-			fprintf(fff, html_head[i]);
+			fputs(html_head[i], fff);
 	}
 	else
 	{
@@ -4739,7 +4739,7 @@ void do_cmd_save_screen_html_aux(char *filename, int message)
 
 	if (!tmpfff) {
 		for (i = 0; html_foot[i]; i++)
-			fprintf(fff, html_foot[i]);
+			fputs(html_foot[i], fff);
 	}
 	else
 	{
@@ -5714,9 +5714,9 @@ msg_print("既知のモンスターなし！");
 
 		else
 #ifdef JP
-			fprintf(fff,"あなたは %lu 匹の敵を倒している。\n\n", Total);
+			fprintf(fff,"あなたは %ld 匹の敵を倒している。\n\n", (long int)Total);
 #else
-			fprintf(fff,"You have defeated %lu enemies.\n\n", Total);
+			fprintf(fff,"You have defeated %ld enemies.\n\n", (long int)Total);
 #endif
 
 	}
@@ -5781,10 +5781,10 @@ fprintf(fff, "     %3d 匹の %s\n", This, r_name + r_ptr->name);
 
 	fprintf(fff,"----------------------------------------------\n");
 #ifdef JP
-	fprintf(fff,"    合計: %lu 匹を倒した。\n", Total);
+	fprintf(fff,"    合計: %ld 匹を倒した。\n", (long int)Total);
 #else
-	fprintf(fff,"   Total: %lu creature%s killed.\n",
-		Total, (Total == 1 ? "" : "s"));
+	fprintf(fff,"   Total: %ld creature%s killed.\n",
+		(long int)Total, (Total == 1 ? "" : "s"));
 #endif
 
 
@@ -7406,7 +7406,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 #endif
 			}
 
-			fprintf(fff, tmp_str);
+			fputs(tmp_str, fff);
 		}
 	}
 #ifdef JP
@@ -7467,7 +7467,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 					quest[num].name, quest[num].level, quest[num].complev);
 #endif
 			}
-			fprintf(fff, tmp_str);
+			fputs(tmp_str, fff);
 		}
 	}
 #ifdef JP
@@ -7501,7 +7501,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 				sprintf(tmp_str, "%s (Dungeon level: %d)\n",
 #endif
 				r_name+r_info[quest[num].r_idx].name, quest[num].level);
-				fprintf(fff, tmp_str);
+				fputs(tmp_str, fff);
 			}
 		}
 #ifdef JP
@@ -7657,7 +7657,7 @@ static void do_cmd_knowledge_quests(void)
 
 					quest[i].name, quest[i].level, note);
 
-				fprintf(fff, tmp_str);
+					fputs(tmp_str, fff);
 
 				if (quest[i].status == QUEST_STATUS_COMPLETED)
 				{
@@ -7666,7 +7666,7 @@ static void do_cmd_knowledge_quests(void)
 #else
 					sprintf(tmp_str, "  Quest Completed - Unrewarded\n");
 #endif
-					fprintf(fff, tmp_str);
+					fputs(tmp_str, fff);
 				}
 				else
 				{
@@ -7719,7 +7719,7 @@ static void do_cmd_knowledge_quests(void)
 	}
 
 	/* Print the current random quest  */
-	if (rand_tmp_str[0]) fprintf(fff, rand_tmp_str);
+	if (rand_tmp_str[0]) fputs(tmp_str, fff);
 
 #ifdef JP
 	if (!total) fprintf(fff, "なし\n");
@@ -7841,81 +7841,81 @@ static void do_cmd_knowledge_inven_aux(FILE *fff, object_type *o_ptr,
 
 			if (f[1] & TR2_IM_ACID) fprintf(fff, imm);
 			else if (f[1] & TR2_RES_ACID) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[1] & TR2_IM_ELEC) fprintf(fff, imm);
 			else if (f[1] & TR2_RES_ELEC) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[1] & TR2_IM_FIRE) fprintf(fff, imm);
 			else if (f[1] & TR2_RES_FIRE) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[1] & TR2_IM_COLD) fprintf(fff, imm);
 			else if (f[1] & TR2_RES_COLD) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[1] & TR2_RES_POIS) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 #if 0
 			if (f[1] & TR2_RES_LITE) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 #endif
 
 			if (f[1] & TR2_RES_FEAR) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[1] & TR2_RES_DARK) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[1] & TR2_RES_BLIND) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
         	if (f[1] & TR2_RES_CONF) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 #if 0
 			if (f[1] & TR2_RES_SHARDS) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 #endif
 			if (f[1] & TR2_RES_SOUND) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[1] & TR2_RES_NETHER) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 #if 0
 			if (f[1] & TR2_RES_NEXUS) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[1] & TR2_RES_CHAOS) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[1] & TR2_RES_DISEN) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 #endif
 			fprintf(fff," ");
 		
 			if (f[1] & TR2_FREE_ACT) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[2] & TR3_SEE_INVIS) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[1] & TR2_HOLD_LIFE) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[2] & TR3_TELEPATHY) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[2] & TR3_SLOW_DIGEST) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[2] & TR3_REGEN) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			if (f[2] & TR3_FEATHER) fprintf(fff, res);
-			else fprintf(fff, non);
+			else fputs(non, fff);
 
 			fprintf(fff,"\n");
 		}

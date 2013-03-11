@@ -4143,13 +4143,13 @@ errr file_character(cptr name, bool full)
 #ifdef JP
 			fprintf(fff,"\n\n まだ敵を倒していません。\n");
 		else
-			fprintf(fff,"\n\n %lu 体の敵を倒しています。\n", Total);
+			fprintf(fff,"\n\n %ld 体の敵を倒しています。\n", (long int)Total);
 #else
 			fprintf(fff,"\n\n You have defeated no enemies yet.\n");
 		else if (Total == 1)
 			fprintf(fff,"\n\n You have defeated one enemy.\n");
 		else
-			fprintf(fff,"\n\n You have defeated %lu enemies.\n", Total);
+			fprintf(fff,"\n\n You have defeated %ld enemies.\n", (long int)Total);
 #endif
 	}
 
