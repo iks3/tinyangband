@@ -689,16 +689,9 @@ typedef struct owner_type owner_type;
 
 struct owner_type
 {
-	cptr owner_name;	/* Name */
-
 	s16b max_cost;		/* Purse limit */
-
-	byte max_inflate;	/* Inflation (max) */
 	byte min_inflate;	/* Inflation (min) */
-
-	byte haggle_per;	/* Haggle unit */
-
-	byte insult_max;	/* Insult limit */
+	cptr owner_name;	/* Name */
 };
 
 
