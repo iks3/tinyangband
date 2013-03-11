@@ -66,8 +66,7 @@
 # include <io.h>
 #endif
 
-#if !defined(MACINTOSH) && !defined(AMIGA) && \
-    !defined(ACORN) && !defined(VM)
+#if !defined(MACINTOSH) && !defined(VM)
 # if defined(__TURBOC__) || defined(__WATCOMC__)
 #  include <mem.h>
 # else
@@ -76,7 +75,7 @@
 #endif
 
 
-#if !defined(NeXT) && !defined(__MWERKS__) && !defined(ACORN)
+#if !defined(NeXT) && !defined(__MWERKS__)
 # include <fcntl.h>
 #endif
 
@@ -110,7 +109,7 @@
 
 #include <string.h>
 
-#if !defined(linux) && !defined(__MWERKS__) && !defined(ACORN) && !defined(WIN32)
+#if !defined(linux) && !defined(__MWERKS__) && !defined(WIN32)
 extern long atol();
 #endif
 
