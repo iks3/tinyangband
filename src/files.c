@@ -2037,7 +2037,7 @@ static void player_flags(u32b *f1, u32b *f2, u32b *f3)
 		if (p_ptr->lev >= 25) (*f2) |= TR2_RES_SOUND;
 		break;
 	case VAR_AULE:
-		/* Nothing */
+		(*f2) |= TR2_SUST_STR;
 		break;
 	case VAR_OROME:
 		(*f1) |= TR1_SPEED;

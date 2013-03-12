@@ -26,153 +26,6 @@ struct power_desc_type
 };
 
 
-#if 0
-/* Hit and Away */
-static bool hit_and_away(void)
-{
-	int dir;
-	int x, y;
-
-	if (!get_rep_dir(&dir)) return FALSE;
-
-	y = py + ddy[dir];
-	x = px + ddx[dir];
-
-	if (!cave[y][x].m_idx)
-	{
-#ifdef JP
-		msg_print("その方向にはモンスターはいません。");
-#else
-		msg_print("You don't see any monster in this direction");
-#endif
-		return (FALSE);
-	}
-
-	py_attack(y, x);
-
-	if (randint0(p_ptr->skill_dis) < 7)
-#ifdef JP
-		msg_print("うまく逃げられなかった。");
-#else
-		msg_print("You are failed to run away.");
-#endif
-	else teleport_player(30);
-
-	return (TRUE);
-}
-#endif
-
-#if 0
-#define cave_wall_bold(Y, X) \
-	((cave[Y][X].feat >= FEAT_SECRET) && \
-	(cave[Y][X].feat <= FEAT_PERM_SOLID))
-
-
-/*
- * Go to an opposite empty floor over a wall.
- */
-static bool jump_wall(void)
-{
-	int nx = px;
-	int ny = py;
-	int tx, ty;
-	int dir;
-
-	project_length = 3;
-	if (!get_aim_dir(&dir)) return FALSE;
-
-	/* Predict the "target" location */
-	ty = py + 2 * ddy[dir];
-	tx = px + 2 * ddx[dir];
-
-	/* Check for "target request" */
-	if ((dir == 5) && target_okay())
-	{
-		tx = target_col;
-		ty = target_row;
-	}
-
-	project_length = 0;
-	mmove2(&ny, &nx, py, px, ty, tx);
-
-	if (!cave_wall_bold(ny, nx) || !in_bounds(ny, nx))
-	{
-#ifdef JP
-		msg_print("超えるべき壁がありません。");
-#else
-		msg_print("No wall for passing.");
-#endif
-		return FALSE;
-	}
-
-	mmove2(&ny, &nx, py, px, ty, tx);
-
-	if (!in_bounds(ny, nx) || (cave[ny][nx].info & CAVE_ICKY) ||
-		((cave[ny][nx].info & CAVE_MARK) && cave_wall_bold(ny, nx)))
-	{
-#ifdef JP
-		msg_print("そこへは移動できません。");
-#else
-		msg_print("Can not move here.");
-#endif
-		return FALSE;
-	}
-
-	if (cave[ny][nx].m_idx)
-	{
-		monster_type *m_ptr = &m_list[cave[ny][nx].m_idx];
-
-		if (is_seen(m_ptr))
-		{
-#ifdef JP
-			msg_print("そこへは移動できません。");
-#else
-			msg_print("Can not move here.");
-#endif
-			return FALSE;
-		}
-	}
-
-	/* Sound */
-	sound(SOUND_TELEPORT);
-
-	if (cave_wall_bold(ny, nx) || (cave[ny][nx].info & CAVE_ICKY) || cave[ny][nx].m_idx || one_in_(10))
-	{
-#ifdef JP
-		msg_print("移動に失敗しました。");
-#else
-		msg_print("Fail to pass the wall.");
-#endif
-	}
-	else
-	{
-		int ox = px;
-		int oy = py;
-
-		px = nx;
-		py = ny;
-		lite_spot(oy, ox);
-		lite_spot(py, px);
-		forget_flow();
-
-		/* Update stuff */
-		p_ptr->update |= (PU_VIEW | PU_LITE | PU_FLOW | PU_MON_LITE);
-
-		/* Update the monsters */
-		p_ptr->update |= (PU_DISTANCE);
-
-		/* Window stuff */
-		p_ptr->window |= (PW_OVERHEAD | PW_DUNGEON);
-
-		/* Handle stuff XXX XXX XXX */
-		handle_stuff();
-	}
-
-	return (TRUE);
-}
-#endif
-
-
 /*
  * Returns the chance to activate a racial power/mutation
  */
@@ -754,116 +607,6 @@ static bool do_cmd_arrow_rain(void)
 }
 
 
-#ifndef TINYANGBAND
-static bool item_tester_hook_devices(const object_type *o_ptr)
-{
-	switch (o_ptr->tval)
-	{
-		case TV_WAND:
-		case TV_STAFF:
-		case TV_ROD:
-		{
-			return (bool) (!object_known_p(o_ptr));
-		}
-	}
-	return (FALSE);
-}
-
-
-static bool do_cmd_identify_devices(void)
-{
-	int item;
-	cptr q, s;
-	object_type *o_ptr;
-	char o_name[MAX_NLEN];
-	bool old_known;
-
-	item_tester_hook = item_tester_hook_devices;
-
-	/* Get an item */
-#ifdef JP
-	q = "どのアイテムを鑑定しますか? ";
-	s = "鑑定できるアイテムがない。";
-#else
-	q = "Identify which item? ";
-	s = "You have nothing to identify.";
-#endif
-
-	if (!get_item(&item, q, s, (USE_EQUIP | USE_INVEN | USE_FLOOR))) return (FALSE);
-
-	/* Access the item (if in the pack) */
-	if (item >= 0)
-	{
-		o_ptr = &inventory[item];
-	}
-	else
-	{
-		o_ptr = &o_list[0 - item];
-	}
-
-	/* Identify it */
-	old_known = identify_item(o_ptr);
-
-	/* Handle stuff */
-	handle_stuff();
-
-	/* Description */
-	object_desc(o_name, o_ptr, 0);
-
-	/* Possibly play a sound depending on object quality. */
-    if (o_ptr->pval < 0)
-    {
-                /* This is a bad item. */
-                sound(SOUND_IDENT_BAD);
-    }
-    else if (o_ptr->name1 != 0)
-    {
-                /* We have a good artifact. */
-                sound(SOUND_IDENT_ART);
-    }
-    else if (o_ptr->name2 != 0)
-    {
-                /* We have a good ego item. */
-                sound(SOUND_IDENT_EGO);
-    }
-
-	/* Describe */
-	if (item >= INVEN_WIELD)
-	{
-#ifdef JP
-		msg_format("%^s: %s(%c)。",
-#else
-		msg_format("%^s: %s (%c).",
-#endif
-			   describe_use(item), o_name, index_to_label(item));
-	}
-	else if (item >= 0)
-	{
-#ifdef JP
-		msg_format("ザック中: %s(%c)。",
-#else
-		msg_format("In your pack: %s (%c).",
-#endif
-			   o_name, index_to_label(item));
-	}
-	else
-	{
-#ifdef JP
-		msg_format("床上: %s。",
-#else
-		msg_format("On the ground: %s.",
-#endif
-			   o_name);
-	}
-
-	/* Auto-inscription/destroy */
-	autopick_alter_item(item, (bool)(destroy_identify && !old_known));
-
-	return (TRUE);
-}
-#endif
-
-
 static bool cmd_racial_power_aux(s32b command)
 {
 	s16b        plev = p_ptr->lev;
@@ -885,7 +628,14 @@ static bool cmd_racial_power_aux(s32b command)
 			(void)set_oppose_acid(15 + randint1(15));
 			break;
 		case VAR_AULE:
-			(void)set_tim_might(30 + randint1(30));
+			if (command == -10)
+			{
+				(void)set_tim_might(30 + randint1(30));
+			}
+			else if (command == -11)
+			{
+				return coat_equip();
+			}
 			break;
 		case VAR_OROME:
 			(void)set_tim_radar(40 + randint1(40));
@@ -1364,16 +1114,18 @@ void do_cmd_racial_power(void)
 			power_desc[num++].number = -10;
 			break;
 	case VAR_AULE:
-#ifdef JP
-			strcpy(power_desc[num].name, "腕力強化");
-#else
-			strcpy(power_desc[num].name, "Extra might");
-#endif
+			strcpy(power_desc[num].name, _("腕力強化", "Extra might"));
 			power_desc[num].level = 5;
 			power_desc[num].cost = 10;
 			power_desc[num].stat = A_STR;
 			power_desc[num].fail = (warrior ? 6 : 12);
 			power_desc[num++].number = -10;
+			strcpy(power_desc[num].name, _("腐食防止", "Rust proofing"));
+			power_desc[num].level = 20;
+			power_desc[num].cost = 30;
+			power_desc[num].stat = A_STR;
+			power_desc[num].fail = (warrior ? 12 : 24);
+			power_desc[num++].number = -11;
 			break;
 	case VAR_OROME:
 #ifdef JP

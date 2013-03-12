@@ -2732,7 +2732,8 @@ void calc_bonuses(void)
 			if (p_ptr->lev >= 25) p_ptr->resist_sound = TRUE;
 			break;
 		case VAR_AULE:
-			/* Nothing */
+			p_ptr->stat_add[A_STR] += 2;
+			p_ptr->sustain_str = TRUE;
 			break;
 		case VAR_OROME:
 			p_ptr->pspeed += 1 + (p_ptr->lev / 7);

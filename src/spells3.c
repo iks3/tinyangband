@@ -1922,18 +1922,12 @@ bool coat_equip(void)
 	char        o_name[MAX_NLEN];
 	cptr        q, s;
 
-
 	/* coat weapon or armor */
 	item_tester_hook = item_tester_hook_weapon_armour;
 
 	/* Get an item */
-#ifdef JP
-q = "どのアイテムを腐食防止しますか? ";
-s = "腐食防止できるアイテムがない。";
-#else
-	q = "Enchant which item? ";
-	s = "You have nothing to enchant.";
-#endif
+	q = _("どのアイテムを腐食防止しますか? ", "Enchant coating which item? ");
+	s = _("腐食防止できるアイテムがない。", "You have nothing to enchant coating.");
 
 	if (!get_item(&item, q, s, (USE_EQUIP | USE_INVEN | USE_FLOOR))) return (FALSE);
 
@@ -1949,21 +1943,17 @@ s = "腐食防止できるアイテムがない。";
 		o_ptr = &o_list[0 - item];
 	}
 
-
 	/* Description */
 	object_desc(o_name, o_ptr, OD_OMIT_PREFIX | OD_NAME_ONLY);
 
 	/* Describe */
 #ifdef JP
-msg_format("%s は明るく輝いた！",
-    o_name);
+	msg_format("%s は明るく輝いた！", o_name);
 #else
 	msg_format("%s %s glow%s brightly!",
 		   ((item >= 0) ? "Your" : "The"), o_name,
 		   ((o_ptr->number > 1) ? "" : "s"));
 #endif
-
-
 	/* Coat */
 	o_ptr->art_flags3 |= (TR3_IGNORE_ACID | TR3_IGNORE_ELEC |
 			      TR3_IGNORE_FIRE | TR3_IGNORE_COLD);
