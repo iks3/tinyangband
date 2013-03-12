@@ -23,6 +23,7 @@ struct power_desc_type
 	int  stat;
 	int  fail;
 	int  number;
+	bool ignore_conf;
 };
 
 
@@ -40,7 +41,7 @@ static int racial_chance(power_desc_type *pd_ptr)
 	int stat = p_ptr->stat_cur[pd_ptr->stat];
 
 	/* No chance for success */
-	if ((p_ptr->lev < min_level) || p_ptr->confused)
+	if ((p_ptr->lev < min_level) || (p_ptr->confused && !(pd_ptr->ignore_conf)))
 	{
 		return (0);
 	}
@@ -99,23 +100,17 @@ static int racial_aux(power_desc_type *pd_ptr)
 	/* Power is not available yet */
 	if (p_ptr->lev < min_level)
 	{
-#ifdef JP
-		msg_format("この能力を使用するにはレベル %d に達していなければなりません。", min_level);
-#else
-		msg_format("You need to attain level %d to use this power.", min_level);
-#endif
+		msg_format(_("この能力を使用するにはレベル %d に達していなければなりません。",
+			"You need to attain level %d to use this power."),
+			min_level);
 		energy_use = 0;
 		return 0;
 	}
 
 	/* Too confused */
-	else if (p_ptr->confused)
+	else if (p_ptr->confused && !(pd_ptr->ignore_conf))
 	{
-#ifdef JP
-		msg_print("混乱していてその能力は使えない。");
-#else
-		msg_print("You are too confused to use this power.");
-#endif
+		msg_print(_("混乱していてその能力は使えません。", "You are too confused to use this power."));
 		energy_use = 0;
 		return 0;
 	}
@@ -123,11 +118,8 @@ static int racial_aux(power_desc_type *pd_ptr)
 	/* Risk death? */
 	else if (p_ptr->chp < use_hp)
 	{
-#ifdef JP
-		if (!get_check("本当に今の衰弱した状態でこの能力を使いますか？"))
-#else
-		if (!get_check("Really use the power in your weakened state? "))
-#endif
+		if (!get_check(_("本当に今の衰弱した状態でこの能力を使いますか？",
+			"Really use the power in your weakened state? ")))
 		{
 			energy_use = 0;
 			return 0;
@@ -162,11 +154,8 @@ static int racial_aux(power_desc_type *pd_ptr)
 	}
 
 	if (flush_failure) flush();
-#ifdef JP
-	msg_print("充分に集中できなかった。");
-#else
-	msg_print("You've failed to concentrate hard enough.");
-#endif
+	msg_print(_("充分に集中できなかった。", "You've failed to concentrate hard enough."));
+
 	return -1;
 }
 
@@ -293,7 +282,7 @@ static bool do_cmd_shield_bash(void)
 #else
 			msg_format("%^s appears confused.", m_name);
 #endif
-			m_ptr->confused += randint0(p_ptr->lev / 5) + 4;
+			m_ptr->confused += (byte)(randint0(p_ptr->lev / 5) + 4);
 		}
 
 		/* Hack -- delay fear messages */
@@ -723,6 +712,7 @@ static bool cmd_racial_power_aux(s32b command)
 			(void)set_poisoned(0);
 			(void)set_cut(0);
 			(void)set_blind(0);
+			(void)set_confused(0);
 			(void)set_image(0);
 			(void)set_stun(0);
 			break;
@@ -905,6 +895,21 @@ static bool cmd_racial_power_aux(s32b command)
 }
 
 
+static power_desc_type power_desc_entry(cptr name, int level, int cost, int stat, int fail, int number)
+{
+	power_desc_type power_desc;
+	strcpy(power_desc.name, name);
+	power_desc.level = level;
+	power_desc.cost = cost;
+	power_desc.stat = stat;
+	power_desc.fail = fail;
+	power_desc.number = number;
+	power_desc.ignore_conf = FALSE;
+
+	return (power_desc);
+}
+
+
 /*
  * Allow user to choose a power (racial / mutation) to activate
  */
@@ -917,7 +922,6 @@ void do_cmd_racial_power(void)
 	char choice;
 	char out_val[160];
 
-
 	for (num = 0; num < 36; num++)
 	{
 		strcpy(power_desc[num].name, "");
@@ -926,161 +930,76 @@ void do_cmd_racial_power(void)
 
 	num = 0;
 
-	if (p_ptr->confused)
+	/* Can use Este's power when confusion */
+	if (p_ptr->confused && (p_ptr->valar_patron != VAR_ESTE))
 	{
-#ifdef JP
-		msg_print("混乱していて特殊能力を使えません！");
-#else
-		msg_print("You are too confused to use any powers!");
-#endif
-		energy_use = 0;
+		msg_print(_("混乱していて特殊能力を使えません！", "You are too confused to use any powers!"));
 		return;
 	}
 
 	switch (p_ptr->pclass)
 	{
 		case CLASS_WARRIOR:
-#ifdef JP
-			strcpy(power_desc[num].name, "シールド・バッシュ");
-#else
-			strcpy(power_desc[num].name, "Shield bashing");
-#endif
-			power_desc[num].level = 1;
-			power_desc[num].cost = 15;
-			power_desc[num].stat = A_DEX;
-			power_desc[num].fail = 0;
-			power_desc[num++].number = -3;
+			power_desc[num++] = power_desc_entry(
+				_("シールド・バッシュ", "Shield bashing"),
+				1, 15, A_DEX, 0, -3);
 			break;
 		case CLASS_PALADIN:
-#ifdef JP
-			strcpy(power_desc[num].name, "呪い識別");
-#else
-			strcpy(power_desc[num].name, "Identify curse");
-#endif
-			power_desc[num].level = 5;
-			power_desc[num].cost = 10;
-			power_desc[num].stat = A_WIS;
-			power_desc[num].fail = 9;
-			power_desc[num++].number = -3;
+			power_desc[num++] = power_desc_entry(
+				_("呪い識別", "Identify curse"),
+				5, 10, A_WIS, 9, -3);
 			break;
 		case CLASS_WARRIOR_MAGE:
-#ifdef JP
-			strcpy(power_desc[num].name, "遠方攻撃");
-#else
-			strcpy(power_desc[num].name, "Distance attack");
-#endif
-			power_desc[num].level = 1;
-			power_desc[num].cost = 15;
-			power_desc[num].stat = A_DEX;
-			power_desc[num].fail = 0;
-			power_desc[num++].number = -3;
+			power_desc[num++] = power_desc_entry(
+				_("遠方攻撃", "Distance attack"),
+				1, 15, A_DEX, 0, -3);
 			break;
 		case CLASS_MAGE:
 		case CLASS_PRIEST:
-#ifdef JP
-			strcpy(power_desc[num].name, "明鏡止水");
-#else
-			strcpy(power_desc[num].name, "Clear mind");
-#endif
-			power_desc[num].level = 15;
-			power_desc[num].cost = 0;
-			power_desc[num].stat = m_info[p_ptr->pclass].spell_stat;
-			power_desc[num].fail = 10;
-			power_desc[num++].number = -3;
+			power_desc[num++] = power_desc_entry(
+				_("明鏡止水", "Clear mind"),
+				15, 0, m_info[p_ptr->pclass].spell_stat, 10, -3);
 			break;
 		case CLASS_ARCHER:
-#ifdef JP
-			strcpy(power_desc[num].name, "弓/矢の鑑定");
-#else
-			strcpy(power_desc[num].name, "Identify bows/ammos");
-#endif
-			power_desc[num].level = 10;
-			power_desc[num].cost = 15;
-			power_desc[num].stat = A_INT;
-			power_desc[num].fail = 15;
-			power_desc[num++].number = -3;
-#ifdef JP
-			strcpy(power_desc[num].name, "矢の雨");
-#else
-			strcpy(power_desc[num].name, "Arrow rain");
-#endif
-			power_desc[num].level = 5;
-			power_desc[num].cost = 15;
-			power_desc[num].stat = A_DEX;
-			power_desc[num].fail = 15;
-			power_desc[num++].number = -4;
+			power_desc[num++] = power_desc_entry(
+				_("弓/矢の鑑定", "Identify bows/ammos"),
+				10, 15, A_INT, 15, -3);
+			power_desc[num++] = power_desc_entry(
+				_("矢の雨", "Arrow rain"),
+				5, 15, A_DEX, 15, -4);
 			break;
 		default:
-#ifdef JP
-			strcpy(power_desc[num].name, "(なし)");
-#else
-			strcpy(power_desc[num].name, "(none)");
-#endif
+			strcpy(power_desc[num].name, _("(なし)", "(none)"));
 			break;
 	}
 
 	switch (p_ptr->prace)
 	{
 		case RACE_DWARF:
-#ifdef JP
-			strcpy(power_desc[num].name, "ドアと罠 感知");
-#else
-			strcpy(power_desc[num].name, "Detect doors+traps");
-#endif
-			power_desc[num].level = 5;
-			power_desc[num].cost = 5;
-			power_desc[num].stat = A_WIS;
-			power_desc[num].fail = 12;
-			power_desc[num++].number = -1;
+			power_desc[num++] = power_desc_entry(
+				_("ドアと罠 感知", "Detect doors+traps"),
+				5, 5, A_WIS, 12, -1);
 			break;
 		case RACE_HOBBIT:
-#ifdef JP
-			strcpy(power_desc[num].name, "食糧生成");
-#else
-			strcpy(power_desc[num].name, "Create food");
-#endif
-			power_desc[num].level = 15;
-			power_desc[num].cost = 10;
-			power_desc[num].stat = A_INT;
-			power_desc[num].fail = 10;
-			power_desc[num++].number = -1;
+			power_desc[num++] = power_desc_entry(
+				_("食糧生成", "Create food"),
+				15, 10, A_INT, 10, -1);
 			break;
 		case RACE_HALF_ORC:
-#ifdef JP
-			strcpy(power_desc[num].name, "恐怖除去");
-#else
-			strcpy(power_desc[num].name, "Remove fear");
-#endif
-			power_desc[num].level = 3;
-			power_desc[num].cost = 5;
-			power_desc[num].stat = A_WIS;
-			power_desc[num].fail = (warrior ? 5 : 10);
-			power_desc[num++].number = -1;
+			power_desc[num++] = power_desc_entry(
+				_("恐怖除去", "Remove fear"),
+				3, 5, A_WIS, (warrior ? 5 : 10), -1);
 			break;
 		case RACE_BARBARIAN:
-#ifdef JP
-			strcpy(power_desc[num].name, "肉体野獣化");
-#else
-			strcpy(power_desc[num].name, "Berserk");
-#endif
-			power_desc[num].level = 8;
-			power_desc[num].cost = 10;
-			power_desc[num].stat = A_WIS;
-			power_desc[num].fail = (warrior ? 6 : 12);
-			power_desc[num++].number = -1;
+			power_desc[num++] = power_desc_entry(
+				_("肉体野獣化", "Berserk"),
+				8, 10, A_WIS, (warrior ? 6 : 12), -1);
 			break;
 #if 0
 		case RACE_VAMPIRE:
-#ifdef JP
-			strcpy(power_desc[num].name, "生命力吸収");
-#else
-			strcpy(power_desc[num].name, "Drain life");
-#endif
-			power_desc[num].level = 2;
-			power_desc[num].cost = 1 + (lvl / 3);
-			power_desc[num].stat = A_CON;
-			power_desc[num].fail = 9;
-			power_desc[num++].number = -1;
+			power_desc[num++] = power_desc_entry(
+				_("生命力吸収", "Drain life"),
+				2, 1 + (lvl / 3), A_CON, 9, -1);
 			break;
 #endif
 		default:
@@ -1090,210 +1009,92 @@ void do_cmd_racial_power(void)
 	switch(p_ptr->valar_patron)
 	{
 	case VAR_MANWE:
-#ifdef JP
-			strcpy(power_desc[num].name, "風のオーラ");
-#else
-			strcpy(power_desc[num].name, "Cloak of Hurricane");
-#endif
-			power_desc[num].level = 7;
-			power_desc[num].cost = 10;
-			power_desc[num].stat = A_INT;
-			power_desc[num].fail = 15;
-			power_desc[num++].number = -10;
+			power_desc[num++] = power_desc_entry(
+				_("風のオーラ", "Cloak of Hurricane"),
+				7, 10, A_WIS, 15, -10);
 			break;
 	case VAR_ULMO:
-#ifdef JP
-			strcpy(power_desc[num].name, "酸への耐性");
-#else
-			strcpy(power_desc[num].name, "Acid resistance");
-#endif
-			power_desc[num].level = 10;
-			power_desc[num].cost = 15;
-			power_desc[num].stat = A_INT;
-			power_desc[num].fail = 15;
-			power_desc[num++].number = -10;
+			power_desc[num++] = power_desc_entry(
+				_("酸への耐性", "Acid resistance"),
+				10, 15, A_INT, 15, -10);
 			break;
 	case VAR_AULE:
-			strcpy(power_desc[num].name, _("腕力強化", "Extra might"));
-			power_desc[num].level = 5;
-			power_desc[num].cost = 10;
-			power_desc[num].stat = A_STR;
-			power_desc[num].fail = (warrior ? 6 : 12);
-			power_desc[num++].number = -10;
-			strcpy(power_desc[num].name, _("腐食防止", "Rust proofing"));
-			power_desc[num].level = 20;
-			power_desc[num].cost = 30;
-			power_desc[num].stat = A_STR;
-			power_desc[num].fail = (warrior ? 12 : 24);
-			power_desc[num++].number = -11;
+			power_desc[num++] = power_desc_entry(
+				_("腕力強化", "Extra might"),
+				5, 10, A_STR, (warrior ? 6 : 12), -10);
+			power_desc[num++] = power_desc_entry(
+				_("腐食防止", "Rust proofing"),
+				20, 30, A_STR, (warrior ? 12 : 24), -11);
 			break;
 	case VAR_OROME:
-#ifdef JP
-			strcpy(power_desc[num].name, "エルフの目");
-#else
-			strcpy(power_desc[num].name, "Elven eye");
-#endif
-			power_desc[num].level = 3;
-			power_desc[num].cost = 5;
-			power_desc[num].stat = A_DEX;
-			power_desc[num].fail = 15;
-			power_desc[num++].number = -10;
+			power_desc[num++] = power_desc_entry(
+				_("エルフの目", "Elven eye"),
+				3, 5, A_DEX, 15, -10);
 			break;
 	case VAR_MANDOS:
-#ifdef JP
-			strcpy(power_desc[num].name, "死者退散");
-#else
-			strcpy(power_desc[num].name, "Dispel undead");
-#endif
-			power_desc[num].level = 10;
-			power_desc[num].cost = 10;
-			power_desc[num].stat = A_WIS;
-			power_desc[num].fail = 10;
-			power_desc[num++].number = -10;
+			power_desc[num++] = power_desc_entry(
+				_("死者退散", "Dispel undead"),
+				10, 10, A_WIS, 10, -10);
 			break;
 	case VAR_IRMO:
-#ifdef JP
-			strcpy(power_desc[num].name, "周辺スリープ");
-#else
-			strcpy(power_desc[num].name, "Sleep monsters");
-#endif
-			power_desc[num].level = 8;
-			power_desc[num].cost = 10;
-			power_desc[num].stat = A_INT;
-			power_desc[num].fail = 15;
-			power_desc[num++].number = -10;
+			power_desc[num++] = power_desc_entry(
+				_("周辺スリープ", "Sleep monsters"),
+				8, 10, A_INT, 15, -10);
 			break;
 	case VAR_TULKAS:
-#ifdef JP
-			strcpy(power_desc[num].name, "全方位攻撃");
-#else
-			strcpy(power_desc[num].name, "Whirlwind Attack");
-#endif
-			power_desc[num].level = 1;
-			power_desc[num].cost = 15;
-			power_desc[num].stat = A_STR;
-			power_desc[num].fail = (warrior ? 9 : 15);
-			power_desc[num++].number = -10;
-#ifdef JP
-			strcpy(power_desc[num].name, "士気高揚");
-#else
-			strcpy(power_desc[num].name, "Heroism");
-#endif
-			power_desc[num].level = 7;
-			power_desc[num].cost = 10;
-			power_desc[num].stat = A_WIS;
-			power_desc[num].fail = 12;
-			power_desc[num++].number = -11;
+			power_desc[num++] = power_desc_entry(
+				_("全方位攻撃", "Whirlwind Attack"),
+				1, 15, A_STR, (warrior ? 9 : 15), -10);
+			power_desc[num++] = power_desc_entry(
+				_("士気高揚", "Heroism"),
+				7, 10, A_WIS, 12, -11);
 			break;
 	case VAR_VARDA:
-#ifdef JP
-			strcpy(power_desc[num].name, "対邪悪結界");
-#else
-			strcpy(power_desc[num].name, "Protection from evil");
-#endif
-			power_desc[num].level = 7;
-			power_desc[num].cost = 15;
-			power_desc[num].stat = A_WIS;
-			power_desc[num].fail = 15;
-			power_desc[num++].number = -10;
+			power_desc[num++] = power_desc_entry(
+				_("対邪悪結界", "Protection from evil"),
+				7, 15, A_WIS, 15, -10);
 			break;
 	case VAR_YAVANNA:
-#ifdef JP
-			strcpy(power_desc[num].name, "草地生成");
-#else
-			strcpy(power_desc[num].name, "Create grass");
-#endif
-			power_desc[num].level = 1;
-			power_desc[num].cost = 2;
-			power_desc[num].stat = A_DEX;
-			power_desc[num].fail = 6;
-			power_desc[num++].number = -10;
-#ifdef JP
-			strcpy(power_desc[num].name, "フラッシュ・ライト");
-#else
-			strcpy(power_desc[num].name, "Flash Light");
-#endif
-			power_desc[num].level = 5;
-			power_desc[num].cost = 5;
-			power_desc[num].stat = A_CHR;
-			power_desc[num].fail = 6;
-			power_desc[num++].number = -11;
+			power_desc[num++] = power_desc_entry(
+				_("草地生成", "Create grass"),
+				1, 2, A_DEX, 6, -10);
+			power_desc[num++] = power_desc_entry(
+				_("フラッシュ・ライト", "Flash Light"),
+				5, 5, A_CHR, 6, -1);
 			break;
 	case VAR_NIENNA:
-#ifdef JP
-			strcpy(power_desc[num].name, "哀しみの歌");
-#else
-			strcpy(power_desc[num].name, "Sorrowful song");
-#endif
-			power_desc[num].level = 7;
-			power_desc[num].cost = 5;
-			power_desc[num].stat = A_CHR;
-			power_desc[num].fail = 9;
-			power_desc[num++].number = -10;
+			power_desc[num++] = power_desc_entry(
+				_("哀しみの歌", "Sorrowful song"),
+				7, 5, A_CHR, 9, -10);
 			break;
 	case VAR_ESTE:
-#ifdef JP
-			strcpy(power_desc[num].name, "癒しの手");
-#else
-			strcpy(power_desc[num].name, "Curing");
-#endif
-			power_desc[num].level = 1;
-			power_desc[num].cost = 5;
-			power_desc[num].stat = A_WIS;
-			power_desc[num].fail = 6;
-			power_desc[num++].number = -10;
+			power_desc[num] = power_desc_entry(
+				_("癒しの手", "Curing"),
+				1, 5, A_WIS, 6, -10);
+			power_desc[num++].ignore_conf = TRUE;
 			break;
 	case VAR_VAIRE:
-#ifdef JP
-			strcpy(power_desc[num].name, "魅惑の目");
-#else
-			strcpy(power_desc[num].name, "Charming");
-#endif
-			power_desc[num].level = 10;
-			power_desc[num].cost = 10;
-			power_desc[num].stat = A_CHR;
-			power_desc[num].fail = 12;
-			power_desc[num++].number = -10;
+			power_desc[num++] = power_desc_entry(
+				_("魅惑の目", "Charming"),
+				10, 10, A_CHR, 12, -10);
 			break;
 	case VAR_VANA:
-#ifdef JP
-			strcpy(power_desc[num].name, "経験値復活");
-#else
-			strcpy(power_desc[num].name, "Restore level");
-#endif
-			power_desc[num].level = 15;
-			power_desc[num].cost = 10;
-			power_desc[num].stat = A_WIS;
-			power_desc[num].fail = 9;
-			power_desc[num++].number = -10;
+			power_desc[num++] = power_desc_entry(
+				_("経験値復活", "Restore level"),
+				15, 10, A_WIS, 9, -10);
 			break;
 	case VAR_NESSA:
-#ifdef JP
-			strcpy(power_desc[num].name, "跳躍");
-#else
-			strcpy(power_desc[num].name, "Stepping");
-#endif
-			power_desc[num].level = 1;
-			power_desc[num].cost = 5;
-			power_desc[num].stat = A_DEX;
-			power_desc[num].fail = 6;
-			power_desc[num++].number = -10;
+			power_desc[num++] = power_desc_entry(
+				_("跳躍", "Stepping"),
+				1, 3, A_DEX, 6, -10);
 			break;
 	default:
 		break;
 	}
 
-#if 0
-	if ((num == 0) && !p_ptr->muta)
-#else
 	if (num == 0)
-#endif
 	{
-#ifdef JP
-		msg_print("使える特殊能力が何もありません。");
-#else
-		msg_print("You have no powers to activate.");
-#endif
+		msg_print(_("使える特殊能力が何もありません。", "You have no powers to activate."));
 		energy_use = 0;
 		return;
 	}
@@ -1306,7 +1107,7 @@ void do_cmd_racial_power(void)
 
 	/* Build a prompt */
 #ifdef JP
-	(void) strnfmt(out_val, 78, "(特殊能力 %c-%c, *'で一覧, ESCで中断) どの特殊能力を使いますか？",
+	(void)strnfmt(out_val, 78, "(特殊能力 %c-%c, *'で一覧, ESCで中断) どの特殊能力を使いますか？",
 #else
 	(void)strnfmt(out_val, 78, "(Powers %c-%c, *=List, ESC=exit) Use which power? ",
 #endif
@@ -1424,7 +1225,7 @@ void do_cmd_racial_power(void)
 
 					/* Prompt */
 #ifdef JP
-					(void) strnfmt(tmp_val, 78, "%sを使いますか？ ", power_desc[i].name);
+					(void)strnfmt(tmp_val, 78, "%sを使いますか？ ", power_desc[i].name);
 #else
 					(void)strnfmt(tmp_val, 78, "Use %s? ", power_desc[i].name);
 #endif
