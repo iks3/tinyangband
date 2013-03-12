@@ -1785,7 +1785,7 @@ void object_wipe(object_type *o_ptr)
 void object_copy(const object_type *o_ptr, object_type *j_ptr)
 {
 	/* Copy the structure */
-	COPY(o_ptr, j_ptr, object_type);
+	(void)COPY(o_ptr, j_ptr, object_type);
 }
 
 

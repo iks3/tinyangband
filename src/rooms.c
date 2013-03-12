@@ -3240,6 +3240,7 @@ msg_format("不正な湖タイプ (%d)", type);
 #endif /* ALLOW_CAVERNS_AND_LAKES */
 
 
+#if 0
 /*
  * Routine used by the random vault creators to add a door to a location
  * Note that range checking has to be done in the calling routine.
@@ -3293,8 +3294,10 @@ static void add_door(int x, int y)
 		cave[y + 1][x].feat = FEAT_WALL_SOLID;
 	}
 }
+#endif
 
 
+#if 0
 /*
  * Routine that fills the empty areas of a room with treasure and monsters.
  */
@@ -3427,6 +3430,7 @@ static void fill_treasure(int x1, int x2, int y1, int y2, int difficulty)
 		}
 	}
 }
+#endif
 
 #if 0
 /*
@@ -3958,6 +3962,7 @@ static void build_mini_c_vault(int x0, int y0, int xsize, int ysize)
 }
 #endif
 
+#if 0
 /*
  * Build a town/ castle by using a recursive algorithm.
  * Basically divide each region to create smaller regions.
@@ -4125,6 +4130,7 @@ static void build_recursive_room(int x1, int y1, int x2, int y2, int power)
 		}
 	}
 }
+#endif
 
 #if 0
 /* Build a castle */
@@ -5148,11 +5154,11 @@ static bool build_type15(void)
 
 	/* Generate new room */
 	generate_room(y1 + town_hgt / 3, x1 + town_wid / 3,
-	              y1 + town_hgt * 2 / 3, x < x1 + town_wid * 2 / 3, FALSE);
+	              y1 + town_hgt * 2 / 3, x1 + town_wid * 2 / 3, FALSE);
 
 	/* Start with floors (center only) */
 	generate_fill(y1 + town_hgt / 3, x1 + town_wid / 3,
-	              y1 + town_hgt * 2 / 3, x < x1 + town_wid * 2 / 3, FEAT_FLOOR);
+	              y1 + town_hgt * 2 / 3, x1 + town_wid * 2 / 3, FEAT_FLOOR);
 
 	/* Build stores */
 	build_stores(y1, x1, stores, n);

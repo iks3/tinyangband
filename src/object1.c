@@ -5331,7 +5331,7 @@ void py_pickup_floor(int pickup)
 	char o_name[MAX_NLEN];
 	object_type *o_ptr;
 
-	int floor_num = 0, floor_list[23], floor_o_idx = 0;
+	int floor_num = 0, floor_o_idx = 0;
 
 	int can_pickup = 0;
 
@@ -5393,9 +5393,6 @@ void py_pickup_floor(int pickup)
 		{
 			can_pickup++;
 		}
-
-		/* Remember this object index */
-		floor_list[floor_num] = this_o_idx;
 
 		/* Count non-gold objects */
 		floor_num++;

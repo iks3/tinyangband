@@ -331,7 +331,7 @@ static cptr r_info_flags6[] =
 	"DARKNESS",
 	"TRAPS",
 	"FORGET",
-	"XXX", /* "ANIM_DEAD", /* ToDo: Implement ANIM_DEAD */
+	"XXX", /* "ANIM_DEAD", */ /* ToDo: Implement ANIM_DEAD */
 	"S_KIN",
 	"XXX", /* "S_CYBER", */
 	"S_MONSTER",

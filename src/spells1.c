@@ -5343,6 +5343,8 @@ if (fuzzy) msg_print("何か非常に冷たいもので攻撃された！");
 		}
 	}
 
+	/* Unused value (suppress warning) */
+	(void)get_damage;
 
 	/* Disturb */
 	disturb(1, 0);

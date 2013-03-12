@@ -2820,7 +2820,7 @@ msg_print("何かにぶちあたった。");
 		lite_spot(oy, ox);
 
 		/* Sound */
-		/* sound(SOUND_WALK); /* Why disabled ? */
+		/* sound(SOUND_WALK); */ /* Why disabled ? */
 
 		/* Check for new panel (redraw map) */
 		verify_panel();

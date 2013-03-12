@@ -256,7 +256,6 @@ void check_experience(void)
  */
 static int get_coin_type(int r_idx)
 {
-	monster_race    *r_ptr = &r_info[r_idx];
 #if 0
 	/* Analyze "coin" monsters */
 	if (r_ptr->d_char == '$')

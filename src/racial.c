@@ -433,7 +433,7 @@ static bool do_cmd_shield_bash(void)
 
 		/* Confusion. */
 		if (bash_quality + p_ptr->lev > randint1(200 + r_ptr->level * 4) &&
-			(!r_ptr->flags3 & (RF3_NO_CONF)))
+			!(r_ptr->flags3 & (RF3_NO_CONF)))
 		{
 #ifdef JP
 			msg_format("%^sは混乱したようだ。", m_name);

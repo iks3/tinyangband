@@ -80,6 +80,7 @@ static byte kanji_code = 0;
 static byte *obj_mem;
 
 
+#if 0
 /*
  * This function determines if the version of the savefile
  * currently being read is older than version "x.y.z".
@@ -102,6 +103,7 @@ static bool older_than(byte x, byte y, byte z)
 	/* Identical versions */
 	return (FALSE);
 }
+#endif
 
 
 /*
@@ -1979,7 +1981,7 @@ static errr rd_savefile_new_aux(void)
 	}
 
 	/* Free array for object memories */
-	C_FREE(obj_mem, tmp_k_idx, byte);
+	C_KILL(obj_mem, tmp_k_idx, byte);
 
 
 	/* Read the pet command settings */

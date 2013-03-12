@@ -91,7 +91,7 @@ if (!k_info) quit("メモリー不足!");
 	max_k_idx++;
 
 	/* Copy the new object_kind */
-	COPY(&k_info[max_k_idx-1], k_info_entry, object_kind);
+	(void)COPY(&k_info[max_k_idx-1], k_info_entry, object_kind);
 
 	/* Success */
 	return (&k_info[max_k_idx-1]);

@@ -3650,7 +3650,6 @@ void calc_bonuses(void)
 	/* Specified weapons give extra bonuses when doing two handed combat. */
 	if (is_two_handed())
 	{
-		object_type *o1_ptr = &inventory[INVEN_WIELD];
 		object_type *o2_ptr = &inventory[INVEN_ARM];
 
 		if ((o2_ptr->tval == TV_SWORD) && (o2_ptr->sval == SV_MAIN_GAUCHE))

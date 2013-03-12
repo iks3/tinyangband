@@ -2143,7 +2143,7 @@ static void roff_aux(int r_idx, int remem)
 	if ((cheat_know) && (remem == 0))
 	{
 		/* Hack -- restore memory */
-		COPY(r_ptr, &save_mem, monster_race);
+		(void)COPY(r_ptr, &save_mem, monster_race);
 	}
 }
 
