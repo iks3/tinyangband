@@ -95,9 +95,7 @@ extern cptr game_inscriptions[];
 extern cptr silly_attacks[MAX_SILLY_ATTACK];
 #endif
 extern mbe_info_type mbe_info[];
-extern cptr valar_patrons[MAX_PATRON];
-extern int valar_stats[MAX_PATRON];
-extern int valar_rewards[MAX_PATRON][MAX_REWARDS];
+extern valar_type valar_info[MAX_PATRON];
 
 /* variable.c */
 extern cptr copyright[5];

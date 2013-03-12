@@ -3409,76 +3409,48 @@ mbe_info_type mbe_info[] =
 };
 
 
-cptr valar_patrons[MAX_PATRON] =
+valar_type valar_info[MAX_PATRON] =
 {
-#ifdef JP
-	"マンウェ",	/* 風 */
-	"ウルモ",	/* 水 */
-	"アウレ",	/* 鍛冶 */
-	"オロメ",	/* 狩人 */
-	"マンドス",	/* 運命 */
-	"イルモ",	/* 夢 */
-	"トゥルカス",	/* 力 */
-	"ヴァルダ",	/* 星(エルベレス) */
-	"ヤヴァンナ",	/* 大地 */
-	"ニエンナ",	/* 嘆き */
-	"エステ",	/* 癒し */
-	"ヴァイレ",	/* 織姫 */
-	"ヴァーナ",	/* 常若 */
-	"ネスサ",	/* 踊り */
-#else
-	"Manwe",
-	"Ulmo",
-	"Aule",
-	"Orome",
-	"Mandos",
-	"Irmo",
-	"Tulkas",
-	"Varda",
-	"Yavanna",
-	"Nienna",
-	"Este",
-	"Vaire",
-	"Vana",
-	"Nessa",
-#endif
-};
-
-
-int valar_stats[MAX_PATRON] =
-{
-	A_WIS,  /* Manwe */
-	A_STR,	/* Ulmo */
-	A_STR,	/* Aure */
-	A_DEX,	/* Orome */
-	A_CON,	/* Mandos */
-	A_INT,	/* Irmo */
-	A_STR,	/* Tulkas */
-	A_INT,	/* Varda */
-	A_WIS,	/* Yavanna */
-	A_INT,	/* Nienna */
-	A_CON,	/* Este */
-	A_CHR,	/* Vaire */
-	A_CON,	/* Vana */
-	A_DEX,	/* Nessa */
-};
-
-
-int valar_rewards[MAX_PATRON][MAX_REWARDS] =
-{
-	{ REW_SPEED, REW_GAIN_ABL, REW_GAIN_ABL, REW_GAIN_ABL, REW_AUGM_ABL },	/* Manwe */
-	{ REW_HERO, REW_RE_CURSE, REW_GAIN_ABL, REW_GAIN_ABL, REW_GREA_OBS },	/* Ulmo */
-	{ REW_HERO, REW_GREA_OBJ, REW_GREA_OBJ, REW_GREA_OBJ, REW_GREA_OBJ },	/* Aule */
-	{ REW_SPEED, REW_SPEED, REW_ENLIGHT, REW_GREA_OBS, REW_AUGM_ABL },	/* Orome */
-	{ REW_RESTORE, REW_MASS_GEN, REW_GAIN_ABL, REW_AUGM_ABL, REW_GREA_OBJ },	/* Mandos */
-	{ REW_BLESS, REW_BLESS, REW_BLESS, REW_BLESS, REW_WISHING },	/* Irmo */
-	{ REW_HERO, REW_DISPEL_C, REW_GAIN_ABL, REW_GAIN_ABL, REW_AUGM_ABL },	/* Tulkas */
-
-	{ REW_ENLIGHT, REW_PROTEVIL, REW_PROTEVIL, REW_GREA_OBS, REW_AUGM_ABL },	/* Varda */
-	{ REW_RE_CURSE, REW_GAIN_ABL, REW_GAIN_ABL, REW_POTION, REW_GREA_OBJ },	/* Yavanna */
-	{ REW_RE_CURSE, REW_RES_POTION, REW_GAIN_ABL, REW_GAIN_ABL, REW_GREA_OBS },	/* Nienna */
-	{ REW_RESTORE, REW_POTION, REW_POTION, REW_GAIN_ABL, REW_GREA_OBJ },	/* Este */
-	{ REW_BLESS, REW_GAIN_ABL, REW_POTION, REW_CLOTH, REW_AMULET },	/* Vaire */
-	{ REW_RESTORE, REW_GAIN_ABL, REW_GAIN_ABL, REW_GAIN_ABL, REW_POTION },	/* Vana */
-	{ REW_SPEED, REW_SPEED, REW_POTION, REW_AUGM_ABL, REW_AMULET },	/* Nessa */
+	/* 風 */
+	{_("マンウェ", "Manwe"), A_WIS,
+	 {REW_SPEED, REW_GAIN_ABL, REW_GAIN_ABL, REW_GAIN_ABL, REW_AUGM_ABL}},
+	/* 水 */
+	{_("ウルモ", "Ulmo"), A_STR,
+	 {REW_HERO, REW_RE_CURSE, REW_GAIN_ABL, REW_GAIN_ABL, REW_GREA_OBS}},
+	/* 鍛冶 */
+	{_("アウレ", "Aule"), A_STR,
+	 {REW_HERO, REW_GREA_OBJ, REW_GREA_OBJ, REW_GREA_OBJ, REW_GREA_OBJ}},
+	/* 狩人 */
+	{_("オロメ", "Orome"), A_DEX,
+	 {REW_SPEED, REW_SPEED, REW_ENLIGHT, REW_GREA_OBS, REW_AUGM_ABL}},
+	/* 運命 */
+	{_("マンドス", "Mandos"), A_CON,
+	 {REW_RESTORE, REW_MASS_GEN, REW_GAIN_ABL, REW_AUGM_ABL, REW_GREA_OBJ}},
+	/* 夢 */
+	{_("イルモ", "Irmo"), A_INT,
+	 {REW_BLESS, REW_BLESS, REW_BLESS, REW_BLESS, REW_WISHING}},
+	/* 力 */
+	{_("トゥルカス", "Tulkas"), A_STR,
+	 {REW_HERO, REW_DISPEL_C, REW_GAIN_ABL, REW_GAIN_ABL, REW_AUGM_ABL}},
+	/* 星(エルベレス) */
+	{_("ヴァルダ", "Varda"), A_INT,
+	 {REW_ENLIGHT, REW_PROTEVIL, REW_PROTEVIL, REW_GREA_OBS, REW_AUGM_ABL}},
+	/* 大地 */
+	{_("ヤヴァンナ", "Yavanna"), A_WIS,
+	 {REW_RE_CURSE, REW_GAIN_ABL, REW_GAIN_ABL, REW_POTION, REW_GREA_OBJ}},
+	/* 嘆き */
+	{_("ニエンナ", "Nienna"), A_INT,
+	 {REW_RE_CURSE, REW_RES_POTION, REW_GAIN_ABL, REW_GAIN_ABL, REW_GREA_OBS}},
+	/* 癒し */
+	{_("エステ", "Este"), A_CON,
+	 {REW_RESTORE, REW_POTION, REW_POTION, REW_GAIN_ABL, REW_GREA_OBJ}},
+	/* 織姫 */
+	{_("ヴァイレ", "Vaire"), A_CHR,
+	 {REW_BLESS, REW_GAIN_ABL, REW_POTION, REW_CLOTH, REW_AMULET}},
+	/* 常若 */
+	{_("ヴァーナ", "Vana"), A_CON,
+	 {REW_RESTORE, REW_GAIN_ABL, REW_GAIN_ABL, REW_GAIN_ABL, REW_POTION}},
+	/* 踊り */
+	{_("ネスサ", "Nessa"), A_DEX,
+	 {REW_SPEED, REW_SPEED, REW_POTION, REW_AUGM_ABL, REW_AMULET}},
 };

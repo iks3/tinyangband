@@ -3453,7 +3453,7 @@ void display_player(int mode)
 			display_player_one_line(ENTRY_REALM, tmp, TERM_L_BLUE);
 		}
 
-		display_player_one_line(ENTRY_PATRON, valar_patrons[p_ptr->valar_patron], TERM_L_BLUE);
+		display_player_one_line(ENTRY_PATRON, valar_info[p_ptr->valar_patron].name, TERM_L_BLUE);
 
 		/* Age, Height, Weight, Social */
 		/* 身長はセンチメートルに、体重はキログラムに変更してあります */

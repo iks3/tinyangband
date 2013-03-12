@@ -3706,7 +3706,7 @@ void player_birth(void)
 	prt("神々は、この不測の事態に対して、大いなる軍勢を派遣しようとし", row++, 10);
 	prt("ている。このままでは中つ国はめちゃめちゃになってしまうだろう。", row++, 10);
 	prt(format("あなたの神%sはこの事態を憂慮し、密かにあなたにモルゴス",
-		valar_patrons[p_ptr->valar_patron]), row++, 10);
+		valar_info[p_ptr->valar_patron].name), row++, 10);
 	prt("討伐を命じられた。モルゴスが力を取り戻す前に、あなたは洞穴の", row++, 10);
 	prt("奥深くに潜む冥王モルゴスを打ち倒さなければならない。        ", row++, 10);
 	switch(p_ptr->prace)
@@ -3735,7 +3735,7 @@ void player_birth(void)
 	prt("send their armies in in great force.  The great battle in the", row++, 10);
 	prt("offing would doubless throw the Middle-Earth into chaos.", row++, 10);
 	prt(format("Your valar %s, troubled by this, has ordered you in",
-		valar_patrons[p_ptr->valar_patron]), row++, 10);
+		valar_info[p_ptr->valar_patron].name), row++, 10);
 	prt("secret on a mission to kill Morgoth. You must enter the cave and", row++, 10);
 	prt("defeat Morgoth who lurks at recesses of the cave before he", row++, 10);
 	prt("regains his great power.", row++, 10);

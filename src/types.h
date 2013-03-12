@@ -1365,3 +1365,13 @@ typedef struct {
 	int dir;
 } travel_type;
 #endif
+
+/*
+ * Valar info
+ */
+typedef struct valar_type
+{
+	cptr name;
+	int stat;
+	int rewards[MAX_REWARDS];
+} valar_type;
