@@ -3611,7 +3611,7 @@ extern int PlayerUID;
 #define REW_RE_CURSE    11
 #define REW_RES_POTION  12
 #define REW_MASS_GEN    13
-#define REW_HEAL        14
+#define REW_CLOTH       14
 #define REW_DISPEL_C    15
 #define REW_WISHING     16
 #define REW_PROTEVIL    17

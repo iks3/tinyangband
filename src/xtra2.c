@@ -4235,7 +4235,7 @@ void gain_level_reward(int chosen_reward)
 		case REW_RESTORE:
 			msg_format(_("%sの声がささやいた:", "The voice of %s whispers:"),
 				valar_patrons[p_ptr->valar_patron]);
-			msg_print(_("「余が汝の身体を癒さん。」", "'Let me cure thee.'"));
+			msg_print(_("「汝の身体を癒さん。」", "'Rise, my servant!'"));
 			reward = _("身体が癒された", "curing");
 			restore_level();
 			(void)set_poisoned(0);
@@ -4244,7 +4244,7 @@ void gain_level_reward(int chosen_reward)
 			(void)set_image(0);
 			(void)set_stun(0);
 			(void)set_cut(0);
-			hp_player(50);
+			hp_player(p_ptr->mhp);
 			for (i = 0; i < 6; i++)
 			{
 				(void)do_res_stat(i);
@@ -4291,24 +4291,24 @@ void gain_level_reward(int chosen_reward)
 				(void)do_inc_stat(i);
 			}
 			break;
-	   case REW_HEAL:
-			msg_format(_("%sの声が響き渡った:", "The voice of %s booms out:"),
-				valar_patrons[p_ptr->valar_patron]);
-			msg_print(_("「甦るがよい、我が下僕よ！」", "'Rise, my servant!'"));
-			reward = _("体力が回復した。", "healing");
-			restore_level();
-			(void)set_poisoned(0);
-			(void)set_blind(0);
-			(void)set_confused(0);
-			(void)set_image(0);
-			(void)set_stun(0);
-			(void)set_cut(0);
-			hp_player(5000);
-			for (i = 0; i < 6; i++)
+		case REW_CLOTH:
 			{
-				(void)do_res_stat(i);
+				object_type forge;
+				object_type *q_ptr = &forge;
+				int n = randint0(3);
+				int tval = (n == 0) ? TV_SOFT_ARMOR : TV_CLOAK;
+				int sval = (n == 0) ? SV_ROBE : SV_ANY;
+
+				msg_format(_("%sの声がささやいた:", "The voice of %s whispers:"),
+					valar_patrons[p_ptr->valar_patron]);
+				msg_print(_("「我がささやかなる賜物を受けとるがよい！」",
+					"'Receive this modest gift from me!'"));
+
+				object_prep(q_ptr, lookup_kind(tval, sval));
+				apply_magic(q_ptr, (object_level + 5), TRUE, TRUE, TRUE, FALSE);
+				(void)drop_near(q_ptr, -1, py, px);
+				break;
 			}
-			break;
 		case REW_POTION:
 			{
 				object_type forge;
