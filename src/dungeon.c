@@ -87,7 +87,12 @@ static byte value_check_aux2(object_type *o_ptr)
 
 
 
-
+/* Sense info */
+typedef struct
+{
+	s16b skill;
+	s32b difficulty;
+} sense_info;
 
 /*
  * Sense the inventory
@@ -99,14 +104,27 @@ static byte value_check_aux2(object_type *o_ptr)
  *   Class 4 = Ranger  --> slow but heavy  (changed!)
  *   Class 5 = Paladin --> slow but heavy
  */
-static void sense_inventory(void)
+
+const sense_info sense_inventory_table[8] =
+{
+	{ SENSE_VFST, 4000L },
+	{ SENSE_FAST, 9000L },
+	{ SENSE_GOOD, 20000L },
+	{ SENSE_NORM, 55000L },
+	{ SENSE_SLOW, 75000L },
+	{ SENSE_BAD,  95000L },
+	{ SENSE_POOR, 240000L },
+	{ SENSE_CANT, 0L },
+};
+
+static void sense_object(s16b skill, bool heavy, bool (*item_tester)(const object_type *))
 {
 	int         i;
 	int         plev = p_ptr->lev;
-	bool        heavy = cp_ptr->s_inv_h;
 	byte        feel;
 	object_type *o_ptr;
 	char        o_name[MAX_NLEN];
+	s32b pow = (plev * plev + 40);
 
 	/*** Check for "sensing" ***/
 
@@ -114,119 +132,28 @@ static void sense_inventory(void)
 	if (p_ptr->confused) return;
 
 	/* Analyze the class */
-	switch (cp_ptr->s_inv)
+	for (i = 0; i < (sizeof(sense_inventory_table) / sizeof(sense_inventory_table[0])); i++)
 	{
-		case SENSE_CANT:
+		if (sense_inventory_table[i].skill == SENSE_CANT) return;
+		if (sense_inventory_table[i].skill == skill)
 		{
-			/* cannot sense */
-			return;
-		}
-
-		case SENSE_VFST:
-		{
-			/* Good sensing */
-			if (!one_in_(4000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_FAST:
-		{
-			/* Good sensing */
-			if (0 != randint0(9000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_GOOD:
-		{
-			/* Okay sensing */
-			if (!one_in_(20000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_NORM:
-		{
-			/* Bad sensing */
-			if (!one_in_(55000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_SLOW:
-		{
-			/* Bad sensing */
-			if (!one_in_(75000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_BAD:
-		{
-			/* Bad sensing */
-			if (!one_in_(95000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_POOR:
-		{
-			/* Very bad (light) sensing */
-			if (0 != randint0(240000L / (plev + 5))) return;
-
-			/* Done */
+			if (!one_in_(sense_inventory_table[i].difficulty / pow)) return;
 			break;
 		}
 	}
-
 
 	/*** Sense everything ***/
 
 	/* Check everything */
 	for (i = 0; i < INVEN_TOTAL; i++)
 	{
-		bool okay = FALSE;
-
 		o_ptr = &inventory[i];
 
 		/* Skip empty slots */
 		if (!o_ptr->k_idx) continue;
 
-		/* Valid "tval" codes */
-		switch (o_ptr->tval)
-		{
-			case TV_SHOT:
-			case TV_ARROW:
-			case TV_BOLT:
-			case TV_BOW:
-			case TV_DIGGING:
-			case TV_HAFTED:
-			case TV_POLEARM:
-			case TV_SWORD:
-			case TV_BOOTS:
-			case TV_GLOVES:
-			case TV_HELM:
-			case TV_CROWN:
-			case TV_SHIELD:
-			case TV_CLOAK:
-			case TV_SOFT_ARMOR:
-			case TV_HARD_ARMOR:
-			case TV_DRAG_ARMOR:
-			{
-				okay = TRUE;
-				break;
-			}
-		}
-
 		/* Skip non-sense machines */
-		if (!okay) continue;
+		if (!item_tester(o_ptr)) continue;
 
 		/* We know about it already, do not tell us again */
 		if (o_ptr->ident & (IDENT_SENSE)) continue;
@@ -296,106 +223,18 @@ static void sense_inventory(void)
 	}
 }
 
-static void sense_magic(void)
+static void sense_inventory(void)
 {
-	int         i;
-	int         plev = p_ptr->lev;
-	bool        heavy = TRUE;
-	byte        feel;
-	object_type *o_ptr;
-	char        o_name[MAX_NLEN];
+	s16b s_inv = cp_ptr->s_inv;
 
-	/*** Check for "sensing" ***/
+	/* Aule gives very fast sense */
+	if (p_ptr->valar_patron) s_inv = SENSE_VFST;
 
-	/* No sensing when confused */
-	if (p_ptr->confused) return;
+	sense_object(s_inv, cp_ptr->s_inv_h, item_tester_hook_weapon_armour);
+}
 
-	/* Analyze the class */
-	switch (cp_ptr->s_mag)
-	{
-		case SENSE_CANT:
-		{
-			/* cannot sense */
-			return;
-		}
-
-		case SENSE_VFST:
-		{
-			/* Good sensing */
-			if (!one_in_(4000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_FAST:
-		{
-			/* Very bad sensing */
-			if (!one_in_(9000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_GOOD:
-		{
-			/* Good sensing */
-			if (!one_in_(20000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_NORM:
-		{
-			/* Good sensing */
-			if (!one_in_(55000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_SLOW:
-		{
-			/* Good sensing */
-			if (!one_in_(75000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_BAD:
-		{
-			/* Bad sensing */
-			if (!one_in_(95000L / (plev * plev + 40))) return;
-
-			/* Done */
-			break;
-		}
-
-		case SENSE_POOR:
-		{
-			/* Bad sensing */
-			if (!one_in_(240000L / (plev + 5))) return;
-
-			/* Done */
-			break;
-		}
-	}
-
-
-	/*** Sense everything ***/
-
-	/* Check everything */
-	for (i = 0; i < INVEN_TOTAL; i++)
-	{
-		bool okay = FALSE;
-
-		o_ptr = &inventory[i];
-
-		/* Skip empty slots */
-		if (!o_ptr->k_idx) continue;
-
+static bool item_tester_hook_magic_item(const object_type *o_ptr)
+{
 		/* Valid "tval" codes */
 		switch (o_ptr->tval)
 		{
@@ -403,80 +242,16 @@ static void sense_magic(void)
 			case TV_AMULET:
 			case TV_FIGURINE:
 			{
-				okay = TRUE;
-				break;
+				return TRUE;
 			}
 		}
 
-		/* Skip non-sense machines */
-		if (!okay) continue;
+		return FALSE;
+}
 
-		/* We know about it already, do not tell us again */
-		if (o_ptr->ident & (IDENT_SENSE)) continue;
-
-		/* It is fully known, no information needed */
-		if (object_known_p(o_ptr)) continue;
-
-		/* Occasional failure on inventory items */
-		if ((i < INVEN_WIELD) && (0 != randint0(5))) continue;
-
-		/* Check for a feeling */
-		feel = (heavy ? value_check_aux1(o_ptr) : value_check_aux2(o_ptr));
-
-		/* Skip non-feelings */
-		if (!feel) continue;
-
-		/* Stop everything */
-		if (disturb_minor) disturb(0, 0);
-
-		/* Get an object description */
-		object_desc(o_name, o_ptr, OD_OMIT_PREFIX | OD_NAME_ONLY);
-
-		/* Message (equipment) */
-		if (i >= INVEN_WIELD)
-		{
-#ifdef JP
-			msg_format("%s%s(%c)は%sという感じがする...",
-					describe_use(i),o_name, index_to_label(i),game_inscriptions[feel]);
-#else
-			msg_format("You feel the %s (%c) you are %s %s %s...",
-					o_name, index_to_label(i), describe_use(i),
-					((o_ptr->number == 1) ? "is" : "are"),
-					game_inscriptions[feel]);
-#endif
-            sound(SOUND_PSEUDOID);
-		}
-
-		/* Message (inventory) */
-		else
-		{
-#ifdef JP
-			msg_format("ザックの中の%s(%c)は%sという感じがする...",
-					o_name, index_to_label(i),game_inscriptions[feel]);
-#else
-			msg_format("You feel the %s (%c) in your pack %s %s...",
-				   o_name, index_to_label(i),
-				   ((o_ptr->number == 1) ? "is" : "are"),
-					   game_inscriptions[feel]);
-#endif
-            sound(SOUND_PSEUDOID);
-		}
-
-		/* We have "felt" it */
-		o_ptr->ident |= (IDENT_SENSE);
-
-		/* Set the "inscription" */
-		o_ptr->feeling = feel;
-
-		/* Auto-inscription/destroy */
-		autopick_alter_item(i, destroy_feeling);
-
-		/* Combine / Reorder the pack (later) */
-		p_ptr->notice |= (PN_COMBINE | PN_REORDER);
-
-		/* Window stuff */
-		p_ptr->window |= (PW_INVEN | PW_EQUIP);
-	}
+static void sense_magic(void)
+{
+	sense_object(cp_ptr->s_mag, TRUE, item_tester_hook_magic_item);
 }
 
 /*
