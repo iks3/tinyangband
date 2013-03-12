@@ -2725,7 +2725,7 @@ void calc_bonuses(void)
 		case VAR_MANWE:
 			p_ptr->resist_elec = TRUE;
 			p_ptr->free_act = TRUE;
-			if (p_ptr->lev >= 30) p_ptr->immune_elec = TRUE;
+			if (p_ptr->lev >= 27) p_ptr->immune_elec = TRUE;
 			break;
 		case VAR_ULMO:
 			p_ptr->resist_fire = TRUE;
@@ -2741,6 +2741,7 @@ void calc_bonuses(void)
 		case VAR_MANDOS:
 			p_ptr->hold_life = TRUE;
 			p_ptr->see_inv = TRUE;
+			if (p_ptr->lev >= 27) p_ptr->resist_neth = TRUE;
 			break;
 		case VAR_IRMO:
 			/* Nothing */
@@ -2754,15 +2755,17 @@ void calc_bonuses(void)
 			break;
 		case VAR_YAVANNA:
 			p_ptr->resist_acid = TRUE;
-			if (p_ptr->lev >= 30) p_ptr->reflect = TRUE;
+			if (p_ptr->lev >= 27) p_ptr->reflect = TRUE;
 			break;
 		case VAR_NIENNA:
 			p_ptr->warning = TRUE;
 			if (p_ptr->lev >= 25) p_ptr->resist_conf = TRUE;
+			/* x1.2 MSP (see calc_mana()) */
 			break;
 		case VAR_ESTE:
 			p_ptr->sustain_con = TRUE;
-			if (p_ptr->lev >= 20) p_ptr->resist_blind = TRUE;
+			if (p_ptr->lev >= 15) p_ptr->resist_blind = TRUE;
+			if (p_ptr->lev >= 25) p_ptr->resist_pois = TRUE;
 			break;
 		case VAR_VAIRE:
 			p_ptr->resist_cold = TRUE;
@@ -2772,8 +2775,11 @@ void calc_bonuses(void)
 		case VAR_VANA:
 			p_ptr->regenerate = TRUE;
 			p_ptr->slow_digest = TRUE;
+			/* x0.9 exp needs (see check_experience()) */
 			break;
 		case VAR_NESSA:
+			p_ptr->sustain_dex = TRUE;
+			p_ptr->stat_add[A_DEX] += 2;
 			p_ptr->skill_stl += 1 + (p_ptr->lev / 7);
 			break;
 	}
