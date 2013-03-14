@@ -39,6 +39,7 @@
 # C: max to-hit : max to-dam : max to-ac : pval
 # W: depth : rarity : weight : cost
 # F: flag | flag | etc
+# U: Activation
 #
 # 'N' indicates the beginning of an entry. The serial number must
 # increase for each new item.
@@ -278,8 +279,8 @@ N:27:テレポートの
 E:of Teleportation
 X:33:0
 W:0:24:0:500
-A:125
 F:TELEPORT | ACTIVATE
+U:TELEPORT
 
 N:28:道化師の
 E:of Fool
@@ -550,24 +551,28 @@ E:of Melting
 X:24:15
 W:0:24:0:8000
 F:BRAND_ACID | RES_ACID | IGNORE_ACID | ACTIVATE
+U:RESIST_ACID
 
 N:61:電撃の
 E:of Shocking
 X:24:20
 W:0:24:0:4500
 F:BRAND_ELEC | RES_ELEC | IGNORE_ELEC | ACTIVATE
+U:RESIST_ELEC
 
 N:62:焼棄の
 E:of Burning
 X:24:20
 W:0:24:0:3000
 F:BRAND_FIRE | RES_FIRE | IGNORE_FIRE | LITE | ACTIVATE
+U:RESIST_FIRE
 
 N:63:凍結の
 E:of Freezing
 X:24:15
 W:0:24:0:2500
 F:BRAND_COLD | RES_COLD | IGNORE_COLD | ACTIVATE
+U:RESIST_COLD
 
 #JZ#
 N:64:毒殺の
@@ -575,6 +580,7 @@ E:of Venom
 X:24:20
 W:0:24:0:4500
 F:BRAND_POIS | RES_POIS | ACTIVATE
+U:RESIST_POIS
 
 #JZ#
 N:65:切れ味の
@@ -661,9 +667,9 @@ E:of Holy Wrath
 X:24:20
 W:0:24:0:8000
 C:5:5:0:4
-A:23
 F:STR | WIS | SLAY_DEMON | SLAY_UNDEAD | LITE | BLESSED | XTRA_BRAND |
 F:ACTIVATE
+U:DISP_EVIL
 
 N:77:エルフの
 E:of Elvenkind
@@ -681,15 +687,16 @@ C:3:3:0:4
 F:SEARCH | INFRA | HIDE_TYPE |
 F:BRAND_ELEC | RES_ELEC | RES_BLIND | SH_ELEC |
 F:LITE | ACTIVATE
+U:STARLIGHT
 
 N:79:護りの
 E:of Protection
 X:24:14
 W:0:24:0:6000
 C:0:0:15:0
-A:94
 F:SEE_INVIS | FREE_ACT | REGEN | SLOW_DIGEST | HOLD_LIFE | WARNING |
 F:ONE_SUSTAIN | ACTIVATE
+U:RESIST_ALL
 
 N:80:妖精の
 E:of Fairy

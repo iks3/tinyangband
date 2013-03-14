@@ -623,94 +623,6 @@ static cptr k_info_gen_flags[] =
 	"XXX",
 };
 
-typedef struct _act_flags act_flags;
-
-struct _act_flags
-{
-	cptr flag;
-	int num;
-};
-
-act_flags activation_flags[] =
-{
-	{"SUNLIGHT", 1},
-	{"BO_MISS_1", 2},
-	{"BA_POIS_1", 3},
-	{"BO_ELEC_1", 4},
-	{"BO_ACID_1", 5},
-	{"BO_COLD_1", 6},
-	{"BO_FIRE_1", 7},
-	{"BA_COLD_1", 8},
-	{"BA_FIRE_1", 9},
-	{"DRAIN_1", 10},
-	{"BA_COLD_2", 11},
-	{"BA_ELEC_2", 12},
-	{"DRAIN_2", 13},
-	{"VAMPIRE_1", 14},
-	{"BO_MISS_2", 15},
-	{"BA_FIRE_2", 16},
-	{"BA_COLD_3", 17},
-	{"BA_ELEC_3", 18},
-	{"WHIRLWIND", 19},
-	{"VAMPIRE_2", 20},
-	{"CALL_CHAOS", 21},
-	{"ROCKET", 22},
-	{"DISP_EVIL", 23},
-	{"BA_MISS_3", 24},
-	{"DISP_GOOD", 25},
-	{"CONFUSE", 51},
-	{"SLEEP", 52},
-	{"QUAKE", 53},
-	{"TERROR", 54},
-	{"TELE_AWAY", 55},
-	{"BANISH_EVIL", 56},
-	{"GENOCIDE", 57},
-	{"MASS_GENO", 58},
-	{"CHARM_ANIMAL", 65},
-	{"CHARM_UNDEAD", 66},
-	{"CHARM_OTHER", 67},
-	{"CHARM_ANIMALS", 68},
-	{"CHARM_OTHERS", 69},
-	{"SUMMON_ANIMAL", 70},
-	{"SUMMON_PHANTOM", 71},
-	{"SUMMON_ELEMENTAL", 72},
-	{"SUMMON_DEMON", 73},
-	{"SUMMON_UNDEAD", 74},
-	{"CURE_LW", 81},
-	{"CURE_MW", 82},
-	{"CURE_POISON", 83},
-	{"REST_LIFE", 84},
-	{"REST_ALL", 85},
-	{"CURE_700", 86},
-	{"CURE_1000", 87},
-	{"CURING", 88},
-	{"ESP", 91},
-	{"BERSERK", 92},
-	{"PROT_EVIL", 93},
-	{"RESIST_ALL", 94},
-	{"SPEED", 95},
-	{"XTRA_SPEED", 96},
-	{"WRAITH", 97},
-	{"INVULN", 98},
-	{"LIGHT", 111},
-	{"MAP_LIGHT", 112},
-	{"DETECT_ALL", 113},
-	{"DETECT_XTRA", 114},
-	{"ID_FULL", 115},
-	{"ID_PLAIN", 116},
-	{"RUNE_EXPLO", 117},
-	{"RUNE_PROT", 118},
-	{"SATIATE", 119},
-	{"DEST_DOOR", 120},
-	{"STONE_MUD", 121},
-	{"RECHARGE", 122},
-	{"ALCHEMY", 123},
-	{"DIM_DOOR", 124},
-	{"TELEPORT", 125},
-	{"RECALL", 126},
-	{"", 0},
-};
-
 /*
  * Add a text to the text-storage and store offset to it.
  *
@@ -1318,6 +1230,36 @@ static errr grab_one_kind_flag(object_kind *k_ptr, cptr what)
 
 
 /*
+ * Grab one activation index flag
+ */
+static int grab_one_activation_flag(cptr what)
+{
+	int i;
+
+	for (i = 0; ; i++)
+	{
+		if (activation_info[i].flag == NULL) break;
+
+		if (streq(what, activation_info[i].flag))
+		{
+			return activation_info[i].index;
+		}
+	}
+
+	i = atoi(what);
+	 if (i > 0)
+	 {
+		 return (i);
+	 }
+
+	/* Oops */
+	msg_format(_("未知の発動・フラグ '%s'。", "Unknown activation flag '%s'."), what);
+
+	/* Error */
+	return (0);
+}
+
+/*
  * Initialize the "k_info" array, by parsing an ascii "template" file
  */
 errr parse_k_info(char *buf, header *head)
@@ -1542,6 +1484,20 @@ errr parse_k_info(char *buf, header *head)
 		k_ptr->to_a =  ta;
 	}
 
+	/* Hack -- Process 'U' for activation index */
+	else if (buf[0] == 'U')
+	{
+		int n = grab_one_activation_flag(buf + 2);
+		if (n > 0)
+		{
+			k_ptr->activate = n;
+		}
+		else
+		{
+			return (5);
+		}
+	}
+
 	/* Hack -- Process 'F' for flags */
 	else if (buf[0] == 'F')
 	{
@@ -1633,41 +1589,6 @@ static errr grab_one_artifact_flag(artifact_type *a_ptr, cptr what)
 
 	/* Error */
 	return (1);
-}
-
-
-/*
- * Grab one flag in an artifact activation type from a textual string
- */
-static int grab_one_activation_flag(cptr what)
-{
-	int i;
-
-	/* Check flags */
-	for (i = 0; activation_flags[i].num != 0; i++)
-	{
-		if (streq(what, activation_flags[i].flag))
-		{
-			return (activation_flags[i].num);
-		}
-	}
-
-	i = atoi(what);
-
-	if (i && (i < 128))
-	{
-		return (i);
-	}
-
-	/* Oops */
-#ifdef JP
-	msg_format("未知のアイテム発動・フラグ '%s'。", what);
-#else
-	msg_format("Unknown activation flag '%s'.", what);
-#endif
-
-	/* Error */
-	return (-1);
 }
 
 
@@ -1840,15 +1761,19 @@ errr parse_a_info(char *buf, header *head)
 		}
 	}
 
-	/* Hack -- Process 'A' for activation */
-	else if (buf[0] == 'A')
+	/* Hack -- Process 'U' for activation index */
+	else if (buf[0] == 'U')
 	{
-		s = buf + 2;
-		i = grab_one_activation_flag(s);
-		if (-1 == i) return (5);
-		else a_ptr->activate = i;
+		int n = grab_one_activation_flag(buf + 2);
+		if (n > 0)
+		{
+			a_ptr->activate = n;
+		}
+		else
+		{
+			return (5);
+		}
 	}
-
 
 	/* Oops */
 	else return (6);
@@ -2079,13 +2004,18 @@ errr parse_e_info(char *buf, header *head)
 		}
 	}
 
-	/* Hack -- Process 'A' for activation */
-	else if (buf[0] == 'A')
+	/* Hack -- Process 'U' for activation index */
+	else if (buf[0] == 'U')
 	{
-		s = buf + 2;
-		i = grab_one_activation_flag(s);
-		if (-1 == i) return (5);
-		else e_ptr->activate = i;
+		int n = grab_one_activation_flag(buf + 2);
+		if (n > 0)
+		{
+			e_ptr->activate = n;
+		}
+		else
+		{
+			return (5);
+		}
 	}
 
 	/* Oops */

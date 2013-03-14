@@ -1190,7 +1190,7 @@ static void wiz_display_item(object_type *o_ptr)
 		   o_ptr->name1, o_ptr->name2, (long)object_value(o_ptr), o_ptr->ident), 7, j);
 
 	prt(format("xtra1 = %-4d  xtra2 = %-4d  xtra3 = %-4d  timeout = %-d",
-		   o_ptr->xtra1, o_ptr->xtra2, o_ptr->xtra3, o_ptr->timeout), 8, j);
+		   o_ptr->xtra1, activation_index(o_ptr), o_ptr->xtra3, o_ptr->timeout), 8, j);
 
 	prt("+------------FLAGS1------------+", 10, j);
 	prt("AFFECT........SLAY........BRAND.", 11, j);

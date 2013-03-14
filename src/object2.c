@@ -982,83 +982,12 @@ s32b flag_cost(const object_type * o_ptr, int plusses)
 	if (f3 & TR3_PERMA_CURSE) total -= 15000;
 
 	/* Also, give some extra for activatable powers... */
-
 	if (o_ptr->art_name && (o_ptr->art_flags3 & TR3_ACTIVATE))
 	{
-		int type = o_ptr->xtra2;
-
-		if (type == ACT_SUNLIGHT) total += 250;
-		else if (type == ACT_BO_MISS_1) total += 250;
-		else if (type == ACT_BA_POIS_1) total += 300;
-		else if (type == ACT_BO_ELEC_1) total += 250;
-		else if (type == ACT_BO_ACID_1) total += 250;
-		else if (type == ACT_BO_COLD_1) total += 250;
-		else if (type == ACT_BO_FIRE_1) total += 250;
-		else if (type == ACT_BA_COLD_1) total += 750;
-		else if (type == ACT_BA_FIRE_1) total += 1000;
-		else if (type == ACT_DRAIN_1) total += 500;
-		else if (type == ACT_BA_COLD_2) total += 1250;
-		else if (type == ACT_BA_ELEC_2) total += 1500;
-		else if (type == ACT_DRAIN_2) total += 750;
-		else if (type == ACT_VAMPIRE_1) total = 1000;
-		else if (type == ACT_BO_MISS_2) total += 1000;
-		else if (type == ACT_BA_FIRE_2) total += 1750;
-		else if (type == ACT_BA_COLD_3) total += 2500;
-		else if (type == ACT_BA_ELEC_3) total += 2500;
-		else if (type == ACT_WHIRLWIND) total += 7500;
-		else if (type == ACT_VAMPIRE_2) total += 2500;
-		else if (type == ACT_CALL_CHAOS) total += 5000;
-		else if (type == ACT_ROCKET) total += 5000;
-		else if (type == ACT_DISP_EVIL) total += 4000;
-		else if (type == ACT_DISP_GOOD) total += 3500;
-		else if (type == ACT_BA_MISS_3) total += 5000;
-		else if (type == ACT_CONFUSE) total += 500;
-		else if (type == ACT_SLEEP) total += 750;
-		else if (type == ACT_QUAKE) total += 600;
-		else if (type == ACT_TERROR) total += 2500;
-		else if (type == ACT_TELE_AWAY) total += 2000;
-		else if (type == ACT_GENOCIDE) total += 10000;
-		else if (type == ACT_MASS_GENO) total += 10000;
-		else if (type == ACT_CHARM_ANIMAL) total += 7500;
-		else if (type == ACT_CHARM_UNDEAD) total += 10000;
-		else if (type == ACT_CHARM_OTHER) total += 10000;
-		else if (type == ACT_CHARM_ANIMALS) total += 12500;
-		else if (type == ACT_CHARM_OTHERS) total += 17500;
-		else if (type == ACT_SUMMON_ANIMAL) total += 10000;
-		else if (type == ACT_SUMMON_PHANTOM) total += 12000;
-		else if (type == ACT_SUMMON_ELEMENTAL) total += 15000;
-		else if (type == ACT_SUMMON_DEMON) total += 20000;
-		else if (type == ACT_SUMMON_UNDEAD) total += 20000;
-		else if (type == ACT_CURE_LW) total += 500;
-		else if (type == ACT_CURE_MW) total += 750;
-		else if (type == ACT_REST_LIFE) total += 7500;
-		else if (type == ACT_REST_ALL) total += 15000;
-		else if (type == ACT_CURE_700) total += 10000;
-		else if (type == ACT_CURE_1000) total += 15000;
-		else if (type == ACT_ESP) total += 1500;
-		else if (type == ACT_BERSERK) total += 800;
-		else if (type == ACT_PROT_EVIL) total += 5000;
-		else if (type == ACT_RESIST_ALL) total += 5000;
-		else if (type == ACT_SPEED) total += 15000;
-		else if (type == ACT_XTRA_SPEED) total += 25000;
-		else if (type == ACT_WRAITH) total += 25000;
-		else if (type == ACT_INVULN) total += 25000;
-		else if (type == ACT_LIGHT) total += 150;
-		else if (type == ACT_MAP_LIGHT) total += 500;
-		else if (type == ACT_DETECT_ALL) total += 1000;
-		else if (type == ACT_DETECT_XTRA) total += 12500;
-		else if (type == ACT_ID_FULL) total += 10000;
-		else if (type == ACT_ID_PLAIN) total += 1250;
-		else if (type == ACT_RUNE_EXPLO) total += 4000;
-		else if (type == ACT_RUNE_PROT) total += 10000;
-		else if (type == ACT_SATIATE) total += 2000;
-		else if (type == ACT_DEST_DOOR) total += 100;
-		else if (type == ACT_STONE_MUD) total += 1000;
-		else if (type == ACT_RECHARGE) total += 1000;
-		else if (type == ACT_ALCHEMY) total += 10000;
-		else if (type == ACT_DIM_DOOR) total += 10000;
-		else if (type == ACT_TELEPORT) total += 2000;
-		else if (type == ACT_RECALL) total += 7500;
+		const activation_type* const act_ptr = find_activation_info(o_ptr);
+		if (act_ptr) {
+			total += act_ptr->value;
+		}
 	}
 
 	return total;
@@ -3516,7 +3445,7 @@ void apply_magic(object_type *o_ptr, int lev, bool okay, bool good, bool great, 
 
 		/* Extract the other fields */
 		o_ptr->pval = a_ptr->pval;
-		o_ptr->xtra2 = a_ptr->activate;
+		/* o_ptr->xtra2 = a_ptr->activate; */
 		o_ptr->ac = a_ptr->ac;
 		o_ptr->dd = a_ptr->dd;
 		o_ptr->ds = a_ptr->ds;
@@ -3656,7 +3585,7 @@ void apply_magic(object_type *o_ptr, int lev, bool okay, bool good, bool great, 
 			if (e_ptr->max_pval) o_ptr->pval += randint1(e_ptr->max_pval);
 
 			/* Add activation */
-			if (e_ptr->activate) o_ptr->xtra2 = e_ptr->activate;
+			/* if (e_ptr->activate) o_ptr->xtra2 = e_ptr->activate; */
 		}
 
 		/* Hack -- extra powers */

@@ -1183,7 +1183,7 @@ void one_slay(object_type *o_ptr)
 void give_activation_power(object_type *o_ptr)
 {
 	int type = 0, chance = 0;
-
+#if 0
 	if (artifact_bias)
 	{
 		if (artifact_bias == BIAS_ELEC)
@@ -1341,107 +1341,19 @@ void give_activation_power(object_type *o_ptr)
 				type = ACT_CURE_POISON;
 		}
 	}
-
+#endif
 	while (!type || (randint1(100) >= chance))
 	{
+		int i;
 		type = randint1(255);
-		switch (type)
+		chance = 0;
+		for (i = 0; activation_info[i].flag != NULL; i++)
 		{
-			case ACT_SUNLIGHT:
-			case ACT_BO_MISS_1:
-			case ACT_BA_POIS_1:
-			case ACT_BO_ELEC_1:
-			case ACT_BO_ACID_1:
-			case ACT_BO_COLD_1:
-			case ACT_BO_FIRE_1:
-			case ACT_CONFUSE:
-			case ACT_SLEEP:
-			case ACT_QUAKE:
-			case ACT_CURE_LW:
-			case ACT_CURE_MW:
-			case ACT_CURE_POISON:
-			case ACT_BERSERK:
-			case ACT_LIGHT:
-			case ACT_MAP_LIGHT:
-			case ACT_DEST_DOOR:
-			case ACT_STONE_MUD:
-			case ACT_TELEPORT:
-				chance = 101;
+			if (activation_info[i].index == type)
+			{
+				chance = activation_info[i].chance;
 				break;
-			case ACT_BA_COLD_1:
-			case ACT_BA_FIRE_1:
-			case ACT_DRAIN_1:
-			case ACT_TELE_AWAY:
-			case ACT_ESP:
-			case ACT_RESIST_ALL:
-			case ACT_DETECT_ALL:
-			case ACT_RECALL:
-			case ACT_SATIATE:
-			case ACT_RECHARGE:
-				chance = 85;
-				break;
-			case ACT_TERROR:
-			case ACT_PROT_EVIL:
-			case ACT_ID_PLAIN:
-				chance = 75;
-				break;
-			case ACT_DRAIN_2:
-			case ACT_VAMPIRE_1:
-			case ACT_BO_MISS_2:
-			case ACT_BA_FIRE_2:
-			case ACT_REST_LIFE:
-				chance = 66;
-				break;
-			case ACT_BA_COLD_3:
-			case ACT_BA_ELEC_3:
-			case ACT_WHIRLWIND:
-			case ACT_VAMPIRE_2:
-			case ACT_CHARM_ANIMAL:
-				chance = 50;
-				break;
-			case ACT_SUMMON_ANIMAL:
-				chance = 40;
-				break;
-			case ACT_DISP_EVIL:
-			case ACT_BA_MISS_3:
-			case ACT_DISP_GOOD:
-			case ACT_BANISH_EVIL:
-			case ACT_GENOCIDE:
-			case ACT_MASS_GENO:
-			case ACT_CHARM_UNDEAD:
-			case ACT_CHARM_OTHER:
-			case ACT_SUMMON_PHANTOM:
-			case ACT_REST_ALL:
-			case ACT_CURING:
-			case ACT_RUNE_EXPLO:
-				chance = 33;
-				break;
-			case ACT_CALL_CHAOS:
-			case ACT_ROCKET:
-			case ACT_CHARM_ANIMALS:
-			case ACT_CHARM_OTHERS:
-			case ACT_SUMMON_ELEMENTAL:
-			case ACT_CURE_700:
-			case ACT_SPEED:
-			case ACT_ID_FULL:
-			case ACT_RUNE_PROT:
-				chance = 25;
-				break;
-			case ACT_CURE_1000:
-			case ACT_XTRA_SPEED:
-			case ACT_DETECT_XTRA:
-			case ACT_DIM_DOOR:
-				chance = 10;
-				break;
-			case ACT_SUMMON_UNDEAD:
-			case ACT_SUMMON_DEMON:
-			case ACT_WRAITH:
-			case ACT_INVULN:
-			case ACT_ALCHEMY:
-				chance = 5;
-				break;
-			default:
-				chance = 0;
+			}
 		}
 	}
 
@@ -1711,686 +1623,300 @@ bool create_artifact(object_type *o_ptr, bool a_scroll)
 }
 
 
+int activation_index(const object_type *o_ptr)
+{
+	if (artifact_p(o_ptr))
+	{
+		if (a_info[o_ptr->name1].flags3 & TR3_ACTIVATE)
+		{
+			return a_info[o_ptr->name1].activate;
+		}
+	}
+	if (ego_item_p(o_ptr))
+	{
+		if (e_info[o_ptr->name2].flags3 & TR3_ACTIVATE)
+		{
+			return e_info[o_ptr->name2].activate;
+		}
+	}
+	if (!(o_ptr->art_name))
+	{
+		if (k_info[o_ptr->k_idx].flags3 & TR3_ACTIVATE)
+		{
+			return k_info[o_ptr->k_idx].activate;
+		}
+	}
+	return o_ptr->xtra2;
+}
+
+const activation_type* find_activation_info(const object_type *o_ptr)
+{
+	const int index = activation_index(o_ptr);
+	const activation_type* p;
+
+	for (p = activation_info; p->flag != NULL; ++ p)
+	{
+		if (p->index == index)
+		{
+			return p;
+		}
+	}
+
+	return NULL;
+}
+
 bool activate_random_artifact(object_type * o_ptr)
 {
 	int plev = p_ptr->lev;
 	int k, dir, dummy;
+	const activation_type* const act_ptr = find_activation_info(o_ptr);
 
-	if (!o_ptr->xtra2) return FALSE;
+	/* Paranoia */
+	if (!act_ptr) {
+		/* Maybe forgot adding information to activation_info table ? */
+		msg_print("Activation information is not found.");
+		return FALSE;
+	}
 
 	/* Activate for attack */
-	switch (o_ptr->xtra2)
+	switch (act_ptr->index)
 	{
+		/* Bolts/Beams */
 		case ACT_SUNLIGHT:
 		{
 			if (!get_aim_dir(&dir)) return FALSE;
-#ifdef JP
-			msg_print("太陽光線が放たれた。");
-#else
-			msg_print("A line of sunlight appears.");
-#endif
 			(void)lite_line(dir);
-			o_ptr->timeout = 10;
 			break;
 		}
-
-		case ACT_BO_MISS_1:
+		case ACT_BO_MISSILE:
 		{
-#ifdef JP
-			msg_print("それは眩しいくらいに明るく輝いた...");
-#else
-			msg_print("It glows extremely brightly...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
 			fire_bolt(GF_MISSILE, dir, damroll(2, 6));
-			o_ptr->timeout = 2;
 			break;
 		}
-
-		case ACT_BA_POIS_1:
+		case ACT_BO_ELEC:
 		{
-#ifdef JP
-			msg_print("それは濃緑色に脈動した...");
-#else
-			msg_print("It throbs deep green...");
-#endif
-			if (!get_aim_dir(&dir)) return FALSE;
-			fire_ball(GF_POIS, dir, 12, 3);
-			o_ptr->timeout = randint0(4) + 4;
-			break;
-		}
-
-		case ACT_BO_ELEC_1:
-		{
-#ifdef JP
-			msg_print("それは火花に覆われた...");
-#else
-			msg_print("It is covered in sparks...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
 			fire_bolt(GF_ELEC, dir, damroll(4, 8));
-			o_ptr->timeout = randint0(6) + 6;
 			break;
 		}
-
-		case ACT_BO_ACID_1:
+		case ACT_BO_ACID:
 		{
-#ifdef JP
-			msg_print("それは酸に覆われた...");
-#else
-			msg_print("It is covered in acid...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
 			fire_bolt(GF_ACID, dir, damroll(5, 8));
-			o_ptr->timeout = randint0(5) + 5;
 			break;
 		}
-
-		case ACT_BO_COLD_1:
+		case ACT_BO_COLD:
 		{
-#ifdef JP
-			msg_print("それは冷気に覆われた...");
-#else
-			msg_print("It is covered in frost...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
 			fire_bolt(GF_COLD, dir, damroll(6, 8));
-			o_ptr->timeout = randint0(7) + 7;
 			break;
 		}
-
-		case ACT_BO_FIRE_1:
+		case ACT_BO_FIRE:
 		{
-#ifdef JP
-			msg_print("それは炎に覆われた...");
-#else
-			msg_print("It is covered in fire...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
 			fire_bolt(GF_FIRE, dir, damroll(9, 8));
-			o_ptr->timeout = randint0(8) + 8;
 			break;
 		}
-
-		case ACT_BA_COLD_1:
+		case ACT_BO_DRAIN:
 		{
-#ifdef JP
-			msg_print("それは冷気に覆われた...");
-#else
-			msg_print("It is covered in frost...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
-			fire_ball(GF_COLD, dir, 48, 2);
-			o_ptr->timeout = 400;
+			if (drain_life(dir, 120))
+			break;
+		}
+		case ACT_BO_MANA:
+		{
+			if (!get_aim_dir(&dir)) return FALSE;
+			fire_bolt(GF_MANA, dir, 150);
 			break;
 		}
 
-		case ACT_BA_FIRE_1:
+		case ACT_BA_POIS:
 		{
-#ifdef JP
-			msg_print("それは赤く激しく輝いた...");
-#else
-			msg_print("It glows an intense red...");
-#endif
+			if (!get_aim_dir(&dir)) return FALSE;
+			fire_ball(GF_POIS, dir, 12, 3);
+			break;
+		}
+		case ACT_BA_ELEC_72:
+		{
+			if (!get_aim_dir(&dir)) return FALSE;
+			fire_ball(GF_ELEC, dir, 72, 3);
+			break;
+		}
+		case ACT_BA_ACID_72:
+		{
+			if (!get_aim_dir(&dir)) return FALSE;
+			fire_ball(GF_ACID, dir, 72, 2);
+			break;
+		}
+		case ACT_BA_FIRE_72:
+		{
 			if (!get_aim_dir(&dir)) return FALSE;
 			fire_ball(GF_FIRE, dir, 72, 2);
-			o_ptr->timeout = 400;
 			break;
 		}
-
-		case ACT_DRAIN_1:
+		case ACT_BA_COLD_72:
 		{
-#ifdef JP
-			msg_print("それは黒く輝いた...");
-#else
-			msg_print("It glows black...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
-			if (drain_life(dir, 90))
-			o_ptr->timeout = 70;
+			fire_ball(GF_COLD, dir, 72, 2);
 			break;
 		}
-
-		case ACT_BA_COLD_2:
+		case ACT_BA_ELEC_300:
 		{
-#ifdef JP
-			msg_print("それは青く激しく輝いた...");
-#else
-			msg_print("It glows an intense blue...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
-			fire_ball(GF_COLD, dir, 100, 2);
-			o_ptr->timeout = 300;
+			fire_ball(GF_ELEC, dir, 300, 4);
 			break;
 		}
-
-		case ACT_BA_ELEC_2:
+		case ACT_BA_ACID_300:
 		{
-#ifdef JP
-			msg_print("電気がパチパチ音を立てた...");
-#else
-			msg_print("It crackles with electricity...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
-			fire_ball(GF_ELEC, dir, 100, 3);
-			o_ptr->timeout = 500;
+			fire_ball(GF_ACID, dir, 300, 4);
 			break;
 		}
-
-		case ACT_DRAIN_2:
+		case ACT_BA_FIRE_300:
 		{
-#ifdef JP
-			msg_print("それは黒く輝いた...");
-#else
-			msg_print("It glows black...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
-			drain_life(dir, 120);
-			o_ptr->timeout = 400;
+			fire_ball(GF_FIRE, dir, 300, 4);
 			break;
 		}
-
-		case ACT_VAMPIRE_1:
+		case ACT_BA_COLD_300:
 		{
-#ifdef JP
-			msg_print("それは黒く輝いた...");
-#else
-			msg_print("It glows black...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
-			for (dummy = 0; dummy < 3; dummy++)
+			fire_ball(GF_COLD, dir, 300, 4);
+			break;
+		}
+		case ACT_BA_STAR:
+		{
+			if (!get_aim_dir(&dir)) return FALSE;
+			fire_ball(GF_LITE, dir, 150, 4);
+			break;
+		}
+		case ACT_BA_DARK:
+		{
+			if (!get_aim_dir(&dir)) return FALSE;
+			fire_ball(GF_DARK, dir, 250, 4);
+			break;
+		}
+		case ACT_BA_MANA:
+		{
+			if (!get_aim_dir(&dir)) return FALSE;
+			fire_ball(GF_MANA, dir, 250, 4);
+			break;
+		}
+		case ACT_BIZARRE:
+		{
+			if (!get_aim_dir(&dir)) return FALSE;
+			ring_of_power(dir);
+			break;
+		}
+		case ACT_STARLIGHT:
+		{
+			int num = damroll(5, 3);
+			int y, x;
+			int attempts;
+
+			for (k = 0; k < num; k++)
 			{
-				if (drain_life(dir, 50))
-				hp_player(50);
-			}
-			o_ptr->timeout = 400;
-			break;
-		}
+				attempts = 1000;
 
-		case ACT_BO_MISS_2:
-		{
-#ifdef JP
-			msg_print("魔法のトゲが現れた...");
-#else
-			msg_print("It grows magical spikes...");
-#endif
-			if (!get_aim_dir(&dir)) return FALSE;
-			fire_bolt(GF_ARROW, dir, 150);
-			o_ptr->timeout = randint0(90) + 90;
-			break;
-		}
-
-		case ACT_BA_FIRE_2:
-		{
-#ifdef JP
-			msg_print("それは深赤色に輝いた...");
-#else
-			msg_print("It glows deep red...");
-#endif
-			if (!get_aim_dir(&dir)) return FALSE;
-			fire_ball(GF_FIRE, dir, 120, 3);
-			o_ptr->timeout = randint0(225) + 225;
-			break;
-		}
-
-		case ACT_BA_COLD_3:
-		{
-#ifdef JP
-			msg_print("それは明白色に輝いた...");
-#else
-			msg_print("It glows bright white...");
-#endif
-			if (!get_aim_dir(&dir)) return FALSE;
-			fire_ball(GF_COLD, dir, 200, 3);
-			o_ptr->timeout = randint0(325) + 325;
-			break;
-		}
-
-		case ACT_BA_ELEC_3:
-		{
-#ifdef JP
-			msg_print("それは深青色に輝いた...");
-#else
-			msg_print("It glows deep blue...");
-#endif
-			if (!get_aim_dir(&dir)) return FALSE;
-			fire_ball(GF_ELEC, dir, 250, 3);
-			o_ptr->timeout = randint0(425) + 425;
-			break;
-		}
-
-		case ACT_WHIRLWIND:
-		{
-			{
-				int y, x;
-				cave_type       *c_ptr;
-				monster_type    *m_ptr;
-
-				for (dir = 0; dir <= 9; dir++)
+				while (attempts--)
 				{
-					y = py + ddy[dir];
-					x = px + ddx[dir];
-					c_ptr = &cave[y][x];
+					scatter(&y, &x, py, px, 4, 0);
 
-					/* Get the monster */
-					m_ptr = &m_list[c_ptr->m_idx];
+					if (!cave_floor_bold(y, x)) continue;
 
-					/* Hack -- attack monsters */
-					if (c_ptr->m_idx && (m_ptr->ml || cave_floor_bold(y, x)))
-						py_attack(y, x);
+					if ((y != py) || (x != px)) break;
 				}
+
+				project(0, 0, y, x, damroll(6 + p_ptr->lev / 8, 10), GF_LITE_WEAK,
+						  (PROJECT_BEAM | PROJECT_THRU | PROJECT_GRID | PROJECT_KILL));
 			}
-			o_ptr->timeout = 250;
 			break;
 		}
 
-		case ACT_VAMPIRE_2:
-		{
-#ifdef JP
-			msg_print("それは黒く輝いた...");
-#else
-			msg_print("It glows black...");
-#endif
-			if (!get_aim_dir(&dir)) return FALSE;
-			for (dummy = 0; dummy < 3; dummy++)
-			{
-				if (drain_life(dir, 100))
-				hp_player(100);
-			}
-
-			o_ptr->timeout = 400;
-			break;
-		}
-
-
-		case ACT_CALL_CHAOS:
-		{
-#ifdef JP
-			msg_print("それは様々な色の火花に包まれた...");
-#else
-			msg_print("It glows in scintillating colours...");
-#endif
-			call_chaos();
-			o_ptr->timeout = 350;
-			break;
-		}
-
-		case ACT_ROCKET:
-		{
-			if (!get_aim_dir(&dir)) return FALSE;
-#ifdef JP
-			msg_print("ロケットを発射した！");
-#else
-			msg_print("You launch a rocket!");
-#endif
- 			sound(SOUND_MISS); /* (Sound substitute) HACK! No rocket sound available, use arrow miss */ 
-			fire_ball(GF_ROCKET, dir, 120 + plev, 2);
-			o_ptr->timeout = 400;
-			break;
-		}
-
+		/* Dispells */
 		case ACT_DISP_EVIL:
 		{
-#ifdef JP
-			msg_print("神聖な雰囲気が充満した...");
-#else
-			msg_print("It floods the area with goodness...");
-#endif
 			dispel_evil(p_ptr->lev * 5);
-			o_ptr->timeout = randint0(200) + 200;
 			break;
 		}
-
-		case ACT_DISP_GOOD:
-		{
-#ifdef JP
-			msg_print("邪悪な雰囲気が充満した...");
-#else
-			msg_print("It floods the area with evil...");
-#endif
-			dispel_good(p_ptr->lev * 5);
-			o_ptr->timeout = randint0(200) + 200;
-			break;
-		}
-
-		case ACT_BA_MISS_3:
-		{
-			if (!get_aim_dir(&dir)) return FALSE;
-#ifdef JP
-			msg_print("あなたはエレメントのブレスを吐いた。");
-#else
-			msg_print("You breathe the elements.");
-#endif
-			sound(SOUND_BR_ELEMENTS);
-			fire_ball(GF_MISSILE, dir, 300, -4);
-			o_ptr->timeout = 500;
-			break;
-		}
-
 		case ACT_PESTICIDE:
 		{
-#ifdef JP
-			msg_print("あなたは害虫を一掃した。");
-#else
-			msg_print("You exterminate small life.");
-#endif
 			(void)dispel_monsters(4);
-			o_ptr->timeout = randint0(55) + 55;
 			break;
 		}
-
-		/* Activate for other offensive action */
-
-		case ACT_CONFUSE:
+		case ACT_BLINDING_LIGHT:
 		{
-#ifdef JP
-			msg_print("それは様々な色の火花に包まれた...");
-#else
-			msg_print("It glows in scintillating colours...");
-#endif
-			if (!get_aim_dir(&dir)) return FALSE;
-			confuse_monster(dir, 20);
-			o_ptr->timeout = 15;
+			fire_ball(GF_LITE, 0, 300, 6);
+			confuse_monsters(3 * p_ptr->lev / 2);
 			break;
 		}
 
-		case ACT_SLEEP:
+		/* Offensive action */
+		case ACT_AGGRAVATE:
 		{
-#ifdef JP
-			msg_print("それは深青色に輝いた...");
-#else
-			msg_print("It glows deep blue...");
-#endif
-			sleep_monsters_touch();
-			o_ptr->timeout = 55;
+			aggravate_monsters(0);
 			break;
 		}
-
-		case ACT_QUAKE:
-		{
-#ifdef JP
-			msg_print("それは鼓動した...");
-#else
-			msg_print("It pulsates...");
-#endif
-			earthquake(py, px, 10);
-			o_ptr->timeout = 50;
-			break;
-		}
-
-		case ACT_FEAR:
-		{
-#ifdef JP
-			msg_print("おどろおどろしい音が鳴り渡った...");
-#else
-			msg_print("You blow a mighty blast; your enemies tremble!");
-#endif
-			(void)turn_monsters((3 * p_ptr->lev / 2) + 10);
-			o_ptr->timeout = randint0(40) + 40;
-			break;
-		}
-
 		case ACT_TERROR:
 		{
-#ifdef JP
-			msg_print("おどろおどろしい音が鳴り渡った...");
-#else
-			msg_print("You blow a mighty blast; your enemies tremble!");
-#endif
+			msg_print(_("おどろおどろしい音が鳴り渡った...",
+				"You blow a mighty blast; your enemies tremble!"));
 			turn_monsters(40 + p_ptr->lev);
-			o_ptr->timeout = 3 * (p_ptr->lev + 10);
 			break;
 		}
-
+		case ACT_CONFUSE:
+		{
+			confuse_monsters(p_ptr->lev);
+			break;
+		}
+		case ACT_SLEEP:
+		{
+			sleep_monsters_touch();
+			break;
+		}
 		case ACT_TELE_AWAY:
 		{
-#ifdef JP
-			msg_print("それは深紫色に輝いた...");
-#else
-			msg_print("It glows deep purple...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
 			(void)fire_beam(GF_AWAY_ALL, dir, plev);
-			o_ptr->timeout = 200;
 			break;
 		}
-
 		case ACT_BANISH_EVIL:
 		{
-			if (banish_evil(100))
-			{
-#ifdef JP
-				msg_print("アーティファクトの力が邪悪を打ち払った！");
-#else
-				msg_print("The power of the artifact banishes evil!");
-#endif
-			}
-			o_ptr->timeout = 250 + randint1(250);
+			(void)banish_evil(100);
 			break;
 		}
-
 		case ACT_GENOCIDE:
 		{
-#ifdef JP
-			msg_print("それは深青色に輝いた...");
-#else
-			msg_print("It glows deep blue...");
-#endif
-			(void)genocide(200);
-			o_ptr->timeout = 500;
+			(void)genocide(66);
 			break;
 		}
-
 		case ACT_MASS_GENO:
 		{
-#ifdef JP
-			msg_print("ひどく鋭い音が流れ出た...");
-#else
-			msg_print("It lets out a long, shrill note...");
-#endif
-			(void)mass_genocide(200);
-			o_ptr->timeout = 1000;
+			(void)mass_genocide(66);
 			break;
 		}
 
-		/* Activate for summoning / charming */
-
-		case ACT_CHARM_ANIMAL:
-		{
-			if (!get_aim_dir(&dir)) return FALSE;
-			(void)charm_animal(dir, plev);
-			o_ptr->timeout = 300;
-			break;
-		}
-
-		case ACT_CHARM_UNDEAD:
-		{
-			if (!get_aim_dir(&dir)) return FALSE;
-			(void)control_one_undead(dir, plev);
-			o_ptr->timeout = 333;
-			break;
-		}
-
-		case ACT_CHARM_OTHER:
-		{
-			if (!get_aim_dir(&dir)) return FALSE;
-			(void)charm_monster(dir, plev);
-			o_ptr->timeout = 400;
-			break;
-		}
-
-		case ACT_CHARM_ANIMALS:
-		{
-			(void)charm_animals(plev * 2);
-			o_ptr->timeout = 500;
-			break;
-		}
-
-		case ACT_CHARM_OTHERS:
-		{
-			charm_monsters(plev * 2);
-			o_ptr->timeout = 750;
-			break;
-		}
-
-		case ACT_SUMMON_ANIMAL:
-		{
-			(void)summon_specific(-1, py, px, plev, SUMMON_ANIMAL_RANGER, TRUE, TRUE, TRUE);
-			o_ptr->timeout = 200 + randint1(300);
-			break;
-		}
-
-		case ACT_SUMMON_PHANTOM:
-		{
-#ifdef JP
-			msg_print("幻霊を召喚した。");
-#else
-			msg_print("You summon a phantasmal servant.");
-#endif
-			(void)summon_specific(-1, py, px, dun_level, SUMMON_PHANTOM, TRUE, TRUE, TRUE);
-			o_ptr->timeout = 200 + randint1(200);
-			break;
-		}
-
-		case ACT_SUMMON_ELEMENTAL:
-		{
-			bool pet = (randint1(3) == 1);
-			bool group = !(pet && (plev < 50));
-
-			if (summon_specific((pet ? -1 : 0), py, px, ((plev * 3) / 2), SUMMON_ELEMENTAL, group, FALSE, pet))
-			{
-#ifdef JP
-				msg_print("エレメンタルが現れた...");
-				if (pet) msg_print("あなたに服従しているようだ。");
-				else msg_print("それをコントロールできなかった！");
-#else
-				msg_print("An elemental materializes...");
-				if (pet) msg_print("It seems obedient to you.");
-				else msg_print("You fail to control it!");
-#endif
-			}
-
-			o_ptr->timeout = 750;
-			break;
-		}
-
-		case ACT_SUMMON_DEMON:
-		{
-			bool pet = (randint1(3) == 1);
-			bool group = !(pet && (plev < 50));
-
-			if (summon_specific((pet ? -1 : 0), py, px, ((plev * 3) / 2), SUMMON_DEMON, group, FALSE, pet))
-			{
-#ifdef JP
-				msg_print("硫黄の悪臭が充満した。");
-				if (pet) msg_print("「ご用でございますか、ご主人様」");
-				else msg_print("「卑しき者よ、我は汝の下僕にあらず！魂を頂くぞ！」");
-#else
-				msg_print("The area fills with a stench of sulphur and brimstone.");
-				if (pet) msg_print("'What is thy bidding... Master?'");
-				else msg_print("'NON SERVIAM! Wretch! I shall feast on thy mortal soul!'");
-#endif
-			}
-
-			o_ptr->timeout = 666 + randint1(333);
-			break;
-		}
-
-		case ACT_SUMMON_UNDEAD:
-		{
-			bool pet = (randint1(3) == 1);
-			bool group;
-			int type;
-
-			if (pet)
-			{
-				type = (plev > 47 ? SUMMON_HI_UNDEAD : SUMMON_UNDEAD);
-				group = (((plev > 24) && (randint1(3) == 1)) ? TRUE : FALSE);
-			}
-			else
-			{
-				type = (plev > 47 ? SUMMON_HI_UNDEAD_NO_UNIQUES : SUMMON_UNDEAD);
-				group = TRUE;
-			}
-
-			if (summon_specific((pet ? -1 : 0), py, px, ((plev * 3) / 2), type,
-						group, FALSE, pet))
-			{
-#ifdef JP
-				msg_print("冷たい風があなたの周りに吹き始めた。それは腐敗臭を運んでいる...");
-				if (pet) msg_print("古えの死せる者共があなたに仕えるため土から甦った！");
-				else msg_print("死者が甦った。眠りを妨げるあなたを罰するために！");
-#else
-				msg_print("Cold winds begin to blow around you, carrying with them the stench of decay...");
-				if (pet) msg_print("Ancient, long-dead forms arise from the ground to serve you!");
-				else msg_print("'The dead arise... to punish you for disturbing them!'");
-#endif
-			}
-
-			o_ptr->timeout = 666 + randint1(333);
-			break;
-		}
-
-		/* Activate for healing */
-
+		/* Heals */
 		case ACT_CURE_LW:
 		{
-#ifdef JP
-			msg_print("それは薄紫色の光を放射した...");
-#else
-			msg_print("It radiates light purple...");
-#endif
 			(void)set_afraid(0);
 			(void)hp_player(30);
-			o_ptr->timeout = 10;
 			break;
 		}
-
 		case ACT_CURE_MW:
 		{
-#ifdef JP
-			msg_print("それは深紫色の光を放射した...");
-#else
-			msg_print("It radiates deep purple...");
-#endif
-			hp_player(damroll(4, 8));
-			(void)set_cut((p_ptr->cut / 2) - 50);
-			o_ptr->timeout = randint0(3) + 3;
-			break;
-		}
-
-		case ACT_CURE_POISON:
-		{
-#ifdef JP
-			msg_print("それは深青色に輝いた...");
-#else
-			msg_print("It glows deep blue...");
-#endif
-			(void)set_afraid(0);
+			hp_player(100);
 			(void)set_poisoned(0);
-			o_ptr->timeout = 5;
+			(void)set_cut(0);
+			(void)set_confused(0);
+			(void)set_image(0);
+			(void)set_blind(0);
+			(void)set_stun(0);
 			break;
 		}
-
-		case ACT_REST_LIFE:
-		{
-#ifdef JP
-			msg_print("それは深紅に輝いた...");
-#else
-			msg_print("It glows a deep red...");
-#endif
-			restore_level();
-			o_ptr->timeout = 450;
-			break;
-		}
-
 		case ACT_REST_ALL:
 		{
-#ifdef JP
-			msg_print("それは濃緑色に輝いた...");
-#else
-			msg_print("It glows a deep green...");
-#endif
 			(void)do_res_stat(A_STR);
 			(void)do_res_stat(A_INT);
 			(void)do_res_stat(A_WIS);
@@ -2398,61 +1924,103 @@ bool activate_random_artifact(object_type * o_ptr)
 			(void)do_res_stat(A_CON);
 			(void)do_res_stat(A_CHR);
 			(void)restore_level();
-			o_ptr->timeout = 750;
 			break;
 		}
-
 		case ACT_CURE_700:
 		{
-#ifdef JP
-			msg_print("それは深青色に輝いた...");
-			msg_print("体内に暖かい鼓動が感じられる...");
-#else
-			msg_print("It glows deep blue...");
-			msg_print("You feel a warm tingling inside...");
-#endif
 			(void)hp_player(700);
 			(void)set_cut(0);
-			o_ptr->timeout = 250;
 			break;
 		}
-
-		case ACT_CURE_1000:
+		case ACT_CURE_MANA:
 		{
-#ifdef JP
-			msg_print("それは白く明るく輝いた...");
-			msg_print("ひじょうに気分がよい...");
-#else
-			msg_print("It glows a bright white...");
-			msg_print("You feel much better...");
-#endif
-			(void)hp_player(1000);
-			(void)set_cut(0);
-			o_ptr->timeout = 888;
-			break;
-		}
-
-		case ACT_CURING:
-		{
-#ifdef JP
-			msg_print("それは眩しいくらいに輝いた...");
-#else
-			msg_print("It glows extremely brightly...");
-#endif
-			(void)hp_player(50);
-			(void)set_poisoned(0);
-			(void)set_confused(0);
-			(void)set_blind(0);
-			(void)set_stun(0);
-			(void)set_cut(0);
-			(void)set_image(0);
-
-			o_ptr->timeout = 100;
+			if (p_ptr->csp < p_ptr->msp)
+			{
+				p_ptr->csp = p_ptr->msp;
+				p_ptr->csp_frac = 0;
+				msg_print(_("頭がハッキリとした。", "You feel your head clear."));
+				p_ptr->redraw |= (PR_MANA);
+				p_ptr->window |= (PW_PLAYER);
+				p_ptr->window |= (PW_SPELL);
+			}
 			break;
 		}
 
 		/* Activate for timed effect */
+		case ACT_HELO:
+		{
+			(void)set_hero(p_ptr->hero + randint1(20) + 20);
+			break;
+		}
+		case ACT_HELO_SPEED:
+		{
+			int t = randint1(50) + 50;
+			(void)set_hero(p_ptr->hero + t);
+			(void)set_fast(p_ptr->fast + t);
+			break;
+		}
+		case ACT_BERSERK:
+		{
+			(void)set_shero(p_ptr->shero + randint1(50) + 50);
+			(void)set_blessed(p_ptr->blessed + randint1(50) + 50);
+			break;
+		}
+		case ACT_SPEED:
+		{
+			(void)set_fast(randint1(20) + 20);
+			break;
+		}
+		case ACT_PROT_EVIL:
+		{
+			k = 3 * p_ptr->lev;
+			(void)set_protevil(p_ptr->protevil + randint1(25) + k);
+			break;
+		}
+		case ACT_WRAITH:
+		{
+			set_wraith_form(p_ptr->tim_wraith + randint1(plev / 2) + (plev / 2));
+			break;
+		}
 
+		case ACT_INVULN:
+		{
+			(void)set_invuln(p_ptr->invuln + randint1(8) + 8);
+			break;
+		}
+		case ACT_RESIST_ELEC:
+		{
+			(void)set_oppose_elec(p_ptr->oppose_elec + randint1(40) + 40);
+			break;
+		}
+		case ACT_RESIST_ACID:
+		{
+			(void)set_oppose_acid(p_ptr->oppose_acid + randint1(40) + 40);
+			break;
+		}
+		case ACT_RESIST_FIRE:
+		{
+			(void)set_oppose_fire(p_ptr->oppose_fire + randint1(40) + 40);
+			break;
+		}
+		case ACT_RESIST_COLD:
+		{
+			(void)set_oppose_cold(p_ptr->oppose_cold + randint1(40) + 40);
+			break;
+		}
+		case ACT_RESIST_POIS:
+		{
+			(void)set_oppose_pois(p_ptr->oppose_pois + randint1(40) + 40);
+			break;
+		}
+		case ACT_RESIST_ALL:
+		{
+			(void)set_oppose_acid(p_ptr->oppose_acid + randint1(40) + 40);
+			(void)set_oppose_elec(p_ptr->oppose_elec + randint1(40) + 40);
+			(void)set_oppose_fire(p_ptr->oppose_fire + randint1(40) + 40);
+			(void)set_oppose_cold(p_ptr->oppose_cold + randint1(40) + 40);
+			(void)set_oppose_pois(p_ptr->oppose_pois + randint1(40) + 40);
+			break;
+		}
 		case ACT_ESP:
 		{
 			(void)set_tim_esp(p_ptr->tim_esp + randint1(30) + 25);
@@ -2460,294 +2028,167 @@ bool activate_random_artifact(object_type * o_ptr)
 			break;
 		}
 
-		case ACT_BERSERK:
-		{
-			(void)set_shero(p_ptr->shero + randint1(50) + 50);
-			(void)set_blessed(p_ptr->blessed + randint1(50) + 50);
-			o_ptr->timeout = 100 + randint1(100);
-			break;
-		}
-
-		case ACT_PROT_EVIL:
-		{
-#ifdef JP
-			msg_print("鋭い音が流れ出た...");
-#else
-			msg_print("It lets out a shrill wail...");
-#endif
-			k = 3 * p_ptr->lev;
-			(void)set_protevil(p_ptr->protevil + randint1(25) + k);
-			o_ptr->timeout = randint0(225) + 225;
-			break;
-		}
-
-		case ACT_RESIST_ALL:
-		{
-#ifdef JP
-			msg_print("それは様々な色に輝いた...");
-#else
-			msg_print("It glows many colours...");
-#endif
-			(void)set_oppose_acid(p_ptr->oppose_acid + randint1(40) + 40);
-			(void)set_oppose_elec(p_ptr->oppose_elec + randint1(40) + 40);
-			(void)set_oppose_fire(p_ptr->oppose_fire + randint1(40) + 40);
-			(void)set_oppose_cold(p_ptr->oppose_cold + randint1(40) + 40);
-			(void)set_oppose_pois(p_ptr->oppose_pois + randint1(40) + 40);
-			o_ptr->timeout = 200;
-			break;
-		}
-
-		case ACT_SPEED:
-		{
-#ifdef JP
-			msg_print("それは明るく緑色に輝いた...");
-#else
-			msg_print("It glows bright green...");
-#endif
-			if (!p_ptr->fast)
-			{
-				(void)set_fast(randint1(20) + 20);
-			}
-			else
-			{
-				(void)set_fast(p_ptr->fast + 5);
-			}
-			o_ptr->timeout = randint0(100) + 100;
-			break;
-		}
-
-		case ACT_XTRA_SPEED:
-		{
-#ifdef JP
-			msg_print("それは明るく輝いた...");
-#else
-			msg_print("It glows brightly...");
-#endif
-			if (!p_ptr->fast)
-			{
-				(void)set_fast(randint1(75) + 75);
-			}
-			else
-			{
-				(void)set_fast(p_ptr->fast + 5);
-			}
-			o_ptr->timeout = randint0(200) + 200;
-			break;
-		}
-
-		case ACT_WRAITH:
-		{
-			set_wraith_form(p_ptr->tim_wraith + randint1(plev / 2) + (plev / 2));
-			o_ptr->timeout = 1000;
-			break;
-		}
-
-		case ACT_INVULN:
-		{
-			(void)set_invuln(p_ptr->invuln + randint1(8) + 8);
-			o_ptr->timeout = 1000;
-			break;
-		}
-
-		/* Activate for general purpose effect (detection etc.) */
-
+		/* General purposes */
 		case ACT_LIGHT:
 		{
-#ifdef JP
-			msg_print("澄んだ光があふれ出た...");
-#else
-			msg_print("It wells with clear light...");
-#endif
 			lite_area(damroll(2, 15), 3);
-			o_ptr->timeout = randint0(10) + 10;
 			break;
 		}
-
 		case ACT_MAP_LIGHT:
 		{
-#ifdef JP
-			msg_print("それは眩しく輝いた...");
-#else
-			msg_print("It shines brightly...");
-#endif
 			map_area(DETECT_RAD_MAP);
 			lite_area(damroll(2, 15), 3);
-			o_ptr->timeout = randint0(50) + 50;
 			break;
 		}
-
 		case ACT_DETECT_ALL:
 		{
-#ifdef JP
-			msg_print("それは白く明るく輝いた...");
-			msg_print("心にイメージが浮かんできた...");
-#else
-			msg_print("It glows bright white...");
-			msg_print("An image forms in your mind...");
-#endif
 			detect_all(DETECT_RAD_DEFAULT);
-			o_ptr->timeout = randint0(55) + 55;
 			break;
 		}
+		case ACT_DETECT_UNIQUE:
+		{
+			monster_type *m_ptr;
+			monster_race *r_ptr;
+			int i;
 
+			msg_print(_("奇妙な場所が頭の中に浮かんだ．．．",
+				"Some strange places show up in your mind. And you see ..."));
+
+			/* Process the monsters (backwards) */
+			for (i = m_max - 1; i >= 1; i--)
+			{
+				/* Access the monster */
+				m_ptr = &m_list[i];
+					
+				/* Ignore "dead" monsters */
+				if (!m_ptr->r_idx) continue;
+					
+				r_ptr = &r_info[m_ptr->r_idx];
+					
+				if(r_ptr->flags1 & RF1_UNIQUE)
+				{
+					msg_format(_("%s． ", "%s. "), r_name + r_ptr->name);
+				}
+			}
+			break;
+		}
 		case ACT_DETECT_XTRA:
 		{
-#ifdef JP
-			msg_print("それは明るく輝いた...");
-#else
-			msg_print("It glows brightly...");
-#endif
 			detect_all(DETECT_RAD_DEFAULT);
 			probing();
 			(void)identify_fully();
-			o_ptr->timeout = 1000;
 			break;
 		}
 
 		case ACT_ID_FULL:
 		{
-#ifdef JP
-			msg_print("それは黄色く輝いた...");
-#else
-			msg_print("It glows yellow...");
-#endif
 			(void)identify_fully();
-			o_ptr->timeout = 750;
 			break;
 		}
 
 		case ACT_ID_PLAIN:
 		{
 			if (!ident_spell()) return FALSE;
-			o_ptr->timeout = 10;
 			break;
 		}
-
 		case ACT_RUNE_EXPLO:
 		{
-#ifdef JP
-			msg_print("それは明赤色に輝いた...");
-#else
-			msg_print("It glows bright red...");
-#endif
 			explosive_rune();
-			o_ptr->timeout = 200;
 			break;
 		}
-
 		case ACT_RUNE_PROT:
 		{
-#ifdef JP
-			msg_print("それは明青色に輝いた...");
-#else
-			msg_print("It glows light blue...");
-#endif
 			warding_glyph();
-			o_ptr->timeout = 400;
 			break;
 		}
-
 		case ACT_SATIATE:
 		{
 			(void)set_food(PY_FOOD_MAX - 1);
-			o_ptr->timeout = 200;
 			break;
 		}
-
 		case ACT_DEST_DOOR:
 		{
-#ifdef JP
-			msg_print("それは明赤色に輝いた...");
-#else
-			msg_print("It glows bright red...");
-#endif
 			destroy_doors_touch();
-			o_ptr->timeout = 10;
 			break;
 		}
-
 		case ACT_STONE_MUD:
 		{
-#ifdef JP
-			msg_print("それは鼓動した...");
-#else
-			msg_print("It pulsates...");
-#endif
 			if (!get_aim_dir(&dir)) return FALSE;
 			wall_to_mud(dir);
-			o_ptr->timeout = 5;
 			break;
 		}
-
 		case ACT_RECHARGE:
 		{
-#ifdef JP
-			msg_print("それは明黄色に輝いた...");
-#else
-			msg_print("It glows bright yellow...");
-#endif
 			recharge(130);
-			o_ptr->timeout = 70;
 			break;
 		}
-
 		case ACT_ALCHEMY:
 		{
-#ifdef JP
-			msg_print("それは明黄色に輝いた...");
-#else
-			msg_print("It glows bright yellow...");
-#endif
 			(void)alchemy();
-			o_ptr->timeout = 500;
 			break;
 		}
-
-		case ACT_DIM_DOOR:
+		case ACT_PHASE_DOOR:
 		{
-#ifdef JP
-			msg_print("次元の扉が開いた。目的地を選んで下さい。");
-#else
-			msg_print("You open a dimensional gate. Choose a destination.");
-#endif
-			if (!dimension_door()) return FALSE;
-			o_ptr->timeout = 100;
+			teleport_player(10);
 			break;
 		}
-
-
 		case ACT_TELEPORT:
 		{
-#ifdef JP
-			msg_print("周りの空間が歪んだ...");
-#else
-			msg_print("It twists space around you...");
-#endif
 			teleport_player(100);
-			o_ptr->timeout = 45;
 			break;
 		}
-
+		case ACT_DIM_DOOR:
+		{
+			msg_print(_("次元の扉が開いた。目的地を選んで下さい。",
+				"You open a dimensional gate. Choose a destination."));
+			if (!dimension_door()) return FALSE;
+			break;
+		}
 		case ACT_RECALL:
 		{
 			if (ironman_downward)
 			{
-#ifdef JP
-				msg_print("それは一瞬輝いたがすぐ元に戻った。");
-#else
-				msg_print("It glows and then fades.");
-#endif
+				msg_print(_("それは一瞬輝いたがすぐ元に戻った。", "It glows and then fades."));
+				return FALSE;
 			}
 			else
 			{
-#ifdef JP
-				msg_print("それは乳白色に輝いた...");
-#else
-				msg_print("It glows soft white...");
-#endif
 				(void)recall_player(randint0(21) + 15);
-				o_ptr->timeout = 200;
 			}
+			break;
+		}
+		case ACT_ARKENSTONE:
+		{
+#ifdef JP
+			msg_print("アーケン石はあなたの体力を奪った...");
+			take_hit(damroll(3,8), "スラインのアーケン石");
+			msg_print("アーケン石は赤く明るく光った！");
+#else
+			msg_print("The Arkenstone drains your vitality...");
+			take_hit(damroll(3, 8), "the Arkenstone of Thrain");
+			msg_print("The Arkenstone flashes bright red!");
+#endif
+			wiz_lite();
+			if (get_check(_("帰還の力を使いますか？", "Activate recall? ")))
+			{
+				word_of_recall();
+			}
+			break;
+		}
+		case ACT_TELEKINESIS:
+		{
+			if (!get_aim_dir(&dir)) return FALSE;
+			fetch(dir, 500, TRUE);
+			break;
+		}
+		case ACT_BRAND_FIRE_BOLTS:
+		{
+			(void)brand_bolts();
+			break;
+		}
+		case ACT_QUAKE:
+		{
+			earthquake(py, px, 10);
 			break;
 		}
 
@@ -2759,6 +2200,16 @@ bool activate_random_artifact(object_type * o_ptr)
 			msg_format("Unknown activation effect: %d.", o_ptr->xtra2);
 #endif
 			return FALSE;
+		}
+	}
+
+	/* Set activation timeout */
+	if (act_ptr->timeout.constant >= 0)
+	{
+		o_ptr->timeout = act_ptr->timeout.constant;
+		if (act_ptr->timeout.dice > 0)
+		{
+			o_ptr->timeout += randint1(act_ptr->timeout.dice);
 		}
 	}
 
@@ -2815,7 +2266,6 @@ void create_named_art(int a_idx, int y, int x)
 
 	/* Extract the fields */
 	q_ptr->pval = a_ptr->pval;
-	q_ptr->xtra2 = a_ptr->activate;
 	q_ptr->ac = a_ptr->ac;
 	q_ptr->dd = a_ptr->dd;
 	q_ptr->ds = a_ptr->ds;

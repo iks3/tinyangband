@@ -65,8 +65,8 @@
 # W: depth : rarity : weight : cost
 # P: base armor class : base damage : plus to-hit : plus to-dam : plus
 # to-ac
-# A: activation
 # F: flag | flag | etc
+# U: activation
 
 # 'N' indicates the beginning of an entry. The serial number must
 # increase for each new item and artifact activations depend on the
@@ -83,7 +83,7 @@
 # 'P' is for power information. The items base armor class, its base
 # damage and pluses to-hit, to-dam and to-ac.
 
-# 'A' is for activation. Activation is what's happen when using
+# 'U' is for activation. Activation is what's happen when using
 # the item. See also macros 'ACT_***' in define.h
 
 # 'F' is for flags. These are fairly self-explanatory. As many F:
@@ -104,8 +104,8 @@ E:of Galadriel
 I:39:4:1
 W:1:1:10:10000
 P:0:1d1:0:0:0
-A:111
 F:ACTIVATE | SEARCH | INSTA_ART | LITE
+U:LIGHT
 D:$A small crystal phial, with the light of Earendil's Star contained inside.  
 D:$Its light is imperishable, and near it darkness cannot endure.
 D:小さな水晶の瓶で、ガラドリエルの泉に映った
@@ -123,8 +123,8 @@ E:of Elendil
 I:39:5:1
 W:15:25:5:32500
 P:0:1d1:0:0:0
-A:112
 F:ACTIVATE | SEE_INVIS | HOLD_LIFE | INSTA_ART | SPEED | LITE
+U:MAP_LIGHT
 D:$The shining Star of the West, a famed heirloom of Elendil's house.
 D:輝く『西方国の星』で、エレンディルの家系に伝わる家宝だ。
 D:銀の鎖に白い宝石がついている。
@@ -137,6 +137,7 @@ W:20:90:5:150000
 P:0:1d1:0:0:0
 F:ACTIVATE | SEE_INVIS | HOLD_LIFE | RES_CONF |
 F:INSTA_ART | SPEED | WIS | INT | LITE
+U:ARKENSTONE
 D:$A great globe seemingly filled with moonlight, the famed Heart of 
 D:$the Mountain, which splinters the light that falls upon it into a 
 D:$thousandglowing shards.
@@ -150,6 +151,7 @@ I:39:7:3
 W:20:50:10:60000
 P:0:1d1:0:0:0
 F:WIS | CHR | ACTIVATE | TELEPATHY | INSTA_ART | LITE
+U:DETECT_UNIQUE
 D:$A shining white ball of unbreakable crystal, the ancient palantiri, 
 D:$or 'far-watchers', were used by kings of Numenor and later by the Exiles 
 D:$for rapid communication between distant lands.
@@ -187,8 +189,8 @@ N:5:カルランマスの
 E:of Carlammas
 I:40:10:2
 W:20:30:3:60000
-A:93
 F:CON | HIDE_TYPE | ACTIVATE | RES_FIRE | INSTA_ART
+U:PROT_EVIL
 D:$A fiery circle of bronze, with mighty spells to ward off evil.
 D:ブロンズの燃えるような首飾りで、邪悪な者をかわして退散させる
 D:強力な呪文が込められている。
@@ -201,11 +203,11 @@ N:6:上級王イングウェの
 E:of Ingwe
 I:40:11:3
 W:20:50:3:90000
-A:23
 F:WIS | CHR | INFRA | HIDE_TYPE |
 F:SEE_INVIS | FREE_ACT | ACTIVATE |
 F:RES_ACID | RES_COLD | RES_ELEC |
 F:INSTA_ART
+U:DISP_EVIL
 D:$The ancient heirloom of Ingwe, high lord of the Vanyar, against whom nothing 
 D:$of evil could stand. 
 D:ヴァラールの島に渡り中つ国に戻ることのなかった
@@ -235,9 +237,9 @@ E:of Boromir
 I:40:18:3
 W:15:60:2:25000
 P:0:0d0:0:8:0
-A:50
 F:STR | SUST_STR | SHOW_MODS | HIDE_TYPE | 
 F:ACTIVATE | INSTA_ART
+U:TERROR
 D:$A massive golden torque, made of innumerable strands of gold and steel 
 D:$intermingled, with great golden hounds set at either end.
 D:黄金と黒鋼の無数のより糸で編み上げられた重厚な金の首飾りで、
@@ -249,10 +251,10 @@ E:of Faramir
 I:40:19:3
 W:15:60:2:20000
 P:0:0d0:12:0:0
-A:26
 F:STEALTH | SHOW_MODS | HIDE_TYPE |
 F:RES_CONF | SUST_DEX | ACTIVATE |
 F:INSTA_ART
+U:PESTICIDE
 D:$A slim neckpiece of True-silver, with quiet spells of Ithilien to aid and
 D:$protect the wearer.
 D:「まことの銀」で作られた首飾りで、身に付ける者を助けて守るイシリエン
@@ -269,7 +271,7 @@ F:CON | HIDE_TYPE | REGEN | HOLD_LIFE | LITE |
 F:SUST_INT | SUST_WIS | SUST_CON |
 F:RES_COLD | RES_DARK | RES_NETHER | ACTIVATE |
 F:INSTA_ART
-A:85
+U:REST_ALL
 D:$A pure white jewel, the last gift of Queen Arwen Undomiel to FrodoBaggins, 
 D:$intended to be worn around his neck on the chain that had onceborne the One Ring.
 D:この純白の宝石は、アルウェン王女が最後にフロドに贈ったものだ。
@@ -298,8 +300,8 @@ N:12:勇猛なるトゥルカスの
 E:of Tulkas
 I:45:33:4
 W:20:90:2:175000
-A:96
 F:STR | DEX | CON | HIDE_TYPE | ACTIVATE | SPEED | INSTA_ART
+U:SPEED
 D:$The treasure of Tulkas, most fleet and wrathful of the Valar.
 D:ヴァラールの中でも最も素早くかつ勇猛なトゥルカスの宝だ。
 
@@ -309,12 +311,12 @@ E:of Power (Narya)
 I:45:34:1
 W:25:100:2:100000
 P:0:1d1:10:10:0
-A:16
 F:STR | INT | WIS | DEX | CON | CHR | SPEED | HIDE_TYPE |
 F:ACTIVATE | SLOW_DIGEST | REGEN | FREE_ACT | SEE_INVIS |
 F:SUST_STR | SUST_WIS | SUST_DEX | SUST_CHR |
 F:IM_FIRE | RES_NETHER | RES_FEAR | SHOW_MODS |
 F:INSTA_ART
+U:BA_FIRE_300
 D:$The Ring of Fire, set with a ruby that glows like flame.  Narya is one 
 D:$of the three Rings of Power created by the Elves and hidden by them from 
 D:$Sauron.
@@ -327,12 +329,12 @@ E:of Power (Nenya)
 I:45:35:2
 W:25:140:2:200000
 P:0:1d1:11:11:0
-A:17
 F:STR | INT | WIS | DEX | CON | CHR | SPEED | HIDE_TYPE |
 F:ACTIVATE | HOLD_LIFE | FREE_ACT | SEE_INVIS |
 F:FEATHER | SLOW_DIGEST | REGEN | SHOW_MODS |
 F:SUST_INT | SUST_WIS | SUST_CHR | IM_COLD | RES_BLIND |
 F:INSTA_ART | XTRA_POWER
+U:BA_COLD_300
 D:$The Ring of Adamant, with a pure white stone as centerpiece.  Nenya is one 
 D:$of the three Rings of Power created by the Elves and hidden by them from 
 D:$Sauron.
@@ -345,13 +347,13 @@ E:of Power (Vilya)
 I:45:36:3
 W:25:170:2:300000
 P:0:1d1:12:12:0
-A:18
 F:STR | INT | WIS | DEX | CON | CHR | SPEED | HIDE_TYPE |
 F:ACTIVATE | HOLD_LIFE | FREE_ACT | SEE_INVIS |
 F:FEATHER | SLOW_DIGEST | REGEN | SHOW_MODS |
 F:SUST_INT | SUST_WIS | SUST_STR | SUST_DEX | SUST_CHR |
 F:IM_ELEC | RES_POIS |
 F:INSTA_ART | XTRA_POWER
+U:BA_ELEC_300
 D:$The Ring of Sapphire, with clear blue gems that shine like stars, 
 D:$glittering untouchable despite all that Morgoth ever wrought.  Vilya is 
 D:$one of the three Rings of Power created by the Elves and hidden by them 
@@ -374,6 +376,7 @@ F:RES_FEAR | RES_POIS | RES_BLIND | RES_NETHER |
 F:SUST_STR | SUST_DEX | SUST_CON |
 F:SUST_INT | SUST_WIS | SUST_CHR |
 F:INSTA_ART | XTRA_H_RES | XTRA_POWER
+U:BIZARRE
 D:$"One Ring to rule them all, One Ring to find them, One Ring to bring 
 D:$them all and in the darkness bind them."  Made of massive gold, and 
 D:$set with runes in the foul speech of Mordor, Isildur's Bane possesses 
@@ -450,6 +453,7 @@ F:STEALTH | WIS | INT | SEE_INVIS |
 F:RES_ACID | RES_ELEC | RES_FIRE | RES_COLD | RES_POIS |
 F:HOLD_LIFE | RES_NETHER | RES_BLIND | RES_FEAR |
 F:ACTIVATE
+U:CURE_700
 D:$A full suit of chain mail armour, fashioned from the rare true-silver. 
 D:$Only the dwarves know the secret ofmaking armour or weapons of 
 D:$this metal. A shimmering suit of true-silver, forged long ago by 
@@ -487,8 +491,8 @@ E:of Himring
 I:36:6:0
 W:10:6:100:35000
 P:6:0d0:0:0:10
-A:93
 F:RES_NETHER | RES_POIS | SH_COLD | ACTIVATE
+U:PROT_EVIL
 D:$Contained within this studded cuirass of pliable leather is the memory of
 D:$unvanquished Himring, defiant fortress surrounded by the legions of Morgoth.
 D:柔軟な革で作られたこの胴鎧には、モルゴスの軍勢に包囲されても
@@ -503,6 +507,7 @@ P:2:0d0:0:0:15
 F:INT | WIS | SEARCH | HIDE_TYPE | FEATHER | ACTIVATE |
 F:SUST_INT | SUST_WIS | FREE_ACT | SEE_INVIS | HOLD_LIFE |
 F:RES_ACID | RES_ELEC | RES_FIRE | RES_COLD | XTRA_H_RES | DEC_MANA
+U:BO_MANA
 D:$The robe of the great wizard Gandalf, also known as Incanus in the 
 D:$lands of the South. It is proof against elements, for neither the 
 D:$heat of the South, nor the ice of the North, nor the acidy pits of Dol 
@@ -567,9 +572,9 @@ E:of Earendil
 I:34:10:0
 W:20:6:160:90000
 P:10:1d6:0:0:10
-A:88
 F:RES_ELEC | RES_FIRE | RES_BLIND | RES_DARK |
 F:RES_FEAR | LITE | REFLECT | ACTIVATE
+U:CURE_MW
 D:$A shining shield, once borne by the great mariner Earendil, "scored with 
 D:$runes to keep all wounds and harm from him".
 D:かつて偉大なる船乗りエアレンディルが身に付けていた輝く盾だ。
@@ -585,6 +590,7 @@ P:10:1d6:0:0:10
 F:LITE | CHR | WIS | SEARCH | SUST_WIS | SUST_CHR |
 F:RES_ELEC | RES_ACID | RES_DARK |
 F:HIDE_TYPE | REFLECT | ACTIVATE
+U:BLINDING_LIGHT
 D:$The legendary shield of Gil-Galad, who fought his way to the gates of
 D:$ the Dark Tower, and with whom came light even to Gorgoroth.
 D:ノルドールの最後の上級王、ギル=ガラドの伝説の盾だ。彼はバラド=ドゥアの門まで
@@ -633,10 +639,10 @@ E:of Gondor
 I:33:11:3
 W:20:40:30:125000
 P:0:1d1:0:0:15
-A:86
 F:STR | WIS | CON | HIDE_TYPE | SPEED |
 F:RES_COLD | RES_FIRE | RES_ELEC | RES_BLIND | RES_CONF |
 F:LITE | SEE_INVIS | REGEN | ACTIVATE | XTRA_H_RES | XTRA_POWER
+U:CURE_700
 D:$The shining winged circlet brought by Elendil from dying Numenor, 
 D:$emblem of Gondor through an age of the world.
 D:滅び行くヌメノールからエレンディルが持ち出した、
@@ -695,8 +701,8 @@ E:'Holhenneth'
 I:32:5:2
 W:10:5:75:100000
 P:5:1d3:0:0:10
-A:113
 F:INT | WIS | SEARCH | HIDE_TYPE | RES_BLIND | SEE_INVIS | ACTIVATE
+U:DETECT_ALL
 D:$A famous helm of forged iron granting extraordinary powers of mind and 
 D:$awareness.
 D:並外れた精神力と知覚とを授ける、鍛鉄製の名高い兜だ。
@@ -731,10 +737,10 @@ E:of Dor-Lomin
 I:32:7:4
 W:20:12:75:300000
 P:8:1d3:0:0:12
-A:54
 F:STR | DEX | CON | HIDE_TYPE |
 F:RES_ACID | RES_ELEC | RES_FIRE | RES_COLD | RES_BLIND |
 F:LITE | SEE_INVIS | TELEPATHY | ACTIVATE
+U:TERROR
 D:$The legendary dragon helm of Turin Turambar, a object of dread to the 
 D:$servants of Morgoth.
 D:トゥーリン・トゥランバールの伝説の竜兜で、モルゴスの手下ども
@@ -750,8 +756,8 @@ E:'Colluin'
 I:35:1:0
 W:5:45:10:10000
 P:1:0d0:0:0:10
-A:94
 F:RES_ACID | RES_ELEC | RES_FIRE | RES_COLD | RES_POIS | ACTIVATE
+U:RESIST_ALL
 D:$A cape worn by a hero from Valinor, a land utterly beyond the strife 
 D:$of Elements.
 D:はるかかなたにあるヴァリノールの地からやって来た英雄が着ていたケープだ。
@@ -784,8 +790,8 @@ E:'Colannon'
 I:35:1:3
 W:3:10:10:11000
 P:1:0d0:0:0:15
-A:125
 F:STEALTH | RES_ACID | ACTIVATE
+U:TELEPORT
 D:$A crystal-blue cape of fine silk worn by a silent messenger of 
 D:$the forces of Law. Somehow, its wearer is always able to escape 
 D:$trouble.
@@ -799,6 +805,7 @@ I:35:2:4
 W:10:30:10:13000
 P:4:0d0:0:0:4
 F:INT | WIS | STEALTH | SEARCH | HIDE_TYPE | RES_ACID | ACTIVATE
+U:SLEEP
 D:$This elven-grey mantle possesses great powers of tranquility and of 
 D:$concealment, and grants the wearer the knowledge and understanding of 
 D:$the Sindar.
@@ -814,9 +821,9 @@ E:of Thingol
 I:35:2:3
 W:10:30:10:35000
 P:1:0d0:0:0:13
-A:122
 F:DEX | CHR | STEALTH | HIDE_TYPE |
 F:FREE_ACT | RES_ACID | RES_FIRE | RES_COLD | ACTIVATE | XTRA_POWER
+U:RECHARGE
 D:$A sable-hued cloak, with glowing elven-runes to restore magic showing calm 
 D:$and clear as moonlight on still water.
 D:半透明で真珠のような灰色のクロークで、魔力を秘めた輝くエルフのルーン文字が
@@ -829,10 +836,10 @@ E:of Luthien
 I:35:6:2
 W:15:40:5:55000
 P:6:0d0:0:0:10
-A:84
 F:INT | WIS | CHR | HIDE_TYPE | SPEED | STEALTH |
 F:RES_ACID | RES_FIRE | RES_COLD | ACTIVATE |
 F:RES_DARK | XTRA_H_RES
+U:REST_ALL
 D:$The opaque midnight folds, inset with a multitude of tiny diamonds, of 
 D:$this cloak swirl around you and you feel a hint, a fragment of the 
 D:$knowledge and power to restore that lay in Luthien, the most beautiful 
@@ -880,8 +887,8 @@ E:'Cammithrim'
 I:31:1:0
 W:5:3:5:30000
 P:1:0d0:0:0:10
-A:2
 F:FREE_ACT | SUST_CON | LITE | ACTIVATE
+U:BO_MISSILE
 D:$These gloves glow so brightly as to light the way for the player and cast 
 D:$magical bolts with great frequency.
 D:このグローブは、身に着ける者の道を照らすかのように明るく輝き、
@@ -894,8 +901,8 @@ E:'Paurhach'
 I:31:2:4
 W:5:20:25:35000
 P:2:1d1:0:0:15
-A:7
 F:SH_FIRE | SUST_STR | STR | LITE | RES_FIRE | ACTIVATE
+U:BO_FIRE
 D:$A firey set of gauntlets that can even shoot fire from the user's 
 D:$hands. 
 D:シンダール語で「跳ねる炎の拳」の名を持つこの篭手は炎に
@@ -907,8 +914,8 @@ E:'Paurnimmen'
 I:31:2:4
 W:5:20:25:33000
 P:2:1d1:0:0:15
-A:6
 F:SUST_CON | CON | REGEN | RES_COLD | ACTIVATE 
+U:BO_COLD
 D:$A set of handgear so icy as to be able to fire frost bolts.
 D:シンダール語で「白き拳」を意味する名を持つこの篭手は常に
 D:冷たく輝き、氷の矢を放つことができる。
@@ -920,8 +927,8 @@ E:'Pauraegen'
 I:31:2:4
 W:5:20:25:31000
 P:2:1d1:0:0:15
-A:4
 F:SUST_INT | INT | FREE_ACT | RES_ELEC | ACTIVATE
+U:BO_ELEC
 D:$A set of handgear with sparks surrounding it, able to fire 
 D:$bolts of electricity.
 D:シンダール語で「鋭き拳」を意味する名を持つこの篭手は常に
@@ -934,8 +941,8 @@ E:'Paurnen'
 I:31:2:4
 W:5:20:25:32000
 P:2:1d1:0:0:15
-A:5
 F:SUST_DEX | DEX | SLOW_DIGEST | RES_ACID | ACTIVATE
+U:BO_ACID
 D:$A set of handgear so corrosive that it may fire bolts of acid.
 D:シンダール語で「水の拳」を意味する名を持つこの篭手は常に
 D:酸でてかっていて、酸の矢を放つことができる。
@@ -954,6 +961,7 @@ W:15:15:40:110000
 P:5:1d1:10:10:10
 F:DEX | HIDE_TYPE |
 F:FREE_ACT | RES_ACID | ACTIVATE | SHOW_MODS | XTRA_POWER
+U:BO_MANA
 D:$The hand-sheathing of Fingolfin, warrior-king of Elves and Men, who gave 
 D:$Morgoth seven mighty wounds and pain that will last forever.
 D:フェアノール亡き後中つ国のノルドールを率いて冥王と戦った
@@ -974,9 +982,8 @@ E:of Feanor
 I:30:3:10
 W:20:120:40:300000
 P:3:1d1:0:0:20
-A:95
-F:SPEED |
-F:ACTIVATE
+F:SPEED | ACTIVATE
+U:SPEED
 D:$This wondrous pair of leather boots once sped Feanor, creator of the 
 D:$Simarils and the mightiest of the Eldar, along the Grinding Ice and to 
 D:$Middle Earth at last. 
@@ -990,9 +997,9 @@ E:of Nessa
 I:30:2:5
 W:10:25:10:200000
 P:2:1d1:0:0:10
-A:83
 F:HIDE_TYPE | SPEED | DEX | CHR | ACTIVATE | FREE_ACT |
 F:RES_NETHER | SUST_CHR | SUST_CON
+U:CURE_LW
 D:$A pair of shoes of Nessa.
 D:ヴァエリアの一人、踊り手ネスサの靴だ。この軽い靴を履けば、鹿のように
 D:しなやかに、矢のように早く駆けることができる。
@@ -1076,8 +1083,8 @@ E:'Narthanc'
 I:23:4:0
 W:1:5:12:12000
 P:0:2d4:4:6:0
-A:7
 F:BRAND_FIRE | RES_FIRE | ACTIVATE | SHOW_MODS | LITE | THROW | XTRA_H_RES
+U:BO_FIRE
 D:$A fiery dagger finely balanced for deadly throws.
 D:「焔の牙」を意味する名を持つこの燃え盛る短剣は、
 D:その刃から焔の矢を迸らせる力をもつ。
@@ -1089,8 +1096,8 @@ E:'Nimthanc'
 I:23:4:0
 W:1:5:12:11000
 P:0:2d4:4:6:0
-A:6
 F:BRAND_COLD | RES_COLD | ACTIVATE | SHOW_MODS | THROW | XTRA_H_RES
+U:BO_COLD
 D:$A frosty dagger finely balanced for deadly throws.
 D:「白き牙」を意味する名を持つこの短剣は必殺の冷気もて
 D:敵を凍てつかせ、刃からは氷の矢を迸らせる力をもつ。
@@ -1102,8 +1109,8 @@ E:'Dethanc'
 I:23:4:0
 W:1:5:12:13000
 P:0:2d4:4:6:0
-A:4
 F:BRAND_ELEC | RES_ELEC | ACTIVATE | SHOW_MODS | THROW | XTRA_H_RES
+U:BO_ELEC
 D:$A dagger covered in sparks and finely balanced for deadly throws.
 D:「黒の牙」を意味する名を持つ、この短剣は雷光に覆われ、
 D:その刃から雷の矢を迸らせる力をもつ。
@@ -1114,10 +1121,10 @@ E:'Belangil'
 I:23:4:2
 W:10:40:12:50000
 P:0:2d4:6:9:0
-A:6
 F:DEX | HIDE_TYPE | SPEED | BLOWS | BRAND_COLD | RES_COLD |
 F:SEE_INVIS | SLOW_DIGEST | REGEN | BLOWS |
 F:ACTIVATE | SHOW_MODS | BRAND_POIS | THROW
+U:BO_COLD
 D:$A frosty dagger surrounded in a nimbus of ice with a hilt of elk horn and 
 D:$an edge to wound the wind.
 D:この氷のオーラに包まれた冷たいダガーは、ヘラジカの角で作られた柄と
@@ -1177,11 +1184,11 @@ E:'Aranruth'
 I:23:17:4
 W:15:60:150:50000
 P:0:3d5:20:12:0
-A:6
 F:STR | DEX | CHR | SPEED | HIDE_TYPE | VORPAL |
 F:SLAY_EVIL | SLAY_DEMON | SLAY_UNDEAD | SLAY_ORC |
 F:BRAND_COLD | RES_COLD | SEE_INVIS | FREE_ACT | FEATHER |
 F:SLOW_DIGEST | ACTIVATE | SHOW_MODS | XTRA_H_RES
+U:BA_COLD_72
 D:$The beautiful sword of Thingol, justly named "King's Ire".  It glistens
 D:$ icy enough to freeze the hearts of demons, and you feel supple and
 D:$ lightfooted as you clasp its hilt of gold and silver inlay.
@@ -1255,10 +1262,10 @@ E:'Ringil'
 I:23:17:10
 W:20:120:130:300000
 P:0:4d5:22:25:0
-A:11
 F:SPEED | REGEN | ACTIVATE | SHOW_MODS |
 F:SLAY_EVIL | BRAND_COLD | SLAY_UNDEAD | SLAY_DEMON | SLAY_TROLL |
 F:FREE_ACT | RES_COLD | LITE | SEE_INVIS | SLOW_DIGEST | 
+U:BA_COLD_72
 D:$The weapon of Fingolfin, High King of the Noldor; it shines like a column 
 D:$of ice lit by light unquenchable.  Morgoth came but unwillingly to meet it 
 D:$of old; his lame foot will remind him of its might should be meet it again.
@@ -1277,11 +1284,11 @@ E:'Anduril'
 I:23:17:4
 W:20:40:130:80000
 P:0:3d5:10:15:5
-A:9
 F:STR | SUST_DEX | HIDE_TYPE |
 F:BRAND_FIRE | SLAY_EVIL | SLAY_TROLL | SLAY_ORC |
 F:RES_FIRE | SEE_INVIS | FREE_ACT | LITE | ACTIVATE |
 F:SHOW_MODS | XTRA_H_RES | XTRA_POWER
+U:BA_FIRE_72
 D:$The famed "Flame of the West", the sword that was broken and is forged 
 D:$again.  It glows with the essence of fire, its wearer is mighty in combat, 
 D:$and no creature of Sauron can withstand it.  It will never be stained or 
@@ -1308,12 +1315,12 @@ E:'Anguirel'
 I:23:17:2
 W:20:45:130:150000
 P:0:2d5:8:12:0
-A:12
 F:STR | CON | SPEED | BLOWS | HIDE_TYPE | 
 F:SLAY_EVIL | BRAND_ELEC | SLAY_DEMON |
 F:RES_ELEC | RES_DARK | RES_FEAR |
 F:SEE_INVIS | FREE_ACT | REGEN | SLOW_DIGEST | LITE |
 F:SHOW_MODS | ACTIVATE |
+U:BA_ELEC_72
 D:$Forged of black galvorn by the Dark-Elven smith Eol, this blade has the 
 D:$living lightning trapped inside.
 D:闇エルフの鍛冶師エオルによってアングラヘル(後のグアサング)と共に
@@ -1343,9 +1350,9 @@ E:of Theoden
 I:23:21:3
 W:15:15:180:40000
 P:0:3d4:8:10:0
-A:13
 F:WIS | CON | HIDE_TYPE | VORPAL |
 F:KILL_DRAGON | TELEPATHY | SLOW_DIGEST | ACTIVATE | SHOW_MODS
+U:CONFUSE
 D:$The sharp edge of this weapon would pierce even the armour of 
 D:$Smaug, and its wielder becomes aware of the minds of their enemies.
 D:戦いを決意した黄金館の王セオデンが手にとったこの鋭い剣は、
@@ -1403,10 +1410,10 @@ E:'Aeglos'
 I:22:2:4
 W:15:45:80:140000
 P:0:3d6:15:25:10
-A:11
 F:WIS | HIDE_TYPE | THROW |
 F:BRAND_COLD | SLAY_TROLL | SLAY_ORC | FREE_ACT | RES_COLD | 
 F:SLOW_DIGEST | ACTIVATE | BLESSED | SHOW_MODS
+U:BA_COLD_72
 D:$The mighty spear of Gil-galad, famed as "Snow-point" in the songs of Elves, 
 D:$against which all the foul corruptions of Sauron dashed in vain.
 D:上級王ギル=ガラドの強力な槍で、「雪の切先」として名高い。
@@ -1444,11 +1451,11 @@ E:of Ulmo
 I:22:5:4
 W:20:90:70:120000
 P:0:4d8:15:19:0
-A:55
 F:DEX | HIDE_TYPE |
 F:SLAY_DRAGON | SLAY_ANIMAL | FREE_ACT | HOLD_LIFE | IM_ACID |
 F:RES_NETHER | SEE_INVIS | SLOW_DIGEST | REGEN | ACTIVATE |
 F:BLESSED | SHOW_MODS | XTRA_POWER
+U:TELE_AWAY
 D:$The awesome weapon of the Vala Ulmo, Lord of Waters. Mightest of all the 
 D:$powers of good save Manwe himself, Ulmo laughs in scorn at the dread powers 
 D:$of the undead, and is utterly in command of the element of water.
@@ -1462,11 +1469,11 @@ E:of Orome
 I:22:2:4
 W:15:45:160:77777
 P:0:3d5:15:15:0
-A:121
 F:INT | WIS | INFRA | HIDE_TYPE | SEARCH | BRAND_FIRE |
 F:SLAY_GIANT | SLAY_EVIL | SLAY_DEMON | SLAY_UNDEAD | SLAY_DRAGON |
 F:RES_FIRE | HOLD_LIFE | RES_FEAR | FEATHER |
 F:LITE | SEE_INVIS | ACTIVATE | BLESSED | SHOW_MODS | THROW
+U:STONE_MUD
 
 # The Glaive of Pain
 #J0# 日本語化, Ko
@@ -1540,6 +1547,7 @@ W:15:15:160:90000
 P:0:2d6:10:12:2
 F:CON | BLOWS | HIDE_TYPE | BRAND_ACID | SHOW_MODS
 F:SLAY_TROLL | SLAY_DEMON | ACTIVATE
+U:HELO_SPEED
 D:$"Hurin [...] wielded the axe two-handed, and it is sung that the axe
 D:$smoked in the black blood of the troll-guard of Gothmog, until it withered,
 D:$and each time that he slew Hurin cried 'Aure entuluva! Day shall come
@@ -1560,9 +1568,9 @@ E:'Lotharang'
 I:22:22:1
 W:5:8:170:21000
 P:0:2d8:4:3:0
-A:82
 F:STR | DEX | BLOWS | HIDE_TYPE |
 F:SLAY_TROLL | SLAY_ORC | ACTIVATE | SHOW_MODS
+U:CURE_LW
 D:$A superbly crafted double-bladed axe that slays the creatures of earth and 
 D:$allows rapid recovery from their blows.
 D:アルノールの野伏の頭領ケルサインが使っていた、
@@ -1609,11 +1617,11 @@ E:of Eonwe
 I:22:25:2
 W:15:120:230:200000
 P:0:5d4:15:18:8
-A:58
 F:STR | INT | WIS | DEX | CON | CHR | HIDE_TYPE |
 F:SLAY_EVIL | BRAND_COLD | SLAY_UNDEAD |
 F:SLAY_ORC | FREE_ACT | IM_COLD | SEE_INVIS | ACTIVATE |
 F:BLESSED | SHOW_MODS
+U:MASS_GENO
 D:$The axe of Eonwe, leader of the Hosts of the West before the gates of 
 D:$Thangorodrim, strikes with icy wrath at the undead, disperses hosts of 
 D:$evil at a word, and grants Maia-like powers of body and mind.
@@ -1650,12 +1658,12 @@ E:of Gothmog
 I:21:2:-2
 W:25:35:90:66666
 P:0:3d6:13:15:0
-A:16
 F:INT | WIS | DEX | STEALTH | HIDE_TYPE | 
 F:HEAVY_CURSE | CURSED | AGGRAVATE | 
 F:BRAND_FIRE | IM_FIRE | RES_ELEC | RES_DARK | LITE
 F:SLAY_ANIMAL | SLAY_ORC | SLAY_TROLL | SLAY_GIANT | SLAY_HUMAN |
 F:ACTIVATE | SHOW_MODS
+U:BA_FIRE_300
 D:$With this unbearably bright whip of flame, the Balrog Gothmog has become
 D:$ known for never having lost in combat.
 D:この赤々と燃え上がる炎のムチはバルログの隊長ゴスモグのものだ。
@@ -1668,10 +1676,10 @@ E:'Totila'
 I:21:13:2
 W:5:8:150:55000
 P:0:3d6:6:8:0
-A:51
 F:STEALTH |
 F:SLAY_EVIL | BRAND_FIRE | RES_FIRE | RES_CONF | ACTIVATE |
 F:SHOW_MODS | LITE
+U:CONFUSE
 D:$A flail whose head befuddles those who stare as you whirl it around, and 
 D:$becomes a fiery comet as you bring it down. 
 D:このフレイルは先端を振り回すことで見るものを惑わせる。そして
@@ -1716,8 +1724,8 @@ E:'Taratol'
 I:21:5:0
 W:10:15:200:50000
 P:0:4d4:12:12:0
-A:95
 F:KILL_DRAGON | BRAND_ELEC | IM_ELEC | ACTIVATE | SHOW_MODS
+U:SPEED
 D:$A great ridged mace that surrounds you in a nimbus of living lightning; 
 D:$you remain utterly untouched, even as fat sparks crackle around your 
 D:$fingers and eyebrows.
@@ -1751,9 +1759,9 @@ E:'Eriril'
 I:21:3:4
 W:5:18:150:20000
 P:0:1d9:3:5:0
-A:116
 F:INT | WIS | HIDE_TYPE | DEC_MANA |
 F:SLAY_EVIL | LITE | SEE_INVIS | ACTIVATE | SHOW_MODS
+U:ID_PLAIN
 D:$The radiant golden staff of an Istari of legend, this wizard's companion 
 D:$grants keen sight and the knowledge of many hidden things.
 D:「秀でし輝き」を意味する名を持つ、伝説のイスタリの黄金に輝くスタッフだ。
@@ -1767,10 +1775,10 @@ E:of Gandalf
 I:21:21:4
 W:15:50:40:140000
 P:0:3d2:10:13:0
-A:114
 F:INT | WIS | CHR | HIDE_TYPE | SEARCH | BRAND_FIRE | DEC_MANA |
 F:SLAY_EVIL | BRAND_FIRE | SLAY_TROLL | SLAY_ORC | LITE | XTRA_POWER |
 F:HOLD_LIFE | RES_FIRE | RES_NETHER | SEE_INVIS | ACTIVATE | SHOW_MODS
+U:DETECT_XTRA
 D:$The staff of the great wizard Gandalf.  
 D:$It is tall and sturdy, with rough-hewn runes that invoke the element of 
 D:$Earth, and which strikes down all creatures who live in the shadow of 
@@ -1791,6 +1799,7 @@ F:STR | TUNNEL | INFRA | SEARCH | HIDE_TYPE |
 F:SLAY_ORC | SLAY_TROLL | SLAY_GIANT | SLAY_DRAGON |
 F:BRAND_ACID | RES_ACID | RES_DARK | RES_FEAR |
 F:ACTIVATE
+U:STONE_MUD
 D:$Wielded by Nain of the Iron Hills at the Battle of Azanulbizar, this great 
 D:$mattock brought victory to the Dwarves over Azog's Orcs - though Nain 
 D:$himself fell at the last, even with victory already assured.
@@ -1853,6 +1862,7 @@ I:19:23:10
 W:20:25:60:50000
 P:0:0d0:10:14:0
 F:SPEED | RES_FIRE | XTRA_MIGHT | ACTIVATE | SHOW_MODS | XTRA_RES_OR_POWER
+U:BRAND_FIRE_BOLTS
 D:$A crossbow that grants fiery speed to he who finds it, and from which 
 D:$shoot bolts that blaze with flame unquenchable.
 D:シンダール語で「疾き弓」を意味するこの素晴らしい弓を手にする者は

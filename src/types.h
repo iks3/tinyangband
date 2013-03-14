@@ -132,6 +132,8 @@ struct object_kind
 	bool aware;			/* The player is "aware" of the item's effects */
 
 	bool tried;			/* The player has "tried" one of the items */
+
+	int activate;		/* Activation */
 };
 
 
@@ -1365,6 +1367,22 @@ typedef struct {
 	int dir;
 } travel_type;
 #endif
+
+/*
+ * Object activation type
+ */
+typedef struct {
+	cptr flag;
+	int index;
+	byte level;
+	s32b value;
+	int chance;
+	struct {
+		int constant;
+		int dice;
+	} timeout;
+	cptr desc;
+} activation_type;
 
 /*
  * Valar info

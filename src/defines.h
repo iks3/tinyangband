@@ -1024,90 +1024,98 @@
 #define EGO_FLAME               93
 #define EGO_BACKBITING          95
 
-/* Activation effects for random artifacts */
+/*
+ * Activation effects for random artifacts
+ */
+/* Bolts/Beams */
 #define ACT_SUNLIGHT            1
-#define ACT_BO_MISS_1           2
-#define ACT_BA_POIS_1           3
-#define ACT_BO_ELEC_1           4
-#define ACT_BO_ACID_1           5
-#define ACT_BO_COLD_1           6
-#define ACT_BO_FIRE_1           7
-#define ACT_BA_COLD_1           8
-#define ACT_BA_FIRE_1           9
-#define ACT_DRAIN_1             10
-#define ACT_BA_COLD_2           11
-#define ACT_BA_ELEC_2           12
-#define ACT_DRAIN_2             13
-#define ACT_VAMPIRE_1           14
-#define ACT_BO_MISS_2           15
-#define ACT_BA_FIRE_2           16
-#define ACT_BA_COLD_3           17
-#define ACT_BA_ELEC_3           18
-#define ACT_WHIRLWIND           19
-#define ACT_VAMPIRE_2           20
-#define ACT_CALL_CHAOS          21
-#define ACT_ROCKET              22
-#define ACT_DISP_EVIL           23
-#define ACT_BA_MISS_3           24
-#define ACT_DISP_GOOD           25
-#define ACT_PESTICIDE           26
-/* 27 - 49 unused */
-#define ACT_FEAR                50
-#define ACT_CONFUSE             51
-#define ACT_SLEEP               52
-#define ACT_QUAKE               53
-#define ACT_TERROR              54
-#define ACT_TELE_AWAY           55
-#define ACT_BANISH_EVIL         56
-#define ACT_GENOCIDE            57
-#define ACT_MASS_GENO           58
-/* 59 - 64 unused */
-#define ACT_CHARM_ANIMAL        65
-#define ACT_CHARM_UNDEAD        66
-#define ACT_CHARM_OTHER         67
-#define ACT_CHARM_ANIMALS       68
-#define ACT_CHARM_OTHERS        69
-#define ACT_SUMMON_ANIMAL       70
-#define ACT_SUMMON_PHANTOM      71
-#define ACT_SUMMON_ELEMENTAL    72
-#define ACT_SUMMON_DEMON        73
-#define ACT_SUMMON_UNDEAD       74
-/* 75 - 80 unused */
-#define ACT_CURE_LW             81
-#define ACT_CURE_MW             82
-#define ACT_CURE_POISON         83
-#define ACT_REST_LIFE           84
-#define ACT_REST_ALL            85
-#define ACT_CURE_700            86
-#define ACT_CURE_1000           87
-#define ACT_CURING              88
-/* 89 - 90 unused */
-#define ACT_ESP                 91
-#define ACT_BERSERK             92
-#define ACT_PROT_EVIL           93
-#define ACT_RESIST_ALL          94
-#define ACT_SPEED               95
-#define ACT_XTRA_SPEED          96
-#define ACT_WRAITH              97
-#define ACT_INVULN              98
-/* 99 - 110 unused */
-#define ACT_LIGHT               111
-#define ACT_MAP_LIGHT           112
-#define ACT_DETECT_ALL          113
-#define ACT_DETECT_XTRA         114
-#define ACT_ID_FULL             115
-#define ACT_ID_PLAIN            116
-#define ACT_RUNE_EXPLO          117
-#define ACT_RUNE_PROT           118
-#define ACT_SATIATE             119
-#define ACT_DEST_DOOR           120
-#define ACT_STONE_MUD           121
-#define ACT_RECHARGE            122
-#define ACT_ALCHEMY             123
-#define ACT_DIM_DOOR            124
-#define ACT_TELEPORT            125
-#define ACT_RECALL              126
-/* 127 -> unused */
+#define ACT_BO_MISSILE          2
+#define ACT_BO_ELEC             3
+#define ACT_BO_ACID             4
+#define ACT_BO_COLD             5
+#define ACT_BO_FIRE             6
+#define ACT_BO_DRAIN            7
+#define ACT_BO_MANA             8
+
+/* Balls */
+#define ACT_BA_POIS             10
+#define ACT_BA_ELEC_72          11
+#define ACT_BA_ACID_72          12
+#define ACT_BA_COLD_72          13
+#define ACT_BA_FIRE_72          14
+#define ACT_BA_ELEC_300         15
+#define ACT_BA_ACID_300         16
+#define ACT_BA_COLD_300         17
+#define ACT_BA_FIRE_300         18
+#define ACT_BA_STAR             19
+#define ACT_BA_DARK             20
+#define ACT_BA_MANA             21
+#define ACT_BIZARRE             22
+#define ACT_STARLIGHT           23
+
+/* Dispell */
+#define ACT_DISP_EVIL           24
+#define ACT_PESTICIDE           25
+#define ACT_BLINDING_LIGHT      26
+
+/* Offencive Effects */
+#define ACT_AGGRAVATE           30
+#define ACT_TERROR              31
+#define ACT_CONFUSE             32
+#define ACT_SLEEP               33
+#define ACT_TELE_AWAY           34
+#define ACT_BANISH_EVIL         35
+#define ACT_GENOCIDE            36
+#define ACT_MASS_GENO           37
+
+/* Heals */
+#define ACT_CURE_LW             40
+#define ACT_CURE_MW             41
+#define ACT_REST_ALL            42
+#define ACT_CURE_700            43
+#define ACT_CURE_MANA           44
+
+/* Enchant player */
+#define ACT_HELO                50
+#define ACT_HELO_SPEED          51
+#define ACT_BERSERK             52
+#define ACT_SPEED               53
+#define ACT_PROT_EVIL           54
+#define ACT_WRAITH              55
+#define ACT_INVULN              56
+#define ACT_RESIST_ELEC         57
+#define ACT_RESIST_ACID         58
+#define ACT_RESIST_FIRE         59
+#define ACT_RESIST_COLD         60
+#define ACT_RESIST_POIS         61
+#define ACT_RESIST_ALL          62
+#define ACT_ESP                 63
+
+/* Miscellaneous */
+#define ACT_LIGHT               70
+#define ACT_MAP_LIGHT           71
+#define ACT_DETECT_ALL          72
+#define ACT_DETECT_UNIQUE       73
+#define ACT_DETECT_XTRA         74
+#define ACT_ID_FULL             75
+#define ACT_ID_PLAIN            76
+#define ACT_RUNE_EXPLO          77
+#define ACT_RUNE_PROT           78
+#define ACT_SATIATE             79
+#define ACT_DEST_DOOR           80
+#define ACT_STONE_MUD           81
+#define ACT_RECHARGE            82
+#define ACT_ALCHEMY             83
+#define ACT_PHASE_DOOR          84
+#define ACT_TELEPORT            85
+#define ACT_DIM_DOOR            86
+#define ACT_RECALL              87
+#define ACT_ARKENSTONE          88
+#define ACT_TELEKINESIS         89
+#define ACT_BRAND_FIRE_BOLTS    90
+#define ACT_QUAKE               91
+
+
 
 /*** Object "tval" and "sval" codes ***/
 

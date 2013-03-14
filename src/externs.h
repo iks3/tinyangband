@@ -96,6 +96,7 @@ extern cptr silly_attacks[MAX_SILLY_ATTACK];
 #endif
 extern mbe_info_type mbe_info[];
 extern valar_type valar_info[MAX_PATRON];
+extern const activation_type activation_info[];
 
 /* variable.c */
 extern cptr copyright[5];
@@ -1236,6 +1237,8 @@ extern void one_brand(object_type *o_ptr);
 extern void one_slay(object_type *o_ptr);
 extern void give_activation_power(object_type *o_ptr);
 extern bool create_artifact(object_type *o_ptr, bool a_scroll);
+extern int activation_index(const object_type *o_ptr);
+extern const activation_type* find_activation_info(const object_type *o_ptr);
 extern bool activate_random_artifact(object_type * o_ptr);
 extern void random_artifact_resistance(object_type * o_ptr, artifact_type *a_ptr);
 extern void create_named_art(int a_idx, int y, int x);

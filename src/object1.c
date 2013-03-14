@@ -224,840 +224,91 @@ void object_flags_known(const object_type *o_ptr, u32b *f1, u32b *f2, u32b *f3)
  * Determine the "Activation" (if any) for an artifact
  * Return a string, or NULL for "no activation"
  */
+static cptr item_activation_aux(const object_type *o_ptr)
+{
+	static char activation_detail[256];
+	cptr desc;
+	char timeout[32];
+	int constant, dice;
+	const activation_type* const act_ptr = find_activation_info(o_ptr);
+
+	if (!act_ptr) return _("未定義", "something undefined");
+
+	desc = act_ptr->desc;
+
+	/* Overwrite description if it is special */
+	switch (act_ptr->index)
+	{
+	case ACT_RESIST_ACID:
+		if ((o_ptr->tval == TV_RING) && (o_ptr->sval == SV_RING_ACID))
+			desc = _("アシッド・ボール (100) と酸への耐性", "ball of acid (100) and resist acid");
+		break;
+	case ACT_RESIST_FIRE:
+		if ((o_ptr->tval == TV_RING) && (o_ptr->sval == SV_RING_FLAMES))
+			desc = _("ファイア・ボール (100) と火への耐性", "ball of fire (100) and resist fire");
+		break;
+	case ACT_RESIST_COLD:
+		if ((o_ptr->tval == TV_RING) && (o_ptr->sval == SV_RING_ICE))
+			desc = _("アイス・ボール (100) と冷気への耐性", "ball of cold (100) and resist cold");
+		break;
+	case ACT_RESIST_ELEC:
+		if ((o_ptr->tval == TV_RING) && (o_ptr->sval == SV_RING_ELEC))
+			desc = _("サンダー・ボール (100) と電撃への耐性", "ball of elec (100) and resist elec");
+		break;
+	}
+
+	/* Timeout description */
+	constant = act_ptr->timeout.constant;
+	dice = act_ptr->timeout.dice;
+	if (constant == 0 && dice == 0)
+	{
+		/* We can activate it every turn */
+		strcpy(timeout, _("いつでも", "every turn"));
+	} 
+	else
+	{
+		/* Normal timeout activations */
+		char constant_str[16], dice_str[16];
+		sprintf(constant_str, "%d", constant);
+		sprintf(dice_str, "d%d", dice);
+		sprintf(timeout, _("%s%s%s ターン毎", "every %s%s%s turns"),
+			(constant > 0) ? constant_str : "",
+			(constant > 0 && dice > 0) ? "+" : "",
+			(dice > 0) ? dice_str : "");
+	}
+
+	/* Build detail activate description */
+	sprintf(activation_detail, _("%s : %s", "%s %s"), desc, timeout);
+
+	return activation_detail;
+}
+
 cptr item_activation(const object_type *o_ptr)
 {
 	u32b f1, f2, f3;
+	const activation_type *act_ptr = find_activation_info(o_ptr);
+
+	/* Paranoia */
+	if (!act_ptr) {
+		/* Maybe forgot adding information to activation_info table ? */
+		msg_print("Activation information is not found.");
+		return _("何も起きない", "Nothing");
+	}
 
 	/* Extract the flags */
 	object_flags(o_ptr, &f1, &f2, &f3);
 
 	/* Require activation ability */
-#ifdef JP
-	if (!(f3 & (TR3_ACTIVATE))) return ("なし");
-#else
-	if (!(f3 & (TR3_ACTIVATE))) return ("nothing");
-#endif
+	if (!(f3 & (TR3_ACTIVATE))) return _("なし", "nothing");
 
-	if (o_ptr->xtra2)
+	/* Get an explain of an activation */
+	if (activation_index(o_ptr))
 	{
-		switch (o_ptr->xtra2)
-		{
-			case ACT_SUNLIGHT:
-			{
-#ifdef JP
-				return "太陽光線 : 10 ターン毎";
-#else
-				return "beam of sunlight every 10 turns";
-#endif
-			}
-			case ACT_BO_MISS_1:
-			{
-#ifdef JP
-				return "マジック・ミサイル(2d6) : 2 ターン毎";
-#else
-				return "magic missile (2d6) every 2 turns";
-#endif
-			}
-			case ACT_BA_POIS_1:
-			{
-#ifdef JP
-				return "悪臭雲 (12), 半径 3 , 4+d4 ターン毎";
-#else
-				return "stinking cloud (12), rad. 3, every 4+d4 turns";
-#endif
-			}
-			case ACT_BO_ELEC_1:
-			{
-#ifdef JP
-				return "サンダー・ボルト(4d8) : 6+d6 ターン毎";
-#else
-				return "lightning bolt (4d8) every 6+d6 turns";
-#endif
-			}
-			case ACT_BO_ACID_1:
-			{
-#ifdef JP
-				return "アシッド・ボルト(5d8) : 5+d5 ターン毎";
-#else
-				return "acid bolt (5d8) every 5+d5 turns";
-#endif
-			}
-			case ACT_BO_COLD_1:
-			{
-#ifdef JP
-				return "アイス・ボルト(6d8) : 7+d7 ターン毎";
-#else
-				return "frost bolt (6d8) every 7+d7 turns";
-#endif
-			}
-			case ACT_BO_FIRE_1:
-			{
-#ifdef JP
-				return "ファイア・ボルト(9d8) : 8+d8 ターン毎";
-#else
-				return "fire bolt (9d8) every 8+d8 turns";
-#endif
-			}
-			case ACT_BA_COLD_1:
-			{
-#ifdef JP
-				return "アイス・ボール (48) : 400 ターン毎";
-#else
-				return "frost ball (48) every 400 turns";
-#endif
-			}
-			case ACT_BA_FIRE_1:
-			{
-#ifdef JP
-				return "ファイア・ボール (72) : 400 ターン毎";
-#else
-				return "ball of fire (72) every 400 turns";
-#endif
-			}
-			case ACT_DRAIN_1:
-			{
-#ifdef JP
-				return "生命力吸収 (90) : 70 ターン毎";
-#else
-				return "drain life (90) every 70 turns";
-#endif
-			}
-			case ACT_BA_COLD_2:
-			{
-#ifdef JP
-				return "アイス・ボール (100) : 300 ターン毎";
-#else
-				return "frost ball (100) every 300 turns";
-#endif
-			}
-			case ACT_BA_ELEC_2:
-			{
-#ifdef JP
-				return "サンダー・ボール (100) : 500 ターン毎";
-#else
-				return "ball of lightning (100) every 500 turns";
-#endif
-			}
-			case ACT_DRAIN_2:
-			{
-#ifdef JP
-				return "生命力吸収(120) : 400 ターン毎";
-#else
-				return "drain life (120) every 400 turns";
-#endif
-			}
-			case ACT_VAMPIRE_1:
-			{
-#ifdef JP
-				return "吸血ドレイン (3*50) : 400 ターン毎";
-#else
-				return "vampiric drain (3*50) every 400 turns";
-#endif
-			}
-			case ACT_BO_MISS_2:
-			{
-#ifdef JP
-				return "矢 (150) : 90+d90 ターン毎";
-#else
-				return "arrows (150) every 90+d90 turns";
-#endif
-			}
-			case ACT_BA_FIRE_2:
-			{
-#ifdef JP
-				return "ファイア・ボール (120) : 225+d225 ターン毎";
-#else
-				return "fire ball (120) every 225+d225 turns";
-#endif
-			}
-			case ACT_BA_COLD_3:
-			{
-#ifdef JP
-				return "コールド・ボール (200) : 325+d325 ターン毎";
-#else
-				return "ball of cold (200) every 325+d325 turns";
-#endif
-			}
-			case ACT_BA_ELEC_3:
-			{
-#ifdef JP
-				return "サンダー・ボール (250) : 425+d425 ターン毎";
-#else
-				return "ball of lightning (250) every 425+d425 turns";
-#endif
-			}
-			case ACT_WHIRLWIND:
-			{
-#ifdef JP
-				return "カマイタチ : 250 ターン毎";
-#else
-				return "whirlwind attack every 250 turns";
-#endif
-			}
-			case ACT_VAMPIRE_2:
-			{
-#ifdef JP
-				return "吸血ドレイン (3*100) : 400 ターン毎";
-#else
-				return "vampiric drain (3*100) every 400 turns";
-#endif
-			}
-			case ACT_CALL_CHAOS:
-			{
-#ifdef JP
-				return "混沌招来 : 350 ターン毎"; 
-#else
-				return "call chaos every 350 turns";
-#endif
-			}
-			case ACT_ROCKET:
-			{
-#ifdef JP
-				return "ロケット (120+level) : 400 ターン毎";
-#else
-				return "launch rocket (120+level) every 400 turns";
-#endif
-			}
-			case ACT_DISP_EVIL:
-			{
-#ifdef JP
-				return "邪悪退散 (level*5) : 200+d200 ターン毎";
-#else
-				return "dispel evil (level*5) every 200+d200 turns";
-#endif
-			}
-			case ACT_BA_MISS_3:
-			{
-#ifdef JP
-				return "エレメントのブレス (300) : 500 ターン毎";
-#else
-				return "elemental breath (300) every 500 turns";
-#endif
-			}
-			case ACT_DISP_GOOD:
-			{
-#ifdef JP
-				return "善良退散 (level*5) : 200+d200 ターン毎";
-#else
-				return "dispel good (level*5) every 200+d200 turns";
-#endif
-			}
-			case ACT_PESTICIDE:
-			{
-#ifdef JP
-				return "害虫の駆除 : 55+d55ターン毎";
-#else
-				return "dispel small life every 55+d55 turns";
-#endif
-			}
-			case ACT_CONFUSE:
-			{
-#ifdef JP
-				return "パニック・モンスター : 15 ターン毎";
-#else
-				return "confuse monster every 15 turns";
-#endif
-			}
-			case ACT_SLEEP:
-			{
-#ifdef JP
-				return "周囲のモンスターを眠らせる : 55 ターン毎";
-#else
-				return "sleep nearby monsters every 55 turns";
-#endif
-			}
-			case ACT_QUAKE:
-			{
-#ifdef JP
-				return "地震 (半径 10) : 50 ターン毎";
-#else
-				return "earthquake (rad 10) every 50 turns";
-#endif
-			}
-			case ACT_FEAR:
-			{
-#ifdef JP
-				return "モンスター恐慌 : 40+d40ターン毎";
-#else
-				return "frighten monsters every 40+d40 turns";
-#endif
-			}
-			case ACT_TERROR:
-			{
-#ifdef JP
-				return "全方向への恐怖の光線 : 3*(レベル+10) ターン毎";
-#else
-				return "rays of fear in every direction every 3*(level+10) turns";
-#endif
-			}
-			case ACT_TELE_AWAY:
-			{
-#ifdef JP
-				return "テレポート・アウェイ : 150 ターン毎";
-#else
-				return "teleport away every 200 turns";
-#endif
-			}
-			case ACT_BANISH_EVIL:
-			{
-#ifdef JP
-				return "邪悪追放 : 250+d250 ターン毎";
-#else
-				return "banish evil every 250+d250 turns";
-#endif
-			}
-			case ACT_GENOCIDE:
-			{
-#ifdef JP
-				return "抹殺 : 500 ターン毎";
-#else
-				return "genocide every 500 turns";
-#endif
-			}
-			case ACT_MASS_GENO:
-			{
-#ifdef JP
-				return "周辺抹殺 : 1000 ターン毎";
-#else
-				return "mass genocide every 1000 turns";
-#endif
-			}
-			case ACT_CHARM_ANIMAL:
-			{
-#ifdef JP
-				return "動物魅了 : 300 ターン毎";
-#else
-				return "charm animal every 300 turns";
-#endif
-			}
-			case ACT_CHARM_UNDEAD:
-			{
-#ifdef JP
-				return "不死従属 : 333 ターン毎";
-#else
-				return "enslave undead every 333 turns";
-#endif
-			}
-			case ACT_CHARM_OTHER:
-			{
-#ifdef JP
-				return "モンスター魅了 : 400 ターン毎";
-#else
-				return "charm monster every 400 turns";
-#endif
-			}
-			case ACT_CHARM_ANIMALS:
-			{
-#ifdef JP
-				return "動物友和 : 500 ターン毎";
-#else
-				return "animal friendship every 500 turns";
-#endif
-			}
-			case ACT_CHARM_OTHERS:
-			{
-#ifdef JP
-				return "周辺魅了 : 750 ターン毎";
-#else
-				return "mass charm every 750 turns";
-#endif
-			}
-			case ACT_SUMMON_ANIMAL:
-			{
-#ifdef JP
-				return "動物召喚 : 200+d300 ターン毎";
-#else
-				return "summon animal every 200+d300 turns";
-#endif
-			}
-			case ACT_SUMMON_PHANTOM:
-			{
-#ifdef JP
-				return "使い霊召喚 : 200+d200 ターン毎";
-#else
-				return "summon phantasmal servant every 200+d200 turns";
-#endif
-			}
-			case ACT_SUMMON_ELEMENTAL:
-			{
-#ifdef JP
-				return "エレメンタル召喚 : 750 ターン毎";
-#else
-				return "summon elemental every 750 turns";
-#endif
-			}
-			case ACT_SUMMON_DEMON:
-			{
-#ifdef JP
-				return "悪魔召喚 : 666+d333 ターン毎";
-#else
-				return "summon demon every 666+d333 turns";
-#endif
-			}
-			case ACT_SUMMON_UNDEAD:
-			{
-#ifdef JP
-				return "不死召喚 : 666+d333 ターン毎";
-#else
-				return "summon undead every 666+d333 turns";
-#endif
-			}
-			case ACT_CURE_LW:
-			{
-#ifdef JP
-				return "恐怖除去 & 回復 (30) : 10 ターン毎";
-#else
-				return "remove fear & heal 30 hp every 10 turns";
-#endif
-			}
-			case ACT_CURE_MW:
-			{
-#ifdef JP
-				return "傷の治癒 (4d8) : 3+d3 ターン毎";
-#else
-				return "cure wounds (4d8) every 3+d3 turns";
-#endif
-			}
-			case ACT_CURE_POISON:
-			{
-#ifdef JP
-				return "恐怖除去/毒消し : 5 ターン毎";
-#else
-				return "remove fear and cure poison every 5 turns";
-#endif
-			}
-			case ACT_REST_LIFE:
-			{
-#ifdef JP
-				return "経験値復活 : 450 ターン毎";
-#else
-				return "restore life levels every 450 turns";
-#endif
-			}
-			case ACT_REST_ALL:
-			{
-#ifdef JP
-				return "全ステータスと経験値回復 : 750 ターン毎";
-#else
-				return "restore stats and life levels every 750 turns";
-#endif
-			}
-			case ACT_CURE_700:
-			{
-#ifdef JP
-				return "700 hp 回復 : 250 ターン毎";
-#else
-				return "heal 700 hit points every 250 turns";
-#endif
-			}
-			case ACT_CURE_1000:
-			{
-#ifdef JP
-				return "1000 hp 回復 : 888 ターン毎";
-#else
-				return "heal 1000 hit points every 888 turns";
-#endif
-			}
-			case ACT_CURING:
-			{
-#ifdef JP
-				return "癒し : 100 ターン毎";
-#else
-				return "curing every 100 turns";
-#endif
-			}
-			case ACT_ESP:
-			{
-#ifdef JP
-				return "一時的な ESP (期間 25+d30) : 200 ターン毎";
-#else
-				return "temporary ESP (dur 25+d30) every 200 turns";
-#endif
-			}
-			case ACT_BERSERK:
-			{
-#ifdef JP
-				return "ヒーロー気分と野獣化 (期間 50+d50) : 100+d100 ターン毎";
-#else
-				return "heroism and berserk (dur 50+d50) every 100+d100 turns";
-#endif
-			}
-			case ACT_PROT_EVIL:
-			{
-#ifdef JP
-				return "対邪悪結界 (期間 level*3 + d25) : 225+d225 ターン毎";
-#else
-				return "protect evil (dur level*3 + d25) every 225+d225 turns";
-#endif
-			}
-			case ACT_RESIST_ALL:
-			{
-#ifdef JP
-				return "炎冷酸電毒への耐性 (期間 40+d40) : 200 ターン毎";
-#else
-				return "resist elements (dur 40+d40) every 200 turns";
-#endif
-			}
-			case ACT_SPEED:
-			{
-#ifdef JP
-				return "スピード (期間 20+d20) : 100+d100 ターン毎";
-#else
-				return "speed (dur 20+d20) every 100+d100 turns";
-#endif
-			}
-			case ACT_XTRA_SPEED:
-			{
-#ifdef JP
-				return "スピード (期間 75+d75) : 200+d200 ターン毎";
-#else
-				return "speed (dur 75+d75) every 200+d200 turns";
-#endif
-			}
-			case ACT_WRAITH:
-			{
-#ifdef JP
-				return "レイス化 (level/2 + d(level/2)) : 1000 ターン毎";
-#else
-				return "wraith form (level/2 + d(level/2)) every 1000 turns";
-#endif
-			}
-			case ACT_INVULN:
-			{
-#ifdef JP
-				return "無敵 (期間 8+d8) : 1000 ターン毎";
-#else
-				return "invulnerability (dur 8+d8) every 1000 turns";
-#endif
-			}
-			case ACT_LIGHT:
-			{
-#ifdef JP
-				return "イルミネーション : 10+d10 ターン毎";
-#else
-				return "light area (dam 2d15) every 10+d10 turns";
-#endif
-			}
-			case ACT_MAP_LIGHT:
-			{
-#ifdef JP
-				return "魔法の地図と周辺照明 : 50+d50 ターン毎";
-#else
-				return "magic mapping and light area every 50+d50 turns";
-#endif
-			}
-			case ACT_DETECT_ALL:
-			{
-#ifdef JP
-				return "全感知 : 55+d55 ターン毎";
-#else
-				return "detection every 55+d55 turns";
-#endif
-			}
-			case ACT_DETECT_XTRA:
-			{
-#ifdef JP
-				return "全感知、探索、*鑑定* : 1000 ターン毎";
-#else
-				return "detection, probing and identify true every 1000 turns";
-#endif
-			}
-			case ACT_ID_FULL:
-			{
-#ifdef JP
-				return "*鑑定* : 750 ターン毎";
-#else
-				return "identify true every 750 turns";
-#endif
-			}
-			case ACT_ID_PLAIN:
-			{
-#ifdef JP
-				return "鑑定 : 10 ターン毎";
-#else
-				return "identify spell every 10 turns";
-#endif
-			}
-			case ACT_RUNE_EXPLO:
-			{
-#ifdef JP
-				return "爆発ルーン : 200 ターン毎";
-#else
-				return "explosive rune every 200 turns";
-#endif
-			}
-			case ACT_RUNE_PROT:
-			{
-#ifdef JP
-				return "守りのルーン : 400 ターン毎";
-#else
-				return "rune of protection every 400 turns";
-#endif
-			}
-			case ACT_SATIATE:
-			{
-#ifdef JP
-				return "空腹充足 : 200 ターン毎";
-#else
-				return "satisfy hunger every 200 turns";
-#endif
-			}
-			case ACT_DEST_DOOR:
-			{
-#ifdef JP
-				return "ドア破壊 : 10 ターン毎";
-#else
-				return "destroy doors every 10 turns";
-#endif
-			}
-			case ACT_STONE_MUD:
-			{
-#ifdef JP
-				return "岩石溶解 : 5 ターン毎";
-#else
-				return "stone to mud every 5 turns";
-#endif
-			}
-			case ACT_RECHARGE:
-			{
-#ifdef JP
-				return "再充填 : 70 ターン毎";
-#else
-				return "recharging every 70 turns";
-#endif
-			}
-			case ACT_ALCHEMY:
-			{
-#ifdef JP
-				return "錬金術 : 500 ターン毎";
-#else
-				return "alchemy every 500 turns";
-#endif
-			}
-			case ACT_DIM_DOOR:
-			{
-#ifdef JP
-				return "次元の扉 : 100 ターン毎";
-#else
-				return "dimension door every 100 turns";
-#endif
-			}
-			case ACT_TELEPORT:
-			{
-#ifdef JP
-				return "テレポート : 45 ターン毎";
-#else
-				return "teleport every 45 turns";
-#endif
-			}
-			case ACT_RECALL:
-			{
-#ifdef JP
-				return "帰還の詔 : 200 ターン毎";
-#else
-				return "word of recall every 200 turns";
-#endif
-			}
-			default:
-			{
-#ifdef JP
-				return "未定義";
-#else
-				return "something undefined";
-#endif
-			}
-		}
-	}
-
-	/* Some artifacts can be activated */
-	switch (o_ptr->name1)
-	{
-		case ART_BRAND:
-			{
-#ifdef JP
-				return "刃先のファイア・ボルト : 999 ターン毎";
-#else
-				return "fire branding of bolts every 999 turns";
-#endif
-			}
-		case ART_CELEBORN:
-			{
-#ifdef JP
-				return ("回復 (777)、癒し、ヒーロー気分 : 300 ターン毎");
-#else
-				return ("heal (777), curing and heroism every 300 turns");
-#endif
-			}
-		case ART_HOLCOLLETH:
-			{
-#ifdef JP
-				return "スリープ(II) : 55 ターン毎";
-#else
-				return "Sleep II every 55 turns";
-#endif
-			}
-		case ART_FINGOLFIN:
-			{
-#ifdef JP
-				return "魔法の矢(150) : 90+d90 ターン毎";
-#else
-				return "a magical arrow (150) every 90+d90 turns";
-#endif
-			}
-		case ART_JUDGE:
-			{
-#ifdef JP
-				return "体力と引き替えに千里眼と帰還 : 20+d20 ターン毎";
-#else
-				return "clairvoyance and recall, draining you every 20+d20 turns";
-#endif
-			}
-		case ART_POWER:
-			{
-#ifdef JP
-				return "信じ難いこと : 450+d450 ターン毎";
-#else
-				return "bizarre things every 450+d450 turns";
-#endif
-			}
-		case ART_PALANTIR:
-			{
-#ifdef JP
-				return "この階にいるユニークモンスターを表示 : 200ターン毎";
-#else
-				return "list of the uniques on the level every 200 turns";
-#endif
-			}
-		case ART_HURIN:
-			{
-#ifdef JP
-				return "士気高揚, スピード(50+d50ターン) : 100+d200 ターン毎";
-#else
-				return "hero and +10 to speed (50) every 100+200d turns";
-#endif
-			}
-		case ART_INCANUS:
-			{
-#ifdef JP
-				return "魔力の矢(120) : 120+d120 ターン毎";
-#else
-				return "a mana bolt (120) every 120+d120 turns";
-#endif
-			}
-		case ART_GIL_GALAD:
-			{
-#ifdef JP
-				return "眩しい光(300) : 250 ターン毎";
-#else
-				return "blinding light (300) every 250 turns";
-#endif
-			}
-		case ART_NAIN:
-			{
-#ifdef JP
-				return "岩石溶解 : 2 ターン毎";
-#else
-				return "stone to mud every 2 turns";
-#endif
-				
-			}
-	}
-
-	/* Some ego item can be activated */
-	if (o_ptr->name2)
-	{
-		switch(o_ptr->name2)
-		{
-			case EGO_SEEING:
-			{
-#ifdef JP
-				return "モンスター感知 : 10+d10 ターン毎";
-#else
-				return "detect monster every 10+d10 turns";
-#endif
-			}
-			case EGO_BRAND_FIRE:
-#ifdef JP
-				return "ファイア・ボール (100) と火への耐性 : 50+d50 ターン毎";
-#else
-				return "ball of fire (100) and resist fire every 50+d50 turns";
-#endif
-			case EGO_BRAND_COLD:
-#ifdef JP
-				return "コールド・ボール (100) と冷気への耐性 : 50+d50 ターン毎";
-#else
-				return "ball of cold (100) and resist cold every 50+d50 turns";
-#endif
-			case EGO_BRAND_ACID:
-#ifdef JP
-				return "アシッド・ボール (100) と酸への耐性 : 50+d50 ターン毎";
-#else
-				return "ball of acid (100) and resist acid every 50+d50 turns";
-#endif
-			case EGO_BRAND_ELEC:
-#ifdef JP
-				return "サンダー・ボール (100) と電撃への耐性 : 50+d50 ターン毎";
-#else
-				return "ball of elec (100) and resist elec every 50+d50 turns";
-#endif
-			case EGO_BRAND_POIS:
-#ifdef JP
-				return "ポイズン・ボール (100) と毒への耐性 : 50+d50 ターン毎";
-#else
-				return "ball of pois (100) and resist pois every 50+d50 turns";
-#endif
-			case EGO_WEAP_LITE:
-#ifdef JP
-				return "スターライト : 50+d50 ターン毎";
-#else
-				return "star light every 50+d50 turns";
-#endif
-		}
-	}
-
-	if (o_ptr->tval == TV_RING)
-	{
-		switch (o_ptr->sval)
-		{
-			case SV_RING_FLAMES:
-#ifdef JP
-return "ファイア・ボール (100) と火への耐性 : 50+d50 ターン毎";
-#else
-				return "ball of fire (100) and resist fire every 50+d50 turns";
-#endif
-
-			case SV_RING_ICE:
-#ifdef JP
-return "コールド・ボール (100) と冷気への耐性 : 50+d50 ターン毎";
-#else
-				return "ball of cold (100) and resist cold every 50+d50 turns";
-#endif
-
-			case SV_RING_ACID:
-#ifdef JP
-return "アシッド・ボール (100) と酸への耐性 : 50+d50 ターン毎";
-#else
-				return "ball of acid (100) and resist acid every 50+d50 turns";
-#endif
-
-			case SV_RING_ELEC:
-#ifdef JP
-return "サンダー・ボール (100) と電撃への耐性 : 50+d50 ターン毎";
-#else
-				return "ball of elec (100) and resist elec every 50+d50 turns";
-#endif
-
-			default:
-				return NULL;
-		}
+		return item_activation_aux(o_ptr);
 	}
 
 	/* Oops */
-#ifdef JP
-	return "奇妙な光";
-#else
-	return "a strange glow";
-#endif
+	return _("何も起きない", "Nothing");
 }
 
 

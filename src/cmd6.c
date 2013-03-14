@@ -2443,7 +2443,7 @@ void ring_of_power(int dir)
  */
 static void do_cmd_activate_aux(int item)
 {
-	int k, dir, lev;
+	int lev;
 	object_type *o_ptr;
 
 
@@ -2472,11 +2472,7 @@ static void do_cmd_activate_aux(int item)
 	if (!can_use_device(lev, (bool)(o_ptr->ident & IDENT_CURSED)))
 	{
 		if (flush_failure) flush();
-#ifdef JP
-		msg_print("うまく始動させることができなかった。");
-#else
-		msg_print("You failed to activate it properly.");
-#endif
+		msg_print(_("うまく始動させることができなかった。", "You failed to activate it properly."));
  		sound(SOUND_STORE2);  /* (Sound substitute) HACK! No fail sound, use strore 2*/
 		return;
 	}
@@ -2484,27 +2480,18 @@ static void do_cmd_activate_aux(int item)
 	/* Check the recharge */
 	if (o_ptr->timeout)
 	{
-#ifdef JP
-		msg_print("それは微かに音を立て、輝き、消えた...");
-#else
-		msg_print("It whines, glows and fades...");
-#endif
+		msg_print(_("それは微かに音を立て、輝き、消えた...", "It whines, glows and fades..."));
 		return;
 	}
 
-
 	/* Activate the artifact */
-#ifdef JP
-	msg_print("始動させた...");
-#else
-	msg_print("You activate it...");
-#endif
+	msg_print(_("始動させた...", "You activate it..."));
 
 	/* Sound */
 	sound(SOUND_ACT_ARTIFACT);
 
-	/* Have specified activation */
-	if (o_ptr->xtra2)
+	/* Activate object */
+	if (activation_index(o_ptr))
 	{
 		(void)activate_random_artifact(o_ptr);
 
@@ -2515,314 +2502,9 @@ static void do_cmd_activate_aux(int item)
 		return;
 	}
 
-	/* Artifacts */
-	else if (o_ptr->name1)
-	{
-		/* Choose effect */
-		switch (o_ptr->name1)
-		{
-			case ART_JUDGE:
-			{
-#ifdef JP
-				msg_print("アーケン石はあなたの体力を奪った...");
-				take_hit(damroll(3,8), "スラインのアーケン石");
-				msg_print("アーケン石は赤く明るく光った！");
-#else
-				msg_print("The Arkenstone drains your vitality...");
-				take_hit(damroll(3, 8), "the Arkenstone of Thrain");
-				msg_print("The Arkenstone flashes bright red!");
-#endif
-				wiz_lite();
-#ifdef JP
-				if (get_check("帰還の力を使いますか？"))
-#else
-				if (get_check("Activate recall? "))
-#endif
-				{
-					word_of_recall();
-				}
-				o_ptr->timeout = randint0(20) + 20;
-				break;
-			}
-			case ART_POWER:
-			{
-#ifdef JP
-				msg_print("指輪は漆黒に輝いた...");
-#else
-				msg_print("The ring glows intensely black...");
-#endif
-				if (!get_aim_dir(&dir)) return;
-				ring_of_power(dir);
-				o_ptr->timeout = randint0(450) + 450;
-				break;
-			}
-			case ART_CELEBORN:
-			{
-#ifdef JP
-				msg_print("天国の歌が聞こえる...");
-#else
-				msg_print("A heavenly choir sings...");
-#endif
-				(void)set_poisoned(0);
-				(void)set_cut(0);
-				(void)set_stun(0);
-				(void)set_confused(0);
-				(void)set_blind(0);
-				(void)set_hero(p_ptr->hero + randint1(25) + 25);
-				(void)hp_player(777);
-				o_ptr->timeout = 300;
-				break;
-			}
-			case ART_HOLCOLLETH:
-			{
-#ifdef JP
-				msg_print("クロークが深いブルーに輝いた...");
-#else
-				msg_print("Your cloak glows deep blue...");
-#endif
-				sleep_monsters_touch();
-				o_ptr->timeout = 55;
-				break;
-			}
-			case ART_FINGOLFIN:
-			{
-#ifdef JP
-				msg_print("セスタスに魔法のトゲが現れた...");
-#else
-				msg_print("Your cesti grows magical spikes...");
-#endif
-				if (!get_aim_dir(&dir)) return;
-				fire_bolt(GF_ARROW, dir, 150);
-				o_ptr->timeout = randint0(90) + 90;
-				break;
-			}
-			case ART_NAIN:
-			{
-#ifdef JP
-				msg_print("つるはしが鼓動した...");
-#else
-				msg_print("Your mattock pulsates...");
-#endif
-				if (!get_aim_dir(&dir)) return;
-				wall_to_mud(dir);
-				o_ptr->timeout = 2;
-				break;
-			}
-			case ART_BRAND:
-			{
-#ifdef JP
-				msg_print("クロスボウが深紅に輝いた...");
-#else
-				msg_print("Your crossbow glows deep red...");
-#endif
-				(void)brand_bolts();
-				o_ptr->timeout = 999;
-				break;
-			}
-			case ART_PALANTIR:
-			{
-				monster_type *m_ptr;
-				monster_race *r_ptr;
-				int i;
-			
-#ifdef JP
-				msg_print("奇妙な場所が頭の中に浮かんだ．．．");
-#else
-				msg_print("Some strange places show up in your mind. And you see ...");
-#endif
-			
-				/* Process the monsters (backwards) */
-				for (i = m_max - 1; i >= 1; i--)
-				{
-					/* Access the monster */
-					m_ptr = &m_list[i];
-					
-					/* Ignore "dead" monsters */
-					if (!m_ptr->r_idx) continue;
-					
-					r_ptr = &r_info[m_ptr->r_idx];
-					
-					if(r_ptr->flags1 & RF1_UNIQUE)
-					{
-#ifdef JP
-						msg_format("%s． ",r_name + r_ptr->name);
-#else
-						msg_format("%s. ",r_name + r_ptr->name);
-#endif
-					}
-				}
-				o_ptr->timeout = 200;
-				break;
-			}
-			case ART_HURIN:
-			{
-				(void)set_fast(p_ptr->fast + randint1(50) + 50);
-				hp_player(10);
-				set_afraid(0);
-				set_hero(p_ptr->hero + randint1(50) + 50);
-				o_ptr->timeout = randint0(200) + 100;
-				break;
-			}
-			case ART_INCANUS:
-			{
-#ifdef JP
-				msg_print("ローブが純粋な魔力で震えた。");
-#else
-				msg_print("The robe pulsates with raw mana...");
-#endif
-				if (!get_aim_dir(&dir)) return;
-				fire_bolt(GF_MANA, dir, 120);
-				o_ptr->timeout = randint0(120) + 120;
-				break;
-			}
-			case ART_GIL_GALAD:
-			{
-#ifdef JP
-				msg_print("盾が眩しい光で輝いた．．．");
-#else
-				msg_print("Your shield gleams with blinding light...");
-#endif
-				fire_ball(GF_LITE, 0, 300, 6);
-				confuse_monsters(3 * p_ptr->lev / 2);
-				o_ptr->timeout = 250;
-				break;
-			}
-		}
-
-		/* Window stuff */
-		p_ptr->window |= (PW_INVEN | PW_EQUIP);
-
-		/* Done */
-		return;
-	}
-
-	/* Ego items */
-	else if (o_ptr->name2)
-	{
-		switch(o_ptr->name2)
-		{
-			case EGO_SEEING:
-				(void)detect_monsters_normal(DETECT_RAD_DEFAULT);
-				o_ptr->timeout = randint0(10) + 10;
-				break;
-			case EGO_BRAND_ACID:
-				if (!get_aim_dir(&dir)) break;
-				fire_ball(GF_ACID, dir, 100, 2);
-				(void)set_oppose_acid(p_ptr->oppose_acid + randint1(20) + 20);
-				o_ptr->timeout = randint0(50) + 50;
-				break;
-			case EGO_BRAND_COLD:
-				if (!get_aim_dir(&dir)) break;
-				fire_ball(GF_COLD, dir, 100, 2);
-				(void)set_oppose_cold(p_ptr->oppose_cold + randint1(20) + 20);
-				o_ptr->timeout = randint0(50) + 50;
-				break;
-			case EGO_BRAND_FIRE:
-				if (!get_aim_dir(&dir)) break;
-				fire_ball(GF_FIRE, dir, 100, 2);
-				(void)set_oppose_fire(p_ptr->oppose_fire + randint1(20) + 20);
-				o_ptr->timeout = randint0(50) + 50;
-				break;
-			case EGO_BRAND_ELEC:
-				if (!get_aim_dir(&dir)) break;
-				fire_ball(GF_ELEC, dir, 100, 2);
-				(void)set_oppose_elec(p_ptr->oppose_elec + randint1(20) + 20);
-				o_ptr->timeout = randint0(50) + 50;
-				break;
-			case EGO_BRAND_POIS:
-				if (!get_aim_dir(&dir)) break;
-				fire_ball(GF_POIS, dir, 100, 2);
-				(void)set_oppose_pois(p_ptr->oppose_pois + randint1(20) + 20);
-				o_ptr->timeout = randint0(50) + 50;
-				break;
-			case EGO_WEAP_LITE:
-			{
-				int num = damroll(5, 3);
-				int y, x;
-				int attempts;
-
-				for (k = 0; k < num; k++)
-				{
-					attempts = 1000;
-
-					while (attempts--)
-					{
-						scatter(&y, &x, py, px, 4, 0);
-						if (!cave_floor_bold(y, x)) continue;
-						if ((y != py) || (x != px)) break;
-					}
-
-					project(0, 0, y, x, damroll(6, 8), GF_LITE_WEAK,
-							  (PROJECT_BEAM | PROJECT_THRU | PROJECT_GRID | PROJECT_KILL));
-				}
-
-				o_ptr->timeout = randint0(50) + 50;
-				break;
-			}
-		}
-
-		/* Window stuff */
-		p_ptr->window |= (PW_INVEN | PW_EQUIP);
-
-		/* Done */
-		return;
-	}
-
-
-	else if (o_ptr->tval == TV_RING)
-	{
-		/* Get a direction for breathing (or abort) */
-		if (!get_aim_dir(&dir)) return;
-
-		switch (o_ptr->sval)
-		{
-			case SV_RING_ACID:
-			{
-				fire_ball(GF_ACID, dir, 100, 2);
-				(void)set_oppose_acid(p_ptr->oppose_acid + randint1(20) + 20);
-				o_ptr->timeout = randint0(50) + 50;
-				break;
-			}
-
-			case SV_RING_ICE:
-			{
-				fire_ball(GF_COLD, dir, 100, 2);
-				(void)set_oppose_cold(p_ptr->oppose_cold + randint1(20) + 20);
-				o_ptr->timeout = randint0(50) + 50;
-				break;
-			}
-
-			case SV_RING_FLAMES:
-			{
-				fire_ball(GF_FIRE, dir, 100, 2);
-				(void)set_oppose_fire(p_ptr->oppose_fire + randint1(20) + 20);
-				o_ptr->timeout = randint0(50) + 50;
-				break;
-			}
-
-			case SV_RING_ELEC:
-			{
-				fire_ball(GF_ELEC, dir, 100, 2);
-				(void)set_oppose_elec(p_ptr->oppose_elec + randint1(20) + 20);
-				o_ptr->timeout = randint0(50) + 50;
-				break;
-			}
-		}
-
-		/* Window stuff */
-		p_ptr->window |= (PW_INVEN | PW_EQUIP);
-
-		/* Success */
-		return;
-	}
-
 	/* Mistake */
-#ifdef JP
-	msg_print("おっと、このアイテムは始動できない。");
-#else
-	msg_print("Oops.  That object cannot be activated.");
-#endif
-
+	msg_print(_("おっと、このアイテムは始動できない。",
+		"Oops.  That object cannot be activated."));
 }
 
 
