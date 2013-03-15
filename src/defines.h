@@ -258,10 +258,11 @@
  * involving object and monster creation.  It must be at least 100.
  * Setting it below 128 may prevent the creation of some objects.
  */
-#define MAX_DEPTH       128
 #ifdef TINYANGBAND
-#define TINY_MAX_DEPTH   40
+#define MAX_DEPTH   40
 #define MORGOTH_DEPTH    27
+#else
+#define MAX_DEPTH       128
 #endif
 
 

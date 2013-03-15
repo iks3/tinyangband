@@ -1441,24 +1441,26 @@ errr parse_k_info(char *buf, header *head)
 	/* Process 'A' for "Allocation" (one line only) */
 	else if (buf[0] == 'A')
 	{
-		int i;
+		int i, l;
 
 		/* XXX XXX XXX Simply read each number following a colon */
 		for (i = 0, s = buf+1; s && (s[0] == ':') && s[1]; ++i)
 		{
-				/* Default chance */
+			/* Default chance */
 			k_ptr->chance[i] = 1;
 
-				/* Store the attack damage index */
-			k_ptr->locale[i] = atoi(s+1);
+			/* Store the attack damage index */
+			l = atoi(s+1);
+			if (l >= MAX_DEPTH) return (1);
+			k_ptr->locale[i] = l;
 
-				/* Find the slash */
+			/* Find the slash */
 			t = my_strchr(s+1, '/');
 
-				/* Find the next colon */
+			/* Find the next colon */
 			s = my_strchr(s+1, ':');
 
-				/* If the slash is "nearby", use it */
+			/* If the slash is "nearby", use it */
 			if (t && (!s || t < s))
 			{
 				int chance = atoi(t+1);

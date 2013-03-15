@@ -1807,17 +1807,17 @@ static s16b m_bonus(int max, int level)
 
 
 	/* Paranoia -- enforce maximal "level" */
-	if (level > TINY_MAX_DEPTH - 1) level = TINY_MAX_DEPTH - 1;
+	if (level > MAX_DEPTH - 1) level = MAX_DEPTH - 1;
 
 
 	/* The "bonus" moves towards the max */
-	bonus = ((max * level) / TINY_MAX_DEPTH);
+	bonus = ((max * level) / MAX_DEPTH);
 
 	/* Hack -- determine fraction of error */
-	extra = ((max * level) % TINY_MAX_DEPTH);
+	extra = ((max * level) % MAX_DEPTH);
 
 	/* Hack -- simulate floating point computations */
-	if (randint0(TINY_MAX_DEPTH) < extra) bonus++;
+	if (randint0(MAX_DEPTH) < extra) bonus++;
 
 
 	/* The "stand" is equal to one quarter of the max */
@@ -2260,7 +2260,7 @@ static void a_m_aux_1(object_type *o_ptr, int level, int power)
 			else if (power < -1)
 			{
 				/* Roll for ego-item */
-				if ((randint0(TINY_MAX_DEPTH) < level) || (power < -2))
+				if ((randint0(MAX_DEPTH) < level) || (power < -2))
 				{
 					while (1)
 					{
@@ -2340,7 +2340,7 @@ static void a_m_aux_1(object_type *o_ptr, int level, int power)
 			else if (power < -1)
 			{
 				/* Roll for ego-item */
-				if ((randint0(TINY_MAX_DEPTH) < level) || (power < -2))
+				if ((randint0(MAX_DEPTH) < level) || (power < -2))
 				{
 					o_ptr->name2 = get_random_ego(INVEN_AMMO, FALSE, level);
 				}
@@ -3361,7 +3361,7 @@ void apply_magic(object_type *o_ptr, int lev, bool okay, bool good, bool great, 
 	int i, rolls, f1, f2, power;
 
 	/* Maximum "level" for various things */
-	if (lev > TINY_MAX_DEPTH - 1) lev = TINY_MAX_DEPTH - 1;
+	if (lev > MAX_DEPTH - 1) lev = MAX_DEPTH - 1;
 
 
 	/* Base chance of being "good" */
@@ -4492,7 +4492,7 @@ void pick_trap(int y, int x)
 		if (p_ptr->inside_arena || quest_number(dun_level)) continue;
 
 		/* Hack -- no trap doors on the deepest level */
-		if (dun_level >= TINY_MAX_DEPTH-1) continue;
+		if (dun_level >= MAX_DEPTH-1) continue;
 
 		break;
 	}

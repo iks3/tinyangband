@@ -261,7 +261,7 @@ static void sense_magic(void)
 static void pattern_teleport(void)
 {
 	int min_level = 0;
-	int max_level = TINY_MAX_DEPTH - 1;
+	int max_level = MAX_DEPTH - 1;
 
 	/* Ask for level */
 #ifdef JP
