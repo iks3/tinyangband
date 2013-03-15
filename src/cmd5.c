@@ -40,13 +40,13 @@ static const char *spell_tips[MAX_REALM][MAX_SPELLS] =
 		"弱い魔法の矢を放つ。",
 		"近距離のテレポートをする。",
 		"近くの全ての見えるモンスターを感知する。",
-		"光源が照らしている範囲か部屋全体を永久に明るくする。",
 		"遠距離のテレポートをする。",
 		"魔法の球を放つ。",
 		"周辺の地形を感知する。",
 		"モンスター1体をテレポートさせる。抵抗されると無効。",
+		"小さな分解の球を放つ。壁も分解できる。",
 
-		"壁を溶かして床にする。",
+		"一定時間、武器に火炎属性を与える。",
 		"地上にいるときはダンジョンの最深階へ、ダンジョンにいるときは地上へと移動する。",
 		"アイテムを1つ識別する。",
 		"生物に有効な強力な矢を放つ。",
@@ -79,13 +79,13 @@ static const char *spell_tips[MAX_REALM][MAX_SPELLS] =
 		"Fires a weak bolt of magic.",
 		"Teleport short distance.",
 		"Detects all monsters in your vicinity unless invisible.",
-		"Lights up nearby area and the inside of a room permanently.",
 		"Teleport long distance.",
 		"Fires a ball of magic.",
 		"Maps nearby area.",
 		"Teleports all monsters on the line away unless resisted.",
+		"Fires a tiny ball of disintegrate. Be able to turn one rock square to floor.",
 
-		"Turns one rock square to mud.",
+		"Gives fire brand to a weapon for a while.",
 		"Recalls player from dungeon to town, or from town to the deepest level of dungeon.",
 		"Identifies an item.",
 		"Fires a beam of drain life.",
@@ -834,13 +834,10 @@ static bool cast_sorcery_spell(int spell)
 	case 2: /* Detect Monsters */
 		(void)detect_monsters_normal(DETECT_RAD_DEFAULT);
 		break;
-	case 3: /* Light Area */
-		(void)lite_area(damroll(2, (plev / 2)), (plev / 10) + 1);
-		break;
-	case 4: /* Teleport Self */
+	case 3: /* Teleport Self */
 		teleport_player(plev * 5);
 		break;
-	case 5: /* Manaburst */
+	case 4: /* Manaburst */
 		if (!get_aim_dir(&dir)) return FALSE;
 
 		fire_ball(GF_MISSILE, dir,
@@ -850,18 +847,21 @@ static bool cast_sorcery_spell(int spell)
 			/* Shouldn't actually use GF_MANA, as it will destroy all
 			 * items on the floor */
 		break;
-	case 6: /* Magic Mapping */
+	case 5: /* Magic Mapping */
 		map_area(DETECT_RAD_MAP);
 		break;
-	case 7: /* Teleport Other */
+	case 6: /* Teleport Other */
 		if (!get_aim_dir(&dir)) return FALSE;
 		(void)fire_beam(GF_AWAY_ALL, dir, plev);
 		break;
+	case 7:
+		if (!get_aim_dir(&dir)) return FALSE;
+		(void)fire_ball(GF_DISINTEGRATE, dir, (50 + plev * 2), 0);
+		break;
 
 		/*** Second Book ***/
-	case 8: /* Stone to Mud */
-		if (!get_aim_dir(&dir)) return FALSE;
-		(void)wall_to_mud(dir);
+	case 8: /* Fire Brand */
+		(void)set_tim_brand(randint1(20) + 20, TR1_BRAND_FIRE);
 		break;
 	case 9: /* Word of Recall */
 		word_of_recall();
@@ -870,7 +870,7 @@ static bool cast_sorcery_spell(int spell)
 		return ident_spell();
 	case 11: /* Bolt of Drain Life */
 		if (!get_aim_dir(&dir)) return FALSE;
-		fire_bolt(GF_OLD_DRAIN, dir, 70 + p_ptr->lev * 2);
+		fire_bolt(GF_OLD_DRAIN, dir, 90 + p_ptr->lev * 2);
 		break;
 	case 12: /* Sense Minds */
 		(void)set_tim_esp(p_ptr->tim_esp + randint1(30) + 25);
@@ -883,8 +883,8 @@ static bool cast_sorcery_spell(int spell)
 		break;
 	case 15: /* Hell Fire */
 		if (!get_aim_dir(&dir)) return FALSE;
-		fire_ball(GF_HELL_FIRE, dir, 111 + (plev * 6), 4);
-		take_hit(7 + randint1(13), "呪文を唱えた疲労");
+		fire_ball(GF_HELL_FIRE, dir, 150 + (plev * 6), 4);
+		take_hit(7 + randint1(10), "呪文を唱えた疲労");
 		break;
 	default:
 #ifdef JP

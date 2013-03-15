@@ -1908,24 +1908,24 @@ cptr spell_names[MAX_REALM][MAX_SPELLS] =
 		"マジック・ミサイル",
 		"ショートテレポート",
 		"モンスター感知",
-		"ライト・エリア",
 		"テレポート",
 		"魔力炸裂",
 		"魔法の地図",
 		"テレポート・アウェイ",
+		"岩砕き",
 #else
 		"Magic Missile",
 		"Phase Door",
 		"Detect Monsters",
-		"Light Area",
 		"Teleport",
 		"Mana Burst",
 		"Magic Mapping",
 		"Teleport Away",
+		"Rock Smash",
 #endif
 
 #ifdef JP
-		"岩石溶解",
+		"火炎の武器",
 		"帰還",
 		"鑑定",
 		"衰弱の矢",
@@ -1934,7 +1934,7 @@ cptr spell_names[MAX_REALM][MAX_SPELLS] =
 		"全感知",
 		"地獄の劫火",
 #else
-		"Stone to Mud",
+		"Fire Brand",
 		"Word of Recall",
 		"Identify",
 		"Drain Bolt",
