@@ -362,7 +362,7 @@ void do_cmd_toggle_search(void)
 /*
  * Determine if a grid contains a chest
  */
-static s16b chest_check(int y, int x)
+static s16b chest_check(int y, int x, bool trapped)
 {
 	cave_type *c_ptr = &cave[y][x];
 
@@ -382,8 +382,13 @@ static s16b chest_check(int y, int x)
 		/* Skip unknown chests XXX XXX */
 		/* if (!(o_ptr->marked & OM_FOUND)) continue; */
 
-		/* Check for chest */
-		if (o_ptr->tval == TV_CHEST) return (this_o_idx);
+		/* Check for non empty chest */
+		if ((o_ptr->tval == TV_CHEST) &&
+			(((!trapped) && (o_ptr->pval)) || /* non empty */
+			((trapped) && (o_ptr->pval > 0)))) /* trapped only */
+		{
+			return (this_o_idx);
+		}
 	}
 
 	/* No chest */
@@ -750,7 +755,7 @@ static int count_chests(int *y, int *x, bool trapped)
 		int xx = px + ddx_ddd[d];
 
 		/* No (visible) chest is there */
-		if ((o_idx = chest_check(yy, xx)) == 0) continue;
+		if ((o_idx = chest_check(yy, xx, FALSE)) == 0) continue;
 
 		/* Grab the object */
 		o_ptr = &o_list[o_idx];
@@ -971,7 +976,7 @@ void do_cmd_open(void)
 		c_ptr = &cave[y][x];
 
 		/* Check for chest */
-		o_idx = chest_check(y, x);
+		o_idx = chest_check(y, x, FALSE);
 
 		/* Nothing useful */
 		if (!((c_ptr->feat >= FEAT_DOOR_HEAD) &&
@@ -2047,7 +2052,7 @@ void do_cmd_disarm(void)
 		c_ptr = &cave[y][x];
 
 		/* Check for chests */
-		o_idx = chest_check(y, x);
+		o_idx = chest_check(y, x, TRUE);
 
 		/* Disarm a trap */
 		if (!is_trap(c_ptr->feat) && !o_idx)

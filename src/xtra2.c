@@ -3591,6 +3591,7 @@ msg_print("あなたは混乱している。");
 bool get_rep_dir_aux(int *dp, bool under)
 {
 	int dir;
+	cptr prompt;
 
 	/* Repeat previous command */
 	if (repeat_pull(dp))
@@ -3604,24 +3605,36 @@ bool get_rep_dir_aux(int *dp, bool under)
 	/* Global direction */
 	dir = command_dir;
 
+	if (under)
+	{
+		prompt = _("方向 ('.'足元, ESCで中断)? ", "Direction ('.' at feet, Escape to cancel)? ");
+	}
+	else
+	{
+		prompt = _("方向 (ESCで中断)? ", "Direction (Escape to cancel)? ");
+	}
+
 	/* Get a direction */
 	while (!dir)
 	{
 		char ch;
 
 		/* Get a command (or Cancel) */
-#ifdef JP
-if (!get_com("方向 (ESCで中断)? ", &ch)) break;
-#else
-		if (!get_com("Direction (Escape to cancel)? ", &ch)) break;
-#endif
+		if (!get_com(prompt, &ch)) break;
 
+		/* Look down */
+		if ((under) && ((ch == '5') || (ch == '-') || (ch == '.')))
+		{
+			dir = 5;
+		}
+		else
+		{
+			/* Look up the direction */
+			dir = get_keymap_dir(ch);
 
-		/* Look up the direction */
-		dir = get_keymap_dir(ch);
-
-		/* Oops */
-		if (!dir) bell();
+			/* Oops */
+			if (!dir) bell();
+		}
 	}
 
 	/* Prevent weirdness */
@@ -3648,12 +3661,7 @@ if (!get_com("方向 (ESCで中断)? ", &ch)) break;
 	if (command_dir != dir)
 	{
 		/* Warn the user */
-#ifdef JP
-msg_print("あなたは混乱している。");
-#else
-		msg_print("You are confused.");
-#endif
-
+		msg_print(_("あなたは混乱している。", "You are confused."));
 	}
 
 	/* Save direction */
