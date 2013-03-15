@@ -2312,7 +2312,7 @@ bool place_monster_aux(int y, int x, int r_idx, bool slp, bool grp, bool friendl
 		/* Try to place several "escorts" */
 		for (i = 0; i < 50; i++)
 		{
-			int nx, ny, z, d = 3;
+			int nx, ny, z, d = 2;
 
 			/* Pick a location */
 			scatter(&ny, &nx, y, x, d, 0);
