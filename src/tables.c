@@ -3520,7 +3520,7 @@ const activation_type activation_info[] =
 	/* Offencive Effects */
 	{ "AGGRAVATE", ACT_AGGRAVATE, 0, 100, 0, {0, 0},
 	  _("モンスターを怒らせる", "aggravete monsters") },
-	{ "TERROR", ACT_TERROR, 10, 2500, 80, {-1, 0},
+	{ "TERROR", ACT_TERROR, 10, 2500, 80, {10, 0},
 	  _("恐慌", "terror") },
 	{ "CONFUSE", ACT_CONFUSE, 10, 500, 80, {10, 0},
 	  _("パニック・モンスター", "confuse monster") },
