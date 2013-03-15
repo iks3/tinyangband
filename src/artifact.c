@@ -181,10 +181,10 @@ void one_ability(object_type *o_ptr)
 
 static void curse_artifact(object_type * o_ptr)
 {
-	if (o_ptr->pval) o_ptr->pval = 0 - (o_ptr->pval + randint1(4));
-	if (o_ptr->to_a) o_ptr->to_a = 0 - (o_ptr->to_a + randint1(4));
-	if (o_ptr->to_h) o_ptr->to_h = 0 - (o_ptr->to_h + randint1(4));
-	if (o_ptr->to_d) o_ptr->to_d = 0 - (o_ptr->to_d + randint1(4));
+	if (o_ptr->pval) o_ptr->pval = 0 - (s16b)(o_ptr->pval + randint1(4));
+	if (o_ptr->to_a) o_ptr->to_a = 0 - (s16b)(o_ptr->to_a + randint1(4));
+	if (o_ptr->to_h) o_ptr->to_h = 0 - (s16b)(o_ptr->to_h + randint1(4));
+	if (o_ptr->to_d) o_ptr->to_d = 0 - (s16b)(o_ptr->to_d + randint1(4));
 
 	o_ptr->art_flags3 |= (TR3_HEAVY_CURSE | TR3_CURSED);
 
@@ -834,7 +834,7 @@ static void random_misc(object_type * o_ptr)
 			if (o_ptr->tval >= TV_BOOTS && o_ptr->tval <= TV_DRAG_ARMOR)
 				random_misc(o_ptr);
 			else
-				o_ptr->to_a = 4 + randint1(11);
+				o_ptr->to_a = 4 + (s16b)randint1(11);
 			break;
 		case 27:
 			o_ptr->art_flags3 |= TR3_SHOW_MODS;
@@ -1511,11 +1511,11 @@ bool create_artifact(object_type *o_ptr, bool a_scroll)
 
 	/* give it some plusses... ( except Amulets and Rings ) */
 	if (o_ptr->tval >= TV_BOOTS && o_ptr->tval <= TV_DRAG_ARMOR)
-		o_ptr->to_a += randint1(o_ptr->to_a > 19 ? 1 : 20 - o_ptr->to_a);
+		o_ptr->to_a += (s16b)randint1(o_ptr->to_a > 19 ? 1 : 20 - o_ptr->to_a);
 	else if (o_ptr->tval <= TV_SWORD)
 	{
-		o_ptr->to_h += randint1(o_ptr->to_h > 19 ? 1 : 20 - o_ptr->to_h);
-		o_ptr->to_d += randint1(o_ptr->to_d > 19 ? 1 : 20 - o_ptr->to_d);
+		o_ptr->to_h += (s16b)randint1(o_ptr->to_h > 19 ? 1 : 20 - o_ptr->to_h);
+		o_ptr->to_d += (s16b)randint1(o_ptr->to_d > 19 ? 1 : 20 - o_ptr->to_d);
 	}
 
 	/* Just to be sure */
@@ -1668,7 +1668,7 @@ const activation_type* find_activation_info(const object_type *o_ptr)
 bool activate_random_artifact(object_type * o_ptr)
 {
 	int plev = p_ptr->lev;
-	int k, dir, dummy;
+	int k, dir;
 	const activation_type* const act_ptr = find_activation_info(o_ptr);
 
 	/* Paranoia */
@@ -2480,7 +2480,7 @@ bool create_nazgul_ring(object_type *o_ptr)
 	/* give it some plusses... */
 	o_ptr->pval = (one_in_(5)) ? 2 : 1;
 	o_ptr->to_a = 0;
-	o_ptr->to_h = randint0(3) + 10;
+	o_ptr->to_h = (s16b)randint0(3) + 10;
 	o_ptr->to_d = o_ptr->to_h;
 
 	/* Just to be sure */
