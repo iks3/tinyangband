@@ -4641,7 +4641,7 @@ if (fuzzy) msg_print("何かとても熱いものでで攻撃された！");
 
 			if (p_ptr->resist_neth)
 			{
-				dam *= 6; dam /= (randint1(6) + 6);
+				dam *= 5; dam /= (randint1(6) + 6);
 			}
 			else
 			{
