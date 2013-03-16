@@ -2191,6 +2191,12 @@ bool activate_random_artifact(object_type * o_ptr)
 			earthquake(py, px, 10);
 			break;
 		}
+		case ACT_DETECT_MONSTERS:
+		{
+			detect_monsters_invis(DETECT_RAD_DEFAULT);
+			detect_monsters_normal(DETECT_RAD_DEFAULT);
+			break;
+		}
 
 		default:
 		{

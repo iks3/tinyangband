@@ -2593,7 +2593,11 @@ static void a_m_aux_2(object_type *o_ptr, int level, int power)
 					case EGO_LORDLINESS:
 						break;
 					case EGO_SEEING:
-						if (one_in_(3)) o_ptr->art_flags3 |= TR3_ACTIVATE;
+						if (one_in_(3))
+						{
+							o_ptr->art_flags3 |= TR3_ACTIVATE;
+							o_ptr->xtra2 = ACT_DETECT_MONSTERS;
+						}
 						if (one_in_(3)) o_ptr->art_flags3 |= TR3_TELEPATHY;
 						break;
 					default:/* not existing crown (wisdom,lite, etc...) */
@@ -2666,7 +2670,11 @@ static void a_m_aux_2(object_type *o_ptr, int level, int power)
 						}
 						break;
 					case EGO_SEEING:
-						if (one_in_(7)) o_ptr->art_flags3 |= TR3_ACTIVATE;
+						if (one_in_(7))
+						{
+							o_ptr->art_flags3 |= TR3_ACTIVATE;
+							o_ptr->xtra2 = ACT_DETECT_MONSTERS;
+						}
 						if (one_in_(7)) o_ptr->art_flags3 |= TR3_TELEPATHY;
 						break;
 					default:/* not existing helm (Magi, Might, etc...)*/

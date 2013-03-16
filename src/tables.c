@@ -3621,6 +3621,8 @@ const activation_type activation_info[] =
 	  _("刃先のファイア・ボルト", "fire branding of bolts") },
 	{ "QUAKE", ACT_QUAKE, 10, 600, 101, {20, 0},
 	  _("地震", "earthquake") },
+	{ "DETECT_MONSTERS", ACT_DETECT_MONSTERS, 10, 1000, 70, {10, 10},
+	  _("モンスター感知", "detect monsters") },
 
 	{ NULL, 0, 0, 0, 101, {0, 0},
 	  "" }

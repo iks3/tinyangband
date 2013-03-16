@@ -1115,6 +1115,7 @@
 #define ACT_TELEKINESIS         89
 #define ACT_BRAND_FIRE_BOLTS    90
 #define ACT_QUAKE               91
+#define ACT_DETECT_MONSTERS     92
 
 
 
