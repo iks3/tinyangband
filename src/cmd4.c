@@ -1446,7 +1446,8 @@ static void do_cmd_options_win(void)
 				if (x == 0) break;
 
 				/* Set flag */
-				window_flag[x] |= (1L << y);
+				/* window_flag[x] |= (1L << y); */
+				window_flag[x] = (1L << y);
 				break;
 			}
 
