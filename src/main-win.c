@@ -5377,25 +5377,15 @@ LRESULT FAR PASCAL AngbandListProc(HWND hWnd, UINT uMsg,
 			return 0;
 		}
 
-		case WM_NCLBUTTONDOWN:
+		case WM_CLOSE:
 		{
-
-#ifdef HTCLOSE
-			if (wParam == HTCLOSE) wParam = HTSYSMENU;
-#endif /* HTCLOSE */
-
-			if (wParam == HTSYSMENU)
+			if (td->visible)
 			{
-				if (td->visible)
-				{
-					td->visible = FALSE;
-					ShowWindow(td->w, SW_HIDE);
-				}
-
-				return 0;
+				td->visible = FALSE;
+				ShowWindow(td->w, SW_HIDE);
 			}
 
-			break;
+			return 0;
 		}
 	}
 
