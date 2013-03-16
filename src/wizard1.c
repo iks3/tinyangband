@@ -1203,7 +1203,11 @@ static void object_analyze(object_type *o_ptr, obj_desc_list *desc_ptr)
 
 	analyze_misc(o_ptr, desc_ptr->misc_desc);
 
-	desc_ptr->activation = item_activation(o_ptr);
+	desc_ptr->activation = NULL;
+	if (activation_index(o_ptr))
+	{
+		desc_ptr->activation = item_activation(o_ptr);
+	}
 }
 
 static void print_header(void)
