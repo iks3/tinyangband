@@ -3638,274 +3638,143 @@ void pause_line(int row)
  */
 typedef struct
 {
-	cptr name;
 	byte cmd;
+	byte rkey; /* Rouge Key for Prompt */
 	bool fin;
+	cptr name;
 } menu_naiyou;
 
 static menu_naiyou menu_info[10][10] =
 {
-#ifdef JP
 	{
-		{"魔法/特殊能力", 1, FALSE},
-		{"行動", 2, FALSE},
-		{"道具(使用)", 3, FALSE},
-		{"道具(その他)", 4, FALSE},
-		{"装備", 5, FALSE},
-		{"扉/箱", 6, FALSE},
-		{"情報", 7, FALSE},
-		{"設定", 8, FALSE},
-		{"その他", 9, FALSE},
-		{"", 0, FALSE},
+		{1, 1, FALSE, _("魔法/特殊能力", "Magic/Special") },
+		{2, 2, FALSE, _("行動", "Action") },
+		{3, 3, FALSE, _("道具(使用)", "Items(use)") },
+		{4, 4, FALSE, _("道具(その他)", "Items(other)") },
+		{5, 5, FALSE, _("装備", "Equip") },
+		{6, 6, FALSE, _("扉/箱", "Door/Box") },
+		{7, 7, FALSE, _("情報", "Informations") },
+		{8, 8, FALSE, _("設定", "Options") },
+		{9, 9, FALSE, _("その他", "Other commands") },
+		{ 0, 0, FALSE, "" },
 	},
 
 	{
-		{"使う(m)", 'm', TRUE},
-		{"調べる(b/P)", 'b', TRUE},
-		{"覚える(G)", 'G', TRUE},
-		{"特殊能力を使う(U/O)", 'U', TRUE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE}
+		{ 'm', 'm', TRUE, _("使う", "Use") },
+		{ 'b', 'P', TRUE, _("調べる", "See tips") },
+		{ 'G', 'G', TRUE, _("覚える", "Study") },
+		{ 'U', 'O', TRUE, _("特殊能力を使う", "Special abilities") },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" }
 	},
 
 	{
-		{"休息する(R)", 'R', TRUE},
-		{"罠を解除する(D)", 'D', TRUE},
-		{"罠/隠し扉を探す(s)", 's', TRUE},
-		{"周りを調べる(l/x)", 'l', TRUE},
-		{"ターゲット指定(*)", '*', TRUE},
-		{"穴を掘る(T/^t)", 'T', TRUE},
-		{"階段を上る(<)", '<', TRUE},
-		{"階段を下りる(>)", '>', TRUE},
-		{"ペットに命令する(p)", 'p', TRUE},
-		{"探索モードのON/OFF(S/#)", 'S', TRUE}
+		{ 'R', 'R', TRUE, _("休息する", "Rest") },
+		{ 'D', 'D', TRUE, _("罠を解除する", "Disarm a trap") },
+		{ 's', 's', TRUE, _("罠/隠し扉を探す", "Search") },
+		{ 'l', 'x', TRUE, _("周りを調べる", "Look") },
+		{ '*', '*', TRUE, _("ターゲット指定", "Target") },
+		{ 'T', KTRL('t'), TRUE, _("穴を掘る", "Dig") },
+		{ '<', '<', TRUE, _("階段を上る", "Go up stairs") },
+		{ '>', '>', TRUE, _("階段を下りる", "Go down stairs") },
+		{ 'p', 'p', TRUE, _("ペットに命令する", "Command pets") },
+		{ 'S', '#', TRUE, _("探索モードのON/OFF", "Search mode ON/OFF") }
 	},
 
 	{
-		{"巻物を読む(r)", 'r', TRUE},
-		{"薬を飲む(q)", 'q', TRUE},
-		{"スタッフを使う(u/Z)", 'u', TRUE},
-		{"ワンドで狙う(a/z)", 'a', TRUE},
-		{"ロッドを振る(z/a)", 'z', TRUE},
-		{"始動する(A)", 'A', TRUE},
-		{"食べる(E)", 'E', TRUE},
-		{"飛び道具で撃つ(f/t)", 'f', TRUE},
-		{"投げる(v)", 'v', TRUE},
-		{"", 0, FALSE}
+		{ 'r', 'r', TRUE, _("巻物を読む", "Read a scroll") },
+		{ 'q', 'q', TRUE, _("薬を飲む", "Drink a potion") },
+		{ 'u', 'Z', TRUE, _("スタッフを使う", "Use a staff") },
+		{ 'a', 'z', TRUE, _("ワンドで狙う", "Aim a wand") },
+		{ 'z', 'a', TRUE, _("ロッドを振る", "Zap a rod") },
+		{ 'A', 'A', TRUE, _("始動する", "Activate an equipment") },
+		{ 'E', 'E', TRUE, _("食べる", "Eat") },
+		{ 'f', 't', TRUE, _("飛び道具で撃つ", "Fire missile weapon") },
+		{ 'v', 'v', TRUE, _("投げる", "Throw an item") },
+		{ 0, 0, FALSE, "" }
 	},
 
 	{
-		{"拾う(g)", 'g', TRUE},
-		{"落とす(d)", 'd', TRUE},
-		{"壊す(k/^d)", 'k', TRUE},
-		{"銘を刻む({)", '{', TRUE},
-		{"銘を消す(})", '}', TRUE},
-		{"調査(I)", 'I', TRUE},
-		{"アイテム一覧(i)", 'i', TRUE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE}
+		{ 'g', 'g', TRUE, _("拾う", "Get items") },
+		{ 'd', 'd', TRUE, _("落とす", "Drop an item") },
+		{ 'k', 'k', TRUE, _("壊す", "Destroy an item") },
+		{ '{', '{', TRUE, _("銘を刻む", "Inscribe an item") },
+		{ '}', '}', TRUE, _("銘を消す", "Uninscribe an item") },
+		{ 'I', 'I', TRUE, _("調査", "Info about an item") },
+		{ 'i', 'i', TRUE, _("アイテム一覧", "Inventory list") },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" }
 	},
 
 	{
-		{"装備する(w)", 'w', TRUE},
-		{"装備を外す(t/T)", 't', TRUE},
-		{"燃料を補給(F)", 'F', TRUE},
-		{"装備一覧(e)", 'e', TRUE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE}
+		{ 'w', 'w', TRUE, _("装備する", "Wear") },
+		{ 't', 'T', TRUE, _("装備を外す", "Take off") },
+		{ 'F', 'F', TRUE, _("燃料を補給", "Refuel") },
+		{ 'e', 'e', TRUE, _("装備一覧", "Equipment list") },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" }
 	},
 
 	{
-		{"開ける(o)", 'o', TRUE},
-		{"閉じる(c)", 'c', TRUE},
-		{"体当たりする(B/f)", 'B', TRUE},
-		{"くさびを打つ(j/S)", 'j', TRUE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE}
+		{ 'o', 'o', TRUE, _("開ける", "Open") },
+		{ 'c', 'c', TRUE, _("閉じる", "Close") },
+		{ 'B', 'f', TRUE, _("体当たりする", "Bash a door") },
+		{ 'j', 'S', TRUE, _("くさびを打つ", "Jam a door") },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" }
 	},
 
 	{
-		{"ダンジョンの全体図(M)", 'M', TRUE},
-		{"位置を確認(L/W)", 'L', TRUE},
-		{"階の雰囲気(^f)", KTRL('F'), TRUE},
-		{"ステータス(C)", 'C', TRUE},
-		{"文字の説明(/)", '/', TRUE},
-		{"メッセージ履歴(^p)", KTRL('P'), TRUE},
-		{"現在の時刻(^t/')", KTRL('T'), TRUE},
-		{"現在の知識(~)", '~', TRUE},
-		{"", 0, FALSE},
-		{"", 0, FALSE}
+		{ 'M', 'M', TRUE, _("ダンジョンの全体図", "Full map") },
+		{ 'L', 'W', TRUE, _("位置を確認", "Map") },
+		{ KTRL('F'), KTRL('F'), TRUE, _("階の雰囲気", "Level feeling") },
+		{ 'C', 'C', TRUE, _("ステータス", "Character status") },
+		{ '/', '/', TRUE, _("文字の説明", "Identify symbol") },
+		{ KTRL('P'), KTRL('P'), TRUE, _("メッセージ履歴", "Show prev messages") },
+		{ KTRL('T'), KTRL('T'), TRUE,_("現在の時刻", "Current time") },
+		{ '~', '~', TRUE, _("現在の知識", "Various informations") },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" }
 	},
 
 	{
-		{"オプション(=)", '=', TRUE},
-		{"マクロ(@)", '@', TRUE},
-		{"画面表示(%)", '%', TRUE},
-		{"カラー(&)", '&', TRUE},
-		{"設定変更コマンド(\")", '\"', TRUE},
-		{"自動拾いをロード($)", '$', TRUE},
-		{"システム(!)", '!', TRUE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE}
+		{ '=', '=', TRUE, _("オプション", "Set options") },
+		{ '@', '@', TRUE, _("マクロ", "Interact with macros") },
+		{ 0, 0, FALSE, _("自動拾い設定", "Auto-pickup editor") },
+		{ '%', '%', TRUE, _("画面表示", "Interact w/ visuals") },
+		{ '&', '&', TRUE, _("カラー", "Interact with colors(&)") },
+		{ '$', '$', TRUE, _("自動拾いをロード", "Reload auto-pick pref") },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" }
 	},
 
 	{
-		{"セーブ&中断(^x)", KTRL('X'), TRUE},
-		{"セーブ(^s)", KTRL('S'), TRUE},
-		{"ヘルプ(?)", '?', TRUE},
-		{"再描画(^r)", KTRL('R'), TRUE},
-		{"メモ(:)", ':', TRUE},
-		{"記念撮影())", ')', TRUE},
-		{"記念撮影の表示(()", '(', TRUE},
-		{"バージョン情報(V)", 'V', TRUE},
-		{"引退する(Q)", 'Q', TRUE},
-		{"", 0, FALSE}
-	},
-#else
-	{
-		{"Magic/Special", 1, FALSE},
-		{"Action", 2, FALSE},
-		{"Items(use)", 3, FALSE},
-		{"Items(other)", 4, FALSE},
-		{"Equip", 5, FALSE},
-		{"Door/Box", 6, FALSE},
-		{"Informations", 7, FALSE},
-		{"Options", 8, FALSE},
-		{"Other commands", 9, FALSE},
-		{"", 0, FALSE},
-	},
-
-	{
-		{"Use(m)", 'm', TRUE},
-		{"See tips(b/P)", 'b', TRUE},
-		{"Study(G)", 'G', TRUE},
-		{"Special abilities(U/O)", 'U', TRUE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE}
-	},
-
-	{
-		{"Rest(R)", 'R', TRUE},
-		{"Disarm a trap(D)", 'D', TRUE},
-		{"Search(s)", 's', TRUE},
-		{"Look(l/x)", 'l', TRUE},
-		{"Target(*)", '*', TRUE},
-		{"Dig(T/^t)", 'T', TRUE},
-		{"Go up stairs(<)", '<', TRUE},
-		{"Go down stairs(>)", '>', TRUE},
-		{"Command pets(p)", 'p', TRUE},
-		{"Search mode ON/OFF(S/#)", 'S', TRUE}
-	},
-
-	{
-		{"Read a scroll(r)", 'r', TRUE},
-		{"Drink a potion(q)", 'q', TRUE},
-		{"Use a staff(u/Z)", 'u', TRUE},
-		{"Aim a wand(a/z)", 'a', TRUE},
-		{"Zap a rod(z/a)", 'z', TRUE},
-		{"Activate an equipment(A)", 'A', TRUE},
-		{"Eat(E)", 'E', TRUE},
-		{"Fire missile weapon(f/t)", 'f', TRUE},
-		{"Throw an item(v)", 'v', TRUE},
-		{"", 0, FALSE}
-	},
-
-	{
-		{"Get items(g)", 'g', TRUE},
-		{"Drop an item(d)", 'd', TRUE},
-		{"Destroy an item(k/^d)", 'k', TRUE},
-		{"Inscribe an item({)", '{', TRUE},
-		{"Uninscribe an item(})", '}', TRUE},
-		{"Info about an item(I)", 'I', TRUE},
-		{"Inventory list(i)", 'i', TRUE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE}
-	},
-
-	{
-		{"Wear(w)", 'w', TRUE},
-		{"Take off(t/T)", 't', TRUE},
-		{"Refuel(F)", 'F', TRUE},
-		{"Equipment list(e)", 'e', TRUE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE}
-	},
-
-	{
-		{"Open(o)", 'o', TRUE},
-		{"Close(c)", 'c', TRUE},
-		{"Bash a door(B/f)", 'B', TRUE},
-		{"Jam a door(j/S)", 'j', TRUE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE}
-	},
-
-	{
-		{"Full map(M)", 'M', TRUE},
-		{"Map(L/W)", 'L', TRUE},
-		{"Level feeling(^f)", KTRL('F'), TRUE},
-		{"Character status(C)", 'C', TRUE},
-		{"Identify symbol(/)", '/', TRUE},
-		{"Show prev messages(^p)", KTRL('P'), TRUE},
-		{"Current time(^t/')", KTRL('T'), TRUE},
-		{"Various informations(~)", '~', TRUE},
-		{"Play record menu(|)", '|', TRUE},
-		{"", 0, FALSE}
-	},
-
-	{
-		{"Set options(=)", '=', TRUE},
-		{"Interact with macros(@)", '@', TRUE},
-		{"Interact w/ visuals(%)", '%', TRUE},
-		{"Interact with colors(&)", '&', TRUE},
-		{"Enter a user pref(\")", '\"', TRUE},
-		{"Reload auto-pick pref($)", '$', TRUE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE},
-		{"", 0, FALSE}
-	},
-
-	{
-		{"Save and quit(^x)", KTRL('X'), TRUE},
-		{"Save(^s)", KTRL('S'), TRUE},
-		{"Help(obsoleted)(?)", '?', TRUE},
-		{"Redraw(^r)", KTRL('R'), TRUE},
-		{"Take note(:)", ':', TRUE},
-		{"Dump screen dump(()", ')', TRUE},
-		{"Load screen dump())", '(', TRUE},
-		{"Version info(V)", 'V', TRUE},
-		{"Quit(Q)", 'Q', TRUE},
-		{"", 0, FALSE}
-	},
-#endif
+		{ KTRL('X'), KTRL('X'), TRUE, _("セーブ&中断", "Save and quit") },
+		{ KTRL('S'), KTRL('S'), TRUE, _("セーブ", "Save") },
+		{ KTRL('R'), KTRL('R'), TRUE, _("再描画", "Redraw") },
+		{ '?', '?', TRUE, _("ヘルプ", "Help") },
+		{ ':', ':', TRUE, _("メモ", "Take note") },
+		{ ')', ')', TRUE, _("記念撮影", "Dump screen dump") },
+		{ '(', '(', TRUE, _("記念撮影の表示", "Load screen dump") },
+		{ 'V', 'V', TRUE, _("バージョン情報", "Version info") },
+		{ 'Q', 'Q', TRUE, _("引退する", "Quit") },
+		{ 0, 0, FALSE, "" }
+	}
 };
 
 static int inkey_from_menu(void)
@@ -3917,6 +3786,7 @@ static int inkey_from_menu(void)
 	int num = 0, max_num, old_num = 0;
 	int menu = 0;
 	bool kisuu;
+	cptr prompt;
 
 	if (py - panel_row_min > 10) basey = 2;
 	else basey = 13;
@@ -3945,8 +3815,16 @@ static int inkey_from_menu(void)
 		for(i = 0; i < 10; i++)
 		{
 			if (!menu_info[menu][i].cmd) break;
-
-			put_str(menu_info[menu][i].name, basey + 1 + i / 2, basex + 4 + (i % 2) * 24);
+			if (menu == 0) prompt = menu_info[menu][i].name;
+			else
+			{
+				char c = (rogue_like_commands) ? menu_info[menu][i].rkey : menu_info[menu][i].cmd;
+				prompt = format("%s(%s%c)",
+					menu_info[menu][i].name,
+					(c < 0x20) ? _("Ctrl+", "^") : "",
+					(c < 0x20) ? ('A' + (c - 1)) : c);
+			}
+			put_str(prompt, basey + 1 + i / 2, basex + 4 + (i % 2) * 24);
 		}
 		max_num = i;
 		kisuu = max_num % 2;
