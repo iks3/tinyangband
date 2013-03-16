@@ -1723,8 +1723,7 @@ void display_map(int *cy, int *cx)
 	/* Get size */
 	Term_get_size(&wid, &hgt);
 	hgt -= 2;
-	wid -= 14;
-	if (use_bigtile) wid /= 2;
+	wid = (!use_bigtile) ? (wid - 14) : ((wid - 16) / 2);
 
 	yrat = (cur_hgt + hgt - 1) / hgt;
 	xrat = (cur_wid + wid - 1) / wid;
