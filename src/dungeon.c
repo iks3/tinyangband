@@ -13,8 +13,6 @@
 #include "angband.h"
 
 #define TY_CURSE_CHANCE 100
-#define CHAINSWORD_NOISE 100
-
 
 /*
  * Return a "feeling" (or NULL) about an item.  Method 1 (Heavy).
@@ -3497,25 +3495,8 @@ static void process_command(void)
 		/* Hack -- Unknown command */
 		default:
 		{
-			if (randint1(2) == 1)
-			{
-				char error_m[1024];
- 				sound(SOUND_BELL);  /* bell is the default system error sound */
-#ifdef JP
-				if (!get_rnd_line("error_j.txt", 0, error_m))
-#else
-				if (!get_rnd_line("error.txt", 0, error_m))
-#endif
-
-					msg_print(error_m);
-			}
-			else
-#ifdef JP
-				prt(" '?' でヘルプが表示されます。", 0, 0);
-#else
-				prt("Type '?' for help.", 0, 0);
-#endif
-
+ 			sound(SOUND_BELL);  /* bell is the default system error sound */
+			prt(_(" '?' でヘルプが表示されます。", "Type '?' for help."), 0, 0);
 			break;
 		}
 	}

@@ -997,68 +997,18 @@ take_hit(111+randint1(111), "ログルスの巻物");
 		case SV_SCROLL_RUMOR:
 		{
 			errr err;
-
-			switch (randint1(20))
-			{
-				case 1:
 #ifdef JP
-err = get_rnd_line("chainswd_j.txt", 0, Rumor);
+			err = get_rnd_line_jonly("rumors_j.txt", 0, Rumor, 10);
 #else
-					err = get_rnd_line("chainswd.txt", 0, Rumor);
+			err = get_rnd_line("rumors.txt", 0, Rumor);
 #endif
-
-					break;
-				case 2:
-#ifdef JP
-err = get_rnd_line("error_j.txt", 0, Rumor);
-#else
-					err = get_rnd_line("error.txt", 0, Rumor);
-#endif
-
-					break;
-				case 3:
-				case 4:
-				case 5:
-#ifdef JP
-err = get_rnd_line("death_j.txt", 0, Rumor);
-#else
-					err = get_rnd_line("death.txt", 0, Rumor);
-#endif
-
-					break;
-				default:
-#ifdef JP
-err = get_rnd_line_jonly("rumors_j.txt", 0, Rumor, 10);
-#else
-					err = get_rnd_line("rumors.txt", 0, Rumor);
-#endif
-
-					break;
-			}
-
 			/* An error occured */
-#ifdef JP
-if (err) strcpy(Rumor, "嘘の噂もある。");
-#else
-			if (err) strcpy(Rumor, "Some rumors are wrong.");
-#endif
-
-
-#ifdef JP
-msg_print("巻物にはメッセージが書かれている:");
-#else
-			msg_print("There is message on the scroll. It says:");
-#endif
-
+			if (err) strcpy(Rumor, _("嘘の噂もある。", "Some rumors are wrong."));
+			msg_print(_("巻物にはメッセージが書かれている:", "There is message on the scroll. It says:"));
 			msg_print(NULL);
 			msg_format("%s", Rumor);
 			msg_print(NULL);
-#ifdef JP
-msg_print("巻物は煙を立てて消え去った！");
-#else
-			msg_print("The scroll disappears in a puff of smoke!");
-#endif
-
+			msg_print(_("巻物は煙を立てて消え去った！", "The scroll disappears in a puff of smoke!"));
 			ident = TRUE;
 			break;
 		}
