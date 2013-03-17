@@ -104,55 +104,17 @@ static bool object_easy_know(int i)
 /* make random name */
 void get_table_name(char *out_string)
 {
-#ifdef JP
 	char Syllable[80];
+	char tmp[80];
 
-	strcpy(out_string, "『");
-	get_rnd_line("aname_j.txt", 1, Syllable);
-	strcat(out_string, Syllable);
-	get_rnd_line("aname_j.txt", 2, Syllable);
-	strcat(out_string, Syllable);
-	strcat(out_string, "』");
-#else
-#if 1
-	char Syllable[80];
-
-	strcpy(out_string, "'");
-	get_rnd_line("aname.txt", 1, Syllable);
-	strcat(out_string, Syllable);
-	get_rnd_line("aname.txt", 2, Syllable);
-	strcat(out_string, Syllable);
-	strcat(out_string, "'");
-	out_string[1] = toupper(out_string[1]);
-#else
-	int testcounter = randint1(3) + 1;
-
-	strcpy(out_string, "'");
-
-	if (randint1(3) == 2)
-	{
-		while (testcounter--)
-			strcat(out_string, syllables[randint0(MAX_SYLLABLES)]);
-	}
-	else
-	{
-		char Syllable[80];
-		testcounter = randint1(2) + 1;
-		while (testcounter--)
-		{
-			(void)get_rnd_line("elvish.txt", 0, Syllable);
-			strcat(out_string, Syllable);
-		}
-	}
-
-	out_string[1] = toupper(out_string[1]);
-
-	strcat(out_string, "'");
+	get_rnd_line(_("aname_j.txt", "aname.txt"), 1, Syllable);
+	strcpy(tmp, Syllable);
+	get_rnd_line(_("aname_j.txt", "aname.txt"), 2, Syllable);
+	strcat(tmp, Syllable);
+#ifndef JP
+	tmp[1] = toupper(tmp[1]);
 #endif
-#endif
-
-
-	out_string[18] = '\0';
+	sprintf(out_string, _("『%s』", "'%s'"), tmp);
 
 	return;
 }
