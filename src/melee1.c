@@ -118,11 +118,8 @@ static int check_hit(int power, int level)
 	if (k < 10) return (k < 5);
 
 	/* Calculate the "attack quality" */
-#ifdef TINYANGBAND
 	i = (power + (level * 5));
-#else
-	i = (power + (level * 3));
-#endif
+
 	/* Total armor */
 	ac = p_ptr->ac + p_ptr->to_a;
 

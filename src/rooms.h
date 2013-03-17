@@ -61,11 +61,7 @@ typedef struct room_info_type room_info_type;
 struct room_info_type
 {
 	/* Allocation information. */
-#ifdef TINYANGBAND
 	s16b prob[5];
-#else
-	s16b prob[11];
-#endif
 
 	/* Minimum level on which room can appear. */
 	byte min_level;

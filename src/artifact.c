@@ -49,7 +49,6 @@ void one_sustain(object_type *o_ptr)
  */
 void one_high_resistance(object_type *o_ptr)
 {
-#ifdef TINYANGBAND
 	switch (randint0(7))
 	{
 		case  0: o_ptr->art_flags2 |= (TR2_RES_POIS);   break;
@@ -60,23 +59,6 @@ void one_high_resistance(object_type *o_ptr)
 		case  5: o_ptr->art_flags2 |= (TR2_RES_NETHER); break;
 		case  6: o_ptr->art_flags2 |= (TR2_RES_FEAR);   break;
 	}
-#else
-	switch (randint0(12))
-	{
-		case  0: o_ptr->art_flags2 |= (TR2_RES_POIS);   break;
-		case  1: o_ptr->art_flags2 |= (TR2_RES_LITE);   break;
-		case  2: o_ptr->art_flags2 |= (TR2_RES_DARK);   break;
-		case  3: o_ptr->art_flags2 |= (TR2_RES_SHARDS); break;
-		case  4: o_ptr->art_flags2 |= (TR2_RES_BLIND);  break;
-		case  5: o_ptr->art_flags2 |= (TR2_RES_CONF);   break;
-		case  6: o_ptr->art_flags2 |= (TR2_RES_SOUND);  break;
-		case  7: o_ptr->art_flags2 |= (TR2_RES_NETHER); break;
-		case  8: o_ptr->art_flags2 |= (TR2_RES_NEXUS);  break;
-		case  9: o_ptr->art_flags2 |= (TR2_RES_CHAOS);  break;
-		case 10: o_ptr->art_flags2 |= (TR2_RES_DISEN);  break;
-		case 11: o_ptr->art_flags2 |= (TR2_RES_FEAR);   break;
-	}
-#endif
 }
 
 /*
@@ -84,7 +66,6 @@ void one_high_resistance(object_type *o_ptr)
  */
 void one_lordly_high_resistance(object_type *o_ptr)
 {
-#ifdef TINYANGBAND
 	switch (randint0(6))
 	{
 		case 0: o_ptr->art_flags2 |= (TR2_RES_DARK);   break;
@@ -94,21 +75,6 @@ void one_lordly_high_resistance(object_type *o_ptr)
 		case 4: o_ptr->art_flags2 |= (TR2_RES_NETHER); break;
 		case 5: o_ptr->art_flags2 |= (TR2_RES_FEAR);   break;
 	}
-#else
-	switch (randint0(10))
-	{
-		case 0: o_ptr->art_flags2 |= (TR2_RES_LITE);   break;
-		case 1: o_ptr->art_flags2 |= (TR2_RES_DARK);   break;
-		case 2: o_ptr->art_flags2 |= (TR2_RES_SHARDS); break;
-		case 3: o_ptr->art_flags2 |= (TR2_RES_BLIND);  break;
-		case 4: o_ptr->art_flags2 |= (TR2_RES_CONF);   break;
-		case 5: o_ptr->art_flags2 |= (TR2_RES_SOUND);  break;
-		case 6: o_ptr->art_flags2 |= (TR2_RES_NETHER); break;
-		case 7: o_ptr->art_flags2 |= (TR2_RES_NEXUS);  break;
-		case 8: o_ptr->art_flags2 |= (TR2_RES_CHAOS);  break;
-		case 9: o_ptr->art_flags2 |= (TR2_RES_FEAR);   break;
-	}
-#endif
 }
 
 
@@ -2409,11 +2375,7 @@ void create_named_ego(object_type *o_ptr)
 bool create_nazgul_ring(object_type *o_ptr)
 {
 	char    new_name[1024];
-#ifdef TINYANGBAND
 	int     powers = randint1(3) + 1;
-#else
-	int     powers = randint1(5) + 1;
-#endif
 
 	/* paranoia */
 	if ((o_ptr->tval != TV_RING) || (o_ptr->sval != SV_RING_WRAITH))

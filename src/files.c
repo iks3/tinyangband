@@ -2387,7 +2387,6 @@ static void display_player_flag_info(void)
 	player_vuln_flags(&vul_f[0], &vul_f[1], &vul_f[2]);
 
 	/*** Set 1 ***/
-#ifdef TINYANGBAND
 	row = 10;
 	col = 1;
 
@@ -2404,48 +2403,6 @@ static void display_player_flag_info(void)
 	display_player_flag_aux(row++, col, _("ÂÑº®Íð:", "Conf  :"), 2, TR2_RES_CONF, 0, im_f[1], vul_f[1]);
 	display_player_flag_aux(row++, col, _("ÂÑ¹ì²»:", "Sound :"), 2, TR2_RES_SOUND, 0, im_f[1], vul_f[1]);
 	display_player_flag_aux(row++, col, _("ÂÑÃÏ¹ö:", "Nether:"), 2, TR2_RES_NETHER, 0, im_f[1], vul_f[1]);
-#else
-	row = 5;
-	col = 1;
-
-	c_put_str(TERM_WHITE, "abcdefghijkl@", row++, col + 8);
-
-#ifdef JP
-	display_player_flag_aux(row++, col, "ÂÑ»À  :", 2, TR2_RES_ACID, TR2_IM_ACID, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÅÅ·â:", 2, TR2_RES_ELEC, TR2_IM_ELEC, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑ²Ð±ê:", 2, TR2_RES_FIRE, TR2_IM_FIRE, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÎäµ¤:", 2, TR2_RES_COLD, TR2_IM_COLD, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÆÇ  :", 2, TR2_RES_POIS, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑ¶²ÉÝ:", 2, TR2_RES_FEAR, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÁ®¸÷:", 2, TR2_RES_LITE, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑ°Å¹õ:", 2, TR2_RES_DARK, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÇËÊÒ:", 2, TR2_RES_SHARDS, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÌÕÌÜ:", 2, TR2_RES_BLIND, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑº®Íð:", 2, TR2_RES_CONF, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑ¹ì²»:", 2, TR2_RES_SOUND, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÃÏ¹ö:", 2, TR2_RES_NETHER, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑ°øº®:", 2, TR2_RES_NEXUS, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑ¥«¥ª:", 2, TR2_RES_CHAOS, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ÂÑÎô²½:", 2, TR2_RES_DISEN, 0, im_f[1], vul_f[1]);
-#else
-	display_player_flag_aux(row++, col, "Acid  :", 2, TR2_RES_ACID, TR2_IM_ACID, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Elec  :", 2, TR2_RES_ELEC, TR2_IM_ELEC, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Fire  :", 2, TR2_RES_FIRE, TR2_IM_FIRE, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Cold  :", 2, TR2_RES_COLD, TR2_IM_COLD, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Poison:", 2, TR2_RES_POIS, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Fear  :", 2, TR2_RES_FEAR, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Light :", 2, TR2_RES_LITE, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Dark  :", 2, TR2_RES_DARK, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Shard :", 2, TR2_RES_SHARDS, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Blind :", 2, TR2_RES_BLIND, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Conf  :", 2, TR2_RES_CONF, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Sound :", 2, TR2_RES_SOUND, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Nether:", 2, TR2_RES_NETHER, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Nexus :", 2, TR2_RES_NEXUS, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Chaos :", 2, TR2_RES_CHAOS, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Disnch:", 2, TR2_RES_DISEN, 0, im_f[1], vul_f[1]);
-#endif
-#endif
 
 	/*** Set 2 ***/
 
@@ -4012,32 +3969,6 @@ errr file_character(cptr name, bool full)
 #else
 		fprintf(fff, "\n Autoscum:           OFF");
 #endif
-#ifndef TINYANGBAND
-	if (ironman_small_levels)
-#ifdef JP
-		fprintf(fff, "\n ¾®¤µ¤¤¥À¥ó¥¸¥ç¥ó:   ALWAYS");
-#else
-		fprintf(fff, "\n Small Levels:       ALWAYS");
-#endif
-	else if (always_small_levels)
-#ifdef JP
-		fprintf(fff, "\n ¾®¤µ¤¤¥À¥ó¥¸¥ç¥ó:   ON");
-#else
-		fprintf(fff, "\n Small Levels:       ON");
-#endif
-	else if (small_levels)
-#ifdef JP
-		fprintf(fff, "\n ¾®¤µ¤¤¥À¥ó¥¸¥ç¥ó:   ENABLED");
-#else
-		fprintf(fff, "\n Small Levels:       ENABLED");
-#endif
-	else
-#ifdef JP
-		fprintf(fff, "\n ¾®¤µ¤¤¥À¥ó¥¸¥ç¥ó:   OFF");
-#else
-		fprintf(fff, "\n Small Levels:       OFF");
-#endif
-#endif /* ifndef TINYANGBAND */
 	if (ironman_shops)
 #ifdef JP
 		fprintf(fff, "\n Å¹¤Ê¤·:             ON");
@@ -4051,40 +3982,12 @@ errr file_character(cptr name, bool full)
 #else
 		fprintf(fff, "\n Diving only:        ON");
 #endif
-#ifndef TINYANGBAND
-	if (ironman_empty_levels)
-#ifdef JP
-		fprintf(fff, "\n ¥¢¥ê¡¼¥Ê:           ALWAYS");
-#else
-		fprintf(fff, "\n Arena Levels:       ALWAYS");
-#endif
-	else if (empty_levels)
-#ifdef JP
-		fprintf(fff, "\n ¥¢¥ê¡¼¥Ê:           ON");
-#else
-		fprintf(fff, "\n Arena Levels:       ENABLED");
-#endif
-	else
-#ifdef JP
-		fprintf(fff, "\n ¥¢¥ê¡¼¥Ê:           OFF");
-#else
-		fprintf(fff, "\n Arena Levels:       OFF");
-#endif
-#endif /* ifndef TINYANGBAND */
 	if (ironman_nightmare)
 #ifdef JP
 		fprintf(fff, "\n °­Ì´¥â¡¼¥É:         ON");
 #else
 		fprintf(fff, "\n Nightmare Mode:     ON");
 #endif
-#ifndef TINYANGBAND
-	if (ironman_hengband)
-#ifdef JP
-		fprintf(fff, "\n ÊÑ¶òÈÚÅÜ¥â¡¼¥É:     ON");
-#else
-		fprintf(fff, "\n Hengband Mode:      ON");
-#endif
-#endif /* ifndef TINYANGBAND */
 #ifdef JP
 	fprintf(fff, "\n ¥é¥ó¥À¥à¥¯¥¨¥¹¥È¿ô: %d", number_of_quests());
 #else
@@ -5534,12 +5437,7 @@ long total_points(void)
 
 	if (preserve_mode) mult -= 10; /* Penalize preserve, maximize modes */
 	if (X_stupid_monsters) mult -= 20; /* AI is not that big a deal (yet) */
-#ifndef TINYANGBAND
 	/* Not too much of a reward since some people like playing with this. */
-	if (ironman_small_levels) mult += 5;
-	if (ironman_empty_levels) mult += 10;
-	if (ironman_rooms) mult +=10;
-#endif
 	if (ironman_downward) mult +=10;
 	if (ironman_nightmare) mult += 20;
 

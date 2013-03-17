@@ -47,8 +47,6 @@
 
 #define SAVEFILE_VERSION 5
 
-#define TINYANGBAND
-
 /*
  * This value is not currently used
  */
@@ -258,12 +256,8 @@
  * involving object and monster creation.  It must be at least 100.
  * Setting it below 128 may prevent the creation of some objects.
  */
-#ifdef TINYANGBAND
 #define MAX_DEPTH   40
 #define MORGOTH_DEPTH    27
-#else
-#define MAX_DEPTH       128
-#endif
 
 
 /*
@@ -1558,11 +1552,7 @@
 /*
  * Special "sval" limit -- first "good" magic/prayer book
  */
-#ifdef TINYANGBAND
 #define SV_BOOK_MIN_GOOD    1
-#else
-#define SV_BOOK_MIN_GOOD    2
-#endif
 
 
 #define OBJ_GOLD_LIST   3       /* First "gold" entry */

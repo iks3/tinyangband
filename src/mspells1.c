@@ -1014,11 +1014,7 @@ bool make_attack_spell(int m_idx)
 	if (!thrown_spell) return (FALSE);
 
 	/* Calculate spell failure rate */
-#ifdef TINYANGBAND
 	failrate = 27 - rlev;
-#else
-	failrate = 25 - (rlev + 3) / 4;
-#endif
 
 	/* Hack -- Stupid monsters will never fail (for jellies and such) */
 	if (r_ptr->flags2 & RF2_STUPID) failrate = 0;

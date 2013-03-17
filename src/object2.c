@@ -2746,11 +2746,7 @@ static void a_m_aux_3(object_type *o_ptr, int level, int power)
 				case SV_RING_ATTACKS:
 				{
 					/* Stat bonus */
-#ifdef TINYANGBAND
 					o_ptr->pval = 1;
-#else
-					o_ptr->pval = m_bonus(2, level);
-#endif
 					if (one_in_(15)) o_ptr->pval++;
 					if (o_ptr->pval < 1) o_ptr->pval = 1;
 

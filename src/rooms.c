@@ -35,7 +35,6 @@
 static room_info_type room_info_normal[ROOM_T_MAX] =
 {
 	/* Depth */
-#ifdef TINYANGBAND
 	/*  0  10  20  30  40  min limit */
 	{{999,900,800,700,600},  0}, /* NORMAL    */
 	{{  1, 10, 20, 30, 40},  1}, /* OVERLAP   */
@@ -51,24 +50,6 @@ static room_info_type room_info_normal[ROOM_T_MAX] =
 	{{  0, 15, 30, 60,120},  5}, /* FRAC_F    */
 	{{  1, 10, 20, 30, 40},  3}, /* INNER_W   */
 	{{  1,  1,  1,  1,  1},  1}, /* ARCADE    */
-#else
-	/*  0  10  20  30  40  50  60  70  80  90 100  min limit */
-	{{999,900,800,700,600,500,400,300,200,100,  0},  0}, /* NORMAL    */
-	{{  1, 10, 20, 30, 40, 50, 60, 70, 80, 90,100},  1}, /* OVERLAP   */
-	{{  1, 10, 20, 30, 40, 50, 60, 70, 80, 90,100},  3}, /* CROSS     */
-	{{  1, 10, 20, 30, 40, 50, 60, 70, 80, 90,100},  3}, /* INNER_F   */
-	{{  0,  1,  1,  1,  2,  3,  5,  6,  8, 10, 13}, 10}, /* NEST      */
-	{{  0,  1,  1,  2,  3,  4,  6,  8, 10, 13, 16}, 10}, /* PIT       */
-	{{  0,  1,  1,  1,  2,  2,  3,  5,  6,  8, 10}, 10}, /* LESSER_V  */
-	{{  0,  0,  1,  1,  1,  2,  2,  3,  4,  5,  6}, 20}, /* GREATER_V */
-	{{  0,100,200,300,400,500,600,700,800,900,999},  5}, /* FRACAVE   */
-	{{  0,  1,  1,  1,  1,  1,  1,  2,  2,  3,  3}, 10}, /* RANDOM_V  */
-	{{  0,  4,  8, 12, 16, 20, 24, 28, 32, 36, 40},  3}, /* OVAL      */
-	{{  1,  6, 12, 18, 24, 30, 36, 42, 48, 54, 60}, 10}, /* CRYPT     */
-	{{  0,100,200,300,400,500,600,700,800,900,999},  5}, /* FRAC_F    */
-	{{  1, 10, 20, 30, 40, 50, 60, 70, 80, 90,100},  3}, /* INNER_W   */
-	{{  1,  1,  1,  1,  1,  1,  1,  2,  2,  3,  3},  1}, /* ARCADE    */
-#endif
 };
 
 
@@ -76,9 +57,6 @@ static room_info_type room_info_normal[ROOM_T_MAX] =
 static byte room_build_order[ROOM_T_MAX] = {
 	ROOM_T_GREATER_VAULT,
 	ROOM_T_ARCADE,
-#if 0
-	ROOM_T_RANDOM_VAULT,
-#endif
 	ROOM_T_LESSER_VAULT,
 	ROOM_T_PIT,
 	ROOM_T_NEST,
@@ -2891,12 +2869,12 @@ static bool generate_fracave(int y0, int x0, int xsize, int ysize, int cutoff, b
 				/* Set appropriate flags */
 				if (light) cave[y0 + y - yhsize][x0 + x - xhsize].info |= (CAVE_GLOW);
 				if (room) cave[y0 + y - yhsize][x0 + x - xhsize].info |= (CAVE_ROOM);
-#ifdef TINYANGBAND
+
+				/* TinyAngband - When 20 of deeper floor, locate lava spots on the foor */
 				if ((dun_level >= 20) && (one_in_(7)))
 				{
 					cave[y0 + y - yhsize][x0 + x - xhsize].feat = (one_in_(7) ? FEAT_DEEP_LAVA : FEAT_SHAL_LAVA);
 				}
-#endif
 			}
 			else if ((cave[y0 + y - yhsize][x0 + x - xhsize].feat == FEAT_WALL_OUTER) &&
 				 (cave[y0 + y - yhsize][x0 + x - xhsize].info & CAVE_ICKY))

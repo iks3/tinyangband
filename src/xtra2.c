@@ -309,44 +309,6 @@ static bool kind_is_cloak(int k_idx)
 	return (FALSE);
 }
 
-#ifndef TINYANGBAND
-/*
- * Hack -- determine if a template is Book
- */
-static bool kind_is_book(int k_idx)
-{
-	object_kind *k_ptr = &k_info[k_idx];
-
-	/* Analyze the item type */
-	if ((k_ptr->tval >= TV_LIFE_BOOK) && (k_ptr->tval <= TV_SORCERY_BOOK))
-	{
-		return (TRUE);
-	}
-
-	/* Assume not good */
-	return (FALSE);
-}
-
-
-/*
- * Hack -- determine if a template is Good book
- */
-static bool kind_is_good_book(int k_idx)
-{
-	object_kind *k_ptr = &k_info[k_idx];
-
-	/* Analyze the item type */
-	if ((k_ptr->tval >= TV_LIFE_BOOK) && (k_ptr->tval <= TV_SORCERY_BOOK) && (k_ptr->sval > 1))
-	{
-		return (TRUE);
-	}
-
-	/* Assume not good */
-	return (FALSE);
-}
-#endif
-
-
 void check_quest_completion(monster_type *m_ptr)
 {
 	int i, y, x, ny, nx, i2, j2;
@@ -830,31 +792,7 @@ void monster_death(int m_idx, bool drop_item_okay)
 		/* Drop it in the dungeon */
 		(void)drop_near(q_ptr, -1, y, x);
 	}
-#ifndef TINYANGBAND
-	else if ((m_ptr->r_idx == MON_RAAL) && (dun_level > 9))
-	{
-		/* Get local object */
-		q_ptr = &forge;
 
-		/* Wipe the object */
-		object_wipe(q_ptr);
-
-		/* Activate restriction */
-		if ((dun_level > 49) && one_in_(5))
-			get_obj_num_hook = kind_is_good_book;
-		else
-			get_obj_num_hook = kind_is_book;
-
-		/* Prepare allocation table */
-		get_obj_num_prep();
-
-		/* Make a great object */
-		make_object(q_ptr, FALSE, FALSE);
-
-		/* Drop it in the dungeon */
-		(void)drop_near(q_ptr, -1, y, x);
-	}
-#endif
 	/* HACK -- ringwraiths */
 	else if ((m_ptr->r_idx == MON_ANGMAR) || (m_ptr->r_idx == MON_KHAMUL) ||
 		(m_ptr->r_idx == MON_NAZGUL))

@@ -1380,11 +1380,8 @@ static int check_hit2(int power, int level, int ac)
 	if (k < 10) return (k < 5);
 
 	/* Calculate the "attack quality" */
-#ifdef TINYANGBAND
 	i = (power + (level * 5));
-#else
-	i = (power + (level * 3));
-#endif
+
 	/* Power and Level compete against Armor */
 	if ((i > 0) && (randint1(i) > ((ac * 3) / 4))) return (TRUE);
 
@@ -2352,11 +2349,7 @@ static void process_monster(int m_idx)
 		int d = 1;
 
 		/* Make a "saving throw" against stun */
-#ifdef TINYANGBAND
 		if (randint0(750) <= r_ptr->level * r_ptr->level)
-#else
-		if (randint0(5000) <= r_ptr->level * r_ptr->level)
-#endif
 		{
 			/* Recover fully */
 			d = m_ptr->stunned;

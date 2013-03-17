@@ -1083,7 +1083,6 @@ static void quest_gen(void)
 /* Make a real level */
 static bool level_gen(cptr *why)
 {
-#ifdef TINYANGBAND
 	/* Level size is always 2x2 */
 	int level_height = 2;
 	int level_width = 2;
@@ -1093,55 +1092,6 @@ static bool level_gen(cptr *why)
 
 	panel_row_min = cur_hgt;
 	panel_col_min = cur_wid;
-#else /* Other Variants */
-	int level_height, level_width;
-
-	if (always_small_levels || ironman_small_levels ||
-		((randint1(SMALL_LEVEL) == 1) && small_levels))
-	{
-		if (cheat_room)
-#ifdef JP
-			msg_print("小さなフロア");
-#else
-			msg_print("A 'small' dungeon level.");
-#endif
-		if (dun_level < 10)
-		{
-			level_height = 2;
-			level_width = 2;
-		}
-		else
-		{
-			do
-			{
-				level_height = randint1(MAX_HGT/SCREEN_HGT);
-				level_width = randint1(MAX_WID/SCREEN_WID);
-			}
-			while ((level_height == MAX_HGT/SCREEN_HGT) &&
-				(level_width == MAX_WID/SCREEN_WID));
-		}
-
-		cur_hgt = level_height * SCREEN_HGT;
-		cur_wid = level_width * SCREEN_WID;
-
-		/* Assume illegal panel */
-		panel_row_min = cur_hgt;
-		panel_col_min = cur_wid;
-
-		if (cheat_room)
-		  msg_format("X:%d, Y:%d.", cur_hgt, cur_wid);
-	}
-	else
-	{
-		/* Big dungeon */
-		cur_hgt = MAX_HGT;
-		cur_wid = MAX_WID;
-
-		/* Assume illegal panel */
-		panel_row_min = cur_hgt;
-		panel_col_min = cur_wid;
-	}
-#endif
 
 	/* Make a dungeon */
 	if (!cave_gen())
