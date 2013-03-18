@@ -3187,6 +3187,9 @@ void do_cmd_bldg(void)
 	show_building(bldg);
 	leave_bldg = FALSE;
 
+	/* BGM */
+	bgm(BGM_BUILDING);
+
 	while (!leave_bldg)
 	{
 		validcmd = FALSE;
@@ -3246,4 +3249,7 @@ void do_cmd_bldg(void)
 
 	/* Window stuff */
 	p_ptr->window |= (PW_OVERHEAD | PW_DUNGEON);
+
+	/* BGM */
+	bgm_dungeon();
 }

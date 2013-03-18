@@ -3312,6 +3312,34 @@ extern int PlayerUID;
  */
 #define SOUND_MAX 150
 
+
+/*** Bgm constants ***/
+/*
+ * Mega-Hack -- some primitive sound support (see "main-win.c")
+ *
+ * Some "sound" constants for "Term_xtra(TERM_XTRA_SOUND, val)"
+ */
+#define BGM_MUTE      0
+#define BGM_TOWN      1
+#define BGM_STORE     2
+#define BGM_BUILDING  3
+#define BGM_DUNGEON   4
+#define BGM_ABYSS     5
+#define BGM_QUEST     6
+#define BGM_SAURON    7
+#define BGM_MORGOTH   8
+#define BGM_WINNER    9
+#define BGM_DEAD     10
+#define BGM_TITLE    11
+
+/*
+ * Mega-Hack -- maximum known sounds
+ */
+#define BGM_MAX 12
+
+
+
+
 /*
  * Hack -- attempt to reduce various values
  */

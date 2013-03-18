@@ -506,6 +506,7 @@ void check_quest_completion(monster_type *m_ptr)
 #else
 						msg_print("You just completed your quest!");
 #endif
+						bgm_dungeon();
 	  					sound(SOUND_LEVEL); /* (Sound substitute) No quest sound */
 						msg_print(NULL);
 					}
@@ -967,6 +968,9 @@ void monster_death(int m_idx, bool drop_item_okay)
 		/* Redraw the "title" */
 		p_ptr->redraw |= (PR_TITLE);
 
+		/* BGM */
+		bgm(BGM_WINNER);
+
 		/* Congratulations */
 #ifdef JP
 msg_print("*** おめでとう ***");
@@ -985,7 +989,6 @@ msg_print("準備が整ったら引退(自殺コマンド)しても結構です。");
 #else
 		msg_print("You may retire (commit suicide) when you are ready.");
 #endif
-
 	}
 }
 

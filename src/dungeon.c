@@ -4142,6 +4142,9 @@ static void dungeon(void)
 	/* Prevent insta-death */
 	if (p_ptr->energy_need > 0 && dun_level) p_ptr->energy_need = 0;
 
+	/* BGM */
+	bgm_dungeon();
+
 	/* Main loop */
 	while (TRUE)
 	{

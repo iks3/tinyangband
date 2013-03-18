@@ -74,6 +74,9 @@
 
 #include "angband.h"
 #include <windows.h>
+#ifdef USE_SOUND
+#include <MMSystem.h>
+#endif
 
 
 #ifdef WINDOWS
@@ -556,6 +559,8 @@ static bool can_use_sound = FALSE;
  * An array of sound file names
  */
 static cptr sound_file[SOUND_MAX][SAMPLE_MAX];
+static cptr bgm_file[BGM_MAX][SAMPLE_MAX];
+static char mci_device_name[256];
 
 #endif /* USE_SOUND */
 
@@ -580,13 +585,11 @@ static cptr AngList = "AngList";
  */
 static cptr ANGBAND_DIR_XTRA_GRAF;
 static cptr ANGBAND_DIR_XTRA_SOUND;
+static cptr ANGBAND_DIR_XTRA_MUSIC;
 static cptr ANGBAND_DIR_XTRA_HELP;
 #ifndef JP
 static cptr ANGBAND_DIR_XTRA_FONT;
 #endif
-#ifdef USE_MUSIC
-static cptr ANGBAND_DIR_XTRA_MUSIC;
-#endif /* 0 */
 
 /*
  * The "complex" color values
@@ -1399,7 +1402,7 @@ static void load_sound_prefs(void)
 	/* Access the sound.cfg */
 	path_build(ini_path, sizeof(ini_path), ANGBAND_DIR_XTRA_SOUND, "sound.cfg");
 
-	for (i = 0; i < SOUND_MAX; i++)
+	for (i = 1; i < SOUND_MAX; i++)
 	{
 		GetPrivateProfileString("Sound", angband_sound_name[i], "", tmp, 1024, ini_path);
 
@@ -1417,6 +1420,84 @@ static void load_sound_prefs(void)
 	}
 }
 
+#ifdef USE_MUSIC
+static int current_bgm = BGM_MUTE;
+
+static errr OpenBgm(cptr filename)
+{
+	errr err = -1;
+	cptr mci_command;
+
+	if (mci_device_name[0] != '\0')
+	{
+		mci_command = format("open \"%s\" type %s alias AngbandBGM", filename, mci_device_name);
+		err = mciSendString(mci_command, NULL, 0, NULL);
+	}
+
+	if (err != 0)
+	{
+		mci_command = format("open \"%s\" alias AngbandBGM", filename);
+		err = mciSendString(mci_command, NULL, 0, NULL);
+	}
+
+	return err;
+}
+
+static void StopBgm()
+{
+	if (current_bgm != BGM_MUTE)
+	{
+		mciSendString("stop AngbandBGM", NULL, 0, NULL);
+		current_bgm = BGM_MUTE;
+	}
+}
+
+static void CloseBgm()
+{
+	StopBgm();
+	mciSendString("close AngbandBGM", NULL, 0, NULL);
+}
+
+static errr PlayBgm(bool again)
+{
+	errr err = 0; 
+	if (again) err = mciSendString("seek AngbandBGM to start", NULL, 0, NULL);
+	if (err == 0) err = mciSendString("play AngbandBGM notify", NULL, 0, data[0].w);
+
+	return err;
+}
+
+static void load_bgm_prefs(void)
+{
+	int i, j, num;
+	char tmp[1024];
+	char ini_path[1024];
+	char bgm_path[1024];
+	char *zz[SAMPLE_MAX];
+
+	/* Access the sound.cfg */
+	path_build(ini_path, sizeof(ini_path), ANGBAND_DIR_XTRA_MUSIC, "music.cfg");
+
+	for (i = 1; i < BGM_MAX; i++)
+	{
+		GetPrivateProfileString("Music", angband_bgm_name[i], "", tmp, 1024, ini_path);
+
+		num = tokenize_whitespace(tmp, SAMPLE_MAX, zz);
+
+		for (j = 0; j < num; j++)
+		{
+			/* Access the sound */
+			path_build(bgm_path, sizeof(bgm_path), ANGBAND_DIR_XTRA_MUSIC, zz[j]);
+
+			/* Save the sound filename, if it exists */
+			if (check_file(bgm_path))
+				bgm_file[i][j] = string_make(zz[j]);
+		}
+	}
+
+	GetPrivateProfileString("Device", mci_device_name, "", tmp, 256, ini_path);
+}
+#endif /* USE_MUSIC */
 #endif /* USE_SOUND */
 
 
@@ -1719,6 +1800,7 @@ static bool init_sound(void)
 	{
 		/* Load the prefs */
 		load_sound_prefs();
+		load_bgm_prefs();
 
 		/* Sound available */
 		can_use_sound = TRUE;
@@ -1727,6 +1809,7 @@ static bool init_sound(void)
 	/* Result */
 	return (can_use_sound);
 }
+
 #endif /* USE_SOUND */
 
 
@@ -2118,18 +2201,25 @@ static errr Term_xtra_win_react(void)
 	if (use_sound != arg_sound)
 	{
 		/* Initialize (if needed) */
-		if (arg_sound && !init_sound())
+		if (arg_sound)
 		{
-			/* Warning */
-#ifdef JP
-			plog("サウンドを初期化できません！");
-#else
-			plog("Cannot initialize sound!");
+			if (!init_sound())
+			{
+				/* Warning */
+				plog(_("サウンドを初期化できません！", "Cannot initialize sound!"));
+
+				/* Cannot enable */
+				arg_sound = FALSE;
+			}
+		}
+		else
+		{
+#ifdef USE_MUSIC
+			if (current_bgm != BGM_MUTE)
+			{
+				CloseBgm();
+			}
 #endif
-
-
-			/* Cannot enable */
-			arg_sound = FALSE;
 		}
 
 		/* Change setting */
@@ -2354,6 +2444,51 @@ static errr Term_xtra_win_sound(int v)
 
 
 /*
+ * Hack -- make a music
+ */
+static errr Term_xtra_win_music(int v)
+{
+	int i;
+	errr err;
+	char buf[1024];
+
+	/* Sound disabled */
+	if (!use_sound) return (1);
+
+	/* Illegal sound */
+	if ((v < 0) || (v >= BGM_MAX)) return (1);
+
+#ifdef USE_MUSIC
+	if (v == current_bgm) return (0);
+
+	CloseBgm();
+	if (v == BGM_MUTE) return (0);
+
+	/* Count the samples */
+	for (i = 0; i < SAMPLE_MAX; i++)
+	{
+		if (!bgm_file[v][i])
+			break;
+	}
+
+	/* No sample */
+	if (i == 0) return (1);
+
+	/* Build the path */
+	path_build(buf, sizeof(buf), ANGBAND_DIR_XTRA_MUSIC, bgm_file[v][randint0(i)]);
+	if (OpenBgm(buf) != 0) return (0);
+	if ((err = PlayBgm(FALSE)) == 0) current_bgm = v;
+	return (err);
+#else /* USE_MUSIC */
+
+	/* Oops */
+	return (1);
+
+#endif /* USE_MUSIC */
+}
+
+
+/*
  * Delay for "x" milliseconds
  */
 static int Term_xtra_win_delay(int v)
@@ -2444,6 +2579,12 @@ static errr Term_xtra_win(int n, int v)
 		case TERM_XTRA_DELAY:
 		{
 			return (Term_xtra_win_delay(v));
+		}
+
+		/* Make a special sound */
+		case TERM_XTRA_MUSIC:
+		{
+			return (Term_xtra_win_music(v));
 		}
 	}
 
@@ -5169,6 +5310,15 @@ LRESULT FAR PASCAL AngbandWndProc(HWND hWnd, UINT uMsg,
 
 			break;
 		}
+#ifdef USE_MUSIC
+		case MM_MCINOTIFY:
+		{
+			if (wParam == MCI_NOTIFY_SUCCESSFUL)
+			{
+				PlayBgm(TRUE);
+			}
+		}
+#endif
 	}
 
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);
@@ -5618,6 +5768,10 @@ static void hook_quit(cptr str)
 	/* bg */
 	delete_bg();
 
+#ifdef USE_MUSIC
+	if (use_sound) CloseBgm();
+#endif
+
 	if (hPal) DeleteObject(hPal);
 
 	UnregisterClass(AppName, hInstance);
@@ -6021,6 +6175,13 @@ int FAR PASCAL WinMain(HINSTANCE hInst, HINSTANCE hPrevInst,
 
 	/* Did the user double click on a save file? */
 	if(!chuukei_server) check_for_save_file(lpCmdLine);
+
+#ifdef USE_MUSIC
+	/* Title Bgm */
+	use_sound = arg_sound;
+	load_bgm_prefs();
+	Term_xtra_win_music(BGM_TITLE);
+#endif
 
 	/* Prompt the user */
 #ifdef JP

@@ -392,7 +392,9 @@
 /*
  * OPTION: Allow the use of "music" in various places
  */
-/* #define USE_MUSIC */
+#ifdef USE_SOUND
+#define USE_MUSIC
+#endif
 
 #endif /* USE_SPECIAL */
 

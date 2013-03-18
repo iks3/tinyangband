@@ -5736,6 +5736,9 @@ static void print_tomb(void)
 		center_string(buf, tmp);
 		put_str(buf, 17, 11);
 
+		/* BGM */
+		bgm(BGM_DEAD);
+
 #ifdef JP
 msg_format("さようなら、%s!", player_name);
 #else

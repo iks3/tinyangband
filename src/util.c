@@ -1664,6 +1664,39 @@ void sound(int val)
 }
 
 
+/*
+ * Hack -- Make a bgm
+ */
+void bgm(int val)
+{
+	/* No sound */
+	if (!use_sound) return;
+
+	/* Make a bgm (if allowed) */
+	Term_xtra(TERM_XTRA_MUSIC, val);
+}
+
+void bgm_dungeon(void)
+{
+	if ((dun_level == quest[QUEST_MORGOTH].level) &&
+		(quest[QUEST_MORGOTH].status == QUEST_STATUS_TAKEN))
+	{
+		bgm(BGM_MORGOTH);
+	}
+	else if ((dun_level == quest[QUEST_SAURON].level) &&
+		(quest[QUEST_SAURON].status == QUEST_STATUS_TAKEN))
+	{
+		bgm(BGM_SAURON);
+	}
+	else if (p_ptr->inside_quest)
+	{
+		bgm(BGM_QUEST);
+	}
+	else if (dun_level >= 20) bgm(BGM_ABYSS);
+	else if (dun_level > 0) bgm(BGM_DUNGEON);
+	else if (dun_level == 0) bgm(BGM_TOWN);
+}
+
 
 /*
  * Helper function called only from "inkey()"

@@ -3064,6 +3064,9 @@ void do_cmd_store(void)
 	/* Do not leave */
 	leave_store = FALSE;
 
+	/* BGM */
+	bgm(BGM_STORE);
+
 	/* Interact with player */
 	while (!leave_store)
 	{
@@ -3254,6 +3257,9 @@ void do_cmd_store(void)
 
 	/* Window stuff */
 	p_ptr->window |= (PW_OVERHEAD | PW_DUNGEON);
+
+	/* BGM */
+	bgm_dungeon();
 }
 
 

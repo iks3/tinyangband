@@ -730,6 +730,25 @@ char angband_sound_name[SOUND_MAX][19] =
 };
 
 
+/*
+ * Standard Bgm Names
+ */
+const cptr angband_bgm_name[BGM_MAX] =
+{
+	"",
+	"town",
+	"store",
+	"building",
+	"dungeon",
+	"abyss",
+	"quest",
+	"sauron",
+	"morgoth",
+	"winner",
+	"dead",
+	"title"
+};
+
 
 /*
  * The array of "cave grids" [MAX_WID][MAX_HGT].
