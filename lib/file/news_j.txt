@@ -1,6 +1,6 @@
 
                   ***************************************
-                  **         TinyAngband 0.0.3         **
+                  **         TinyAngband 1.0.0         **
                   ***************************************
           Based on Moria:    Copyright (c) 1985 Robert Alan Koeneke
               and Umoria:    Copyright (c) 1989 James E. Wilson

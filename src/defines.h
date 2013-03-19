@@ -41,11 +41,11 @@
 /*
  * Current version number of TinyAngband
  */
-#define VERSION_MAJOR   0
+#define VERSION_MAJOR   1
 #define VERSION_MINOR   0
-#define VERSION_PATCH   3
+#define VERSION_PATCH   0
 
-#define SAVEFILE_VERSION 5
+#define SAVEFILE_VERSION 6
 
 /*
  * This value is not currently used

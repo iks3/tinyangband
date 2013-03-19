@@ -1,5 +1,11 @@
 === TinyAngband History and Information ===
 
+--- 1.0.0 ---
+Add 24x24 tile
+Add BGM function (Apply only to Windows)
+Improving balances of rewards of valar
+And bug fix.
+
 --- 0.0.3 ---
 Fixing bug of hit bonus of fire weapons
 Auto weilding when birth
