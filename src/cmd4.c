@@ -7686,7 +7686,7 @@ static void do_cmd_knowledge_quests(void)
 				/* New random */
 				rand_level = quest[i].level;
 
-				if (p_ptr->max_dlv >= rand_level)
+				if (dun_level == rand_level)
 				{
 					/* Print the quest info */
 					r_ptr = &r_info[quest[i].r_idx];
@@ -7708,11 +7708,11 @@ static void do_cmd_knowledge_quests(void)
 					else
 					{
 #ifdef JP
-						sprintf(rand_tmp_str,"%s (%d ≥¨) - %s§Ú≈›§π°£\n",
+						sprintf(rand_tmp_str,"À…±“º‘ (%d ≥¨) - %s§Ú≈›§π°£\n",
 #else
-						sprintf(rand_tmp_str,"%s (Dungeon level: %d)\n  Kill %s.\n",
+						sprintf(rand_tmp_str,"The Guardian (Dungeon level: %d)\n  Kill %s.\n",
 #endif
-							quest[i].name, quest[i].level, name);
+							quest[i].level, name);
 					}
 				}
 			}
@@ -7720,7 +7720,7 @@ static void do_cmd_knowledge_quests(void)
 	}
 
 	/* Print the current random quest  */
-	if (rand_tmp_str[0]) fputs(tmp_str, fff);
+	if (rand_tmp_str[0]) fputs(rand_tmp_str, fff);
 
 #ifdef JP
 	if (!total) fprintf(fff, "§ §∑\n");
