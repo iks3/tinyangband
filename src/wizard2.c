@@ -681,8 +681,18 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 			q_ptr->art_flags3 |= TR3_IGNORE_FIRE;
 		}
 
-		/* Drop it */
-		(void)drop_near(q_ptr, -1, py, px);
+		if (inven_carry_okay(q_ptr))
+		{
+			s16b slot = inven_carry(q_ptr);
+			object_desc(o_name, q_ptr, OD_NAME_ONLY);
+			msg_format("%c - %s", index_to_label(slot), o_name);
+		}
+		else
+		{
+			/* Drop it */
+			msg_print(_("足元に何かが現れた！", "An object appears at your feet!"));
+			(void)drop_near(q_ptr, 0, py, px);
+		}
 
 		return (retval);
 	}
