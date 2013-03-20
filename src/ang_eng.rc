@@ -121,7 +121,8 @@ ANGBAND MENU
 		{
 			MENUITEM "&None", 400
 			MENUITEM "&8x8 tiles", 401
-			MENUITEM "&Adam Bolt's tiles", 402
+			MENUITEM "&24x24 tiles", 402
+			MENUITEM "&Adam Bolt's tiles", 403
 			MENUITEM "&Bigtile mode", 409
 		}
 

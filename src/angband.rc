@@ -123,7 +123,8 @@ ANGBAND MENU
 		{
 			MENUITEM "なし(&N)", 400
 			MENUITEM "8x8 タイル(&O)", 401
-			MENUITEM "Adam Boltさんタイル(&A)", 402
+			MENUITEM "24x24 タイル(&W)", 402
+			MENUITEM "Adam Boltさんタイル(&A)", 403
 			MENUITEM "タイルを2倍幅で表示", 409
 		}
 		MENUITEM "効果音(&S)", 410
