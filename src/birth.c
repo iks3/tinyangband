@@ -3270,8 +3270,6 @@ static bool player_birth_autoroll(void)
 	char buf[80];
 
 
-#ifdef ALLOW_AUTOROLLER
-
 	s16b stat_limit[A_MAX];
 	s32b stat_match[A_MAX];
 	s32b auto_round = 0L;
@@ -3284,9 +3282,8 @@ static bool player_birth_autoroll(void)
 	{
 		/* Save the minimum stat */
 		stat_limit[i] = initial_stat[p_ptr->pclass][i];
+		stat_match[i] = 0;
 	}
-
-#endif /* ALLOW_AUTOROLLER */
 
 	/* Clean up */
 	clear_from(10);
@@ -3364,12 +3361,9 @@ static bool player_birth_autoroll(void)
 				{
 					auto_round = 1;
 
-					if (autoroller)
+					for( i = 0; i < 6; i ++)
 					{
-						for( i = 0; i < 6; i ++)
-						{
-							stat_match[i] = 0;
-						}
+						stat_match[i] = 0;
 					}
 				}
 

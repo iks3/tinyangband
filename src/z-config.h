@@ -226,11 +226,6 @@
  */
 #define ALLOW_MACROS
 
-/*
- * OPTION: Allow characteres to be "auto-rolled"
- */
-#define ALLOW_AUTOROLLER
-
 
 /*
  * OPTION: Allow monsters to "flee" when hit hard
