@@ -2129,6 +2129,43 @@ static errr Term_user_win(int n)
 }
 
 
+#ifdef USE_SOUND
+static errr Term_xtra_win_react_sound(void)
+{
+	/* Handle "arg_sound" */
+	if (use_sound != arg_sound)
+	{
+		/* Initialize (if needed) */
+		if (arg_sound)
+		{
+			if (!init_sound())
+			{
+				/* Warning */
+				plog(_("サウンドを初期化できません！", "Cannot initialize sound!"));
+
+				/* Cannot enable */
+				arg_sound = FALSE;
+			}
+		}
+		else
+		{
+#ifdef USE_MUSIC
+			if (current_bgm != BGM_MUTE)
+			{
+				CloseBgm();
+			}
+#endif
+		}
+
+		/* Change setting */
+		use_sound = arg_sound;
+	}
+
+	return (0);
+}
+#endif
+
+
 /*
  * React to global changes
  */
@@ -2196,36 +2233,7 @@ static errr Term_xtra_win_react(void)
 
 
 #ifdef USE_SOUND
-
-	/* Handle "arg_sound" */
-	if (use_sound != arg_sound)
-	{
-		/* Initialize (if needed) */
-		if (arg_sound)
-		{
-			if (!init_sound())
-			{
-				/* Warning */
-				plog(_("サウンドを初期化できません！", "Cannot initialize sound!"));
-
-				/* Cannot enable */
-				arg_sound = FALSE;
-			}
-		}
-		else
-		{
-#ifdef USE_MUSIC
-			if (current_bgm != BGM_MUTE)
-			{
-				CloseBgm();
-			}
-#endif
-		}
-
-		/* Change setting */
-		use_sound = arg_sound;
-	}
-
+	Term_xtra_win_react_sound();
 #endif /* USE_SOUND */
 
 
@@ -6178,8 +6186,7 @@ int FAR PASCAL WinMain(HINSTANCE hInst, HINSTANCE hPrevInst,
 
 #ifdef USE_MUSIC
 	/* Title Bgm */
-	use_sound = arg_sound;
-	load_bgm_prefs();
+	Term_xtra_win_react_sound();
 	Term_xtra_win_music(BGM_TITLE);
 #endif
 
