@@ -2427,8 +2427,12 @@ static errr Term_xtra_win_sound(int v)
 	/* No sample */
 	if (i == 0) return (1);
 
+	Rand_quick = TRUE;
+
 	/* Build the path */
 	path_build(buf, sizeof(buf), ANGBAND_DIR_XTRA_SOUND, sound_file[v][randint0(i)]);
+
+	Rand_quick = FALSE;
 
 #ifdef WIN32
 
@@ -2482,8 +2486,13 @@ static errr Term_xtra_win_music(int v)
 	/* No sample */
 	if (i == 0) return (1);
 
+	Rand_quick = TRUE;
+
 	/* Build the path */
 	path_build(buf, sizeof(buf), ANGBAND_DIR_XTRA_MUSIC, bgm_file[v][randint0(i)]);
+
+	Rand_quick = FALSE;
+
 	if (OpenBgm(buf) != 0) return (0);
 	if ((err = PlayBgm(FALSE)) == 0) current_bgm = v;
 	return (err);
