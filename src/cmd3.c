@@ -1,4 +1,4 @@
-/* File: cmd3.c */
+ï»¿/* File: cmd3.c */
 
 /* Purpose: Inventory commands */
 
@@ -45,7 +45,7 @@ void do_cmd_inven(void)
 	item_tester_full = FALSE;
 
 #ifdef JP
-	sprintf(out_val, "»ı¤ÁÊª¡§ ¹ç·× %3d.%1d kg (¸Â³¦¤Î%d%%) ¥³¥Ş¥ó¥É: ",
+	sprintf(out_val, "æŒã¡ç‰©ï¼š åˆè¨ˆ %3d.%1d kg (é™ç•Œã®%d%%) ã‚³ãƒãƒ³ãƒ‰: ",
 		lbtokg1(p_ptr->total_weight) , lbtokg2(p_ptr->total_weight) ,
 		(int)((p_ptr->total_weight * 100) / ((adj_str_wgt[p_ptr->stat_ind[A_STR]] * 100) / 2)));
 #else
@@ -119,7 +119,7 @@ void do_cmd_equip(void)
 
 	/* Build a prompt */
 #ifdef JP
-	sprintf(out_val, "ÁõÈ÷¡§ ¹ç·× %3d.%1d kg (¸Â³¦¤Î%d%%) ¥³¥Ş¥ó¥É: ",
+	sprintf(out_val, "è£…å‚™ï¼š åˆè¨ˆ %3d.%1d kg (é™ç•Œã®%d%%) ã‚³ãƒãƒ³ãƒ‰: ",
 		lbtokg1(p_ptr->total_weight) , lbtokg2(p_ptr->total_weight) ,
 		(int)((p_ptr->total_weight * 100) / ((adj_str_wgt[p_ptr->stat_ind[A_STR]] * 100) / 2)));
 #else
@@ -196,8 +196,8 @@ void do_cmd_wield(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤ì¤òÁõÈ÷¤·¤Ş¤¹¤«? ";
-	s = "ÁõÈ÷²ÄÇ½¤Ê¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
+	q = "ã©ã‚Œã‚’è£…å‚™ã—ã¾ã™ã‹? ";
+	s = "è£…å‚™å¯èƒ½ãªã‚¢ã‚¤ãƒ†ãƒ ãŒãªã„ã€‚";
 #else
 	q = "Wear/Wield which item? ";
 	s = "You have nothing you can wear or wield.";
@@ -225,7 +225,7 @@ void do_cmd_wield(void)
 	if (slot == INVEN_WIELD)
 	{
 #ifdef JP
-		act = "¤òÂÇ·âÍÑ¤ËÁõÈ÷¤·¤¿";
+		act = "ã‚’æ‰“æ’ƒç”¨ã«è£…å‚™ã—ãŸ";
 #else
 		act = "You are wielding";
 #endif
@@ -234,7 +234,7 @@ void do_cmd_wield(void)
 	else if (slot == INVEN_BOW)
 	{
 #ifdef JP
-		act = "¤ò¼Í·âÍÑ¤ËÁõÈ÷¤·¤¿";
+		act = "ã‚’å°„æ’ƒç”¨ã«è£…å‚™ã—ãŸ";
 #else
 		act = "You are shooting with";
 #endif
@@ -243,7 +243,7 @@ void do_cmd_wield(void)
 	else if (slot == INVEN_LITE)
 	{
 #ifdef JP
-		act = "¤ò¸÷¸»¤Ë¤·¤¿";
+		act = "ã‚’å…‰æºã«ã—ãŸ";
 #else
 		act = "Your light source is";
 #endif
@@ -252,7 +252,7 @@ void do_cmd_wield(void)
 	else
 	{
 #ifdef JP
-		act = "¤òÁõÈ÷¤·¤¿";
+		act = "ã‚’è£…å‚™ã—ãŸ";
 #else
 		act = "You are wearing";
 #endif
@@ -267,8 +267,8 @@ void do_cmd_wield(void)
 
 		/* Choose a ring from the equipment only */
 #ifdef JP
-		q = "¤É¤Á¤é¤Î»ØÎØ¤È¼è¤êÂØ¤¨¤Ş¤¹¤«?";
-		s = "¤ª¤Ã¤È¡£";
+		q = "ã©ã¡ã‚‰ã®æŒ‡è¼ªã¨å–ã‚Šæ›¿ãˆã¾ã™ã‹?";
+		s = "ãŠã£ã¨ã€‚";
 #else
 		q = "Replace which ring? ";
 		s = "Oops.";
@@ -287,8 +287,8 @@ void do_cmd_wield(void)
 
 			/* Choose a ring from the equipment only */
 #ifdef JP
-			q = "¤É¤Á¤é¤ÎÉğ´ï¤È¼è¤êÂØ¤¨¤Ş¤¹¤«?";
-			s = "¤ª¤Ã¤È¡£";
+			q = "ã©ã¡ã‚‰ã®æ­¦å™¨ã¨å–ã‚Šæ›¿ãˆã¾ã™ã‹?";
+			s = "ãŠã£ã¨ã€‚";
 #else
 			q = "Replace which weapon? ";
 			s = "Oops.";
@@ -301,7 +301,7 @@ void do_cmd_wield(void)
 		{
 			/* Confirm doing two handed combat */
 #ifdef JP
-			if (get_check("ÆóÅáÎ®¤ò¹Ô¤¤¤Ş¤¹¤«¡©"))
+			if (get_check("äºŒåˆ€æµã‚’è¡Œã„ã¾ã™ã‹ï¼Ÿ"))
 #else
 			if (get_check("Do you want to do two handed combat?"))
 #endif
@@ -319,7 +319,7 @@ void do_cmd_wield(void)
 
 		/* Message */
 #ifdef JP
-		msg_format("%s%s¤Ï¼ö¤ï¤ì¤Æ¤¤¤ë¤è¤¦¤À¡£",
+		msg_format("%s%sã¯å‘ªã‚ã‚Œã¦ã„ã‚‹ã‚ˆã†ã ã€‚",
 			   describe_use(slot) , o_name );
 #else
 		msg_format("The %s you are %s appears to be cursed.",
@@ -340,7 +340,7 @@ void do_cmd_wield(void)
 		object_desc(o_name, o_ptr, OD_OMIT_PREFIX | OD_NAME_ONLY);
 
 #ifdef JP
-		sprintf(dummy, "ËÜÅö¤Ë%s{¼ö¤ï¤ì¤Æ¤¤¤ë}¤ò»È¤¤¤Ş¤¹¤«¡©", o_name);
+		sprintf(dummy, "æœ¬å½“ã«%s{å‘ªã‚ã‚Œã¦ã„ã‚‹}ã‚’ä½¿ã„ã¾ã™ã‹ï¼Ÿ", o_name);
 #else
 		sprintf(dummy, "Really use the %s {cursed}? ", o_name);
 #endif
@@ -356,7 +356,7 @@ void do_cmd_wield(void)
 		object_desc(o_name, o_ptr, OD_OMIT_PREFIX | OD_NAME_ONLY);
 
 #ifdef JP
-		sprintf(dummy, "%s¤òÁõÈ÷¤¹¤ë¤ÈµÛ·ìµ´¤Ë¤Ê¤ê¤Ş¤¹¡£¤è¤í¤·¤¤¤Ç¤¹¤«¡©", o_name);
+		sprintf(dummy, "%sã‚’è£…å‚™ã™ã‚‹ã¨å¸è¡€é¬¼ã«ãªã‚Šã¾ã™ã€‚ã‚ˆã‚ã—ã„ã§ã™ã‹ï¼Ÿ", o_name);
 #else
 		msg_format("%s will transforms you into a vampire permanently when equiped.", o_name);
 		sprintf(dummy, "Do you become a vampire?");
@@ -377,7 +377,7 @@ void do_cmd_wield(void)
 			quest[i].status = QUEST_STATUS_COMPLETED;
 			quest[i].complev = (byte)p_ptr->lev;
 #ifdef JP
-			msg_print("¥¯¥¨¥¹¥È¤òÃ£À®¤·¤¿¡ª");
+			msg_print("ã‚¯ã‚¨ã‚¹ãƒˆã‚’é”æˆã—ãŸï¼");
 #else
 			msg_print("You completed your quest!");
 #endif
@@ -445,7 +445,7 @@ void do_cmd_wield(void)
 
 	/* Message */
 #ifdef JP
-	msg_format("%s(%c)%s¡£", o_name, index_to_label(slot), act );
+	msg_format("%s(%c)%sã€‚", o_name, index_to_label(slot), act );
 #else
 	msg_format("%s %s (%c).", act, o_name, index_to_label(slot));
 #endif
@@ -457,7 +457,7 @@ void do_cmd_wield(void)
 	{
 		/* Warn the player */
 #ifdef JP
-		msg_print("¤¦¤ï¡ª ¤¹¤µ¤Ş¤¸¤¯Îä¤¿¤¤¡ª");
+		msg_print("ã†ã‚ï¼ ã™ã•ã¾ã˜ãå†·ãŸã„ï¼");
 #else
 		msg_print("Oops! It feels deathly cold!");
 #endif
@@ -473,7 +473,7 @@ void do_cmd_wield(void)
 		p_ptr->prace = RACE_VAMPIRE;
 		newrace = TRUE;
 #ifdef JP
-		msg_format("¤¢¤Ê¤¿¤ÏµÛ·ìµ´¤ËÊÑ²½¤·¤¿¡ª");
+		msg_format("ã‚ãªãŸã¯å¸è¡€é¬¼ã«å¤‰åŒ–ã—ãŸï¼");
 #else
 		msg_format("You polymorphed into a vampire!");
 #endif
@@ -538,7 +538,7 @@ void swap_wielding_hands(void)
 		object_desc(o_name, q_ptr, 0);
 
 #ifdef JP
-		msg_format("%s¤ò±¦¼ê¤Ç¹½¤¨¤¿¡£", o_name);
+		msg_format("%sã‚’å³æ‰‹ã§æ§‹ãˆãŸã€‚", o_name);
 #else
 		msg_format("You are weilding %s in your right hand.", o_name);
 #endif
@@ -561,8 +561,8 @@ void do_cmd_takeoff(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤ì¤òÁõÈ÷¤«¤é¤Ï¤º¤·¤Ş¤¹¤«? ";
-	s = "¤Ï¤º¤»¤ëÁõÈ÷¤¬¤Ê¤¤¡£";
+	q = "ã©ã‚Œã‚’è£…å‚™ã‹ã‚‰ã¯ãšã—ã¾ã™ã‹? ";
+	s = "ã¯ãšã›ã‚‹è£…å‚™ãŒãªã„ã€‚";
 #else
 	q = "Take off which item? ";
 	s = "You are not wearing anything to take off.";
@@ -588,7 +588,7 @@ void do_cmd_takeoff(void)
 	{
 		/* Oops */
 #ifdef JP
-		msg_print("¤Õ¡¼¤à¡¢¤É¤¦¤ä¤é¼ö¤ï¤ì¤Æ¤¤¤ë¤è¤¦¤À¡£");
+		msg_print("ãµãƒ¼ã‚€ã€ã©ã†ã‚„ã‚‰å‘ªã‚ã‚Œã¦ã„ã‚‹ã‚ˆã†ã ã€‚");
 #else
 		msg_print("Hmmm, it seems to be cursed.");
 #endif
@@ -625,8 +625,8 @@ void do_cmd_drop(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥¢¥¤¥Æ¥à¤òÍî¤È¤·¤Ş¤¹¤«? ";
-	s = "Íî¤È¤»¤ë¥¢¥¤¥Æ¥à¤ò»ı¤Ã¤Æ¤¤¤Ê¤¤¡£";
+	q = "ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’è½ã¨ã—ã¾ã™ã‹? ";
+	s = "è½ã¨ã›ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã‚’æŒã£ã¦ã„ãªã„ã€‚";
 #else
 	q = "Drop which item? ";
 	s = "You have nothing to drop.";
@@ -652,7 +652,7 @@ void do_cmd_drop(void)
 	{
 		/* Oops */
 #ifdef JP
-		msg_print("¤Õ¡¼¤à¡¢¤É¤¦¤ä¤é¼ö¤ï¤ì¤Æ¤¤¤ë¤è¤¦¤À¡£");
+		msg_print("ãµãƒ¼ã‚€ã€ã©ã†ã‚„ã‚‰å‘ªã‚ã‚Œã¦ã„ã‚‹ã‚ˆã†ã ã€‚");
 #else
 		msg_print("Hmmm, it seems to be cursed.");
 #endif
@@ -723,8 +723,8 @@ void do_cmd_destroy(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥¢¥¤¥Æ¥à¤ò²õ¤·¤Ş¤¹¤«? ";
-	s = "²õ¤»¤ë¥¢¥¤¥Æ¥à¤ò»ı¤Ã¤Æ¤¤¤Ê¤¤¡£";
+	q = "ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’å£Šã—ã¾ã™ã‹? ";
+	s = "å£Šã›ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã‚’æŒã£ã¦ã„ãªã„ã€‚";
 #else
 	q = "Destroy which item? ";
 	s = "You have nothing to destroy.";
@@ -753,7 +753,7 @@ void do_cmd_destroy(void)
 		/* Make a verification */
 		sprintf(out_val, 
 #ifdef JP
-			"ËÜÅö¤Ë%s¤ò²õ¤·¤Ş¤¹¤«? [y/n/Auto]",
+			"æœ¬å½“ã«%sã‚’å£Šã—ã¾ã™ã‹? [y/n/Auto]",
 #else
 			"Really destroy %s? [y/n/Auto]",
 #endif
@@ -830,7 +830,7 @@ void do_cmd_destroy(void)
 
 		/* Message */
 #ifdef JP
-		msg_format("%s¤ÏÇË²õÉÔ²ÄÇ½¤À¡£", o_name);
+		msg_format("%sã¯ç ´å£Šä¸å¯èƒ½ã ã€‚", o_name);
 #else
 		msg_format("You cannot destroy %s.", o_name);
 #endif
@@ -841,7 +841,7 @@ void do_cmd_destroy(void)
 
 	/* Message */
 #ifdef JP
-	msg_format("%s¤ò²õ¤·¤¿¡£", o_name);
+	msg_format("%sã‚’å£Šã—ãŸã€‚", o_name);
 #else
 	msg_format("You destroy %s.", o_name);
 #endif
@@ -876,7 +876,7 @@ void do_cmd_destroy(void)
 			if (tester_exp < 1) tester_exp = 1;
 
 #ifdef JP
-msg_print("¹¹¤Ë·Ğ¸³¤òÀÑ¤ó¤À¤è¤¦¤Êµ¤¤¬¤¹¤ë¡£");
+msg_print("æ›´ã«çµŒé¨“ã‚’ç©ã‚“ã ã‚ˆã†ãªæ°—ãŒã™ã‚‹ã€‚");
 #else
 			msg_print("You feel more experienced.");
 #endif
@@ -921,8 +921,8 @@ void do_cmd_observe(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥¢¥¤¥Æ¥à¤òÄ´¤Ù¤Ş¤¹¤«? ";
-	s = "Ä´¤Ù¤é¤ì¤ë¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
+	q = "ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’èª¿ã¹ã¾ã™ã‹? ";
+	s = "èª¿ã¹ã‚‰ã‚Œã‚‹ã‚¢ã‚¤ãƒ†ãƒ ãŒãªã„ã€‚";
 #else
 	q = "Examine which item? ";
 	s = "You have nothing to examine.";
@@ -947,7 +947,7 @@ void do_cmd_observe(void)
 	if (!(o_ptr->ident & IDENT_MENTAL))
 	{
 #ifdef JP
-		msg_print("¤³¤Î¥¢¥¤¥Æ¥à¤Ë¤Ä¤¤¤ÆÆÃ¤ËÃÎ¤Ã¤Æ¤¤¤ë¤³¤È¤Ï¤Ê¤¤¡£");
+		msg_print("ã“ã®ã‚¢ã‚¤ãƒ†ãƒ ã«ã¤ã„ã¦ç‰¹ã«çŸ¥ã£ã¦ã„ã‚‹ã“ã¨ã¯ãªã„ã€‚");
 #else
 		msg_print("You have no special knowledge about that item.");
 #endif
@@ -961,7 +961,7 @@ void do_cmd_observe(void)
 
 	/* Describe */
 #ifdef JP
-	msg_format("%s¤òÄ´¤Ù¤Æ¤¤¤ë...", o_name);
+	msg_format("%sã‚’èª¿ã¹ã¦ã„ã‚‹...", o_name);
 #else
 	msg_format("Examining %s...", o_name);
 #endif
@@ -969,7 +969,7 @@ void do_cmd_observe(void)
 	/* Describe it fully */
 	if (!identify_fully_aux(o_ptr, TRUE))
 #ifdef JP
-		msg_print("ÆÃ¤ËÊÑ¤ï¤Ã¤¿¤È¤³¤í¤Ï¤Ê¤¤¤è¤¦¤À¡£");
+		msg_print("ç‰¹ã«å¤‰ã‚ã£ãŸã¨ã“ã‚ã¯ãªã„ã‚ˆã†ã ã€‚");
 #else
 		msg_print("You see nothing special.");
 #endif
@@ -991,8 +991,8 @@ void do_cmd_uninscribe(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥¢¥¤¥Æ¥à¤ÎÌÃ¤ò¾Ã¤·¤Ş¤¹¤«? ";
-	s = "ÌÃ¤ò¾Ã¤»¤ë¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
+	q = "ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã®éŠ˜ã‚’æ¶ˆã—ã¾ã™ã‹? ";
+	s = "éŠ˜ã‚’æ¶ˆã›ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ãŒãªã„ã€‚";
 #else
 	q = "Un-inscribe which item? ";
 	s = "You have nothing to un-inscribe.";
@@ -1016,7 +1016,7 @@ void do_cmd_uninscribe(void)
 	if (!o_ptr->inscription)
 	{
 #ifdef JP
-		msg_print("¤³¤Î¥¢¥¤¥Æ¥à¤Ë¤Ï¾Ã¤¹¤Ù¤­ÌÃ¤¬¤Ê¤¤¡£");
+		msg_print("ã“ã®ã‚¢ã‚¤ãƒ†ãƒ ã«ã¯æ¶ˆã™ã¹ãéŠ˜ãŒãªã„ã€‚");
 #else
 		msg_print("That item had no inscription to remove.");
 #endif
@@ -1026,7 +1026,7 @@ void do_cmd_uninscribe(void)
 
 	/* Message */
 #ifdef JP
-	msg_print("ÌÃ¤ò¾Ã¤·¤¿¡£");
+	msg_print("éŠ˜ã‚’æ¶ˆã—ãŸã€‚");
 #else
 	msg_print("Inscription removed.");
 #endif
@@ -1063,8 +1063,8 @@ void do_cmd_inscribe(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥¢¥¤¥Æ¥à¤ËÌÃ¤ò¹ï¤ß¤Ş¤¹¤«? ";
-	s = "ÌÃ¤ò¹ï¤á¤ë¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
+	q = "ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã«éŠ˜ã‚’åˆ»ã¿ã¾ã™ã‹? ";
+	s = "éŠ˜ã‚’åˆ»ã‚ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ãŒãªã„ã€‚";
 #else
 	q = "Inscribe which item? ";
 	s = "You have nothing to inscribe.";
@@ -1089,7 +1089,7 @@ void do_cmd_inscribe(void)
 
 	/* Message */
 #ifdef JP
-	msg_format("%s¤ËÌÃ¤ò¹ï¤à¡£", o_name);
+	msg_format("%sã«éŠ˜ã‚’åˆ»ã‚€ã€‚", o_name);
 #else
 	msg_format("Inscribing %s.", o_name);
 #endif
@@ -1108,7 +1108,7 @@ void do_cmd_inscribe(void)
 
 	/* Get a new inscription (possibly empty) */
 #ifdef JP
-	if (get_string("ÌÃ: ", out_val, 80))
+	if (get_string("éŠ˜: ", out_val, 80))
 #else
 	if (get_string("Inscription: ", out_val, 80))
 #endif
@@ -1167,8 +1167,8 @@ static void do_cmd_refill_lamp(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤ÎÌı¤Ä¤Ü¤«¤éÃí¤®¤Ş¤¹¤«? ";
-	s = "Ìı¤òÊäµë¤¹¤ë¤â¤Î¤¬¤Ê¤¤¡£";
+	q = "ã©ã®æ²¹ã¤ã¼ã‹ã‚‰æ³¨ãã¾ã™ã‹? ";
+	s = "æ²¹ã‚’è£œçµ¦ã™ã‚‹ã‚‚ã®ãŒãªã„ã€‚";
 #else
 	q = "Refill with which source of oil? ";
 	s = "You have no sources of oil.";
@@ -1212,7 +1212,7 @@ static void do_cmd_refill_lamp(void)
 
 	/* Message */
 #ifdef JP
-	msg_print("¥é¥ó¥×¤ËÌı¤òÃí¤¤¤À¡£");
+	msg_print("ãƒ©ãƒ³ãƒ—ã«æ²¹ã‚’æ³¨ã„ã ã€‚");
 #else
 	msg_print("You fuel your lamp.");
 #endif
@@ -1223,7 +1223,7 @@ static void do_cmd_refill_lamp(void)
 	{
 		j_ptr->xtra3 = FUEL_LAMP;
 #ifdef JP
-		msg_print("¥é¥ó¥×¤ÎÌı¤Ï°ìÇÕ¤À¡£");
+		msg_print("ãƒ©ãƒ³ãƒ—ã®æ²¹ã¯ä¸€æ¯ã ã€‚");
 #else
 		msg_print("Your lamp is full.");
 #endif
@@ -1283,8 +1283,8 @@ static void do_cmd_refill_torch(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¾¾ÌÀ¤ÇÌÀ¤«¤ê¤ò¶¯¤á¤Ş¤¹¤«? ";
-	s = "Â¾¤Ë¾¾ÌÀ¤¬¤Ê¤¤¡£";
+	q = "ã©ã®æ¾æ˜ã§æ˜ã‹ã‚Šã‚’å¼·ã‚ã¾ã™ã‹? ";
+	s = "ä»–ã«æ¾æ˜ãŒãªã„ã€‚";
 #else
 	q = "Refuel with which torch? ";
 	s = "You have no extra torches.";
@@ -1316,7 +1316,7 @@ static void do_cmd_refill_torch(void)
 
 	/* Message */
 #ifdef JP
-	msg_print("¾¾ÌÀ¤ò·ë¹ç¤·¤¿¡£");
+	msg_print("æ¾æ˜ã‚’çµåˆã—ãŸã€‚");
 #else
 	msg_print("You combine the torches.");
 #endif
@@ -1327,7 +1327,7 @@ static void do_cmd_refill_torch(void)
 	{
 		j_ptr->xtra3 = FUEL_TORCH;
 #ifdef JP
-		msg_print("¾¾ÌÀ¤Î¼÷Ì¿¤Ï½½Ê¬¤À¡£");
+		msg_print("æ¾æ˜ã®å¯¿å‘½ã¯ååˆ†ã ã€‚");
 #else
 		msg_print("Your torch is fully fueled.");
 #endif
@@ -1338,7 +1338,7 @@ static void do_cmd_refill_torch(void)
 	else
 	{
 #ifdef JP
-		msg_print("¾¾ÌÀ¤Ï¤¤¤Ã¤½¤¦ÌÀ¤ë¤¯µ±¤¤¤¿¡£");
+		msg_print("æ¾æ˜ã¯ã„ã£ãã†æ˜ã‚‹ãè¼ã„ãŸã€‚");
 #else
 		msg_print("Your torch glows more brightly.");
 #endif
@@ -1380,7 +1380,7 @@ void do_cmd_refill(void)
 	if (o_ptr->tval != TV_LITE)
 	{
 #ifdef JP
-		msg_print("¸÷¸»¤òÁõÈ÷¤·¤Æ¤¤¤Ê¤¤¡£");
+		msg_print("å…‰æºã‚’è£…å‚™ã—ã¦ã„ãªã„ã€‚");
 #else
 		msg_print("You are not wielding a light.");
 #endif
@@ -1403,7 +1403,7 @@ void do_cmd_refill(void)
 	else
 	{
 #ifdef JP
-		msg_print("¤³¤Î¸÷¸»¤Ï¼÷Ì¿¤ò±ä¤Ğ¤»¤Ê¤¤¡£");
+		msg_print("ã“ã®å…‰æºã¯å¯¿å‘½ã‚’å»¶ã°ã›ãªã„ã€‚");
 #else
 		msg_print("Your light cannot be refilled.");
 #endif
@@ -1421,7 +1421,7 @@ void do_cmd_target(void)
 	if (target_set(TARGET_KILL))
 	{
 #ifdef JP
-		msg_print("¥¿¡¼¥²¥Ã¥È·èÄê¡£");
+		msg_print("ã‚¿ãƒ¼ã‚²ãƒƒãƒˆæ±ºå®šã€‚");
 #else
 		msg_print("Target Selected.");
 #endif
@@ -1432,7 +1432,7 @@ void do_cmd_target(void)
 	else
 	{
 #ifdef JP
-		msg_print("¥¿¡¼¥²¥Ã¥È²ò½ü¡£");
+		msg_print("ã‚¿ãƒ¼ã‚²ãƒƒãƒˆè§£é™¤ã€‚");
 #else
 		msg_print("Target Aborted.");
 #endif
@@ -1451,7 +1451,7 @@ void do_cmd_look(void)
 	if (target_set(TARGET_LOOK))
 	{
 #ifdef JP
-		msg_print("¥¿¡¼¥²¥Ã¥È·èÄê¡£");
+		msg_print("ã‚¿ãƒ¼ã‚²ãƒƒãƒˆæ±ºå®šã€‚");
 #else
 		msg_print("Target Selected.");
 #endif
@@ -1489,7 +1489,7 @@ void do_cmd_locate(void)
 		if ((y2 == y1) && (x2 == x1))
 		{
 #ifdef JP
-			strcpy(tmp_val, "¿¿¾å");
+			strcpy(tmp_val, "çœŸä¸Š");
 #else
 			tmp_val[0] = '\0';
 #endif
@@ -1499,8 +1499,8 @@ void do_cmd_locate(void)
 		{
 #ifdef JP
 			sprintf(tmp_val, "%s%s",
-				((y2 < y1) ? "ËÌ" : (y2 > y1) ? "Æî" : ""),
-				((x2 < x1) ? "À¾" : (x2 > x1) ? "Åì" : ""));
+				((y2 < y1) ? "åŒ—" : (y2 > y1) ? "å—" : ""),
+				((x2 < x1) ? "è¥¿" : (x2 > x1) ? "æ±" : ""));
 #else
 			sprintf(tmp_val, "%s%s of",
 				((y2 < y1) ? " North" : (y2 > y1) ? " South" : ""),
@@ -1512,7 +1512,7 @@ void do_cmd_locate(void)
 		/* Prepare to ask which way to look */
 		sprintf(out_val,
 #ifdef JP
-			"¥Ş¥Ã¥×°ÌÃÖ [%d(%02d),%d(%02d)] (¥×¥ì¥¤¥ä¡¼¤Î%s)  Êı¸ş?",
+			"ãƒãƒƒãƒ—ä½ç½® [%d(%02d),%d(%02d)] (ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®%s)  æ–¹å‘?",
 #else
 			"Map sector [%d(%02d),%d(%02d)], which is%s your sector.  Direction?",
 #endif
@@ -1575,101 +1575,101 @@ void do_cmd_locate(void)
 static cptr ident_info[] =
 {
 #ifdef JP
-	" :°Å°Ç",
-	"!:Ìô, ¥ª¥¤¥ë",
-	"\":¥¢¥ß¥å¥ì¥Ã¥È, ğô¾ş¤ê",
-	"#:ÊÉ(±£¤·¥É¥¢)/¿¢Êª/µ¤ÂÎ/°Å¤¤·ê",
-	"$:ºâÊõ(¶â¤«ÊõÀĞ)",
-	"%:¹ÛÌ®(ÍÏ´ä¤«ÀĞ±Ñ)",
-	"&:È¢",
-	"':³«¤¤¤¿¥É¥¢",
-	"(:Æğ¤é¤«¤¤ËÉ¶ñ",
-	"):½â",
-	"*:ºâÊõ¤ò´Ş¤ó¤À¹ÛÌ®¤Ş¤¿¤Ïµå·Á¤Î²øÊª",
-	"+:ÊÄ¤¸¤¿¥É¥¢",
-	",:¿©¤ÙÊª, ¤ª¤Ğ¤±¥­¥Î¥³",
-	"-:¥ï¥ó¥É, ¥í¥Ã¥É",
-	".:¾²",
-	"/:´È¾õÉğ´ï(¥¢¥Ã¥¯¥¹/¥Ñ¥¤¥¯/Åù)",
+	" :æš—é—‡",
+	"!:è–¬, ã‚ªã‚¤ãƒ«",
+	"\":ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ, é ¸é£¾ã‚Š",
+	"#:å£(éš ã—ãƒ‰ã‚¢)/æ¤ç‰©/æ°—ä½“/æš—ã„ç©´",
+	"$:è²¡å®(é‡‘ã‹å®çŸ³)",
+	"%:é‰±è„ˆ(æº¶å²©ã‹çŸ³è‹±)",
+	"&:ç®±",
+	"':é–‹ã„ãŸãƒ‰ã‚¢",
+	"(:è»Ÿã‚‰ã‹ã„é˜²å…·",
+	"):ç›¾",
+	"*:è²¡å®ã‚’å«ã‚“ã é‰±è„ˆã¾ãŸã¯çƒå½¢ã®æ€ªç‰©",
+	"+:é–‰ã˜ãŸãƒ‰ã‚¢",
+	",:é£Ÿã¹ç‰©, ãŠã°ã‘ã‚­ãƒã‚³",
+	"-:ãƒ¯ãƒ³ãƒ‰, ãƒ­ãƒƒãƒ‰",
+	".:åºŠ",
+	"/:ç«¿çŠ¶æ­¦å™¨(ã‚¢ãƒƒã‚¯ã‚¹/ãƒ‘ã‚¤ã‚¯/ç­‰)",
 	/* "0:unused", */
-	"1:»¨²ß²°¤ÎÆş¸ı",
-	"2:ËÉ¶ñ²°¤ÎÆş¸ı",
-	"3:Éğ´ïÀìÌçÅ¹¤ÎÆş¸ı",
-	"4:»û±¡¤ÎÆş¸ı",
-	"5:Ï£¶â½Ñ¤ÎÅ¹¤ÎÆş¸ı",
-	"6:ËâË¡¤ÎÅ¹¤ÎÆş¸ı",
-	"7:¥Ö¥é¥Ã¥¯¥Ş¡¼¥±¥Ã¥È¤ÎÆş¸ı",
-	"8:²æ¤¬²È¤ÎÆş¸ı",
-	"9:Èş½Ñ¾¦¤ÎÆş¸ı",
-	"::´äÀĞ",
-	";:·ë³¦¤ÎÌæ¾Ï/ÇúÈ¯¤Î¥ë¡¼¥ó",
-	"<:¾å¤ê³¬ÃÊ",
-	"=:»ØÎØ",
-	">:²¼¤ê³¬ÃÊ",
-	"?:´¬Êª",
-	"@:¥×¥ì¥¤¥ä¡¼",
-	"A:Å·»È",
-	"B:Ä»",
-	"C:¸¤",
-	"D:¸ÅÂå¥É¥é¥´¥ó/¥ï¥¤¥¢¡¼¥à",
-	"E:¥¨¥ì¥á¥ó¥¿¥ë",
-	"F:¥È¥ó¥Ü",
-	"G:¥´¡¼¥¹¥È",
-	"H:»¨¼ï",
-	"I:º«Ãî",
-	"J:¥Ø¥Ó",
-	"K:¥­¥é¡¼¡¦¥Ó¡¼¥È¥ë",
-	"L:¥ê¥Ã¥Á",
-	"M:Â¿¼ó¤Îà¨ÃîÎà",
+	"1:é›‘è²¨å±‹ã®å…¥å£",
+	"2:é˜²å…·å±‹ã®å…¥å£",
+	"3:æ­¦å™¨å°‚é–€åº—ã®å…¥å£",
+	"4:å¯ºé™¢ã®å…¥å£",
+	"5:éŒ¬é‡‘è¡“ã®åº—ã®å…¥å£",
+	"6:é­”æ³•ã®åº—ã®å…¥å£",
+	"7:ãƒ–ãƒ©ãƒƒã‚¯ãƒãƒ¼ã‚±ãƒƒãƒˆã®å…¥å£",
+	"8:æˆ‘ãŒå®¶ã®å…¥å£",
+	"9:ç¾è¡“å•†ã®å…¥å£",
+	"::å²©çŸ³",
+	";:çµç•Œã®ç´‹ç« /çˆ†ç™ºã®ãƒ«ãƒ¼ãƒ³",
+	"<:ä¸Šã‚Šéšæ®µ",
+	"=:æŒ‡è¼ª",
+	">:ä¸‹ã‚Šéšæ®µ",
+	"?:å·»ç‰©",
+	"@:ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼",
+	"A:å¤©ä½¿",
+	"B:é³¥",
+	"C:çŠ¬",
+	"D:å¤ä»£ãƒ‰ãƒ©ã‚´ãƒ³/ãƒ¯ã‚¤ã‚¢ãƒ¼ãƒ ",
+	"E:ã‚¨ãƒ¬ãƒ¡ãƒ³ã‚¿ãƒ«",
+	"F:ãƒˆãƒ³ãƒœ",
+	"G:ã‚´ãƒ¼ã‚¹ãƒˆ",
+	"H:é›‘ç¨®",
+	"I:æ˜†è™«",
+	"J:ãƒ˜ãƒ“",
+	"K:ã‚­ãƒ©ãƒ¼ãƒ»ãƒ“ãƒ¼ãƒˆãƒ«",
+	"L:ãƒªãƒƒãƒ",
+	"M:å¤šé¦–ã®çˆ¬è™«é¡",
 	/* "N:unused", */
-	"O:¥ª¡¼¥¬",
-	"P:µğÂç¿Í´Ö·¿À¸Êª",
-	"Q:¥¯¥¤¥ë¥¹¥ë¥°(Ì®ÂÇ¤ÄÆù²ô)",
-	"R:à¨ÃîÎà/Î¾À¸Îà",
-	"S:ÃØéá/¥µ¥½¥ê/¥À¥Ë",
-	"T:¥È¥í¥ë",
-	"U:¾åµé¥Ç¡¼¥â¥ó",
-	"V:¥Ğ¥ó¥Ñ¥¤¥¢",
-	"W:¥ï¥¤¥È/¥ì¥¤¥¹/Åù",
-	"X:¥¾¡¼¥ó/¥¶¥ì¥ó/Åù",
-	"Y:¥¤¥¨¥Æ¥£",
-	"Z:¥Ï¥¦¥ó¥É",
-	"[:·ø¤¤¥¢¡¼¥Ş¡¼",
-	"\\:Æß´ï(¥á¥¤¥¹/¥à¥Á/Åù)",
-	"]:¼ï¡¹¤ÎËÉ¶ñ",
-	"^:¥È¥é¥Ã¥×",
-	"_:¥¹¥¿¥Ã¥Õ",
-	"`:¿Í·Á¡¤Ä¦Áü",
-	"a:¥¢¥ê",
-	"b:¥³¥¦¥â¥ê",
-	"c:¥à¥«¥Ç",
-	"d:¥É¥é¥´¥ó",
-	"e:¥Õ¥í¡¼¥Æ¥£¥ó¥°¡¦¥¢¥¤",
-	"f:¥Í¥³",
-	"g:¥´¡¼¥ì¥à",
-	"h:¥Û¥Ó¥Ã¥È/¥¨¥ë¥Õ/¥É¥ï¡¼¥Õ",
-	"i:¥Ù¥È¥Ù¥È",
-	"j:¥¼¥ê¡¼",
-	"k:¥³¥Ü¥ë¥É",
-	"l:¿åÀ³À¸Êª",
-	"m:¥â¥ë¥É",
-	"n:¥Ê¡¼¥¬",
-	"o:¥ª¡¼¥¯",
-	"p:¿Í´Ö",
-	"q:»ÍÂ­½Ã",
-	"r:¥Í¥º¥ß",
-	"s:¥¹¥±¥ë¥È¥ó",
-	"t:Ä®¤Î¿Í",
-	"u:²¼µé¥Ç¡¼¥â¥ó",
-	"v:¥Ü¥ë¥Æ¥Ã¥¯¥¹",
-	"w:¥¤¥â¥à¥·/Âç·²",
+	"O:ã‚ªãƒ¼ã‚¬",
+	"P:å·¨å¤§äººé–“å‹ç”Ÿç‰©",
+	"Q:ã‚¯ã‚¤ãƒ«ã‚¹ãƒ«ã‚°(è„ˆæ‰“ã¤è‚‰å¡Š)",
+	"R:çˆ¬è™«é¡/ä¸¡ç”Ÿé¡",
+	"S:èœ˜è››/ã‚µã‚½ãƒª/ãƒ€ãƒ‹",
+	"T:ãƒˆãƒ­ãƒ«",
+	"U:ä¸Šç´šãƒ‡ãƒ¼ãƒ¢ãƒ³",
+	"V:ãƒãƒ³ãƒ‘ã‚¤ã‚¢",
+	"W:ãƒ¯ã‚¤ãƒˆ/ãƒ¬ã‚¤ã‚¹/ç­‰",
+	"X:ã‚¾ãƒ¼ãƒ³/ã‚¶ãƒ¬ãƒ³/ç­‰",
+	"Y:ã‚¤ã‚¨ãƒ†ã‚£",
+	"Z:ãƒã‚¦ãƒ³ãƒ‰",
+	"[:å …ã„ã‚¢ãƒ¼ãƒãƒ¼",
+	"\\:éˆå™¨(ãƒ¡ã‚¤ã‚¹/ãƒ ãƒ/ç­‰)",
+	"]:ç¨®ã€…ã®é˜²å…·",
+	"^:ãƒˆãƒ©ãƒƒãƒ—",
+	"_:ã‚¹ã‚¿ãƒƒãƒ•",
+	"`:äººå½¢ï¼Œå½«åƒ",
+	"a:ã‚¢ãƒª",
+	"b:ã‚³ã‚¦ãƒ¢ãƒª",
+	"c:ãƒ ã‚«ãƒ‡",
+	"d:ãƒ‰ãƒ©ã‚´ãƒ³",
+	"e:ãƒ•ãƒ­ãƒ¼ãƒ†ã‚£ãƒ³ã‚°ãƒ»ã‚¢ã‚¤",
+	"f:ãƒã‚³",
+	"g:ã‚´ãƒ¼ãƒ¬ãƒ ",
+	"h:ãƒ›ãƒ“ãƒƒãƒˆ/ã‚¨ãƒ«ãƒ•/ãƒ‰ãƒ¯ãƒ¼ãƒ•",
+	"i:ãƒ™ãƒˆãƒ™ãƒˆ",
+	"j:ã‚¼ãƒªãƒ¼",
+	"k:ã‚³ãƒœãƒ«ãƒ‰",
+	"l:æ°´æ£²ç”Ÿç‰©",
+	"m:ãƒ¢ãƒ«ãƒ‰",
+	"n:ãƒŠãƒ¼ã‚¬",
+	"o:ã‚ªãƒ¼ã‚¯",
+	"p:äººé–“",
+	"q:å››è¶³ç£",
+	"r:ãƒã‚ºãƒŸ",
+	"s:ã‚¹ã‚±ãƒ«ãƒˆãƒ³",
+	"t:ç”ºã®äºº",
+	"u:ä¸‹ç´šãƒ‡ãƒ¼ãƒ¢ãƒ³",
+	"v:ãƒœãƒ«ãƒ†ãƒƒã‚¯ã‚¹",
+	"w:ã‚¤ãƒ¢ãƒ ã‚·/å¤§ç¾¤",
 	/* "x:unused", */
-	"y:¥¤¡¼¥¯",
-	"z:¥¾¥ó¥Ó/¥ß¥¤¥é",
-	"{:Èô¤ÓÆ»¶ñ¤ÎÃÆ(Ìğ/ÃÆ)",
-	"|:Åá·õÎà(¥½¡¼¥É/¥À¥¬¡¼/Åù)",
-	"}:Èô¤ÓÆ»¶ñ(µİ/¥¯¥í¥¹¥Ü¥¦/¥¹¥ê¥ó¥°)",
-	"~:¿å/ÍÏ´äÎ® (¼ï¡¹¤Î¥¢¥¤¥Æ¥à)",
+	"y:ã‚¤ãƒ¼ã‚¯",
+	"z:ã‚¾ãƒ³ãƒ“/ãƒŸã‚¤ãƒ©",
+	"{:é£›ã³é“å…·ã®å¼¾(çŸ¢/å¼¾)",
+	"|:åˆ€å‰£é¡(ã‚½ãƒ¼ãƒ‰/ãƒ€ã‚¬ãƒ¼/ç­‰)",
+	"}:é£›ã³é“å…·(å¼“/ã‚¯ãƒ­ã‚¹ãƒœã‚¦/ã‚¹ãƒªãƒ³ã‚°)",
+	"~:æ°´/æº¶å²©æµ (ç¨®ã€…ã®ã‚¢ã‚¤ãƒ†ãƒ )",
 	NULL
 #else
 	" :A dark grid",
@@ -1776,40 +1776,40 @@ static cptr ident_info[] =
 
 #ifdef JP
 #if 0
-/* ±ÑÆüÀÚ¤êÂØ¤¨µ¡Ç½¤ËÂĞ±ş */
+/* è‹±æ—¥åˆ‡ã‚Šæ›¿ãˆæ©Ÿèƒ½ã«å¯¾å¿œ */
 static cptr E_ident_info[] =
 {
-	" :°Å°Ç",
+	" :æš—é—‡",
 	"!:A potion (or oil)",
 	"\":An amulet (or necklace)",
-	"#:ÊÉ(±£¤·¥É¥¢)",
-	"$:ºâÊõ(gold or gems)",
-	"%:¹ÛÌ®(ÍÏ´ä¤«ÀĞ±Ñ)",
-	"&:È¢",
-	"':³«¤¤¤¿¥É¥¢",
+	"#:å£(éš ã—ãƒ‰ã‚¢)",
+	"$:è²¡å®(gold or gems)",
+	"%:é‰±è„ˆ(æº¶å²©ã‹çŸ³è‹±)",
+	"&:ç®±",
+	"':é–‹ã„ãŸãƒ‰ã‚¢",
 	"(:Soft armor",
 	"):A shield",
-	"*:ºâÊõ¤ò´Ş¤ó¤À¹ÛÌ®¤Ş¤¿¤Ï ball monster",
-	"+:ÊÄ¤¸¤¿¥É¥¢",
-	",:¿©¤ÙÊª(mushroom patch)",
+	"*:è²¡å®ã‚’å«ã‚“ã é‰±è„ˆã¾ãŸã¯ ball monster",
+	"+:é–‰ã˜ãŸãƒ‰ã‚¢",
+	",:é£Ÿã¹ç‰©(mushroom patch)",
 	"-:A wand (or rod)",
-	".:¾²",
+	".:åºŠ",
 	"/:A polearm (Axe/Pike/etc)",
 	/* "0:unused", */
-	"1:»¨²ß²°¤ÎÆş¸ı",
-	"2:ËÉ¶ñ²°¤ÎÆş¸ı",
-	"3:Éğ´ïÀìÌçÅ¹¤ÎÆş¸ı",
-	"4:»û±¡¤ÎÆş¸ı",
-	"5:Ï£¶â½Ñ¤ÎÅ¹¤ÎÆş¸ı",
-	"6:ËâË¡¤ÎÅ¹¤ÎÆş¸ı",
-	"7:¥Ö¥é¥Ã¥¯¥Ş¡¼¥±¥Ã¥È¤ÎÆş¸ı",
-	"8:²æ¤¬²È¤ÎÆş¸ı",
-	"9:½ñÅ¹¤ÎÆş¸ı",
-	"::´äÀĞ",
+	"1:é›‘è²¨å±‹ã®å…¥å£",
+	"2:é˜²å…·å±‹ã®å…¥å£",
+	"3:æ­¦å™¨å°‚é–€åº—ã®å…¥å£",
+	"4:å¯ºé™¢ã®å…¥å£",
+	"5:éŒ¬é‡‘è¡“ã®åº—ã®å…¥å£",
+	"6:é­”æ³•ã®åº—ã®å…¥å£",
+	"7:ãƒ–ãƒ©ãƒƒã‚¯ãƒãƒ¼ã‚±ãƒƒãƒˆã®å…¥å£",
+	"8:æˆ‘ãŒå®¶ã®å…¥å£",
+	"9:æ›¸åº—ã®å…¥å£",
+	"::å²©çŸ³",
 	";:A glyph of warding/ explosive rune",
-	"<:¾å¤ê³¬ÃÊ",
+	"<:ä¸Šã‚Šéšæ®µ",
 	"=:A ring",
-	">:²¼¤ê³¬ÃÊ",
+	">:ä¸‹ã‚Šéšæ®µ",
 	"?:A scroll",
 	"@:Player",
 	"A:Angel",
@@ -1873,7 +1873,7 @@ static cptr E_ident_info[] =
 	"{:A missile (arrow/bolt/shot)",
 	"|:An edged weapon (sword/dagger/etc)",
 	"}:A launcher (bow/crossbow/sling)",
-	"~:Fluid terrain (or ¼ï¡¹¤Î¥¢¥¤¥Æ¥à)",
+	"~:Fluid terrain (or ç¨®ã€…ã®ã‚¢ã‚¤ãƒ†ãƒ )",
 	NULL
 };
 #endif
@@ -2006,7 +2006,7 @@ void do_cmd_query_symbol(void)
 
 	/* Get a character, or abort */
 #ifdef JP
-	if (!get_com("ÃÎ¤ê¤¿¤¤Ê¸»ú¤òÆşÎÏ¤·¤Æ²¼¤µ¤¤(µ­¹æ or ^AÁ´,^U¥æ,^NÈó¥æ,^MÌ¾Á°): ", &sym)) return;
+	if (!get_com("çŸ¥ã‚ŠãŸã„æ–‡å­—ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„(è¨˜å· or ^Aå…¨,^Uãƒ¦,^Néãƒ¦,^Måå‰): ", &sym)) return;
 #else
 	if (!get_com("Enter character to be identified(^A:All,^U:Uniqs,^N:Non uniqs,^M:Name): ", &sym)) return;
 #endif
@@ -2023,7 +2023,7 @@ void do_cmd_query_symbol(void)
 	{
 		all = TRUE;
 #ifdef JP
-		strcpy(buf, "Á´¥â¥ó¥¹¥¿¡¼¤Î¥ê¥¹¥È");
+		strcpy(buf, "å…¨ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®ãƒªã‚¹ãƒˆ");
 #else
 		strcpy(buf, "Full monster list.");
 #endif
@@ -2033,7 +2033,7 @@ void do_cmd_query_symbol(void)
 	{
 		all = uniq = TRUE;
 #ifdef JP
-		strcpy(buf, "¥æ¥Ë¡¼¥¯¡¦¥â¥ó¥¹¥¿¡¼¤Î¥ê¥¹¥È");
+		strcpy(buf, "ãƒ¦ãƒ‹ãƒ¼ã‚¯ãƒ»ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®ãƒªã‚¹ãƒˆ");
 #else
 		strcpy(buf, "Unique monster list.");
 #endif
@@ -2043,7 +2043,7 @@ void do_cmd_query_symbol(void)
 	{
 		all = norm = TRUE;
 #ifdef JP
-		strcpy(buf, "¥æ¥Ë¡¼¥¯³°¥â¥ó¥¹¥¿¡¼¤Î¥ê¥¹¥È");
+		strcpy(buf, "ãƒ¦ãƒ‹ãƒ¼ã‚¯å¤–ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®ãƒªã‚¹ãƒˆ");
 #else
 		strcpy(buf, "Non-unique monster list.");
 #endif
@@ -2054,7 +2054,7 @@ void do_cmd_query_symbol(void)
 	{
 		all = TRUE;
 #ifdef JP
-		if (!get_string("Ì¾Á°(±Ñ¸ì¤Î¾ì¹ç¾®Ê¸»ú¤Ç²Ä)",temp, 70))
+		if (!get_string("åå‰(è‹±èªã®å ´åˆå°æ–‡å­—ã§å¯)",temp, 70))
 #else
 		if (!get_string("Enter name:",temp, 70))
 #endif
@@ -2063,7 +2063,7 @@ void do_cmd_query_symbol(void)
 		     all = FALSE;
 		}
 #ifdef JP
-		sprintf(buf, "Ì¾Á°:%s¤Ë¥Ş¥Ã¥Á",temp);
+		sprintf(buf, "åå‰:%sã«ãƒãƒƒãƒ",temp);
 #else
 		sprintf(buf, "Monsters with a name \"%s\"",temp);
 #endif
@@ -2079,7 +2079,7 @@ void do_cmd_query_symbol(void)
 	else
 	{
 #ifdef JP
-		sprintf(buf, "%c - %s", sym, "Ìµ¸ú¤ÊÊ¸»ú");
+		sprintf(buf, "%c - %s", sym, "ç„¡åŠ¹ãªæ–‡å­—");
 #else
 		sprintf(buf, "%c - %s.", sym, "Unknown Symbol");
 #endif
@@ -2152,7 +2152,7 @@ void do_cmd_query_symbol(void)
 
 	/* Prompt XXX XXX XXX */
 #ifdef JP
-	put_str("»×¤¤½Ğ¤ò¸«¤Ş¤¹¤«? (k:»¦³²½ç/y/n): ", 0, 36);
+	put_str("æ€ã„å‡ºã‚’è¦‹ã¾ã™ã‹? (k:æ®ºå®³é †/y/n): ", 0, 36);
 #else
 	put_str("Recall details? (k/y/n): ", 0, 40);
 #endif
@@ -2221,7 +2221,7 @@ void do_cmd_query_symbol(void)
 
 		/* Hack -- Complete the prompt */
 #ifdef JP
-		Term_addstr(-1, TERM_WHITE, " ['r'»×¤¤½Ğ, ESC]");
+		Term_addstr(-1, TERM_WHITE, " ['r'æ€ã„å‡º, ESC]");
 #else
 		Term_addstr(-1, TERM_WHITE, " [(r)ecall, ESC]");
 #endif
@@ -2241,7 +2241,7 @@ void do_cmd_query_symbol(void)
 
 				/* Hack -- Complete the prompt (again) */
 #ifdef JP
-				Term_addstr(-1, TERM_WHITE, " ['r'»×¤¤½Ğ, ESC]");
+				Term_addstr(-1, TERM_WHITE, " ['r'æ€ã„å‡º, ESC]");
 #else
 				Term_addstr(-1, TERM_WHITE, " [(r)ecall, ESC]");
 #endif
@@ -2340,7 +2340,7 @@ bool research_mon(void)
 
 	/* Get a character, or abort */
 #ifdef JP
-if (!get_com("¥â¥ó¥¹¥¿¡¼¤ÎÊ¸»ú¤òÆşÎÏ¤·¤Æ²¼¤µ¤¤(µ­¹æ or ^AÁ´,^U¥æ,^NÈó¥æ,^MÌ¾Á°):", &sym)) 
+if (!get_com("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®æ–‡å­—ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„(è¨˜å· or ^Aå…¨,^Uãƒ¦,^Néãƒ¦,^Måå‰):", &sym)) 
 #else
 	if (!get_com("Enter character of monster: ", &sym))
 #endif
@@ -2366,27 +2366,27 @@ if (!get_com("¥â¥ó¥¹¥¿¡¼¤ÎÊ¸»ú¤òÆşÎÏ¤·¤Æ²¼¤µ¤¤(µ­¹æ or ^AÁ´,^U¥æ,^NÈó¥æ,^MÌ¾Á°):
 	if (sym == KTRL('A'))
 	{
 		all = TRUE;
-		strcpy(buf, "Á´¥â¥ó¥¹¥¿¡¼¤Î¥ê¥¹¥È");
+		strcpy(buf, "å…¨ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®ãƒªã‚¹ãƒˆ");
 	}
 	else if (sym == KTRL('U'))
 	{
 		all = uniq = TRUE;
-		strcpy(buf, "¥æ¥Ë¡¼¥¯¡¦¥â¥ó¥¹¥¿¡¼¤Î¥ê¥¹¥È");
+		strcpy(buf, "ãƒ¦ãƒ‹ãƒ¼ã‚¯ãƒ»ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®ãƒªã‚¹ãƒˆ");
 	}
 	else if (sym == KTRL('N'))
 	{
 		all = norm = TRUE;
-		strcpy(buf, "¥æ¥Ë¡¼¥¯³°¥â¥ó¥¹¥¿¡¼¤Î¥ê¥¹¥È");
+		strcpy(buf, "ãƒ¦ãƒ‹ãƒ¼ã‚¯å¤–ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®ãƒªã‚¹ãƒˆ");
 	}
 	else if (sym == KTRL('M'))
 	{
 		all = TRUE;
-		if (!get_string("Ì¾Á°(±Ñ¸ì¤Î¾ì¹ç¾®Ê¸»ú¤Ç²Ä)", temp, 70))
+		if (!get_string("åå‰(è‹±èªã®å ´åˆå°æ–‡å­—ã§å¯)", temp, 70))
 		{
 		     all = FALSE;
 		     temp[0] = 0;
 		}
-		sprintf(buf, "Ì¾Á°:%s¤Ë¥Ş¥Ã¥Á",temp);
+		sprintf(buf, "åå‰:%sã«ãƒãƒƒãƒ",temp);
 	}
 
 	else if (ident_info[i])
@@ -2402,7 +2402,7 @@ if (!get_com("¥â¥ó¥¹¥¿¡¼¤ÎÊ¸»ú¤òÆşÎÏ¤·¤Æ²¼¤µ¤¤(µ­¹æ or ^AÁ´,^U¥æ,^NÈó¥æ,^MÌ¾Á°):
 	else
 	{
 #ifdef JP
-	  sprintf(buf, "%c - %s", sym, "Ìµ¸ú¤ÊÊ¸»ú");
+	  sprintf(buf, "%c - %s", sym, "ç„¡åŠ¹ãªæ–‡å­—");
 #else
 		sprintf(buf, "%c - %s.", sym, "Unknown Symbol");
 #endif
@@ -2428,7 +2428,7 @@ if (!get_com("¥â¥ó¥¹¥¿¡¼¤ÎÊ¸»ú¤òÆşÎÏ¤·¤Æ²¼¤µ¤¤(µ­¹æ or ^AÁ´,^U¥æ,^NÈó¥æ,^MÌ¾Á°):
 		/* Require unique monsters if needed */
 		if (uniq && !(r_ptr->flags1 & (RF1_UNIQUE))) continue;
 
-		/* Ì¾Á°¸¡º÷ */
+		/* åå‰æ¤œç´¢ */
 		if (temp[0]){
 		    char temp2[80];
 		    int xx;
@@ -2511,7 +2511,7 @@ if (!get_com("¥â¥ó¥¹¥¿¡¼¤ÎÊ¸»ú¤òÆşÎÏ¤·¤Æ²¼¤µ¤¤(µ­¹æ or ^AÁ´,^U¥æ,^NÈó¥æ,^MÌ¾Á°):
 
 		/* Hack -- Complete the prompt */
 #ifdef JP
-Term_addstr(-1, TERM_WHITE, " ['r'»×¤¤½Ğ, ' '¤ÇÂ³¹Ô, ESC]");
+Term_addstr(-1, TERM_WHITE, " ['r'æ€ã„å‡º, ' 'ã§ç¶šè¡Œ, ESC]");
 #else
 		Term_addstr(-1, TERM_WHITE, " [(r)ecall, ESC, space to continue]");
 #endif

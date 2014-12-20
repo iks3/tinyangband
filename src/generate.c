@@ -1,4 +1,4 @@
-/* File: generate.c */
+ï»¿/* File: generate.c */
 
 /* Purpose: Dungeon generation */
 
@@ -244,7 +244,7 @@ static void alloc_object(int set, int typ, int num)
 			if (cheat_room)
 			{
 #ifdef JP
-msg_print("·Ù¹ğ¡ª¥¢¥¤¥Æ¥à¤òÇÛÃÖ¤Ç¤­¤Ş¤»¤ó¡ª");
+msg_print("è­¦å‘Šï¼ã‚¢ã‚¤ãƒ†ãƒ ã‚’é…ç½®ã§ãã¾ã›ã‚“ï¼");
 #else
 				msg_print("Warning! Could not place object!");
 #endif
@@ -491,7 +491,7 @@ static void gen_caverns_and_lakes(void)
 		{
 			if (cheat_room)
 #ifdef JP
-				msg_print("¸Ğ¤¢¤ê¡£");
+				msg_print("æ¹–ã‚ã‚Šã€‚");
 #else
 				msg_print("Lake on the level.");
 #endif
@@ -508,7 +508,7 @@ static void gen_caverns_and_lakes(void)
 
 		if (cheat_room)
 #ifdef JP
-			msg_print("Æ¶·¢¤¢¤ê¡£");
+			msg_print("æ´çªŸã‚ã‚Šã€‚");
 #else
 			msg_print("Cavern on level.");
 #endif
@@ -607,7 +607,7 @@ static bool cave_gen(void)
 
 		if (cheat_room)
 #ifdef JP
-			msg_print("¥¢¥ê¡¼¥Ê¥ì¥Ù¥ë");
+			msg_print("ã‚¢ãƒªãƒ¼ãƒŠãƒ¬ãƒ™ãƒ«");
 #else
 			msg_print("Arena level.");
 #endif
@@ -878,7 +878,7 @@ static bool cave_gen(void)
 		else if (cheat_hear)
 		{
 #ifdef JP
-			msg_format("¥â¥ó¥¹¥¿¡¼¿ô´ğËÜÃÍ¤ò %d ¤«¤é %d ¤Ë¸º¤é¤·¤Ş¤¹", small_tester, i);
+			msg_format("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼æ•°åŸºæœ¬å€¤ã‚’ %d ã‹ã‚‰ %d ã«æ¸›ã‚‰ã—ã¾ã™", small_tester, i);
 #else
 			msg_format("Reduced monsters base from %d to %d", small_tester, i);
 #endif
@@ -1097,7 +1097,7 @@ static bool level_gen(cptr *why)
 	if (!cave_gen())
 	{
 #ifdef JP
-		*why = "¥×¥ì¥¤¥ä¡¼¤òÇÛÃÖ¤Ç¤­¤Ê¤¤";
+		*why = "ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’é…ç½®ã§ããªã„";
 #else
 		*why = "could not place player";
 #endif
@@ -1238,7 +1238,7 @@ void generate_cave(void)
 		{
 			/* Message */
 #ifdef JP
-why = "¥¢¥¤¥Æ¥à¤¬Â¿¤¹¤®¤ë";
+why = "ã‚¢ã‚¤ãƒ†ãƒ ãŒå¤šã™ãã‚‹";
 #else
 			why = "too many objects";
 #endif
@@ -1252,7 +1252,7 @@ why = "¥¢¥¤¥Æ¥à¤¬Â¿¤¹¤®¤ë";
 		{
 			/* Message */
 #ifdef JP
-why = "¥â¥ó¥¹¥¿¡¼¤¬Â¿¤¹¤®¤ë";
+why = "ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒå¤šã™ãã‚‹";
 #else
 			why = "too many monsters";
 #endif
@@ -1278,7 +1278,7 @@ why = "¥â¥ó¥¹¥¿¡¼¤¬Â¿¤¹¤®¤ë";
 				{
 					/* Message */
 #ifdef JP
-why = "Âà¶ş¤Ê³¬";
+why = "é€€å±ˆãªéš";
 #else
 					why = "boring level";
 #endif
@@ -1295,7 +1295,7 @@ why = "Âà¶ş¤Ê³¬";
 
 		/* Message */
 #ifdef JP
-if (why) msg_format("À¸À®¤ä¤êÄ¾¤·(%s)", why);
+if (why) msg_format("ç”Ÿæˆã‚„ã‚Šç›´ã—(%s)", why);
 #else
 		if (why) msg_format("Generation restarted (%s)", why);
 #endif

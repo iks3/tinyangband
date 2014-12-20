@@ -3,438 +3,438 @@ N:*:Default
 Contra Dextra Avenue
 P.S. Trebor SUX.
 #DRUAGA
-¤Ä¤ë¤Ï¤·¤ò±Êµ×´ä¤Ë»È¤Ã¤Æ¤â²õ¤ì¤ë¤³¤È¤Ï¤Ê¤¤¤Î¤Ç°Â¿´¤À¡£
-#¥İ¡¼¥È¥Ô¥¢
-¥ä¥¹ ¥Õ¥¯ ¥Ì¥²
-¾å¾å²¼²¼º¸±¦º¸±¦£Â£Á
+ã¤ã‚‹ã¯ã—ã‚’æ°¸ä¹…å²©ã«ä½¿ã£ã¦ã‚‚å£Šã‚Œã‚‹ã“ã¨ã¯ãªã„ã®ã§å®‰å¿ƒã ã€‚
+#ãƒãƒ¼ãƒˆãƒ”ã‚¢
+ãƒ¤ã‚¹ ãƒ•ã‚¯ ãƒŒã‚²
+ä¸Šä¸Šä¸‹ä¸‹å·¦å³å·¦å³ï¼¢ï¼¡
 #Black Onix
-¥¤¥í¥¤¥Ã¥«¥¤¥Å¥Ä
-»ØÎØÊª¸ì¤Î±Ç²è¤Î¥×¥ì¥Ó¥å¡¼Æ°²è¤ÏÉ¬¸«Êª¤À¤½¤¦¤À¡£
-¥È¡¼¥ë¥­¥ó¤òÆÉ¤ó¤Ç¤Ê¤¤¤Ê¤ó¤Æµ¤¤ÎÆÇ¤Ê¡£
-¥¤¥ó¥¿¡¼¥Í¥Ã¥È¥¨¥¯¥¹¥×¥í¡¼¥À¡¼(ÀÄ¤¤'e')¤Ë¤Ï¿¨¤é¤Ê¤¤¤Û¤¦¤¬¤¤¤¤¡£
-¥µ¥ó¥ê¥ªSFÊ¸¸Ë[±Æ¤Î¥¸¥ã¥Ã¥¯]¤Ï°Å¹õ¤ÎËâË¡½ñ[¥Í¥¯¥í¥Î¥ß¥³¥ó]¤è¤ê´õ¾¯¤é¤·¤¤¡£
-ÅÁÀâ¤Î¼Í¼ê¤Î¹õ¤¤Ìğ¤ÏÅ¨¤Ë»É¤µ¤Ã¤Æ»à¤Ì¤Ş¤ÇÈ´¤±¤Ê¤¤¤é¤·¤¤¡£
-¥¢¥¤¥Æ¥à¤ò²õ¤·¤¿¤¯¤Ê¤«¤Ã¤¿¤é¤×¤è¤×¤è¤Ë¤Ï¶áÉÕ¤¯¤Ê¡ª
-¥Ç¥£¥ª¡¦¥Ö¥é¥ó¥É¡¼¤Ï»ş´Ö¤òÁà¤ë¤³¤È¤¬¤Ç¤­¤ë¤é¤·¤¤¡£
-ÅÁÀâ¤Î¼Í¼ê¤Îµİ¤È¹õ¤¤Ìğ¤¬¤¢¤ì¤Ğ¥¹¥Ş¥¦¥°¤ò°ì·â¤ÇÅİ¤¹¤³¤È¤â²ÄÇ½¤é¤·¤¤¡£
-¡ØÂ¼Àµ¡Ù¤Ï¿Í´Ö¤ò»¦¤¹¤ÈËâÎÏ¤¬Áı¤¹¤é¤·¤¤¡£
-¡ØÂ¼Àµ¡Ù¤òÈ¯Æ°¤¹¤ë¤Î¤Ï¤ä¤á¤¿¤Û¤¦¤¬¤¤¤¤¤é¤·¤¤¡£
-ÅÁÀâ¤Î¥Ì¥ó¥Á¥ã¥¯¡ØÎ¶Áè¸×ò¬¡Ù¤Ï½¤¹ÔÁÎ¤¬»È¤¦¤ÈÁÇ¼ê¤Î»ş¤ÈÆ±¤¸¹¶·â¤¬¤Ç¤­¤ë¤½¤¦¤À¡£
-¤ª¤­¤Î¤É¤¯¤Ç¤¹¤¬¤Ü¤¦¤±¤ó¤Î¤·¤ç£±¤Ï¤­¤¨¤Æ¤·¤Ş¤¤¤Ş¤·¤¿¡£
-¤Õ¤Ã¤«¤Ä¤Î¤¸¤å¤â¤ó¤¬¤Á¤¬¤¤¤Ş¤¹¡£
-#from ¥³¥ó¥é¥Ã¥É by Z
-±ô¤«±©º¬¤«?
-#from º½¤ÎÃæ¤ÎÈâ by Z
-ÓÌ¤²¤Æ¤¤¤ë¤Î¤«»à¤ò
-¤¬¤ó¤Ğ¤êÆşÆ»¤Û¤È¤È¤®¤¹
-Ì±ÌÀ½ñË¼[Ãæ¹ñÉğ¿ÍÎóÅÁ]¤Ï½¤¹ÔÁÎÀìÍÑ¤ÎËâË¡½ñ¤À¡£
-¤ó¤¬¤¢¡¦¤°¤¢ ¤Ê¤Õ¤ë¤¿¤°¤ó ¤¤¤¢¡ª¤¯¤È¤¥¤°¤¢¡ª
-¤Õ¤ó¤°¤ë¤¤ ¤à¤°¤ë¤¦¤Ê¤Õ ¤¯¤È¤¥¤ë¤¦ ¤ë¤ë¤¤¤¨ ¤¦¤¬¤Õ¤Ê¤°¤ë ¤Õ¤¿¤°¤ó
-¤ä ¤Ê ¤«¤Ç¤£¤·¤å¤È¤¥ ¤Ë¤ë¤°¤¦¤ì ¤¹¤Æ¤ë¤Õ¤¹¤Ê ¤¯¤Ê¤¡ ¤Ë¤ç¤°¤¿
-¤Ö¤°¤È¤é¤°¤ë¤ó ¤Ö¤ë¤°¤È¤à ¤¢¤¤¡ª¤¢¤¤¡ª¤Ï¤¹¤¿¤¢¡ª
-¤¤¤«¤¢ ¤Ï¤¢¤Ö¤Û¤¦---¤¤¤¤ ¤é¤¢¤ó=¤Æ¤´¤¹ ¤¯¤È¤¥¤ë¤¦ ¤Õ¤¿¤°¤ó
-¥¢¥Ã¥·¥å ¥Ê¥º¥° ¥É¥¥¥ë¥Ğ¥È¥¥¡¼¥ë
+ã‚¤ãƒ­ã‚¤ãƒƒã‚«ã‚¤ãƒ…ãƒ„
+æŒ‡è¼ªç‰©èªã®æ˜ ç”»ã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼å‹•ç”»ã¯å¿…è¦‹ç‰©ã ãã†ã ã€‚
+ãƒˆãƒ¼ãƒ«ã‚­ãƒ³ã‚’èª­ã‚“ã§ãªã„ãªã‚“ã¦æ°—ã®æ¯’ãªã€‚
+ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆã‚¨ã‚¯ã‚¹ãƒ—ãƒ­ãƒ¼ãƒ€ãƒ¼(é’ã„'e')ã«ã¯è§¦ã‚‰ãªã„ã»ã†ãŒã„ã„ã€‚
+ã‚µãƒ³ãƒªã‚ªSFæ–‡åº«[å½±ã®ã‚¸ãƒ£ãƒƒã‚¯]ã¯æš—é»’ã®é­”æ³•æ›¸[ãƒã‚¯ãƒ­ãƒãƒŸã‚³ãƒ³]ã‚ˆã‚Šå¸Œå°‘ã‚‰ã—ã„ã€‚
+ä¼èª¬ã®å°„æ‰‹ã®é»’ã„çŸ¢ã¯æ•µã«åˆºã•ã£ã¦æ­»ã¬ã¾ã§æŠœã‘ãªã„ã‚‰ã—ã„ã€‚
+ã‚¢ã‚¤ãƒ†ãƒ ã‚’å£Šã—ãŸããªã‹ã£ãŸã‚‰ã·ã‚ˆã·ã‚ˆã«ã¯è¿‘ä»˜ããªï¼
+ãƒ‡ã‚£ã‚ªãƒ»ãƒ–ãƒ©ãƒ³ãƒ‰ãƒ¼ã¯æ™‚é–“ã‚’æ“ã‚‹ã“ã¨ãŒã§ãã‚‹ã‚‰ã—ã„ã€‚
+ä¼èª¬ã®å°„æ‰‹ã®å¼“ã¨é»’ã„çŸ¢ãŒã‚ã‚Œã°ã‚¹ãƒã‚¦ã‚°ã‚’ä¸€æ’ƒã§å€’ã™ã“ã¨ã‚‚å¯èƒ½ã‚‰ã—ã„ã€‚
+ã€æ‘æ­£ã€ã¯äººé–“ã‚’æ®ºã™ã¨é­”åŠ›ãŒå¢—ã™ã‚‰ã—ã„ã€‚
+ã€æ‘æ­£ã€ã‚’ç™ºå‹•ã™ã‚‹ã®ã¯ã‚„ã‚ãŸã»ã†ãŒã„ã„ã‚‰ã—ã„ã€‚
+ä¼èª¬ã®ãƒŒãƒ³ãƒãƒ£ã‚¯ã€é¾äº‰è™é¬ªã€ã¯ä¿®è¡Œåƒ§ãŒä½¿ã†ã¨ç´ æ‰‹ã®æ™‚ã¨åŒã˜æ”»æ’ƒãŒã§ãã‚‹ãã†ã ã€‚
+ãŠãã®ã©ãã§ã™ãŒã¼ã†ã‘ã‚“ã®ã—ã‚‡ï¼‘ã¯ããˆã¦ã—ã¾ã„ã¾ã—ãŸã€‚
+ãµã£ã‹ã¤ã®ã˜ã‚…ã‚‚ã‚“ãŒã¡ãŒã„ã¾ã™ã€‚
+#from ã‚³ãƒ³ãƒ©ãƒƒãƒ‰ by Z
+é‰›ã‹ç¾½æ ¹ã‹?
+#from ç ‚ã®ä¸­ã®æ‰‰ by Z
+å—…ã’ã¦ã„ã‚‹ã®ã‹æ­»ã‚’
+ãŒã‚“ã°ã‚Šå…¥é“ã»ã¨ã¨ãã™
+æ°‘æ˜æ›¸æˆ¿[ä¸­å›½æ­¦äººåˆ—ä¼]ã¯ä¿®è¡Œåƒ§å°‚ç”¨ã®é­”æ³•æ›¸ã ã€‚
+ã‚“ãŒã‚ãƒ»ãã‚ ãªãµã‚‹ãŸãã‚“ ã„ã‚ï¼ãã¨ã…ãã‚ï¼
+ãµã‚“ãã‚‹ã„ ã‚€ãã‚‹ã†ãªãµ ãã¨ã…ã‚‹ã† ã‚‹ã‚‹ã„ãˆ ã†ãŒãµãªãã‚‹ ãµãŸãã‚“
+ã‚„ ãª ã‹ã§ãƒã—ã‚…ã¨ã… ã«ã‚‹ãã†ã‚Œ ã™ã¦ã‚‹ãµã™ãª ããªã ã«ã‚‡ããŸ
+ã¶ãã¨ã‚‰ãã‚‹ã‚“ ã¶ã‚‹ãã¨ã‚€ ã‚ã„ï¼ã‚ã„ï¼ã¯ã™ãŸã‚ï¼
+ã„ã‹ã‚ ã¯ã‚ã¶ã»ã†---ã„ã„ ã‚‰ã‚ã‚“=ã¦ã”ã™ ãã¨ã…ã‚‹ã† ãµãŸãã‚“
+ã‚¢ãƒƒã‚·ãƒ¥ ãƒŠã‚ºã‚° ãƒ‰ã‚¥ãƒ«ãƒãƒˆã‚¥ãƒ¼ãƒ«
 #They say that you can't trust rumors.
-±½¤ò¿®¤¸¤Á¤ã¤¤¤±¤Ê¤¤¤è¡£
+å™‚ã‚’ä¿¡ã˜ã¡ã‚ƒã„ã‘ãªã„ã‚ˆã€‚
 #You have no more Black Potions of Death.
-¤â¤¦¹õ¤¤»à¤ÎÌô¤ò»ı¤Ã¤Æ¤¤¤Ê¤¤¡£
+ã‚‚ã†é»’ã„æ­»ã®è–¬ã‚’æŒã£ã¦ã„ãªã„ã€‚
 #They say that smart guys hang around at 1600'.
-¸­¤¤ÅÛ¤é¤Ï1600'¤¢¤¿¤ê¤Ç´èÄ¥¤ë¤é¤·¤¤¡£
+è³¢ã„å¥´ã‚‰ã¯1600'ã‚ãŸã‚Šã§é ‘å¼µã‚‹ã‚‰ã—ã„ã€‚
 #They say that tough guys hang around at 1500'.
-¥¿¥Õ¤ÊÅÛ¤é¤Ï1500'¤¢¤¿¤ê¤Ç´èÄ¥¤ë¤é¤·¤¤¡£
+ã‚¿ãƒ•ãªå¥´ã‚‰ã¯1500'ã‚ãŸã‚Šã§é ‘å¼µã‚‹ã‚‰ã—ã„ã€‚
 #They say that handsome guys hang around at 1200'.
-¥Ï¥ó¥µ¥à¤ÊÅÛ¤é¤Ï1200'¤¢¤¿¤ê¤Ç´èÄ¥¤ë¤é¤·¤¤¡£
+ãƒãƒ³ã‚µãƒ ãªå¥´ã‚‰ã¯1200'ã‚ãŸã‚Šã§é ‘å¼µã‚‹ã‚‰ã—ã„ã€‚
 #They say that a visit to 3250' can be quite an experience.
-3250'¤Ş¤Ç¹Ô¤Ã¤Æ¤ß¤ë¤Î¤Ï¤¤¤¤·Ğ¸³¤Ë¤Ê¤ë¤é¤·¤¤¡£
+3250'ã¾ã§è¡Œã£ã¦ã¿ã‚‹ã®ã¯ã„ã„çµŒé¨“ã«ãªã‚‹ã‚‰ã—ã„ã€‚
 #They say that a visit to 3250' will only get you killed.
-3250'¤Ş¤Ç¹Ô¤Ã¤Æ¤ß¤ë¤Î¤Ï»à¤Ë¤Ë¹Ô¤¯¤è¤¦¤Ê¤â¤Î¤é¤·¤¤¡£
+3250'ã¾ã§è¡Œã£ã¦ã¿ã‚‹ã®ã¯æ­»ã«ã«è¡Œãã‚ˆã†ãªã‚‚ã®ã‚‰ã—ã„ã€‚
 #Throw a Potion of Blindness at a monster and it cannot cast any spells!
-ÌÕÌÜ¤ÎÌô¤òÅ¨¤ËÅê¤²¤Ä¤±¤ì¤ĞÅÛ¤é¤Ï¼öÊ¸¤ò¾§¤¨¤é¤ì¤Ê¤¯¤Ê¤ë¡£
+ç›²ç›®ã®è–¬ã‚’æ•µã«æŠ•ã’ã¤ã‘ã‚Œã°å¥´ã‚‰ã¯å‘ªæ–‡ã‚’å”±ãˆã‚‰ã‚Œãªããªã‚‹ã€‚
 #Not satisfied with the artifacts you find? Well, create your own!
-¸«¤Ä¤±¤¿¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¤À¤±¤Ç¤ÏÊªÂ­¤ê¤Ê¤¤¡©¤¸¤ã¤¢¼«Ê¬¤Çºî¤í¤¦¡ª
+è¦‹ã¤ã‘ãŸã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆã ã‘ã§ã¯ç‰©è¶³ã‚Šãªã„ï¼Ÿã˜ã‚ƒã‚è‡ªåˆ†ã§ä½œã‚ã†ï¼
 #MAKE MONEY FAST! Find a Treasure Pit!
-¡ü¤¹¤°¤Ë¶â»ı¤Á¤Ë¤Ê¤ì¤ëÊıË¡¶µ¤¨¤Ş¤¹¡ª¡ü ¢ªÊõÊª¸Ë¤ò¸«¤Ä¤±¤è¤¦¡ª
+â—ã™ãã«é‡‘æŒã¡ã«ãªã‚Œã‚‹æ–¹æ³•æ•™ãˆã¾ã™ï¼â— â†’å®ç‰©åº«ã‚’è¦‹ã¤ã‘ã‚ˆã†ï¼
 #Buy a home in the dungeon, any depth you want! Contact: McDuck & Co.
-¥À¥ó¥¸¥ç¥ó¤Ë²È¤òÇã¤ª¤¦¡ª¤É¤ó¤Ê¿¼¤µ¤Ç¤â¡ªMcDuck ÉÔÆ°»º¤Ë¤¤¤Ş¤¹¤°Ï¢Íí¤ò¡ª
+ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã«å®¶ã‚’è²·ãŠã†ï¼ã©ã‚“ãªæ·±ã•ã§ã‚‚ï¼McDuck ä¸å‹•ç”£ã«ã„ã¾ã™ãé€£çµ¡ã‚’ï¼
 #They say that Alberich has forged an all-powerful Ring.
-¥¢¥ë¥Ù¥ê¥Ò¤¬Á´¤Æ¤ÎÎÏ¤Î»ØÎØ¤òºî¤Ã¤¿¤é¤·¤¤¡£
+ã‚¢ãƒ«ãƒ™ãƒªãƒ’ãŒå…¨ã¦ã®åŠ›ã®æŒ‡è¼ªã‚’ä½œã£ãŸã‚‰ã—ã„ã€‚
 #A good item will not corrode.
-ÎÉ¤¤¥¢¥¤¥Æ¥à¤ÏÉå¿©¤·¤Ê¤¤¡£
+è‰¯ã„ã‚¢ã‚¤ãƒ†ãƒ ã¯è…é£Ÿã—ãªã„ã€‚
 #They say that Alberich lost the Tarnhelm after making himself invisible.
-¥¢¥ë¥Ù¥ê¥Ò¤Ï¼«Ê¬¤òÆ©ÌÀ¤Ë¤·¤¿¸å¡¢¡Ø±£¤ìË¹»Ò¡Ù¤òÌµ¤¯¤·¤Æ¤·¤Ş¤Ã¤¿¤½¤¦¤À¡£
+ã‚¢ãƒ«ãƒ™ãƒªãƒ’ã¯è‡ªåˆ†ã‚’é€æ˜ã«ã—ãŸå¾Œã€ã€éš ã‚Œå¸½å­ã€ã‚’ç„¡ãã—ã¦ã—ã¾ã£ãŸãã†ã ã€‚
 #They say that Nibelungs live in dark caves.
-¥Ë¡¼¥Ù¥ë¥ó¥°¤Ï°Å¤¤Æ¶·¢¤Ë½»¤ó¤Ç¤¤¤ë¤é¤·¤¤¡£
+ãƒ‹ãƒ¼ãƒ™ãƒ«ãƒ³ã‚°ã¯æš—ã„æ´çªŸã«ä½ã‚“ã§ã„ã‚‹ã‚‰ã—ã„ã€‚
 #Some weapons that slay dragons can be very deadly against them...
-¥É¥é¥´¥ó¥¹¥ì¥¤¥ä¡¼¤ÎÉğ´ï¤Ï¥É¥é¥´¥ó¤ËÃ×Ì¿Åª¤Ê¥À¥á¡¼¥¸¤òÍ¿¤¨¤ë¡£
+ãƒ‰ãƒ©ã‚´ãƒ³ã‚¹ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ­¦å™¨ã¯ãƒ‰ãƒ©ã‚´ãƒ³ã«è‡´å‘½çš„ãªãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹ã€‚
 #Finding the Phial of Galadriel at 50' is nothing to be proud of.
-¥¬¥é¥É¥ê¥¨¥ë¤ÎààÍşÉÓ¤ò°ì³¬¤Ç¸«¤Ä¤±¤Æ¤â¼«Ëı¤Ç¤­¤Ê¤¤¡£
+ã‚¬ãƒ©ãƒ‰ãƒªã‚¨ãƒ«ã®ç»ç’ƒç“¶ã‚’ä¸€éšã§è¦‹ã¤ã‘ã¦ã‚‚è‡ªæ…¢ã§ããªã„ã€‚
 #There are Black Market stores hidden deep in the dungeon, with COOL stuff!
-¥À¥ó¥¸¥ç¥ó¤Î±ü¿¼¤¯¤Ë¥Ö¥é¥Ã¥¯¥Ş¡¼¥±¥Ã¥È¤¬¤¢¤Ã¤Æ¡¢À¨¤¤¤â¤Î¤òÇä¤Ã¤Æ¤ë¤é¤·¤¤¡£
+ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®å¥¥æ·±ãã«ãƒ–ãƒ©ãƒƒã‚¯ãƒãƒ¼ã‚±ãƒƒãƒˆãŒã‚ã£ã¦ã€å‡„ã„ã‚‚ã®ã‚’å£²ã£ã¦ã‚‹ã‚‰ã—ã„ã€‚
 #Have you ever seen a Rod of Havoc inscribed {BFG9000}?
-{BFG9000}¤ÈÌÃ¤Î¤¢¤ë²õÌÇ¤Î¥í¥Ã¥É¤ò¸«¤¿¤³¤È¤¢¤ë¤«¤¤¡©
+{BFG9000}ã¨éŠ˜ã®ã‚ã‚‹å£Šæ»…ã®ãƒ­ãƒƒãƒ‰ã‚’è¦‹ãŸã“ã¨ã‚ã‚‹ã‹ã„ï¼Ÿ
 #What a pity, you cannot read it!
-¤½¤ì¤òÆÉ¤à¤³¤È¤¬½ĞÍè¤Ê¤¤¤Ê¤ó¤Æµ¤¤ÎÆÇ¤Ê¡£
+ãã‚Œã‚’èª­ã‚€ã“ã¨ãŒå‡ºæ¥ãªã„ãªã‚“ã¦æ°—ã®æ¯’ãªã€‚
 You will encounter a dark, tall stranger...
 #A Mithril mail will not rust.
-¥ß¥¹¥ê¥ë¤Î³»¤Ï»¬¤Ó¤Ê¤¤¡£
+ãƒŸã‚¹ãƒªãƒ«ã®é§ã¯éŒ†ã³ãªã„ã€‚
 #An Adamantite mail will not rust.
-¥¢¥À¥Ş¥ó¥¿¥¤¥È¤Î³»¤Ï»¬¤Ó¤Ê¤¤¡£
+ã‚¢ãƒ€ãƒãƒ³ã‚¿ã‚¤ãƒˆã®é§ã¯éŒ†ã³ãªã„ã€‚
 #A Rusty Chain Mail cannot rust any further.
-»¬¤Ó¤¿º¿¤«¤¿¤Ó¤é¤Ï¤½¤ì°Ê¾å»¬¤Ó¤Ê¤¤¡£
+éŒ†ã³ãŸé–ã‹ãŸã³ã‚‰ã¯ãã‚Œä»¥ä¸ŠéŒ†ã³ãªã„ã€‚
 #If you are a mage, you will NOT want to find Raal's Tome of Destruction!
-¤¢¤Ê¤¿¤¬ËâË¡»È¤¤¤Ê¤é¡¢¥é¥¢¥ë¤ÎÇË²õ¤Î½¸ÂçÀ®¤Ë¤Ï½Ğ²ñ¤¤¤¿¤¯¤Ê¤¤¤Ç¤¢¤í¤¦¡£
+ã‚ãªãŸãŒé­”æ³•ä½¿ã„ãªã‚‰ã€ãƒ©ã‚¢ãƒ«ã®ç ´å£Šã®é›†å¤§æˆã«ã¯å‡ºä¼šã„ãŸããªã„ã§ã‚ã‚ã†ã€‚
 #You won't want to find Raal's Tome of Destruction!
-¤¢¤Ê¤¿¤Ï¥é¥¢¥ë¤ÎÇË²õ¤Î½¸ÂçÀ®¤Ë¤Ï½Ğ²ñ¤¤¤¿¤¯¤Ê¤¤¤Ç¤¢¤í¤¦¡£
+ã‚ãªãŸã¯ãƒ©ã‚¢ãƒ«ã®ç ´å£Šã®é›†å¤§æˆã«ã¯å‡ºä¼šã„ãŸããªã„ã§ã‚ã‚ã†ã€‚
 #You won't want to find Raal's Tome of Destruction, unless you are a mage.
-¤¢¤Ê¤¿¤¬ËâË¡»È¤¤¤Ç¤Ê¤¤¸Â¤ê¡¢¥é¥¢¥ë¤ÎÇË²õ¤Î½¸ÂçÀ®¤Ë¤Ï½Ğ²ñ¤¤¤¿¤¯¤Ê¤¤¤Ç¤¢¤í¤¦¡£
+ã‚ãªãŸãŒé­”æ³•ä½¿ã„ã§ãªã„é™ã‚Šã€ãƒ©ã‚¢ãƒ«ã®ç ´å£Šã®é›†å¤§æˆã«ã¯å‡ºä¼šã„ãŸããªã„ã§ã‚ã‚ã†ã€‚
 #A Wand of Death is useless against monsters that are tougher than you.
-»à¤Î¾ó¤Ï¤¢¤Ê¤¿¤è¤ê¶¯¤¤Å¨¤Ë¤Ï¸ú²Ì¤¬¤Ê¤¤¡£
+æ­»ã®æ–ã¯ã‚ãªãŸã‚ˆã‚Šå¼·ã„æ•µã«ã¯åŠ¹æœãŒãªã„ã€‚
 #A Wand of Death is of little use against foes that are dead already.
-»à¤Î¾ó¤Ï¤¹¤Ç¤Ë»à¤ó¤Ç¤¤¤ëÅ¨¤Ë¤ÏÌò¤ËÎ©¤¿¤Ê¤¤¡£
+æ­»ã®æ–ã¯ã™ã§ã«æ­»ã‚“ã§ã„ã‚‹æ•µã«ã¯å½¹ã«ç«‹ãŸãªã„ã€‚
 #Try taking off your armor before fighting a Gelatinous Cube!
-¥¼¥é¥Á¥ó¥­¥å¡¼¥Ö¤ÈÀï¤¦Á°¤Ë³»¤òÃ¦¤¤¤Ç¤ß¤è¤¦¡£
+ã‚¼ãƒ©ãƒãƒ³ã‚­ãƒ¥ãƒ¼ãƒ–ã¨æˆ¦ã†å‰ã«é§ã‚’è„±ã„ã§ã¿ã‚ˆã†ã€‚
 #They say that only one sword can score *CRITICAL* hits.
-¤¿¤À°ì¤Ä¤Î·õ¤Î¤ß¤¬ *CRITICAL* ¤ò½Ğ¤¹¤³¤È¤¬½ĞÍè¤ë¤é¤·¤¤¡£
+ãŸã ä¸€ã¤ã®å‰£ã®ã¿ãŒ *CRITICAL* ã‚’å‡ºã™ã“ã¨ãŒå‡ºæ¥ã‚‹ã‚‰ã—ã„ã€‚
 You have Error in objdes()
 #This rumor is not true.
-¤³¤Î±½¤Ï¿¿¼Â¤Ç¤Ï¤Ê¤¤¡£
+ã“ã®å™‚ã¯çœŸå®Ÿã§ã¯ãªã„ã€‚
 Trump power may be useful in some circumstances: free teleport!
 #If you can fall like a feather, you need not care about gravity.
-±©º¬¤Î¤è¤¦¤ËÍî²¼¤¹¤ë¤Î¤Ê¤é½ÅÎÏ¤òµ¤¤Ë¤¹¤ëÉ¬Í×¤Ï¤Ê¤¤¡£
+ç¾½æ ¹ã®ã‚ˆã†ã«è½ä¸‹ã™ã‚‹ã®ãªã‚‰é‡åŠ›ã‚’æ°—ã«ã™ã‚‹å¿…è¦ã¯ãªã„ã€‚
 #They say that you should rejoice if you find a scroll labeled ""!
-"" ¤È½ñ¤«¤ì¤¿´¬Êª¤ò½¦¤Ã¤¿¤é´î¤Ö¤Ù¤­¤Ê¤ó¤À¤½¤¦¤À¡£
+"" ã¨æ›¸ã‹ã‚ŒãŸå·»ç‰©ã‚’æ‹¾ã£ãŸã‚‰å–œã¶ã¹ããªã‚“ã ãã†ã ã€‚
 #You don't always have to kill everything you meet!
-¤¤¤Ä¤â½Ğ²ñ¤¦Å¨Á´¤Æ¤ò»¦¤¹É¬Í×¤Ï¤Ê¤¤¡ª
+ã„ã¤ã‚‚å‡ºä¼šã†æ•µå…¨ã¦ã‚’æ®ºã™å¿…è¦ã¯ãªã„ï¼
 #If you can't beat it, leave it alone!
-Åİ¤»¤Ê¤¤¤Ê¤é¡¢¤Û¤Ã¤È¤­¤Ê¡ª
+å€’ã›ãªã„ãªã‚‰ã€ã»ã£ã¨ããªï¼
 An umber hulk can be a confusing sight.
 #There *is* a good use for Potions of Detonations, Ruination and Death...
-ÇúÈ¯¤ÎÌô¤ä»à¤ÎÌô¤äÇËÌÇ¤ÎÌô¤Ë¤Ï¡¢¤¤¤¤»È¤¤Æ»¤¬¤¢¤ë¡£
+çˆ†ç™ºã®è–¬ã‚„æ­»ã®è–¬ã‚„ç ´æ»…ã®è–¬ã«ã¯ã€ã„ã„ä½¿ã„é“ãŒã‚ã‚‹ã€‚
 #It's a bad idea to throw away a Longsword (4d5).
-¥í¥ó¥°¥½¡¼¥É(4d5)¤ò¼Î¤Æ¤ë¤Î¤Ï¤ä¤á¤¿¤Û¤¦¤¬¤¤¤¤¡£
+ãƒ­ãƒ³ã‚°ã‚½ãƒ¼ãƒ‰(4d5)ã‚’æ¨ã¦ã‚‹ã®ã¯ã‚„ã‚ãŸã»ã†ãŒã„ã„ã€‚
 #It's a bad idea to wield a Longsword (4d5).
-¥í¥ó¥°¥½¡¼¥É(4d5)¤òÁõÈ÷¤¹¤ë¤Î¤Ï¤ä¤á¤¿¤Û¤¦¤¬¤¤¤¤¡£
+ãƒ­ãƒ³ã‚°ã‚½ãƒ¼ãƒ‰(4d5)ã‚’è£…å‚™ã™ã‚‹ã®ã¯ã‚„ã‚ãŸã»ã†ãŒã„ã„ã€‚
 #It's useless to bash monsters with bows - but there's one notable exception...
-µİ¤Ç¥â¥ó¥¹¥¿¡¼¤òÃ¡¤¯¤Î¤Ï°ÕÌ£¤¬¤Ê¤¤¡£¤¿¤À°ì¤Ä¤ÎÆÃ¼ì¤ÊÎã³°¤ò½ü¤¤¤Æ¤Ï¡Ä
+å¼“ã§ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’å©ãã®ã¯æ„å‘³ãŒãªã„ã€‚ãŸã ä¸€ã¤ã®ç‰¹æ®Šãªä¾‹å¤–ã‚’é™¤ã„ã¦ã¯â€¦
 #Actually, Slime Mold Juice is not completely useless.
-¼Â¤Ï¥¹¥é¥¤¥à¥â¡¼¥ë¥É¥¸¥å¡¼¥¹¤ÏÁ´¤¯Ìò¤ËÎ©¤¿¤Ê¤¤Ìõ¤Ç¤Ï¤Ê¤¤¡£
+å®Ÿã¯ã‚¹ãƒ©ã‚¤ãƒ ãƒ¢ãƒ¼ãƒ«ãƒ‰ã‚¸ãƒ¥ãƒ¼ã‚¹ã¯å…¨ãå½¹ã«ç«‹ãŸãªã„è¨³ã§ã¯ãªã„ã€‚
 #Help me! I'm being held captive in a Vault at 2850'!
-½õ¤±¤Æ¤¯¤À¤µ¤¤¡ª»ä¤ÏÃÏ²¼£µ£·³¬¤ÎÃÏ²¼¼¼¤ËÊá¤é¤¨¤é¤ì¤Æ¤¤¤Ş¤¹¡ª
+åŠ©ã‘ã¦ãã ã•ã„ï¼ç§ã¯åœ°ä¸‹ï¼•ï¼—éšã®åœ°ä¸‹å®¤ã«æ•ã‚‰ãˆã‚‰ã‚Œã¦ã„ã¾ã™ï¼
 #Ever tried inscribing your armor {erodeproof}?
-ËÉ¶ñ¤Ë{Éå¿©¤·¤Ê¤¤}¤ÈÌÃ¤ò¹ï¤ó¤À¤³¤È¤¢¤ë¤«¤¤¡©
+é˜²å…·ã«{è…é£Ÿã—ãªã„}ã¨éŠ˜ã‚’åˆ»ã‚“ã ã“ã¨ã‚ã‚‹ã‹ã„ï¼Ÿ
 #Why are you wasting time reading fortunes?
-¤Ê¤ó¤Ç¤ª¤ß¤¯¤¸¤Ê¤ó¤«ÆÉ¤ó¤Ç»ş´Ö¤òÌµÂÌ¤Ë¤·¤Æ¤ë¤ó¤À¡©
+ãªã‚“ã§ãŠã¿ãã˜ãªã‚“ã‹èª­ã‚“ã§æ™‚é–“ã‚’ç„¡é§„ã«ã—ã¦ã‚‹ã‚“ã ï¼Ÿ
 There is a horrible, ghastly fate awaiting you... at 2700'!
 #You can get the Longsword 'Ringil' by doing the following:
-¥í¥ó¥°¥½¡¼¥É¡Ø¥ê¥ó¥®¥ë¡Ù¤ò¼ê¤ËÆş¤ì¤ëÊıË¡¤Ï°Ê²¼¤ÎÄÌ¤ê¡§
+ãƒ­ãƒ³ã‚°ã‚½ãƒ¼ãƒ‰ã€ãƒªãƒ³ã‚®ãƒ«ã€ã‚’æ‰‹ã«å…¥ã‚Œã‚‹æ–¹æ³•ã¯ä»¥ä¸‹ã®é€šã‚Šï¼š
 #You can protect yourself from Great Wyrms of Power by doing the following:
-¥Ñ¥ï¡¼¡¦¥ï¥¤¥¢¡¼¥à¤«¤é¿È¤ò¼é¤ëÊıË¡¤Ï°Ê²¼¤ÎÄÌ¤ê¡§
+ãƒ‘ãƒ¯ãƒ¼ãƒ»ãƒ¯ã‚¤ã‚¢ãƒ¼ãƒ ã‹ã‚‰èº«ã‚’å®ˆã‚‹æ–¹æ³•ã¯ä»¥ä¸‹ã®é€šã‚Šï¼š
 #It's true name is 249.
-¤½¤ì¤ÎËÜÅö¤ÎÌ¾Á°¤Ï 249 ¤À¡£
+ãã‚Œã®æœ¬å½“ã®åå‰ã¯ 249 ã ã€‚
 #You feel like someone's pulling your leg!
-Ã¯¤«¤ËÂ­¤ò°ú¤ÃÄ¥¤é¤ì¤Æ¤¤¤ëµ¤¤¬¤¹¤ë¡ª
+èª°ã‹ã«è¶³ã‚’å¼•ã£å¼µã‚‰ã‚Œã¦ã„ã‚‹æ°—ãŒã™ã‚‹ï¼
 #AAAAAAAAAAARRRRRRRRGGGGHHHHHHH!
-¤°¤¢¤¢¤¢¤¢¤¢¤¡¤¡¤¡¤¡¡ª
+ãã‚ã‚ã‚ã‚ã‚ããããï¼
 #Imperial assassin looking for a job. Contact: Pak, Master of Sinanju, 2600'.
-Äë¹ñ¤Î¥¢¥µ¥·¥ó¡¢¿¦µá¤à¡£Ï¢Íí¤Ï2600'¤Î¥·¥Ê¥ó¥¸¥å¡¦¥Ş¥¹¥¿¡¼ Pak ¤Ş¤Ç
+å¸å›½ã®ã‚¢ã‚µã‚·ãƒ³ã€è·æ±‚ã‚€ã€‚é€£çµ¡ã¯2600'ã®ã‚·ãƒŠãƒ³ã‚¸ãƒ¥ãƒ»ãƒã‚¹ã‚¿ãƒ¼ Pak ã¾ã§
 Try inscribing the name of the first monster killed by it in the weapon!
 #The richer the victim the happier the thief.
-¥«¥â¤¬¶â»ı¤Á¤Ê¤Û¤ÉÅ¥ËÀ¤Ï´ò¤·¤¤¡£
+ã‚«ãƒ¢ãŒé‡‘æŒã¡ãªã»ã©æ³¥æ£’ã¯å¬‰ã—ã„ã€‚
 #Wanted: Smurfs. Good reward. Contact: Gargamel, 400'.
-¥¹¥Ş¡¼¥ÕÊç½¸¡£¹âÊó½·¡¢Ï¢Íí¤Ï400'¤Î¥¬¡¼¥¬¥á¥ë¤Ş¤Ç¡£
+ã‚¹ãƒãƒ¼ãƒ•å‹Ÿé›†ã€‚é«˜å ±é…¬ã€é€£çµ¡ã¯400'ã®ã‚¬ãƒ¼ã‚¬ãƒ¡ãƒ«ã¾ã§ã€‚
 #Beware the Jabberwock, my son! The jaws that bite, the claws that catch...
-¥¸¥ã¥Ğ¥¦¥©¥Ã¥¯¤Ë¤ãµ¤¤ò¤Ä¤±¤ë¤ó¤À¤¾¡¢¤ï¤¬Â©»Ò¡ª²ç¤à¤­½Ğ¤·¤Æ³ú¤ß¤Ä¤¯¤¾¡¢ÄŞ¤à¤­½Ğ¤·¤Æ½±¤¤¤¯¤ë¤¾¡ª
+ã‚¸ãƒ£ãƒã‚¦ã‚©ãƒƒã‚¯ã«ã‚ƒæ°—ã‚’ã¤ã‘ã‚‹ã‚“ã ãã€ã‚ãŒæ¯å­ï¼ç‰™ã‚€ãå‡ºã—ã¦å™›ã¿ã¤ããã€çˆªã‚€ãå‡ºã—ã¦è¥²ã„ãã‚‹ãï¼
 #There's something bad about what you are carrying in your backpack...
-¥¶¥Ã¥¯¤ÎÃæ¿È¤Ï¤Ê¤Ë¤«ÎÉ¤¯¤Ê¤¤µ¤¤¬¤¹¤ë¡£
+ã‚¶ãƒƒã‚¯ã®ä¸­èº«ã¯ãªã«ã‹è‰¯ããªã„æ°—ãŒã™ã‚‹ã€‚
 #Thieves are more likely to appear if you are carrying a lot of money.
-¤¿¤¯¤µ¤ó¶â¤ò»ı¤Ã¤Æ¤¤¤ë»ş¤Û¤ÉÅ¥ËÀ¤Ï¤è¤¯¸½¤ì¤ë¡£
+ãŸãã•ã‚“é‡‘ã‚’æŒã£ã¦ã„ã‚‹æ™‚ã»ã©æ³¥æ£’ã¯ã‚ˆãç¾ã‚Œã‚‹ã€‚
 #They say that Scrolls of *Curse Weapon* can create powerful cursed artifacts.
-*Éğ´ï¼öÇû*¤Î´¬Êª¤Ç¶¯ÎÏ¤Ê¼ö¤ï¤ì¤¿¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¤òºî¤ì¤ë¤é¤·¤¤¡£
+*æ­¦å™¨å‘ªç¸›*ã®å·»ç‰©ã§å¼·åŠ›ãªå‘ªã‚ã‚ŒãŸã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆã‚’ä½œã‚Œã‚‹ã‚‰ã—ã„ã€‚
 #They say that Mjollnir will return to your hand if you throw it.
-¥ß¥å¥ë¥Ë¡¼¥ë¤òÅê¤²¤ë¤È¼ê¸µ¤ËÌá¤Ã¤Æ¤¯¤ë¤é¤·¤¤¡£
+ãƒŸãƒ¥ãƒ«ãƒ‹ãƒ¼ãƒ«ã‚’æŠ•ã’ã‚‹ã¨æ‰‹å…ƒã«æˆ»ã£ã¦ãã‚‹ã‚‰ã—ã„ã€‚
 #They say that the Chainsword makes monsters mad with its awful noise!
-¡Ø¥Á¥§¥ó¥½¡¼¡Ù¤Ï¤Ò¤É¤¤²»¤Ç¥â¥ó¥¹¥¿¡¼¤ò¶¸¤ï¤»¤ë¤é¤·¤¤¡£
+ã€ãƒã‚§ãƒ³ã‚½ãƒ¼ã€ã¯ã²ã©ã„éŸ³ã§ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’ç‹‚ã‚ã›ã‚‹ã‚‰ã—ã„ã€‚
 #They say that Ringil shines so brightly that it makes monsters angry.
-¡Ø¥ê¥ó¥®¥ë¡Ù¤Ï¥â¥ó¥¹¥¿¡¼¤òÅÜ¤é¤»¤ë¤Û¤ÉÌÀ¤ë¤¯µ±¤¤¤Æ¤¤¤ë¤é¤·¤¤¡£
+ã€ãƒªãƒ³ã‚®ãƒ«ã€ã¯ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’æ€’ã‚‰ã›ã‚‹ã»ã©æ˜ã‚‹ãè¼ã„ã¦ã„ã‚‹ã‚‰ã—ã„ã€‚
 #They say that all Pattern weapons are deadly against Demons of Chaos.
-¤¹¤Ù¤Æ¤ÎÇË¼Ù¤ÎÉğ´ï¤Ïº®ÆÙ¤Î°­Ëâ¤¿¤Á¤ËÃ×Ì¿Åª¤Ê°ì·â¤òÍ¿¤¨¤ë¤½¤¦¤À¡£
+ã™ã¹ã¦ã®ç ´é‚ªã®æ­¦å™¨ã¯æ··æ²Œã®æ‚ªé­”ãŸã¡ã«è‡´å‘½çš„ãªä¸€æ’ƒã‚’ä¸ãˆã‚‹ãã†ã ã€‚
 #Klingsor's Castle was destroyed by the the holy might of the Spear of Destiny.
-¥¯¥ê¥ó¥°¥¾¡¼¥ë¤Î¾ë¤Ï¡Ø¥í¥ó¥®¥Ì¥¹¡Ù¤ÎÀ»¤Ê¤ëÎÏ¤ÇÂÇ¤Á²õ¤µ¤ì¤¿¡£
+ã‚¯ãƒªãƒ³ã‚°ã‚¾ãƒ¼ãƒ«ã®åŸã¯ã€ãƒ­ãƒ³ã‚®ãƒŒã‚¹ã€ã®è–ãªã‚‹åŠ›ã§æ‰“ã¡å£Šã•ã‚ŒãŸã€‚
 Orcs are mortally afraid of weapons that can slay them.
 #There is a way to turn a Ring of Speed (-20) into a Ring of Speed (+20).
-¥¹¥Ô¡¼¥É¤Î»ØÎØ(-20 ²ÃÂ®)¤ò¥¹¥Ô¡¼¥É¤Î»ØÎØ(+20 ²ÃÂ®)¤ËÊÑ¤¨¤ëÊıË¡¤¬¤¢¤ë¡£
+ã‚¹ãƒ”ãƒ¼ãƒ‰ã®æŒ‡è¼ª(-20 åŠ é€Ÿ)ã‚’ã‚¹ãƒ”ãƒ¼ãƒ‰ã®æŒ‡è¼ª(+20 åŠ é€Ÿ)ã«å¤‰ãˆã‚‹æ–¹æ³•ãŒã‚ã‚‹ã€‚
 #There is no way to turn a Ring of Speed (-20) into a Ring of Speed (+20).
-¥¹¥Ô¡¼¥É¤Î»ØÎØ(-20 ²ÃÂ®)¤ò¥¹¥Ô¡¼¥É¤Î»ØÎØ(+20 ²ÃÂ®)¤ËÊÑ¤¨¤ëÊıË¡¤Ï¤Ê¤¤¡£
+ã‚¹ãƒ”ãƒ¼ãƒ‰ã®æŒ‡è¼ª(-20 åŠ é€Ÿ)ã‚’ã‚¹ãƒ”ãƒ¼ãƒ‰ã®æŒ‡è¼ª(+20 åŠ é€Ÿ)ã«å¤‰ãˆã‚‹æ–¹æ³•ã¯ãªã„ã€‚
 #Cool guys can resist fire.
-¥¯¡¼¥ë¤ÊÅÛ¤Ï²Ğ¤Ø¤ÎÂÑÀ­¤ò»ı¤Ã¤Æ¤¤¤ë¡£
+ã‚¯ãƒ¼ãƒ«ãªå¥´ã¯ç«ã¸ã®è€æ€§ã‚’æŒã£ã¦ã„ã‚‹ã€‚
 They say that death incarnate wears heavy metal boots...
 #You feel the Longsword (t) you are carrying in your backpack is special...
-¥¶¥Ã¥¯¤ÎÃæ¤Î¥í¥ó¥°¡¦¥½¡¼¥É (t)¤ÏÆÃÊÌÀ½¤È¤¤¤¦µ¤¤¬¤¹¤ë...
+ã‚¶ãƒƒã‚¯ã®ä¸­ã®ãƒ­ãƒ³ã‚°ãƒ»ã‚½ãƒ¼ãƒ‰ (t)ã¯ç‰¹åˆ¥è£½ã¨ã„ã†æ°—ãŒã™ã‚‹...
 If you start seeing red monsters, you have probably gained infravision.
 #They say that the dungeon is deeper than the Abyss.
-¥À¥ó¥¸¥ç¥ó¤ÏÃÏ¹ö¤Î¿¼Ê¥¤è¤ê¿¼¤¤¤È¤¤¤ï¤ì¤Æ¤¤¤ë¡£
+ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã¯åœ°ç„ã®æ·±æ·µã‚ˆã‚Šæ·±ã„ã¨ã„ã‚ã‚Œã¦ã„ã‚‹ã€‚
 #When all else fails, read the instructions.
-²¿¤â¤«¤â¼ºÇÔ¤·¤¿¤Ê¤é¡¢ÀâÌÀ½ñ¤òÆÉ¤ó¤Ç¤ß¤ë¤ó¤À¤Ê¡£
+ä½•ã‚‚ã‹ã‚‚å¤±æ•—ã—ãŸãªã‚‰ã€èª¬æ˜æ›¸ã‚’èª­ã‚“ã§ã¿ã‚‹ã‚“ã ãªã€‚
 #I've seen Paavo Vaaranen drop a Power Dragon Scale Mail!
-½Ä»³¥Î¥Ã¥¯¤¬£Ğ£Ä£Ó£Í¤òÍî¤¹¤Î¤ò¸«¤¿¤¾¡ª
+ç¸¦å±±ãƒãƒƒã‚¯ãŒï¼°ï¼¤ï¼³ï¼­ã‚’è½ã™ã®ã‚’è¦‹ãŸãï¼
 #They say that the dungeon has no bottom.
-¥À¥ó¥¸¥ç¥ó¤Ë¤ÏÄì¤¬¤Ê¤¤¤é¤·¤¤¡£
+ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã«ã¯åº•ãŒãªã„ã‚‰ã—ã„ã€‚
 #They say that the dungeon has a bottom.
-¥À¥ó¥¸¥ç¥ó¤Ë¤ÏÄì¤¬¤¢¤ë¤é¤·¤¤¡£
+ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã«ã¯åº•ãŒã‚ã‚‹ã‚‰ã—ã„ã€‚
 #No poison is immediately deadly.
-¤É¤ó¤ÊÆÇ¤â¤¹¤°¤ËÃ×Ì¿Åª¤Ë¤Ê¤ëÌõ¤Ç¤Ï¤Ê¤¤¡£
+ã©ã‚“ãªæ¯’ã‚‚ã™ãã«è‡´å‘½çš„ã«ãªã‚‹è¨³ã§ã¯ãªã„ã€‚
 #I have seen a Ring of Speed (+50) in the Black Market!
-¥¹¥Ô¡¼¥É¤Î»ØÎØ(+50 ²ÃÂ®)¤ò¥Ö¥é¥Ã¥¯¥Ş¡¼¥±¥Ã¥È¤Ç¸«¤¿¡ª
+ã‚¹ãƒ”ãƒ¼ãƒ‰ã®æŒ‡è¼ª(+50 åŠ é€Ÿ)ã‚’ãƒ–ãƒ©ãƒƒã‚¯ãƒãƒ¼ã‚±ãƒƒãƒˆã§è¦‹ãŸï¼
 #Telepathy works like a two-way door.
-¥Æ¥ì¥Ñ¥·¡¼¤ÏÁĞÊı¸şÄÌ¿®¤Î¤è¤¦¤Ê¤â¤Î¤À¡£
+ãƒ†ãƒ¬ãƒ‘ã‚·ãƒ¼ã¯åŒæ–¹å‘é€šä¿¡ã®ã‚ˆã†ãªã‚‚ã®ã ã€‚
 #Elvish waybread might negate the effects of poison.
-¥¨¥ë¥Õ¤Î¹ÔÎÈ¤ÏÆÇ¤òÄ·¤ÍÊÖ¤¹¤«¤â¤·¤ì¤Ê¤¤¡£
+ã‚¨ãƒ«ãƒ•ã®è¡Œç³§ã¯æ¯’ã‚’è·³ã­è¿”ã™ã‹ã‚‚ã—ã‚Œãªã„ã€‚
 #Once uncursed, Calris will become a deadly weapon.
-¡Ø¥«¥ë¥ê¥¹¡Ù¤Ï¡¢¼ö¤¤¤ò²ò¤¯¤³¤È¤¬¤Ç¤­¤ì¤Ğ¶¯ÎÏ¤ÊÉğ´ï¤Ë¤Ê¤ë¤À¤í¤¦¡£
+ã€ã‚«ãƒ«ãƒªã‚¹ã€ã¯ã€å‘ªã„ã‚’è§£ãã“ã¨ãŒã§ãã‚Œã°å¼·åŠ›ãªæ­¦å™¨ã«ãªã‚‹ã ã‚ã†ã€‚
 #If there's a stairway to hell, there must also be a stairway to heaven.
-ÃÏ¹ö¤Ø¤Î³¬ÃÊ¤¬¤¢¤ë¤Î¤Ê¤é¡¢Å·¹ñ¤Ø¤Î³¬ÃÊ¤â¤¢¤ë¤Ï¤º¤À¡£
+åœ°ç„ã¸ã®éšæ®µãŒã‚ã‚‹ã®ãªã‚‰ã€å¤©å›½ã¸ã®éšæ®µã‚‚ã‚ã‚‹ã¯ãšã ã€‚
 #You feel your luck is turning...
-Â¿¾¯¤Ï±¿¤¬¸ş¤¤¤Æ¤­¤¿¤«...
+å¤šå°‘ã¯é‹ãŒå‘ã„ã¦ããŸã‹...
 If you thought Death swords were bad, wait until you meet Killer katanas!
 #Overeating can be bad for your health if there are others nearby.
-¶á¤¯¤Ë²¿¤«¤¤¤ë¾ì¹ç¡¢¿©¤Ù²á¤®¤Ï·ò¹¯¤ËÎÉ¤¯¤Ê¤¤¡£
+è¿‘ãã«ä½•ã‹ã„ã‚‹å ´åˆã€é£Ÿã¹éãã¯å¥åº·ã«è‰¯ããªã„ã€‚
 #Cave dwellers are accustomed to darkness and rarely enjoy bright light.
-Æ¶·¢¤ËÀ³¤àÀ¸Êª¤Ï°Å°Ç¤Ë´·¤ì¤Æ¤¤¤ë¤Î¤ÇÌÀ¤ë¤¤¸÷¤ò¤¤¤ä¤¬¤ë¤³¤È¤¬Â¿¤¤¡£
+æ´çªŸã«æ£²ã‚€ç”Ÿç‰©ã¯æš—é—‡ã«æ…£ã‚Œã¦ã„ã‚‹ã®ã§æ˜ã‚‹ã„å…‰ã‚’ã„ã‚„ãŒã‚‹ã“ã¨ãŒå¤šã„ã€‚
 #A creature made of stone can be slain by a spell that turns stone to mud.
-ÀĞ¤Ç½ĞÍè¤¿¥â¥ó¥¹¥¿¡¼¤Ï´äÀĞÍÏ²ò¤Î¼öÊ¸¤Ç»¦¤¹¤³¤È¤¬¤Ç¤­¤ë¡£
+çŸ³ã§å‡ºæ¥ãŸãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã¯å²©çŸ³æº¶è§£ã®å‘ªæ–‡ã§æ®ºã™ã“ã¨ãŒã§ãã‚‹ã€‚
 #It is often a good idea to throw items that you don't want to eat or drink.
-¿©¤Ù¤¿¤ê°û¤ó¤À¤ê¤·¤¿¤¯¤Ê¤¤¤è¤¦¤Ê¥¢¥¤¥Æ¥à¤òÅê¤²¤ë¤Î¤ÏÎÉ¤¤¥¢¥¤¥Ç¥£¥¢¤Ç¤¢¤ë¤³¤È¤¬Â¿¤¤¡£
+é£Ÿã¹ãŸã‚Šé£²ã‚“ã ã‚Šã—ãŸããªã„ã‚ˆã†ãªã‚¢ã‚¤ãƒ†ãƒ ã‚’æŠ•ã’ã‚‹ã®ã¯è‰¯ã„ã‚¢ã‚¤ãƒ‡ã‚£ã‚¢ã§ã‚ã‚‹ã“ã¨ãŒå¤šã„ã€‚
 #The faster you run the more food you will burn.
-Â®¤¯Áö¤ë¤Û¤É¤¿¤¯¤µ¤ó¤Î¿©ÎÈ¤ò¾ÃÈñ¤¹¤ë¡£
+é€Ÿãèµ°ã‚‹ã»ã©ãŸãã•ã‚“ã®é£Ÿç³§ã‚’æ¶ˆè²»ã™ã‚‹ã€‚
 #Invisible monsters will often expose themselves if you drop items around you.
-¥¢¥¤¥Æ¥à¤ò¼«Ê¬¤Î¼ş¤ê¤Ë¤Ğ¤é¤Ş¤¤¤Æ¤ª¤¯¤È¡¢Æ©ÌÀ¤Ê¥â¥ó¥¹¥¿¡¼¤Ï¤è¤¯»Ñ¤ò¤µ¤é¤±¤À¤¹¡£
+ã‚¢ã‚¤ãƒ†ãƒ ã‚’è‡ªåˆ†ã®å‘¨ã‚Šã«ã°ã‚‰ã¾ã„ã¦ãŠãã¨ã€é€æ˜ãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã¯ã‚ˆãå§¿ã‚’ã•ã‚‰ã‘ã ã™ã€‚
 #They say that the key to killing tougher monsters is called "hit&run".
-¶¯¤¤¥â¥ó¥¹¥¿¡¼¤òÅİ¤¹¥³¥Ä¤Ï¡Ö¥Ò¥Ã¥È¡õ¥¢¥¦¥§¥¤¡×¤À¤½¤¦¤À¡£
+å¼·ã„ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’å€’ã™ã‚³ãƒ„ã¯ã€Œãƒ’ãƒƒãƒˆï¼†ã‚¢ã‚¦ã‚§ã‚¤ã€ã ãã†ã ã€‚
 #They say that there is no such thing as free advice.
-ÌµÎÁ¥¢¥É¥Ğ¥¤¥¹¤Ê¤ó¤Æ¤â¤Î¤Ï¤³¤ÎÀ¤¤Ë¤Ê¤¤¤½¤¦¤À¡£
+ç„¡æ–™ã‚¢ãƒ‰ãƒã‚¤ã‚¹ãªã‚“ã¦ã‚‚ã®ã¯ã“ã®ä¸–ã«ãªã„ãã†ã ã€‚
 #Wearing an Amulet of Doom will take you into the Dungeons of Doom.
-ÇËÌÇ¤Î¥¢¥ß¥å¥ì¥Ã¥È(Amulet of Doom)¤òÁõÈ÷¤¹¤ë¤È¡Ö±¿Ì¿¤ÎÂçÌÂµÜ¡×(Dungeons of Doom)¤Ë¹Ô¤±¤ë¤é¤·¤¤¡£
+ç ´æ»…ã®ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ(Amulet of Doom)ã‚’è£…å‚™ã™ã‚‹ã¨ã€Œé‹å‘½ã®å¤§è¿·å®®ã€(Dungeons of Doom)ã«è¡Œã‘ã‚‹ã‚‰ã—ã„ã€‚
 #They say that when you're hungry you can get a pizza in 30 turns or it's free.
-Ê¢¤¬¸º¤Ã¤¿»ş¡¢¥Ô¥¶¤ò 30¥¿¡¼¥ó°ÊÆâ¤Ë¼ê¤ËÆş¤ì¤é¤ì¤ë¤é¤·¤¤¡£ÃÙ¤ì¤ë¤È¥¿¥À¤Ë¤Ê¤ë¤é¤·¤¤¡£
+è…¹ãŒæ¸›ã£ãŸæ™‚ã€ãƒ”ã‚¶ã‚’ 30ã‚¿ãƒ¼ãƒ³ä»¥å†…ã«æ‰‹ã«å…¥ã‚Œã‚‰ã‚Œã‚‹ã‚‰ã—ã„ã€‚é…ã‚Œã‚‹ã¨ã‚¿ãƒ€ã«ãªã‚‹ã‚‰ã—ã„ã€‚
 #You can often wrest one last charge from an empty wand if you try hard enough.
-¶õ¤Ë¤Ê¤Ã¤¿¥ï¥ó¥É¤ò°ì½ê·üÌ¿¿¶¤ë¤ÈºÇ¸å¤Î°ì²óÊ¬¤ò¹Ê¤ê½Ğ¤¹¤³¤È¤¬½ĞÍè¤ë¤é¤·¤¤¡£
+ç©ºã«ãªã£ãŸãƒ¯ãƒ³ãƒ‰ã‚’ä¸€æ‰€æ‡¸å‘½æŒ¯ã‚‹ã¨æœ€å¾Œã®ä¸€å›åˆ†ã‚’çµã‚Šå‡ºã™ã“ã¨ãŒå‡ºæ¥ã‚‹ã‚‰ã—ã„ã€‚
 #Wands may recharge themselves if you leave them on the floor long enough.
-¶õ¤Ë¤Ê¤Ã¤¿¥ï¥ó¥É¤ò¾²¤Î¾å¤Ë½¼Ê¬Ä¹¤¯Êü¤Ã¤Æ¤ª¤¯¤È²ó¿ô¤¬Áı¤¨¤ë¤é¤·¤¤¡£
+ç©ºã«ãªã£ãŸãƒ¯ãƒ³ãƒ‰ã‚’åºŠã®ä¸Šã«å……åˆ†é•·ãæ”¾ã£ã¦ãŠãã¨å›æ•°ãŒå¢—ãˆã‚‹ã‚‰ã—ã„ã€‚
 #There is more than one way to deal with a locked door.
-¸°¤Î³İ¤«¤Ã¤¿¥É¥¢¤ò¤Ê¤ó¤È¤«¤¹¤ë¤Ë¤Ï´ö¤Ä¤«¤ÎÊıË¡¤¬¤¢¤ë¡£
+éµã®æ›ã‹ã£ãŸãƒ‰ã‚¢ã‚’ãªã‚“ã¨ã‹ã™ã‚‹ã«ã¯å¹¾ã¤ã‹ã®æ–¹æ³•ãŒã‚ã‚‹ã€‚
 #Afraid of your valuables getting stolen? Carry more junk!
-Âç»ö¤Ê¥¢¥¤¥Æ¥à¤òÅğ¤Ş¤ì¤ë¤Î¤¬¶²¤¤¡©¥¬¥é¥¯¥¿¤ò¤¿¤¯¤µ¤ó»ı¤ÁÊâ¤­¤Ê¤µ¤¤¡ª
+å¤§äº‹ãªã‚¢ã‚¤ãƒ†ãƒ ã‚’ç›—ã¾ã‚Œã‚‹ã®ãŒæã„ï¼Ÿã‚¬ãƒ©ã‚¯ã‚¿ã‚’ãŸãã•ã‚“æŒã¡æ­©ããªã•ã„ï¼
 #Afraid of your money getting stolen? Invest it!
-¶â¤òÅğ¤Ş¤ì¤ë¤Î¤¬¶²¤¤¡©Åê»ñ¤·¤Ê¤µ¤¤¡ª
+é‡‘ã‚’ç›—ã¾ã‚Œã‚‹ã®ãŒæã„ï¼ŸæŠ•è³‡ã—ãªã•ã„ï¼
 #Liar! It's not me who has snatched all the gold!
-±³¤Ä¤­¡ª¶â¤òÁ´ÉôÅğ¤Ã¤Æ¤¤¤Ã¤¿¤Î¤ÏËÍ¤¸¤ã¤Ê¤¤¤è¡ª
+å˜˜ã¤ãï¼é‡‘ã‚’å…¨éƒ¨ç›—ã£ã¦ã„ã£ãŸã®ã¯åƒ•ã˜ã‚ƒãªã„ã‚ˆï¼
 #Barney can make you look utterly stupid. Barney MUST die!!!
-¥Ğ¡¼¥Ë¡¼¤Á¤ã¤ó¤Ï·¯¤ò´°Á´¤Ê¥¢¥Û¤Ë¤·¤Æ¤·¤Ş¤¦¤À¤í¤¦¡£¥Ğ¡¼¥Ë¡¼»à¤¹¤Ù¤·¡ª
+ãƒãƒ¼ãƒ‹ãƒ¼ã¡ã‚ƒã‚“ã¯å›ã‚’å®Œå…¨ãªã‚¢ãƒ›ã«ã—ã¦ã—ã¾ã†ã ã‚ã†ã€‚ãƒãƒ¼ãƒ‹ãƒ¼æ­»ã™ã¹ã—ï¼
 #If you hear something smashed into splinters, you had better watch out.
-²¿¤«¤¬Ê´¡¹¤Ë¤Ê¤ë²»¤¬Ê¹¤³¤¨¤¿¤é¡¢µ¤¤ò¤Ä¤±¤¿Êı¤¬¤¤¤¤¡£
+ä½•ã‹ãŒç²‰ã€…ã«ãªã‚‹éŸ³ãŒèã“ãˆãŸã‚‰ã€æ°—ã‚’ã¤ã‘ãŸæ–¹ãŒã„ã„ã€‚
 #Watch your step! - Choose search mode? Key (s).
-Â­¸µ¤Ëµ¤¤ò¤Ä¤±¤Æ¡ªÃµº÷¥â¡¼¥É¤ËÆş¤ë¤Ë¤Ï(s)¥­¡¼¤À¡£
+è¶³å…ƒã«æ°—ã‚’ã¤ã‘ã¦ï¼æ¢ç´¢ãƒ¢ãƒ¼ãƒ‰ã«å…¥ã‚‹ã«ã¯(s)ã‚­ãƒ¼ã ã€‚
 #They say that you had better leave Greater hell-beasts alone.
-¥°¥ì¡¼¥¿¡¼¡¦¥Ø¥ë=¥Ó¡¼¥¹¥È¤ÏÊü¤Ã¤Æ¤ª¤¤¤¿¤Û¤¦¤¬¤¤¤¤¤½¤¦¤À¡£
+ã‚°ãƒ¬ãƒ¼ã‚¿ãƒ¼ãƒ»ãƒ˜ãƒ«=ãƒ“ãƒ¼ã‚¹ãƒˆã¯æ”¾ã£ã¦ãŠã„ãŸã»ã†ãŒã„ã„ãã†ã ã€‚
 #Kharis' tomb is somewhere in the dungeon and you won't want to desecrate it!
-¡Ø¥«¥ê¥¹¡Ù¤ÎÊè¤Ï¥À¥ó¥¸¥ç¥ó¤Î¤É¤³¤«¤Ë¤¢¤ë¤é¤·¤¤¤¬¡¢¹Ó¤µ¤Ê¤¤Êı¤¬¿È¤Î¤¿¤á¤À¡ª
+ã€ã‚«ãƒªã‚¹ã€ã®å¢“ã¯ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®ã©ã“ã‹ã«ã‚ã‚‹ã‚‰ã—ã„ãŒã€è’ã•ãªã„æ–¹ãŒèº«ã®ãŸã‚ã ï¼
 #Selling unidentified potions to shopkeepers might be safer than quaffing them.
-Ì¤´ÕÄê¤ÎÌô¤òÅ¹¤ËÇä¤ë¤Î¤Ï¡¢¼«Ê¬¤Ç°û¤à¤è¤ê°ÂÁ´¤À¡£
+æœªé‘‘å®šã®è–¬ã‚’åº—ã«å£²ã‚‹ã®ã¯ã€è‡ªåˆ†ã§é£²ã‚€ã‚ˆã‚Šå®‰å…¨ã ã€‚
 #Always look out for trapdoors on "special" feeling levels!
-¡ÖÆÃÊÌ¤Ê¡×´¶¤¸¤Î¤¹¤ë³¬¤Ç¤Ï¾ï¤ËÍî¤·¸Í¤Ëµ¤¤ò¤Ä¤±¤í¡ª
+ã€Œç‰¹åˆ¥ãªã€æ„Ÿã˜ã®ã™ã‚‹éšã§ã¯å¸¸ã«è½ã—æˆ¸ã«æ°—ã‚’ã¤ã‘ã‚ï¼
 #There is a way to max out your stats with Potions of Charisma & Nexus.
-Ì¥ÎÏ¤ÎÌô¤È°ø²Ìº®Íğ¤Ç¥¹¥Æ¡¼¥¿¥¹¤òÁ´ÉôºÇÂç¤Ë¤¹¤ëÊıË¡¤¬¤¢¤ë¡£
+é­…åŠ›ã®è–¬ã¨å› æœæ··ä¹±ã§ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’å…¨éƒ¨æœ€å¤§ã«ã™ã‚‹æ–¹æ³•ãŒã‚ã‚‹ã€‚
 #Unique opponents will recover their health faster than other creatures.
-¥æ¥Ë¡¼¥¯¥â¥ó¥¹¥¿¡¼¤ÏÉáÄÌ¤ÎÅ¨¤è¤êÁÇÁá¤¯ÂÎÎÏ¤ò²óÉü¤¹¤ë¤À¤í¤¦¡£
+ãƒ¦ãƒ‹ãƒ¼ã‚¯ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã¯æ™®é€šã®æ•µã‚ˆã‚Šç´ æ—©ãä½“åŠ›ã‚’å›å¾©ã™ã‚‹ã ã‚ã†ã€‚
 #They say that only one sword, Nothung, can slay Fafner the Dragon.
-¤¿¤À°ì¤Ä¤Î·õ¡¢¡Ø¥Î¡¼¥È¥¥¥ó¥°¡Ù¤Î¤ß¤¬Î¶¤Î¥Õ¥¡¥Õ¥Ê¡¼¤òÅİ¤¹¤³¤È¤¬½ĞÍè¤ë¤é¤·¤¤¡£
+ãŸã ä¸€ã¤ã®å‰£ã€ã€ãƒãƒ¼ãƒˆã‚¥ãƒ³ã‚°ã€ã®ã¿ãŒé¾ã®ãƒ•ã‚¡ãƒ•ãƒŠãƒ¼ã‚’å€’ã™ã“ã¨ãŒå‡ºæ¥ã‚‹ã‚‰ã—ã„ã€‚
 #"So when I die, the first thing I will see in heaven is a score list?"
-¡Ö¤¸¤ã¤¢¡¢¤â¤·»à¤ó¤À»ş¡¢Å·¹ñ¤Ç¿¿¤ÃÀè¤ËÌÜ¤Ë¤¹¤ë¤Î¤Ï¥¹¥³¥¢¥ê¥¹¥È¤À¤Ã¤Æ¤Î¤«¤¤¡©¡×
+ã€Œã˜ã‚ƒã‚ã€ã‚‚ã—æ­»ã‚“ã æ™‚ã€å¤©å›½ã§çœŸã£å…ˆã«ç›®ã«ã™ã‚‹ã®ã¯ã‚¹ã‚³ã‚¢ãƒªã‚¹ãƒˆã ã£ã¦ã®ã‹ã„ï¼Ÿã€
 You're going into the morgue at midnight?
 #How dare you! I will not buy that!
-¤è¤¯¤â¤½¤ó¤Ê¡ª¿®ÍÑ¤Ç¤­¤Ê¤¤¤Í¡ª
+ã‚ˆãã‚‚ãã‚“ãªï¼ä¿¡ç”¨ã§ããªã„ã­ï¼
 #A Potion of Detonations is also known as nitroglycerin...
-ÇúÈ¯¤ÎÌô¤Ï¥Ë¥È¥í¥°¥ê¥»¥ê¥ó¤È¤¤¤¦Ì¾¤Ç¤âÃÎ¤é¤ì¤Æ¤¤¤ë¡£
+çˆ†ç™ºã®è–¬ã¯ãƒ‹ãƒˆãƒ­ã‚°ãƒªã‚»ãƒªãƒ³ã¨ã„ã†åã§ã‚‚çŸ¥ã‚‰ã‚Œã¦ã„ã‚‹ã€‚
 #There is a trap on this level!
-¤³¤Î³¬¤Ë¤Ïæ«¤¬¤¢¤ë¡ª
+ã“ã®éšã«ã¯ç½ ãŒã‚ã‚‹ï¼
 A weapon of Undead Slaying has all you need to kill a ghost.
 A weapon of Dragon Slaying may give you resistance to a dragon's breath attack.
 #They say that only a Warrior will want to wear the Terror Mask.
-Àï»Î¤Î¤ß¤¬¡Ø¶²Éİ¤Î²¾ÌÌ¡Ù¤òÁõÈ÷¤·¤¿¤¬¤ë¤À¤í¤¦¤È¸À¤ï¤ì¤Æ¤¤¤ë¡£
+æˆ¦å£«ã®ã¿ãŒã€ææ€–ã®ä»®é¢ã€ã‚’è£…å‚™ã—ãŸãŒã‚‹ã ã‚ã†ã¨è¨€ã‚ã‚Œã¦ã„ã‚‹ã€‚
 #All that is shall come to an end - a dark day dawns for the gods.
-º£¤¢¤ëÊªÁ´¤Æ¤Ë½ª¤ê¤ÏÍè¤ë¡£¿À¡¹¤Î°Å¤­²«ºª¤¬¡£
+ä»Šã‚ã‚‹ç‰©å…¨ã¦ã«çµ‚ã‚Šã¯æ¥ã‚‹ã€‚ç¥ã€…ã®æš—ãé»„æ˜ãŒã€‚
 #The One Ring is powerful, but will eventually destroy its owner.
-¡Ø°ì¤Ä¤Î»ØÎØ¡Ù¤Ï¶¯ÎÏ¤À¤¬¡¢ºÇ¸å¤Ë¤Ï»ı¤Á¼ç¤òÌÇ¤Ü¤¹¤À¤í¤¦¡£
+ã€ä¸€ã¤ã®æŒ‡è¼ªã€ã¯å¼·åŠ›ã ãŒã€æœ€å¾Œã«ã¯æŒã¡ä¸»ã‚’æ»…ã¼ã™ã ã‚ã†ã€‚
 #Having troubles with summoners? Door Creation is your friend!
-¾¤´­¥â¥ó¥¹¥¿¡¼¤Ë¼ê¤ò¾Æ¤¤¤Æ¤ë¡©¥É¥¢À¸À®¤Ï¤¢¤Ê¤¿¤ÎÍ§¤Ç¤¹¡ª
+å¬å–šãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã«æ‰‹ã‚’ç„¼ã„ã¦ã‚‹ï¼Ÿãƒ‰ã‚¢ç”Ÿæˆã¯ã‚ãªãŸã®å‹ã§ã™ï¼
 #Stairway Creation may be slower than Teleport Level, but safer...
-³¬ÃÊÀ¸À®¤Ï¥ì¥Ù¥ë¥Æ¥ì¥İ¡¼¥È¤è¤êÃÙ¤¤¤±¤É¡¢°ÂÁ´¤À...
+éšæ®µç”Ÿæˆã¯ãƒ¬ãƒ™ãƒ«ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã‚ˆã‚Šé…ã„ã‘ã©ã€å®‰å…¨ã ...
 #I hid the Jewel in a vault at 4700'. To find it, you need to:
-Îã¤ÎÊõÀĞ¤ò4700'¤Ë±£¤·¤¿¡£¸«¤Ä¤±¤ëÊıË¡¤Ï¡§
+ä¾‹ã®å®çŸ³ã‚’4700'ã«éš ã—ãŸã€‚è¦‹ã¤ã‘ã‚‹æ–¹æ³•ã¯ï¼š
 #Wands of Heal Monster are useful! Hint: ball spell, @....moo(o)ooo
-²óÉü¥â¥ó¥¹¥¿¡¼¤Î¥ï¥ó¥É¤ÏÌò¤Ë¤¿¤Ä¡ª¥Ò¥ó¥È¡§µå¼öÊ¸¡¢@....moo(o)ooo
+å›å¾©ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®ãƒ¯ãƒ³ãƒ‰ã¯å½¹ã«ãŸã¤ï¼ãƒ’ãƒ³ãƒˆï¼šçƒå‘ªæ–‡ã€@....moo(o)ooo
 #Guaranteed heal self - scenario: o'@, type c4c4c4c4
-³Î¼Â¤Ê²óÉü - ¥Ò¥ó¥È¡§o'@ ¤Ç c4c4c4c4
+ç¢ºå®Ÿãªå›å¾© - ãƒ’ãƒ³ãƒˆï¼šo'@ ã§ c4c4c4c4
 If it can't see you, it can't hurt you!
 If it can't see you, you might still be able to hurt it...
 #The Jedi Holocron is the best artifact light source there is.
-¥¸¥§¥À¥¤¥Û¥í¥¯¥í¥ó¤ÏºÇ¶¯¤Î¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¸÷¸»¤À¡£
+ã‚¸ã‚§ãƒ€ã‚¤ãƒ›ãƒ­ã‚¯ãƒ­ãƒ³ã¯æœ€å¼·ã®ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆå…‰æºã ã€‚
 #I love you, you love me, we are a happy family!
-¥¢¥¤¥é¥Ö¥æ¡¼¡¢¥æ¡¼¥é¥Ö¥ß¡¼¡¢¥Ü¥¯¤¿¤Á¥Ï¥Ã¥Ô¡¼²ÈÂ²¡ª
+ã‚¢ã‚¤ãƒ©ãƒ–ãƒ¦ãƒ¼ã€ãƒ¦ãƒ¼ãƒ©ãƒ–ãƒŸãƒ¼ã€ãƒœã‚¯ãŸã¡ãƒãƒƒãƒ”ãƒ¼å®¶æ—ï¼
 Even *you* can become a Living Trump with the right treatment.
 No animal is interested in sex if it is mortally scared.
 #There is a plenty of Longswords around 1000'.
-20³¬¤¢¤¿¤ê¤Ë¤Ï¥í¥ó¥°¥½¡¼¥É¤¬¤¿¤¯¤µ¤óÍî¤Á¤Æ¤¤¤ë¡£
+20éšã‚ãŸã‚Šã«ã¯ãƒ­ãƒ³ã‚°ã‚½ãƒ¼ãƒ‰ãŒãŸãã•ã‚“è½ã¡ã¦ã„ã‚‹ã€‚
 #Wagner's operas are awfully dissonant! The characters must be deaf!
-¥ï¡¼¥°¥Ê¡¼¤Î¥ª¥Ú¥é¤Ï¹ó¤¤ÉÔÄ´ÏÂ²»¤À¡ªÅĞ¾ì¿ÍÊª¤Ï¼ª¤¬Ê¹¤³¤¨¤Ê¤¤¤Ë°ã¤¤¤Ê¤¤¡ª
+ãƒ¯ãƒ¼ã‚°ãƒŠãƒ¼ã®ã‚ªãƒšãƒ©ã¯é…·ã„ä¸èª¿å’ŒéŸ³ã ï¼ç™»å ´äººç‰©ã¯è€³ãŒèã“ãˆãªã„ã«é•ã„ãªã„ï¼
 #Groo may be as dumb as an amoeba, but he knows a good sword when he sees one.
-¥°¥ë¡¼¤Ï¥¢¥á¡¼¥ĞÊÂ¤ËÇÏ¼¯¤À¤¬¡¢·õ¤ò¸«¤ëÌÜ¤Ï³Î¤«¤À¡£
+ã‚°ãƒ«ãƒ¼ã¯ã‚¢ãƒ¡ãƒ¼ãƒä¸¦ã«é¦¬é¹¿ã ãŒã€å‰£ã‚’è¦‹ã‚‹ç›®ã¯ç¢ºã‹ã ã€‚
 Groo is an idiot! Groo is a dolt! He is a fool! He has no mind!
 And now, Groo does what Groo does best!
 #Groo is your worst nightmare.
-¥°¥ë¡¼¤ÏºÇ°­¤Î°­Ì´¤À¡£
+ã‚°ãƒ«ãƒ¼ã¯æœ€æ‚ªã®æ‚ªå¤¢ã ã€‚
 #Freddy Krueger is your worst nightmare.
-¥Õ¥ì¥Ç¥£¡¦¥¯¥ë¡¼¥¬¡¼¤ÏºÇ°­¤Î°­Ì´¤À¡£
+ãƒ•ãƒ¬ãƒ‡ã‚£ãƒ»ã‚¯ãƒ«ãƒ¼ã‚¬ãƒ¼ã¯æœ€æ‚ªã®æ‚ªå¤¢ã ã€‚
 Come to Freddy! He needs some sparring urgently.
 There are often stairways in graveyards: bad people are carried to hell...
 #An urgent message from Dworkin: Pattern not found.
-¥É¥ï¡¼¥­¥ó¤«¤é¤Î¶ÛµŞ¥á¥Ã¥»¡¼¥¸¡§Pattern not found.
+ãƒ‰ãƒ¯ãƒ¼ã‚­ãƒ³ã‹ã‚‰ã®ç·Šæ€¥ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ï¼šPattern not found.
 #Only a god of Thunder could ride a lightning bolt!
-Íë¤Î¿À¤Î¤ß¤¬°ğºÊ¤Ë¾è¤ë¤³¤È¤¬¤Ç¤­¤ë¡£
+é›·ã®ç¥ã®ã¿ãŒç¨²å¦»ã«ä¹—ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
 #When the day of Ragnarok comes, Surtur will set the world afire...
-¡Ö¥é¥°¥Ê¥í¥¯¡×¤ÎÆü¤¬Íè¤¿»ş¡¢¥¹¥ë¥È¤ÏÀ¤³¦¤Ë²Ğ¤òÊü¤Ä¤À¤í¤¦¡£
+ã€Œãƒ©ã‚°ãƒŠãƒ­ã‚¯ã€ã®æ—¥ãŒæ¥ãŸæ™‚ã€ã‚¹ãƒ«ãƒˆã¯ä¸–ç•Œã«ç«ã‚’æ”¾ã¤ã ã‚ã†ã€‚
 #Surtur's accursed sword, Twilight, burns with everlasting fire.
-¥¹¥ë¥È¤Î¼ö¤ï¤ì¤¿·õ¡Ø¿À¡¹¤Î²«ºª¡Ù¤Ï±Ê±ó¤Î±ê¤ÇÇ³¤¨¤Æ¤¤¤ë¡£
+ã‚¹ãƒ«ãƒˆã®å‘ªã‚ã‚ŒãŸå‰£ã€ç¥ã€…ã®é»„æ˜ã€ã¯æ°¸é ã®ç‚ã§ç‡ƒãˆã¦ã„ã‚‹ã€‚
 #Wotan (Odin) carved his Runespear from a branch of the World-Tree Ash.
-¥ª¡¼¥Ç¥£¥ó¤ÏÀ¤³¦¼ù¤Î»Ş¤«¤éËâÁä¤òºî¤ê¾å¤²¤¿¡£
+ã‚ªãƒ¼ãƒ‡ã‚£ãƒ³ã¯ä¸–ç•Œæ¨¹ã®æã‹ã‚‰é­”æ§ã‚’ä½œã‚Šä¸Šã’ãŸã€‚
 #Hagen slew Siegfried with his spear, stealthily sneaking behind him.
-¥Ï¡¼¥²¥ó¤Ï¥¸¡¼¥°¥Õ¥ê¡¼¥É¤Ë¸å¤í¤«¤éÇ¦¤Ó¤è¤êÁä¤Ç»¦¤·¤¿¡£
+ãƒãƒ¼ã‚²ãƒ³ã¯ã‚¸ãƒ¼ã‚°ãƒ•ãƒªãƒ¼ãƒ‰ã«å¾Œã‚ã‹ã‚‰å¿ã³ã‚ˆã‚Šæ§ã§æ®ºã—ãŸã€‚
 #Powerful spells are bound in the Runes of Wotan's Spear.
-¥ª¡¼¥Ç¥£¥ó¤ÎËâÁä¤Ë¤Ï¥ë¡¼¥óÊ¸»ú¤Ç¶¯ÎÏ¤Ê¼öÊ¸¤¬Éõ¤¸¹ş¤Ş¤ì¤Æ¤¤¤ë¡£
+ã‚ªãƒ¼ãƒ‡ã‚£ãƒ³ã®é­”æ§ã«ã¯ãƒ«ãƒ¼ãƒ³æ–‡å­—ã§å¼·åŠ›ãªå‘ªæ–‡ãŒå°ã˜è¾¼ã¾ã‚Œã¦ã„ã‚‹ã€‚
 #The wearer of Lohengrin's Chainmail is protected by the Holy Grail.
-µ³»Î¥í¡¼¥¨¥ó¥°¥ê¥ó¤Îº¿¤«¤¿¤Ó¤é¤ò¿È¤ËÉÕ¤±¤ë¼Ô¤ÏÀ»ÇÕ¤Î²Ã¸î¤òÆÀ¤ë¡£
+é¨å£«ãƒ­ãƒ¼ã‚¨ãƒ³ã‚°ãƒªãƒ³ã®é–ã‹ãŸã³ã‚‰ã‚’èº«ã«ä»˜ã‘ã‚‹è€…ã¯è–æ¯ã®åŠ è­·ã‚’å¾—ã‚‹ã€‚
 #Gurnemanz' Helmet will let you see holy mysteries hidden from men's eyes.
-¥°¥ë¥Í¥Ş¥ó¥Ä¤Î³õ¤Ï¿Í´Ö¤ÎÌÜ¤Ë¤Ï¸«¤¨¤Ê¤¤À»¤Ê¤ë¿ÀÈë¤ò¸«¤»¤Æ¤¯¤ì¤ë¤À¤í¤¦¡£
+ã‚°ãƒ«ãƒãƒãƒ³ãƒ„ã®å…œã¯äººé–“ã®ç›®ã«ã¯è¦‹ãˆãªã„è–ãªã‚‹ç¥ç§˜ã‚’è¦‹ã›ã¦ãã‚Œã‚‹ã ã‚ã†ã€‚
 #Weapons of Flame will light your way.
-²Ğ±ê¤ÎÉğ´ï¤Ï¼ş¤ê¤ò¾È¤é¤¹¤À¤í¤¦¡£
+ç«ç‚ã®æ­¦å™¨ã¯å‘¨ã‚Šã‚’ç…§ã‚‰ã™ã ã‚ã†ã€‚
 #They say that the gods get angry if you pray too much.
-µ§¤ê¤¹¤®¤ë¤È¿ÀÍÍ¤ÏÅÜ¤ë¤é¤·¤¤¡£
+ç¥ˆã‚Šã™ãã‚‹ã¨ç¥æ§˜ã¯æ€’ã‚‹ã‚‰ã—ã„ã€‚
 For any remedy there is a misery.
 #Poison will kill you slowly.
-ÆÇ¤Ï¤æ¤Ã¤¯¤ê¤È¤¢¤Ê¤¿¤ò»¦¤¹¤À¤í¤¦¡£
+æ¯’ã¯ã‚†ã£ãã‚Šã¨ã‚ãªãŸã‚’æ®ºã™ã ã‚ã†ã€‚
 #Using a Morningstar in the evening has no effect.
-¥â¡¼¥Ë¥ó¥°¥¹¥¿¡¼¤òÌë»È¤Ã¤Æ¤â¸ú²Ì¤¬¤Ê¤¤¡£
+ãƒ¢ãƒ¼ãƒ‹ãƒ³ã‚°ã‚¹ã‚¿ãƒ¼ã‚’å¤œä½¿ã£ã¦ã‚‚åŠ¹æœãŒãªã„ã€‚
 #Didn't you forget to pay?
-»ÙÊ§¤¤¤òËº¤ì¤Æ¤Ê¤¤¤«¡©
+æ”¯æ‰•ã„ã‚’å¿˜ã‚Œã¦ãªã„ã‹ï¼Ÿ
 #Death is just life's way of telling you you've been fired.
-»à¤ÏÃ±¤Ë¿ÍÀ¸¤¬¤¢¤Ê¤¿¤ËÆÍ¤­¤Ä¤±¤ë²ò¸ÛÄÌ¹ğ½ñ¤À¡£
+æ­»ã¯å˜ã«äººç”ŸãŒã‚ãªãŸã«çªãã¤ã‘ã‚‹è§£é›‡é€šå‘Šæ›¸ã ã€‚
 #They say that nobody can defeat his own ghost.
-¼«Ê¬¼«¿È¤ÎÍ©Îî¤Ë¤ÏÃ¯¤â¾¡¤Æ¤Ê¤¤¤é¤·¤¤¡£
+è‡ªåˆ†è‡ªèº«ã®å¹½éœŠã«ã¯èª°ã‚‚å‹ã¦ãªã„ã‚‰ã—ã„ã€‚
 #A greedy genocide can be a fatal mistake, especially if you are low on hits.
-ìÅÍß¤ÊËõ»¦¤ÏÃ×Ì¿Åª¤Ê¥ß¥¹¤Ë¤Ê¤ê¤«¤Í¤Ê¤¤¡£ÆÃ¤ËHP¤¬Äã¤¤»ş¤Ë¤Ï¡£
+è²ªæ¬²ãªæŠ¹æ®ºã¯è‡´å‘½çš„ãªãƒŸã‚¹ã«ãªã‚Šã‹ã­ãªã„ã€‚ç‰¹ã«HPãŒä½ã„æ™‚ã«ã¯ã€‚
 #PLEASE ignore the previous rumor.
-¤ª´ê¤¤¤À¤«¤éÁ°¤Î±½¤ÏËº¤ì¤Æ¤¯¤ì¡£
+ãŠé¡˜ã„ã ã‹ã‚‰å‰ã®å™‚ã¯å¿˜ã‚Œã¦ãã‚Œã€‚
 #There are scrolls that can be read only by mages.
-ËâË¡»È¤¤¤Ë¤·¤«ÆÉ¤á¤Ê¤¤´¬Êª¤¬¤¢¤ë¤é¤·¤¤¡£
+é­”æ³•ä½¿ã„ã«ã—ã‹èª­ã‚ãªã„å·»ç‰©ãŒã‚ã‚‹ã‚‰ã—ã„ã€‚
 Some undead opponents will come back if defeated, more powerful than before!
 #One level further down somebody is getting killed, right now.
-°ì¤Ä²¼¤Î³¬¤Ç¡¢º£¤Á¤ç¤¦¤ÉÃ¯¤«¤¬»¦¤µ¤ì¤Æ¤¤¤ë¡£
+ä¸€ã¤ä¸‹ã®éšã§ã€ä»Šã¡ã‚‡ã†ã©èª°ã‹ãŒæ®ºã•ã‚Œã¦ã„ã‚‹ã€‚
 #Meet me at 1900' if you are a man.
-ÃË¤Ê¤é 1900'¤Ş¤ÇÍè¤Æ²¶¤È¾¡Éé¤À¡£
+ç”·ãªã‚‰ 1900'ã¾ã§æ¥ã¦ä¿ºã¨å‹è² ã ã€‚
 #Bashing a creature may sometimes stun it.
-Å¨¤òÃ¡¤¯¤ÈÛ¯Û°¤È¤¹¤ë¤³¤È¤¬¤¢¤ë¡£
+æ•µã‚’å©ãã¨æœ¦æœ§ã¨ã™ã‚‹ã“ã¨ãŒã‚ã‚‹ã€‚
 #One Ring to rule them all, One Ring to find them.
-°ì¤Ä¤Î»ØÎØ¤Ï¤¹¤Ù¤Æ¤òÅı¤Ù¡¢°ì¤Ä¤Î»ØÎØ¤Ï¤¹¤Ù¤Æ¤ò¸«¤Ä¤±¤ë¡£
+ä¸€ã¤ã®æŒ‡è¼ªã¯ã™ã¹ã¦ã‚’çµ±ã¹ã€ä¸€ã¤ã®æŒ‡è¼ªã¯ã™ã¹ã¦ã‚’è¦‹ã¤ã‘ã‚‹ã€‚
 #One Ring to bring them all and in the darkness bind them.
-°ì¤Ä¤Î»ØÎØ¤Ï¤¹¤Ù¤Æ¤òÊá¤¨¤Æ¤¯¤é¤ä¤ß¤Î¤Ê¤«¤Ë¤Ä¤Ê¤®¤È¤á¤ë¡£
+ä¸€ã¤ã®æŒ‡è¼ªã¯ã™ã¹ã¦ã‚’æ•ãˆã¦ãã‚‰ã‚„ã¿ã®ãªã‹ã«ã¤ãªãã¨ã‚ã‚‹ã€‚
 #A person attuned to the Jewel could use it to erase the Pattern.
-Îã¤ÎÊõÀĞ¤ËÆ±Ä´¤·¤¿¼Ô¤Ï<¥Ñ¥¿¡¼¥ó>¤ò¾Ã¤¹¤Î¤Ë¤½¤ì¤ò»È¤¦¤³¤È¤¬¤Ç¤­¤ë¡£
+ä¾‹ã®å®çŸ³ã«åŒèª¿ã—ãŸè€…ã¯<ãƒ‘ã‚¿ãƒ¼ãƒ³>ã‚’æ¶ˆã™ã®ã«ãã‚Œã‚’ä½¿ã†ã“ã¨ãŒã§ãã‚‹ã€‚
 #Three Rings for the Elven-kings under the sky...
-»°¤Ä¤Î»ØÎØ¤Ï¶õ¤Î²¼¤Ê¤ë¥¨¥ë¥Õ¤Î²¦¤Ë¡£
+ä¸‰ã¤ã®æŒ‡è¼ªã¯ç©ºã®ä¸‹ãªã‚‹ã‚¨ãƒ«ãƒ•ã®ç‹ã«ã€‚
 #Never carry a Potion of Detonations if there is a fire trap nearby!
-¶á¤¯¤Ë±ê¤Îæ«¤¬¤¢¤ë»ş¤Ï¡¢ÀäÂĞ¤ËÇúÈ¯¤ÎÌô¤ò»ı¤ÁÊâ¤¤¤Æ¤Ï¤¤¤±¤Ê¤¤¡ª
-#¥·¥§¡¼¥¯¥¹¥Ô¥¢¤é¤·¤¤
+è¿‘ãã«ç‚ã®ç½ ãŒã‚ã‚‹æ™‚ã¯ã€çµ¶å¯¾ã«çˆ†ç™ºã®è–¬ã‚’æŒã¡æ­©ã„ã¦ã¯ã„ã‘ãªã„ï¼
+#ã‚·ã‚§ãƒ¼ã‚¯ã‚¹ãƒ”ã‚¢ã‚‰ã—ã„
 Laugh to scorn the power of man, for none of woman born shall harm thee!
 All hail thee that shalt be king hereafter!
 He who laughs at Groo's brains will find there is nothing to laugh about.
 A wise man always speaks too soon...
 Let us not dwell on possible bad fortunes!
 #Appearance is only the frosting, not the cake!
-¸«¤¿ÌÜ¤È¤¤¤¦¤Î¤Ï¤¿¤À¤Îº½Åü¾ş¤ê¤Ç¤¢¤Ã¤Æ¥±¡¼¥­¤½¤Î¤â¤Î¤Ç¤Ï¤Ê¤¤¡ª
+è¦‹ãŸç›®ã¨ã„ã†ã®ã¯ãŸã ã®ç ‚ç³–é£¾ã‚Šã§ã‚ã£ã¦ã‚±ãƒ¼ã‚­ãã®ã‚‚ã®ã§ã¯ãªã„ï¼
 #A feeling of Death flows through your body.
-»à¤ÎÍ½´¶¤¬ÇØ¶Ú¤ò¶î¤±È´¤±¤¿¡£
+æ­»ã®äºˆæ„ŸãŒèƒŒç­‹ã‚’é§†ã‘æŠœã‘ãŸã€‚
 #Violence is no solution.
-Ë½ÎÏ¤Ç¤Ï²¿¤â²ò·è¤·¤Ê¤¤¡£
+æš´åŠ›ã§ã¯ä½•ã‚‚è§£æ±ºã—ãªã„ã€‚
 #Boots of Speed (+50) are no myth!
-¥¹¥Ô¡¼¥É¤Î·¤ (+50 ²ÃÂ®)¤ÏÌ´¤Ç¤Ï¤Ê¤¤¡ª
+ã‚¹ãƒ”ãƒ¼ãƒ‰ã®é´ (+50 åŠ é€Ÿ)ã¯å¤¢ã§ã¯ãªã„ï¼
 #You will need to Restore the Constitution if the Anarchists strike.
-ÌµÀ¯ÉÜ¼çµÁ¼Ô¤Î¹¶·â¤ËÂĞ¤·¤Æ¤Ï Restore Constitution (ÂÑµ×ÎÏÉü³è¤È·ûË¡ÍÊ¸î¤ò¤«¤±¤Æ¤¢¤ë¡Ë¤¬É¬Í×¤À¡£
+ç„¡æ”¿åºœä¸»ç¾©è€…ã®æ”»æ’ƒã«å¯¾ã—ã¦ã¯ Restore Constitution (è€ä¹…åŠ›å¾©æ´»ã¨æ†²æ³•æ“è­·ã‚’ã‹ã‘ã¦ã‚ã‚‹ï¼‰ãŒå¿…è¦ã ã€‚
 Drain you of your sanity: Face the Thing That Should Not Be!
 #Wearing an Amulet of Doom will take you into the Dungeons of Doom.
-ÇËÌÇ¤Î¥¢¥ß¥å¥ì¥Ã¥È(Amulet of Doom)¤òÁõÈ÷¤¹¤ë¤È²èÌÌ¤¬£³£Ä¥İ¥ê¥´¥ó¤Ë¤Ê¤ë¤é¤·¤¤¡£
+ç ´æ»…ã®ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ(Amulet of Doom)ã‚’è£…å‚™ã™ã‚‹ã¨ç”»é¢ãŒï¼“ï¼¤ãƒãƒªã‚´ãƒ³ã«ãªã‚‹ã‚‰ã—ã„ã€‚
 Whence come you then, that you have never heard of the Rhinegold?
 #The Nibelung, Night-Alberich, in revenge, stole the Rhinegold.
-¥Ë¡¼¥Ù¥ë¥ó¥°¡¢Ìë¤Î¥¢¥ë¥Ù¥ê¥Ò¤ÏÉü½²¤Î¤¿¤á¥é¥¤¥ó¤Î²«¶â¤òÅğ¤ó¤À¡£
+ãƒ‹ãƒ¼ãƒ™ãƒ«ãƒ³ã‚°ã€å¤œã®ã‚¢ãƒ«ãƒ™ãƒªãƒ’ã¯å¾©è®ã®ãŸã‚ãƒ©ã‚¤ãƒ³ã®é»„é‡‘ã‚’ç›—ã‚“ã ã€‚
 Since by curse it came to me, accursed be this Ring!
 Each shall itch to possess the Ring, but none in it shall find pleasure!
 Solemn treaties, with symbols of trust, carved by Wotan in his Spear.
 Pudpadnoy Tooboothokoot is possessed by a demon known only as "It".
 #Merlin wore the Terror Mask and the last thing he ever saw was a big J...
-¥Ş¡¼¥ê¥ó¤¬¶²Éİ¤Î²¾ÌÌ¤òÈï¤êºÇ¸å¤Ë¸«¤¿¤Î¤ÏÂç¤­¤Ê'J'¤À¤Ã¤¿¡Ä
+ãƒãƒ¼ãƒªãƒ³ãŒææ€–ã®ä»®é¢ã‚’è¢«ã‚Šæœ€å¾Œã«è¦‹ãŸã®ã¯å¤§ããª'J'ã ã£ãŸâ€¦
 #They say that the One Ring has a very special curse.
-¡Ø°ì¤Ä¤Î»ØÎØ¡Ù¤Ë¤ÏÆÃÊÌ¤Ê¼ö¤¤¤¬¤«¤±¤é¤ì¤Æ¤¤¤ë¤½¤¦¤À¡£
+ã€ä¸€ã¤ã®æŒ‡è¼ªã€ã«ã¯ç‰¹åˆ¥ãªå‘ªã„ãŒã‹ã‘ã‚‰ã‚Œã¦ã„ã‚‹ãã†ã ã€‚
 #They say that alcohol is bad for your health.
-¥¢¥ë¥³¡¼¥ë¤ÏÂÎ¤Ë°­¤¤¤é¤·¤¤¡£
+ã‚¢ãƒ«ã‚³ãƒ¼ãƒ«ã¯ä½“ã«æ‚ªã„ã‚‰ã—ã„ã€‚
 #What if you DON'T give a name to the artifact you create..?
-¼«Ê¬¤Çºî¤Ã¤¿¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¤ËÌ¾Á°¤ò¡öÉÕ¤±¤Ê¤«¤Ã¤¿¤é¡ö¤É¤¦¤Ê¤ë¤À¤í¤¦¡©
+è‡ªåˆ†ã§ä½œã£ãŸã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆã«åå‰ã‚’ï¼Šä»˜ã‘ãªã‹ã£ãŸã‚‰ï¼Šã©ã†ãªã‚‹ã ã‚ã†ï¼Ÿ
 #They say that ancient battlefields are often haunted.
-¸ÅÀï¾ì¤Ï¼ö¤ï¤ì¤Æ¤¤¤ë¤³¤È¤¬Â¿¤¤¤é¤·¤¤¡£
+å¤æˆ¦å ´ã¯å‘ªã‚ã‚Œã¦ã„ã‚‹ã“ã¨ãŒå¤šã„ã‚‰ã—ã„ã€‚
 #Beware of pits that fill the whole level!
-¥À¥ó¥¸¥ç¥ó°ìÇÕ¤Ë¹­¤¬¤Ã¤¿¥â¥ó¥¹¥¿¡¼Éô²°¤Ë¤Ïµ¤¤ò¤Ä¤±¤í¡ª
+ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ä¸€æ¯ã«åºƒãŒã£ãŸãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼éƒ¨å±‹ã«ã¯æ°—ã‚’ã¤ã‘ã‚ï¼
 #They say that the true name of wall monsters is 177.
-¥¦¥©¡¼¥ë¡¦¥â¥ó¥¹¥¿¡¼¤ÎËÜÅö¤ÎÌ¾Á°¤Ï 177 ¤È¤¤¤¦¤é¤·¤¤¡£
+ã‚¦ã‚©ãƒ¼ãƒ«ãƒ»ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®æœ¬å½“ã®åå‰ã¯ 177 ã¨ã„ã†ã‚‰ã—ã„ã€‚
 Never mind the Phial of Galadriel - the Phial of the Gods kicks its butt!
 #A Ring of Speed? Phooey! Try looking for a Ring of *Speed*!
-¥¹¥Ô¡¼¥É¤Î»ØÎØ¡© ¥Á¥Ã¥Á¥Ã¥Á¥Ã¡ª *¥¹¥Ô¡¼¥É*¤Î»ØÎØ¤òÃµ¤·¤Ê¡ª
+ã‚¹ãƒ”ãƒ¼ãƒ‰ã®æŒ‡è¼ªï¼Ÿ ãƒãƒƒãƒãƒƒãƒãƒƒï¼ *ã‚¹ãƒ”ãƒ¼ãƒ‰*ã®æŒ‡è¼ªã‚’æ¢ã—ãªï¼
 #Thisss cccity isss guilty... the crime isss life... the ssentence isss DEATH!
-¤³¤Î³¹¤ÏÍ­ºá¤Ç¤¢¤ë¡Äºá¾õ¤ÏÀ¸Ì¿¡ÄÈ½·è¤Ï»à·º¡ª
+ã“ã®è¡—ã¯æœ‰ç½ªã§ã‚ã‚‹â€¦ç½ªçŠ¶ã¯ç”Ÿå‘½â€¦åˆ¤æ±ºã¯æ­»åˆ‘ï¼
 #If you hear heavy steps - watch out!
-½Å¸ü¤ÊÂ­²»¤¬Ê¹¤³¤¨¤¿¤éµ¤¤ò¤Ä¤±¤í¡ª
+é‡åšãªè¶³éŸ³ãŒèã“ãˆãŸã‚‰æ°—ã‚’ã¤ã‘ã‚ï¼
 #A visit to the Wilderness is educational: you meet many strange animals.
-¹ÓÌî¤Ë¹Ô¤Ã¤Æ¤ß¤ë¤È¤¤¤í¤¤¤í¶µ¤¨¤é¤ì¤ë¡£¤½¤³¤Ë¤Ï¤¿¤¯¤µ¤óÊÑ¤ï¤Ã¤¿Æ°Êª¤¬¤¤¤ë¡£
+è’é‡ã«è¡Œã£ã¦ã¿ã‚‹ã¨ã„ã‚ã„ã‚æ•™ãˆã‚‰ã‚Œã‚‹ã€‚ãã“ã«ã¯ãŸãã•ã‚“å¤‰ã‚ã£ãŸå‹•ç‰©ãŒã„ã‚‹ã€‚
 #What happens if you wear a Ring of Extra Ring Fingers (-2) {cursed}?
-¤â¤·Ìô»Ø¤Î»ØÎØ (-2 »Ø) {¼ö¤ï¤ì¤Æ¤¤¤ë} ¤òÁõÈ÷¤·¤¿¤é¤É¤¦¤Ê¤ë¤À¤í¤¦¡©
+ã‚‚ã—è–¬æŒ‡ã®æŒ‡è¼ª (-2 æŒ‡) {å‘ªã‚ã‚Œã¦ã„ã‚‹} ã‚’è£…å‚™ã—ãŸã‚‰ã©ã†ãªã‚‹ã ã‚ã†ï¼Ÿ
 Damn! Those alien bastards are gonna pay for shooting up my ride!
 #Oremor nhoj em llik tsum uoy emag siht niw ot.
-Oremor nhoj ¤¤¤Ê¤é¤Ê¤Ğ¤Í¤µÅİ¤ò»ä¤Ï¤Ë¤Ä¾¡¤Ç¥à¡¼¥²¤Î¤³¡£
+Oremor nhoj ã„ãªã‚‰ãªã°ã­ã•å€’ã‚’ç§ã¯ã«ã¤å‹ã§ãƒ ãƒ¼ã‚²ã®ã“ã€‚
 If I cancel tomorrow the undead will thank me today.
 Hellfire will burn your soul... (if you're not of evil alignment!)
 #Never attempt to Call the Void in an enclosed space!
-ÊÄ¤¸¤¿¶õ´Ö¤Ç¡ÖµõÌµ¾·Íè¡×¤ò»î¤·¤Æ¤Ï¤Ê¤é¤Ê¤¤¡ª
+é–‰ã˜ãŸç©ºé–“ã§ã€Œè™šç„¡æ‹›æ¥ã€ã‚’è©¦ã—ã¦ã¯ãªã‚‰ãªã„ï¼
 #Call the Void needs a lot of room to cast...
-¡ÖµõÌµ¾·Íè¡×¤Î¼öÊ¸¤Ï¹­¤¤¶õ´Ö¤òÉ¬Í×¤È¤¹¤ë¡£
+ã€Œè™šç„¡æ‹›æ¥ã€ã®å‘ªæ–‡ã¯åºƒã„ç©ºé–“ã‚’å¿…è¦ã¨ã™ã‚‹ã€‚
 #Why doesn't Detect Monsters show invisible monsters? 'Cos you can't see 'em!
-²¿¸Î¥â¥ó¥¹¥¿¡¼´¶ÃÎ¤ÇÆ©ÌÀ¤Ê¥â¥ó¥¹¥¿¡¼¤ò¸«¤Ä¤±¤é¤ì¤Ê¤¤¤ó¤À¡©¡Ö¸«¤¨¤Ê¤¤¤«¤é¤µ¡×
+ä½•æ•…ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼æ„ŸçŸ¥ã§é€æ˜ãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’è¦‹ã¤ã‘ã‚‰ã‚Œãªã„ã‚“ã ï¼Ÿã€Œè¦‹ãˆãªã„ã‹ã‚‰ã•ã€
 I'll tell you the truth, son: your soul's gonna burn in a lake of fire!
 #You cruelly stab the helpless, sleeping Software bug!
-Ì²¤Ã¤Æ¤¤¤ëÌµÄñ¹³¤Ê¥½¥Õ¥È¥¦¥§¥¢¥Ğ¥°¤ò»ÄÇ¦¤ËÀÚ¤êÎö¤¤¤¿¡ª
+çœ ã£ã¦ã„ã‚‹ç„¡æŠµæŠ—ãªã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ãƒã‚°ã‚’æ®‹å¿ã«åˆ‡ã‚Šè£‚ã„ãŸï¼
 Slab: Jus' say AarrghaarrghpleeassennononoUGH.
 #You feel the Windows (95) on your hard disk is broken...
-¥Ï¡¼¥É¥Ç¥£¥¹¥¯¤ËÆş¤Ã¤Æ¤¤¤ë¥¦¥£¥ó¥É¥¦¥º(95)¤Ï²õ¤ì¤Æ¤¤¤ë¤È¤¤¤¦µ¤¤¬¤¹¤ë¡£
+ãƒãƒ¼ãƒ‰ãƒ‡ã‚£ã‚¹ã‚¯ã«å…¥ã£ã¦ã„ã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚º(95)ã¯å£Šã‚Œã¦ã„ã‚‹ã¨ã„ã†æ°—ãŒã™ã‚‹ã€‚
 #There is a rare spellbook called [M$ PowerFools] {cursed}
-ËâË¡½ñ[¥Ş¥¤¥¯¥í¥ó¥Õ¥È ¥Ñ¥ï¡¼¡¦¥Õ¡¼¥ë]{¼ö¤ï¤ì¤Æ¤¤¤ë}¤È¤¤¤¦¤Î¤¬¤¢¤ë¤é¤·¤¤¡£
+é­”æ³•æ›¸[ãƒã‚¤ã‚¯ãƒ­ãƒ³ãƒ•ãƒˆ ãƒ‘ãƒ¯ãƒ¼ãƒ»ãƒ•ãƒ¼ãƒ«]{å‘ªã‚ã‚Œã¦ã„ã‚‹}ã¨ã„ã†ã®ãŒã‚ã‚‹ã‚‰ã—ã„ã€‚
 #*** LOW HITPOINT WARNING! ***
-*** ·Ù¹ğ¡ªÄã¥Ò¥Ã¥È¥İ¥¤¥ó¥È¡ª ***
+*** è­¦å‘Šï¼ä½ãƒ’ãƒƒãƒˆãƒã‚¤ãƒ³ãƒˆï¼ ***
 #Isn't your very head an especially prized one?
-¤¢¤ó¤¿¤Î¤½¤Î¼ó¤Ë¤Ï¹â¤¤¾Ş¶â¤¬¤«¤«¤Ã¤Æ¤ë¤ó¤¸¤ã¤Ê¤¤¤Î¤«¤¤¡©
+ã‚ã‚“ãŸã®ãã®é¦–ã«ã¯é«˜ã„è³é‡‘ãŒã‹ã‹ã£ã¦ã‚‹ã‚“ã˜ã‚ƒãªã„ã®ã‹ã„ï¼Ÿ
 #Would ya like a special nice one-way trip to da underworld?
-ÃÏ²¼¤Ø¤ÎÆÃÊÌÊÒÆ»¥Ä¥¢¡¼¤Ï¤¤¤é¤ó¤«¤Í¡©
+åœ°ä¸‹ã¸ã®ç‰¹åˆ¥ç‰‡é“ãƒ„ã‚¢ãƒ¼ã¯ã„ã‚‰ã‚“ã‹ã­ï¼Ÿ
 Die or Deliver! Just assent with a head movement.
 Didn't your blood-brother end his career with an enforced suicide?
 Look out for gaz spreading blobs at the ceilings!
 Don't turn around: the Evil Eye iss jusst beehind thee ..
 #Ya want a share of The Ultimate Dungeon Cleaner Trustee?
-¡Øµæ¶Ë¥À¥ó¥¸¥ç¥ó¥¯¥ê¡¼¥Ê¡¼¿®Â÷¡Ù¤ÎÇÛÅö¶â¤¬Íß¤·¤¤¤±¡©
+ã€ç©¶æ¥µãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã‚¯ãƒªãƒ¼ãƒŠãƒ¼ä¿¡è¨—ã€ã®é…å½“é‡‘ãŒæ¬²ã—ã„ã‘ï¼Ÿ
 Autorollers aren't wary bright things.
 The Wargs give ah very sharpee Choir tonightee!
 The depths are about as unreliable as a dish of over-ripe figs.
@@ -446,9 +446,9 @@ Some underworld lads would *LOVE* to blacken your name!
 Beware! The Castle now and then provides regrettable accidents.
 Let the sun of wilderness melt the chill from your life!
 #By combining our minds with motion we can tune for the shadow we desire.
-Àº¿À¤ÈÆ°ºî¤òÁÈ¤ß¹ç¤ï¤»¤ÆË¾¤ß¤Î±Æ¤ÎÀ¤³¦¤òÄ´Àá¤¹¤ë¤³¤È¤¬½ĞÍè¤ë¡£
+ç²¾ç¥ã¨å‹•ä½œã‚’çµ„ã¿åˆã‚ã›ã¦æœ›ã¿ã®å½±ã®ä¸–ç•Œã‚’èª¿ç¯€ã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã‚‹ã€‚
 #I can show ya the wayy back to chaos, if ya'r gettin homesick.
-¥Û¡¼¥à¥·¥Ã¥¯¤Ë¤Ê¤Ã¤¿¤é¡¢¤¢¤¿¤¤¤¬º®ÆÙ¤ËÌá¤ëÆ»¤ò¶µ¤¨¤Æ¤¢¤²¤ë¤è¡£
+ãƒ›ãƒ¼ãƒ ã‚·ãƒƒã‚¯ã«ãªã£ãŸã‚‰ã€ã‚ãŸã„ãŒæ··æ²Œã«æˆ»ã‚‹é“ã‚’æ•™ãˆã¦ã‚ã’ã‚‹ã‚ˆã€‚
 Living trump you are? Your equilibrium is becoming impaired...
 Increase your pace to catch up with your thoughtlessness?
 Ya laik da show off a lott - how strong ya are, how fast ya are, ha!
@@ -456,16 +456,16 @@ Solve your pattern, push on ahead, take mental notes as you proceed.
 Since confrontation is inevitable: give yourself a crash course of the code.
 It strucks you as something similar to color blindness. Contagious trap!
 #Hey young magic coder adept, you still owe some contributions.
-¤ª¤¤¡¢¤½¤³¤Î¼ã¤¤¥Ï¥Ã¥«¡¼·¯¡¢¤â¤Ã¤È¹×¸¥¤·¤Æ¤¯¤ì¤Ê¤­¤ã¤¤¤«¤ó¤è¡£
+ãŠã„ã€ãã“ã®è‹¥ã„ãƒãƒƒã‚«ãƒ¼å›ã€ã‚‚ã£ã¨è²¢çŒ®ã—ã¦ãã‚Œãªãã‚ƒã„ã‹ã‚“ã‚ˆã€‚
 #Yes, timing is definitely against you today. Never mind.
-¤½¤¦¤À¡£º£Æü¤¢¤Ê¤¿¤Ï±¿¤¬°­¤¤¡£µ¤¤Ë¤¹¤ë¤Ê¡£
+ãã†ã ã€‚ä»Šæ—¥ã‚ãªãŸã¯é‹ãŒæ‚ªã„ã€‚æ°—ã«ã™ã‚‹ãªã€‚
 Amberites are able to sustain some pretty awful beatings.
 You are a secretive person, even in that incarnation, paradoxical too!
 Pass some time in places where the bad things dwell - be red-eyed for a day!
 Go on Goon! But there will be not sufficient time to flee any farther.
 Avoid overconfidence! Be able to gauge its range and striking angle.
 #Try to beat them to the punch while they are still off-balance.
-Å¨¤¬¤Õ¤é¤Ä¤¤¤Æ¤¤¤ë¤¹¤­¤ËÃ¡¤±¡ª
+æ•µãŒãµã‚‰ã¤ã„ã¦ã„ã‚‹ã™ãã«å©ã‘ï¼
 Regain your mental footing - and detect the sounds of pursuit.
 Fire Angels have a vast array of senses. Shadow bloodhounds.
 The drug-store stuff affects your shadow-shifting ability!
@@ -486,7 +486,7 @@ If in good enough shape you'd better throw your legs over the edge...
 While standing in the shadows to regain stamina have visions of sugar plums...
 Encounter them orcs!, know they are countless: no rest for you for hours!
 #A monk might have a very foul blow, about four inches below the belt buckle.
-¥â¥ó¥¯¤Ï¡¢¤Ø¤½²¼»°À£¤¢¤¿¤ê¤Ë¥Õ¥¡¥¦¥ë¹¶·â¤ò¤¹¤ë¤³¤È¤¬¤¢¤ë¡£
+ãƒ¢ãƒ³ã‚¯ã¯ã€ã¸ãä¸‹ä¸‰å¯¸ã‚ãŸã‚Šã«ãƒ•ã‚¡ã‚¦ãƒ«æ”»æ’ƒã‚’ã™ã‚‹ã“ã¨ãŒã‚ã‚‹ã€‚
 Are you really suffering withdrawal symptoms and want something crushable?
 Smaug and allohol may disturb your .. was it sanity, courage or boredom?
 Ha treasures! Like all vaults it was full of depths and dangers.
@@ -496,7 +496,7 @@ Bodychecks, bodycounts itching all my ways but the awful software bugs...
 Be constantly on guard, joker, don't take anything at face value.
 Which is better: mind blast or mind wash? Will lost memories return gradually?
 #Have a rest and a rumor in the inn over some comfortable pitchers of beer.
-½É²°¤Ç¤æ¤Ã¤¯¤ê¥Ó¡¼¥ë¤Ç¤â°û¤ó¤Ç±½¤òÊ¹¤¤¤Æ¤ß¤¿¤é¤É¤¦¤À¤¤¡©
+å®¿å±‹ã§ã‚†ã£ãã‚Šãƒ“ãƒ¼ãƒ«ã§ã‚‚é£²ã‚“ã§å™‚ã‚’èã„ã¦ã¿ãŸã‚‰ã©ã†ã ã„ï¼Ÿ
 The stakes are far too high for a weak bluff, so watch the scores?
 Be not like the others. Proceed carefully, cover yourself at all times.
 You wouldn't want to fool with the Trumps! Aren't they of Doom quality?
@@ -504,7 +504,7 @@ Smeagols removal is high on your list of things that needed knowing or doing?
 Matter of recollection: find the inn and nurse some rumors for a while.
 Served you right: 3 quarters dead. Wasn't it purely a result of your arrogance?
 #Confident - Cocky - Lazy - Dead. The Old Man's mantra, and a serious good one.
-¼«¿® - ¼«¹û¤ì - ÂÕÂÆ - »à¡£Ìì¤µ¤ó¤Î¸ıÊÊ¤À¤Ã¤¿¡£¿¿·õ¤Ç¡¢¤¤¤¤¸ÀÍÕ¤À¡£
+è‡ªä¿¡ - è‡ªæƒšã‚Œ - æ€ æƒ° - æ­»ã€‚çˆºã•ã‚“ã®å£ç™–ã ã£ãŸã€‚çœŸå‰£ã§ã€ã„ã„è¨€è‘‰ã ã€‚
 Let your mind drift over the perversely plotted events of the past levels.
 Another loss? Curse your inertia at having let the situation slide for so long.
 So you have been another cockerel who'd crow before he thinks? Foolish heart!
@@ -514,12 +514,12 @@ Head over heels? There comes a point in any illness when...
 A flash of your all-to-familiar arrogance might make you bungle.
 Ooh, they will sense it, you really love playing with fire.
 #One ill turn deserves another.
-£±¥¿¡¼¥ó¤Î¥ß¥¹¤Ï¤µ¤é¤Ê¤ë¥ß¥¹¤ò¸Æ¤Ö¡£
+ï¼‘ã‚¿ãƒ¼ãƒ³ã®ãƒŸã‚¹ã¯ã•ã‚‰ãªã‚‹ãƒŸã‚¹ã‚’å‘¼ã¶ã€‚
 To say it blunt: you *cannot* afford another mistake. - What you say, really?
 Our dreams are too much with us. They imply a breach of security.
 Groo seems almost too well organized to be a mental case.
 #They say that the Jewel of Judgement controls all the elements.
-¡Ø¿³È½¤ÎÊõÀĞ¡Ù¤ÏÁ´¤Æ¤Î¥¨¥ì¥á¥ó¥È¤ò¥³¥ó¥È¥í¡¼¥ë¤¹¤ë¤é¤·¤¤¡£
+ã€å¯©åˆ¤ã®å®çŸ³ã€ã¯å…¨ã¦ã®ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚’ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã™ã‚‹ã‚‰ã—ã„ã€‚
 They say: Droppa MaPantz is the court jester of Amber and a master of traps.
 They say: Spores that turn to jewel shards might smash you like bullets.
 They say: Inhale the crisp evening air before going downward hunting.
@@ -531,17 +531,17 @@ They say: Being what you have to be without whining about it.
 They say: Visit a tannery and get used to be tanned!
 They say: "Z" stands for Zelazny, Roger (+1995) and means 'He lives'(greek).
 #Zelazny said: "A headlong rush may also result in a broken neck."
-¡Ö¸ş¤³¤¦¸«¤º¤ÊÆÍ¿Ê¤Ï¼ó¤òÀŞ¤ë¤³¤È¤Ë¤Ê¤ë¤À¤í¤¦¡£¡×--- R.¥¼¥é¥º¥Ë¥¤
+ã€Œå‘ã“ã†è¦‹ãšãªçªé€²ã¯é¦–ã‚’æŠ˜ã‚‹ã“ã¨ã«ãªã‚‹ã ã‚ã†ã€‚ã€--- R.ã‚¼ãƒ©ã‚ºãƒ‹ã‚¤
 #Z. says: The full-scale, all-or-nothing reaction may be ok if you always win.
-¡Ö´°Á´¤Ê all or nothing ¤È¤¤¤¦ÂÖÅÙ¤Ï¡¢¤¤¤Ä¤â¾¡¤Ä¤ó¤À¤Ã¤¿¤é¤½¤ì¤Ç¤¤¤¤¤À¤í¤¦¡£¡×--- R.¥¼¥é¥º¥Ë¥¤
+ã€Œå®Œå…¨ãª all or nothing ã¨ã„ã†æ…‹åº¦ã¯ã€ã„ã¤ã‚‚å‹ã¤ã‚“ã ã£ãŸã‚‰ãã‚Œã§ã„ã„ã ã‚ã†ã€‚ã€--- R.ã‚¼ãƒ©ã‚ºãƒ‹ã‚¤
 Z. says: Couldn't we just sit down and talk about it over a couple of beers?
 Z. says: Somewhere there must be a gap in the icy blue logic that surrounds us.
 #Chaos patrons are *very* moody!
-¥«¥ª¥¹¼é¸îËâ¿À¤Ï¤È¤Æ¤âµ¤¤Ş¤°¤ì¤À¡ª
+ã‚«ã‚ªã‚¹å®ˆè­·é­”ç¥ã¯ã¨ã¦ã‚‚æ°—ã¾ãã‚Œã ï¼
 You gonna meet unique personalities who are even more than a challenge.
 To be at cross-purposes over your ways with uniques might prove fatal.
 #No good to confront the fiendish, quick Freesia without some good gear.
-¤¤¤¤ÁõÈ÷¤â¤Ê¤·¤Ë¤¢¤Î°­Ëâ¤Î¤è¤¦¤ÊÁÇÁá¤¤¥Õ¥ê¡¼¥¸¥¢¤ËÎ©¤Á¸ş¤«¤¦¤Î¤ÏÎÉ¤¯¤Ê¤¤¡£
+ã„ã„è£…å‚™ã‚‚ãªã—ã«ã‚ã®æ‚ªé­”ã®ã‚ˆã†ãªç´ æ—©ã„ãƒ•ãƒªãƒ¼ã‚¸ã‚¢ã«ç«‹ã¡å‘ã‹ã†ã®ã¯è‰¯ããªã„ã€‚
 Being infuriated by tricky foes will make your timing less immaculate.
 Jellies? Some encounters are chilly though they take you no further forwards.
 The best way to treat enemies is to make friends with them. Charm monsters!
@@ -553,46 +553,46 @@ Mutations may not increase your beauty but surely your repertoire!
 The thrum of serious risk-taking heightens the suspense. Hitchcock them!
 They pay you the compliment of being perfectly straight? OOps, a hero!
 #Try to line up your opponents to dispatch them one after the other.
-Å¨¤ò°ì¿Í¤Å¤ÄÅİ¤¹¤¿¤á¤Ë¡¢°ìÎó¤ËÊÂ¤Ğ¤»¤í¡£
+æ•µã‚’ä¸€äººã¥ã¤å€’ã™ãŸã‚ã«ã€ä¸€åˆ—ã«ä¸¦ã°ã›ã‚ã€‚
 Some orcish leaders are extremely keen to meet you quite soon.
 Gee! You say you were nearly vanqished by the trickery of priests?
 Run over the facts in your head before confronting special tough guys.
 Kind creatures? They make you stay put if your free action is unsustained.
 Are you ready to vanish discreetly when those packs are after you?
 #Any stupid Umber Hulk might destroy YOU if being not too confusionproof.
-º®ÍğÂÑÀ­¤¬¤Ê¤«¤Ã¤¿¤é¡¢¤É¤ó¤Ê´ÖÈ´¤±¤Ê¥¢¥ó¥Ğ¡¼¥Ï¥ë¥¯¤Ç¤â¤¢¤Ê¤¿¤òÅİ¤·¤Æ¤·¤Ş¤¦¤À¤í¤¦¡£
+æ··ä¹±è€æ€§ãŒãªã‹ã£ãŸã‚‰ã€ã©ã‚“ãªé–“æŠœã‘ãªã‚¢ãƒ³ãƒãƒ¼ãƒãƒ«ã‚¯ã§ã‚‚ã‚ãªãŸã‚’å€’ã—ã¦ã—ã¾ã†ã ã‚ã†ã€‚
 Magic doors make fine fences against weak masses of critters.
 #Traps, Summoners, Zephyrs. The foreboding of evil grows heavier with stairs.
-æ«¡¢¾¤´­¤¹¤ëÅ¨¡¢¥Ï¥¦¥ó¥É¡£°­¤Îµ¤ÇÛ¤Ï³¬ÃÊ¤ò¹ß¤ê¤ëÅÙ¤ËÇ»¤¯¤Ê¤Ã¤Æ¤¤¤¯¡£
+ç½ ã€å¬å–šã™ã‚‹æ•µã€ãƒã‚¦ãƒ³ãƒ‰ã€‚æ‚ªã®æ°—é…ã¯éšæ®µã‚’é™ã‚Šã‚‹åº¦ã«æ¿ƒããªã£ã¦ã„ãã€‚
 #Weak dangers? You may be overwhelmed by sheer numbers.
-Âç¤·¤¿¤³¤È¤Ê¤¤´í¸±¤À¤Ã¤Æ¡©¿ô¤Ç²¡¤µ¤ì¤Æ°µÅİ¤µ¤ì¤ë¤À¤í¤¦¤è¡£
+å¤§ã—ãŸã“ã¨ãªã„å±é™ºã ã£ã¦ï¼Ÿæ•°ã§æŠ¼ã•ã‚Œã¦åœ§å€’ã•ã‚Œã‚‹ã ã‚ã†ã‚ˆã€‚
 Deep waters are a nice separation against some poisonous animals.
 #It is best to waylay heavy magic users in narrow passages around the corners.
-ËâË¡¤ò¥Ğ¥·¥Ğ¥·»È¤¦Å¨¤Ï¶¹¤¤ÄÌÏ©¤Î¶Ê¤ÇÂÔ¤ÁÉú¤»¤¹¤ë¤Î¤¬°ìÈÖ¤¤¤¤¡£
+é­”æ³•ã‚’ãƒã‚·ãƒã‚·ä½¿ã†æ•µã¯ç‹­ã„é€šè·¯ã®æ›²ã§å¾…ã¡ä¼ã›ã™ã‚‹ã®ãŒä¸€ç•ªã„ã„ã€‚
 Heart is downcast? Huh, that's beyond even your accustomed folly. Courage!
 #Dark is the Shadow and yet your heart rejoices.
-±Æ¤Ï°Å¤¯¤È¤â¡¢»ä¤Î¿´¤Ï´î¤ó¤Ç¤ª¤ê¤Ş¤¹¡Ä¥¢¥ë¥¦¥§¥ó
+å½±ã¯æš—ãã¨ã‚‚ã€ç§ã®å¿ƒã¯å–œã‚“ã§ãŠã‚Šã¾ã™â€¦ã‚¢ãƒ«ã‚¦ã‚§ãƒ³
 #In the dreadful light you will stand aghast unless your are indeed an elf.
-¥¨¥ë¥Õ¤Ç¤â¤Ê¤¤¸Â¤ê¡¢¶¯Îõ¤Ê¸÷¤ÎÃæ¤Ç¤ÏÊòÁ³¤ÈÎ©¤Á¤Ä¤¯¤·¤Æ¤·¤Ş¤¦¤À¤í¤¦¡£
+ã‚¨ãƒ«ãƒ•ã§ã‚‚ãªã„é™ã‚Šã€å¼·çƒˆãªå…‰ã®ä¸­ã§ã¯å‘†ç„¶ã¨ç«‹ã¡ã¤ãã—ã¦ã—ã¾ã†ã ã‚ã†ã€‚
 How the means unforeseen are revealed whereby Oberon might be overthrown?
 Saroyan: Voyald is a way of saying Void, Voyage and World at the same time.
 #Death, next to birth is our best gift, and next to truth it is our best friend.
-¡Ö»à¡×¤Ï¡¢²æ¡¹¤Ë¤È¤Ã¤ÆÀ¸¤Î¼¡¤ËÍ­Æñ¤¤Êª¤À¡£¤½¤·¤Æ¿¿¼Â¤Î¼¡¤ËÎÉ¤­Í§¤À¡£
+ã€Œæ­»ã€ã¯ã€æˆ‘ã€…ã«ã¨ã£ã¦ç”Ÿã®æ¬¡ã«æœ‰é›£ã„ç‰©ã ã€‚ãã—ã¦çœŸå®Ÿã®æ¬¡ã«è‰¯ãå‹ã ã€‚
 The greatest story-teller of all is time and change, or death.
 #Sing Fury: "This is not the time to wonder, this is not the time to cry!"
-(·ã¤·¤¯)¢öº£¤ÏÇº¤à»ş¤¸¤ã¤Ê¤¤¡£º£¤Ïµã¤¯»ş¤¸¤ã¤Ê¤¤¡ª
+(æ¿€ã—ã)â™ªä»Šã¯æ‚©ã‚€æ™‚ã˜ã‚ƒãªã„ã€‚ä»Šã¯æ³£ãæ™‚ã˜ã‚ƒãªã„ï¼
 How hope beyond hopes is fulfilled is yours to stumble upon.
 Do not grudge his chance of peril him who advances beyond hopes.
 Thou shalt see what comes to him who sets his foolish webs before these feet.
 Tolkien said: "The dread of the Ringwraith cannot be shaken off." Fearless!
 #Potion mimics are wicked summoners. Hurry up to knock them out, quickly! 
-¥ß¥ß¥Ã¥¯¡ÊÌô¡Ë¤Ï¤¿¤Á¤Î°­¤¤¾¤´­¤ò¤¹¤ë¡£µŞ¤¤¤ÇÅİ¤»¡¢Áá¤¯¡ª
+ãƒŸãƒŸãƒƒã‚¯ï¼ˆè–¬ï¼‰ã¯ãŸã¡ã®æ‚ªã„å¬å–šã‚’ã™ã‚‹ã€‚æ€¥ã„ã§å€’ã›ã€æ—©ãï¼
 Full-scale priests look innocent but are among the nastiest sort of summoners.
 Summoners? Victory is slipping from your grasp even as you stretch out hands.
 Winning vault treasures is just like pulling chestnuts out of spreading fire.
 A dark full of nightmares? There is only one true Nightmare!
 #Strength is crucial. Isn't witchcraft just an embroidery in a bard's tale?
-¶¯¤µ¤³¤½¤¬´Î¿´¤À¡£ËâË¡¤Ê¤ó¤Æ¤Î¤Ï¶ãÍ·»í¿Í¤ÎÏÃ¤ÎµÓ¿§¤Ë¤¹¤®¤Ê¤¤¤ó¤¸¤ã¤Ê¤¤¤«¡©
+å¼·ã•ã“ããŒè‚å¿ƒã ã€‚é­”æ³•ãªã‚“ã¦ã®ã¯åŸéŠè©©äººã®è©±ã®è„šè‰²ã«ã™ããªã„ã‚“ã˜ã‚ƒãªã„ã‹ï¼Ÿ
 Whenever doubled over force yourself upright. Who wants a bad loser?
 Give heartened chase when your enemies turned tail. Last bit by missile!
 Vlad Dracula? Die and forget, since death is forbidden - to him, not you!
@@ -602,23 +602,23 @@ All your misdeeds are engraved into the very flesh-score of time itself.
 Such a chaos spawn will disenchant your best gear in no time at all.
 Trickster Rinaldo. This memory comes to you unbidden, as bitter as always.
 #The extremely ugly man-eater Grendel got his fame via Beowulf saga.
-¤È¤Æ¤â½¹¤¤¡Ø¿Í¿©¤¤¥°¥ì¥ó¥Ç¥ë¡Ù¤Ï¥Ù¥ª¥¦¥ë¥Õ¤ÎÊª¸ì¤ÇÍ­Ì¾¤Ë¤Ê¤Ã¤¿¡£
+ã¨ã¦ã‚‚é†œã„ã€äººé£Ÿã„ã‚°ãƒ¬ãƒ³ãƒ‡ãƒ«ã€ã¯ãƒ™ã‚ªã‚¦ãƒ«ãƒ•ã®ç‰©èªã§æœ‰åã«ãªã£ãŸã€‚
 You'd like anyone who sees you outlined in an archway will turn and run?
 #Do not run when Barney approaches, and become a happily crumbling idiot.
-¥Ğ¡¼¥Ë¡¼¤Á¤ã¤ó¤¬¤ä¤Ã¤Æ¤Æ¤âÆ¨¤²¤ë¤Ê¡£¤½¤·¤Æ¹¬¤»¤½¤¦¤ËÁû¤°ÇÏ¼¯¤Ë¤Ê¤ë¤Î¤À¡£
+ãƒãƒ¼ãƒ‹ãƒ¼ã¡ã‚ƒã‚“ãŒã‚„ã£ã¦ã¦ã‚‚é€ƒã’ã‚‹ãªã€‚ãã—ã¦å¹¸ã›ãã†ã«é¨’ãé¦¬é¹¿ã«ãªã‚‹ã®ã ã€‚
 #Boldor is just a self-opinionated piece of pomposity. But lots of companions!
-¥Ü¥ë¥É¡¼¥ë¤Ï¤¿¤À¤ÎÂºÂç¤ÊÊĞ¶ş¼Ô¤À¡£¤·¤«¤·¤¿¤¯¤µ¤ó¤Î¼ê²¼¤È°ì½ï¤À¡ª
+ãƒœãƒ«ãƒ‰ãƒ¼ãƒ«ã¯ãŸã ã®å°Šå¤§ãªåå±ˆè€…ã ã€‚ã—ã‹ã—ãŸãã•ã‚“ã®æ‰‹ä¸‹ã¨ä¸€ç·’ã ï¼
 Morgoth is the very brink where hope and despair are akin.
 Give little heed to the wreck and slaughter that will lay around the pits.
 #Accidents? what accidents? Mighty were your fallen ancestors.
-»ö¸Î¡©¤É¤ó¤Ê»ö¸Î¤À¤Ã¤¿¤ó¤À¡©º£¤ÏË´¤­·¯¤ÎÀèÁÄ¤¿¤Á¤Ï¶¯¤«¤Ã¤¿¡ª
+äº‹æ•…ï¼Ÿã©ã‚“ãªäº‹æ•…ã ã£ãŸã‚“ã ï¼Ÿä»Šã¯äº¡ãå›ã®å…ˆç¥–ãŸã¡ã¯å¼·ã‹ã£ãŸï¼
 Fortune has betrayed you but for the momentum. Confidence!
 On the long run - IF you're survivor - winds of fortune will not wreck you.
 As a spell-striking egghead you'd need convincing offensive powers!
 #Once no Recall is left the way up will seem never ending to you.
-µ¢´Ô¤Î´¬Êª¤¬Ìµ¤¯¤Ê¤Ã¤¿¤é¡¢ÃÏ¾å¤Ø¤ÎÎ¹¤Ï½ª¤ê¤Î¤Ê¤¤¤â¤Î¤Ë´¶¤¸¤ë¤À¤í¤¦¡£
+å¸°é‚„ã®å·»ç‰©ãŒç„¡ããªã£ãŸã‚‰ã€åœ°ä¸Šã¸ã®æ—…ã¯çµ‚ã‚Šã®ãªã„ã‚‚ã®ã«æ„Ÿã˜ã‚‹ã ã‚ã†ã€‚
 #The simple scheme ended in failure. That demon called lots of companions.
-Ã±½ã¤ÊºîÀï¤Ï¼ºÇÔ¤Ë½ª¤Ã¤¿¡£¤¢¤Î°­Ëâ¤¬Âô»³¤ÎÃç´Ö¤ò¾¤´­¤·¤¿¤Î¤À¡£
+å˜ç´”ãªä½œæˆ¦ã¯å¤±æ•—ã«çµ‚ã£ãŸã€‚ã‚ã®æ‚ªé­”ãŒæ²¢å±±ã®ä»²é–“ã‚’å¬å–šã—ãŸã®ã ã€‚
 Sing CCR: "Before you kill me take a look at yourself." Reflection-shields!
 Sing Pythons: "Always look on the bright sight of death." Only a breath away!
 Sing Beck: "I'm a loser, baby dragon, so why don't you kill me?" Suicide, ha!
@@ -627,85 +627,85 @@ Sing Garbage: "The trick is keep on breathing." Wear dragon scale mail!
 Sing Crowded House: "Always take your weather with you!" Yeah, have a breath.
 The game is serious. Catch it if you can. But you can leave your head on.
 #A Grey Mushroom of Restoring will not restore your drained life experience.
-Éü³è¤Î¥­¥Î¥³¤Ï¼º¤ï¤ì¤¿·Ğ¸³ÃÍ¤ò²óÉü¤·¤Ê¤¤¡£
+å¾©æ´»ã®ã‚­ãƒã‚³ã¯å¤±ã‚ã‚ŒãŸçµŒé¨“å€¤ã‚’å›å¾©ã—ãªã„ã€‚
 #Close eXamination of splendid shop-wares will provide precious insights. 
-Å¹¤ÎÁÇÀ²¤é¤·¤¤¾¦ÉÊ¤òÎÉ¤¯´Ñ»¡(X)¤¹¤ë¤Èµ®½Å¤Ê¾ğÊó¤¬ÆÀ¤é¤ì¤ë¤À¤í¤¦¡£
+åº—ã®ç´ æ™´ã‚‰ã—ã„å•†å“ã‚’è‰¯ãè¦³å¯Ÿ(X)ã™ã‚‹ã¨è²´é‡ãªæƒ…å ±ãŒå¾—ã‚‰ã‚Œã‚‹ã ã‚ã†ã€‚
 #Bought items come *identified*, knowledge secure from blank mind attacks.
-Å¹¤ÇÇã¤Ã¤¿¥¢¥¤¥Æ¥à¤Ï *´ÕÄê* ¤µ¤ì¤Æ¡¢µ­²±ÁÓ¼º¤Î¹¶·â¤¬¤­¤«¤Ê¤¤¡£
+åº—ã§è²·ã£ãŸã‚¢ã‚¤ãƒ†ãƒ ã¯ *é‘‘å®š* ã•ã‚Œã¦ã€è¨˜æ†¶å–ªå¤±ã®æ”»æ’ƒãŒãã‹ãªã„ã€‚
 #You even may transmit knowledge of *identified* items by means of stacking.
- *´ÕÄê*¤µ¤ì¤¿¥¢¥¤¥Æ¥à¤Î¾ğÊó¤ò¡¢ÀÑ¤ß½Å¤Í¤ë¤³¤È¤Ë¤è¤Ã¤ÆÂ¾¤Ë°Ü¤¹¤³¤È¤¬¤Ç¤­¤ë¡£
+ *é‘‘å®š*ã•ã‚ŒãŸã‚¢ã‚¤ãƒ†ãƒ ã®æƒ…å ±ã‚’ã€ç©ã¿é‡ã­ã‚‹ã“ã¨ã«ã‚ˆã£ã¦ä»–ã«ç§»ã™ã“ã¨ãŒã§ãã‚‹ã€‚
 What average mages get by *identify* the Stone will Tell the Nature adept.
 Malekith the Dark elf has a remarkable repertoire of spells to catch you. 
 Zelazny said: "You are a living example of the absurdity of things."
 #Zelazny said: "Whenever anything outrageous happens, there's a reason for it."
-¡Ö²¿¤«¤È¤Æ¤Ä¤â¤Ê¤¤»ö¤¬µ¯¤³¤ë»ş¡¢¤½¤ì¤Ë¤Ï¾ï¤ËÍıÍ³¤¬¤¢¤ë¤â¤Î¤À¡£¡×-- R.¥¼¥é¥º¥Ë¥¤
+ã€Œä½•ã‹ã¨ã¦ã¤ã‚‚ãªã„äº‹ãŒèµ·ã“ã‚‹æ™‚ã€ãã‚Œã«ã¯å¸¸ã«ç†ç”±ãŒã‚ã‚‹ã‚‚ã®ã ã€‚ã€-- R.ã‚¼ãƒ©ã‚ºãƒ‹ã‚¤
 Zelazny said: "Sometimes it's damned hard to tell the dancer from the dance."
 If it's not quite visible if you caught a gear curse look it up by Ctrl-C.
 Any lesser titan will not just summon a monster but several combos of them.
 #Robin Hood nowadays leads a wretched existence as a trapper and master thief.
-¥í¥Ó¥ó¥Õ¥Ã¥É¤ÏºÇ¶á¤¸¤ãÂÄÍî¤·¤Æ¿Í¤òæ«¤Ë¤«¤±¤ëÂçÅ¥ËÀ¤Ë¤Ê¤Ã¤Æ¤·¤Ş¤Ã¤¿¤é¤·¤¤¡£
+ãƒ­ãƒ“ãƒ³ãƒ•ãƒƒãƒ‰ã¯æœ€è¿‘ã˜ã‚ƒå •è½ã—ã¦äººã‚’ç½ ã«ã‹ã‘ã‚‹å¤§æ³¥æ£’ã«ãªã£ã¦ã—ã¾ã£ãŸã‚‰ã—ã„ã€‚
 #Too many different Zephyrs are the heroes death. IF caught on open ground.
-Âô»³¤Î¤¤¤í¤ó¤Ê¼ïÎà¤Î¥Ï¥¦¥ó¥É¤Ë°Ï¤Ş¤ì¤ë¤Î¤Ï»à¤ò°ÕÌ£¤¹¤ë¡£¤½¤ì¤¬³«¤±¤¿¾ì½ê¤À¤Ã¤¿¤é¡£
+æ²¢å±±ã®ã„ã‚ã‚“ãªç¨®é¡ã®ãƒã‚¦ãƒ³ãƒ‰ã«å›²ã¾ã‚Œã‚‹ã®ã¯æ­»ã‚’æ„å‘³ã™ã‚‹ã€‚ãã‚ŒãŒé–‹ã‘ãŸå ´æ‰€ã ã£ãŸã‚‰ã€‚
 If you ever confront a Hru have a Teleport Other at hand!
 #Any Hru will rage, spreading earthquake and ruin. Only Shudde is worse.
-¤É¤Î¥Õ¥ë¥¥¤âÎã³°¤Ê¤¯ÅÜ¤ê¶¸¤¤¡¢ÊÕ¤ê¤òÃÏ¿Ì¤Ç²õÌÇ¤µ¤»¤ë¡£¤â¤Ã¤È¥¿¥Á¤¬°­¤¤¤Î¤Ï¥·¥å¥É¤¯¤é¤¤¤À¡£
+ã©ã®ãƒ•ãƒ«ã‚¥ã‚‚ä¾‹å¤–ãªãæ€’ã‚Šç‹‚ã„ã€è¾ºã‚Šã‚’åœ°éœ‡ã§å£Šæ»…ã•ã›ã‚‹ã€‚ã‚‚ã£ã¨ã‚¿ãƒãŒæ‚ªã„ã®ã¯ã‚·ãƒ¥ãƒ‰ãã‚‰ã„ã ã€‚
 #You cannot escape a Hru just by blinking. Your life will be shattered!
-¥·¥ç¡¼¥È¥Æ¥ì¥İ¡¼¥È¤¯¤é¤¤¤Ç¤Ï¥Õ¥ë¥¥¤«¤éÆ¨¤²¤é¤ì¤Ê¤¤¡£Ê´¡¹¤Ë¤µ¤ì¤Æ¤·¤Ş¤¦¤¾¡ª
+ã‚·ãƒ§ãƒ¼ãƒˆãƒ†ãƒ¬ãƒãƒ¼ãƒˆãã‚‰ã„ã§ã¯ãƒ•ãƒ«ã‚¥ã‹ã‚‰é€ƒã’ã‚‰ã‚Œãªã„ã€‚ç²‰ã€…ã«ã•ã‚Œã¦ã—ã¾ã†ãï¼
 #If Amulets of Resistance don't stack it's caused by different additionals.
-¤â¤·Ê£¿ô¤ÎÂÑÀ­¤Î¥¢¥ß¥å¥ì¥Ã¥È¤¬½Å¤Ê¤é¤Ê¤¤¾ì¹ç¡¢¤½¤ì¤Ï°Û¤Ê¤ëÄÉ²ÃÂÑÀ­¤ò»ı¤Ã¤Æ¤¤¤ë¤«¤é¤À¡£
+ã‚‚ã—è¤‡æ•°ã®è€æ€§ã®ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆãŒé‡ãªã‚‰ãªã„å ´åˆã€ãã‚Œã¯ç•°ãªã‚‹è¿½åŠ è€æ€§ã‚’æŒã£ã¦ã„ã‚‹ã‹ã‚‰ã ã€‚
 Seek melee combat with breathing foes so your treasures won't get blasted!
 #Master Vampires won't prey on your life blood only, but love to torture DEX.
-¥Ş¥¹¥¿¡¼¥Ğ¥ó¥Ñ¥¤¥¢¤Ï¤¢¤Ê¤¿¤ÎÀ¸¤­·ì¤òµÛ¤¦¤À¤±¤Ç¤Ï¤Ê¤¤¡£´ïÍÑ¤µ¤ò²¼¤²¤ë¤Î¤âÂç¹¥¤­¤À¡£
+ãƒã‚¹ã‚¿ãƒ¼ãƒãƒ³ãƒ‘ã‚¤ã‚¢ã¯ã‚ãªãŸã®ç”Ÿãè¡€ã‚’å¸ã†ã ã‘ã§ã¯ãªã„ã€‚å™¨ç”¨ã•ã‚’ä¸‹ã’ã‚‹ã®ã‚‚å¤§å¥½ãã ã€‚
 Hellhound Garm is defeatable if you fence out his summoned packs in advance.
 #Mighty reptile Zoth-Ommog hates treasures and will crush any, leaving none!
-¤È¤Æ¤â¶¯¤¤à¨ÃîÎà¥¾¥¹=¥ª¥à¥â¥°¤ÏÊõÊª¤¬·ù¤¤¤À¡£Á´Éô²õ¤·¤Æ°ì¤Ä¤â»Ä¤µ¤Ê¤¤¤À¤í¤¦¡ª
+ã¨ã¦ã‚‚å¼·ã„çˆ¬è™«é¡ã‚¾ã‚¹=ã‚ªãƒ ãƒ¢ã‚°ã¯å®ç‰©ãŒå«Œã„ã ã€‚å…¨éƒ¨å£Šã—ã¦ä¸€ã¤ã‚‚æ®‹ã•ãªã„ã ã‚ã†ï¼
 #Drolems are not drolleries but draconic golems with high defenses. They bite!
-¥É¥í¡¼¥ì¥à¤ÏÅ¥¤Î¥´¡¼¥ì¥à¤¸¤ã¤Ê¤¯¡¢¹â¤¤ËÉ¸æÎÏ¤ò¤â¤ÄÎµ·¿¤Î¥´¡¼¥ì¥à¤À¡£´í¤Ê¤¤¤¾¡ª
+ãƒ‰ãƒ­ãƒ¼ãƒ¬ãƒ ã¯æ³¥ã®ã‚´ãƒ¼ãƒ¬ãƒ ã˜ã‚ƒãªãã€é«˜ã„é˜²å¾¡åŠ›ã‚’ã‚‚ã¤ç«œå‹ã®ã‚´ãƒ¼ãƒ¬ãƒ ã ã€‚å±ãªã„ãï¼
 #You can't get hold on Bully Gates, he charges you and is gone immediately.
-°Î¤Ö¤ë¥²¥¤¥Ä¤òÊá¤Ş¤¨¤ë¤³¤È¤Ï½ĞÍè¤Ê¤¤¡£Èà¤ÏÀÁµá½ñ¤ò¤è¤³¤·¤Æ¤¹¤°¤ËÆ¨¤²¤ë¡£
+å‰ã¶ã‚‹ã‚²ã‚¤ãƒ„ã‚’æ•ã¾ãˆã‚‹ã“ã¨ã¯å‡ºæ¥ãªã„ã€‚å½¼ã¯è«‹æ±‚æ›¸ã‚’ã‚ˆã“ã—ã¦ã™ãã«é€ƒã’ã‚‹ã€‚
 #Never go near Bull Gates without maximum dexterity or lose lots of money!
-´ïÍÑ¤µ¤¬ºÇÂçÃÍ¤Ë¤Ê¤Ã¤Æ¤Ê¤¤¤Ê¤é¥Ö¥ë¥²¥¤¥Ä¤Ë¤Ï¶áÉÕ¤¯¤Ê¡ªÂç¶â¤òÌµ¤¯¤¹¤¾¡ª
+å™¨ç”¨ã•ãŒæœ€å¤§å€¤ã«ãªã£ã¦ãªã„ãªã‚‰ãƒ–ãƒ«ã‚²ã‚¤ãƒ„ã«ã¯è¿‘ä»˜ããªï¼å¤§é‡‘ã‚’ç„¡ãã™ãï¼
 He cackles and sneers at you and throws traps as his confetti: Bully Gates!
 If the singular naga Jasra finds open ground she will call her hydras on you!
 You must capitalize (s)ecrets to find its Keepers. You'll really love them!
 The true name of Shudde is 747. But this will not help you sufficiently. Run!
 I balanced all, brought all to mind. In balance with this life, this death.
 #A visit in the Inner Temple is less expensive than bundles of Restore potions.
-»û±¡¤Î¼£ÎÅ½ê¤Ë¹Ô¤¯Êı¤¬¡¢Éü³è¤ÎÌô¤ò¤¤¤í¤¤¤íÇã¤¦¤è¤ê¤â°Â¾å¤¬¤ê¤À¡£
+å¯ºé™¢ã®æ²»ç™‚æ‰€ã«è¡Œãæ–¹ãŒã€å¾©æ´»ã®è–¬ã‚’ã„ã‚ã„ã‚è²·ã†ã‚ˆã‚Šã‚‚å®‰ä¸ŠãŒã‚Šã ã€‚
 Trolls, Paladins or Bloodletters are fine to make money - if you top them.
 #The goddess of cats drains dexterity dramatically. Don't forget to sustain it.
-Ç­¤Î½÷²¦¤Ï´ïÍÑ¤µ¤ò·àÅª¤Ë²¼¤²¤ë¡£°İ»ı¤¹¤ë¤Î¤òËº¤ì¤Æ¤Ï¤Ê¤é¤Ê¤¤¡£
+çŒ«ã®å¥³ç‹ã¯å™¨ç”¨ã•ã‚’åŠ‡çš„ã«ä¸‹ã’ã‚‹ã€‚ç¶­æŒã™ã‚‹ã®ã‚’å¿˜ã‚Œã¦ã¯ãªã‚‰ãªã„ã€‚
 #Scrolls of artifact creation need a plain weapon/armour to enhance it.
-¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥ÈÀ¸À®¤Î´¬Êª¤ÏÁÇ¤ÎÉğ´ï¤äËÉ¶ñ¤òÉ¬Í×¤È¤¹¤ë¡£
+ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆç”Ÿæˆã®å·»ç‰©ã¯ç´ ã®æ­¦å™¨ã‚„é˜²å…·ã‚’å¿…è¦ã¨ã™ã‚‹ã€‚
 #The definitely best way to fill a gear gap is creating your own artifact.
-ÁõÈ÷ÉÔÂ­¤ò·êËä¤á¤¹¤ëºÇ¤â¤¤¤¤ÊıË¡¤Ï¼«Ê¬¤Ç¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¤òºî¤ë¤³¤È¤À¡£
+è£…å‚™ä¸è¶³ã‚’ç©´åŸ‹ã‚ã™ã‚‹æœ€ã‚‚ã„ã„æ–¹æ³•ã¯è‡ªåˆ†ã§ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆã‚’ä½œã‚‹ã“ã¨ã ã€‚
 Iron liches are *very* deadly if you're not hard to breath and summons alike.
 #Maulotaurs tend to rely on fire and overwhelming shattering strength. Prepare!
-¥Ş¥¦¥í¥¿¥¦¥í¥¹¤Ï²Ğ±ê¤È°µÅİÅª¤ÊÇË²õÎÏ¤ÇÇ÷¤ë¤À¤í¤¦¡£µ¤¤ò¤Ä¤±¤í¡ª
+ãƒã‚¦ãƒ­ã‚¿ã‚¦ãƒ­ã‚¹ã¯ç«ç‚ã¨åœ§å€’çš„ãªç ´å£ŠåŠ›ã§è¿«ã‚‹ã ã‚ã†ã€‚æ°—ã‚’ã¤ã‘ã‚ï¼
 Think out ways to get hold on some unusual nasty unique thieves. Ooh, Santa!
 They say that everyone has some skeletons in the cellar. Some are harmful!
-#Amber10, Ghostwheel ¤Î¥»¥ê¥Õ
+#Amber10, Ghostwheel ã®ã‚»ãƒªãƒ•
 #GHOST said: "I would not wish to add to your probable present paranoia."
-¥´¡¼¥¹¥È¤Ï¸À¤Ã¤¿¡£¡Ö·¯¤¬º£Êú¤¤¤Æ¤ë¤â¤Ã¤È¤â¤é¤·¤¤ÌÑÁÛ¤ò¤â¤Ã¤È¹ó¤¯¤·¤¿¤¯¤Ê¤¤¤ó¤À¡£¡×
+ã‚´ãƒ¼ã‚¹ãƒˆã¯è¨€ã£ãŸã€‚ã€Œå›ãŒä»ŠæŠ±ã„ã¦ã‚‹ã‚‚ã£ã¨ã‚‚ã‚‰ã—ã„å¦„æƒ³ã‚’ã‚‚ã£ã¨é…·ãã—ãŸããªã„ã‚“ã ã€‚ã€
 One of life's smaller puzzles is how to get control of the nearer futures.
 The King in Yellow is strong in help. But he is also quite jumpy by himself.
 Glaurung and all his kinsfolk - send them where the pepper grows! It's timing.
 The swamps south of the Elventown is worthy of some hunting excursions!
 You would be amazed of what a Greater Kraken is able to give to you.
 #In deep waters any treasures will be lost! Lure them coastwards.
-¿¼¤¤³¤¤ä²Ï¤Ç¤ÏÊõÊª¤ÏÁ´¤Æ¼º¤ï¤ì¤Æ¤·¤Ş¤¦¡ª´ßÊÕ¤Ë¤ª¤Ó¤­´ó¤»¤ë¤ó¤À¡£
+æ·±ã„æµ·ã‚„æ²³ã§ã¯å®ç‰©ã¯å…¨ã¦å¤±ã‚ã‚Œã¦ã—ã¾ã†ï¼å²¸è¾ºã«ãŠã³ãå¯„ã›ã‚‹ã‚“ã ã€‚
 Any means of digging are crucial for designing the battleground as You like!
 You may assault nasty Zephyr packs at doubled corners safe from their breath.
 #Only permanent walls will prevent Ethearal or Deathdrakes to come after you.
-Å·¾å³¦¥É¥ì¥¤¥¯¤È¥Ç¥¹¥É¥ì¥¤¥¯¤ÎÄÉÀ×¤Ï±Êµ×´ä¤Ç¤·¤«¼×¤ì¤Ê¤¤¡£
+å¤©ä¸Šç•Œãƒ‰ãƒ¬ã‚¤ã‚¯ã¨ãƒ‡ã‚¹ãƒ‰ãƒ¬ã‚¤ã‚¯ã®è¿½è·¡ã¯æ°¸ä¹…å²©ã§ã—ã‹é®ã‚Œãªã„ã€‚
 #Drujs are not good for you. So as folks (dare)say: Let sleeping wyverns lie.
-¥É¥ë¥¸¤Ï·¯¤Î¤¿¤á¤ËÎÉ¤¯¤Ê¤¤¡£¤è¤¯¸À¤¦¤¸¤ã¤Ê¤¤¤«¡¢¡Ö¿²¤¿¥ï¥¤¥Ğ¡¼¥ó¤òµ¯¤³¤¹¤Ê¡×¤È¡£
+ãƒ‰ãƒ«ã‚¸ã¯å›ã®ãŸã‚ã«è‰¯ããªã„ã€‚ã‚ˆãè¨€ã†ã˜ã‚ƒãªã„ã‹ã€ã€Œå¯ãŸãƒ¯ã‚¤ãƒãƒ¼ãƒ³ã‚’èµ·ã“ã™ãªã€ã¨ã€‚
 Sort of Pit-diver you are - those who seek after artifacts beyond the Rim.
 A jagged tentacle of the constantly shifting kind is moving toward your leg...
 Raal's? Ya might have to fool with it a long while just to figure it out.
 Pattern and Logrus, like reason and feeling, the wells of Powers mages draw on.
 #Apollonian and Dionysiac, light and dark, Order and Chaos need one another.
-¥¢¥İ¥í¥ó¤È¥Ç¥å¥ª¥Ë¥å¥½¥¹¡¢¸÷¤È°Ç¡¢Ãá½ø¤Èº®ÆÙ¤Ï¸ß¤¤¤òÉ¬Í×¤È¤¹¤ë¡£
+ã‚¢ãƒãƒ­ãƒ³ã¨ãƒ‡ãƒ¥ã‚ªãƒ‹ãƒ¥ã‚½ã‚¹ã€å…‰ã¨é—‡ã€ç§©åºã¨æ··æ²Œã¯äº’ã„ã‚’å¿…è¦ã¨ã™ã‚‹ã€‚
 The principles game of light and dark is finally to be judged esthetically.
 An uncursed amulet of anti-teleportation supports Your choice of battleground.
 Try to get unknown to your old self. No compromising awhile.
@@ -720,7 +720,7 @@ Pay no attention. Incomers are resented and regarded as fair game!
 At the Courts of Chaos poisonous feuds fester behind every corner.
 You seem inoffensive, a mere joker, a light-weight. But your eyes ..?
 #Your knife has certainly hacked some bad meats. It's stained.
-·¯¤Î¥Ê¥¤¥Õ¤Ï²¿¤«°­¤¤Æù¤òÀÚ¤Ã¤¿¤è¤¦¤À¡£»¬¤Ó¤Æ¤¤¤ë¤è¡£
+å›ã®ãƒŠã‚¤ãƒ•ã¯ä½•ã‹æ‚ªã„è‚‰ã‚’åˆ‡ã£ãŸã‚ˆã†ã ã€‚éŒ†ã³ã¦ã„ã‚‹ã‚ˆã€‚
 The shrewd ones are never fooled. The weak mimic the strong habits.
 I see you have accustomed to plenty of local shopping snobberies.
 You won? You truly must have a brain as sharp as a woodsman's hatchet!
@@ -733,18 +733,18 @@ Life: to mortgage yesterdays gains in order to move on to the next intermezzo.
 The art of dragon mail maintenance is: Never get stuck without escape chance.
 Oh I see! Now I'm not good enough!
 #Prices? Any complaints and you'll be bumped out faster than you can breathe.
-ÃÍÃÊ¤¬¤É¤¦¤·¤¿¤Ã¤Æ¡©Ê¸¶ç¸À¤ª¤¦¤â¤ó¤Ê¤éÂ©¤¹¤ë¥Ò¥Ş¤â¤Ê¤¯¤Ö¤Á¤Î¤á¤·¤Æ¤ä¤ë¤¾¡£
+å€¤æ®µãŒã©ã†ã—ãŸã£ã¦ï¼Ÿæ–‡å¥è¨€ãŠã†ã‚‚ã‚“ãªã‚‰æ¯ã™ã‚‹ãƒ’ãƒã‚‚ãªãã¶ã¡ã®ã‚ã—ã¦ã‚„ã‚‹ãã€‚
 #Prices? If you insist on haggling you'll never advance seriously!
-ÃÍÃÊ¤¬¤É¤¦¤·¤¿¤Ã¤Æ¡©ÃÍ°ú¤­¤·¤¿¤¤¤Ã¤Æ¤ó¤Ê¤é¡¢¤â¤¦¿¿ÌÌÌÜ¤ËÏÃ¤Ï½ĞÍè¤Ê¤¤¤Í¡£
+å€¤æ®µãŒã©ã†ã—ãŸã£ã¦ï¼Ÿå€¤å¼•ãã—ãŸã„ã£ã¦ã‚“ãªã‚‰ã€ã‚‚ã†çœŸé¢ç›®ã«è©±ã¯å‡ºæ¥ãªã„ã­ã€‚
 Well, I tell ya, the dungeons landlords are mulling this over gloomily!
 #Don't you think you are on a descending curve, young firehead?
-¼ã¤¤¿Í¤è¡¢¤¢¤ó¤¿¤Ï²¼¤êºä¤ò²¼¤Ã¤Æ¤ë¤È¤Ï»×¤ï¤ó¤«¤Í¡©
+è‹¥ã„äººã‚ˆã€ã‚ã‚“ãŸã¯ä¸‹ã‚Šå‚ã‚’ä¸‹ã£ã¦ã‚‹ã¨ã¯æ€ã‚ã‚“ã‹ã­ï¼Ÿ
 You are starting to loose your temper? So what? Gnaw your pistachios!
 It shrieks? Don't bother! Presumably there will be just innocent bystanders.
 Still you might still fade out again! Been seeing so many ghostly apparitions.
 Even if the bluff fails them never give up! The caves are hotbed of banditry.
 #Before I settled down, in my younger days I won the arena price.
-¤ï¤·¤ã±£µï¤¹¤ëÁ°¤Ë¥¢¥ê¡¼¥Ê¤ÇÍ¥¾¡¤·¤¿¤¾¡£
+ã‚ã—ã‚ƒéš å±…ã™ã‚‹å‰ã«ã‚¢ãƒªãƒ¼ãƒŠã§å„ªå‹ã—ãŸãã€‚
 Yegh! Assuming you are not the refined sensitive type you're disguised as?
 However you shouldn't want to upset sensitivities hereabout. Learn xenology!
 Critters? If action was taken early this conspiracy could be nipped in the bed.
@@ -758,26 +758,26 @@ Gorgons are fairy tales: mighty useful to get stone sculptures for the palace.
 Selling blessed weapons to a sympathizing temple is not too bad an idea.
 I'd prefer ball sorcery or breath ability to mass genocide for good reason.
 #Scrolls of genocide will extinct annoying monster races from your level area.
-Ëõ»¦¤Î´¬Êª¤Ï¤½¤Î³¬¤Ë¤¤¤ë¤¦¤¶¤Ã¤¿¤¤Å¨¤ò°ì¼ïÎà¾Ã¤·µî¤ë¤³¤È¤¬¤Ç¤­¤ë¡£
+æŠ¹æ®ºã®å·»ç‰©ã¯ãã®éšã«ã„ã‚‹ã†ã–ã£ãŸã„æ•µã‚’ä¸€ç¨®é¡æ¶ˆã—å»ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
 *Destruction* will cause a 15x15 area to change completely, but you undamaged.
 There are mostly only rumors about the effects of rarer ZAngband items.
 What does NETHER mean? The (arch.) N. regions are the world of the dead/hell.
 #What does NEXUS mean? It refers to connexion/bond. Location/stats get unstable.
-¡Ö¥Í¥¯¥µ¥¹¡×¤È¤Ï¤É¤¦¤¤¤¦°ÕÌ£¡©¤½¤ì¤Ï·ëÀÜÅÀ¡¿·ë¤ÓÌÜ¤ò°ÕÌ£¤·¡¢¤½¤³¤Ç¤Ï°ÌÃÖ¤ä¾õÂÖ¤¬ÉÔ°ÂÄê¤Ë¤Ê¤ë¡£
+ã€Œãƒã‚¯ã‚µã‚¹ã€ã¨ã¯ã©ã†ã„ã†æ„å‘³ï¼Ÿãã‚Œã¯çµæ¥ç‚¹ï¼çµã³ç›®ã‚’æ„å‘³ã—ã€ãã“ã§ã¯ä½ç½®ã‚„çŠ¶æ…‹ãŒä¸å®‰å®šã«ãªã‚‹ã€‚
 #Such a Blade of Chaos (chaotic) is quite a rare and precious finding.
-¡Ê¥«¥ª¥Æ¥£¥Ã¥¯¡Ë¥«¥ª¥¹¥Ö¥ì¡¼¥É¤Ê¤ó¤Æ¤Î¤ÏÈó¾ï¤ËÄÁ¤·¤¯µ®½Å¤Ê¤â¤Î¤À¡£
+ï¼ˆã‚«ã‚ªãƒ†ã‚£ãƒƒã‚¯ï¼‰ã‚«ã‚ªã‚¹ãƒ–ãƒ¬ãƒ¼ãƒ‰ãªã‚“ã¦ã®ã¯éå¸¸ã«çã—ãè²´é‡ãªã‚‚ã®ã ã€‚
 Isn't it a scandal that chaos patrons mostly grant inferior weapon gifts?
 #Precious Blades of Chaos (6d5) are won by defeating a Bloodletter's platoon.
-µ®½Å¤Ê¥«¥ª¥¹¥Ö¥ì¡¼¥É(6d5)¤Ï·ìÙ¤°­Ëâ¤ÎÂç·²¤òÅİ¤»¤Ğ¼ê¤Ë¤Ï¤¤¤ë¡£
+è²´é‡ãªã‚«ã‚ªã‚¹ãƒ–ãƒ¬ãƒ¼ãƒ‰(6d5)ã¯è¡€æˆ®æ‚ªé­”ã®å¤§ç¾¤ã‚’å€’ã›ã°æ‰‹ã«ã¯ã„ã‚‹ã€‚
 Nether and Life draining are not just the same, as by breath or by touching?
 Examination of rings of nether resistance reveals two granted intrinsics.
 To stand your ground against adversaries who heal-self you'll need...
 #It's the Grail Brotherhood who is behind it all!
-¤¹¤Ù¤ÆÀ»ÇÕµ³»ÎÃÄ¤Î»Å¶È¤Ë°ã¤¤¤Ê¤¤¡ª
+ã™ã¹ã¦è–æ¯é¨å£«å›£ã®ä»•æ¥­ã«é•ã„ãªã„ï¼
 There is no such thing as 'fearless', not unless a man is mad. But hide it!
 When the monsters don't eat you, ooh, let's say you're home.
 #Young ones are made stupid, it's their protection against life's unkindness.
-¼ã¤¤¿Í´Ö¤Ï¶ò¤«¤Ê¤â¤Î¤À¤¬¡¢¤½¤ì¤Ï¿ÍÀ¸¤ÎÉÔ¿ÆÀÚ¤µ¤ËÂĞ¤¹¤ëËÉ¸æ¤Ê¤Î¤À¡£
+è‹¥ã„äººé–“ã¯æ„šã‹ãªã‚‚ã®ã ãŒã€ãã‚Œã¯äººç”Ÿã®ä¸è¦ªåˆ‡ã•ã«å¯¾ã™ã‚‹é˜²å¾¡ãªã®ã ã€‚
 And what about your due contribution to All-Fool's Day celebration? None?
 For the shared blood of your Ancestors you'll know about depth devilries.
 It takes a practiced eye to see through the glitter the rotten core of Thuringwethil.
@@ -785,155 +785,155 @@ I saw dragon scale mail priced 11000 gp more for having +17 instead of +16.
 The strong rely on strength. The not-so-strong must mint means of shrewdness.
 If not your might might make tremble them and flee you need good spy ability.
 #Pay heed to the Quylthulg race: invisible, powerful summoners, able to escape.
-¥¯¥£¥ë¥¹¥ë¥°¤ÎÎà¤Ë¤Ïµ¤¤ò¤Ä¤±¤í¡§Æ©ÌÀ¤Ç¡¢¶¯ÎÏ¤Ê¾¤´­¤ò¤·¤Æ¡¢¤¹¤°Æ¨¤²¤ë¡£
+ã‚¯ã‚£ãƒ«ã‚¹ãƒ«ã‚°ã®é¡ã«ã¯æ°—ã‚’ã¤ã‘ã‚ï¼šé€æ˜ã§ã€å¼·åŠ›ãªå¬å–šã‚’ã—ã¦ã€ã™ãé€ƒã’ã‚‹ã€‚
 (S)He has the devil of a time who encounters the neversleeping quylthulgs.
 Your pet aversion against all sorts of hounds won't lead you to anything!
 An inertia hound is gorgeous dinner: giving pleasure and sleepy satisfaction.
 #Patience at ambush will help to defeat many hounds.
-Ç¦ÂÑ¶¯¤¤ÂÔ¤ÁÉú¤»¤Ï¥Ï¥¦¥ó¥É¤Î·²¤òÅİ¤¹¤Î¤ËÌòÎ©¤Ä¤À¤í¤¦¡£
+å¿è€å¼·ã„å¾…ã¡ä¼ã›ã¯ãƒã‚¦ãƒ³ãƒ‰ã®ç¾¤ã‚’å€’ã™ã®ã«å½¹ç«‹ã¤ã ã‚ã†ã€‚
 #Without catching acid I have once eliminated 10 water hounds 1 by 1 in melee!
-»ä¤Ï¤«¤Ä¤Æ½½É¤¤Î¥¦¥©¡¼¥¿¡¼¥Ï¥¦¥ó¥É¤ò°ìÉ¤¤Å¤Ä»À¤òÍá¤Ó¤ë¤³¤È¤Ê¤¯ÂÇ·â¤ÇÅİ¤·¤¿¡ª
+ç§ã¯ã‹ã¤ã¦ååŒ¹ã®ã‚¦ã‚©ãƒ¼ã‚¿ãƒ¼ãƒã‚¦ãƒ³ãƒ‰ã‚’ä¸€åŒ¹ã¥ã¤é…¸ã‚’æµ´ã³ã‚‹ã“ã¨ãªãæ‰“æ’ƒã§å€’ã—ãŸï¼
 You'll get The_object_resists_the_spell if your Rune of Protection won't work.
 #As shopkeepers rarely change you'll be glad about any high maximum merchants.
-Å¹¼ç¤Ï¤á¤Ã¤¿¤Ë¸òÂØ¤·¤Ê¤¤¤«¤é¡¢Çã¤¤¤È¤êºÇ¹â³Û¤Î¹â¤¤ÅÛ¤Ë¤Ê¤Ã¤¿¤é¥é¥Ã¥­¡¼¤À¡£
+åº—ä¸»ã¯ã‚ã£ãŸã«äº¤æ›¿ã—ãªã„ã‹ã‚‰ã€è²·ã„ã¨ã‚Šæœ€é«˜é¡ã®é«˜ã„å¥´ã«ãªã£ãŸã‚‰ãƒ©ãƒƒã‚­ãƒ¼ã ã€‚
 #It seems not smart to have your high bonus missiles destroyed by breathers.
-¹â¤¤½¤ÀµÃÍ¤ÎÌğ¤ä¥Ü¥ë¥È¤ò¥Ö¥ì¥¹¤ÇÇË²õ¤µ¤ì¤ë¤Î¤Ï¸­¤¤¤³¤È¤Ç¤Ï¤Ê¤¤¡£
+é«˜ã„ä¿®æ­£å€¤ã®çŸ¢ã‚„ãƒœãƒ«ãƒˆã‚’ãƒ–ãƒ¬ã‚¹ã§ç ´å£Šã•ã‚Œã‚‹ã®ã¯è³¢ã„ã“ã¨ã§ã¯ãªã„ã€‚
 Against those some_hundert_hp_drain attacks you'll need means of heal-self!
 #If you cover your back by fencing or digging no summoned will surround you.
-·ê·¡¤ê¤äÊÉ¤òÍøÍÑ¤·¤ÆÇØ¸å¤ò¥«¥Ğ¡¼¤·¤Æ¤ª¤±¤Ğ¾¤´­¤µ¤ì¤¿Å¨¤Ë°Ï¤Ş¤ì¤ë¤³¤È¤Ï¤Ê¤¤¡£
+ç©´æ˜ã‚Šã‚„å£ã‚’åˆ©ç”¨ã—ã¦èƒŒå¾Œã‚’ã‚«ãƒãƒ¼ã—ã¦ãŠã‘ã°å¬å–šã•ã‚ŒãŸæ•µã«å›²ã¾ã‚Œã‚‹ã“ã¨ã¯ãªã„ã€‚
 #It's deciding which things are crucial that separates the wise from others.
-¤É¤Î»öÊÁ¤¬Âç»ö¤«¸«¶Ë¤á¤ë»ö¤¬¡¢¸­¤¤¼Ô¤È¤½¤¦¤Ç¤Ê¤¤¼Ô¤òÊ¬¤±¤ë¡£
+ã©ã®äº‹æŸ„ãŒå¤§äº‹ã‹è¦‹æ¥µã‚ã‚‹äº‹ãŒã€è³¢ã„è€…ã¨ãã†ã§ãªã„è€…ã‚’åˆ†ã‘ã‚‹ã€‚
 Being clocked backwards is just a terrible irony of fate.
 #Time is a weird attack - not even sustained stats will save you.
-»ş´Ö¹¶·â¤Ï´ñ²ø¤À¡£°İ»ı¤·¤Æ¤¤¤ëÇ½ÎÏ¤Ç¤µ¤¨²¼¤²¤Æ¤·¤Ş¤¦¡£
+æ™‚é–“æ”»æ’ƒã¯å¥‡æ€ªã ã€‚ç¶­æŒã—ã¦ã„ã‚‹èƒ½åŠ›ã§ã•ãˆä¸‹ã’ã¦ã—ã¾ã†ã€‚
 Stumble on a death mold: another unsettling occurrence in an unsettling world.
 #Too many errors and one's luck would run out at last.
-¼ºÇÔ¤ò½Å¤Í¤Æ¤¤¤¯¤È¤¤¤Ä¤«±¿¤¬¿Ô¤­¤Æ¤·¤Ş¤¦¤À¤í¤¦¡£
+å¤±æ•—ã‚’é‡ã­ã¦ã„ãã¨ã„ã¤ã‹é‹ãŒå°½ãã¦ã—ã¾ã†ã ã‚ã†ã€‚
 Errorowwww!
 #The highest bonused ring of damage I have seen was +23!
-»ä¤¬º£¤Ş¤Ç¸«¤¿¤³¤È¤Î¤¢¤ë°ìÈÖ¤¤¤¤¥À¥á¡¼¥¸¤Î»ØÎØ¤Ï +23 ¤À¡ª
+ç§ãŒä»Šã¾ã§è¦‹ãŸã“ã¨ã®ã‚ã‚‹ä¸€ç•ªã„ã„ãƒ€ãƒ¡ãƒ¼ã‚¸ã®æŒ‡è¼ªã¯ +23 ã ï¼
 #The highest bonused amulets of searching/brilliance I have seen was +6!
-»ä¤¬º£¤Ş¤Ç¸«¤¿¤³¤È¤Î¤¢¤ë°ìÈÖ¤¤¤¤Ãµº÷/ÃÎÀ­¤Î¥¢¥ß¥å¥ì¥Ã¥È¤Ï +6 ¤À¡ª
+ç§ãŒä»Šã¾ã§è¦‹ãŸã“ã¨ã®ã‚ã‚‹ä¸€ç•ªã„ã„æ¢ç´¢/çŸ¥æ€§ã®ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆã¯ +6 ã ï¼
 #It's your own fault if you don't use all non-cheating means of awareness.
-¥¤¥ó¥Á¥­¤Ç¤Ê¤¤¤¢¤é¤æ¤ë¼êÃÊ¤ò»È¤Ã¤Æ·Ù²ü¤·¤Æ¤¿¤Î¤Ç¤Ê¤¤¤Ê¤é¡¢¤½¤ì¤Ï·¯¤ÎÀÕÇ¤¤À¡£
+ã‚¤ãƒ³ãƒã‚­ã§ãªã„ã‚ã‚‰ã‚†ã‚‹æ‰‹æ®µã‚’ä½¿ã£ã¦è­¦æˆ’ã—ã¦ãŸã®ã§ãªã„ãªã‚‰ã€ãã‚Œã¯å›ã®è²¬ä»»ã ã€‚
 #Pay ANY price for a Rod of Perception for it saves you lots of scrolls/staffs.
-´ÕÄê¤Î¥í¥Ã¥É¤Ï¡¢¤¤¤«¤Ê¤ëÂå½ş¤òÊ§¤Ã¤Æ¤Ç¤â¼ê¤ËÆş¤ì¤í¡£¤¿¤¯¤µ¤ó¤Î´¬Êª¤ä¥¹¥¿¥Ã¥Õ¤òÀáÌó¤Ç¤­¤ë¡£
+é‘‘å®šã®ãƒ­ãƒƒãƒ‰ã¯ã€ã„ã‹ãªã‚‹ä»£å„Ÿã‚’æ‰•ã£ã¦ã§ã‚‚æ‰‹ã«å…¥ã‚Œã‚ã€‚ãŸãã•ã‚“ã®å·»ç‰©ã‚„ã‚¹ã‚¿ãƒƒãƒ•ã‚’ç¯€ç´„ã§ãã‚‹ã€‚
 #Rods seem somewhat secure from fire/acid/lightning attacks, but get stolen!
-¥í¥Ã¥É¤Ï²Ğ/»À/ÅÅµ¤¤Î¹¶·â¤ËÂĞ¤·¤ÆÌµ½ı¤Ê¤è¤¦¤À¤¬¡¢Åğ¤Ş¤ì¤ë¤³¤È¤Ï¤¢¤ë¡ª
+ãƒ­ãƒƒãƒ‰ã¯ç«/é…¸/é›»æ°—ã®æ”»æ’ƒã«å¯¾ã—ã¦ç„¡å‚·ãªã‚ˆã†ã ãŒã€ç›—ã¾ã‚Œã‚‹ã“ã¨ã¯ã‚ã‚‹ï¼
 #Some black humored remarks (rumors) on common morals are not easily outwitted.
-¾ï¼±Åª¤ÊÆ»ÆÁ¤ËÂĞ¤¹¤ëÈéÆù¤Î¸ú¤¤¤¿¥æ¡¼¥â¥¢¤Ë¤Ï´ÊÃ±¤Ë¤ÏÀÚ¤êÊÖ¤»¤Ê¤¤¡£
+å¸¸è­˜çš„ãªé“å¾³ã«å¯¾ã™ã‚‹çš®è‚‰ã®åŠ¹ã„ãŸãƒ¦ãƒ¼ãƒ¢ã‚¢ã«ã¯ç°¡å˜ã«ã¯åˆ‡ã‚Šè¿”ã›ãªã„ã€‚
 #Ever read Ambrose Bierce, From the devil's dictionary? No, didn't steal there.
-¥Ó¥¢¡¼¥¹¤Î¡Ö°­Ëâ¤Î¼­Åµ¡×¤òÆÉ¤ó¤À¤«¤Ã¤Æ¡©¤¤¤ä¡¢¤¢¤ÎËÜ¤«¤é¤Ï¥Ñ¥¯¤Ã¤Æ¤Ê¤¤¤è¡£
+ãƒ“ã‚¢ãƒ¼ã‚¹ã®ã€Œæ‚ªé­”ã®è¾å…¸ã€ã‚’èª­ã‚“ã ã‹ã£ã¦ï¼Ÿã„ã‚„ã€ã‚ã®æœ¬ã‹ã‚‰ã¯ãƒ‘ã‚¯ã£ã¦ãªã„ã‚ˆã€‚
 Remember that? Irony is a sophisticated art of talk by saying some opposite.
 #There are Uniques that are (friendly), but alas! they won't [yet] talk to you.
-¤¤¤¯¤Ä¤«¤Î¥æ¥Ë¡¼¥¯¥â¥ó¥¹¥¿¡¼¤Ï(Í§¹¥Åª)¤À¤¬¡¢¤Ê¤ó¤È¤Ş¤¢¡¢[º£¤Î¤È¤³¤í]Èà¤é¤ÏÏÃ¤·¤«¤±¤Æ¤³¤Ê¤¤¡£
+ã„ãã¤ã‹ã®ãƒ¦ãƒ‹ãƒ¼ã‚¯ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã¯(å‹å¥½çš„)ã ãŒã€ãªã‚“ã¨ã¾ã‚ã€[ä»Šã®ã¨ã“ã‚]å½¼ã‚‰ã¯è©±ã—ã‹ã‘ã¦ã“ãªã„ã€‚
 #Ents (friendly) are equally strong as Hrus and tend to clear the vault fields.
-¥¨¥ó¥È(Í§¹¥Åª)¤Ï¥Õ¥ë¥¥¤ÈÆ±¤¸¤¯¤é¤¤¶¯¤¯¤Æ¡¢¤è¤¯ÃÏ²¼¼¼¤ò¤­¤ì¤¤¤Ë¤·¤Æ¤¯¤ì¤ë¡£
+ã‚¨ãƒ³ãƒˆ(å‹å¥½çš„)ã¯ãƒ•ãƒ«ã‚¥ã¨åŒã˜ãã‚‰ã„å¼·ãã¦ã€ã‚ˆãåœ°ä¸‹å®¤ã‚’ãã‚Œã„ã«ã—ã¦ãã‚Œã‚‹ã€‚
 You could hate an Ent (friendly) who picks up the dragon scale mails you left.
 #Ahtu is somewhat the evil mirror of Treebeard. Beware to confront these foes!
-¡Ø¥¢¥Õ¥È¥¥¡Ù¤ÏÌÚ¤Îò¤¤Î°­¤Î¼Ì¤·¿È¤Î¤è¤¦¤Ê¤â¤Î¤À¡£µ¤¤ò¤Ä¤±¤í¡ª
+ã€ã‚¢ãƒ•ãƒˆã‚¥ã€ã¯æœ¨ã®é¬šã®æ‚ªã®å†™ã—èº«ã®ã‚ˆã†ãªã‚‚ã®ã ã€‚æ°—ã‚’ã¤ã‘ã‚ï¼
 They say that there's work to be done, and no rest this side of Heaven.
 There are no guarantees in life, but it's smarter to take fewer chances.
 Artsi is not susceptible to sorcery, ideal warrior! If ever get him in melee.
 It's a crying shame but 30000's the highest one_item_price you ever will get.
 #Is it really true that a good chain armour once rusted can't be restored?
-°ìÅÙ»¬¤Ó¤¿º¿¤«¤¿¤Ó¤é¤Ï¸µ¤ËÌá¤é¤Ê¤¤¤Ã¤ÆËÜÅö¡©
+ä¸€åº¦éŒ†ã³ãŸé–ã‹ãŸã³ã‚‰ã¯å…ƒã«æˆ»ã‚‰ãªã„ã£ã¦æœ¬å½“ï¼Ÿ
 Never thought about that daylight might be not just an illumination?
 Stone Skin is valuable as diamonds: even the tougher foes will miss you.
 #You WILL need some means to prevent to be teleported to and fro unwanted.
-¤¢¤Á¤³¤Á¤Ø¥Æ¥ì¥İ¡¼¥È¤µ¤»¤é¤ì¤ë¤Î¤òËÉ¤°¼êÃÊ¤¬É¬¤ºÉ¬Í×¤Ë¤Ê¤ë¤À¤í¤¦¡£
+ã‚ã¡ã“ã¡ã¸ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã•ã›ã‚‰ã‚Œã‚‹ã®ã‚’é˜²ãæ‰‹æ®µãŒå¿…ãšå¿…è¦ã«ãªã‚‹ã ã‚ã†ã€‚
 #Without a means to teleport away certain nuisances you'll have harder labor.
-¤¢¤ë¼ï¤Î¤¦¤¶¤Ã¤¿¤¤Å¨¤Ï¥Æ¥ì¥İ¡¼¥È¥¢¥¦¥§¥¤¤ò»ı¤Ã¤Æ¤Ê¤¤¤ÈÌÌÅİ¤Ê¤³¤È¤Ë¤Ê¤ë¡£
+ã‚ã‚‹ç¨®ã®ã†ã–ã£ãŸã„æ•µã¯ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã‚¢ã‚¦ã‚§ã‚¤ã‚’æŒã£ã¦ãªã„ã¨é¢å€’ãªã“ã¨ã«ãªã‚‹ã€‚
 Hypnos, Lord of Sleep, is an awful jumpy fellow; you have to hunt him down.
 #If you ever, ever manage to best The Stormbringer you'll be amazed!
-¤â¤·¡¢²¾¤Ë¤â¤·¤â¡Ø¥¹¥È¡¼¥à¥Ö¥ê¥ó¥¬¡¼¡Ù¤òÅİ¤»¤¿¤Ê¤é¡¢·¯¤Ï¶Ã¤¯¤À¤í¤¦¡£
+ã‚‚ã—ã€ä»®ã«ã‚‚ã—ã‚‚ã€ã‚¹ãƒˆãƒ¼ãƒ ãƒ–ãƒªãƒ³ã‚¬ãƒ¼ã€ã‚’å€’ã›ãŸãªã‚‰ã€å›ã¯é©šãã ã‚ã†ã€‚
 #The deeper you dive the more grateful you'll be about sustaining equipment.
-¿¼¤¯Àø¤ì¤ĞÀø¤ë¤Û¤É¥¹¥Æ¡¼¥¿¥¹°İ»ı¤ÎÁõÈ÷¤¬Í­Æñ¤¯»×¤¨¤ë¤À¤í¤¦¡£
+æ·±ãæ½œã‚Œã°æ½œã‚‹ã»ã©ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ç¶­æŒã®è£…å‚™ãŒæœ‰é›£ãæ€ãˆã‚‹ã ã‚ã†ã€‚
 You'll love Reflection if you ever encounter those smashing halfling legions.
 Surprisingly not only crossbows use bolts that could bounce...
 #At an early stage you are yet quite happy to find e.g. rods of trap detection.
-½øÈ×¤Ç¤Ï¥È¥é¥Ã¥×´¶ÃÎ¤Î¥í¥Ã¥É¤È¤«¤Ç¤µ¤¨¤â´ò¤·¤¯»×¤¨¤ë¤À¤í¤¦¡£
+åºç›¤ã§ã¯ãƒˆãƒ©ãƒƒãƒ—æ„ŸçŸ¥ã®ãƒ­ãƒƒãƒ‰ã¨ã‹ã§ã•ãˆã‚‚å¬‰ã—ãæ€ãˆã‚‹ã ã‚ã†ã€‚
 #There is but one use for charisma boosting items: shopkeeper charming.
-Ì¥ÎÏ¾å¾º¥¢¥¤¥Æ¥à¤ÎÍ£°ì¤Î»È¤¤Æ»¤ÏÅ¹¼ç¤òÌ¥Î»¤¹¤ë¤³¤È¤À¡£
+é­…åŠ›ä¸Šæ˜‡ã‚¢ã‚¤ãƒ†ãƒ ã®å”¯ä¸€ã®ä½¿ã„é“ã¯åº—ä¸»ã‚’é­…äº†ã™ã‚‹ã“ã¨ã ã€‚
 #It's a happy moment when sufficient DEX makes you "grab hold of your backpack".
-´ïÍÑ¤µ¤¬½½Ê¬¹â¤¯¤Ê¤Ã¤Æ¡Ö¤¢¤ï¤Æ¤Æ¥¶¥Ã¥¯¤ò¼è¤êÌá¡×¤»¤ë¤è¤¦¤Ë¤Ê¤Ã¤¿¤éºÇ¹â¤À¡£
+å™¨ç”¨ã•ãŒååˆ†é«˜ããªã£ã¦ã€Œã‚ã‚ã¦ã¦ã‚¶ãƒƒã‚¯ã‚’å–ã‚Šæˆ»ã€ã›ã‚‹ã‚ˆã†ã«ãªã£ãŸã‚‰æœ€é«˜ã ã€‚
 #Don't go deeper down the cliffs unless you find secure footholds (equipment).
-°ÂÁ´³Î¼Â¤ÊÂ­³İ¤«¤ê¡ÊÁõÈ÷¡Ë¤ò¸«¤Ä¤±¤ë¤Ş¤Ç¤Ï³³¤ò¤â¤Ã¤È²¼¤Ë¹ß¤ê¤ë¤Î¤Ï¤ä¤á¤È¤±¡£
+å®‰å…¨ç¢ºå®Ÿãªè¶³æ›ã‹ã‚Šï¼ˆè£…å‚™ï¼‰ã‚’è¦‹ã¤ã‘ã‚‹ã¾ã§ã¯å´–ã‚’ã‚‚ã£ã¨ä¸‹ã«é™ã‚Šã‚‹ã®ã¯ã‚„ã‚ã¨ã‘ã€‚
 Value in ART is so to say your scores relation of light and shade.
 You'd like an illustration on "sowing dragon's teeth"? Try Sorcery tower Quest!
 Waste of time, the crying. Fight and live - fight and die, then enter renewed.
 The say that to want too much was stupidity, waste of precious time and effort.
 #Down at 650' is an ill-omened place where the swift ochre jellies roam.
-£±£³³¬¤¢¤¿¤ê¤ËÁÇÁá¤¤¥ª¡¼¥«¡¼¥¼¥ê¡¼¤É¤â¤¬¤¦¤í¤Ä¤¯ÉÔµÈ¤Ê¾ì½ê¤¬¤¢¤ë¡£
+ï¼‘ï¼“éšã‚ãŸã‚Šã«ç´ æ—©ã„ã‚ªãƒ¼ã‚«ãƒ¼ã‚¼ãƒªãƒ¼ã©ã‚‚ãŒã†ã‚ã¤ãä¸å‰ãªå ´æ‰€ãŒã‚ã‚‹ã€‚
 Below 2500' you'll need sustained maximum spell stats to secure your heal-self.
 #The miracle of Herbal Healing is like Book-stories told by priests, amazing.
-ÌôÁğ¼£ÎÅ¤Î´ñÀ×¤Ï¿ÀÉã¤ÎÏÃ¤¹ÀâÏÃ¤Î¤è¤¦¤Ë¡¢¶Ã¤¯¤Ù¤­¤â¤Î¤À¡£
+è–¬è‰æ²»ç™‚ã®å¥‡è·¡ã¯ç¥çˆ¶ã®è©±ã™èª¬è©±ã®ã‚ˆã†ã«ã€é©šãã¹ãã‚‚ã®ã ã€‚
 A fallen Angel is likely to stay behind a stone obstacle in chequered pits.
 A screaming willingness to the flash and bang of damnation, freed of the suspence.
 They say that all these inevitable tombstones are but blessings in disguise. 
 Survival challenges use up superabundant energies, burn off the gland-juices.
 Kittens. Always going for the dramatic. Watching too many adventure holos.
 #Young Heroes-to-be are always kept on diet, to increase their aggressiveness.
-¼ã¤¤±ÑÍº¤ÎÍñ¤¿¤Á¤Ï¥¢¥°¥ì¥Ã¥·¥Ö¤Ç¤¤¤ë¤¿¤á¤Ë¤¤¤Ä¤â¥À¥¤¥¨¥Ã¥È¤·¤Æ¤ë¡£
+è‹¥ã„è‹±é›„ã®åµãŸã¡ã¯ã‚¢ã‚°ãƒ¬ãƒƒã‚·ãƒ–ã§ã„ã‚‹ãŸã‚ã«ã„ã¤ã‚‚ãƒ€ã‚¤ã‚¨ãƒƒãƒˆã—ã¦ã‚‹ã€‚
 Free at last from the blood curse: mirth welled up, boiled over as pure laughter.
 #If you encounter groups of usual solitary cats look out for Bast, Cat's godess!
-ÉáÄÌ¤ÏÃ±ÆÈ¤Ç½Ğ¤Æ¤¯¤ëÇ­¤¬½¸ÃÄ¤Ç¤¤¤¿¤Ê¤é¡¢Ç­¤Î½÷¿À¡Ø¥Ğ¥¹¥È¡Ù¤Ëµ¤¤òÉÕ¤±¤í¡ª
+æ™®é€šã¯å˜ç‹¬ã§å‡ºã¦ãã‚‹çŒ«ãŒé›†å›£ã§ã„ãŸãªã‚‰ã€çŒ«ã®å¥³ç¥ã€ãƒã‚¹ãƒˆã€ã«æ°—ã‚’ä»˜ã‘ã‚ï¼
 #Even protected Books are destroyed by breathers of chaos balls. Area effect!
-¾å°ÌËâË¡¤ÎËÜ¤Ç¤µ¤¨¥«¥ª¥¹¤Î¥Ö¥ì¥¹¤ÇÇË²õ¤µ¤ì¤ë¤³¤È¤¬¤¢¤ë¡£
+ä¸Šä½é­”æ³•ã®æœ¬ã§ã•ãˆã‚«ã‚ªã‚¹ã®ãƒ–ãƒ¬ã‚¹ã§ç ´å£Šã•ã‚Œã‚‹ã“ã¨ãŒã‚ã‚‹ã€‚
 #It is more secure to carry precious books yourself, IF you provide resistances.
-ÂÑÀ­¤ò»ı¤Ã¤Æ¤ë¤Ê¤é¡¢Âç»ö¤ÊËâË¡½ñ¤Ï¼«Ê¬¤Ç»ı¤ÁÊâ¤¤¤¿Êı¤¬°ÂÁ´¤À¡£
+è€æ€§ã‚’æŒã£ã¦ã‚‹ãªã‚‰ã€å¤§äº‹ãªé­”æ³•æ›¸ã¯è‡ªåˆ†ã§æŒã¡æ­©ã„ãŸæ–¹ãŒå®‰å…¨ã ã€‚
 #There are but sometimes shopkeepers that pay full price of 25000gp for a Book.
-°ìºı¤ÎËÜ¤Ë¤Ş¤Ã¤È¤¦¤Ê$25000¤ÎÇãÃÍ¤òÉÕ¤±¤ëÅ¹¼ç¤Ï¤¿¤Ş¤Ë¤·¤«¤¤¤Ê¤¤¡£
+ä¸€å†Šã®æœ¬ã«ã¾ã£ã¨ã†ãª$25000ã®è²·å€¤ã‚’ä»˜ã‘ã‚‹åº—ä¸»ã¯ãŸã¾ã«ã—ã‹ã„ãªã„ã€‚
 #Being hit by Cold breathes while carrying potions might speed and heal foes!
-Ìô¤ò¤¿¤¯¤µ¤ó»ı¤Ã¤Æ¤¤¤ë»ş¤ËÎäµ¤¤Î¥Ö¥ì¥¹¤òÍá¤Ó¤¿¤é¼ş°Ï¤ÎÅ¨¤òÂ®¤¯¤·¤¿¤ê¼£ÎÅ¤·¤¿¤ê¤·¤Æ¤·¤Ş¤¦¤À¤í¤¦¡ª
+è–¬ã‚’ãŸãã•ã‚“æŒã£ã¦ã„ã‚‹æ™‚ã«å†·æ°—ã®ãƒ–ãƒ¬ã‚¹ã‚’æµ´ã³ãŸã‚‰å‘¨å›²ã®æ•µã‚’é€Ÿãã—ãŸã‚Šæ²»ç™‚ã—ãŸã‚Šã—ã¦ã—ã¾ã†ã ã‚ã†ï¼
 You'll rarely get a chance to fight Fiona down and off, she loves her jumpiness!
 #Why are Poison Resistance rings higher priced than even Disenchantment rings?
-¤Ê¤ó¤ÇÂÑÆÇ¤Î»ØÎØ¤¬ÂÑÎô²½¤Î»ØÎØ¤è¤ê¹â¤¤¤ó¤À¡©
+ãªã‚“ã§è€æ¯’ã®æŒ‡è¼ªãŒè€åŠ£åŒ–ã®æŒ‡è¼ªã‚ˆã‚Šé«˜ã„ã‚“ã ï¼Ÿ
 Are there any cumulative effects by adding another means of resistance? Well?
 #IF there are no free places around you, the worst summoning will not itch you.
-¼«Ê¬¤Î¼ş¤ê¤Ë¶õ¤¤¤¿¾ì½ê¤¬¤Ê¤±¤ì¤Ğ¾¤´­¥â¥ó¥¹¥¿¡¼¤ËÇº¤Ş¤µ¤ì¤ë¤³¤È¤Ï¤Ê¤¤¡£
+è‡ªåˆ†ã®å‘¨ã‚Šã«ç©ºã„ãŸå ´æ‰€ãŒãªã‘ã‚Œã°å¬å–šãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã«æ‚©ã¾ã•ã‚Œã‚‹ã“ã¨ã¯ãªã„ã€‚
 #You can win against the ever-aware quylthulgs by blocking their lines of sight.
-ÌÜ¤òÀÃ¤Ş¤·¤¿¥¯¥¤¥ë¥¹¥ë¥°¤Ï¡¢»ëÀş¤ò¼×¤ë¤³¤È¤Ë¤è¤Ã¤ÆÅİ¤¹¤³¤È¤¬¤Ç¤­¤ë¡£
+ç›®ã‚’é†’ã¾ã—ãŸã‚¯ã‚¤ãƒ«ã‚¹ãƒ«ã‚°ã¯ã€è¦–ç·šã‚’é®ã‚‹ã“ã¨ã«ã‚ˆã£ã¦å€’ã™ã“ã¨ãŒã§ãã‚‹ã€‚
 Any hounds are disastrous to containment by Door Building. Extinct them quickly!
 #Regularly the god of the merchants is the same as that of the thieves.
-ÄÌ¾ï¡¢¾¦Çä¤Î¿À¤ÈÅ¥ËÀ¤Î¿À¤È¤ÏÆ±°ì¤À¡£
+é€šå¸¸ã€å•†å£²ã®ç¥ã¨æ³¥æ£’ã®ç¥ã¨ã¯åŒä¸€ã ã€‚
 #We are all natural born victims.
-²æ¡¹¤Ï¤ß¤ó¤ÊÀ¸¤Ş¤ì¤Ä¤¤¤Æ¤Î³ÍÊª¤À¡£
+æˆ‘ã€…ã¯ã¿ã‚“ãªç”Ÿã¾ã‚Œã¤ã„ã¦ã®ç²ç‰©ã ã€‚
 #Without information life is quite short.
-¾ğÊó¤¬¤Ê¤±¤ì¤Ğ¿ÍÀ¸¤Ï¶Ë¤á¤ÆÃ»¤¤¡£
+æƒ…å ±ãŒãªã‘ã‚Œã°äººç”Ÿã¯æ¥µã‚ã¦çŸ­ã„ã€‚
 Information age has not just begun today! Hermes, Loki, Prometheus are tradition.
 #Scrolls of Dispel XX are able to damage the foe for about 60 hitpoints.
-XX Âà»¶¤Î´¬Êª¤ÏÅ¨¤Ë 60 HP ¤Î¥À¥á¡¼¥¸¤òÍ¿¤¨¤ë¤³¤È¤¬½ĞÍè¤ë¡£
+XX é€€æ•£ã®å·»ç‰©ã¯æ•µã« 60 HP ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹ã“ã¨ãŒå‡ºæ¥ã‚‹ã€‚
 #Scrolls of Fire/Ice/Chaos produce a balleffect, centered on you. Damaging you?
-±ê¡¿É¹¡¿¥«¥ª¥¹¤Î´¬Êª¤Ï¡¢¤¢¤Ê¤¿¤òÃæ¿´¤Ëµå¾õ¤Î¸ú²Ì¤òµÚ¤Ü¤¹¡£¤¢¤Ê¤¿¤Ë¥À¥á¡¼¥¸¡©
+ç‚ï¼æ°·ï¼ã‚«ã‚ªã‚¹ã®å·»ç‰©ã¯ã€ã‚ãªãŸã‚’ä¸­å¿ƒã«çƒçŠ¶ã®åŠ¹æœã‚’åŠã¼ã™ã€‚ã‚ãªãŸã«ãƒ€ãƒ¡ãƒ¼ã‚¸ï¼Ÿ
 #Scrolls of Ice do double damage compared to SoF, but a little less than SoC.
-É¹¤Î´¬Êª¤Ï±ê¤Î´¬Êª¤ÎÇÜ¤Î¥À¥á¡¼¥¸¤òÍ¿¤¨¤ë¤¬¡¢¥«¥ª¥¹¤Î´¬Êª¤è¤ê¤Ï¾¯¤·¾¯¤Ê¤¤¡£
+æ°·ã®å·»ç‰©ã¯ç‚ã®å·»ç‰©ã®å€ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹ãŒã€ã‚«ã‚ªã‚¹ã®å·»ç‰©ã‚ˆã‚Šã¯å°‘ã—å°‘ãªã„ã€‚
 #To find a Rod of Havoc means nothing else than: chaos at your fingertips.
-²õÌÇ¤Î¥í¥Ã¥É¤ò¸«¤Ä¤±¤ë¤³¤È¤Ï¡¢º®ÆÙ¤ò¼ê¸µ¤ËÃÖ¤¤¤Æ¤ª¤¯¤³¤È¤ËÂ¾¤Ê¤é¤Ê¤¤¡£
+å£Šæ»…ã®ãƒ­ãƒƒãƒ‰ã‚’è¦‹ã¤ã‘ã‚‹ã“ã¨ã¯ã€æ··æ²Œã‚’æ‰‹å…ƒã«ç½®ã„ã¦ãŠãã“ã¨ã«ä»–ãªã‚‰ãªã„ã€‚
 If the sages speak of Curing this comprehends the recovery of 6! traumata.
 The traumata to suffer: Cut, Stun, Blind, Confused, Terrified, Hallucination.
 #Staffs of Power will dispel any monster.
-ÎÏ¤Î¥¹¥¿¥Ã¥Õ¤Ï¤¢¤é¤æ¤ë¥â¥ó¥¹¥¿¡¼¤òÂà»¶¤µ¤»¤ë¤À¤í¤¦¡£
+åŠ›ã®ã‚¹ã‚¿ãƒƒãƒ•ã¯ã‚ã‚‰ã‚†ã‚‹ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’é€€æ•£ã•ã›ã‚‹ã ã‚ã†ã€‚
 #Staffs of Holiness will dispel evil ones and also protect you.
-À»¾ô¤Î¥¹¥¿¥Ã¥Õ¤Ï¼Ù°­¤ÊÅ¨¤òÂà»¶¤µ¤»¡¢¤«¤Ä¤¢¤Ê¤¿¤ò¼é¤ë¤À¤í¤¦¡£
+è–æµ„ã®ã‚¹ã‚¿ãƒƒãƒ•ã¯é‚ªæ‚ªãªæ•µã‚’é€€æ•£ã•ã›ã€ã‹ã¤ã‚ãªãŸã‚’å®ˆã‚‹ã ã‚ã†ã€‚
 #Staffs of the Magi will help eggheads to clear the head and recover energies.
-¸­¼Ô¤Î¥¹¥¿¥Ã¥Õ¤Ï¥¤¥ó¥Æ¥ê·¯¤ò¤Ï¤Ã¤­¤ê¤µ¤»¤Æ¥¨¥Í¥ë¥®¡¼¤ò²óÉü¤¹¤ë¤Î¤ËÌòÎ©¤Ä¡£
+è³¢è€…ã®ã‚¹ã‚¿ãƒƒãƒ•ã¯ã‚¤ãƒ³ãƒ†ãƒªå›ã‚’ã¯ã£ãã‚Šã•ã›ã¦ã‚¨ãƒãƒ«ã‚®ãƒ¼ã‚’å›å¾©ã™ã‚‹ã®ã«å½¹ç«‹ã¤ã€‚
 #Those who seek knowledge of the sources must be experienced hunters of hints.
-º¬¸»(Source)¤Ë¤Ä¤¤¤ÆÃµ¤ë¼Ô¤Ï¼ê¤¬¤«¤ê¤ò¸«¤Ä¤±¤ë·Ğ¸³¤òÀÑ¤ó¤Ç¤¤¤ë¤Ù¤­¤À¡£
+æ ¹æº(Source)ã«ã¤ã„ã¦æ¢ã‚‹è€…ã¯æ‰‹ãŒã‹ã‚Šã‚’è¦‹ã¤ã‘ã‚‹çµŒé¨“ã‚’ç©ã‚“ã§ã„ã‚‹ã¹ãã ã€‚
 You have difficulties to find survey or details in the source files? Combat!
 #There are always people who'd like to restrict knowledge to their own circles.
-ÃÎ¼±¤ò¼«Ê¬¤¿¤Á¤À¤±¤Î¤â¤Î¤Ë¤·¤è¤¦¤È¤¹¤ë¿Í¡¹¤ÏÉ¬¤º¤¤¤ë¤â¤Î¤À¡£
+çŸ¥è­˜ã‚’è‡ªåˆ†ãŸã¡ã ã‘ã®ã‚‚ã®ã«ã—ã‚ˆã†ã¨ã™ã‚‹äººã€…ã¯å¿…ãšã„ã‚‹ã‚‚ã®ã ã€‚
 #It can't be bad to give knowledge to the people, even if by means of rumors.
-¿Í¡¹¤ËÃÎ¼±¤ò¹­¤á¤ë¤Î¤Ï¤¤¤¤¤³¤È¤À¡£¤À¤È¤¨±½¤È¤·¤Æ¹­¤á¤ë¤È¤·¤Æ¤â¡£
+äººã€…ã«çŸ¥è­˜ã‚’åºƒã‚ã‚‹ã®ã¯ã„ã„ã“ã¨ã ã€‚ã ã¨ãˆå™‚ã¨ã—ã¦åºƒã‚ã‚‹ã¨ã—ã¦ã‚‚ã€‚
 Those who'd exclude people of knowledge make up a priesthood of selfishness.
 #You don't like the rumors you get? Write your own! (And share the good ones.)
-±½¤¬µ¤¤ËÆş¤é¤Ê¤¤¡©¼«Ê¬¤Ç½ñ¤³¤¦¡ª¡Ê¤½¤·¤ÆÎÉ¤¤¤â¤Î¤ò¶¦Í­¤·¤è¤¦¡Ë
+å™‚ãŒæ°—ã«å…¥ã‚‰ãªã„ï¼Ÿè‡ªåˆ†ã§æ›¸ã“ã†ï¼ï¼ˆãã—ã¦è‰¯ã„ã‚‚ã®ã‚’å…±æœ‰ã—ã‚ˆã†ï¼‰
 #If potions of blindness are useful against foes they will be priced at shops.
-ÌÕÌÜ¤ÎÌô¤¬Å¨¤ËÂĞ¤·¤ÆÍ­¸ú¤Ê¤éÅ¹¤Ç¤â¤Ã¤È¹â¤¯ÃÍ¤¬¤Ä¤¯¤À¤í¤¦¡£
+ç›²ç›®ã®è–¬ãŒæ•µã«å¯¾ã—ã¦æœ‰åŠ¹ãªã‚‰åº—ã§ã‚‚ã£ã¨é«˜ãå€¤ãŒã¤ãã ã‚ã†ã€‚
 #Rumors are sort of wishing wells.
-±½¤Ï´ê¤¤¤Î°æ¸Í¤ß¤¿¤¤¤Ê¤â¤ó¤À¡£
+å™‚ã¯é¡˜ã„ã®äº•æˆ¸ã¿ãŸã„ãªã‚‚ã‚“ã ã€‚
 Not any waters seem drinkable for those not thirsty!
 #There are unclean waters. Well, boil them up!
-ÉÔ·é¤Ê¿å¤â¤¢¤ë¡£Ê¨¤«¤·¤Æ¤«¤é°û¤á¡ª
+ä¸æ½”ãªæ°´ã‚‚ã‚ã‚‹ã€‚æ²¸ã‹ã—ã¦ã‹ã‚‰é£²ã‚ï¼
 Time heals all wounds?? But surely time wounds all heels!
 OOOOOOOOOOOOOOOOOO

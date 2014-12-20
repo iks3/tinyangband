@@ -1,4 +1,4 @@
------ How to install -----
+﻿----- How to install -----
 
 --- UNIX
   Download source archive and do as follows:

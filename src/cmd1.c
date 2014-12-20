@@ -1,4 +1,4 @@
-/* File: cmd1.c */
+ï»¿/* File: cmd1.c */
 
 /* Purpose: Movement commands (part 1) */
 
@@ -106,7 +106,7 @@ static s16b critical_norm(int weight, int chance, int dam)
 		if (k < 400)
 		{
 #ifdef JP
-			msg_print("¼ê¤´¤¿¤¨¤¬¤¢¤Ã¤¿¡ª");
+			msg_print("æ‰‹ã”ãŸãˆãŒã‚ã£ãŸï¼");
 #else
 			msg_print("It was a good hit!");
 #endif
@@ -116,7 +116,7 @@ static s16b critical_norm(int weight, int chance, int dam)
 		else if (k < 700)
 		{
 #ifdef JP
-			msg_print("¤«¤Ê¤ê¤Î¼ê¤´¤¿¤¨¤¬¤¢¤Ã¤¿¡ª");
+			msg_print("ã‹ãªã‚Šã®æ‰‹ã”ãŸãˆãŒã‚ã£ãŸï¼");
 #else
 			msg_print("It was a great hit!");
 #endif
@@ -126,7 +126,7 @@ static s16b critical_norm(int weight, int chance, int dam)
 		else if (k < 900)
 		{
 #ifdef JP
-			msg_print("²ñ¿´¤Î°ì·â¤À¡ª");
+			msg_print("ä¼šå¿ƒã®ä¸€æ’ƒã ï¼");
 #else
 			msg_print("It was a superb hit!");
 #endif
@@ -136,7 +136,7 @@ static s16b critical_norm(int weight, int chance, int dam)
 		else if (k < 1300)
 		{
 #ifdef JP
-			msg_print("ºÇ¹â¤Î²ñ¿´¤Î°ì·â¤À¡ª");
+			msg_print("æœ€é«˜ã®ä¼šå¿ƒã®ä¸€æ’ƒã ï¼");
 #else
 			msg_print("It was a *GREAT* hit!");
 #endif
@@ -146,7 +146,7 @@ static s16b critical_norm(int weight, int chance, int dam)
 		else
 		{
 #ifdef JP
-			msg_print("ÈæÎà¤Ê¤­ºÇ¹â¤Î²ñ¿´¤Î°ì·â¤À¡ª");
+			msg_print("æ¯”é¡ãªãæœ€é«˜ã®ä¼šå¿ƒã®ä¸€æ’ƒã ï¼");
 #else
 			msg_print("It was a *SUPERB* hit!");
 #endif
@@ -454,7 +454,7 @@ void search(void)
 
 					/* Message */
 #ifdef JP
-					msg_print("¥È¥é¥Ã¥×¤òÈ¯¸«¤·¤¿¡£");
+					msg_print("ãƒˆãƒ©ãƒƒãƒ—ã‚’ç™ºè¦‹ã—ãŸã€‚");
 #else
 					msg_print("You have found a trap.");
 #endif
@@ -469,7 +469,7 @@ void search(void)
 				{
 					/* Message */
 #ifdef JP
-					msg_print("±£¤·¥É¥¢¤òÈ¯¸«¤·¤¿¡£");
+					msg_print("éš ã—ãƒ‰ã‚¢ã‚’ç™ºè¦‹ã—ãŸã€‚");
 #else
 					msg_print("You have found a secret door.");
 #endif
@@ -504,7 +504,7 @@ void search(void)
 					{
 						/* Message */
 #ifdef JP
-						msg_print("È¢¤Ë»Å³İ¤±¤é¤ì¤¿¥È¥é¥Ã¥×¤òÈ¯¸«¤·¤¿¡ª");
+						msg_print("ç®±ã«ä»•æ›ã‘ã‚‰ã‚ŒãŸãƒˆãƒ©ãƒƒãƒ—ã‚’ç™ºè¦‹ã—ãŸï¼");
 #else
 						msg_print("You have discovered a trap on the chest!");
 #endif
@@ -536,11 +536,11 @@ void py_pickup_aux(int o_idx)
 
 #ifdef JP
 /*
- * ¥¢¥¤¥Æ¥à¤ò½¦¤Ã¤¿ºİ¤Ë¡Ö£²¤Ä¤Î¥±¡¼¥­¤ò»ı¤Ã¤Æ¤¤¤ë¡×
- * "You have two cakes." ¤È¥¢¥¤¥Æ¥à¤ò½¦¤Ã¤¿¸å¤Î¹ç·×¤Î¤ß¤ÎÉ½¼¨¤¬¥ª¥ê¥¸¥Ê¥ë
- * ¤À¤¬¡¢°ãÏÂ´¶¤¬
- * ¤¢¤ë¤È¤¤¤¦»ØÅ¦¤ò¤¦¤±¤¿¤Î¤Ç¡¢¡Ö¡Á¤ò½¦¤Ã¤¿¡¢¡Á¤ò»ı¤Ã¤Æ¤¤¤ë¡×¤È¤¤¤¦É½¼¨
- * ¤Ë¤«¤¨¤Æ¤¢¤ë¡£¤½¤Î¤¿¤á¤ÎÇÛÎó¡£
+ * ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ‹¾ã£ãŸéš›ã«ã€Œï¼’ã¤ã®ã‚±ãƒ¼ã‚­ã‚’æŒã£ã¦ã„ã‚‹ã€
+ * "You have two cakes." ã¨ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ‹¾ã£ãŸå¾Œã®åˆè¨ˆã®ã¿ã®è¡¨ç¤ºãŒã‚ªãƒªã‚¸ãƒŠãƒ«
+ * ã ãŒã€é•å’Œæ„ŸãŒ
+ * ã‚ã‚‹ã¨ã„ã†æŒ‡æ‘˜ã‚’ã†ã‘ãŸã®ã§ã€ã€Œï½ã‚’æ‹¾ã£ãŸã€ï½ã‚’æŒã£ã¦ã„ã‚‹ã€ã¨ã„ã†è¡¨ç¤º
+ * ã«ã‹ãˆã¦ã‚ã‚‹ã€‚ãã®ãŸã‚ã®é…åˆ—ã€‚
  */
 	char o_name[MAX_NLEN];
 /*	char	old_name[80];*/
@@ -571,10 +571,10 @@ void py_pickup_aux(int o_idx)
 	/* Message */
 #ifdef JP
 	if (o_ptr->number > hirottakazu) {
-	    msg_format("%s½¦¤Ã¤Æ¡¢%s(%c)¤ò»ı¤Ã¤Æ¤¤¤ë¡£",
+	    msg_format("%sæ‹¾ã£ã¦ã€%s(%c)ã‚’æŒã£ã¦ã„ã‚‹ã€‚",
 		       kazu_str, o_name, index_to_label(slot));
 	} else {
-	    msg_format("%s(%c)¤ò½¦¤Ã¤¿¡£", o_name, index_to_label(slot));
+	    msg_format("%s(%c)ã‚’æ‹¾ã£ãŸã€‚", o_name, index_to_label(slot));
 	}
 #else
 	msg_format("You have %s (%c).", o_name, index_to_label(slot));
@@ -591,7 +591,7 @@ void py_pickup_aux(int o_idx)
 			quest[i].status = QUEST_STATUS_COMPLETED;
 			quest[i].complev = (byte)p_ptr->lev;
 #ifdef JP
-			msg_print("¥¯¥¨¥¹¥È¤òÃ£À®¤·¤¿¡ª");
+			msg_print("ã‚¯ã‚¨ã‚¹ãƒˆã‚’é”æˆã—ãŸï¼");
 #else
 			msg_print("You completed your quest!");
 #endif
@@ -679,7 +679,7 @@ void carry(int pickup)
 		{
 			/* Message */
 #ifdef JP
-		msg_format(" $%ld ¤Î²ÁÃÍ¤¬¤¢¤ë%s¤ò¸«¤Ä¤±¤¿¡£",
+		msg_format(" $%ld ã®ä¾¡å€¤ãŒã‚ã‚‹%sã‚’è¦‹ã¤ã‘ãŸã€‚",
 			   (long)o_ptr->pval, o_name);
 #else
 			msg_format("You collect %ld gold pieces worth of %s.",
@@ -726,7 +726,7 @@ void carry(int pickup)
 			else if (!pickup)
 			{
 #ifdef JP
-				msg_format("%s¤¬¤¢¤ë¡£", o_name);
+				msg_format("%sãŒã‚ã‚‹ã€‚", o_name);
 #else
 				msg_format("You see %s.", o_name);
 #endif
@@ -737,7 +737,7 @@ void carry(int pickup)
 			else if (!inven_carry_okay(o_ptr))
 			{
 #ifdef JP
-				msg_format("¥¶¥Ã¥¯¤Ë¤Ï%s¤òÆş¤ì¤ë·ä´Ö¤¬¤Ê¤¤¡£", o_name);
+				msg_format("ã‚¶ãƒƒã‚¯ã«ã¯%sã‚’å…¥ã‚Œã‚‹éš™é–“ãŒãªã„ã€‚", o_name);
 #else
 				msg_format("You have no room for %s.", o_name);
 #endif
@@ -754,7 +754,7 @@ void carry(int pickup)
 				{
 					char out_val[160];
 #ifdef JP
-					sprintf(out_val, "%s¤ò½¦¤¤¤Ş¤¹¤«? ", o_name);
+					sprintf(out_val, "%sã‚’æ‹¾ã„ã¾ã™ã‹? ", o_name);
 #else
 					sprintf(out_val, "Pick up %s? ", o_name);
 #endif
@@ -813,7 +813,7 @@ static void hit_trap(void)
 	cave_type *c_ptr;
 
 #ifdef JP
-	cptr		name = "¥È¥é¥Ã¥×";
+	cptr		name = "ãƒˆãƒ©ãƒƒãƒ—";
 #else
 	cptr name = "a trap";
 #endif
@@ -834,7 +834,7 @@ static void hit_trap(void)
 			if (p_ptr->ffall)
 			{
 #ifdef JP
-				msg_print("Íî¤·¸Í¤òÈô¤Ó±Û¤¨¤¿¡£");
+				msg_print("è½ã—æˆ¸ã‚’é£›ã³è¶ŠãˆãŸã€‚");
 #else
 				msg_print("You fly over a trap door.");
 #endif
@@ -843,7 +843,7 @@ static void hit_trap(void)
 			else
 			{
 #ifdef JP
-				msg_print("Íî¤·¸Í¤ËÍî¤Á¤¿¡ª");
+				msg_print("è½ã—æˆ¸ã«è½ã¡ãŸï¼");
 #else
 				msg_print("You have fallen through a trap door!");
 #endif
@@ -851,7 +851,7 @@ static void hit_trap(void)
 /* 				sound(SOUND_FALL); */ /* No fall sound */
 				dam = damroll(2, 8);
 #ifdef JP
-				name = "Íî¤·¸Í";
+				name = "è½ã—æˆ¸";
 #else
 				name = "a trap door";
 #endif
@@ -875,7 +875,7 @@ static void hit_trap(void)
 			if (p_ptr->ffall)
 			{
 #ifdef JP
-				msg_print("Íî¤··ê¤òÈô¤Ó±Û¤¨¤¿¡£");
+				msg_print("è½ã—ç©´ã‚’é£›ã³è¶ŠãˆãŸã€‚");
 #else
 				msg_print("You fly over a pit trap.");
 #endif
@@ -884,14 +884,14 @@ static void hit_trap(void)
 			else
 			{
 #ifdef JP
-				msg_print("Íî¤··ê¤ËÍî¤Á¤Æ¤·¤Ş¤Ã¤¿¡ª");
+				msg_print("è½ã—ç©´ã«è½ã¡ã¦ã—ã¾ã£ãŸï¼");
 #else
 				msg_print("You have fallen into a pit!");
 #endif
 
 				dam = damroll(2, 6);
 #ifdef JP
-				name = "Íî¤··ê";
+				name = "è½ã—ç©´";
 #else
 				name = "a pit trap";
 #endif
@@ -906,7 +906,7 @@ static void hit_trap(void)
 			if (p_ptr->ffall)
 			{
 #ifdef JP
-				msg_print("¥È¥²¤Î¤¢¤ëÍî¤··ê¤òÈô¤Ó±Û¤¨¤¿¡£");
+				msg_print("ãƒˆã‚²ã®ã‚ã‚‹è½ã—ç©´ã‚’é£›ã³è¶ŠãˆãŸã€‚");
 #else
 				msg_print("You fly over a spiked pit.");
 #endif
@@ -915,7 +915,7 @@ static void hit_trap(void)
 			else
 			{
 #ifdef JP
-			msg_print("¥¹¥Ñ¥¤¥¯¤¬Éß¤«¤ì¤¿Íî¤··ê¤ËÍî¤Á¤Æ¤·¤Ş¤Ã¤¿¡ª");
+			msg_print("ã‚¹ãƒ‘ã‚¤ã‚¯ãŒæ•·ã‹ã‚ŒãŸè½ã—ç©´ã«è½ã¡ã¦ã—ã¾ã£ãŸï¼");
 #else
 				msg_print("You fall into a spiked pit!");
 #endif
@@ -923,7 +923,7 @@ static void hit_trap(void)
 
 				/* Base damage */
 #ifdef JP
-				name = "Íî¤··ê";
+				name = "è½ã—ç©´";
 #else
 				name = "a pit trap";
 #endif
@@ -934,14 +934,14 @@ static void hit_trap(void)
 				if (randint0(100) < 50)
 				{
 #ifdef JP
-					msg_print("¥¹¥Ñ¥¤¥¯¤¬»É¤µ¤Ã¤¿¡ª");
+					msg_print("ã‚¹ãƒ‘ã‚¤ã‚¯ãŒåˆºã•ã£ãŸï¼");
 #else
 					msg_print("You are impaled!");
 #endif
 
 
 #ifdef JP
-					name = "¥È¥²¤Î¤¢¤ëÍî¤··ê";
+					name = "ãƒˆã‚²ã®ã‚ã‚‹è½ã—ç©´";
 #else
 					name = "a spiked pit";
 #endif
@@ -961,7 +961,7 @@ static void hit_trap(void)
 			if (p_ptr->ffall)
 			{
 #ifdef JP
-				msg_print("¥È¥²¤Î¤¢¤ëÍî¤··ê¤òÈô¤Ó±Û¤¨¤¿¡£");
+				msg_print("ãƒˆã‚²ã®ã‚ã‚‹è½ã—ç©´ã‚’é£›ã³è¶ŠãˆãŸã€‚");
 #else
 				msg_print("You fly over a spiked pit.");
 #endif
@@ -970,7 +970,7 @@ static void hit_trap(void)
 			else
 			{
 #ifdef JP
-			msg_print("¥¹¥Ñ¥¤¥¯¤¬Éß¤«¤ì¤¿Íî¤··ê¤ËÍî¤Á¤Æ¤·¤Ş¤Ã¤¿¡ª");
+			msg_print("ã‚¹ãƒ‘ã‚¤ã‚¯ãŒæ•·ã‹ã‚ŒãŸè½ã—ç©´ã«è½ã¡ã¦ã—ã¾ã£ãŸï¼");
 #else
 				msg_print("You fall into a spiked pit!");
 #endif
@@ -980,7 +980,7 @@ static void hit_trap(void)
 				dam = damroll(2, 6);
 
 #ifdef JP
-				name = "Íî¤··ê";
+				name = "è½ã—ç©´";
 #else
 				name = "a pit trap";
 #endif
@@ -990,14 +990,14 @@ static void hit_trap(void)
 				if (randint0(100) < 50)
 				{
 #ifdef JP
-					msg_print("ÆÇ¤òÅÉ¤é¤ì¤¿¥¹¥Ñ¥¤¥¯¤¬»É¤µ¤Ã¤¿¡ª");
+					msg_print("æ¯’ã‚’å¡—ã‚‰ã‚ŒãŸã‚¹ãƒ‘ã‚¤ã‚¯ãŒåˆºã•ã£ãŸï¼");
 #else
 					msg_print("You are impaled on poisonous spikes!");
 #endif
 
 
 #ifdef JP
-					name = "¥È¥²¤Î¤¢¤ëÍî¤··ê";
+					name = "ãƒˆã‚²ã®ã‚ã‚‹è½ã—ç©´";
 #else
 					name = "a spiked pit";
 #endif
@@ -1009,7 +1009,7 @@ static void hit_trap(void)
 					if (p_ptr->resist_pois || p_ptr->oppose_pois)
 					{
 #ifdef JP
-						msg_print("¤·¤«¤·ÆÇ¤Î±Æ¶Á¤Ï¤Ê¤«¤Ã¤¿¡ª");
+						msg_print("ã—ã‹ã—æ¯’ã®å½±éŸ¿ã¯ãªã‹ã£ãŸï¼");
 #else
 						msg_print("The poison does not affect you!");
 #endif
@@ -1033,7 +1033,7 @@ static void hit_trap(void)
 		case FEAT_TRAP_TY_CURSE:
 		{
 #ifdef JP
-			msg_print("²¿¤«¤¬¥Ô¥«¥Ã¤È¸÷¤Ã¤¿¡ª");
+			msg_print("ä½•ã‹ãŒãƒ”ã‚«ãƒƒã¨å…‰ã£ãŸï¼");
 #else
 			msg_print("There is a flash of shimmering light!");
 #endif
@@ -1063,7 +1063,7 @@ static void hit_trap(void)
 		case FEAT_TRAP_TELEPORT:
 		{
 #ifdef JP
-			msg_print("¥Æ¥ì¥İ¡¼¥È¡¦¥È¥é¥Ã¥×¤Ë¤Ò¤Ã¤«¤«¤Ã¤¿¡ª");
+			msg_print("ãƒ†ãƒ¬ãƒãƒ¼ãƒˆãƒ»ãƒˆãƒ©ãƒƒãƒ—ã«ã²ã£ã‹ã‹ã£ãŸï¼");
 #else
 			msg_print("You hit a teleport trap!");
 #endif
@@ -1074,18 +1074,18 @@ static void hit_trap(void)
 
 		case FEAT_TRAP_FIRE:
 		{
-			msg_print(_("±ê¤ËÊñ¤Ş¤ì¤¿¡ª", "You are enveloped in flames!"));
+			msg_print(_("ç‚ã«åŒ…ã¾ã‚ŒãŸï¼", "You are enveloped in flames!"));
 			dam = damroll(4, 6);
-			fire_dam(dam, _("±ê¤Î¥È¥é¥Ã¥×", "a fire trap"), FALSE);
+			fire_dam(dam, _("ç‚ã®ãƒˆãƒ©ãƒƒãƒ—", "a fire trap"), FALSE);
 
 			break;
 		}
 
 		case FEAT_TRAP_ACID:
 		{
-			msg_print(_("»À¤¬¿á¤­¤«¤±¤é¤ì¤¿¡ª", "You are splashed with acid!"));
+			msg_print(_("é…¸ãŒå¹ãã‹ã‘ã‚‰ã‚ŒãŸï¼", "You are splashed with acid!"));
 			dam = damroll(4, 6);
-			acid_dam(dam, _("»À¤Î¥È¥é¥Ã¥×", "an acid trap"), FALSE);
+			acid_dam(dam, _("é…¸ã®ãƒˆãƒ©ãƒƒãƒ—", "an acid trap"), FALSE);
 
 			break;
 		}
@@ -1095,7 +1095,7 @@ static void hit_trap(void)
 			if (check_hit(125))
 			{
 #ifdef JP
-				msg_print("¾®¤µ¤Ê¥À¡¼¥Ä¤¬Èô¤ó¤Ç¤­¤Æ»É¤µ¤Ã¤¿¡ª");
+				msg_print("å°ã•ãªãƒ€ãƒ¼ãƒ„ãŒé£›ã‚“ã§ãã¦åˆºã•ã£ãŸï¼");
 #else
 				msg_print("A small dart hits you!");
 #endif
@@ -1107,7 +1107,7 @@ static void hit_trap(void)
 			else
 			{
 #ifdef JP
-				msg_print("¾®¤µ¤Ê¥À¡¼¥Ä¤¬Èô¤ó¤Ç¤­¤¿¡ª¤¬¡¢±¿ÎÉ¤¯Åö¤¿¤é¤Ê¤«¤Ã¤¿¡£");
+				msg_print("å°ã•ãªãƒ€ãƒ¼ãƒ„ãŒé£›ã‚“ã§ããŸï¼ãŒã€é‹è‰¯ãå½“ãŸã‚‰ãªã‹ã£ãŸã€‚");
 #else
 				msg_print("A small dart barely misses you.");
 #endif
@@ -1121,14 +1121,14 @@ static void hit_trap(void)
 			if (check_hit(125))
 			{
 #ifdef JP
-				msg_print("¾®¤µ¤Ê¥À¡¼¥Ä¤¬Èô¤ó¤Ç¤­¤Æ»É¤µ¤Ã¤¿¡ª");
+				msg_print("å°ã•ãªãƒ€ãƒ¼ãƒ„ãŒé£›ã‚“ã§ãã¦åˆºã•ã£ãŸï¼");
 #else
 				msg_print("A small dart hits you!");
 #endif
 
 				dam = damroll(1, 4);
 #ifdef JP
-				take_hit(dam, "¥À¡¼¥Ä¤Îæ«");
+				take_hit(dam, "ãƒ€ãƒ¼ãƒ„ã®ç½ ");
 #else
 				take_hit(dam, "a dart trap");
 #endif
@@ -1138,7 +1138,7 @@ static void hit_trap(void)
 			else
 			{
 #ifdef JP
-				msg_print("¾®¤µ¤Ê¥À¡¼¥Ä¤¬Èô¤ó¤Ç¤­¤¿¡ª¤¬¡¢±¿ÎÉ¤¯Åö¤¿¤é¤Ê¤«¤Ã¤¿¡£");
+				msg_print("å°ã•ãªãƒ€ãƒ¼ãƒ„ãŒé£›ã‚“ã§ããŸï¼ãŒã€é‹è‰¯ãå½“ãŸã‚‰ãªã‹ã£ãŸã€‚");
 #else
 				msg_print("A small dart barely misses you.");
 #endif
@@ -1152,14 +1152,14 @@ static void hit_trap(void)
 			if (check_hit(125))
 			{
 #ifdef JP
-				msg_print("¾®¤µ¤Ê¥À¡¼¥Ä¤¬Èô¤ó¤Ç¤­¤Æ»É¤µ¤Ã¤¿¡ª");
+				msg_print("å°ã•ãªãƒ€ãƒ¼ãƒ„ãŒé£›ã‚“ã§ãã¦åˆºã•ã£ãŸï¼");
 #else
 				msg_print("A small dart hits you!");
 #endif
 
 				dam = damroll(1, 4);
 #ifdef JP
-				take_hit(dam, "¥À¡¼¥Ä¤Îæ«");
+				take_hit(dam, "ãƒ€ãƒ¼ãƒ„ã®ç½ ");
 #else
 				take_hit(dam, "a dart trap");
 #endif
@@ -1169,7 +1169,7 @@ static void hit_trap(void)
 			else
 			{
 #ifdef JP
-				msg_print("¾®¤µ¤Ê¥À¡¼¥Ä¤¬Èô¤ó¤Ç¤­¤¿¡ª¤¬¡¢±¿ÎÉ¤¯Åö¤¿¤é¤Ê¤«¤Ã¤¿¡£");
+				msg_print("å°ã•ãªãƒ€ãƒ¼ãƒ„ãŒé£›ã‚“ã§ããŸï¼ãŒã€é‹è‰¯ãå½“ãŸã‚‰ãªã‹ã£ãŸã€‚");
 #else
 				msg_print("A small dart barely misses you.");
 #endif
@@ -1183,14 +1183,14 @@ static void hit_trap(void)
 			if (check_hit(125))
 			{
 #ifdef JP
-				msg_print("¾®¤µ¤Ê¥À¡¼¥Ä¤¬Èô¤ó¤Ç¤­¤Æ»É¤µ¤Ã¤¿¡ª");
+				msg_print("å°ã•ãªãƒ€ãƒ¼ãƒ„ãŒé£›ã‚“ã§ãã¦åˆºã•ã£ãŸï¼");
 #else
 				msg_print("A small dart hits you!");
 #endif
 
 				dam = damroll(1, 4);
 #ifdef JP
-				take_hit(dam, "¥À¡¼¥Ä¤Îæ«");
+				take_hit(dam, "ãƒ€ãƒ¼ãƒ„ã®ç½ ");
 #else
 				take_hit(dam, "a dart trap");
 #endif
@@ -1200,7 +1200,7 @@ static void hit_trap(void)
 			else
 			{
 #ifdef JP
-				msg_print("¾®¤µ¤Ê¥À¡¼¥Ä¤¬Èô¤ó¤Ç¤­¤¿¡ª¤¬¡¢±¿ÎÉ¤¯Åö¤¿¤é¤Ê¤«¤Ã¤¿¡£");
+				msg_print("å°ã•ãªãƒ€ãƒ¼ãƒ„ãŒé£›ã‚“ã§ããŸï¼ãŒã€é‹è‰¯ãå½“ãŸã‚‰ãªã‹ã£ãŸã€‚");
 #else
 				msg_print("A small dart barely misses you.");
 #endif
@@ -1212,7 +1212,7 @@ static void hit_trap(void)
 		case FEAT_TRAP_BLIND:
 		{
 #ifdef JP
-			msg_print("¹õ¤¤¥¬¥¹¤ËÊñ¤ß¹ş¤Ş¤ì¤¿¡ª");
+			msg_print("é»’ã„ã‚¬ã‚¹ã«åŒ…ã¿è¾¼ã¾ã‚ŒãŸï¼");
 #else
 			msg_print("A black gas surrounds you!");
 #endif
@@ -1227,7 +1227,7 @@ static void hit_trap(void)
 		case FEAT_TRAP_CONFUSE:
 		{
 #ifdef JP
-			msg_print("¤­¤é¤á¤¯¥¬¥¹¤ËÊñ¤ß¹ş¤Ş¤ì¤¿¡ª");
+			msg_print("ãã‚‰ã‚ãã‚¬ã‚¹ã«åŒ…ã¿è¾¼ã¾ã‚ŒãŸï¼");
 #else
 			msg_print("A gas of scintillating colors surrounds you!");
 #endif
@@ -1242,7 +1242,7 @@ static void hit_trap(void)
 		case FEAT_TRAP_POISON:
 		{
 #ifdef JP
-			msg_print("»É·ãÅª¤ÊÎĞ¿§¤Î¥¬¥¹¤ËÊñ¤ß¹ş¤Ş¤ì¤¿¡ª");
+			msg_print("åˆºæ¿€çš„ãªç·‘è‰²ã®ã‚¬ã‚¹ã«åŒ…ã¿è¾¼ã¾ã‚ŒãŸï¼");
 #else
 			msg_print("A pungent green gas surrounds you!");
 #endif
@@ -1257,7 +1257,7 @@ static void hit_trap(void)
 		case FEAT_TRAP_SLEEP:
 		{
 #ifdef JP
-			msg_print("´ñÌ¯¤ÊÇò¤¤Ì¸¤ËÊñ¤Ş¤ì¤¿¡ª");
+			msg_print("å¥‡å¦™ãªç™½ã„éœ§ã«åŒ…ã¾ã‚ŒãŸï¼");
 #else
 			msg_print("A strange white mist surrounds you!");
 #endif
@@ -1265,7 +1265,7 @@ static void hit_trap(void)
 			if (!p_ptr->free_act)
 			{
 #ifdef JP
-msg_print("¤¢¤Ê¤¿¤ÏÌ²¤ê¤Ë½¢¤¤¤¿¡£");
+msg_print("ã‚ãªãŸã¯çœ ã‚Šã«å°±ã„ãŸã€‚");
 #else
 				msg_print("You fall asleep.");
 #endif
@@ -1274,7 +1274,7 @@ msg_print("¤¢¤Ê¤¿¤ÏÌ²¤ê¤Ë½¢¤¤¤¿¡£");
 				if (ironman_nightmare)
 				{
 #ifdef JP
-msg_print("¿È¤ÎÌÓ¤â¤è¤À¤Ä¸÷·Ê¤¬Æ¬¤ËÉâ¤«¤ó¤À¡£");
+msg_print("èº«ã®æ¯›ã‚‚ã‚ˆã ã¤å…‰æ™¯ãŒé ­ã«æµ®ã‹ã‚“ã ã€‚");
 #else
 					msg_print("A horrible vision enters your mind.");
 #endif
@@ -1297,7 +1297,7 @@ msg_print("¿È¤ÎÌÓ¤â¤è¤À¤Ä¸÷·Ê¤¬Æ¬¤ËÉâ¤«¤ó¤À¡£");
 		case FEAT_TRAP_TRAPS:
 		{
 #ifdef JP
-msg_print("¤Ş¤Ğ¤æ¤¤Á®¸÷¤¬Áö¤Ã¤¿¡ª");
+msg_print("ã¾ã°ã‚†ã„é–ƒå…‰ãŒèµ°ã£ãŸï¼");
 #else
 			msg_print("There is a bright flash of light!");
 #endif
@@ -1344,11 +1344,11 @@ static void touch_zap_player_aux(monster_type *m_ptr, bool immune, int flags_off
 static void touch_zap_player(monster_type *m_ptr)
 {
 	touch_zap_player_aux(m_ptr, p_ptr->immune_fire, offsetof(monster_race, flags2), offsetof(monster_race, r_flags2), RF2_AURA_FIRE,
-				fire_dam, _("ÆÍÁ³¤È¤Æ¤âÇ®¤¯¤Ê¤Ã¤¿¡ª", "You are suddenly very hot!"));
+				fire_dam, _("çªç„¶ã¨ã¦ã‚‚ç†±ããªã£ãŸï¼", "You are suddenly very hot!"));
 	touch_zap_player_aux(m_ptr, p_ptr->immune_cold, offsetof(monster_race, flags3), offsetof(monster_race, r_flags3), RF3_AURA_COLD,
-				cold_dam, _("ÆÍÁ³¤È¤Æ¤â´¨¤¯¤Ê¤Ã¤¿¡ª", "You are suddenly very cold!"));
+				cold_dam, _("çªç„¶ã¨ã¦ã‚‚å¯’ããªã£ãŸï¼", "You are suddenly very cold!"));
 	touch_zap_player_aux(m_ptr, p_ptr->immune_elec, offsetof(monster_race, flags2), offsetof(monster_race, r_flags2), RF2_AURA_ELEC,
-				elec_dam, _("ÅÅ·â¤ò¤¯¤é¤Ã¤¿¡ª", "You get zapped!"));
+				elec_dam, _("é›»æ’ƒã‚’ãã‚‰ã£ãŸï¼", "You get zapped!"));
 }
 
 
@@ -1448,19 +1448,19 @@ static void py_attack_aux(int y, int x, int mode)
 			inventory[INVEN_ARM].name2 == EGO_WEIRD)
 		{
 #ifdef JP
-			msg_format("¹õ¤¤¿Ï¤Ï¶¯Íß¤Ë%s¤ò¹¶·â¤·¤¿¡ª", m_name);
+			msg_format("é»’ã„åˆƒã¯å¼·æ¬²ã«%sã‚’æ”»æ’ƒã—ãŸï¼", m_name);
 #else
 			msg_format("Your black blade greedily attacks %s!", m_name);
 #endif
 		}
 #ifdef JP
-		else if (!get_check("ËÜÅö¤Ë¹¶·â¤·¤Ş¤¹¤«¡©"))
+		else if (!get_check("æœ¬å½“ã«æ”»æ’ƒã—ã¾ã™ã‹ï¼Ÿ"))
 #else
 		else if (!get_check("Really hit it? "))
 #endif
 		{
 #ifdef JP
-			msg_format("%s¤ò¹¶·â¤¹¤ë¤Î¤ò»ß¤á¤¿¡£", m_name);
+			msg_format("%sã‚’æ”»æ’ƒã™ã‚‹ã®ã‚’æ­¢ã‚ãŸã€‚", m_name);
 #else
 			msg_format("You stop to avoid hitting %s.", m_name);
 #endif
@@ -1474,13 +1474,13 @@ static void py_attack_aux(int y, int x, int mode)
 		/* Message */
 		if (m_ptr->ml)
 #ifdef JP
-			msg_format("¶²¤¯¤Æ%s¤ò¹¶·â¤Ç¤­¤Ê¤¤¡ª", m_name);
+			msg_format("æãã¦%sã‚’æ”»æ’ƒã§ããªã„ï¼", m_name);
 #else
 			msg_format("You are too afraid to attack %s!", m_name);
 #endif
 		else
 #ifdef JP
-			msg_format ("¤½¤Ã¤Á¤Ë¤Ï²¿¤«¶²¤¤¤â¤Î¤¬¤¤¤ë¡ª");
+			msg_format ("ãã£ã¡ã«ã¯ä½•ã‹æã„ã‚‚ã®ãŒã„ã‚‹ï¼");
 #else
 			msg_format ("There is something scary in your way!");
 #endif
@@ -1599,9 +1599,9 @@ static void py_attack_aux(int y, int x, int mode)
 				if (o_ptr->k_idx)
 				{
 #ifdef JP
-					if (backstab) msg_format("¤¢¤Ê¤¿¤ÏÎä¹ó¤Ë¤âÌ²¤Ã¤Æ¤¤¤ëÌµÎÏ¤Ê%s¤òÆÍ¤­»É¤·¤¿¡ª", m_name);
-					else if (stab_fleeing) msg_format("Æ¨¤²¤ë%s¤òÇØÃæ¤«¤éÆÍ¤­»É¤·¤¿¡ª", m_name);
-					else msg_format("%s¤ò¹¶·â¤·¤¿¡£", m_name);
+					if (backstab) msg_format("ã‚ãªãŸã¯å†·é…·ã«ã‚‚çœ ã£ã¦ã„ã‚‹ç„¡åŠ›ãª%sã‚’çªãåˆºã—ãŸï¼", m_name);
+					else if (stab_fleeing) msg_format("é€ƒã’ã‚‹%sã‚’èƒŒä¸­ã‹ã‚‰çªãåˆºã—ãŸï¼", m_name);
+					else msg_format("%sã‚’æ”»æ’ƒã—ãŸã€‚", m_name);
 #else
 					if (backstab) msg_format("You cruelly stab the helpless, sleeping %s!", m_name);
 					else if (stab_fleeing) msg_format("You backstab the fleeing %s!",  m_name);
@@ -1639,7 +1639,7 @@ static void py_attack_aux(int y, int x, int mode)
 						int inc_chance = 4;
 
 #ifdef JP
-						msg_format("%s¤ò¥°¥Ã¥µ¥êÀÚ¤êÎö¤¤¤¿¡ª", m_name);
+						msg_format("%sã‚’ã‚°ãƒƒã‚µãƒªåˆ‡ã‚Šè£‚ã„ãŸï¼", m_name);
 #else
 						msg_format("Your weapon cuts deep into %s!", m_name);
 #endif
@@ -1656,7 +1656,7 @@ static void py_attack_aux(int y, int x, int mode)
 						if (k > m_ptr->hp)
 						{
 #ifdef JP
-							msg_format("%s¤ò¿¿¤ÃÆó¤Ä¤Ë¤·¤¿¡ª", m_name);
+							msg_format("%sã‚’çœŸã£äºŒã¤ã«ã—ãŸï¼", m_name);
 #else
 							msg_format("You cut %s in half!", m_name);
 #endif
@@ -1666,13 +1666,13 @@ static void py_attack_aux(int y, int x, int mode)
 							switch(mult)
 							{
 #ifdef JP
-								case 2:	msg_format("%s¤ò»Â¤Ã¤¿¡ª", m_name);	break;
-								case 3:	msg_format("%s¤ò¤Ö¤Ã¤¿»Â¤Ã¤¿¡ª", m_name); break;
-								case 4:	msg_format("%s¤ò¥á¥Ã¥¿»Â¤ê¤Ë¤·¤¿¡ª", m_name); break;
-								case 5:	msg_format("%s¤ò¥á¥Ã¥¿¥á¥¿¤Ë»Â¤Ã¤¿¡ª", m_name);	break;
-								case 6:	msg_format("%s¤ò»É¿È¤Ë¤·¤¿¡ª", m_name);	break;
-								case 7:	msg_format("%s¤ò»Â¤Ã¤Æ»Â¤Ã¤Æ»Â¤ê¤Ş¤¯¤Ã¤¿¡ª", m_name); break;
-								default:	msg_format("%s¤òºÙÀÚ¤ì¤Ë¤·¤¿¡ª", m_name); break;
+								case 2:	msg_format("%sã‚’æ–¬ã£ãŸï¼", m_name);	break;
+								case 3:	msg_format("%sã‚’ã¶ã£ãŸæ–¬ã£ãŸï¼", m_name); break;
+								case 4:	msg_format("%sã‚’ãƒ¡ãƒƒã‚¿æ–¬ã‚Šã«ã—ãŸï¼", m_name); break;
+								case 5:	msg_format("%sã‚’ãƒ¡ãƒƒã‚¿ãƒ¡ã‚¿ã«æ–¬ã£ãŸï¼", m_name);	break;
+								case 6:	msg_format("%sã‚’åˆºèº«ã«ã—ãŸï¼", m_name);	break;
+								case 7:	msg_format("%sã‚’æ–¬ã£ã¦æ–¬ã£ã¦æ–¬ã‚Šã¾ãã£ãŸï¼", m_name); break;
+								default:	msg_format("%sã‚’ç´°åˆ‡ã‚Œã«ã—ãŸï¼", m_name); break;
 #else
 								case 2: msg_format("You gouge %s!", m_name); break;
 								case 3: msg_format("You maim %s!", m_name); break;
@@ -1704,7 +1704,7 @@ static void py_attack_aux(int y, int x, int mode)
 				/* ATTACK_TOUKI bypass invulnerability */
 					if (m_ptr->invulner)
 #ifdef JP
-						msg_print("Æ®µ¤¤¬ÌµÅ¨¤Î¥Ğ¥ê¥¢¤ò»Â¤êÎö¤¤¤¿¡ª");
+						msg_print("é—˜æ°—ãŒç„¡æ•µã®ãƒãƒªã‚¢ã‚’æ–¬ã‚Šè£‚ã„ãŸï¼");
 #else
 						msg_print("The barrier is penetrated!");
 #endif
@@ -1719,7 +1719,7 @@ static void py_attack_aux(int y, int x, int mode)
 				if (wizard)
 				{
 #ifdef JP
-					msg_format("%d/%d ¤Î¥À¥á¡¼¥¸¤òÍ¿¤¨¤¿¡£", k, m_ptr->hp);
+					msg_format("%d/%d ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆãŸã€‚", k, m_ptr->hp);
 #else
 					msg_format("You do %d (out of %d) damage.", k, m_ptr->hp);
 #endif
@@ -1787,7 +1787,7 @@ static void py_attack_aux(int y, int x, int mode)
 							if (drain_msg)
 							{
 #ifdef JP
-								msg_format("¿Ï¤¬%s¤«¤éÀ¸Ì¿ÎÏ¤òµÛ¤¤¼è¤Ã¤¿¡ª", m_name);
+								msg_format("åˆƒãŒ%sã‹ã‚‰ç”Ÿå‘½åŠ›ã‚’å¸ã„å–ã£ãŸï¼", m_name);
 #else
 								msg_format("Your weapon drains life from %s!", m_name);
 #endif
@@ -1810,7 +1810,7 @@ static void py_attack_aux(int y, int x, int mode)
 					{
 						p_ptr->confusing = FALSE;
 #ifdef JP
-						msg_print("¼ê¤Îµ±¤­¤¬¤Ê¤¯¤Ê¤Ã¤¿¡£");
+						msg_print("æ‰‹ã®è¼ããŒãªããªã£ãŸã€‚");
 #else
 						msg_print("Your hands stop glowing.");
 #endif
@@ -1826,7 +1826,7 @@ static void py_attack_aux(int y, int x, int mode)
 						}
 
 #ifdef JP
-						msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", m_name);
+						msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", m_name);
 #else
 						msg_format("%^s is unaffected.", m_name);
 #endif
@@ -1834,7 +1834,7 @@ static void py_attack_aux(int y, int x, int mode)
 					else if (randint0(100) < r_ptr->level)
 					{
 #ifdef JP
-						msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", m_name);
+						msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", m_name);
 #else
 						msg_format("%^s is unaffected.", m_name);
 #endif
@@ -1842,7 +1842,7 @@ static void py_attack_aux(int y, int x, int mode)
 					else
 					{
 #ifdef JP
-						msg_format("%^s¤Ïº®Íğ¤·¤¿¤è¤¦¤À¡£", m_name);
+						msg_format("%^sã¯æ··ä¹±ã—ãŸã‚ˆã†ã ã€‚", m_name);
 #else
 						msg_format("%^s appears confused.", m_name);
 #endif
@@ -1860,7 +1860,7 @@ static void py_attack_aux(int y, int x, int mode)
 						{
 							if (m_ptr->ml) r_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-							msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", m_name);
+							msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", m_name);
 #else
 							msg_format("%^s is unaffected!", m_name);
 #endif
@@ -1870,7 +1870,7 @@ static void py_attack_aux(int y, int x, int mode)
 						{
 							if (m_ptr->ml) r_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-							msg_format("%^s¤ÏÄñ¹³ÎÏ¤ò»ı¤Ã¤Æ¤¤¤ë¡ª", m_name);
+							msg_format("%^sã¯æŠµæŠ—åŠ›ã‚’æŒã£ã¦ã„ã‚‹ï¼", m_name);
 #else
 							msg_format("%^s resists!", m_name);
 #endif
@@ -1881,7 +1881,7 @@ static void py_attack_aux(int y, int x, int mode)
 					if (!resists_tele)
 					{
 #ifdef JP
-						msg_format("%^s¤Ï¾Ã¤¨¤¿¡ª", m_name);
+						msg_format("%^sã¯æ¶ˆãˆãŸï¼", m_name);
 #else
 						msg_format("%^s disappears!", m_name);
 #endif
@@ -1900,7 +1900,7 @@ static void py_attack_aux(int y, int x, int mode)
 						if (polymorph_monster(y, x))
 						{
 #ifdef JP
-							msg_format("%^s¤ÏÊÑ²½¤·¤¿¡ª", m_name);
+							msg_format("%^sã¯å¤‰åŒ–ã—ãŸï¼", m_name);
 #else
 							msg_format("%^s changes!", m_name);
 #endif
@@ -1919,7 +1919,7 @@ static void py_attack_aux(int y, int x, int mode)
 						else
 						{
 #ifdef JP
-						msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", m_name);
+						msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", m_name);
 #else
 							msg_format("%^s is unaffected.", m_name);
 #endif
@@ -1936,7 +1936,7 @@ static void py_attack_aux(int y, int x, int mode)
 
 				/* Message */
 #ifdef JP
-				msg_format("¥ß¥¹¡ª %s¤Ë¤«¤ï¤µ¤ì¤¿¡£", m_name);
+				msg_format("ãƒŸã‚¹ï¼ %sã«ã‹ã‚ã•ã‚ŒãŸã€‚", m_name);
 #else
 				msg_format("You miss %s.", m_name);
 #endif
@@ -1953,7 +1953,7 @@ static void py_attack_aux(int y, int x, int mode)
 		if(!((r_ptr->flags3 & RF3_NO_STUN) || (r_ptr->flags1 & RF1_UNIQUE)))
 		{
 #ifdef JP
-			msg_format("%^s¤Ï¥Õ¥é¥Õ¥é¤Ë¤Ê¤Ã¤¿¡£", m_name);
+			msg_format("%^sã¯ãƒ•ãƒ©ãƒ•ãƒ©ã«ãªã£ãŸã€‚", m_name);
 #else
 			msg_format("%^s is stunned.", m_name);
 #endif
@@ -1975,7 +1975,7 @@ static void py_attack_aux(int y, int x, int mode)
 
 		/* Message */
 #ifdef JP
-		msg_format("%^s¤Ï¶²Éİ¤·¤ÆÆ¨¤²½Ğ¤·¤¿¡ª", m_name);
+		msg_format("%^sã¯ææ€–ã—ã¦é€ƒã’å‡ºã—ãŸï¼", m_name);
 #else
 		msg_format("%^s flees in terror!", m_name);
 #endif
@@ -2088,7 +2088,7 @@ static bool pattern_seq(int c_y, int c_x, int n_y, int n_x)
 		    !p_ptr->confused && !p_ptr->stun && !p_ptr->image)
 		{
 #ifdef JP
-			if (get_check("¥Ñ¥¿¡¼¥ó¤Î¾å¤òÊâ¤­»Ï¤á¤ë¤È¡¢Á´¤Æ¤òÊâ¤«¤Ê¤±¤ì¤Ğ¤Ê¤ê¤Ş¤»¤ó¡£¤¤¤¤¤Ç¤¹¤«¡©"))
+			if (get_check("ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸Šã‚’æ­©ãå§‹ã‚ã‚‹ã¨ã€å…¨ã¦ã‚’æ­©ã‹ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚ã„ã„ã§ã™ã‹ï¼Ÿ"))
 #else
 			if (get_check("If you start walking the Pattern, you must walk the whole way. Ok? "))
 #endif
@@ -2110,7 +2110,7 @@ static bool pattern_seq(int c_y, int c_x, int n_y, int n_x)
 		else
 		{
 #ifdef JP
-			msg_print("¥Ñ¥¿¡¼¥ó¤Î¾å¤òÊâ¤¯¤Ë¤Ï¥¹¥¿¡¼¥ÈÃÏÅÀ¤«¤éÊâ¤­»Ï¤á¤Ê¤¯¤Æ¤Ï¤Ê¤ê¤Ş¤»¤ó¡£");
+			msg_print("ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸Šã‚’æ­©ãã«ã¯ã‚¹ã‚¿ãƒ¼ãƒˆåœ°ç‚¹ã‹ã‚‰æ­©ãå§‹ã‚ãªãã¦ã¯ãªã‚Šã¾ã›ã‚“ã€‚");
 #else
 			msg_print("You must start walking the Pattern from the startpoint.");
 #endif
@@ -2129,7 +2129,7 @@ static bool pattern_seq(int c_y, int c_x, int n_y, int n_x)
 		else
 		{
 #ifdef JP
-			msg_print("¥Ñ¥¿¡¼¥ó¤Î¾å¤ÏÀµ¤·¤¤½ç½ø¤ÇÊâ¤«¤Í¤Ğ¤Ê¤ê¤Ş¤»¤ó¡£");
+			msg_print("ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸Šã¯æ­£ã—ã„é †åºã§æ­©ã‹ã­ã°ãªã‚Šã¾ã›ã‚“ã€‚");
 #else
 			msg_print("You must walk the Pattern in correct order.");
 #endif
@@ -2143,7 +2143,7 @@ static bool pattern_seq(int c_y, int c_x, int n_y, int n_x)
 		if (!pattern_tile(n_y, n_x))
 		{
 #ifdef JP
-			msg_print("¥Ñ¥¿¡¼¥ó¤òÆ§¤ß³°¤·¤Æ¤Ï¤¤¤±¤Ş¤»¤ó¡£");
+			msg_print("ãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’è¸ã¿å¤–ã—ã¦ã¯ã„ã‘ã¾ã›ã‚“ã€‚");
 #else
 			msg_print("You may not step off from the Pattern.");
 #endif
@@ -2159,7 +2159,7 @@ static bool pattern_seq(int c_y, int c_x, int n_y, int n_x)
 		if (!pattern_tile(c_y, c_x))
 		{
 #ifdef JP
-			msg_print("¥Ñ¥¿¡¼¥ó¤Î¾å¤òÊâ¤¯¤Ë¤Ï¥¹¥¿¡¼¥ÈÃÏÅÀ¤«¤éÊâ¤­»Ï¤á¤Ê¤¯¤Æ¤Ï¤Ê¤ê¤Ş¤»¤ó¡£");
+			msg_print("ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸Šã‚’æ­©ãã«ã¯ã‚¹ã‚¿ãƒ¼ãƒˆåœ°ç‚¹ã‹ã‚‰æ­©ãå§‹ã‚ãªãã¦ã¯ãªã‚Šã¾ã›ã‚“ã€‚");
 #else
 			msg_print("You must start walking the Pattern from the startpoint.");
 #endif
@@ -2185,7 +2185,7 @@ static bool pattern_seq(int c_y, int c_x, int n_y, int n_x)
 				default:
 					if (wizard)
 #ifdef JP
-						msg_format("¤ª¤«¤·¤Ê¥Ñ¥¿¡¼¥óÊâ¹Ô¡¢%d¡£", cave[c_y][c_x].feat);
+						msg_format("ãŠã‹ã—ãªãƒ‘ã‚¿ãƒ¼ãƒ³æ­©è¡Œã€%dã€‚", cave[c_y][c_x].feat);
 #else
 						msg_format("Funny Pattern walking, %d.", cave[c_y][c_x].feat);
 #endif
@@ -2199,13 +2199,13 @@ static bool pattern_seq(int c_y, int c_x, int n_y, int n_x)
 			{
 				if (!pattern_tile(n_y, n_x))
 #ifdef JP
-					msg_print("¥Ñ¥¿¡¼¥ó¤òÆ§¤ß³°¤·¤Æ¤Ï¤¤¤±¤Ş¤»¤ó¡£");
+					msg_print("ãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’è¸ã¿å¤–ã—ã¦ã¯ã„ã‘ã¾ã›ã‚“ã€‚");
 #else
 					msg_print("You may not step off from the Pattern.");
 #endif
 				else
 #ifdef JP
-					msg_print("¥Ñ¥¿¡¼¥ó¤Î¾å¤ÏÀµ¤·¤¤½ç½ø¤ÇÊâ¤«¤Í¤Ğ¤Ê¤ê¤Ş¤»¤ó¡£");
+					msg_print("ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸Šã¯æ­£ã—ã„é †åºã§æ­©ã‹ã­ã°ãªã‚Šã¾ã›ã‚“ã€‚");
 #else
 					msg_print("You must walk the Pattern in correct order.");
 #endif
@@ -2339,7 +2339,7 @@ void move_player(int dir, int do_pickup)
 			    (r_info[m_ptr->r_idx].flags2 & RF2_PASS_WALL))
 			{
 #ifdef JP
-				msg_format("%s¤ò²¡¤·Âà¤±¤¿¡£", m_name);
+				msg_format("%sã‚’æŠ¼ã—é€€ã‘ãŸã€‚", m_name);
 #else
 				msg_format("You push past %s.", m_name);
 #endif
@@ -2353,7 +2353,7 @@ void move_player(int dir, int do_pickup)
 			else
 			{
 #ifdef JP
-				msg_format("%^s¤¬¼ÙËâ¤À¡ª", m_name);
+				msg_format("%^sãŒé‚ªé­”ã ï¼", m_name);
 #else
 				msg_format("%^s is in your way!", m_name);
 #endif
@@ -2374,7 +2374,7 @@ void move_player(int dir, int do_pickup)
 	else if ((c_ptr->feat == FEAT_DARK_PIT) && !p_ptr->ffall)
 	{
 #ifdef JP
-		msg_print("Îö¤±ÌÜ¤ò²£ÀÚ¤ë¤³¤È¤Ï¤Ç¤­¤Ş¤»¤ó¡£");
+		msg_print("è£‚ã‘ç›®ã‚’æ¨ªåˆ‡ã‚‹ã“ã¨ã¯ã§ãã¾ã›ã‚“ã€‚");
 #else
 		msg_print("You can't cross the chasm.");
 #endif
@@ -2389,7 +2389,7 @@ void move_player(int dir, int do_pickup)
 		if (dun_level || !p_ptr->ffall)
 		{
 #ifdef JP
-			msg_print("»³¤Ë¤ÏÅĞ¤ì¤Ş¤»¤ó¡ª");
+			msg_print("å±±ã«ã¯ç™»ã‚Œã¾ã›ã‚“ï¼");
 #else
 			msg_print("You can't climb the mountains!");
 #endif
@@ -2445,7 +2445,7 @@ void move_player(int dir, int do_pickup)
 				(p_ptr->blind || !(c_ptr->info & CAVE_LITE)))
 			{
 #ifdef JP
-				msg_print("¥É¥¢¤¬¹Ô¤¯¼ê¤ò¤Ï¤Ğ¤ó¤Ç¤¤¤ë¤è¤¦¤À¡£");
+				msg_print("ãƒ‰ã‚¢ãŒè¡Œãæ‰‹ã‚’ã¯ã°ã‚“ã§ã„ã‚‹ã‚ˆã†ã ã€‚");
 #else
 				msg_print("You feel a closed door blocking your way.");
 #endif
@@ -2462,7 +2462,7 @@ void move_player(int dir, int do_pickup)
 #endif /* ALLOW_EASY_OPEN */
 
 #ifdef JP
-				msg_print("¥É¥¢¤¬¹Ô¤¯¼ê¤ò¤Ï¤Ğ¤ó¤Ç¤¤¤ë¡£");
+				msg_print("ãƒ‰ã‚¢ãŒè¡Œãæ‰‹ã‚’ã¯ã°ã‚“ã§ã„ã‚‹ã€‚");
 #else
 				msg_print("There is a closed door blocking your way.");
 #endif
@@ -2535,7 +2535,7 @@ void move_player(int dir, int do_pickup)
 			if (c_ptr->feat == FEAT_RUBBLE)
 			{
 #ifdef JP
-				msg_print("´äÀĞ¤¬¹Ô¤¯¼ê¤ò¤Ï¤Ğ¤ó¤Ç¤¤¤ë¤è¤¦¤À¡£");
+				msg_print("å²©çŸ³ãŒè¡Œãæ‰‹ã‚’ã¯ã°ã‚“ã§ã„ã‚‹ã‚ˆã†ã ã€‚");
 #else
 				msg_print("You feel some rubble blocking your way.");
 #endif
@@ -2547,7 +2547,7 @@ void move_player(int dir, int do_pickup)
 			else
 			{
 #ifdef JP
-				msg_print("ÊÉ¤¬¹Ô¤¯¼ê¤ò¤Ï¤Ğ¤ó¤Ç¤¤¤ë¤è¤¦¤À¡£");
+				msg_print("å£ãŒè¡Œãæ‰‹ã‚’ã¯ã°ã‚“ã§ã„ã‚‹ã‚ˆã†ã ã€‚");
 #else
 				msg_print("You feel a wall blocking your way.");
 #endif
@@ -2563,7 +2563,7 @@ void move_player(int dir, int do_pickup)
 			if (c_ptr->feat == FEAT_RUBBLE)
 			{
 #ifdef JP
-				msg_print("´äÀĞ¤¬¹Ô¤¯¼ê¤ò¤Ï¤Ğ¤ó¤Ç¤¤¤ë¡£");
+				msg_print("å²©çŸ³ãŒè¡Œãæ‰‹ã‚’ã¯ã°ã‚“ã§ã„ã‚‹ã€‚");
 #else
 				msg_print("There is rubble blocking your way.");
 #endif
@@ -2582,7 +2582,7 @@ void move_player(int dir, int do_pickup)
 			else
 			{
 #ifdef JP
-				msg_print("ÊÉ¤¬¹Ô¤¯¼ê¤ò¤Ï¤Ğ¤ó¤Ç¤¤¤ë¡£");
+				msg_print("å£ãŒè¡Œãæ‰‹ã‚’ã¯ã°ã‚“ã§ã„ã‚‹ã€‚");
 #else
 				msg_print("There is a wall blocking your way.");
 #endif
@@ -2619,7 +2619,7 @@ void move_player(int dir, int do_pickup)
 		disturb(0, 0);
 
 #ifdef JP
-msg_print("²¿¤«¤Ë¤Ö¤Á¤¢¤¿¤Ã¤¿¡£");
+msg_print("ä½•ã‹ã«ã¶ã¡ã‚ãŸã£ãŸã€‚");
 #else
 		msg_print("You bump into something.");
 #endif
@@ -2640,7 +2640,7 @@ msg_print("²¿¤«¤Ë¤Ö¤Á¤¢¤¿¤Ã¤¿¡£");
 			if (process_warning(x, y))
 			{
 #ifdef JP
-				if (!get_check("ËÜÅö¤Ë¤³¤Î¤Ş¤Ş¿Ê¤ß¤Ş¤¹¤«¡©"))
+				if (!get_check("æœ¬å½“ã«ã“ã®ã¾ã¾é€²ã¿ã¾ã™ã‹ï¼Ÿ"))
 #else
 				if (!get_check("Really want to go ahead?"))
 #endif
@@ -2746,7 +2746,7 @@ msg_print("²¿¤«¤Ë¤Ö¤Á¤¢¤¿¤Ã¤¿¡£");
 				quest[p_ptr->inside_quest].status = QUEST_STATUS_COMPLETED;
 				quest[p_ptr->inside_quest].complev = (byte)p_ptr->lev;
 #ifdef JP
-				msg_print("¥¯¥¨¥¹¥È¤òÃ£À®¤·¤¿¡ª");
+				msg_print("ã‚¯ã‚¨ã‚¹ãƒˆã‚’é”æˆã—ãŸï¼");
 #else
 				msg_print("You accomplished your quest!");
 #endif
@@ -2771,7 +2771,7 @@ msg_print("²¿¤«¤Ë¤Ö¤Á¤¢¤¿¤Ã¤¿¡£");
 
 			/* Message */
 #ifdef JP
-			msg_print("¥È¥é¥Ã¥×¤À¡ª");
+			msg_print("ãƒˆãƒ©ãƒƒãƒ—ã ï¼");
 #else
 			msg_print("You found a trap!");
 #endif
@@ -2807,7 +2807,7 @@ msg_print("²¿¤«¤Ë¤Ö¤Á¤¢¤¿¤Ã¤¿¡£");
 				if (alert_trap_detect)
 				{
 #ifdef JP
-					msg_print("* Ãí°Õ:¤³¤ÎÀè¤Ï¥È¥é¥Ã¥×¤Î´¶ÃÎÈÏ°Ï³°¤Ç¤¹¡ª *");
+					msg_print("* æ³¨æ„:ã“ã®å…ˆã¯ãƒˆãƒ©ãƒƒãƒ—ã®æ„ŸçŸ¥ç¯„å›²å¤–ã§ã™ï¼ *");
 #else
 					msg_print("*Leaving trap detect region!*");
 #endif
@@ -3190,7 +3190,7 @@ static bool run_test(void)
 			if (alert_trap_detect)
 			{
 #ifdef JP
-				msg_print("* Ãí°Õ:¤³¤ÎÀè¤Ï¥È¥é¥Ã¥×¤Î´¶ÃÎÈÏ°Ï³°¤Ç¤¹¡ª *");
+				msg_print("* æ³¨æ„:ã“ã®å…ˆã¯ãƒˆãƒ©ãƒƒãƒ—ã®æ„ŸçŸ¥ç¯„å›²å¤–ã§ã™ï¼ *");
 #else
 				msg_print("*Leaving trap detect region!*");
 #endif
@@ -3604,7 +3604,7 @@ void run_step(int dir)
 		{
 			/* Message */
 #ifdef JP
-			msg_print("¤½¤ÎÊı¸ş¤Ë¤Ï¹Ô¤±¤Ş¤»¤ó¡£");
+			msg_print("ãã®æ–¹å‘ã«ã¯è¡Œã‘ã¾ã›ã‚“ã€‚");
 #else
 			msg_print("You cannot run in that direction.");
 #endif
@@ -3686,7 +3686,7 @@ static bool travel_test(void)
 			if (alert_trap_detect)
 			{
 #ifdef JP
-				msg_print("* Ãí°Õ:¤³¤ÎÀè¤Ï¥È¥é¥Ã¥×¤Î´¶ÃÎÈÏ°Ï³°¤Ç¤¹¡ª *");
+				msg_print("* æ³¨æ„:ã“ã®å…ˆã¯ãƒˆãƒ©ãƒƒãƒ—ã®æ„ŸçŸ¥ç¯„å›²å¤–ã§ã™ï¼ *");
 #else
 				msg_print("*Leaving trap detect region!*");
 #endif
@@ -3704,7 +3704,7 @@ static bool travel_test(void)
 	if (p_ptr->blind || no_lite())
 	{
 #ifdef JP
-		msg_print("ÌÜ¤¬¸«¤¨¤Ê¤¤¡ª");
+		msg_print("ç›®ãŒè¦‹ãˆãªã„ï¼");
 #else
 		msg_print("You cannot see!");
 #endif

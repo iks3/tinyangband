@@ -1,4 +1,4 @@
-/* File: z-config.h */
+﻿/* File: z-config.h */
 
 /* Purpose: Angband specific configuration stuff */
 

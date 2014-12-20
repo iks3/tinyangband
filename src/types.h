@@ -1,4 +1,4 @@
-/* File: types.h */
+ï»¿/* File: types.h */
 
 /* Purpose: global type declarations */
 
@@ -279,7 +279,7 @@ struct monster_race
 {
 	u32b name;				/* Name (offset) */
 #ifdef JP
-	u32b E_name;			/* ±Ñ¸ìÌ¾ (offset) */
+	u32b E_name;			/* è‹±èªå (offset) */
 #endif
 	u32b text;				/* Text (offset) */
 
@@ -772,7 +772,7 @@ struct player_sex
 	cptr title;			/* Type of sex */
 
 #ifdef JP
-	cptr E_title;		/* ±Ñ¸ìÀ­ÊÌ */
+	cptr E_title;		/* è‹±èªæ€§åˆ¥ */
 #define X_title (english_others ? E_title : title)
 #endif
 	cptr winner;		/* Name of winner */
@@ -790,7 +790,7 @@ struct player_race
 	cptr title;			/* Type of race */
 
 #ifdef JP
-	cptr E_title;		/* ±Ñ¸ì¼ïÂ² */
+	cptr E_title;		/* è‹±èªç¨®æ— */
 #endif
 	s16b r_adj[6];		/* Racial stat bonuses */
 
@@ -838,7 +838,7 @@ struct player_class
 	cptr title;			/* Type of class */
 
 #ifdef JP
-	cptr E_title;		/* ±Ñ¸ì¿¦¶È */
+	cptr E_title;		/* è‹±èªè·æ¥­ */
 #endif
 	s16b c_adj[6];		/* Class stat modifier */
 

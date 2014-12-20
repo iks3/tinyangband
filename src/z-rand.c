@@ -1,4 +1,4 @@
-/* File: z-rand.c */
+﻿/* File: z-rand.c */
 
 /* Purpose: a simple random number generator -BEN- */
 

@@ -1,4 +1,4 @@
-/* File: mspells2.c */
+ï»¿/* File: mspells2.c */
 
 /* Purpose: Monster spells (attack monster) */
 
@@ -267,7 +267,7 @@ bool monst_spell_monst(int m_idx)
 			if (known)
 			{
 #ifdef JP
-				if (see_m) msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¶«¤ó¤À¡£", m_name, t_name);
+				if (see_m) msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦å«ã‚“ã ã€‚", m_name, t_name);
 #else
 				if (see_m) msg_format("%^s shrieks at %s.", m_name, t_name);
 #endif
@@ -287,8 +287,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¡Ö¤Õ¤ó¤Ã¡ª¡×", m_name);
-					else msg_format("%^s¤¬%s¤ËÂĞ¤·¤ÆÂç¤­¤Ê´ä¤òÅê¤²¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sã€Œãµã‚“ã£ï¼ã€", m_name);
+					else msg_format("%^sãŒ%sã«å¯¾ã—ã¦å¤§ããªå²©ã‚’æŠ•ã’ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s shouts, 'Haa!!'.", m_name);
 					else msg_format("%^s throws a large rock to %s.", m_name);
@@ -316,8 +316,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤òÎÏ¶¯¤¯¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÂĞ¤·¤Æ¥¹¥¿¡¼¡¦¥Ğ¡¼¥¹¥È¤Î¼öÊ¸¤òÇ°¤¸¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’åŠ›å¼·ãã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å¯¾ã—ã¦ã‚¹ã‚¿ãƒ¼ãƒ»ãƒãƒ¼ã‚¹ãƒˆã®å‘ªæ–‡ã‚’å¿µã˜ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s mumbles powerfully.", m_name);
 					else msg_format("%^s invokes a star burst upon %s.", m_name, t_name);
@@ -343,8 +343,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤ò¼Í¤Ã¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¥í¥±¥Ã¥È¤òÈ¯¼Í¤·¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’å°„ã£ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«ãƒ­ã‚±ãƒƒãƒˆã‚’ç™ºå°„ã—ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s shoots something.", m_name);
 					else msg_format("%^s fires a rocket at %s.", m_name, t_name);
@@ -370,8 +370,8 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					if (blind) msg_format("%^s¤¬´ñÌ¯¤Ê²»¤òÈ¯¤·¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÌğ¤òÊü¤Ã¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒå¥‡å¦™ãªéŸ³ã‚’ç™ºã—ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«çŸ¢ã‚’æ”¾ã£ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s makes a strange noise.", m_name);
 					else msg_format("%^s fires an arrow at %s.", m_name, t_name);
@@ -398,8 +398,8 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					if (blind) msg_format("%^s¤¬´ñÌ¯¤Ê²»¤òÈ¯¤·¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÌğ¤òÊü¤Ã¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒå¥‡å¦™ãªéŸ³ã‚’ç™ºã—ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«çŸ¢ã‚’æ”¾ã£ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s makes a strange noise.", m_name);
 					else msg_format("%^s fires an arrow at %s.", m_name, t_name);
@@ -426,8 +426,8 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					if (blind) msg_format("%^s¤¬´ñÌ¯¤Ê²»¤òÈ¯¤·¤¿¡£", m_name);
-					else msg_format("%s¤¬%s¤Ë¥Ü¥ë¥È¤òÊü¤Ã¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒå¥‡å¦™ãªéŸ³ã‚’ç™ºã—ãŸã€‚", m_name);
+					else msg_format("%sãŒ%sã«ãƒœãƒ«ãƒˆã‚’æ”¾ã£ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s makes a strange noise.", m_name);
 					else msg_format("%^s fires a bolt at %s.", m_name, t_name);
@@ -454,8 +454,8 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					if (blind) msg_format("%^s¤¬´ñÌ¯¤Ê²»¤òÈ¯¤·¤¿¡£", m_name);
-					else msg_format("%s¤¬%s¤Ë¥Ü¥ë¥È¤òÊü¤Ã¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒå¥‡å¦™ãªéŸ³ã‚’ç™ºã—ãŸã€‚", m_name);
+					else msg_format("%sãŒ%sã«ãƒœãƒ«ãƒˆã‚’æ”¾ã£ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s makes a strange noise.", m_name);
 					else msg_format("%^s fires a bolt at %s.", m_name, t_name);
@@ -483,8 +483,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë»À¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«é…¸ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes acid at %s.", m_name, t_name);
@@ -512,8 +512,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë°ğºÊ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«ç¨²å¦»ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes lightning at %s.", m_name, t_name);
@@ -541,8 +541,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë²Ğ±ê¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«ç«ç‚ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes fire at %s.", m_name, t_name);
@@ -570,8 +570,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÎäµ¤¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å†·æ°—ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes frost at %s.", m_name, t_name);
@@ -600,8 +600,8 @@ bool monst_spell_monst(int m_idx)
 					disturb(1, 0);
 
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¥¬¥¹¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«ã‚¬ã‚¹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 						msg_format("%^s breathes gas at %s.", m_name, t_name);
@@ -629,8 +629,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÃÏ¹ö¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«åœ°ç„ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes nether at %s.", m_name, t_name);
@@ -658,8 +658,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÁ®¸÷¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«é–ƒå…‰ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes light at %s.", m_name, t_name);
@@ -687,8 +687,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë°Å¹õ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«æš—é»’ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes darkness at %s.", m_name, t_name);
@@ -716,8 +716,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ëº®Íğ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«æ··ä¹±ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes confusion at %s.", m_name, t_name);
@@ -745,8 +745,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¹ì²»¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«è½ŸéŸ³ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes sound at %s.", m_name, t_name);
@@ -774,8 +774,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¥«¥ª¥¹¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«ã‚«ã‚ªã‚¹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes chaos at %s.", m_name, t_name);
@@ -803,8 +803,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÎô²½¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«åŠ£åŒ–ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes disenchantment at %s.", m_name, t_name);
@@ -832,8 +832,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë°ø²Ìº®Íğ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å› æœæ··ä¹±ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes nexus at %s.", m_name, t_name);
@@ -861,8 +861,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë»ş´ÖµÕÅ¾¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«æ™‚é–“é€†è»¢ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes time at %s.", m_name, t_name);
@@ -890,8 +890,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÃÙÆß¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«é…éˆã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes inertia at %s.", m_name, t_name);
@@ -920,8 +920,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë½ÅÎÏ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«é‡åŠ›ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes gravity at %s.", m_name, t_name);
@@ -949,8 +949,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÇËÊÒ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«ç ´ç‰‡ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes shards at %s.", m_name, t_name);
@@ -978,8 +978,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¥×¥é¥º¥Ş¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«ãƒ—ãƒ©ã‚ºãƒã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes plasma at %s.", m_name, t_name);
@@ -1007,8 +1007,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¥Õ¥©¡¼¥¹¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«ãƒ•ã‚©ãƒ¼ã‚¹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes force at %s.", m_name, t_name);
@@ -1036,8 +1036,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËËâÎÏ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«é­”åŠ›ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes mana at %s.", m_name, t_name);
@@ -1065,8 +1065,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÊü¼ÍÇ½µå¤òÊü¤Ã¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«æ”¾å°„èƒ½çƒã‚’æ”¾ã£ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s mumbles.", m_name);
 					else msg_format("%^s casts a ball of radiation at %s.", m_name, t_name);
@@ -1092,8 +1092,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÊü¼ÍÀ­ÇÑ´şÊª¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«æ”¾å°„æ€§å»ƒæ£„ç‰©ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes toxic waste at %s.", m_name, t_name);
@@ -1121,8 +1121,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬¶²¤í¤·¤²¤Ë¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¥«¥ª¥¹µå¤òÊü¤Ã¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒæã‚ã—ã’ã«ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«ã‚«ã‚ªã‚¹çƒã‚’æ”¾ã£ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s mumbles frighteningly.", m_name);
 					else msg_format("%^s catss a chaos ball upon %s.", m_name, t_name);
@@ -1148,8 +1148,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÊ¬²ò¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«åˆ†è§£ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s breathes.", m_name);
 					else msg_format("%^s breathes disintegration at %s.", m_name, t_name);
@@ -1177,8 +1177,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥¢¥·¥Ã¥É¡¦¥Ü¡¼¥ë¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦ã‚¢ã‚·ãƒƒãƒ‰ãƒ»ãƒœãƒ¼ãƒ«ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s mumbles.", m_name);
 					else msg_format("%^s casts an acid ball at %s.", m_name, t_name);
@@ -1205,8 +1205,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥µ¥ó¥À¡¼¡¦¥Ü¡¼¥ë¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦ã‚µãƒ³ãƒ€ãƒ¼ãƒ»ãƒœãƒ¼ãƒ«ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s mumbles.", m_name);
 					else msg_format("%^s casts a lightning ball at %s.", m_name, t_name);
@@ -1233,8 +1233,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥Õ¥¡¥¤¥¢¡¦¥Ü¡¼¥ë¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦ãƒ•ã‚¡ã‚¤ã‚¢ãƒ»ãƒœãƒ¼ãƒ«ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s mumbles.", m_name);
 					else msg_format("%^s casts a fire ball at %s.", m_name, t_name);
@@ -1261,8 +1261,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥¢¥¤¥¹¡¦¥Ü¡¼¥ë¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦ã‚¢ã‚¤ã‚¹ãƒ»ãƒœãƒ¼ãƒ«ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s mumbles.", m_name);
 					else msg_format("%^s casts a frost ball at %s.", m_name, t_name);
@@ -1289,8 +1289,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ°­½­±À¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦æ‚ªè‡­é›²ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s mumbles.", m_name);
 					else msg_format("%^s casts a stinking cloud at %s.", m_name, t_name);
@@ -1317,8 +1317,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤ÆÃÏ¹öµå¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦åœ°ç„çƒã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s mumbles.", m_name);
 					else msg_format("%^s casts a nether ball at %s.", m_name, t_name);
@@ -1345,10 +1345,10 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÂĞ¤·¤ÆÎ®¤ì¤ë¤è¤¦¤Ê¿È¿¶¤ê¤ò¤·¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å¯¾ã—ã¦æµã‚Œã‚‹ã‚ˆã†ãªèº«æŒ¯ã‚Šã‚’ã—ãŸã€‚", m_name, t_name);
 
-					msg_format("%^s¤Ï±²´¬¤Ë°û¤ß¹ş¤Ş¤ì¤¿¡£", t_name);
+					msg_format("%^sã¯æ¸¦å·»ã«é£²ã¿è¾¼ã¾ã‚ŒãŸã€‚", t_name);
 #else
 					if (blind) msg_format("%^s mumbles.", m_name);
 					else msg_format("%^s gestures fluidly at %s.", m_name, t_name);
@@ -1377,8 +1377,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤òÎÏ¶¯¤¯¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÂĞ¤·¤ÆËâÎÏ¤ÎÍò¤Î¼öÊ¸¤òÇ°¤¸¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’åŠ›å¼·ãã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å¯¾ã—ã¦é­”åŠ›ã®åµã®å‘ªæ–‡ã‚’å¿µã˜ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s mumbles powerfully.", m_name);
 					else msg_format("%^s invokes a mana storm upon %s.", m_name, t_name);
@@ -1404,8 +1404,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					if (blind) msg_format("%^s¤¬²¿¤«¤òÎÏ¶¯¤¯¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-					else msg_format("%^s¤¬%s¤ËÂĞ¤·¤Æ°Å¹õ¤ÎÍò¤Î¼öÊ¸¤òÇ°¤¸¤¿¡£", m_name, t_name);
+					if (blind) msg_format("%^sãŒä½•ã‹ã‚’åŠ›å¼·ãã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+					else msg_format("%^sãŒ%sã«å¯¾ã—ã¦æš—é»’ã®åµã®å‘ªæ–‡ã‚’å¿µã˜ãŸã€‚", m_name, t_name);
 #else
 					if (blind) msg_format("%^s mumbles powerfully.", m_name);
 					else msg_format("%^s invokes a darkness storm upon %s.", m_name, t_name);
@@ -1432,7 +1432,7 @@ bool monst_spell_monst(int m_idx)
 			if (see_m)
 			{
 #ifdef JP
-				msg_format("%^s¤ÏÀº¿À¥¨¥Í¥ë¥®¡¼¤ò%s¤«¤éµÛ¤¤¤È¤Ã¤¿¡£", m_name, t_name);
+				msg_format("%^sã¯ç²¾ç¥ã‚¨ãƒãƒ«ã‚®ãƒ¼ã‚’%sã‹ã‚‰å¸ã„ã¨ã£ãŸã€‚", m_name, t_name);
 #else
 				msg_format("%^s draws psychic energy from %s.", m_name, t_name);
 #endif
@@ -1446,7 +1446,7 @@ bool monst_spell_monst(int m_idx)
 					if (see_both)
 					{
 #ifdef JP
-						msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", t_name);
+						msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", t_name);
 #else
 						msg_format("%^s is unaffected!", t_name);
 #endif
@@ -1465,7 +1465,7 @@ bool monst_spell_monst(int m_idx)
 					if (see_m)
 					{
 #ifdef JP
-						msg_format("%^s¤Ïµ¤Ê¬¤¬ÎÉ¤µ¤½¤¦¤À¡£", m_name);
+						msg_format("%^sã¯æ°—åˆ†ãŒè‰¯ã•ãã†ã ã€‚", m_name);
 #else
 						msg_format("%^s appears healthier.", m_name);
 #endif
@@ -1483,7 +1483,7 @@ bool monst_spell_monst(int m_idx)
 			if (see_m)
 			{
 #ifdef JP
-				msg_format("%^s¤Ï%s¤ò¤¸¤Ã¤ÈâË¤ó¤À¡£", m_name, t_name);
+				msg_format("%^sã¯%sã‚’ã˜ã£ã¨ç¨ã‚“ã ã€‚", m_name, t_name);
 #else
 				msg_format("%^s gazes intently at %s.", m_name, t_name);
 #endif
@@ -1504,7 +1504,7 @@ bool monst_spell_monst(int m_idx)
 					}
 
 #ifdef JP
-					msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", t_name);
+					msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", t_name);
 #else
 					msg_format("%^s is unaffected!", t_name);
 #endif
@@ -1515,7 +1515,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_t)
 				{
 #ifdef JP
-					msg_format("%^s¤ÏÀº¿À¹¶·â¤ò¿©¤é¤Ã¤¿¡£", t_name);
+					msg_format("%^sã¯ç²¾ç¥æ”»æ’ƒã‚’é£Ÿã‚‰ã£ãŸã€‚", t_name);
 #else
 					msg_format("%^s is blasted by psionic energy.", t_name);
 #endif
@@ -1524,7 +1524,7 @@ bool monst_spell_monst(int m_idx)
 				t_ptr->confused += randint0(4) + 4;
 
 #ifdef JP
-				mon_take_hit_mon(t_idx, damroll(8, 8), &fear, "¤ÎÀº¿À¤ÏÊø²õ¤·¡¢ÆùÂÎ¤ÏÈ´¤±³Ì¤È¤Ê¤Ã¤¿¡£", m_idx);
+				mon_take_hit_mon(t_idx, damroll(8, 8), &fear, "ã®ç²¾ç¥ã¯å´©å£Šã—ã€è‚‰ä½“ã¯æŠœã‘æ®»ã¨ãªã£ãŸã€‚", m_idx);
 #else
 				mon_take_hit_mon(t_idx, damroll(8, 8), &fear, " collapses, a mindless husk.", m_idx);
 #endif
@@ -1540,7 +1540,7 @@ bool monst_spell_monst(int m_idx)
 			if (see_m)
 			{
 #ifdef JP
-				msg_format("%^s¤Ï%s¤ò¤¸¤Ã¤ÈâË¤ó¤À¡£", m_name, t_name);
+				msg_format("%^sã¯%sã‚’ã˜ã£ã¨ç¨ã‚“ã ã€‚", m_name, t_name);
 #else
 				msg_format("%^s gazes intently at %s.", m_name, t_name);
 #endif
@@ -1561,7 +1561,7 @@ bool monst_spell_monst(int m_idx)
 					}
 
 #ifdef JP
-					msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", t_name);
+					msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", t_name);
 #else
 					msg_format("%^s is unaffected!", t_name);
 #endif
@@ -1572,7 +1572,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_t)
 				{
 #ifdef JP
-					msg_format("%^s¤ÏÀº¿À¹¶·â¤ò¿©¤é¤Ã¤¿¡£", t_name);
+					msg_format("%^sã¯ç²¾ç¥æ”»æ’ƒã‚’é£Ÿã‚‰ã£ãŸã€‚", t_name);
 #else
 					msg_format("%^s is blasted by psionic energy.", t_name);
 #endif
@@ -1583,7 +1583,7 @@ bool monst_spell_monst(int m_idx)
 				t_ptr->stunned += randint0(4) + 4;
 
 #ifdef JP
-				mon_take_hit_mon(t_idx, damroll(12, 15), &fear, "¤ÎÀº¿À¤ÏÊø²õ¤·¡¢ÆùÂÎ¤ÏÈ´¤±³Ì¤È¤Ê¤Ã¤¿¡£", m_idx);
+				mon_take_hit_mon(t_idx, damroll(12, 15), &fear, "ã®ç²¾ç¥ã¯å´©å£Šã—ã€è‚‰ä½“ã¯æŠœã‘æ®»ã¨ãªã£ãŸã€‚", m_idx);
 #else
 				mon_take_hit_mon(t_idx, damroll(12, 15), &fear, " collapses, a mindless husk.", m_idx);
 #endif
@@ -1601,7 +1601,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_m)
 				{
 #ifdef JP
-					msg_format("%^s¤Ï%s¤ò»Ø¤µ¤·¤Æ¼ö¤¤¤ò¤«¤±¤¿¡£", m_name, t_name);
+					msg_format("%^sã¯%sã‚’æŒ‡ã•ã—ã¦å‘ªã„ã‚’ã‹ã‘ãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s points at %s and curses.", m_name, t_name);
 #endif
@@ -1615,7 +1615,7 @@ bool monst_spell_monst(int m_idx)
 			if (tr_ptr->level > randint1((rlev - 10) < 1 ? 1 : (rlev - 10)) + 10)
 			{
 #ifdef JP
-				if (see_both) msg_format("%^s¤ÏÂÑÀ­¤ò»ı¤Ã¤Æ¤¤¤ë¡ª", t_name);
+				if (see_both) msg_format("%^sã¯è€æ€§ã‚’æŒã£ã¦ã„ã‚‹ï¼", t_name);
 #else
 				if (see_both) msg_format("%^s resists!", t_name);
 #endif
@@ -1623,7 +1623,7 @@ bool monst_spell_monst(int m_idx)
 			else
 			{
 #ifdef JP
-				mon_take_hit_mon(t_idx, damroll(3, 8), &fear, "¤Ï»à¤ó¤À¡£", m_idx);
+				mon_take_hit_mon(t_idx, damroll(3, 8), &fear, "ã¯æ­»ã‚“ã ã€‚", m_idx);
 #else
 				mon_take_hit_mon(t_idx, damroll(3, 8), &fear, " is destroyed.", m_idx);
 #endif
@@ -1641,7 +1641,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_m)
 				{
 #ifdef JP
-					msg_format("%^s¤Ï%s¤ò»Ø¤µ¤·¤Æ¶²¤í¤·¤²¤Ë¼ö¤¤¤ò¤«¤±¤¿¡£", m_name, t_name);
+					msg_format("%^sã¯%sã‚’æŒ‡ã•ã—ã¦æã‚ã—ã’ã«å‘ªã„ã‚’ã‹ã‘ãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s points at %s and curses horribly.", m_name, t_name);
 #endif
@@ -1655,7 +1655,7 @@ bool monst_spell_monst(int m_idx)
 			if (tr_ptr->level > randint1((rlev - 10) < 1 ? 1 : (rlev - 10)) + 10)
 			{
 #ifdef JP
-				if (see_both) msg_format("%^s¤ÏÂÑÀ­¤ò»ı¤Ã¤Æ¤¤¤ë¡ª", t_name);
+				if (see_both) msg_format("%^sã¯è€æ€§ã‚’æŒã£ã¦ã„ã‚‹ï¼", t_name);
 #else
 				if (see_both) msg_format("%^s resists!", t_name);
 #endif
@@ -1663,7 +1663,7 @@ bool monst_spell_monst(int m_idx)
 			else
 			{
 #ifdef JP
-				mon_take_hit_mon(t_idx, damroll(3, 8), &fear, "¤Ï»à¤ó¤À¡£", m_idx);
+				mon_take_hit_mon(t_idx, damroll(3, 8), &fear, "ã¯æ­»ã‚“ã ã€‚", m_idx);
 #else
 				mon_take_hit_mon(t_idx, damroll(8, 8), &fear, " is destroyed.", m_idx);
 #endif
@@ -1681,7 +1681,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_m)
 				{
 #ifdef JP
-					msg_format("%^s¤Ï%s¤ò»Ø¤µ¤·¡¢¶²¤í¤·¤²¤Ë¼öÊ¸¤ò¾§¤¨¤¿¡ª", m_name, t_name);
+					msg_format("%^sã¯%sã‚’æŒ‡ã•ã—ã€æã‚ã—ã’ã«å‘ªæ–‡ã‚’å”±ãˆãŸï¼", m_name, t_name);
 #else
 					msg_format("%^s points at %s, incanting terribly!", m_name, t_name);
 #endif
@@ -1695,7 +1695,7 @@ bool monst_spell_monst(int m_idx)
 			if (tr_ptr->level > randint1((rlev - 10) < 1 ? 1 : (rlev - 10)) + 10)
 			{
 #ifdef JP
-				if (see_both) msg_format("%^s¤ÏÂÑÀ­¤ò»ı¤Ã¤Æ¤¤¤ë¡ª", t_name);
+				if (see_both) msg_format("%^sã¯è€æ€§ã‚’æŒã£ã¦ã„ã‚‹ï¼", t_name);
 #else
 				if (see_both) msg_format("%^s resists!", t_name);
 #endif
@@ -1703,7 +1703,7 @@ bool monst_spell_monst(int m_idx)
 			else
 			{
 #ifdef JP
-				mon_take_hit_mon(t_idx, damroll(10, 15), &fear, "¤Ï»à¤ó¤À¡£", m_idx);
+				mon_take_hit_mon(t_idx, damroll(10, 15), &fear, "ã¯æ­»ã‚“ã ã€‚", m_idx);
 #else
 				mon_take_hit_mon(t_idx, damroll(10, 15), &fear, " is destroyed.", m_idx);
 #endif
@@ -1721,7 +1721,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_m)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤ò»Øº¹¤·¡¢¡Ö»à¤Í¡ª¡×¤È¶«¤ó¤À¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã‚’æŒ‡å·®ã—ã€ã€Œæ­»ã­ï¼ã€ã¨å«ã‚“ã ã€‚", m_name, t_name);
 #else
 					msg_format("%^s points at %s, screaming the word, 'DIE!'", m_name, t_name);
 #endif
@@ -1735,7 +1735,7 @@ bool monst_spell_monst(int m_idx)
 			if (tr_ptr->level > randint1((rlev - 10) < 1 ? 1 : (rlev - 10)) + 10)
 			{
 #ifdef JP
-				if (see_both) msg_format("%^s¤ÏÂÑÀ­¤ò»ı¤Ã¤Æ¤¤¤ë¡ª", t_name);
+				if (see_both) msg_format("%^sã¯è€æ€§ã‚’æŒã£ã¦ã„ã‚‹ï¼", t_name);
 #else
 				if (see_both) msg_format("%^s resists!", t_name);
 #endif
@@ -1743,7 +1743,7 @@ bool monst_spell_monst(int m_idx)
 			else
 			{
 #ifdef JP
-				mon_take_hit_mon(t_idx, damroll(10, 15), &fear, "¤Ï»à¤ó¤À¡£", m_idx);
+				mon_take_hit_mon(t_idx, damroll(10, 15), &fear, "ã¯æ­»ã‚“ã ã€‚", m_idx);
 #else
 				mon_take_hit_mon(t_idx, damroll(15, 15), &fear, " is destroyed.", m_idx);
 #endif
@@ -1761,7 +1761,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥¢¥·¥Ã¥É¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					msg_format("%sãŒ%sã«å‘ã‹ã£ã¦ã‚¢ã‚·ãƒƒãƒ‰ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts an acid bolt at %s.", m_name, t_name);
 #endif
@@ -1786,7 +1786,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥µ¥ó¥À¡¼¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦ã‚µãƒ³ãƒ€ãƒ¼ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a lightning bolt at %s.", m_name, t_name);
 #endif
@@ -1811,7 +1811,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥Õ¥¡¥¤¥¢¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦ãƒ•ã‚¡ã‚¤ã‚¢ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a fire bolt at %s.", m_name, t_name);
 #endif
@@ -1836,7 +1836,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥¢¥¤¥¹¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦ã‚¢ã‚¤ã‚¹ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a frost bolt at %s.", m_name, t_name);
 #endif
@@ -1861,7 +1861,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥İ¥¤¥º¥ó¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦ãƒã‚¤ã‚ºãƒ³ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a poison bolt at %s.", m_name, t_name);
 #endif
@@ -1886,7 +1886,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤ÆÃÏ¹ö¤ÎÌğ¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦åœ°ç„ã®çŸ¢ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a nether bolt at %s.", m_name, t_name);
 #endif
@@ -1911,7 +1911,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥¦¥©¡¼¥¿¡¼¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦ã‚¦ã‚©ãƒ¼ã‚¿ãƒ¼ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a water bolt at %s.", m_name, t_name);
 #endif
@@ -1936,7 +1936,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤ÆËâÎÏ¤ÎÌğ¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦é­”åŠ›ã®çŸ¢ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a mana bolt at %s.", m_name, t_name);
 #endif
@@ -1960,7 +1960,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥×¥é¥º¥Ş¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦ãƒ—ãƒ©ã‚ºãƒãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a plasma bolt at %s.", m_name, t_name);
 #endif
@@ -1985,7 +1985,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¶Ë´¨¤ÎÌğ¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦æ¥µå¯’ã®çŸ¢ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts an ice bolt at %s.", m_name, t_name);
 #endif
@@ -2010,7 +2010,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤Ë¸ş¤«¤Ã¤Æ¥Ş¥¸¥Ã¥¯¡¦¥ß¥µ¥¤¥ë¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã«å‘ã‹ã£ã¦ãƒã‚¸ãƒƒã‚¯ãƒ»ãƒŸã‚µã‚¤ãƒ«ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a magic missile at %s.", m_name, t_name);
 #endif
@@ -2034,7 +2034,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬¶²¤í¤·¤²¤Ê¸¸³Ğ¤òºî¤ê½Ğ¤·¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒæã‚ã—ã’ãªå¹»è¦šã‚’ä½œã‚Šå‡ºã—ãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a fearful illusion in front of %s.", m_name, t_name);
 #endif
@@ -2049,7 +2049,7 @@ bool monst_spell_monst(int m_idx)
 			if (tr_ptr->flags3 & RF3_NO_FEAR)
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤Ï¶²Éİ¤ò´¶¤¸¤Ê¤¤¡£", t_name);
+				if (see_t) msg_format("%^sã¯ææ€–ã‚’æ„Ÿã˜ãªã„ã€‚", t_name);
 #else
 				if (see_t) msg_format("%^s refuses to be frightened.", t_name);
 #endif
@@ -2057,7 +2057,7 @@ bool monst_spell_monst(int m_idx)
 			else if (tr_ptr->level > randint1((rlev - 10) < 1 ? 1 : (rlev - 10)) + 10)
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤Ï¶²Éİ¤ò´¶¤¸¤Ê¤¤¡£", t_name);
+				if (see_t) msg_format("%^sã¯ææ€–ã‚’æ„Ÿã˜ãªã„ã€‚", t_name);
 #else
 				if (see_t) msg_format("%^s refuses to be frightened.", t_name);
 #endif
@@ -2080,7 +2080,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%s¤Ï¼öÊ¸¤ò¾§¤¨¤Æ%s¤ÎÌÜ¤ò¾Æ¤­ÉÕ¤«¤»¤¿¡£", m_name, t_name);
+					msg_format("%sã¯å‘ªæ–‡ã‚’å”±ãˆã¦%sã®ç›®ã‚’ç„¼ãä»˜ã‹ã›ãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a spell, burning %s%s eyes.", m_name, t_name,
 								  (streq(t_name, "it") ? "s" : "'s"));
@@ -2096,7 +2096,7 @@ bool monst_spell_monst(int m_idx)
 			if (tr_ptr->flags3 & RF3_NO_CONF)
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", t_name);
+				if (see_t) msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", t_name);
 #else
 				if (see_t) msg_format("%^s is unaffected.", t_name);
 #endif
@@ -2104,7 +2104,7 @@ bool monst_spell_monst(int m_idx)
 			else if (tr_ptr->level > randint1((rlev - 10) < 1 ? 1 : (rlev - 10)) + 10)
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", t_name);
+				if (see_t) msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", t_name);
 #else
 				if (see_t) msg_format("%^s is unaffected.", t_name);
 #endif
@@ -2112,7 +2112,7 @@ bool monst_spell_monst(int m_idx)
 			else
 			{
 #ifdef JP
-				if (see_t)   msg_format("%^s¤ÏÌÜ¤¬¸«¤¨¤Ê¤¯¤Ê¤Ã¤¿¡ª ", t_name);
+				if (see_t)   msg_format("%^sã¯ç›®ãŒè¦‹ãˆãªããªã£ãŸï¼ ", t_name);
 #else
 				if (see_t) msg_format("%^s is blinded!", t_name);
 #endif
@@ -2131,7 +2131,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤ÎÁ°¤Ë¸¸ÏÇÅª¤Ê¸¸¤ò¤Ä¤¯¤ê½Ğ¤·¤¿¡£", m_name, t_name);
+					msg_format("%^sãŒ%sã®å‰ã«å¹»æƒ‘çš„ãªå¹»ã‚’ã¤ãã‚Šå‡ºã—ãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s casts a mesmerizing illusion in front of %s.", m_name, t_name);
 #endif
@@ -2145,7 +2145,7 @@ bool monst_spell_monst(int m_idx)
 			if (tr_ptr->flags3 & RF3_NO_CONF)
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤ÏÏÇ¤ï¤µ¤ì¤Ê¤«¤Ã¤¿¡£", t_name);
+				if (see_t) msg_format("%^sã¯æƒ‘ã‚ã•ã‚Œãªã‹ã£ãŸã€‚", t_name);
 #else
 				if (see_t) msg_format("%^s disbelieves the feeble spell.", t_name);
 #endif
@@ -2153,7 +2153,7 @@ bool monst_spell_monst(int m_idx)
 			else if (tr_ptr->level > randint1((rlev - 10) < 1 ? 1 : (rlev - 10)) + 10)
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤ÏÏÇ¤ï¤µ¤ì¤Ê¤«¤Ã¤¿¡£", t_name);
+				if (see_t) msg_format("%^sã¯æƒ‘ã‚ã•ã‚Œãªã‹ã£ãŸã€‚", t_name);
 #else
 				if (see_t) msg_format("%^s disbelieves the feeble spell.", t_name);
 #endif
@@ -2161,7 +2161,7 @@ bool monst_spell_monst(int m_idx)
 			else
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤Ïº®Íğ¤·¤¿¤è¤¦¤À¡£", t_name);
+				if (see_t) msg_format("%^sã¯æ··ä¹±ã—ãŸã‚ˆã†ã ã€‚", t_name);
 #else
 				if (see_t) msg_format("%^s seems confused.", t_name);
 #endif
@@ -2180,7 +2180,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%s¤¬%s¤Î¶ÚÆù¤«¤éÎÏ¤òµÛ¤¤¤È¤Ã¤¿¡£", m_name, t_name);
+					msg_format("%sãŒ%sã®ç­‹è‚‰ã‹ã‚‰åŠ›ã‚’å¸ã„ã¨ã£ãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s drains power from %s%s muscles.", m_name, t_name,
 								  (streq(t_name, "it") ? "s" : "'s"));
@@ -2195,7 +2195,7 @@ bool monst_spell_monst(int m_idx)
 			if (tr_ptr->flags1 & RF1_UNIQUE)
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", t_name);
+				if (see_t) msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", t_name);
 #else
 				if (see_t) msg_format("%^s is unaffected.", t_name);
 #endif
@@ -2203,7 +2203,7 @@ bool monst_spell_monst(int m_idx)
 			else if (tr_ptr->level > randint1((rlev - 10) < 1 ? 1 : (rlev - 10)) + 10)
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", t_name);
+				if (see_t) msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", t_name);
 #else
 				if (see_t) msg_format("%^s is unaffected.", t_name);
 #endif
@@ -2213,7 +2213,7 @@ bool monst_spell_monst(int m_idx)
 				if (!t_ptr->slowed)
 				{
 #ifdef JP
-					if (see_t) msg_format("%s¤ÎÆ°¤­¤¬ÃÙ¤¯¤Ê¤Ã¤¿¡£", t_name);
+					if (see_t) msg_format("%sã®å‹•ããŒé…ããªã£ãŸã€‚", t_name);
 #else
 					if (see_t) msg_format("%^s starts moving slower.", t_name);
 #endif
@@ -2233,7 +2233,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤Ï%s¤ò¤¸¤Ã¤È¸«¤Ä¤á¤¿¡£", m_name, t_name);
+					msg_format("%^sã¯%sã‚’ã˜ã£ã¨è¦‹ã¤ã‚ãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s stares intently at %s.", m_name, t_name);
 #endif
@@ -2247,7 +2247,7 @@ bool monst_spell_monst(int m_idx)
 			if ((tr_ptr->flags1 & RF1_UNIQUE) || (tr_ptr->flags3 & RF3_NO_STUN))
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", t_name);
+				if (see_t) msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", t_name);
 #else
 				if (see_t) msg_format("%^s is unaffected.", t_name);
 #endif
@@ -2255,7 +2255,7 @@ bool monst_spell_monst(int m_idx)
 			else if (tr_ptr->level > randint1((rlev - 10) < 1 ? 1 : (rlev - 10)) + 10)
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", t_name);
+				if (see_t) msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", t_name);
 #else
 				if (see_t) msg_format("%^s is unaffected.", t_name);
 #endif
@@ -2263,7 +2263,7 @@ bool monst_spell_monst(int m_idx)
 			else
 			{
 #ifdef JP
-				if (see_t) msg_format("%^s¤ÏËãáã¤·¤¿¡ª", t_name);
+				if (see_t) msg_format("%^sã¯éº»ç—ºã—ãŸï¼", t_name);
 #else
 				if (see_t) msg_format("%^s is paralyzed!", t_name);
 #endif
@@ -2283,7 +2283,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_m)
 				{
 #ifdef JP
-					msg_format("%^s¤¬¼«Ê¬¤ÎÂÎ¤ËÇ°¤òÁ÷¤Ã¤¿¡£", m_name, m_poss);
+					msg_format("%^sãŒè‡ªåˆ†ã®ä½“ã«å¿µã‚’é€ã£ãŸã€‚", m_name, m_poss);
 #else
 					msg_format("%^s concentrates on %s body.", m_name, m_poss);
 #endif
@@ -2298,7 +2298,7 @@ bool monst_spell_monst(int m_idx)
 			if (!m_ptr->hasted)
 			{
 #ifdef JP
-				if (see_m) msg_format("%^s¤ÎÆ°¤­¤¬Â®¤¯¤Ê¤Ã¤¿¡£", m_name);
+				if (see_m) msg_format("%^sã®å‹•ããŒé€Ÿããªã£ãŸã€‚", m_name);
 #else
 				if (see_m) msg_format("%^s starts moving faster.", m_name);
 #endif
@@ -2315,7 +2315,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_m)
 				{
 #ifdef JP
-					msg_format("%^s¤¬%s¤Ë<ÇËÌÇ¤Î¼ê>¤òÊü¤Ã¤¿¡ª", m_name, t_name);
+					msg_format("%^sãŒ%sã«<ç ´æ»…ã®æ‰‹>ã‚’æ”¾ã£ãŸï¼", m_name, t_name);
 #else
 					msg_format("%^s invokes the Hand of Doom upon %s!", m_name, t_name);
 #endif
@@ -2330,7 +2330,7 @@ bool monst_spell_monst(int m_idx)
 			if (tr_ptr->flags1 & RF1_UNIQUE)
 			{
 #ifdef JP
-				if (see_both) msg_format("¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª", t_name);
+				if (see_both) msg_format("ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼", t_name);
 #else
 				if (see_both) msg_format("^%s is unaffected!", t_name);
 #endif
@@ -2348,7 +2348,7 @@ bool monst_spell_monst(int m_idx)
 				else
 				{
 #ifdef JP
-					if (see_both) msg_format("%^s¤ÏÂÑÀ­¤ò»ı¤Ã¤Æ¤¤¤ë¡ª", t_name);
+					if (see_both) msg_format("%^sã¯è€æ€§ã‚’æŒã£ã¦ã„ã‚‹ï¼", t_name);
 #else
 					if (see_both) msg_format("%^s resists!", t_name);
 #endif
@@ -2367,7 +2367,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_m)
 				{
 #ifdef JP
-					msg_format("%^s¤Ï¼«Ê¬¤Î½ı¤ËÇ°¤ò½¸Ãæ¤·¤¿¡£", m_name);
+					msg_format("%^sã¯è‡ªåˆ†ã®å‚·ã«å¿µã‚’é›†ä¸­ã—ãŸã€‚", m_name);
 #else
 					msg_format("%^s concentrates on %s wounds.", m_name, m_poss);
 #endif
@@ -2392,7 +2392,7 @@ bool monst_spell_monst(int m_idx)
 					if (see_m)
 					{
 #ifdef JP
-						msg_format("%^s¤Ï´°Á´¤Ë¼£¤Ã¤¿¡ª", m_name);
+						msg_format("%^sã¯å®Œå…¨ã«æ²»ã£ãŸï¼", m_name);
 #else
 						msg_format("%^s looks completely healed!", m_name);
 #endif
@@ -2410,7 +2410,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_m)
 				{
 #ifdef JP
-					msg_format("%^s¤ÏÂÎÎÏ¤ò²óÉü¤·¤¿¤è¤¦¤À¡£", m_name);
+					msg_format("%^sã¯ä½“åŠ›ã‚’å›å¾©ã—ãŸã‚ˆã†ã ã€‚", m_name);
 #else
 					msg_format("%^s looks healthier.", m_name);
 #endif
@@ -2432,7 +2432,7 @@ bool monst_spell_monst(int m_idx)
 
 				/* Message */
 #ifdef JP
-				if (see_m) msg_format("%^s¤ÏÍ¦µ¤¤ò¼è¤êÌá¤·¤¿¡£", m_name);
+				if (see_m) msg_format("%^sã¯å‹‡æ°—ã‚’å–ã‚Šæˆ»ã—ãŸã€‚", m_name);
 #else
 				if (see_m) msg_format("%^s recovers %s courage.", m_name, m_poss);
 #endif
@@ -2450,7 +2450,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%s¤ÏÌµ½ı¤Îµå¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+					msg_format("%sã¯ç„¡å‚·ã®çƒã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 					msg_format("%^s casts a Globe of Invulnerability.", m_name);
 #endif
@@ -2475,7 +2475,7 @@ bool monst_spell_monst(int m_idx)
 			if (see_m)
 			{
 #ifdef JP
-				msg_format("%^s¤¬½Ö»ş¤Ë¾Ã¤¨¤¿¡£", m_name);
+				msg_format("%^sãŒç¬æ™‚ã«æ¶ˆãˆãŸã€‚", m_name);
 #else
 				msg_format("%^s blinks away.", m_name);
 #endif
@@ -2491,7 +2491,7 @@ bool monst_spell_monst(int m_idx)
 			if (see_m)
 			{
 #ifdef JP
-				msg_format("%^s¤¬¥Æ¥ì¥İ¡¼¥È¤·¤¿¡£", m_name);
+				msg_format("%^sãŒãƒ†ãƒ¬ãƒãƒ¼ãƒˆã—ãŸã€‚", m_name);
 #else
 				msg_format("%^s teleports away.", m_name);
 #endif
@@ -2531,7 +2531,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_either)
 				{
 #ifdef JP
-					msg_format("%^s¤Ï%s¤ò¥Æ¥ì¥İ¡¼¥È¤µ¤»¤¿¡£", m_name, t_name);
+					msg_format("%^sã¯%sã‚’ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã•ã›ãŸã€‚", m_name, t_name);
 #else
 					msg_format("%^s teleports %s away.", m_name, t_name);
 #endif
@@ -2550,7 +2550,7 @@ bool monst_spell_monst(int m_idx)
 					{
 						tr_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-						msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", t_name);
+						msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", t_name);
 #else
 						msg_format("%^s is unaffected!", t_name);
 #endif
@@ -2564,7 +2564,7 @@ bool monst_spell_monst(int m_idx)
 					{
 						tr_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-						msg_format("%^s¤ÏÂÑÀ­¤ò»ı¤Ã¤Æ¤¤¤ë¡ª", t_name);
+						msg_format("%^sã¯è€æ€§ã‚’æŒã£ã¦ã„ã‚‹ï¼", t_name);
 #else
 						msg_format("%^s resists!", t_name);
 #endif
@@ -2603,7 +2603,7 @@ bool monst_spell_monst(int m_idx)
 				if (see_m)
 				{
 #ifdef JP
-					msg_format("%^s¤¬°Å°Ç¤ÎÃæ¤Ç¼ê¤ò¿¶¤Ã¤¿¡£", m_name);
+					msg_format("%^sãŒæš—é—‡ã®ä¸­ã§æ‰‹ã‚’æŒ¯ã£ãŸã€‚", m_name);
 #else
 					msg_format("%^s gestures in shadow.", m_name);
 #endif
@@ -2611,7 +2611,7 @@ bool monst_spell_monst(int m_idx)
 					if (see_t)
 					{
 #ifdef JP
-						msg_format("%^s¤Ï°Å°Ç¤ËÊñ¤Ş¤ì¤¿¡£", t_name);
+						msg_format("%^sã¯æš—é—‡ã«åŒ…ã¾ã‚ŒãŸã€‚", t_name);
 #else
 						msg_format("%^s is surrounded by darkness.", t_name);
 #endif
@@ -2659,8 +2659,8 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%s¤¬ËâË¡¤Ç%s¤ò¾¤´­¤·¤¿¡£", m_name,
-						((r_ptr->flags1 & RF1_UNIQUE) ? "¼ê²¼" : "Ãç´Ö"));
+					msg_format("%sãŒé­”æ³•ã§%sã‚’å¬å–šã—ãŸã€‚", m_name,
+						((r_ptr->flags1 & RF1_UNIQUE) ? "æ‰‹ä¸‹" : "ä»²é–“"));
 #else
 					msg_format("%^s magically summons %s %s.", m_name, m_poss,
 								  ((r_ptr->flags1 & RF1_UNIQUE) ? "minions" : "kin"));
@@ -2697,7 +2697,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬¥µ¥¤¥Ğ¡¼¥Ç¡¼¥â¥ó¤ò¾¤´­¤·¤¿¡ª", m_name);
+					msg_format("%^sãŒã‚µã‚¤ãƒãƒ¼ãƒ‡ãƒ¼ãƒ¢ãƒ³ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 					msg_format("%^s magically summons Cyberdemons!", m_name);
 #endif
@@ -2730,7 +2730,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤ÇÃç´Ö¤ò¾¤´­¤·¤¿¡ª", m_name);
+					msg_format("%^sãŒé­”æ³•ã§ä»²é–“ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 					msg_format("%^s magically summons help!", m_name);
 #endif
@@ -2763,7 +2763,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤Ç¥â¥ó¥¹¥¿¡¼¤ò¾¤´­¤·¤¿¡ª", m_name);
+					msg_format("%^sãŒé­”æ³•ã§ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 					msg_format("%^s magically summons monsters!", m_name);
 #endif
@@ -2797,7 +2797,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤Ç¥¢¥ê¤ò¾¤´­¤·¤¿¡£", m_name);
+					msg_format("%^sãŒé­”æ³•ã§ã‚¢ãƒªã‚’å¬å–šã—ãŸã€‚", m_name);
 #else
 					msg_format("%^s magically summons ants.", m_name);
 #endif
@@ -2831,7 +2831,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤Ç¥¯¥â¤ò¾¤´­¤·¤¿¡£", m_name);
+					msg_format("%^sãŒé­”æ³•ã§ã‚¯ãƒ¢ã‚’å¬å–šã—ãŸã€‚", m_name);
 #else
 					msg_format("%^s magically summons spiders.", m_name);
 #endif
@@ -2865,7 +2865,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤Ç¥Ï¥¦¥ó¥É¤ò¾¤´­¤·¤¿¡£", m_name);
+					msg_format("%^sãŒé­”æ³•ã§ãƒã‚¦ãƒ³ãƒ‰ã‚’å¬å–šã—ãŸã€‚", m_name);
 #else
 					msg_format("%^s magically summons hounds.", m_name);
 #endif
@@ -2899,7 +2899,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤Ç¥Ò¥É¥é¤ò¾¤´­¤·¤¿¡£", m_name);
+					msg_format("%^sãŒé­”æ³•ã§ãƒ’ãƒ‰ãƒ©ã‚’å¬å–šã—ãŸã€‚", m_name);
 #else
 					msg_format("%^s magically summons hydras.", m_name);
 #endif
@@ -2933,7 +2933,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤ÇÅ·»È¤ò¾¤´­¤·¤¿¡ª", m_name);
+					msg_format("%^sãŒé­”æ³•ã§å¤©ä½¿ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 					msg_format("%^s magically summons an angel!", m_name);
 #endif
@@ -2967,7 +2967,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤ÇÃÏ¹ö¤Î¶¯Å¨¤ò¾¤´­¤·¤¿¡ª", m_name);
+					msg_format("%^sãŒé­”æ³•ã§åœ°ç„ã®å¼·æ•µã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 					msg_format("%^s magically summons a hellish adversary!", m_name);
 #endif
@@ -3001,7 +3001,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%s¤¬ËâË¡¤Ç¥¢¥ó¥Ç¥Ã¥É¤ò¾¤´­¤·¤¿¡£", m_name);
+					msg_format("%sãŒé­”æ³•ã§ã‚¢ãƒ³ãƒ‡ãƒƒãƒ‰ã‚’å¬å–šã—ãŸã€‚", m_name);
 #else
 					msg_format("%^s magically summons undead.", m_name);
 #endif
@@ -3035,7 +3035,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤Ç¥É¥é¥´¥ó¤ò¾¤´­¤·¤¿¡ª", m_name);
+					msg_format("%^sãŒé­”æ³•ã§ãƒ‰ãƒ©ã‚´ãƒ³ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 					msg_format("%^s magically summons a dragon!", m_name);
 #endif
@@ -3071,7 +3071,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%s¤¬ËâË¡¤Ç¥¢¥ó¥Ç¥Ã¥É¤ò¾¤´­¤·¤¿¡£", m_name);
+					msg_format("%sãŒé­”æ³•ã§ã‚¢ãƒ³ãƒ‡ãƒƒãƒ‰ã‚’å¬å–šã—ãŸã€‚", m_name);
 #else
 					msg_format("%^s magically summons undead.", m_name);
 #endif
@@ -3107,7 +3107,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤Ç¥É¥é¥´¥ó¤ò¾¤´­¤·¤¿¡ª", m_name);
+					msg_format("%^sãŒé­”æ³•ã§ãƒ‰ãƒ©ã‚´ãƒ³ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 					msg_format("%^s magically summons dragons!", m_name);
 #endif
@@ -3141,7 +3141,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤ÇÃÏ¹ö¤Î¶¯Å¨¤ò¾¤´­¤·¤¿¡ª", m_name);
+					msg_format("%^sãŒé­”æ³•ã§åœ°ç„ã®å¼·æ•µã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 					msg_format("%^s magically summons a hellish adversary!", m_name);
 #endif
@@ -3175,7 +3175,7 @@ bool monst_spell_monst(int m_idx)
 				{
 					disturb(1, 0);
 #ifdef JP
-					msg_format("%^s¤¬ËâË¡¤ÇÆÃÊÌ¤Ê¶¯Å¨¤ò¾¤´­¤·¤¿¡ª", m_name);
+					msg_format("%^sãŒé­”æ³•ã§ç‰¹åˆ¥ãªå¼·æ•µã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 					msg_format("%^s magically summons special opponents!", m_name);
 #endif
@@ -3210,7 +3210,7 @@ bool monst_spell_monst(int m_idx)
 	if (fear && see_t)
 	{
 #ifdef JP
-		msg_format("%^s¤Ï¶²Éİ¤·¤ÆÆ¨¤²½Ğ¤·¤¿¡ª", t_name);
+		msg_format("%^sã¯ææ€–ã—ã¦é€ƒã’å‡ºã—ãŸï¼", t_name);
 #else
 		msg_format("%^s flees in terror!", t_name);
 #endif

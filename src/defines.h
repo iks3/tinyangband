@@ -1,4 +1,4 @@
-/* File: defines.h */
+ï»¿/* File: defines.h */
 
 /* Purpose: global constants and macro definitions */
 
@@ -3582,7 +3582,7 @@ extern int PlayerUID;
 #define DETECT_RAD_ALL     255
 
 /*
- * ÊÑ¶ò¥â¡¼¥É¤Ç¤¤¤¯¤Ä¤«¤Î¥ª¥×¥·¥ç¥ó¤Ï¾ï¤ËON¤È¹Í¤¨¤ë¤¿¤á¤Î¥Ş¥¯¥í¡£
+ * å¤‰æ„šãƒ¢ãƒ¼ãƒ‰ã§ã„ãã¤ã‹ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯å¸¸ã«ONã¨è€ƒãˆã‚‹ãŸã‚ã®ãƒã‚¯ãƒ­ã€‚
  */
 
 #define X_stupid_monsters (stupid_monsters && !ironman_hengband)

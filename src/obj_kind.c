@@ -1,4 +1,4 @@
-/* File: obj_kind.c */
+ï»¿/* File: obj_kind.c */
 
 /* Purpose: Code for the object templates */
 
@@ -77,7 +77,7 @@ object_kind *k_info_add(object_kind *k_info_entry)
 
 		/* Failure */
 #ifdef JP
-if (!k_info) quit("¥á¥â¥ê¡¼ÉÔÂ­!");
+if (!k_info) quit("ãƒ¡ãƒ¢ãƒªãƒ¼ä¸è¶³!");
 #else
 		if (!k_info) quit("Out of memory!");
 #endif
@@ -156,7 +156,7 @@ errr init_object_alloc(void)
 
 	/* Paranoia */
 #ifdef JP
-if (!num[0]) quit("Ä®¤Î¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡ª");
+if (!num[0]) quit("ç”ºã®ã‚¢ã‚¤ãƒ†ãƒ ãŒãªã„ï¼");
 #else
 	if (!num[0]) quit("No town objects!");
 #endif

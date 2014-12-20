@@ -1,4 +1,4 @@
-/* File: flavor.c */
+ï»¿/* File: flavor.c */
 
 /* Purpose: Object flavor code */
 
@@ -114,7 +114,7 @@ void get_table_name(char *out_string)
 #ifndef JP
 	tmp[1] = toupper(tmp[1]);
 #endif
-	sprintf(out_string, _("¡Ø%s¡Ù", "'%s'"), tmp);
+	sprintf(out_string, _("ã€%sã€", "'%s'"), tmp);
 
 	return;
 }
@@ -132,7 +132,7 @@ void get_table_sindarin(char *out_string)
 	strcat(tmp, Syllable);
 #ifdef JP
 	sindarin_to_kana(Syllable, tmp);
-	sprintf(out_string, "¡Ø%s¡Ù", Syllable);
+	sprintf(out_string, "ã€%sã€", Syllable);
 #else
 	tmp[0] = toupper(tmp[0]);
 	sprintf(out_string, "'%s'", tmp);
@@ -149,7 +149,7 @@ void get_table_bad_sindarin(char *out_string)
 	strcpy(tmp, Syllable);
 #ifdef JP
 	sindarin_to_kana(Syllable, tmp);
-	sprintf(out_string, "¡Ø%s¡Ù", Syllable);
+	sprintf(out_string, "ã€%sã€", Syllable);
 #else
 	tmp[0] = toupper(tmp[0]);
 	sprintf(out_string, "'%s'", tmp);
@@ -468,8 +468,8 @@ static char *object_desc_num(char *t, uint n)
 
 #ifdef JP
 /*
- * ÆüËÜ¸ì¤Î¸Ä¿ôÉ½¼¨¥ë¡¼¥Á¥ó
- *¡Êcmd1.c ¤ÇÎ®ÍÑ¤¹¤ë¤¿¤á¤Ë object_desc_japanese ¤«¤é°ÜÆ°¤·¤¿¡£¡Ë
+ * æ—¥æœ¬èªã®å€‹æ•°è¡¨ç¤ºãƒ«ãƒ¼ãƒãƒ³
+ *ï¼ˆcmd1.c ã§æµç”¨ã™ã‚‹ãŸã‚ã« object_desc_japanese ã‹ã‚‰ç§»å‹•ã—ãŸã€‚ï¼‰
  */
 
 char *object_desc_kosuu(char *t, const object_type *o_ptr)
@@ -486,23 +486,23 @@ char *object_desc_kosuu(char *t, const object_type *o_ptr)
 		case TV_ROD:
 		case TV_DIGGING:
 		{
-			t = object_desc_str(t, "ËÜ");
+			t = object_desc_str(t, "æœ¬");
 			break;
 		}
 		case TV_SCROLL:
 		{
-			t = object_desc_str(t, "´¬");
+			t = object_desc_str(t, "å·»");
 			break;
 		}
 		case TV_POTION:
 		{
-			t = object_desc_str(t, "Éş");
+			t = object_desc_str(t, "æœ");
 			break;
 		}
 		case TV_LIFE_BOOK:
 		case TV_SORCERY_BOOK:
 		{
-			t = object_desc_str(t, "ºı");
+			t = object_desc_str(t, "å†Š");
 			break;
 		}
 		case TV_SOFT_ARMOR:
@@ -510,28 +510,28 @@ char *object_desc_kosuu(char *t, const object_type *o_ptr)
 		case TV_DRAG_ARMOR:
 		case TV_CLOAK:
 		{
-			t = object_desc_str(t, "Ãå");
+			t = object_desc_str(t, "ç€");
 			break;
 		}
 		case TV_SWORD:
 		case TV_HAFTED:
 		case TV_BOW:
 		{
-			t = object_desc_str(t, "¿¶");
+			t = object_desc_str(t, "æŒ¯");
 			break;
 		}
 		case TV_BOOTS:
 		{
-			t = object_desc_str(t, "Â­");
+			t = object_desc_str(t, "è¶³");
 			break;
 		}
 #if 0
-		/* ¿©¤Ù¤â¤Î by ita */
+		/* é£Ÿã¹ã‚‚ã® by ita */
 		case TV_FOOD:
 		{
 			if (o_ptr->sval == SV_FOOD_JERKY)
 			{
-				t = object_desc_str(t, "ÀÚ¤ì");
+				t = object_desc_str(t, "åˆ‡ã‚Œ");
 				break;
 			}
 		}
@@ -540,11 +540,11 @@ char *object_desc_kosuu(char *t, const object_type *o_ptr)
 		{
 			if (o_ptr->number < 10)
 			{
-				t = object_desc_str(t, "¤Ä");
+				t = object_desc_str(t, "ã¤");
 			}
 			else
 			{
-				t = object_desc_str(t, "¸Ä");
+				t = object_desc_str(t, "å€‹");
 			}
 			break;
 		}
@@ -621,127 +621,127 @@ typedef struct flag_insc_table
 
 static flag_insc_table flag_insc_plus[] =
 {
-	{ "¹¶", "At", TR1_BLOWS, 1, 0 },
-	{ "Â®", "Sp", TR1_SPEED, 1, 0 },
-	{ "ÏÓ", "St", TR1_STR, 1, 0 },
-	{ "ÃÎ", "In", TR1_INT, 1, 0 },
-	{ "¸­", "Wi", TR1_WIS, 1, 0 },
-	{ "´ï", "Dx", TR1_DEX, 1, 0 },
-	{ "ÂÑ", "Cn", TR1_CON, 1, 0 },
-	{ "Ì¥", "Ch", TR1_CHR, 1, 0 },
-	{ "¶ñ", "Sl", TR1_MAGIC_MASTERY, 1, 0 },
-	{ "±£", "Sl", TR1_STEALTH, 1, 0 },
-	{ "Ãµ", "Sr", TR1_SEARCH, 1, 0 },
-	{ "ÀÖ", "If", TR1_INFRA, 1, 0 },
-	{ "·¡", "Dg", TR1_TUNNEL, 1, 0 },
+	{ "æ”»", "At", TR1_BLOWS, 1, 0 },
+	{ "é€Ÿ", "Sp", TR1_SPEED, 1, 0 },
+	{ "è…•", "St", TR1_STR, 1, 0 },
+	{ "çŸ¥", "In", TR1_INT, 1, 0 },
+	{ "è³¢", "Wi", TR1_WIS, 1, 0 },
+	{ "å™¨", "Dx", TR1_DEX, 1, 0 },
+	{ "è€", "Cn", TR1_CON, 1, 0 },
+	{ "é­…", "Ch", TR1_CHR, 1, 0 },
+	{ "å…·", "Sl", TR1_MAGIC_MASTERY, 1, 0 },
+	{ "éš ", "Sl", TR1_STEALTH, 1, 0 },
+	{ "æ¢", "Sr", TR1_SEARCH, 1, 0 },
+	{ "èµ¤", "If", TR1_INFRA, 1, 0 },
+	{ "æ˜", "Dg", TR1_TUNNEL, 1, 0 },
 	{ NULL, NULL, 0, 0, 0 }
 };
 
 static flag_insc_table flag_insc_immune[] =
 {
-	{ "»À", "Ac", TR2_IM_ACID, 2, 0 },
-	{ "ÅÅ", "El", TR2_IM_ELEC, 2, 0 },
-	{ "±ê", "Fi", TR2_IM_FIRE, 2, 0 },
-	{ "Îä", "Co", TR2_IM_COLD, 2, 0 },
+	{ "é…¸", "Ac", TR2_IM_ACID, 2, 0 },
+	{ "é›»", "El", TR2_IM_ELEC, 2, 0 },
+	{ "ç‚", "Fi", TR2_IM_FIRE, 2, 0 },
+	{ "å†·", "Co", TR2_IM_COLD, 2, 0 },
 	{ NULL, NULL, 0, 0, 0 }
 };
 
 static flag_insc_table flag_insc_resistance[] =
 {
-	{ "»À", "Ac", TR2_RES_ACID, 2, TR2_IM_ACID },
-	{ "ÅÅ", "El", TR2_RES_ELEC, 2, TR2_IM_ELEC },
-	{ "±ê", "Fi", TR2_RES_FIRE, 2, TR2_IM_FIRE },
-	{ "Îä", "Co", TR2_RES_COLD, 2, TR2_IM_COLD },
-	{ "ÆÇ", "Po", TR2_RES_POIS, 2, 0 },
-	{ "Á®", "Li", TR2_RES_LITE, 2, 0 },
-	{ "°Å", "Dk", TR2_RES_DARK, 2, 0 },
-	{ "ÇË", "Sh", TR2_RES_SHARDS, 2, 0 },
-	{ "ÌÕ", "Bl", TR2_RES_BLIND, 2, 0 },
-	{ "Íğ", "Cf", TR2_RES_CONF, 2, 0 },
-	{ "¹ì", "So", TR2_RES_SOUND, 2, 0 },
-	{ "¹ö", "Nt", TR2_RES_NETHER, 2, 0 },
-	{ "°ø", "Nx", TR2_RES_NEXUS, 2, 0 },
-	{ "ÆÙ", "Ca", TR2_RES_CHAOS, 2, 0 },
-	{ "Îô", "Di", TR2_RES_DISEN, 2, 0 },
-	{ "¶²", "Fe", TR2_RES_FEAR, 2, 0 },
+	{ "é…¸", "Ac", TR2_RES_ACID, 2, TR2_IM_ACID },
+	{ "é›»", "El", TR2_RES_ELEC, 2, TR2_IM_ELEC },
+	{ "ç‚", "Fi", TR2_RES_FIRE, 2, TR2_IM_FIRE },
+	{ "å†·", "Co", TR2_RES_COLD, 2, TR2_IM_COLD },
+	{ "æ¯’", "Po", TR2_RES_POIS, 2, 0 },
+	{ "é–ƒ", "Li", TR2_RES_LITE, 2, 0 },
+	{ "æš—", "Dk", TR2_RES_DARK, 2, 0 },
+	{ "ç ´", "Sh", TR2_RES_SHARDS, 2, 0 },
+	{ "ç›²", "Bl", TR2_RES_BLIND, 2, 0 },
+	{ "ä¹±", "Cf", TR2_RES_CONF, 2, 0 },
+	{ "è½Ÿ", "So", TR2_RES_SOUND, 2, 0 },
+	{ "ç„", "Nt", TR2_RES_NETHER, 2, 0 },
+	{ "å› ", "Nx", TR2_RES_NEXUS, 2, 0 },
+	{ "æ²Œ", "Ca", TR2_RES_CHAOS, 2, 0 },
+	{ "åŠ£", "Di", TR2_RES_DISEN, 2, 0 },
+	{ "æ", "Fe", TR2_RES_FEAR, 2, 0 },
 	{ NULL, NULL, 0, 0, 0 }
 };
 
 static flag_insc_table flag_insc_misc[] =
 {
-	{ "ËâÎÏ", "Ma", TR3_DEC_MANA, 3, 0 },
-	{ "Åê", "Th", TR2_THROW, 2, 0 },
-	{ "È¿", "Rf", TR2_REFLECT, 2, 0 },
-	{ "Ëã", "Fa", TR2_FREE_ACT, 2, 0 },
-	{ "»ë", "Si", TR3_SEE_INVIS, 3, 0 },
-	{ "·Ğ", "Hl", TR2_HOLD_LIFE, 2, 0 },
-	{ "´¶", "Esp", TR3_TELEPATHY, 3, 0 },
-	{ "ÃÙ", "Sd", TR3_SLOW_DIGEST, 3, 0 },
-	{ "³è", "Rg", TR3_REGEN, 3, 0 },
-	{ "Éâ", "Lv", TR3_FEATHER, 3, 0 },
-	{ "ÌÀ", "Xl", TR3_LITE, 3, 0 },
-	{ "·Ù", "Wr", TR3_WARNING, 3, 0},
-	{ "ÇÜ", "Xm", TR3_XTRA_MIGHT, 3, 0 },
-	{ "¼Í", "Xs", TR3_XTRA_SHOTS, 3, 0 },
-	{ "½Ö", "Te", TR3_TELEPORT, 3, 0 },
-	{ "ÅÜ", "Ag", TR3_AGGRAVATE, 3, 0 },
-	{ "½Ë", "Bs", TR3_BLESSED, 3, 0 },
-	{ "±Ê¼ö", "Pc", TR3_PERMA_CURSE, 3, 0 },
-	{ "¼ö", "Cu", TR3_HEAVY_CURSE, 3, TR3_PERMA_CURSE },
-	{ "´÷", "Ty", TR3_TY_CURSE, 3, 0 },
+	{ "é­”åŠ›", "Ma", TR3_DEC_MANA, 3, 0 },
+	{ "æŠ•", "Th", TR2_THROW, 2, 0 },
+	{ "å", "Rf", TR2_REFLECT, 2, 0 },
+	{ "éº»", "Fa", TR2_FREE_ACT, 2, 0 },
+	{ "è¦–", "Si", TR3_SEE_INVIS, 3, 0 },
+	{ "çµŒ", "Hl", TR2_HOLD_LIFE, 2, 0 },
+	{ "æ„Ÿ", "Esp", TR3_TELEPATHY, 3, 0 },
+	{ "é…", "Sd", TR3_SLOW_DIGEST, 3, 0 },
+	{ "æ´»", "Rg", TR3_REGEN, 3, 0 },
+	{ "æµ®", "Lv", TR3_FEATHER, 3, 0 },
+	{ "æ˜", "Xl", TR3_LITE, 3, 0 },
+	{ "è­¦", "Wr", TR3_WARNING, 3, 0},
+	{ "å€", "Xm", TR3_XTRA_MIGHT, 3, 0 },
+	{ "å°„", "Xs", TR3_XTRA_SHOTS, 3, 0 },
+	{ "ç¬", "Te", TR3_TELEPORT, 3, 0 },
+	{ "æ€’", "Ag", TR3_AGGRAVATE, 3, 0 },
+	{ "ç¥", "Bs", TR3_BLESSED, 3, 0 },
+	{ "æ°¸å‘ª", "Pc", TR3_PERMA_CURSE, 3, 0 },
+	{ "å‘ª", "Cu", TR3_HEAVY_CURSE, 3, TR3_PERMA_CURSE },
+	{ "å¿Œ", "Ty", TR3_TY_CURSE, 3, 0 },
 #if 0
-	{ "·Ğ", "De", TR3_DRAIN_EXP, 3, 0 },
+	{ "çµŒ", "De", TR3_DRAIN_EXP, 3, 0 },
 #endif
 	{ NULL, NULL, 0, 0, 0 }
 };
 
 static flag_insc_table flag_insc_aura[] =
 {
-	{ "±ê", "F", TR3_SH_FIRE, 3, 0 },
-	{ "ÅÅ", "E", TR3_SH_ELEC, 3, 0 },
-	{ "Îä", "C", TR3_SH_COLD, 3, 0 },
-	{ "Ëâ", "M", TR3_NO_MAGIC, 3, 0 },
-	{ "½Ö", "T", TR3_NO_TELE, 3, 0 },
+	{ "ç‚", "F", TR3_SH_FIRE, 3, 0 },
+	{ "é›»", "E", TR3_SH_ELEC, 3, 0 },
+	{ "å†·", "C", TR3_SH_COLD, 3, 0 },
+	{ "é­”", "M", TR3_NO_MAGIC, 3, 0 },
+	{ "ç¬", "T", TR3_NO_TELE, 3, 0 },
 	{ NULL, NULL, 0, 0, 0 }
 };
 
 static flag_insc_table flag_insc_brand[] =
 {
-	{ "»À", "A", TR1_BRAND_ACID, 1, 0 },
-	{ "ÅÅ", "E", TR1_BRAND_ELEC, 1, 0 },
-	{ "¾Æ", "F", TR1_BRAND_FIRE, 1, 0 },
-	{ "Åà", "Co", TR1_BRAND_COLD, 1, 0 },
-	{ "ÆÇ", "P", TR1_BRAND_POIS, 1, 0 },
-	{ "ÆÙ", "Ca", TR1_CHAOTIC, 1, 0 },
-	{ "µÛ", "V", TR1_VAMPIRIC, 1, 0 },
-	{ "¿Ì", "Q", TR1_IMPACT, 1, 0 },
-	{ "ÀÚ", "S", TR1_VORPAL, 1, 0 },
+	{ "é…¸", "A", TR1_BRAND_ACID, 1, 0 },
+	{ "é›»", "E", TR1_BRAND_ELEC, 1, 0 },
+	{ "ç„¼", "F", TR1_BRAND_FIRE, 1, 0 },
+	{ "å‡", "Co", TR1_BRAND_COLD, 1, 0 },
+	{ "æ¯’", "P", TR1_BRAND_POIS, 1, 0 },
+	{ "æ²Œ", "Ca", TR1_CHAOTIC, 1, 0 },
+	{ "å¸", "V", TR1_VAMPIRIC, 1, 0 },
+	{ "éœ‡", "Q", TR1_IMPACT, 1, 0 },
+	{ "åˆ‡", "S", TR1_VORPAL, 1, 0 },
 	{ NULL, NULL, 0, 0, 0 }
 };
 
 static flag_insc_table flag_insc_slay[] =
 {
-	{ "¼Ù", "*", TR1_SLAY_EVIL, 1, 0 },
-	{ "Î¶", "DD", TR1_KILL_DRAGON, 1, 0 },
-	{ "Îµ", "D", TR1_SLAY_DRAGON, 1, TR1_KILL_DRAGON },
-	{ "¥ª", "o", TR1_SLAY_ORC, 1, 0 },
-	{ "¥È", "T", TR1_SLAY_TROLL, 1, 0 },
-	{ "µğ", "P", TR1_SLAY_GIANT, 1, 0 },
-	{ "¥Ç", "U", TR1_SLAY_DEMON, 1, 0 },
-	{ "»à", "L", TR1_SLAY_UNDEAD, 1, 0 },
-	{ "Æ°", "Z", TR1_SLAY_ANIMAL, 1, 0 },
-	{ "¿Í", "h", TR1_SLAY_HUMAN, 1, 0 },
+	{ "é‚ª", "*", TR1_SLAY_EVIL, 1, 0 },
+	{ "é¾", "DD", TR1_KILL_DRAGON, 1, 0 },
+	{ "ç«œ", "D", TR1_SLAY_DRAGON, 1, TR1_KILL_DRAGON },
+	{ "ã‚ª", "o", TR1_SLAY_ORC, 1, 0 },
+	{ "ãƒˆ", "T", TR1_SLAY_TROLL, 1, 0 },
+	{ "å·¨", "P", TR1_SLAY_GIANT, 1, 0 },
+	{ "ãƒ‡", "U", TR1_SLAY_DEMON, 1, 0 },
+	{ "æ­»", "L", TR1_SLAY_UNDEAD, 1, 0 },
+	{ "å‹•", "Z", TR1_SLAY_ANIMAL, 1, 0 },
+	{ "äºº", "h", TR1_SLAY_HUMAN, 1, 0 },
 	{ NULL, NULL, 0, 0, 0 }
 };
 
 static flag_insc_table flag_insc_sust[] =
 {
-	{ "ÏÓ", "St", TR2_SUST_STR, 2, 0 },
-	{ "ÃÎ", "In", TR2_SUST_INT, 2, 0 },
-	{ "¸­", "Wi", TR2_SUST_WIS, 2, 0 },
-	{ "´ï", "Dx", TR2_SUST_DEX, 2, 0 },
-	{ "ÂÑ", "Cn", TR2_SUST_CON, 2, 0 },
-	{ "Ì¥", "Ch", TR2_SUST_CHR, 2, 0 },
+	{ "è…•", "St", TR2_SUST_STR, 2, 0 },
+	{ "çŸ¥", "In", TR2_SUST_INT, 2, 0 },
+	{ "è³¢", "Wi", TR2_SUST_WIS, 2, 0 },
+	{ "å™¨", "Dx", TR2_SUST_DEX, 2, 0 },
+	{ "è€", "Cn", TR2_SUST_CON, 2, 0 },
+	{ "é­…", "Ch", TR2_SUST_CHR, 2, 0 },
 	{ NULL, NULL, 0, 0, 0 }
 };
 
@@ -1218,9 +1218,9 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			modstr = k_name + flavor_k_ptr->flavor_name;
 
 #ifdef JP
-			if (!flavor)    basenm = "%¤Î¥¢¥ß¥å¥ì¥Ã¥È";
-			else if (aware) basenm = "%¤Î#¥¢¥ß¥å¥ì¥Ã¥È";
-			else            basenm = "#¥¢¥ß¥å¥ì¥Ã¥È";
+			if (!flavor)    basenm = "%ã®ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ";
+			else if (aware) basenm = "%ã®#ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ";
+			else            basenm = "#ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ";
 #else
 			if (!flavor)    basenm = "& Amulet~ of %";
 			else if (aware) basenm = "& # Amulet~ of %";
@@ -1244,9 +1244,9 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			modstr = k_name + flavor_k_ptr->flavor_name;
 
 #ifdef JP
-			if (!flavor)    basenm = "%¤Î»ØÎØ";
-			else if (aware) basenm = "%¤Î#»ØÎØ";
-			else            basenm = "#»ØÎØ";
+			if (!flavor)    basenm = "%ã®æŒ‡è¼ª";
+			else if (aware) basenm = "%ã®#æŒ‡è¼ª";
+			else            basenm = "#æŒ‡è¼ª";
 #else
 			if (!flavor)    basenm = "& Ring~ of %";
 			else if (aware) basenm = "& # Ring~ of %";
@@ -1264,9 +1264,9 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			modstr = k_name + flavor_k_ptr->flavor_name;
 
 #ifdef JP
-			if (!flavor)    basenm = "%¤Î¥¹¥¿¥Ã¥Õ";
-			else if (aware) basenm = "%¤Î#¥¹¥¿¥Ã¥Õ";
-			else            basenm = "#¥¹¥¿¥Ã¥Õ";
+			if (!flavor)    basenm = "%ã®ã‚¹ã‚¿ãƒƒãƒ•";
+			else if (aware) basenm = "%ã®#ã‚¹ã‚¿ãƒƒãƒ•";
+			else            basenm = "#ã‚¹ã‚¿ãƒƒãƒ•";
 #else
 			if (!flavor)    basenm = "& Staff~ of %";
 			else if (aware) basenm = "& # Staff~ of %";
@@ -1282,9 +1282,9 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			modstr = k_name + flavor_k_ptr->flavor_name;
 
 #ifdef JP
-			if (!flavor)    basenm = "%¤Î¥ï¥ó¥É";
-			else if (aware) basenm = "%¤Î#¥ï¥ó¥É";
-			else            basenm = "#¥ï¥ó¥É";
+			if (!flavor)    basenm = "%ã®ãƒ¯ãƒ³ãƒ‰";
+			else if (aware) basenm = "%ã®#ãƒ¯ãƒ³ãƒ‰";
+			else            basenm = "#ãƒ¯ãƒ³ãƒ‰";
 #else
 			if (!flavor)    basenm = "& Wand~ of %";
 			else if (aware) basenm = "& # Wand~ of %";
@@ -1300,9 +1300,9 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			modstr = k_name + flavor_k_ptr->flavor_name;
 
 #ifdef JP
-			if (!flavor)    basenm = "%¤Î¥í¥Ã¥É";
-			else if (aware) basenm = "%¤Î#¥í¥Ã¥É";
-			else            basenm = "#¥í¥Ã¥É";
+			if (!flavor)    basenm = "%ã®ãƒ­ãƒƒãƒ‰";
+			else if (aware) basenm = "%ã®#ãƒ­ãƒƒãƒ‰";
+			else            basenm = "#ãƒ­ãƒƒãƒ‰";
 #else
 			if (!flavor)    basenm = "& Rod~ of %";
 			else if (aware) basenm = "& # Rod~ of %";
@@ -1318,9 +1318,9 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			modstr = k_name + flavor_k_ptr->flavor_name;
 
 #ifdef JP
-			if (!flavor)    basenm = "%¤Î´¬Êª";
-			else if (aware) basenm = "\"#\"¤È½ñ¤«¤ì¤¿%¤Î´¬Êª";
-			else            basenm = "\"#\"¤È½ñ¤«¤ì¤¿´¬Êª";
+			if (!flavor)    basenm = "%ã®å·»ç‰©";
+			else if (aware) basenm = "\"#\"ã¨æ›¸ã‹ã‚ŒãŸ%ã®å·»ç‰©";
+			else            basenm = "\"#\"ã¨æ›¸ã‹ã‚ŒãŸå·»ç‰©";
 #else
 			if (!flavor)    basenm = "& Scroll~ of %";
 			else if (aware) basenm = "& Scroll~ titled \"#\" of %";
@@ -1336,9 +1336,9 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			modstr = k_name + flavor_k_ptr->flavor_name;
 
 #ifdef JP
-			if (!flavor)    basenm = "%¤ÎÌô";
-			else if (aware) basenm = "%¤Î#Ìô";
-			else            basenm = "#Ìô";
+			if (!flavor)    basenm = "%ã®è–¬";
+			else if (aware) basenm = "%ã®#è–¬";
+			else            basenm = "#è–¬";
 #else
 			if (!flavor)    basenm = "& Potion~ of %";
 			else if (aware) basenm = "& # Potion~ of %";
@@ -1352,7 +1352,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 		case TV_LIFE_BOOK:
 		{
 #ifdef JP
-			basenm = "À¸Ì¿¤ÎËâË¡½ñ%";
+			basenm = "ç”Ÿå‘½ã®é­”æ³•æ›¸%";
 #else
 			if (mp_ptr->spell_type == ST_PRAYER)
 				basenm = "& Book~ of Life Magic %";
@@ -1366,7 +1366,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 		case TV_SORCERY_BOOK:
 		{
 #ifdef JP
-			basenm = "Àç½Ñ¤ÎËâË¡½ñ%";
+			basenm = "ä»™è¡“ã®é­”æ³•æ›¸%";
 #else
 			if (mp_ptr->spell_type == ST_PRAYER)
 				basenm = "& Book~ of Sorcery %";
@@ -1388,7 +1388,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 		default:
 		{
 #ifdef JP
-			strcpy(buf, "(¤Ê¤·)");
+			strcpy(buf, "(ãªã—)");
 #else
 			strcpy(buf, "(nothing)");
 #endif
@@ -1425,16 +1425,16 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 	else if (o_ptr->number > 1)
 	{
 		t = object_desc_kosuu(t, o_ptr);
-		t = object_desc_str(t, "¤Î ");
+		t = object_desc_str(t, "ã® ");
 	}
 
-	/* ±Ñ¸ì¤Î¾ì¹ç¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¤Ï The ¤¬ÉÕ¤¯¤Î¤ÇÊ¬¤«¤ë¤¬
-	 * ÆüËÜ¸ì¤Ç¤ÏÊ¬¤«¤é¤Ê¤¤¤Î¤Ç¥Ş¡¼¥¯¤ò¤Ä¤±¤ë 
+	/* è‹±èªã®å ´åˆã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆã¯ The ãŒä»˜ãã®ã§åˆ†ã‹ã‚‹ãŒ
+	 * æ—¥æœ¬èªã§ã¯åˆ†ã‹ã‚‰ãªã„ã®ã§ãƒãƒ¼ã‚¯ã‚’ã¤ã‘ã‚‹ 
 	 */
 	if (known)
 	{
-		if (artifact_p(o_ptr)) t = object_desc_str(t, "¡ú");
-		else if (o_ptr->art_name) t = object_desc_str(t, "¡ù");
+		if (artifact_p(o_ptr)) t = object_desc_str(t, "â˜…");
+		else if (o_ptr->art_name) t = object_desc_str(t, "â˜†");
 	}
 
 #else
@@ -1540,35 +1540,35 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 	/* while (*s == '~') s++; */
 
 #ifdef JP
-	/* ÅÁÀâ¤Î¥¢¥¤¥Æ¥à¡¢Ì¾¤Î¤¢¤ë¥¢¥¤¥Æ¥à¤ÎÌ¾Á°¤òÉÕ²Ã¤¹¤ë */
+	/* ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ ã€åã®ã‚ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã®åå‰ã‚’ä»˜åŠ ã™ã‚‹ */
 	if (known)
 	{
-		/* ¥é¥ó¥À¥à¡¦¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È */
+		/* ãƒ©ãƒ³ãƒ€ãƒ ãƒ»ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆ */
 		if (o_ptr->art_name)
 		{
 			cptr temp = quark_str(o_ptr->art_name);
 
-			/* '¡Ø' ¤«¤é»Ï¤Ş¤é¤Ê¤¤ÅÁÀâ¤Î¥¢¥¤¥Æ¥à¤ÎÌ¾Á°¤ÏºÇ½é¤ËÉÕ²Ã¤¹¤ë */
-			/* ±Ñ¸ìÈÇ¤Î¥»¡¼¥Ö¥Õ¥¡¥¤¥ë¤«¤éÍè¤¿ 'of XXX' ¤Ï,¡ÖXXX¤Î¡×¤ÈÉ½¼¨¤¹¤ë */
+			/* 'ã€' ã‹ã‚‰å§‹ã¾ã‚‰ãªã„ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ ã®åå‰ã¯æœ€åˆã«ä»˜åŠ ã™ã‚‹ */
+			/* è‹±èªç‰ˆã®ã‚»ãƒ¼ãƒ–ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰æ¥ãŸ 'of XXX' ã¯,ã€ŒXXXã®ã€ã¨è¡¨ç¤ºã™ã‚‹ */
 			if (strncmp(temp, "of ", 3) == 0)
 			{
 				t = object_desc_str(t, &temp[3]);
-				t = object_desc_str(t, "¤Î");
+				t = object_desc_str(t, "ã®");
 			}
-			else if ((strncmp(temp, "¡Ø", 2) != 0) && (temp[0] != '\''))
+			else if ((strncmp(temp, "ã€", 2) != 0) && (temp[0] != '\''))
 				t = object_desc_str(t, temp);
 		}
-		/* ÅÁÀâ¤Î¥¢¥¤¥Æ¥à */
+		/* ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ  */
 		else if (o_ptr->name1 && !fullname)
 		{
 			artifact_type *a_ptr = &a_info[o_ptr->name1];
-			/* '¡Ø' ¤«¤é»Ï¤Ş¤é¤Ê¤¤ÅÁÀâ¤Î¥¢¥¤¥Æ¥à¤ÎÌ¾Á°¤ÏºÇ½é¤ËÉÕ²Ã¤¹¤ë */
-			if (strncmp(a_name + a_ptr->name, "¡Ø", 2) != 0)
+			/* 'ã€' ã‹ã‚‰å§‹ã¾ã‚‰ãªã„ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ ã®åå‰ã¯æœ€åˆã«ä»˜åŠ ã™ã‚‹ */
+			if (strncmp(a_name + a_ptr->name, "ã€", 2) != 0)
 			{
 				t = object_desc_str(t, a_name + a_ptr->name);
 			}
 		}
-		/* Ì¾¤Î¤¢¤ë¥¢¥¤¥Æ¥à */
+		/* åã®ã‚ã‚‹ã‚¢ã‚¤ãƒ†ãƒ  */
 		else if (o_ptr->name2)
 		{
 			ego_item_type *e_ptr = &e_info[o_ptr->name2];
@@ -1641,31 +1641,31 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 
 
 #ifdef JP
-	/* '¡Ø'¤«¤é»Ï¤Ş¤ëÅÁÀâ¤Î¥¢¥¤¥Æ¥à¤ÎÌ¾Á°¤ÏºÇ¸å¤ËÉÕ²Ã¤¹¤ë */
+	/* 'ã€'ã‹ã‚‰å§‹ã¾ã‚‹ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ ã®åå‰ã¯æœ€å¾Œã«ä»˜åŠ ã™ã‚‹ */
 	if (known)
 	{
-		/* ¥é¥ó¥À¥à¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¤ÎÌ¾Á°¤Ï¥»¡¼¥Ö¥Õ¥¡¥¤¥ë¤Ëµ­Ï¿
-		   ¤µ¤ì¤ë¤Î¤Ç¡¢±Ñ¸ìÈÇ¤ÎÌ¾Á°¤â¤½¤ì¤é¤·¤¯ÊÑ´¹¤¹¤ë */
+		/* ãƒ©ãƒ³ãƒ€ãƒ ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆã®åå‰ã¯ã‚»ãƒ¼ãƒ–ãƒ•ã‚¡ã‚¤ãƒ«ã«è¨˜éŒ²
+		   ã•ã‚Œã‚‹ã®ã§ã€è‹±èªç‰ˆã®åå‰ã‚‚ãã‚Œã‚‰ã—ãå¤‰æ›ã™ã‚‹ */
 		if (o_ptr->art_name)
 		{
 			char temp[256];
 			int itemp;
 			strcpy(temp, quark_str(o_ptr->art_name));
 			/* MEGA HACK by ita */
-			if (strncmp(temp, "¡Ø", 2) == 0) t = object_desc_str(t, temp);
+			if (strncmp(temp, "ã€", 2) == 0) t = object_desc_str(t, temp);
 			else if (temp[0] == '\'')
 			{
 				itemp = strlen(temp);
 				temp[itemp - 1] = 0;
-				t = object_desc_str(t, "¡Ø");
+				t = object_desc_str(t, "ã€");
 				t = object_desc_str(t, &temp[1]);
-				t = object_desc_str(t, "¡Ù");
+				t = object_desc_str(t, "ã€");
 			}
 		}
 		else if (o_ptr->name1)
 		{
 			artifact_type *a_ptr = &a_info[o_ptr->name1];
-			if (strncmp(a_name + a_ptr->name, "¡Ø", 2) == 0)
+			if (strncmp(a_name + a_ptr->name, "ã€", 2) == 0)
 			{
 				t = object_desc_str(t, a_name + a_ptr->name);
 			}
@@ -1694,9 +1694,9 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 				cptr str = my_strchr(quark_str(o_ptr->inscription), '#');
 
 				/* Add the false name */
-				t = object_desc_str(t,"¡Ø");
+				t = object_desc_str(t,"ã€");
 				t = object_desc_str(t, &str[1]);
-				t = object_desc_str(t,"¡Ù");
+				t = object_desc_str(t,"ã€");
 			}
 		}
 	}
@@ -1766,7 +1766,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 		else if (!o_ptr->pval)
 		{
 #ifdef JP
-			t = object_desc_str(t, "(¶õ)");
+			t = object_desc_str(t, "(ç©º)");
 #else
 			t = object_desc_str(t, " (empty)");
 #endif
@@ -1778,7 +1778,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			if (chest_traps[0 - o_ptr->pval])
 			{
 #ifdef JP
-				t = object_desc_str(t, "(²ò½üºÑ)");
+				t = object_desc_str(t, "(è§£é™¤æ¸ˆ)");
 #else
 				t = object_desc_str(t, " (disarmed)");
 #endif
@@ -1786,7 +1786,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			else
 			{
 #ifdef JP
-				t = object_desc_str(t, "(Èó»Ü¾û)");
+				t = object_desc_str(t, "(éæ–½éŒ )");
 #else
 				t = object_desc_str(t, " (unlocked)");
 #endif
@@ -1802,7 +1802,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 				case 0:
 				{
 #ifdef JP
-					t = object_desc_str(t, "(»Ü¾û)");
+					t = object_desc_str(t, "(æ–½éŒ )");
 #else
 					t = object_desc_str(t, " (Locked)");
 #endif
@@ -1811,7 +1811,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 				case CHEST_LOSE_STR:
 				{
 #ifdef JP
-					t = object_desc_str(t, "(ÆÇ¿Ë)");
+					t = object_desc_str(t, "(æ¯’é‡)");
 #else
 					t = object_desc_str(t, " (Poison Needle)");
 #endif
@@ -1820,7 +1820,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 				case CHEST_LOSE_CON:
 				{
 #ifdef JP
-					t = object_desc_str(t, "(ÆÇ¿Ë)");
+					t = object_desc_str(t, "(æ¯’é‡)");
 #else
 					t = object_desc_str(t, " (Poison Needle)");
 #endif
@@ -1829,7 +1829,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 				case CHEST_POISON:
 				{
 #ifdef JP
-					t = object_desc_str(t, "(¥¬¥¹¡¦¥È¥é¥Ã¥×)");
+					t = object_desc_str(t, "(ã‚¬ã‚¹ãƒ»ãƒˆãƒ©ãƒƒãƒ—)");
 #else
 					t = object_desc_str(t, " (Gas Trap)");
 #endif
@@ -1838,7 +1838,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 				case CHEST_PARALYZE:
 				{
 #ifdef JP
-					t = object_desc_str(t, "(¥¬¥¹¡¦¥È¥é¥Ã¥×)");
+					t = object_desc_str(t, "(ã‚¬ã‚¹ãƒ»ãƒˆãƒ©ãƒƒãƒ—)");
 #else
 					t = object_desc_str(t, " (Gas Trap)");
 #endif
@@ -1847,7 +1847,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 				case CHEST_EXPLODE:
 				{
 #ifdef JP
-					t = object_desc_str(t, "(ÇúÈ¯ÁõÃÖ)");
+					t = object_desc_str(t, "(çˆ†ç™ºè£…ç½®)");
 #else
 					t = object_desc_str(t, " (Explosion Device)");
 #endif
@@ -1856,7 +1856,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 				case CHEST_SUMMON:
 				{
 #ifdef JP
-					t = object_desc_str(t, "(¾¤´­¤Î¥ë¡¼¥ó)");
+					t = object_desc_str(t, "(å¬å–šã®ãƒ«ãƒ¼ãƒ³)");
 #else
 					t = object_desc_str(t, " (Summoning Runes)");
 #endif
@@ -1865,7 +1865,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 				default:
 				{
 #ifdef JP
-					t = object_desc_str(t, "(¥Ş¥ë¥Á¡¦¥È¥é¥Ã¥×)");
+					t = object_desc_str(t, "(ãƒãƒ«ãƒãƒ»ãƒˆãƒ©ãƒƒãƒ—)");
 #else
 					t = object_desc_str(t, " (Multiple Traps)");
 #endif
@@ -2069,7 +2069,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			}
 			t = object_desc_num(t, o_ptr->pval);
 #ifdef JP
-			t = object_desc_str(t, "²óÊ¬");
+			t = object_desc_str(t, "å›åˆ†");
 #else
 			t = object_desc_str(t, " charge");
 			if (o_ptr->pval != 1) t = object_desc_chr(t, 's');
@@ -2103,7 +2103,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 					t = object_desc_str(t, " (");
 					t = object_desc_num(t, power);
 #ifdef JP
-					t = object_desc_str(t, "ËÜ ½¼Å¶Ãæ)");
+					t = object_desc_str(t, "æœ¬ å……å¡«ä¸­)");
 #else
 					t = object_desc_str(t, " charging)");
 #endif
@@ -2113,7 +2113,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 				else
 				{
 #ifdef JP
-					t = object_desc_str(t, "(½¼Å¶Ãæ)");
+					t = object_desc_str(t, "(å……å¡«ä¸­)");
 #else
 					t = object_desc_str(t, " (charging)");
 #endif
@@ -2142,7 +2142,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			{
 				/* Dump " to speed" */
 #ifdef JP
-				t = object_desc_str(t, "²ÃÂ®");
+				t = object_desc_str(t, "åŠ é€Ÿ");
 #else
 				t = object_desc_str(t, " to speed");
 #endif
@@ -2153,7 +2153,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			{
 				/* Add " attack" */
 #ifdef JP
-				t = object_desc_str(t, "¹¶·â");
+				t = object_desc_str(t, "æ”»æ’ƒ");
 #else
 				t = object_desc_str(t, " attack");
 
@@ -2167,7 +2167,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			{
 				/* Dump " to stealth" */
 #ifdef JP
-				t = object_desc_str(t, "±£Ì©");
+				t = object_desc_str(t, "éš å¯†");
 #else
 				t = object_desc_str(t, " to stealth");
 #endif
@@ -2178,7 +2178,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			{
 				/* Dump " to searching" */
 #ifdef JP
-				t = object_desc_str(t, "Ãµº÷");
+				t = object_desc_str(t, "æ¢ç´¢");
 #else
 				t = object_desc_str(t, " to searching");
 #endif
@@ -2189,7 +2189,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			{
 				/* Dump " to infravision" */
 #ifdef JP
-				t = object_desc_str(t, "ÀÖ³°Àş»ëÎÏ");
+				t = object_desc_str(t, "èµ¤å¤–ç·šè¦–åŠ›");
 #else
 				t = object_desc_str(t, " to infravision");
 #endif
@@ -2210,7 +2210,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 #endif
 			t = object_desc_num(t, o_ptr->xtra3);
 #ifdef JP
-			t = object_desc_str(t, "¥¿¡¼¥ó¤Î¼÷Ì¿)");
+			t = object_desc_str(t, "ã‚¿ãƒ¼ãƒ³ã®å¯¿å‘½)");
 #else
 			t = object_desc_str(t, " turns of light)");
 #endif
@@ -2221,7 +2221,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 		{
 			/* Hack -- Dump " (charging)" if relevant */
 #ifdef JP
-			t = object_desc_str(t, "(½¼Å¶Ãæ)");
+			t = object_desc_str(t, "(å……å¡«ä¸­)");
 #else
 			t = object_desc_str(t, " (charging)");
 #endif
@@ -2282,7 +2282,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 	else if (cursed_p(o_ptr) && (known || (o_ptr->ident & IDENT_SENSE)))
 	{
 #ifdef JP
-		strcpy(fake_insc_buf, "¼ö¤ï¤ì¤Æ¤¤¤ë");
+		strcpy(fake_insc_buf, "å‘ªã‚ã‚Œã¦ã„ã‚‹");
 #else
 		strcpy(fake_insc_buf, "cursed");
 #endif
@@ -2295,7 +2295,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 		 && !(o_ptr->ident & IDENT_SENSE))
 	{
 #ifdef JP
-		strcpy(fake_insc_buf, "Ì¤´ÕÄê");
+		strcpy(fake_insc_buf, "æœªé‘‘å®š");
 #else
 		strcpy(fake_insc_buf, "unidentified");
 #endif
@@ -2305,7 +2305,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 	else if (!known && (o_ptr->ident & IDENT_EMPTY))
 	{
 #ifdef JP
-		strcpy(fake_insc_buf, "¶õ");
+		strcpy(fake_insc_buf, "ç©º");
 #else
 		strcpy(fake_insc_buf, "empty");
 #endif
@@ -2315,7 +2315,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 	else if (!aware && object_tried_p(o_ptr))
 	{
 #ifdef JP
-		strcpy(fake_insc_buf, "Ì¤È½ÌÀ");
+		strcpy(fake_insc_buf, "æœªåˆ¤æ˜");
 #else
 		strcpy(fake_insc_buf, "tried");
 #endif
@@ -2335,7 +2335,7 @@ void object_desc(char *buf, const object_type *o_ptr, u32b mode)
 			(void)object_desc_num(discount_num_buf, o_ptr->discount);
 			strcat(fake_insc_buf, discount_num_buf);
 #ifdef JP
-			strcat(fake_insc_buf, "%°ú¤­");
+			strcat(fake_insc_buf, "%å¼•ã");
 #else
 			strcat(fake_insc_buf, "% off");
 #endif

@@ -1,4 +1,4 @@
-/* File z-form.h */
+﻿/* File z-form.h */
 
 #ifndef INCLUDED_Z_FORM_H
 #define INCLUDED_Z_FORM_H

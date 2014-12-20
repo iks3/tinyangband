@@ -1,4 +1,4 @@
-/* File: object1.c */
+ï»¿/* File: object1.c */
 
 /* Purpose: Object code, part 1 */
 
@@ -232,7 +232,7 @@ static cptr item_activation_aux(const object_type *o_ptr)
 	int constant, dice;
 	const activation_type* const act_ptr = find_activation_info(o_ptr);
 
-	if (!act_ptr) return _("Ì¤ÄêµÁ", "something undefined");
+	if (!act_ptr) return _("æœªå®šç¾©", "something undefined");
 
 	desc = act_ptr->desc;
 
@@ -241,19 +241,19 @@ static cptr item_activation_aux(const object_type *o_ptr)
 	{
 	case ACT_RESIST_ACID:
 		if ((o_ptr->tval == TV_RING) && (o_ptr->sval == SV_RING_ACID))
-			desc = _("¥¢¥·¥Ã¥É¡¦¥Ü¡¼¥ë (100) ¤È»À¤Ø¤ÎÂÑÀ­", "ball of acid (100) and resist acid");
+			desc = _("ã‚¢ã‚·ãƒƒãƒ‰ãƒ»ãƒœãƒ¼ãƒ« (100) ã¨é…¸ã¸ã®è€æ€§", "ball of acid (100) and resist acid");
 		break;
 	case ACT_RESIST_FIRE:
 		if ((o_ptr->tval == TV_RING) && (o_ptr->sval == SV_RING_FLAMES))
-			desc = _("¥Õ¥¡¥¤¥¢¡¦¥Ü¡¼¥ë (100) ¤È²Ğ¤Ø¤ÎÂÑÀ­", "ball of fire (100) and resist fire");
+			desc = _("ãƒ•ã‚¡ã‚¤ã‚¢ãƒ»ãƒœãƒ¼ãƒ« (100) ã¨ç«ã¸ã®è€æ€§", "ball of fire (100) and resist fire");
 		break;
 	case ACT_RESIST_COLD:
 		if ((o_ptr->tval == TV_RING) && (o_ptr->sval == SV_RING_ICE))
-			desc = _("¥¢¥¤¥¹¡¦¥Ü¡¼¥ë (100) ¤ÈÎäµ¤¤Ø¤ÎÂÑÀ­", "ball of cold (100) and resist cold");
+			desc = _("ã‚¢ã‚¤ã‚¹ãƒ»ãƒœãƒ¼ãƒ« (100) ã¨å†·æ°—ã¸ã®è€æ€§", "ball of cold (100) and resist cold");
 		break;
 	case ACT_RESIST_ELEC:
 		if ((o_ptr->tval == TV_RING) && (o_ptr->sval == SV_RING_ELEC))
-			desc = _("¥µ¥ó¥À¡¼¡¦¥Ü¡¼¥ë (100) ¤ÈÅÅ·â¤Ø¤ÎÂÑÀ­", "ball of elec (100) and resist elec");
+			desc = _("ã‚µãƒ³ãƒ€ãƒ¼ãƒ»ãƒœãƒ¼ãƒ« (100) ã¨é›»æ’ƒã¸ã®è€æ€§", "ball of elec (100) and resist elec");
 		break;
 	}
 
@@ -263,7 +263,7 @@ static cptr item_activation_aux(const object_type *o_ptr)
 	if (constant == 0 && dice == 0)
 	{
 		/* We can activate it every turn */
-		strcpy(timeout, _("¤¤¤Ä¤Ç¤â", "every turn"));
+		strcpy(timeout, _("ã„ã¤ã§ã‚‚", "every turn"));
 	} 
 	else
 	{
@@ -271,7 +271,7 @@ static cptr item_activation_aux(const object_type *o_ptr)
 		char constant_str[16], dice_str[16];
 		sprintf(constant_str, "%d", constant);
 		sprintf(dice_str, "d%d", dice);
-		sprintf(timeout, _("%s%s%s ¥¿¡¼¥óËè", "every %s%s%s turns"),
+		sprintf(timeout, _("%s%s%s ã‚¿ãƒ¼ãƒ³æ¯", "every %s%s%s turns"),
 			(constant > 0) ? constant_str : "",
 			(constant > 0 && dice > 0) ? "+" : "",
 			(dice > 0) ? dice_str : "");
@@ -292,14 +292,14 @@ cptr item_activation(const object_type *o_ptr)
 	if (!act_ptr) {
 		/* Maybe forgot adding information to activation_info table ? */
 		msg_print("Activation information is not found.");
-		return _("²¿¤âµ¯¤­¤Ê¤¤", "Nothing");
+		return _("ä½•ã‚‚èµ·ããªã„", "Nothing");
 	}
 
 	/* Extract the flags */
 	object_flags(o_ptr, &f1, &f2, &f3);
 
 	/* Require activation ability */
-	if (!(f3 & (TR3_ACTIVATE))) return _("¤Ê¤·", "nothing");
+	if (!(f3 & (TR3_ACTIVATE))) return _("ãªã—", "nothing");
 
 	/* Get an explain of an activation */
 	if (activation_index(o_ptr))
@@ -308,7 +308,7 @@ cptr item_activation(const object_type *o_ptr)
 	}
 
 	/* Oops */
-	return _("²¿¤âµ¯¤­¤Ê¤¤", "Nothing");
+	return _("ä½•ã‚‚èµ·ããªã„", "Nothing");
 }
 
 
@@ -347,13 +347,13 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_ACTIVATE))
 	{
 #ifdef JP
-		info[i++] = "»ÏÆ°¤·¤¿¤È¤­¤Î¸ú²Ì...";
+		info[i++] = "å§‹å‹•ã—ãŸã¨ãã®åŠ¹æœ...";
 #else
 		info[i++] = "It can be activated for...";
 #endif
 		info[i++] = item_activation(o_ptr);
 #ifdef JP
-		info[i++] = "...¤¿¤À¤·ÁõÈ÷¤·¤Æ¤¤¤Ê¤±¤ì¤Ğ¤Ê¤é¤Ê¤¤¡£";
+		info[i++] = "...ãŸã ã—è£…å‚™ã—ã¦ã„ãªã‘ã‚Œã°ãªã‚‰ãªã„ã€‚";
 #else
 		info[i++] = "...if it is being worn.";
 #endif
@@ -363,7 +363,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (o_ptr->tval == TV_FIGURINE)
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÅê¤²¤¿»ş¥Ú¥Ã¥È¤ËÊÑ²½¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯æŠ•ã’ãŸæ™‚ãƒšãƒƒãƒˆã«å¤‰åŒ–ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It will transform into a pet when thrown.";
 #endif
@@ -375,13 +375,13 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		monster_race *r_ptr = &r_info[o_ptr->pval];
 		if (r_ptr->flags2 & (RF2_ELDRITCH_HORROR))
 #ifdef JP
-			info[i++] = "¤½¤ì¤ÏÉô²°¤Ë¾ş¤ë¤È¶²¤¤¡£";
+			info[i++] = "ãã‚Œã¯éƒ¨å±‹ã«é£¾ã‚‹ã¨æã„ã€‚";
 #else
 			info[i++] = "It is fearful.";
 #endif
 		else
 #ifdef JP
-			info[i++] = "¤½¤ì¤ÏÉô²°¤Ë¾ş¤ë¤È³Ú¤·¤¤¡£";
+			info[i++] = "ãã‚Œã¯éƒ¨å±‹ã«é£¾ã‚‹ã¨æ¥½ã—ã„ã€‚";
 #else
 			info[i++] = "It is cheerful.";
 #endif
@@ -393,7 +393,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		if (artifact_p(o_ptr))
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤Ï±Ê±ó¤Ê¤ëÌÀ¤«¤ê(È¾·Â 3)¤ò¼ø¤±¤ë¡£";
+			info[i++] = "ãã‚Œã¯æ°¸é ãªã‚‹æ˜ã‹ã‚Š(åŠå¾„ 3)ã‚’æˆã‘ã‚‹ã€‚";
 #else
 			info[i++] = "It provides light (radius 3) forever.";
 #endif
@@ -401,7 +401,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		else if (o_ptr->sval == SV_LITE_FEANOR)
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤Ï±Ê±ó¤Ê¤ëÌÀ¤«¤ê(È¾·Â 2)¤ò¼ø¤±¤ë¡£";
+			info[i++] = "ãã‚Œã¯æ°¸é ãªã‚‹æ˜ã‹ã‚Š(åŠå¾„ 2)ã‚’æˆã‘ã‚‹ã€‚";
 #else
 			info[i++] = "It provides light (radius 2) forever.";
 #endif
@@ -409,7 +409,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		else if (o_ptr->sval == SV_LITE_LANTERN)
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤ÏÇ³ÎÁÊäµë¤Ë¤è¤Ã¤ÆÌÀ¤«¤ê(È¾·Â 2)¤ò¼ø¤±¤ë¡£";
+			info[i++] = "ãã‚Œã¯ç‡ƒæ–™è£œçµ¦ã«ã‚ˆã£ã¦æ˜ã‹ã‚Š(åŠå¾„ 2)ã‚’æˆã‘ã‚‹ã€‚";
 #else
 			info[i++] = "It provides light (radius 2) when fueled.";
 #endif
@@ -417,7 +417,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		else if (o_ptr->sval == SV_LITE_TORCH)
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤ÏÇ³ÎÁÊäµë¤Ë¤è¤Ã¤ÆÌÀ¤«¤ê(È¾·Â 1)¤ò¼ø¤±¤ë¡£";
+			info[i++] = "ãã‚Œã¯ç‡ƒæ–™è£œçµ¦ã«ã‚ˆã£ã¦æ˜ã‹ã‚Š(åŠå¾„ 1)ã‚’æˆã‘ã‚‹ã€‚";
 #else
 			info[i++] = "It provides light (radius 1) when fueled.";
 #endif
@@ -425,7 +425,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		else
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤Ï±Ê±ó¤Ê¤ëÌÀ¤«¤ê(È¾·Â 2)¤ò¼ø¤±¤ë¡£";
+			info[i++] = "ãã‚Œã¯æ°¸é ãªã‚‹æ˜ã‹ã‚Š(åŠå¾„ 2)ã‚’æˆã‘ã‚‹ã€‚";
 #else
 			info[i++] = "It provides light (radius 2) forever.";
 #endif
@@ -438,7 +438,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_STR))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÏÓÎÏ¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯è…•åŠ›ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your strength.";
 #endif
@@ -446,7 +446,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_INT))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÃÎÇ½¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯çŸ¥èƒ½ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your intelligence.";
 #endif
@@ -454,7 +454,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_WIS))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¸­¤µ¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯è³¢ã•ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your wisdom.";
 #endif
@@ -462,7 +462,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_DEX))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï´ïÍÑ¤µ¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯å™¨ç”¨ã•ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your dexterity.";
 #endif
@@ -470,7 +470,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_CON))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÂÑµ×ÎÏ¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯è€ä¹…åŠ›ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your constitution.";
 #endif
@@ -478,7 +478,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_CHR))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÌ¥ÎÏ¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯é­…åŠ›ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your charisma.";
 #endif
@@ -487,7 +487,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_MAGIC_MASTERY))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏËâË¡Æ»¶ñ»ÈÍÑÇ½ÎÏ¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯é­”æ³•é“å…·ä½¿ç”¨èƒ½åŠ›ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your magic devices.";
 #endif
@@ -495,7 +495,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_STEALTH))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï±£Ì©¹ÔÆ°Ç½ÎÏ¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯éš å¯†è¡Œå‹•èƒ½åŠ›ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your stealth.";
 #endif
@@ -503,7 +503,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_SEARCH))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÃµº÷Ç½ÎÏ¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯æ¢ç´¢èƒ½åŠ›ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your searching.";
 #endif
@@ -511,7 +511,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_INFRA))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÀÖ³°Àş»ëÎÏ¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯èµ¤å¤–ç·šè¦–åŠ›ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your infravision.";
 #endif
@@ -519,7 +519,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_TUNNEL))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏºÎ·¡Ç½ÎÏ¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯æ¡æ˜èƒ½åŠ›ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your ability to tunnel.";
 #endif
@@ -527,7 +527,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_SPEED))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥¹¥Ô¡¼¥É¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯ã‚¹ãƒ”ãƒ¼ãƒ‰ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your speed.";
 #endif
@@ -535,7 +535,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_BLOWS))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÂÇ·â²ó¿ô¤Ë±Æ¶Á¤òµÚ¤Ü¤¹";
+		info[i++] = "ãã‚Œã¯æ‰“æ’ƒå›æ•°ã«å½±éŸ¿ã‚’åŠã¼ã™";
 #else
 		info[i++] = "It affects your attack speed.";
 #endif
@@ -544,7 +544,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_BRAND_ACID))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï»À¤Ë¤è¤Ã¤ÆÂç¤­¤Ê¥À¥á¡¼¥¸¤òÍ¿¤¨¤ë";
+		info[i++] = "ãã‚Œã¯é…¸ã«ã‚ˆã£ã¦å¤§ããªãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹";
 #else
 		info[i++] = "It does extra damage from acid.";
 #endif
@@ -552,7 +552,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_BRAND_ELEC))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÅÅ·â¤Ë¤è¤Ã¤ÆÂç¤­¤Ê¥À¥á¡¼¥¸¤òÍ¿¤¨¤ë";
+		info[i++] = "ãã‚Œã¯é›»æ’ƒã«ã‚ˆã£ã¦å¤§ããªãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹";
 #else
 		info[i++] = "It does extra damage from electricity.";
 #endif
@@ -560,7 +560,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_BRAND_FIRE))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï²Ğ±ê¤Ë¤è¤Ã¤ÆÂç¤­¤Ê¥À¥á¡¼¥¸¤òÍ¿¤¨¤ë";
+		info[i++] = "ãã‚Œã¯ç«ç‚ã«ã‚ˆã£ã¦å¤§ããªãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹";
 #else
 		info[i++] = "It does extra damage from fire.";
 #endif
@@ -568,7 +568,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_BRAND_COLD))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÎäµ¤¤Ë¤è¤Ã¤ÆÂç¤­¤Ê¥À¥á¡¼¥¸¤òÍ¿¤¨¤ë";
+		info[i++] = "ãã‚Œã¯å†·æ°—ã«ã‚ˆã£ã¦å¤§ããªãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹";
 #else
 		info[i++] = "It does extra damage from frost.";
 #endif
@@ -576,7 +576,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_BRAND_POIS))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÅ¨¤òÆÇ¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯æ•µã‚’æ¯’ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It poisons your foes.";
 #endif
@@ -584,7 +584,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_CHAOTIC))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥«¥ª¥¹Åª¤Ê¸ú²Ì¤òµÚ¤Ü¤¹¡£";
+		info[i++] = "ãã‚Œã¯ã‚«ã‚ªã‚¹çš„ãªåŠ¹æœã‚’åŠã¼ã™ã€‚";
 #else
 		info[i++] = "It produces chaotic effects.";
 #endif
@@ -592,7 +592,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_VAMPIRIC))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÅ¨¤«¤é¥Ò¥Ã¥È¥İ¥¤¥ó¥È¤òµÛ¼ı¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯æ•µã‹ã‚‰ãƒ’ãƒƒãƒˆãƒã‚¤ãƒ³ãƒˆã‚’å¸åã™ã‚‹ã€‚";
 #else
 		info[i++] = "It drains life from your foes.";
 #endif
@@ -600,7 +600,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_IMPACT))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÃÏ¿Ì¤òµ¯¤³¤¹¤³¤È¤¬¤Ç¤­¤ë¡£";
+		info[i++] = "ãã‚Œã¯åœ°éœ‡ã‚’èµ·ã“ã™ã“ã¨ãŒã§ãã‚‹ã€‚";
 #else
 		info[i++] = "It can cause earthquakes.";
 #endif
@@ -608,7 +608,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_VORPAL))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÈó¾ï¤ËÀÚ¤ìÌ£¤¬±Ô¤¯Å¨¤òÀÚÃÇ¤¹¤ë¤³¤È¤¬¤Ç¤­¤ë¡£";
+		info[i++] = "ãã‚Œã¯éå¸¸ã«åˆ‡ã‚Œå‘³ãŒé‹­ãæ•µã‚’åˆ‡æ–­ã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚";
 #else
 		info[i++] = "It is very sharp and can cut your foes.";
 #endif
@@ -617,7 +617,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_KILL_DRAGON))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥É¥é¥´¥ó¤Ë¤È¤Ã¤Æ¤ÎÅ·Å¨¤Ç¤¢¤ë¡£";
+		info[i++] = "ãã‚Œã¯ãƒ‰ãƒ©ã‚´ãƒ³ã«ã¨ã£ã¦ã®å¤©æ•µã§ã‚ã‚‹ã€‚";
 #else
 		info[i++] = "It is a great bane of dragons.";
 #endif
@@ -625,7 +625,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	else if (f1 & (TR1_SLAY_DRAGON))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥É¥é¥´¥ó¤ËÂĞ¤·¤ÆÆÃ¤Ë¶²¤ë¤Ù¤­ÎÏ¤òÈ¯´ø¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ãƒ‰ãƒ©ã‚´ãƒ³ã«å¯¾ã—ã¦ç‰¹ã«æã‚‹ã¹ãåŠ›ã‚’ç™ºæ®ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It is especially deadly against dragons.";
 #endif
@@ -633,7 +633,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_SLAY_ORC))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥ª¡¼¥¯¤ËÂĞ¤·¤ÆÆÃ¤Ë¶²¤ë¤Ù¤­ÎÏ¤òÈ¯´ø¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚ªãƒ¼ã‚¯ã«å¯¾ã—ã¦ç‰¹ã«æã‚‹ã¹ãåŠ›ã‚’ç™ºæ®ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It is especially deadly against orcs.";
 #endif
@@ -641,7 +641,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_SLAY_TROLL))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥È¥í¥ë¤ËÂĞ¤·¤ÆÆÃ¤Ë¶²¤ë¤Ù¤­ÎÏ¤òÈ¯´ø¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ãƒˆãƒ­ãƒ«ã«å¯¾ã—ã¦ç‰¹ã«æã‚‹ã¹ãåŠ›ã‚’ç™ºæ®ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It is especially deadly against trolls.";
 #endif
@@ -649,7 +649,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_SLAY_GIANT))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥¸¥ã¥¤¥¢¥ó¥È¤ËÂĞ¤·¤ÆÆÃ¤Ë¶²¤ë¤Ù¤­ÎÏ¤òÈ¯´ø¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆã«å¯¾ã—ã¦ç‰¹ã«æã‚‹ã¹ãåŠ›ã‚’ç™ºæ®ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It is especially deadly against giants.";
 #endif
@@ -657,7 +657,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_SLAY_DEMON))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥Ç¡¼¥â¥ó¤ËÂĞ¤·¤ÆÀ»¤Ê¤ëÎÏ¤òÈ¯´ø¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ãƒ‡ãƒ¼ãƒ¢ãƒ³ã«å¯¾ã—ã¦è–ãªã‚‹åŠ›ã‚’ç™ºæ®ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It strikes at demons with holy wrath.";
 #endif
@@ -665,7 +665,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_SLAY_UNDEAD))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥¢¥ó¥Ç¥Ã¥É¤ËÂĞ¤·¤ÆÀ»¤Ê¤ëÎÏ¤òÈ¯´ø¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚¢ãƒ³ãƒ‡ãƒƒãƒ‰ã«å¯¾ã—ã¦è–ãªã‚‹åŠ›ã‚’ç™ºæ®ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It strikes at undead with holy wrath.";
 #endif
@@ -673,7 +673,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_SLAY_EVIL))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¼Ù°­¤Ê¤ëÂ¸ºß¤ËÂĞ¤·¤ÆÀ»¤Ê¤ëÎÏ¤Ç¹¶·â¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯é‚ªæ‚ªãªã‚‹å­˜åœ¨ã«å¯¾ã—ã¦è–ãªã‚‹åŠ›ã§æ”»æ’ƒã™ã‚‹ã€‚";
 #else
 		info[i++] = "It fights against evil with holy fury.";
 #endif
@@ -681,7 +681,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_SLAY_ANIMAL))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¼«Á³³¦¤ÎÆ°Êª¤ËÂĞ¤·¤ÆÆÃ¤Ë¶²¤ë¤Ù¤­ÎÏ¤òÈ¯´ø¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯è‡ªç„¶ç•Œã®å‹•ç‰©ã«å¯¾ã—ã¦ç‰¹ã«æã‚‹ã¹ãåŠ›ã‚’ç™ºæ®ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It is especially deadly against natural creatures.";
 #endif
@@ -689,7 +689,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f1 & (TR1_SLAY_HUMAN))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¿Í´Ö¤ËÂĞ¤·¤ÆÆÃ¤Ë¶²¤ë¤Ù¤­ÎÏ¤òÈ¯´ø¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯äººé–“ã«å¯¾ã—ã¦ç‰¹ã«æã‚‹ã¹ãåŠ›ã‚’ç™ºæ®ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It is especially deadly against humans.";
 #endif
@@ -698,7 +698,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_DEC_MANA))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏËâÎÏ¤Î¾ÃÈñ¤ò²¡¤µ¤¨¤ë¡£";
+		info[i++] = "ãã‚Œã¯é­”åŠ›ã®æ¶ˆè²»ã‚’æŠ¼ã•ãˆã‚‹ã€‚";
 #else
 		info[i++] = "It decreases your mana consumption.";
 #endif
@@ -706,7 +706,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_THROW))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÅê¤²¤Æ»È¤¦¤Î¤ËÅ¬¤·¤Æ¤¤¤ë¡£";
+		info[i++] = "ãã‚Œã¯æŠ•ã’ã¦ä½¿ã†ã®ã«é©ã—ã¦ã„ã‚‹ã€‚";
 #else
 		info[i++] = "It is perfectly balanced for throwing.";
 #endif
@@ -715,7 +715,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_SUST_STR))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¤¢¤Ê¤¿¤ÎÏÓÎÏ¤ò°İ»ı¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚ãªãŸã®è…•åŠ›ã‚’ç¶­æŒã™ã‚‹ã€‚";
 #else
 		info[i++] = "It sustains your strength.";
 #endif
@@ -723,7 +723,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_SUST_INT))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¤¢¤Ê¤¿¤ÎÃÎÇ½¤ò°İ»ı¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚ãªãŸã®çŸ¥èƒ½ã‚’ç¶­æŒã™ã‚‹ã€‚";
 #else
 		info[i++] = "It sustains your intelligence.";
 #endif
@@ -731,7 +731,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_SUST_WIS))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¤¢¤Ê¤¿¤Î¸­¤µ¤ò°İ»ı¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚ãªãŸã®è³¢ã•ã‚’ç¶­æŒã™ã‚‹ã€‚";
 #else
 		info[i++] = "It sustains your wisdom.";
 #endif
@@ -739,7 +739,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_SUST_DEX))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¤¢¤Ê¤¿¤Î´ïÍÑ¤µ¤ò°İ»ı¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚ãªãŸã®å™¨ç”¨ã•ã‚’ç¶­æŒã™ã‚‹ã€‚";
 #else
 		info[i++] = "It sustains your dexterity.";
 #endif
@@ -747,7 +747,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_SUST_CON))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¤¢¤Ê¤¿¤ÎÂÑµ×ÎÏ¤ò°İ»ı¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚ãªãŸã®è€ä¹…åŠ›ã‚’ç¶­æŒã™ã‚‹ã€‚";
 #else
 		info[i++] = "It sustains your constitution.";
 #endif
@@ -755,7 +755,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_SUST_CHR))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¤¢¤Ê¤¿¤ÎÌ¥ÎÏ¤ò°İ»ı¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚ãªãŸã®é­…åŠ›ã‚’ç¶­æŒã™ã‚‹ã€‚";
 #else
 		info[i++] = "It sustains your charisma.";
 #endif
@@ -764,7 +764,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_IM_ACID))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï»À¤ËÂĞ¤¹¤ë´°Á´¤ÊÌÈ±Ö¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯é…¸ã«å¯¾ã™ã‚‹å®Œå…¨ãªå…ç–«ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides immunity to acid.";
 #endif
@@ -772,7 +772,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_IM_ELEC))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÅÅ·â¤ËÂĞ¤¹¤ë´°Á´¤ÊÌÈ±Ö¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯é›»æ’ƒã«å¯¾ã™ã‚‹å®Œå…¨ãªå…ç–«ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides immunity to electricity.";
 #endif
@@ -780,7 +780,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_IM_FIRE))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï²Ğ¤ËÂĞ¤¹¤ë´°Á´¤ÊÌÈ±Ö¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯ç«ã«å¯¾ã™ã‚‹å®Œå…¨ãªå…ç–«ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides immunity to fire.";
 #endif
@@ -788,7 +788,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_IM_COLD))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï´¨¤µ¤ËÂĞ¤¹¤ë´°Á´¤ÊÌÈ±Ö¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯å¯’ã•ã«å¯¾ã™ã‚‹å®Œå…¨ãªå…ç–«ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides immunity to cold.";
 #endif
@@ -797,7 +797,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_FREE_ACT))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏËãáã¤ËÂĞ¤¹¤ë´°Á´¤ÊÌÈ±Ö¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯éº»ç—ºã«å¯¾ã™ã‚‹å®Œå…¨ãªå…ç–«ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides immunity to paralysis.";
 #endif
@@ -805,7 +805,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_HOLD_LIFE))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÀ¸Ì¿ÎÏµÛ¼ı¤ËÂĞ¤¹¤ëÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯ç”Ÿå‘½åŠ›å¸åã«å¯¾ã™ã‚‹è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to life draining.";
 #endif
@@ -813,7 +813,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_FEAR))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¶²Éİ¤Ø¤Î´°Á´¤ÊÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯ææ€–ã¸ã®å®Œå…¨ãªè€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It makes you completely fearless.";
 #endif
@@ -821,7 +821,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_ACID))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï»À¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯é…¸ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to acid.";
 #endif
@@ -829,7 +829,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_ELEC))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÅÅ·â¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯é›»æ’ƒã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to electricity.";
 #endif
@@ -837,7 +837,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_FIRE))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï²Ğ¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯ç«ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to fire.";
 #endif
@@ -845,7 +845,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_COLD))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï´¨¤µ¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯å¯’ã•ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to cold.";
 #endif
@@ -853,7 +853,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_POIS))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÆÇ¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯æ¯’ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to poison.";
 #endif
@@ -862,7 +862,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_LITE))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÁ®¸÷¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯é–ƒå…‰ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to light.";
 #endif
@@ -870,7 +870,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_DARK))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï°Å¹õ¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯æš—é»’ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to dark.";
 #endif
@@ -879,7 +879,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_BLIND))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÌÕÌÜ¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯ç›²ç›®ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to blindness.";
 #endif
@@ -887,7 +887,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_CONF))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ïº®Íğ¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯æ··ä¹±ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to confusion.";
 #endif
@@ -895,7 +895,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_SOUND))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¹ì²»¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯è½ŸéŸ³ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to sound.";
 #endif
@@ -903,7 +903,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_SHARDS))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÇËÊÒ¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯ç ´ç‰‡ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to shards.";
 #endif
@@ -912,7 +912,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_NETHER))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÃÏ¹ö¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯åœ°ç„ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to nether.";
 #endif
@@ -920,7 +920,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_NEXUS))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï°ø²Ìº®Íğ¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯å› æœæ··ä¹±ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to nexus.";
 #endif
@@ -928,7 +928,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_CHAOS))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥«¥ª¥¹¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚«ã‚ªã‚¹ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to chaos.";
 #endif
@@ -936,7 +936,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_RES_DISEN))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÎô²½¤Ø¤ÎÂÑÀ­¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯åŠ£åŒ–ã¸ã®è€æ€§ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides resistance to disenchantment.";
 #endif
@@ -945,7 +945,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_WRAITH))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¤¢¤Ê¤¿¤òÈóÊª¼Á²½¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚ãªãŸã‚’éç‰©è³ªåŒ–ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It renders you incorporeal.";
 #endif
@@ -953,7 +953,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_FEATHER))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÃè¤ËÉâ¤¯¤³¤È¤ò²ÄÇ½¤Ë¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯å®™ã«æµ®ãã“ã¨ã‚’å¯èƒ½ã«ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It allows you to levitate.";
 #endif
@@ -961,7 +961,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_LITE) && (o_ptr->tval != TV_LITE))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï±Ê±ó¤ÎÌÀ¤«¤ê¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯æ°¸é ã®æ˜ã‹ã‚Šã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It provides permanent light.";
 #endif
@@ -969,7 +969,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_SEE_INVIS))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÆ©ÌÀ¤Ê¥â¥ó¥¹¥¿¡¼¤ò¸«¤ë¤³¤È¤ò²ÄÇ½¤Ë¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯é€æ˜ãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’è¦‹ã‚‹ã“ã¨ã‚’å¯èƒ½ã«ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It allows you to see invisible monsters.";
 #endif
@@ -977,7 +977,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_TELEPATHY))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥Æ¥ì¥Ñ¥·¡¼Ç½ÎÏ¤ò¼ø¤±¤ë¡£";
+		info[i++] = "ãã‚Œã¯ãƒ†ãƒ¬ãƒ‘ã‚·ãƒ¼èƒ½åŠ›ã‚’æˆã‘ã‚‹ã€‚";
 #else
 		info[i++] = "It gives telepathic powers.";
 #endif
@@ -985,7 +985,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_SLOW_DIGEST))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¤¢¤Ê¤¿¤Î¿·ÄÄÂå¼Õ¤òÃÙ¤¯¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ã‚ãªãŸã®æ–°é™³ä»£è¬ã‚’é…ãã™ã‚‹ã€‚";
 #else
 		info[i++] = "It slows your metabolism.";
 #endif
@@ -993,7 +993,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_REGEN))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÂÎÎÏ²óÉüÎÏ¤ò¶¯²½¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ä½“åŠ›å›å¾©åŠ›ã‚’å¼·åŒ–ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It speeds your regenerative powers.";
 #endif
@@ -1001,7 +1001,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_WARNING))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï´í¸±¤ËÂĞ¤·¤Æ·Ù¹ğ¤òÈ¯¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯å±é™ºã«å¯¾ã—ã¦è­¦å‘Šã‚’ç™ºã™ã‚‹ã€‚";
 #else
 		info[i++] = "It warns you of danger";
 #endif
@@ -1009,7 +1009,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f2 & (TR2_REFLECT))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÌğ¤ä¥Ü¥ë¥È¤òÈ¿¼Í¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯çŸ¢ã‚„ãƒœãƒ«ãƒˆã‚’åå°„ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It reflects bolts and arrows.";
 #endif
@@ -1018,7 +1018,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_SH_FIRE))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï±ê¤Î¥Ğ¥ê¥¢¤òÄ¥¤ë¡£";
+		info[i++] = "ãã‚Œã¯ç‚ã®ãƒãƒªã‚¢ã‚’å¼µã‚‹ã€‚";
 #else
 		info[i++] = "It produces a fiery sheath.";
 #endif
@@ -1026,7 +1026,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_SH_ELEC))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÅÅµ¤¤Î¥Ğ¥ê¥¢¤òÄ¥¤ë¡£";
+		info[i++] = "ãã‚Œã¯é›»æ°—ã®ãƒãƒªã‚¢ã‚’å¼µã‚‹ã€‚";
 #else
 		info[i++] = "It produces an electric sheath.";
 #endif
@@ -1034,7 +1034,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_SH_COLD))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÎäµ¤¤Î¥Ğ¥ê¥¢¤òÄ¥¤ë¡£";
+		info[i++] = "ãã‚Œã¯å†·æ°—ã®ãƒãƒªã‚¢ã‚’å¼µã‚‹ã€‚";
 #else
 		info[i++] = "It produces an cold sheath.";
 #endif
@@ -1042,7 +1042,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_NO_MAGIC))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÈ¿ËâË¡¥Ğ¥ê¥¢¤òÄ¥¤ë¡£";
+		info[i++] = "ãã‚Œã¯åé­”æ³•ãƒãƒªã‚¢ã‚’å¼µã‚‹ã€‚";
 #else
 		info[i++] = "It produces an anti-magic shell.";
 #endif
@@ -1050,7 +1050,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_NO_TELE))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥Æ¥ì¥İ¡¼¥È¤ò¼ÙËâ¤¹¤ë¡£";
+		info[i++] = "ãã‚Œã¯ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã‚’é‚ªé­”ã™ã‚‹ã€‚";
 #else
 		info[i++] = "It prevents teleportation.";
 #endif
@@ -1059,7 +1059,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_XTRA_MIGHT))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÌğ¡¿¥Ü¥ë¥È¡¿ÃÆ¤ò¤è¤ê¶¯ÎÏ¤ËÈ¯¼Í¤¹¤ë¤³¤È¤¬¤Ç¤­¤ë¡£";
+		info[i++] = "ãã‚Œã¯çŸ¢ï¼ãƒœãƒ«ãƒˆï¼å¼¾ã‚’ã‚ˆã‚Šå¼·åŠ›ã«ç™ºå°„ã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚";
 #else
 		info[i++] = "It fires missiles with extra might.";
 #endif
@@ -1067,7 +1067,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_XTRA_SHOTS))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÌğ¡¿¥Ü¥ë¥È¡¿ÃÆ¤òÈó¾ï¤ËÁá¤¯È¯¼Í¤¹¤ë¤³¤È¤¬¤Ç¤­¤ë¡£";
+		info[i++] = "ãã‚Œã¯çŸ¢ï¼ãƒœãƒ«ãƒˆï¼å¼¾ã‚’éå¸¸ã«æ—©ãç™ºå°„ã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚";
 #else
 		info[i++] = "It fires missiles excessively fast.";
 #endif
@@ -1076,7 +1076,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_DRAIN_EXP))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï·Ğ¸³ÃÍ¤òµÛ¤¤¼è¤ë¡£";
+		info[i++] = "ãã‚Œã¯çµŒé¨“å€¤ã‚’å¸ã„å–ã‚‹ã€‚";
 #else
 		info[i++] = "It drains experience.";
 #endif
@@ -1084,7 +1084,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & (TR3_TELEPORT))
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¥é¥ó¥À¥à¤Ê¥Æ¥ì¥İ¡¼¥È¤ò°ú¤­µ¯¤³¤¹¡£";
+		info[i++] = "ãã‚Œã¯ãƒ©ãƒ³ãƒ€ãƒ ãªãƒ†ãƒ¬ãƒãƒ¼ãƒˆã‚’å¼•ãèµ·ã“ã™ã€‚";
 #else
 		info[i++] = "It induces random teleportation.";
 #endif
@@ -1092,7 +1092,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & TR3_AGGRAVATE)
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤ÏÉÕ¶á¤Î¥â¥ó¥¹¥¿¡¼¤òÅÜ¤é¤»¤ë¡£";
+		info[i++] = "ãã‚Œã¯ä»˜è¿‘ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’æ€’ã‚‰ã›ã‚‹ã€‚";
 #else
 		info[i++] = "It aggravates nearby creatures.";
 #endif
@@ -1101,7 +1101,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & TR3_BLESSED)
 	{
 #ifdef JP
-		info[i++] = "¤½¤ì¤Ï¿À¤Ë½ËÊ¡¤µ¤ì¤Æ¤¤¤ë¡£";
+		info[i++] = "ãã‚Œã¯ç¥ã«ç¥ç¦ã•ã‚Œã¦ã„ã‚‹ã€‚";
 #else
 		info[i++] = "It has been blessed by the gods.";
 #endif
@@ -1112,7 +1112,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		if (f3 & TR3_PERMA_CURSE)
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤Ï±Ê±ó¤Î¼ö¤¤¤¬¤«¤±¤é¤ì¤Æ¤¤¤ë¡£";
+			info[i++] = "ãã‚Œã¯æ°¸é ã®å‘ªã„ãŒã‹ã‘ã‚‰ã‚Œã¦ã„ã‚‹ã€‚";
 #else
 			info[i++] = "It is permanently cursed.";
 #endif
@@ -1120,7 +1120,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		else if (f3 & TR3_HEAVY_CURSE)
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤Ï¶¯ÎÏ¤Ê¼ö¤¤¤¬¤«¤±¤é¤ì¤Æ¤¤¤ë¡£";
+			info[i++] = "ãã‚Œã¯å¼·åŠ›ãªå‘ªã„ãŒã‹ã‘ã‚‰ã‚Œã¦ã„ã‚‹ã€‚";
 #else
 			info[i++] = "It is heavily cursed.";
 #endif
@@ -1128,7 +1128,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		else
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤Ï¼ö¤ï¤ì¤Æ¤¤¤ë¡£";
+			info[i++] = "ãã‚Œã¯å‘ªã‚ã‚Œã¦ã„ã‚‹ã€‚";
 #else
 			info[i++] = "It is cursed.";
 #endif
@@ -1138,7 +1138,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if (f3 & TR3_TY_CURSE)
 	{
 #ifdef JP
-			info[i++] = "¤½¤ì¤ÏÂÀ¸Å¤Î²Ò¡¹¤·¤¤±åÇ°¤¬½É¤Ã¤Æ¤¤¤ë¡£";
+			info[i++] = "ãã‚Œã¯å¤ªå¤ã®ç¦ã€…ã—ã„æ€¨å¿µãŒå®¿ã£ã¦ã„ã‚‹ã€‚";
 #else
 			info[i++] = "It carries an ancient foul curse.";
 #endif
@@ -1149,7 +1149,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 	if ((f3 & flag) == flag)
 	{
 #ifdef JP
-	  info[i++] = "¤½¤ì¤Ï»À¡¦ÅÅ·â¡¦²Ğ±ê¡¦Îäµ¤¤Ç¤Ï½ı¤Ä¤«¤Ê¤¤¡£";
+	  info[i++] = "ãã‚Œã¯é…¸ãƒ»é›»æ’ƒãƒ»ç«ç‚ãƒ»å†·æ°—ã§ã¯å‚·ã¤ã‹ãªã„ã€‚";
 #else
 	  info[i++] = "It cannot be harmed by the elements.";
 #endif
@@ -1157,7 +1157,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		if (f3 & (TR3_IGNORE_ACID))
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤Ï»À¤Ç¤Ï½ı¤Ä¤«¤Ê¤¤¡£";
+			info[i++] = "ãã‚Œã¯é…¸ã§ã¯å‚·ã¤ã‹ãªã„ã€‚";
 #else
 			info[i++] = "It cannot be harmed by acid.";
 #endif
@@ -1165,7 +1165,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		if (f3 & (TR3_IGNORE_ELEC))
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤ÏÅÅ·â¤Ç¤Ï½ı¤Ä¤«¤Ê¤¤¡£";
+			info[i++] = "ãã‚Œã¯é›»æ’ƒã§ã¯å‚·ã¤ã‹ãªã„ã€‚";
 #else
 			info[i++] = "It cannot be harmed by electricity.";
 #endif
@@ -1173,7 +1173,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		if (f3 & (TR3_IGNORE_FIRE))
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤Ï²Ğ±ê¤Ç¤Ï½ı¤Ä¤«¤Ê¤¤¡£";
+			info[i++] = "ãã‚Œã¯ç«ç‚ã§ã¯å‚·ã¤ã‹ãªã„ã€‚";
 #else
 			info[i++] = "It cannot be harmed by fire.";
 #endif
@@ -1181,7 +1181,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		if (f3 & (TR3_IGNORE_COLD))
 		{
 #ifdef JP
-			info[i++] = "¤½¤ì¤ÏÎäµ¤¤Ç¤Ï½ı¤Ä¤«¤Ê¤¤¡£";
+			info[i++] = "ãã‚Œã¯å†·æ°—ã§ã¯å‚·ã¤ã‹ãªã„ã€‚";
 #else
 			info[i++] = "It cannot be harmed by cold.";
 #endif
@@ -1219,7 +1219,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 		if ((k == hgt - 2) && (j+1 < i))
 		{
 #ifdef JP
-			prt("-- Â³¤¯ --", k, 15);
+			prt("-- ç¶šã --", k, 15);
 #else
 			prt("-- more --", k, 15);
 #endif
@@ -1230,7 +1230,7 @@ bool identify_fully_aux(object_type *o_ptr, bool real)
 
 	/* Wait for it */
 #ifdef JP
-	prt("[²¿¤«¥­¡¼¤ò²¡¤¹¤È¥²¡¼¥à¤ËÌá¤ê¤Ş¤¹]", k, 15);
+	prt("[ä½•ã‹ã‚­ãƒ¼ã‚’æŠ¼ã™ã¨ã‚²ãƒ¼ãƒ ã«æˆ»ã‚Šã¾ã™]", k, 15);
 #else
 	prt("[Press any key to continue]", k, 15);
 #endif
@@ -1395,75 +1395,75 @@ cptr mention_use(int i)
 	switch (i)
 	{
 #ifdef JP
-		case INVEN_WIELD: p = " ±¦¼ê"; break;
-		case INVEN_ARM: p = " º¸¼ê"; break;
+		case INVEN_WIELD: p = " å³æ‰‹"; break;
+		case INVEN_ARM: p = " å·¦æ‰‹"; break;
 #else
 		case INVEN_WIELD: p = "On right arm"; break;
 		case INVEN_ARM: p = "On left arm"; break;
 #endif
 
 #ifdef JP
-case INVEN_BOW:   p = "¼Í·âÍÑ"; break;
+case INVEN_BOW:   p = "å°„æ’ƒç”¨"; break;
 #else
 		case INVEN_BOW:   p = "Shooting"; break;
 #endif
 
 #ifdef JP
-case INVEN_LEFT:  p = "º¸¼ê»Ø"; break;
+case INVEN_LEFT:  p = "å·¦æ‰‹æŒ‡"; break;
 #else
 		case INVEN_LEFT:  p = "On left hand"; break;
 #endif
 
 #ifdef JP
-case INVEN_RIGHT: p = "±¦¼ê»Ø"; break;
+case INVEN_RIGHT: p = "å³æ‰‹æŒ‡"; break;
 #else
 		case INVEN_RIGHT: p = "On right hand"; break;
 #endif
 
 #ifdef JP
-case INVEN_NECK:  p = "  ¼ó"; break;
+case INVEN_NECK:  p = "  é¦–"; break;
 #else
 		case INVEN_NECK:  p = "Around neck"; break;
 #endif
 
 #ifdef JP
-case INVEN_LITE:  p = " ¸÷¸»"; break;
+case INVEN_LITE:  p = " å…‰æº"; break;
 #else
 		case INVEN_LITE:  p = "Light source"; break;
 #endif
 
 #ifdef JP
-case INVEN_BODY:  p = "  ÂÎ"; break;
+case INVEN_BODY:  p = "  ä½“"; break;
 #else
 		case INVEN_BODY:  p = "On body"; break;
 #endif
 
 #ifdef JP
-case INVEN_OUTER: p = "ÂÎ¤Î¾å"; break;
+case INVEN_OUTER: p = "ä½“ã®ä¸Š"; break;
 #else
 		case INVEN_OUTER: p = "About body"; break;
 #endif
 
 #ifdef JP
-case INVEN_HEAD:  p = "  Æ¬"; break;
+case INVEN_HEAD:  p = "  é ­"; break;
 #else
 		case INVEN_HEAD:  p = "On head"; break;
 #endif
 
 #ifdef JP
-case INVEN_HANDS: p = "  ¼ê"; break;
+case INVEN_HANDS: p = "  æ‰‹"; break;
 #else
 		case INVEN_HANDS: p = "On hands"; break;
 #endif
 
 #ifdef JP
-case INVEN_FEET:  p = "  Â­"; break;
+case INVEN_FEET:  p = "  è¶³"; break;
 #else
 		case INVEN_FEET:  p = "On feet"; break;
 #endif
 
 #ifdef JP
-default:          p = "¥¶¥Ã¥¯"; break;
+default:          p = "ã‚¶ãƒƒã‚¯"; break;
 #else
 		default:          p = "In pack"; break;
 #endif
@@ -1478,7 +1478,7 @@ default:          p = "¥¶¥Ã¥¯"; break;
 		if (adj_str_hold[p_ptr->stat_ind[A_STR]] < o_ptr->weight / 10)
 		{
 #ifdef JP
-p = "±¿ÈÂÃæ";
+p = "é‹æ¬ä¸­";
 #else
 			p = "Just lifting";
 #endif
@@ -1494,7 +1494,7 @@ p = "±¿ÈÂÃæ";
 		if (adj_str_hold[p_ptr->stat_ind[A_STR]] < o_ptr->weight / 10)
 		{
 #ifdef JP
-p = "±¿ÈÂÃæ";
+p = "é‹æ¬ä¸­";
 #else
 			p = "Just holding";
 #endif
@@ -1518,7 +1518,7 @@ cptr describe_use(int i)
 	switch (i)
 	{
 #ifdef JP
-case INVEN_WIELD: p = "ÂÇ·âÍÑ¤ËÁõÈ÷¤·¤Æ¤¤¤ë"; break;
+case INVEN_WIELD: p = "æ‰“æ’ƒç”¨ã«è£…å‚™ã—ã¦ã„ã‚‹"; break;
 #else
 		case INVEN_WIELD: p = "attacking monsters with"; break;
 #endif
@@ -1527,7 +1527,7 @@ case INVEN_WIELD: p = "ÂÇ·âÍÑ¤ËÁõÈ÷¤·¤Æ¤¤¤ë"; break;
 			if (is_two_handed())
 			{
 #ifdef JP
-				p = "ÂÇ·âÍÑ¤ËÁõÈ÷¤·¤Æ¤¤¤ë";
+				p = "æ‰“æ’ƒç”¨ã«è£…å‚™ã—ã¦ã„ã‚‹";
 #else
 				p = "attacking monsters with";
 #endif
@@ -1535,7 +1535,7 @@ case INVEN_WIELD: p = "ÂÇ·âÍÑ¤ËÁõÈ÷¤·¤Æ¤¤¤ë"; break;
 			else
 			{
 #ifdef JP
-				p = "ÏÓ¤Ë¤Ä¤±¤Æ¤¤¤ë";
+				p = "è…•ã«ã¤ã‘ã¦ã„ã‚‹";
 #else
 				p = "wearing on your arm";
 #endif
@@ -1543,67 +1543,67 @@ case INVEN_WIELD: p = "ÂÇ·âÍÑ¤ËÁõÈ÷¤·¤Æ¤¤¤ë"; break;
 		break;
 
 #ifdef JP
-case INVEN_BOW:   p = "¼Í·âÍÑ¤ËÁõÈ÷¤·¤Æ¤¤¤ë"; break;
+case INVEN_BOW:   p = "å°„æ’ƒç”¨ã«è£…å‚™ã—ã¦ã„ã‚‹"; break;
 #else
 		case INVEN_BOW:   p = "shooting missiles with"; break;
 #endif
 
 #ifdef JP
-case INVEN_LEFT:  p = "º¸¼ê¤Î»Ø¤Ë¤Ï¤á¤Æ¤¤¤ë"; break;
+case INVEN_LEFT:  p = "å·¦æ‰‹ã®æŒ‡ã«ã¯ã‚ã¦ã„ã‚‹"; break;
 #else
 		case INVEN_LEFT:  p = "wearing on your left hand"; break;
 #endif
 
 #ifdef JP
-case INVEN_RIGHT: p = "±¦¼ê¤Î»Ø¤Ë¤Ï¤á¤Æ¤¤¤ë"; break;
+case INVEN_RIGHT: p = "å³æ‰‹ã®æŒ‡ã«ã¯ã‚ã¦ã„ã‚‹"; break;
 #else
 		case INVEN_RIGHT: p = "wearing on your right hand"; break;
 #endif
 
 #ifdef JP
-case INVEN_NECK:  p = "¼ó¤Ë¤«¤±¤Æ¤¤¤ë"; break;
+case INVEN_NECK:  p = "é¦–ã«ã‹ã‘ã¦ã„ã‚‹"; break;
 #else
 		case INVEN_NECK:  p = "wearing around your neck"; break;
 #endif
 
 #ifdef JP
-case INVEN_LITE:  p = "¸÷¸»¤Ë¤·¤Æ¤¤¤ë"; break;
+case INVEN_LITE:  p = "å…‰æºã«ã—ã¦ã„ã‚‹"; break;
 #else
 		case INVEN_LITE:  p = "using to light the way"; break;
 #endif
 
 #ifdef JP
-case INVEN_BODY:  p = "ÂÎ¤ËÃå¤Æ¤¤¤ë"; break;
+case INVEN_BODY:  p = "ä½“ã«ç€ã¦ã„ã‚‹"; break;
 #else
 		case INVEN_BODY:  p = "wearing on your body"; break;
 #endif
 
 #ifdef JP
-case INVEN_OUTER: p = "¿È¤Ë¤Ş¤È¤Ã¤Æ¤¤¤ë"; break;
+case INVEN_OUTER: p = "èº«ã«ã¾ã¨ã£ã¦ã„ã‚‹"; break;
 #else
 		case INVEN_OUTER: p = "wearing on your back"; break;
 #endif
 
 #ifdef JP
-case INVEN_HEAD:  p = "Æ¬¤Ë¤«¤Ö¤Ã¤Æ¤¤¤ë"; break;
+case INVEN_HEAD:  p = "é ­ã«ã‹ã¶ã£ã¦ã„ã‚‹"; break;
 #else
 		case INVEN_HEAD:  p = "wearing on your head"; break;
 #endif
 
 #ifdef JP
-case INVEN_HANDS: p = "¼ê¤Ë¤Ä¤±¤Æ¤¤¤ë"; break;
+case INVEN_HANDS: p = "æ‰‹ã«ã¤ã‘ã¦ã„ã‚‹"; break;
 #else
 		case INVEN_HANDS: p = "wearing on your hands"; break;
 #endif
 
 #ifdef JP
-case INVEN_FEET:  p = "Â­¤Ë¤Ï¤¤¤Æ¤¤¤ë"; break;
+case INVEN_FEET:  p = "è¶³ã«ã¯ã„ã¦ã„ã‚‹"; break;
 #else
 		case INVEN_FEET:  p = "wearing on your feet"; break;
 #endif
 
 #ifdef JP
-default:          p = "¥¶¥Ã¥¯¤ËÆş¤Ã¤Æ¤¤¤ë"; break;
+default:          p = "ã‚¶ãƒƒã‚¯ã«å…¥ã£ã¦ã„ã‚‹"; break;
 #else
 		default:          p = "carrying in your pack"; break;
 #endif
@@ -1618,7 +1618,7 @@ default:          p = "¥¶¥Ã¥¯¤ËÆş¤Ã¤Æ¤¤¤ë"; break;
 		if (adj_str_hold[p_ptr->stat_ind[A_STR]] < o_ptr->weight / 10)
 		{
 #ifdef JP
-p = "±¿ÈÂÃæ¤Î";
+p = "é‹æ¬ä¸­ã®";
 #else
 			p = "just lifting";
 #endif
@@ -1634,7 +1634,7 @@ p = "±¿ÈÂÃæ¤Î";
 		if (adj_str_hold[p_ptr->stat_ind[A_STR]] < o_ptr->weight / 10)
 		{
 #ifdef JP
-p = "»ı¤Ä¤À¤±¤ÇÀº°ìÇÕ¤Î";
+p = "æŒã¤ã ã‘ã§ç²¾ä¸€æ¯ã®";
 #else
 			p = "just holding";
 #endif
@@ -2515,7 +2515,7 @@ static bool verify(cptr prompt, int item)
 
 	/* Prompt */
 #ifdef JP
-(void)sprintf(out_val, "%s%s¤Ç¤¹¤«? ", prompt, o_name);
+(void)sprintf(out_val, "%s%sã§ã™ã‹? ", prompt, o_name);
 #else
 	(void)sprintf(out_val, "%s %s? ", prompt, o_name);
 #endif
@@ -2576,7 +2576,7 @@ static bool get_item_allow(int item)
 		{
 			/* Verify the choice */
 #ifdef JP
-			if (!verify("ËÜÅö¤Ë", item)) return (FALSE);
+			if (!verify("æœ¬å½“ã«", item)) return (FALSE);
 #else
 			if (!verify("Really try", item)) return (FALSE);
 #endif
@@ -2950,7 +2950,7 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 		{
 			/* Begin the prompt */
 #ifdef JP
-			sprintf(out_val, "»ı¤ÁÊª:");
+			sprintf(out_val, "æŒã¡ç‰©:");
 #else
 			sprintf(out_val, "Inven:");
 #endif
@@ -2972,14 +2972,14 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 
 			/* Indicate ability to "view" */
 #ifdef JP
-			if (!command_see) strcat(out_val, " '*'°ìÍ÷,");
+			if (!command_see) strcat(out_val, " '*'ä¸€è¦§,");
 #else
 			if (!command_see) strcat(out_val, " * to see,");
 #endif
 
 			/* Append */
 #ifdef JP
-			if (equip) strcat(out_val, " '/'ÁõÈ÷ÉÊ,");
+			if (equip) strcat(out_val, " '/'è£…å‚™å“,");
 #else
 			if (equip) strcat(out_val, " / for Equip,");
 #endif
@@ -2990,7 +2990,7 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 		{
 			/* Begin the prompt */
 #ifdef JP
-			sprintf(out_val, "ÁõÈ÷ÉÊ:");
+			sprintf(out_val, "è£…å‚™å“:");
 #else
 			sprintf(out_val, "Equip:");
 #endif
@@ -3012,14 +3012,14 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 
 			/* Indicate ability to "view" */
 #ifdef JP
-			if (!command_see) strcat(out_val, " '*'°ìÍ÷,");
+			if (!command_see) strcat(out_val, " '*'ä¸€è¦§,");
 #else
 			if (!command_see) strcat(out_val, " * to see,");
 #endif
 
 			/* Append */
 #ifdef JP
-			if (inven) strcat(out_val, " '/' »ı¤ÁÊª,");
+			if (inven) strcat(out_val, " '/' æŒã¡ç‰©,");
 #else
 			if (inven) strcat(out_val, " / for Inven,");
 #endif
@@ -3027,7 +3027,7 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 
 		/* Indicate legality of the "floor" item */
 #ifdef JP
-		if (allow_floor) strcat(out_val, " '-'¾²¾å,");
+		if (allow_floor) strcat(out_val, " '-'åºŠä¸Š,");
 #else
 		if (allow_floor) strcat(out_val, " - for floor,");
 #endif
@@ -3322,7 +3322,7 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 
 				/* Verify the item */
 #ifdef JP
-				if (ver && !verify("ËÜÅö¤Ë", k))
+				if (ver && !verify("æœ¬å½“ã«", k))
 #else
 				if (ver && !verify("Try", k))
 #endif
@@ -3865,7 +3865,7 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 		{
 			/* Begin the prompt */
 #ifdef JP
-			sprintf(out_val, "»ı¤ÁÊª:");
+			sprintf(out_val, "æŒã¡ç‰©:");
 #else
 			sprintf(out_val, "Inven:");
 #endif
@@ -3883,21 +3883,21 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 
 			/* Indicate ability to "view" */
 #ifdef JP
-			if (!command_see) strcat(out_val, " '*'°ìÍ÷,");
+			if (!command_see) strcat(out_val, " '*'ä¸€è¦§,");
 #else
 			if (!command_see) strcat(out_val, " * to see,");
 #endif
 
 			/* Append */
 #ifdef JP
-			if (allow_equip) strcat(out_val, " '/'ÁõÈ÷ÉÊ,");
+			if (allow_equip) strcat(out_val, " '/'è£…å‚™å“,");
 #else
 			if (allow_equip) strcat(out_val, " / for Equip,");
 #endif
 
 			/* Append */
 #ifdef JP
-			if (allow_floor) strcat(out_val, " '-'¾²¾å,");
+			if (allow_floor) strcat(out_val, " '-'åºŠä¸Š,");
 #else
 			if (allow_floor) strcat(out_val, " - for floor,");
 #endif
@@ -3908,7 +3908,7 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 		{
 			/* Begin the prompt */
 #ifdef JP
-			sprintf(out_val, "ÁõÈ÷ÉÊ:");
+			sprintf(out_val, "è£…å‚™å“:");
 #else
 			sprintf(out_val, "Equip:");
 #endif
@@ -3926,21 +3926,21 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 
 			/* Indicate ability to "view" */
 #ifdef JP
-			if (!command_see) strcat(out_val, " '*'°ìÍ÷,");
+			if (!command_see) strcat(out_val, " '*'ä¸€è¦§,");
 #else
 			if (!command_see) strcat(out_val, " * to see,");
 #endif
 
 			/* Append */
 #ifdef JP
-			if (allow_inven) strcat(out_val, " '/' »ı¤ÁÊª,");
+			if (allow_inven) strcat(out_val, " '/' æŒã¡ç‰©,");
 #else
 			if (allow_inven) strcat(out_val, " / for Inven,");
 #endif
 
 			/* Append */
 #ifdef JP
-			if (allow_floor) strcat(out_val, " '-'¾²¾å,");
+			if (allow_floor) strcat(out_val, " '-'åºŠä¸Š,");
 #else
 			if (allow_floor) strcat(out_val, " - for floor,");
 #endif
@@ -3951,7 +3951,7 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 		{
 			/* Begin the prompt */
 #ifdef JP
-			sprintf(out_val, "¾²¾å:");
+			sprintf(out_val, "åºŠä¸Š:");
 #else
 			sprintf(out_val, "Floor:");
 #endif
@@ -3968,7 +3968,7 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 
 			/* Indicate ability to "view" */
 #ifdef JP
-			if (!command_see) strcat(out_val, " '*'°ìÍ÷,");
+			if (!command_see) strcat(out_val, " '*'ä¸€è¦§,");
 #else
 			if (!command_see) strcat(out_val, " * to see,");
 #endif
@@ -3977,7 +3977,7 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 			if (allow_inven)
 			{
 #ifdef JP
-				strcat(out_val, " '/' »ı¤ÁÊª,");
+				strcat(out_val, " '/' æŒã¡ç‰©,");
 #else
 				strcat(out_val, " / for Inven,");
 #endif
@@ -3985,7 +3985,7 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 			else if (allow_equip)
 			{
 #ifdef JP
-				strcat(out_val, " '/'ÁõÈ÷ÉÊ,");
+				strcat(out_val, " '/'è£…å‚™å“,");
 #else
 				strcat(out_val, " / for Equip,");
 #endif
@@ -3995,7 +3995,7 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 			if (command_see)
 			{
 #ifdef JP
-				strcat(out_val, " Enter ¼¡,");
+				strcat(out_val, " Enter æ¬¡,");
 #else
 				strcat(out_val, " Enter for scroll down,");
 #endif
@@ -4455,7 +4455,7 @@ bool get_item_floor(int *cp, cptr pmt, cptr str, int mode)
 
 				/* Verify the item */
 #ifdef JP
-				if (ver && !verify("ËÜÅö¤Ë", k))
+				if (ver && !verify("æœ¬å½“ã«", k))
 #else
 				if (ver && !verify("Try", k))
 #endif
@@ -4545,8 +4545,8 @@ static bool py_pickup_floor_aux(void)
 
 	/* Get an object */
 #ifdef JP
-	q = "¤É¤ì¤ò½¦¤¤¤Ş¤¹¤«¡©";
-	s = "¤â¤¦¥¶¥Ã¥¯¤Ë¤Ï¾²¤Ë¤¢¤ë¤É¤Î¥¢¥¤¥Æ¥à¤âÆş¤é¤Ê¤¤¡£";
+	q = "ã©ã‚Œã‚’æ‹¾ã„ã¾ã™ã‹ï¼Ÿ";
+	s = "ã‚‚ã†ã‚¶ãƒƒã‚¯ã«ã¯åºŠã«ã‚ã‚‹ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚‚å…¥ã‚‰ãªã„ã€‚";
 #else
 	q = "Get which item? ";
 	s = "You no longer have any room for the objects on the floor.";
@@ -4608,7 +4608,7 @@ void py_pickup_floor(int pickup)
 		{
 			/* Message */
 #ifdef JP
-		msg_format(" $%ld ¤Î²ÁÃÍ¤¬¤¢¤ë%s¤ò¸«¤Ä¤±¤¿¡£",
+		msg_format(" $%ld ã®ä¾¡å€¤ãŒã‚ã‚‹%sã‚’è¦‹ã¤ã‘ãŸã€‚",
 			   (long)o_ptr->pval, o_name);
 #else
 			msg_format("You have found %ld gold pieces worth of %s.",
@@ -4682,7 +4682,7 @@ void py_pickup_floor(int pickup)
 
 			/* Message */
 #ifdef JP
-				msg_format("%s¤¬¤¢¤ë¡£", o_name);
+				msg_format("%sãŒã‚ã‚‹ã€‚", o_name);
 #else
 			msg_format("You see %s.", o_name);
 #endif
@@ -4694,7 +4694,7 @@ void py_pickup_floor(int pickup)
 		{
 			/* Message */
 #ifdef JP
-			msg_format("%d ¸Ä¤Î¥¢¥¤¥Æ¥à¤Î»³¤¬¤¢¤ë¡£", floor_num);
+			msg_format("%d å€‹ã®ã‚¢ã‚¤ãƒ†ãƒ ã®å±±ãŒã‚ã‚‹ã€‚", floor_num);
 #else
 			msg_format("You see a pile of %d items.", floor_num);
 #endif
@@ -4730,7 +4730,7 @@ void py_pickup_floor(int pickup)
 
 			/* Message */
 #ifdef JP
-				msg_format("¥¶¥Ã¥¯¤Ë¤Ï%s¤òÆş¤ì¤ë·ä´Ö¤¬¤Ê¤¤¡£", o_name);
+				msg_format("ã‚¶ãƒƒã‚¯ã«ã¯%sã‚’å…¥ã‚Œã‚‹éš™é–“ãŒãªã„ã€‚", o_name);
 #else
 			msg_format("You have no room for %s.", o_name);
 #endif
@@ -4742,7 +4742,7 @@ void py_pickup_floor(int pickup)
 		{
 			/* Message */
 #ifdef JP
-			msg_format("¥¶¥Ã¥¯¤Ë¤Ï¾²¤Ë¤¢¤ë¤É¤Î¥¢¥¤¥Æ¥à¤âÆş¤é¤Ê¤¤¡£", o_name);
+			msg_format("ã‚¶ãƒƒã‚¯ã«ã¯åºŠã«ã‚ã‚‹ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚‚å…¥ã‚‰ãªã„ã€‚", o_name);
 #else
 			msg_print("You have no room for any of the objects on the floor.");
 #endif
@@ -4780,7 +4780,7 @@ void py_pickup_floor(int pickup)
 
 			/* Build a prompt */
 #ifdef JP
-					(void)sprintf(out_val, "%s¤ò½¦¤¤¤Ş¤¹¤«? ", o_name);
+					(void)sprintf(out_val, "%sã‚’æ‹¾ã„ã¾ã™ã‹? ", o_name);
 #else
 			(void) sprintf(out_val, "Pick up %s? ", o_name);
 #endif

@@ -12,7 +12,7 @@
 W:F:#:0
 
 # Town 1
-W:F:1:1:0:1:0:Town:ÃÏ¾å
+W:F:1:1:0:1:0:Town:åœ°ä¸Š
 
 # Wilderness layout
 W:D:###

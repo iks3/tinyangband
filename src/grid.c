@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * File: grid.c
  * Purpose: low-level dungeon creation primitives
  */
@@ -214,7 +214,7 @@ void vault_objects(int y, int x, int num)
 				if (cheat_room)
 				{
 #ifdef JP
-msg_print("·Ù¹ğ¡ªÊõ¸Ë¤Ë¥¢¥¤¥Æ¥à¤òÃÖ¤±¤Ş¤»¤ó¡ª");
+msg_print("è­¦å‘Šï¼å®åº«ã«ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç½®ã‘ã¾ã›ã‚“ï¼");
 #else
 					msg_print("Warning! Could not place vault object!");
 #endif
@@ -271,7 +271,7 @@ void vault_trap_aux(int y, int x, int yd, int xd)
 			if (cheat_room)
 			{
 #ifdef JP
-msg_print("·Ù¹ğ¡ªÊõ¸Ë¤Ëæ«¤òÃÖ¤±¤Ş¤»¤ó¡ª");
+msg_print("è­¦å‘Šï¼å®åº«ã«ç½ ã‚’ç½®ã‘ã¾ã›ã‚“ï¼");
 #else
 				msg_print("Warning! Could not place vault trap!");
 #endif

@@ -1,4 +1,4 @@
-/* File: externs.h */
+﻿/* File: externs.h */
 
 /* Purpose: extern declarations (variables and functions) */
 
@@ -24,7 +24,7 @@ extern cptr macro_trigger_keycode[2][MAX_MACRO_TRIG];
 
 #ifdef JP
 /* XTRA HACK LVUP */
-/* ���ܸ��ǵ�ǽ�ɲäǻȤ� */
+/* 日本語版機能追加で使う */
 extern int level_up;
 #endif
 
@@ -1383,6 +1383,7 @@ extern void jverb( const char *in , char *out , int flag);
 extern void sjis2euc(char *str);
 extern void euc2sjis(char *str);
 extern byte codeconv(char *str);
+extern void guess_convert_to_system_encoding(char* strbuf, int buflen);
 #endif
 
 /* chuukei.c */

@@ -1,4 +1,4 @@
-/* File: main-mac.c */
+Ôªø/* File: main-mac.c */
 
 /* Purpose: Simple support for MACINTOSH Angband */
 
@@ -3490,7 +3490,7 @@ static void menu(long mc)
 					{
 						if (!can_save){
 #ifdef JP
-							plog("∫£§œ•ª°º•÷§π§Î§≥§»§œΩ–ÕË§ﬁ§ª§Û°£");
+							plog("‰ªä„ÅØ„Çª„Éº„Éñ„Åô„Çã„Åì„Å®„ÅØÂá∫Êù•„Åæ„Åõ„Çì„ÄÇ");
 #else
 							plog("You may not do that right now.");
 #endif

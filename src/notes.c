@@ -1,4 +1,4 @@
-/* File: notes.c */
+ï»¿/* File: notes.c */
 
 /* Purpose: Note taking to a file */
 
@@ -80,7 +80,7 @@ void add_note(cptr note, char code)
 	if (!dun_level)
 	{
 #ifdef JP
-		strnfmt(depths, 32, "    ÃÏ¾å");
+		strnfmt(depths, 32, "    åœ°ä¸Š");
 #else
 		strnfmt(depths, 32, " Surface");
 #endif
@@ -88,7 +88,7 @@ void add_note(cptr note, char code)
 	else if (p_ptr->inside_quest)
 	{
 #ifdef JP
-		strnfmt(depths, 32, "¥¯¥¨¥¹¥È");
+		strnfmt(depths, 32, "ã‚¯ã‚¨ã‚¹ãƒˆ");
 #else
 		strnfmt(depths, 32, "   Quest");
 #endif
@@ -104,7 +104,7 @@ void add_note(cptr note, char code)
 	else
 	{
 #ifdef JP
-		strnfmt(depths, 32, "  %3d ³¬", dun_level);
+		strnfmt(depths, 32, "  %3d éš", dun_level);
 #else
 		strnfmt(depths, 32, " Lev %3d", dun_level);
 #endif
@@ -118,70 +118,70 @@ void add_note(cptr note, char code)
 	{
 		case 'D': /* New day */
 #ifdef JP
-			strnfmt(buf, 255, "%d ÆüÌÜ\n", day);
+			strnfmt(buf, 255, "%d æ—¥ç›®\n", day);
 #else
 			strnfmt(buf, 255, "Day %d\n", day);
 #endif
 			break;
 		case 'A': /* Found the artifact */
 #ifdef JP
-			strnfmt(buf, 255, "%s %s : %s ¤òÈ¯¸«¡£\n", g_time, depths, note);
+			strnfmt(buf, 255, "%s %s : %s ã‚’ç™ºè¦‹ã€‚\n", g_time, depths, note);
 #else
 			strnfmt(buf, 255, "%s %s : Found The %s.\n", g_time, depths, note);
 #endif
 			break;
 		case 'U': /* Defeated The unique */
 #ifdef JP
-			strnfmt(buf, 255, "%s %s : %s ¤ò·âÇË¡£\n", g_time, depths, note);
+			strnfmt(buf, 255, "%s %s : %s ã‚’æ’ƒç ´ã€‚\n", g_time, depths, note);
 #else
 			strnfmt(buf, 255, "%s %s : Defeated %s.\n", g_time, depths, note);
 #endif
 			break;
 		case 'Q': /* Complete quest */
 #ifdef JP
-			strnfmt(buf, 255, "%s %s : ¥¯¥¨¥¹¥È%s¤òÃ£À®¡£\n", g_time, depths, note);
+			strnfmt(buf, 255, "%s %s : ã‚¯ã‚¨ã‚¹ãƒˆ%sã‚’é”æˆã€‚\n", g_time, depths, note);
 #else
 			strnfmt(buf, 255, "%s %s : Complete quest %s.\n", g_time, depths, note);
 #endif
 			break;
 		case 'L': /* Level up */
 #ifdef JP
-			strnfmt(buf, 255, "%s %s : ¥ì¥Ù¥ë %s ¤Ë¾å¤¬¤Ã¤¿¡£\n", g_time, depths, note);
+			strnfmt(buf, 255, "%s %s : ãƒ¬ãƒ™ãƒ« %s ã«ä¸ŠãŒã£ãŸã€‚\n", g_time, depths, note);
 #else
 			strnfmt(buf, 255, "%s %s : Reach player level %s.\n", g_time, depths, note);
 #endif
 			break;
 		case 's': /* Level up */
 #ifdef JP
-			strnfmt(buf, 255, "%s %s : %s ¤Î¿ÈÂÎ¤ò¾è¤Ã¼è¤Ã¤¿¡£\n", g_time, depths, note);
+			strnfmt(buf, 255, "%s %s : %s ã®èº«ä½“ã‚’ä¹—ã£å–ã£ãŸã€‚\n", g_time, depths, note);
 #else
 			strnfmt(buf, 255, "%s %s : Snatched %s's body.\n", g_time, depths, note);
 #endif
 			break;
 		case 'r': /* reward from valar */
 #ifdef JP
-			strnfmt(buf, 255, "%s %s : ¥Ñ¥È¥í¥ó¤ÎÊó½·¤Ç¡¢%s\n", g_time, depths, note);
+			strnfmt(buf, 255, "%s %s : ãƒ‘ãƒˆãƒ­ãƒ³ã®å ±é…¬ã§ã€%s\n", g_time, depths, note);
 #else
 			strnfmt(buf, 255, "%s %s : The patron rewards you with %s.\n", g_time, depths, note);
 #endif
 			break;
 		case 'd': /* Died (Killed) */
 #ifdef JP
-			strnfmt(buf, 255, "%s %s : %s ¤Ë»¦¤µ¤ì¤¿¡£\n", g_time, depths, note);
+			strnfmt(buf, 255, "%s %s : %s ã«æ®ºã•ã‚ŒãŸã€‚\n", g_time, depths, note);
 #else
 			strnfmt(buf, 255, "%s %s : Killed by %s.\n", g_time, depths, note);
 #endif
 			break;
 		case 'W': /* Cheat mode */
 #ifdef JP
-			strnfmt(buf, 255, "      [ ¥á¥â ] : %s ¤Ë¤è¤ê¥¹¥³¥¢¤¬»Ä¤»¤Ê¤¯¤Ê¤Ã¤¿¡£\n", note);
+			strnfmt(buf, 255, "      [ ãƒ¡ãƒ¢ ] : %s ã«ã‚ˆã‚Šã‚¹ã‚³ã‚¢ãŒæ®‹ã›ãªããªã£ãŸã€‚\n", note);
 #else
 			strnfmt(buf, 255, "      [ Note ] : Give up recording score for %s.\n", note);
 #endif
 			break;
 		default :
 #ifdef JP
-			strnfmt(buf, 255, "      [ ¥á¥â ] : %s\n", note);
+			strnfmt(buf, 255, "      [ ãƒ¡ãƒ¢ ] : %s\n", note);
 #else
 			strnfmt(buf, 255, "      [ Note ] : %s\n", note);
 #endif
@@ -203,7 +203,7 @@ void add_note_type(int note_number)
 
 	/* Get the date */
 #ifdef JP
-	strftime(long_day, 30, "%YÇ¯%m·î%dÆü %H:%M:%S", localtime(&ct));
+	strftime(long_day, 30, "%Yå¹´%mæœˆ%dæ—¥ %H:%M:%S", localtime(&ct));
 #else
 	strftime(long_day, 30, "%Y-%m-%d at %H:%M:%S", localtime(&ct));
 #endif
@@ -218,7 +218,7 @@ void add_note_type(int note_number)
 
 			/* Build the string containing the player information */
 #ifdef JP
-			strnfmt(player, 100, "%s¤Î%s", race_info[p_ptr->prace].title,
+			strnfmt(player, 100, "%sã®%s", race_info[p_ptr->prace].title,
 				 class_info[p_ptr->pclass].title);
 #else
 			strnfmt(player, 100, "the %s %s", race_info[p_ptr->prace].title,
@@ -258,21 +258,21 @@ void add_note_type(int note_number)
 			strnfmt(buf, 1024, "\n================================================\n");
 #ifdef JP
 			strnfmt(buf, 1024, "%s%s %s\n", buf, player, player_name);
-			strnfmt(buf, 1024, "%s%s¤ËÀ¸¤Ş¤ì¤ë\n", buf, long_day);
+			strnfmt(buf, 1024, "%s%sã«ç”Ÿã¾ã‚Œã‚‹\n", buf, long_day);
 #else
 			strnfmt(buf, 1024, "%s%s the %s\n", buf, player_name, player);
 			strnfmt(buf, 1024, "%sBorn on %s\n", buf, long_day);
 #endif
 			strnfmt(buf, 1024, "%s================================================\n\n", buf);
-			strnfmt(buf, 1024, "%s1 ÆüÌÜ\n",buf);
+			strnfmt(buf, 1024, "%s1 æ—¥ç›®\n",buf);
 		}
 		break;
 
 		case NOTE_WINNER:
 		{
 #ifdef JP
-			strnfmt(buf, 1024, "%s ¤ÏÌ½²¦¡Ø¥â¥ë¥´¥¹¡Ù¤òÅİ¤·¤¿¡£\n", player_name);
-			strnfmt(buf, 1024, "%s°ÎÂç¤Ê¤ë%s¤Ë±É¸÷¤¢¤ì¡ª (%s Ã£À®)\n", buf, player_name, long_day);
+			strnfmt(buf, 1024, "%s ã¯å†¥ç‹ã€ãƒ¢ãƒ«ã‚´ã‚¹ã€ã‚’å€’ã—ãŸã€‚\n", player_name);
+			strnfmt(buf, 1024, "%så‰å¤§ãªã‚‹%sã«æ „å…‰ã‚ã‚Œï¼ (%s é”æˆ)\n", buf, player_name, long_day);
 #else
 			strnfmt(buf, 1024, "%s slew Morgoth, Lord of Darkness.\n", player_name);
 			strnfmt(buf, 1024, "%sLong live %s! (on %s)\n", buf, player_name, long_day);

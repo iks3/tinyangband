@@ -1,4 +1,4 @@
-/* File: z-form.c */
+﻿/* File: z-form.c */
 
 /* Purpose: Low level text formatting -BEN- */
 

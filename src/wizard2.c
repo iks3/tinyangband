@@ -1,4 +1,4 @@
-/* File: wizard2.c */
+ï»¿/* File: wizard2.c */
 
 /* Purpose: Wizard commands */
 
@@ -124,7 +124,7 @@ static int ego_slot(object_type *o_ptr)
 static void wishing_puff_of_smoke(void)
 {
 #ifdef JP
-	msg_print("²¿¤«¤¬Â­²¼¤ËÅ¾¤¬¤Ã¤Æ¤­¤¿¤¬¡¢±ì¤Î¤è¤¦¤Ë¾Ã¤¨¤Æ¤·¤Ş¤Ã¤¿¡£");
+	msg_print("ä½•ã‹ãŒè¶³ä¸‹ã«è»¢ãŒã£ã¦ããŸãŒã€ç…™ã®ã‚ˆã†ã«æ¶ˆãˆã¦ã—ã¾ã£ãŸã€‚");
 #else
 	msg_print("You feel something roll beneath your feet, but it disappears in a puff of smoke!");
 #endif
@@ -168,10 +168,10 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 
 	char *fixed_str[] = {
 #ifdef JP
-		"Ç³¤¨¤Ê¤¤",
-		"»¬¤Ó¤Ê¤¤",
-		"Éå¿©¤·¤Ê¤¤",
-		"°ÂÄê¤·¤¿",
+		"ç‡ƒãˆãªã„",
+		"éŒ†ã³ãªã„",
+		"è…é£Ÿã—ãªã„",
+		"å®‰å®šã—ãŸ",
 #else
 		"rotproof",
 		"fireproof",
@@ -190,10 +190,10 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 	while (1)
 	{
 #ifdef JP
-		if (get_string("²¿¤ò¤ªË¾¤ß¡© ", buf, (MAX_NLEN - 1))) break;
+		if (get_string("ä½•ã‚’ãŠæœ›ã¿ï¼Ÿ ", buf, (MAX_NLEN - 1))) break;
 		if (confirm)
 		{
-			if (!get_check("²¿¤â´ê¤¤¤Ş¤»¤ó¡£ËÜÅö¤Ë¤è¤í¤·¤¤¤Ç¤¹¤«¡©")) continue;
+			if (!get_check("ä½•ã‚‚é¡˜ã„ã¾ã›ã‚“ã€‚æœ¬å½“ã«ã‚ˆã‚ã—ã„ã§ã™ã‹ï¼Ÿ")) continue;
 		}
 #else
 		if (get_string("For what do you wish? ", buf, (MAX_NLEN - 1))) break;
@@ -221,7 +221,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 
 	/* wishing blessed object ? */
 #ifdef JP
-	if (!strncmp(str, "½ËÊ¡¤µ¤ì¤¿", 10))
+	if (!strncmp(str, "ç¥ç¦ã•ã‚ŒãŸ", 10))
 	{
 		str = ltrim(str+10);
 		blessed = TRUE;
@@ -247,7 +247,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 
 #ifdef JP
 	/* wishing preserve artifacts ? */
-	if (!strncmp(str, "¡ú", 2))
+	if (!strncmp(str, "â˜…", 2))
 	{
 		str = ltrim(str + 2);
 		wish_art = TRUE;
@@ -255,7 +255,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 	}
 
 	/* wishing random artifacts ? */
-	else if (!strncmp(str, "¡ù", 2))
+	else if (!strncmp(str, "â˜†", 2))
 	{
 		str = ltrim(str + 2);
 		wish_art = TRUE;
@@ -263,7 +263,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 	}
 
 	/* wishing random ego ? */
-	else if (!strncmp(str, "¹âµé¤Ê", 6))
+	else if (!strncmp(str, "é«˜ç´šãª", 6))
 	{
 		str = ltrim(str + 6);
 		wish_ego = TRUE;
@@ -289,7 +289,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 	if (strlen(str) < 1)
 	{
 #ifdef JP
-		msg_print("Ì¾Á°¤¬¤Ê¤¤¡ª");
+		msg_print("åå‰ãŒãªã„ï¼");
 #else
 		msg_print("What?");
 #endif
@@ -299,7 +299,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 	if ((!art) && (wish_art))
 	{
 #ifdef JP
-		msg_print("¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¤Ï´ê¤¨¤Ê¤¤¡ª");
+		msg_print("ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆã¯é¡˜ãˆãªã„ï¼");
 #else
 		msg_print("You can not wish artifacts!");
 #endif
@@ -437,10 +437,10 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 
 #ifdef JP
 			/* remove quotes */
-			if (!strncmp(astr, "¡Ø", 2))
+			if (!strncmp(astr, "ã€", 2))
 			{
 				strcpy(aname, (astr + 2));
-				astr = strstr(aname, "¡Ù");
+				astr = strstr(aname, "ã€");
 				astr[0] = '\0';
 			}
 			/* remove 'of' */
@@ -448,7 +448,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 			{
 				int l = strlen(astr);
 				strcpy(aname, astr);
-				if (!strrncmp(aname, "¤Î", 2))
+				if (!strrncmp(aname, "ã®", 2))
 				{
 					aname[l-2] = '\0';
 				}
@@ -507,7 +507,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 	if ((wizard) && ((a_num > 1) || (k_num > 1)))
 	{
 #ifdef JP
-		msg_print("¸õÊä¤¬Â¿¤¹¤®¤ë¡ª");
+		msg_print("å€™è£œãŒå¤šã™ãã‚‹ï¼");
 #else
 		msg_print("Too many matches!");
 #endif
@@ -534,7 +534,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 	else if ((!ego) && (wish_ego || e_num))
 	{
 #ifdef JP
-		msg_print("¥¨¥´¥¢¥¤¥Æ¥à¤Ï´ê¤¨¤Ê¤¤¡ª");
+		msg_print("ã‚¨ã‚´ã‚¢ã‚¤ãƒ†ãƒ ã¯é¡˜ãˆãªã„ï¼");
 #else
 		msg_print("Can not wish ego items.");
 #endif
@@ -554,7 +554,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 		if ((k_ptr->tval == TV_STAFF) && (k_ptr->sval == SV_STAFF_WISHING))
 		{
 #ifdef JP
-			msg_print("¤½¤Î´ê¤¤¤Ï¤¹¤Ç¤Ë¤«¤Ê¤Ã¤Æ¤¤¤ë¡£");
+			msg_print("ãã®é¡˜ã„ã¯ã™ã§ã«ã‹ãªã£ã¦ã„ã‚‹ã€‚");
 #else
 			msg_print("This wish has already been fulfilled.");
 #endif
@@ -640,7 +640,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 				if (i == max_roll)
 				{
 #ifdef JP
-					msg_print("¼ºÇÔ¡ª¤â¤¦°ìÅÙ´ê¤Ã¤Æ¤ß¤Æ¤¯¤À¤µ¤¤¡£");
+					msg_print("å¤±æ•—ï¼ã‚‚ã†ä¸€åº¦é¡˜ã£ã¦ã¿ã¦ãã ã•ã„ã€‚");
 #else
 					msg_print("Failed! Try again.");
 #endif
@@ -690,7 +690,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 		else
 		{
 			/* Drop it */
-			msg_print(_("Â­¸µ¤Ë²¿¤«¤¬¸½¤ì¤¿¡ª", "An object appears at your feet!"));
+			msg_print(_("è¶³å…ƒã«ä½•ã‹ãŒç¾ã‚ŒãŸï¼", "An object appears at your feet!"));
 			(void)drop_near(q_ptr, 0, py, px);
 		}
 
@@ -701,7 +701,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 	else
 	{
 #ifdef JP
-		msg_print("¤¦¡¼¤ó¡¢¤½¤ó¤Ê¤â¤Î¤ÏÂ¸ºß¤·¤Ê¤¤¤è¤¦¤À¡£");
+		msg_print("ã†ãƒ¼ã‚“ã€ãã‚“ãªã‚‚ã®ã¯å­˜åœ¨ã—ãªã„ã‚ˆã†ã ã€‚");
 #else
 		msg_print("Ummmm, that is not existing.");
 #endif
@@ -726,7 +726,7 @@ static bool wiz_dimension_door(void)
 	if (!cave_empty_bold(y, x))
 	{
 #ifdef JP
-msg_print("ÀºÎî³¦¤«¤éÊª¼Á³¦¤ËÌá¤ë»ş¤¦¤Ş¤¯¤¤¤«¤Ê¤«¤Ã¤¿¡ª");
+msg_print("ç²¾éœŠç•Œã‹ã‚‰ç‰©è³ªç•Œã«æˆ»ã‚‹æ™‚ã†ã¾ãã„ã‹ãªã‹ã£ãŸï¼");
 #else
 		msg_print("You fail to exit the astral plane correctly!");
 #endif
@@ -1246,42 +1246,42 @@ typedef struct tval_desc
 static tval_desc tvals[] =
 {
 #ifdef JP
-	{ TV_SWORD,             "Åá·õ"                 },
-	{ TV_POLEARM,           "´È¾õÉğ´ï"             },
-	{ TV_HAFTED,            "Æß´ï"                 },
-	{ TV_BOW,               "¼Í·âÉğ´ï"             },
-	{ TV_ARROW,             "Ìğ"                   },
-	{ TV_BOLT,              "¥Ü¥ë¥È"               },
-	{ TV_SHOT,              "ÃÆ"                   },
-	{ TV_SHIELD,            "½â"                   },
-	{ TV_CROWN,             "´§"                   },
-	{ TV_HELM,              "³õ"                   },
-	{ TV_GLOVES,            "¥°¥í¡¼¥Ö"             },
-	{ TV_BOOTS,             "·¤"                   },
-	{ TV_CLOAK,             "¥¯¥í¡¼¥¯"             },
-	{ TV_DRAG_ARMOR,        "Îµ¤ÎÎÚ³»"             },
-	{ TV_HARD_ARMOR,        "¹Å¼Á¤Ê³»"             },
-	{ TV_SOFT_ARMOR,        "Æğ¼Á¤Ê³»"             },
-	{ TV_RING,              "»ØÎØ"                 },
-	{ TV_AMULET,            "¥¢¥ß¥å¥ì¥Ã¥È"         },
-	{ TV_LITE,              "¸÷¸»"                 },
-	{ TV_POTION,            "Ìô"                   },
-	{ TV_SCROLL,            "´¬Êª"                 },
-	{ TV_WAND,              "¥ï¥ó¥É"               },
-	{ TV_STAFF,             "¥¹¥¿¥Ã¥Õ"             },
-	{ TV_ROD,               "¥í¥Ã¥É"               },
-	{ TV_LIFE_BOOK,         "ËâË¡½ñ(À¸Ì¿)"         },
-	{ TV_SORCERY_BOOK,      "ËâË¡½ñ(Àç½Ñ)"         },
-	{ TV_SPIKE,             "¤¯¤µ¤Ó"               },
-	{ TV_DIGGING,           "ºÎ·¡Æ»¶ñ"             },
-	{ TV_CHEST,             "ÊõÈ¢"                 },
-	{ TV_FIGURINE,          "¿Í·Á"                 },
-	{ TV_STATUE,            "Áü"                   },
-	{ TV_CORPSE,            "»àÂÎ"                 },
-	{ TV_FOOD,              "¿©ÎÁ"                 },
-	{ TV_FLASK,             "Ìı¤Ä¤Ü"               },
-	{ TV_JUNK,              "¥¬¥é¥¯¥¿"             },
-	{ TV_SKELETON,          "¹ü"                   },
+	{ TV_SWORD,             "åˆ€å‰£"                 },
+	{ TV_POLEARM,           "ç«¿çŠ¶æ­¦å™¨"             },
+	{ TV_HAFTED,            "éˆå™¨"                 },
+	{ TV_BOW,               "å°„æ’ƒæ­¦å™¨"             },
+	{ TV_ARROW,             "çŸ¢"                   },
+	{ TV_BOLT,              "ãƒœãƒ«ãƒˆ"               },
+	{ TV_SHOT,              "å¼¾"                   },
+	{ TV_SHIELD,            "ç›¾"                   },
+	{ TV_CROWN,             "å† "                   },
+	{ TV_HELM,              "å…œ"                   },
+	{ TV_GLOVES,            "ã‚°ãƒ­ãƒ¼ãƒ–"             },
+	{ TV_BOOTS,             "é´"                   },
+	{ TV_CLOAK,             "ã‚¯ãƒ­ãƒ¼ã‚¯"             },
+	{ TV_DRAG_ARMOR,        "ç«œã®é±—é§"             },
+	{ TV_HARD_ARMOR,        "ç¡¬è³ªãªé§"             },
+	{ TV_SOFT_ARMOR,        "è»Ÿè³ªãªé§"             },
+	{ TV_RING,              "æŒ‡è¼ª"                 },
+	{ TV_AMULET,            "ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ"         },
+	{ TV_LITE,              "å…‰æº"                 },
+	{ TV_POTION,            "è–¬"                   },
+	{ TV_SCROLL,            "å·»ç‰©"                 },
+	{ TV_WAND,              "ãƒ¯ãƒ³ãƒ‰"               },
+	{ TV_STAFF,             "ã‚¹ã‚¿ãƒƒãƒ•"             },
+	{ TV_ROD,               "ãƒ­ãƒƒãƒ‰"               },
+	{ TV_LIFE_BOOK,         "é­”æ³•æ›¸(ç”Ÿå‘½)"         },
+	{ TV_SORCERY_BOOK,      "é­”æ³•æ›¸(ä»™è¡“)"         },
+	{ TV_SPIKE,             "ãã•ã³"               },
+	{ TV_DIGGING,           "æ¡æ˜é“å…·"             },
+	{ TV_CHEST,             "å®ç®±"                 },
+	{ TV_FIGURINE,          "äººå½¢"                 },
+	{ TV_STATUE,            "åƒ"                   },
+	{ TV_CORPSE,            "æ­»ä½“"                 },
+	{ TV_FOOD,              "é£Ÿæ–™"                 },
+	{ TV_FLASK,             "æ²¹ã¤ã¼"               },
+	{ TV_JUNK,              "ã‚¬ãƒ©ã‚¯ã‚¿"             },
+	{ TV_SKELETON,          "éª¨"                   },
 	{ 0,                    NULL                   }
 #else
 	{ TV_SWORD,             "Sword"                },
@@ -1442,7 +1442,7 @@ static int wiz_create_itemtype(void)
 
 	/* Choose! */
 #ifdef JP
-	if (!get_com(format("¤É¤Î¼ïÎà¤Î%s? ", tval_desc), &ch)) return (0);
+	if (!get_com(format("ã©ã®ç¨®é¡ã®%s? ", tval_desc), &ch)) return (0);
 #else
 	if (!get_com(format("What Kind of %s? ", tval_desc), &ch)) return (0);
 #endif
@@ -2286,7 +2286,7 @@ static void do_cmd_dump_options(void)
 	if (!fff)
 	{
 #ifdef JP
-		msg_format("¥Õ¥¡¥¤¥ë %s ¤ò³«¤±¤Ş¤»¤ó¤Ç¤·¤¿¡£", buf);
+		msg_format("ãƒ•ã‚¡ã‚¤ãƒ« %s ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚", buf);
 #else
 		msg_format("Failed to open file %s.", buf);
 #endif
@@ -2338,7 +2338,7 @@ static void do_cmd_dump_options(void)
 	my_fclose(fff);
 
 #ifdef JP
-	msg_format("¥ª¥×¥·¥ç¥óbit»ÈÍÑ¾õ¶·¤ò¥Õ¥¡¥¤¥ë %s ¤Ë½ñ¤­½Ğ¤·¤Ş¤·¤¿¡£", buf);
+	msg_format("ã‚ªãƒ—ã‚·ãƒ§ãƒ³bitä½¿ç”¨çŠ¶æ³ã‚’ãƒ•ã‚¡ã‚¤ãƒ« %s ã«æ›¸ãå‡ºã—ã¾ã—ãŸã€‚", buf);
 #else
 	msg_format("Option bits usage dump saved to file %s.", buf);
 #endif

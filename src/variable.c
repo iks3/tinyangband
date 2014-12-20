@@ -1,4 +1,4 @@
-/* File: variable.c */
+﻿/* File: variable.c */
 
 /* Purpose: Angband variables */
 
@@ -38,7 +38,7 @@ cptr macro_trigger_keycode[2][MAX_MACRO_TRIG];
 
 #ifdef JP
 /* XTRA HACK LVUP */
-/* ��٥륢�åפλ��˾徺�̤�ɽ������Τ˻Ȥ� */
+/* レベルアップの時に上昇量を表示するのに使う */
 int level_up = 0;
 #endif
 

@@ -1,4 +1,4 @@
-/* File: cmd6.c */
+ï»¿/* File: cmd6.c */
 
 /* Purpose: Object commands */
 
@@ -87,17 +87,17 @@ static void do_cmd_eat_food_aux(int item)
 	switch (o_ptr->sval)
 	{
 #ifdef JP
-		/* ¤½¤ì¤¾¤ì¤Î¿©¤ÙÊª¤Î´¶ÁÛ¤ò¥ª¥ê¥¸¥Ê¥ë¤è¤êºÙ¤«¤¯É½¸½ */
+		/* ãã‚Œãã‚Œã®é£Ÿã¹ç‰©ã®æ„Ÿæƒ³ã‚’ã‚ªãƒªã‚¸ãƒŠãƒ«ã‚ˆã‚Šç´°ã‹ãè¡¨ç¾ */
 		case SV_FOOD_SLIME_MOLD:
 		{
-			msg_print("¤³¤ì¤Ï¤Ê¤ó¤È¤â·ÁÍÆ¤·¤¬¤¿¤¤Ì£¤À¡£");
+			msg_print("ã“ã‚Œã¯ãªã‚“ã¨ã‚‚å½¢å®¹ã—ãŒãŸã„å‘³ã ã€‚");
 			ident = TRUE;
 			break;
 		}
 
 		case SV_FOOD_RATION:
 		{
-			msg_print("¤³¤ì¤Ï¤ª¤¤¤·¤¤¡£");
+			msg_print("ã“ã‚Œã¯ãŠã„ã—ã„ã€‚");
 			ident = TRUE;
 			break;
 		}
@@ -114,7 +114,7 @@ static void do_cmd_eat_food_aux(int item)
 		case SV_FOOD_WAYBREAD:
 		{
 #ifdef JP
-			msg_print("¤³¤ì¤Ï¤Ò¤¸¤ç¤¦¤ËÈşÌ£¤À¡£");
+			msg_print("ã“ã‚Œã¯ã²ã˜ã‚‡ã†ã«ç¾å‘³ã ã€‚");
 #else
 			msg_print("That tastes good.");
 #endif
@@ -148,14 +148,14 @@ static void do_cmd_eat_food_aux(int item)
 		/* Reduced nutritional benefit */
 		(void)set_food(p_ptr->food + (o_ptr->pval / 10));
 #ifdef JP
-msg_print("¤¢¤Ê¤¿¤Î¤è¤¦¤Ê¼Ô¤Ë¤È¤Ã¤Æ¿©ÎÈ¤Ê¤É¶Ï¤«¤Ê±ÉÍÜ¤Ë¤·¤«¤Ê¤é¤Ê¤¤¡£");
+msg_print("ã‚ãªãŸã®ã‚ˆã†ãªè€…ã«ã¨ã£ã¦é£Ÿç³§ãªã©åƒ…ã‹ãªæ „é¤Šã«ã—ã‹ãªã‚‰ãªã„ã€‚");
 #else
 		msg_print("Mere victuals hold scant sustenance for a being such as yourself.");
 #endif
 
 		if (p_ptr->food < PY_FOOD_ALERT)   /* Hungry */
 #ifdef JP
-msg_print("¤¢¤Ê¤¿¤Îµ²¤¨¤Ï¿·Á¯¤Ê·ì¤Ë¤è¤Ã¤Æ¤Î¤ßËş¤¿¤µ¤ì¤ë¡ª");
+msg_print("ã‚ãªãŸã®é£¢ãˆã¯æ–°é®®ãªè¡€ã«ã‚ˆã£ã¦ã®ã¿æº€ãŸã•ã‚Œã‚‹ï¼");
 #else
 			msg_print("Your hunger can only be satisfied with fresh blood!");
 #endif
@@ -206,8 +206,8 @@ void do_cmd_eat_food(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤ì¤ò¿©¤Ù¤Ş¤¹¤«? ";
-	s = "¿©¤ÙÊª¤¬¤Ê¤¤¡£";
+	q = "ã©ã‚Œã‚’é£Ÿã¹ã¾ã™ã‹? ";
+	s = "é£Ÿã¹ç‰©ãŒãªã„ã€‚";
 #else
 	q = "Eat which item? ";
 	s = "You have nothing to eat.";
@@ -257,11 +257,11 @@ static void do_cmd_quaff_potion_aux(int item)
 	switch (o_ptr->sval)
 	{
 #ifdef JP
-		/* °û¤ß¤´¤¿¤¨¤ò¥ª¥ê¥¸¥Ê¥ë¤è¤êºÙ¤«¤¯É½¸½ */
+		/* é£²ã¿ã”ãŸãˆã‚’ã‚ªãƒªã‚¸ãƒŠãƒ«ã‚ˆã‚Šç´°ã‹ãè¡¨ç¾ */
 		case SV_POTION_WATER:
 		{
-			msg_print("¸ı¤ÎÃæ¤¬¤µ¤Ã¤Ñ¤ê¤·¤¿¡£");
-			msg_print("¤Î¤É¤Î³é¤­¤¬¾¯¤·¤ª¤µ¤Ş¤Ã¤¿¡£");
+			msg_print("å£ã®ä¸­ãŒã•ã£ã±ã‚Šã—ãŸã€‚");
+			msg_print("ã®ã©ã®æ¸‡ããŒå°‘ã—ãŠã•ã¾ã£ãŸã€‚");
 			ident = TRUE;
 			break;
 		}
@@ -277,8 +277,8 @@ static void do_cmd_quaff_potion_aux(int item)
 		case SV_POTION_DETONATIONS:
 		{
 #ifdef JP
-			msg_print("ÂÎ¤ÎÃæ¤Ç·ã¤·¤¤ÇúÈ¯¤¬µ¯¤­¤¿¡ª");
-			take_hit(damroll(50, 20), "ÇúÈ¯¤ÎÌô");
+			msg_print("ä½“ã®ä¸­ã§æ¿€ã—ã„çˆ†ç™ºãŒèµ·ããŸï¼");
+			take_hit(damroll(50, 20), "çˆ†ç™ºã®è–¬");
 #else
 			msg_print("Massive explosions rupture your body!");
 			take_hit(damroll(50, 20), "a potion of Detonation");
@@ -418,7 +418,7 @@ static void do_cmd_quaff_potion_aux(int item)
 				p_ptr->csp = p_ptr->msp;
 				p_ptr->csp_frac = 0;
 #ifdef JP
-				msg_print("Æ¬¤¬¥Ï¥Ã¥­¥ê¤È¤·¤¿¡£");
+				msg_print("é ­ãŒãƒãƒƒã‚­ãƒªã¨ã—ãŸã€‚");
 #else
 				msg_print("You feel your head clear.");
 #endif
@@ -487,7 +487,7 @@ static void do_cmd_quaff_potion_aux(int item)
 		case SV_POTION_ENLIGHTENMENT:
 		{
 #ifdef JP
-			msg_print("¼«Ê¬¤ÎÃÖ¤«¤ì¤Æ¤¤¤ë¾õ¶·¤¬Ç¾Î¢¤ËÉâ¤«¤ó¤Ç¤­¤¿...");
+			msg_print("è‡ªåˆ†ã®ç½®ã‹ã‚Œã¦ã„ã‚‹çŠ¶æ³ãŒè„³è£ã«æµ®ã‹ã‚“ã§ããŸ...");
 #else
 			msg_print("An image of your surroundings forms in your mind...");
 #endif
@@ -500,7 +500,7 @@ static void do_cmd_quaff_potion_aux(int item)
 		case SV_POTION_SELF_KNOWLEDGE:
 		{
 #ifdef JP
-			msg_print("¼«Ê¬¼«¿È¤Î¤³¤È¤¬¾¯¤·¤ÏÊ¬¤«¤Ã¤¿µ¤¤¬¤¹¤ë...");
+			msg_print("è‡ªåˆ†è‡ªèº«ã®ã“ã¨ãŒå°‘ã—ã¯åˆ†ã‹ã£ãŸæ°—ãŒã™ã‚‹...");
 #else
 			msg_print("You begin to know yourself a little better...");
 #endif
@@ -520,7 +520,7 @@ static void do_cmd_quaff_potion_aux(int item)
 				s32b ee = player_exp[p_ptr->lev - 1] * p_ptr->expfact / 100L;
 				ee -= p_ptr->max_exp;
 #ifdef JP
-				msg_print("¹¹¤Ë·Ğ¸³¤òÀÑ¤ó¤À¤è¤¦¤Êµ¤¤¬¤¹¤ë¡£");
+				msg_print("æ›´ã«çµŒé¨“ã‚’ç©ã‚“ã ã‚ˆã†ãªæ°—ãŒã™ã‚‹ã€‚");
 #else
 				msg_print("You feel more experienced.");
 #endif
@@ -618,8 +618,8 @@ void do_cmd_quaff_potion(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤ÎÌô¤ò°û¤ß¤Ş¤¹¤«? ";
-	s = "°û¤á¤ëÌô¤¬¤Ê¤¤¡£";
+	q = "ã©ã®è–¬ã‚’é£²ã¿ã¾ã™ã‹? ";
+	s = "é£²ã‚ã‚‹è–¬ãŒãªã„ã€‚";
 #else
 	q = "Quaff which potion? ";
 	s = "You have no potions to quaff.";
@@ -721,7 +721,7 @@ static void do_cmd_read_scroll_aux(int item)
 			if (remove_curse())
 			{
 #ifdef JP
-				msg_print("Ã¯¤«¤Ë¸«¼é¤é¤ì¤Æ¤¤¤ë¤è¤¦¤Êµ¤¤¬¤¹¤ë¡£");
+				msg_print("èª°ã‹ã«è¦‹å®ˆã‚‰ã‚Œã¦ã„ã‚‹ã‚ˆã†ãªæ°—ãŒã™ã‚‹ã€‚");
 #else
 				msg_print("You feel as if someone is watching over you.");
 #endif
@@ -736,7 +736,7 @@ static void do_cmd_read_scroll_aux(int item)
 			if (remove_all_curse())
 			{
 #ifdef JP
-				msg_print("Ã¯¤«¤Ë¸«¼é¤é¤ì¤Æ¤¤¤ë¤è¤¦¤Êµ¤¤¬¤¹¤ë¡£");
+				msg_print("èª°ã‹ã«è¦‹å®ˆã‚‰ã‚Œã¦ã„ã‚‹ã‚ˆã†ãªæ°—ãŒã™ã‚‹ã€‚");
 #else
 				msg_print("You feel as if someone is watching over you.");
 #endif
@@ -869,7 +869,7 @@ static void do_cmd_read_scroll_aux(int item)
 			if (p_ptr->confusing == 0)
 			{
 #ifdef JP
-				msg_print("¼ê¤¬µ±¤­»Ï¤á¤¿¡£");
+				msg_print("æ‰‹ãŒè¼ãå§‹ã‚ãŸã€‚");
 #else
 				msg_print("Your hands begin to glow.");
 #endif
@@ -906,7 +906,7 @@ static void do_cmd_read_scroll_aux(int item)
 				ident = TRUE;
 			else
 #ifdef JP
-msg_print("¥À¥ó¥¸¥ç¥ó¤¬ÍÉ¤ì¤¿...");
+msg_print("ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ãŒæºã‚ŒãŸ...");
 #else
 				msg_print("The dungeon trembles...");
 #endif
@@ -956,7 +956,7 @@ msg_print("¥À¥ó¥¸¥ç¥ó¤¬ÍÉ¤ì¤¿...");
 			/* Note: "Double" damage since it is centered on the player ... */
 			if (!(p_ptr->oppose_fire || p_ptr->resist_fire || p_ptr->immune_fire))
 #ifdef JP
-take_hit(50+randint1(50), "±ê¤Î´¬Êª");
+take_hit(50+randint1(50), "ç‚ã®å·»ç‰©");
 #else
 				take_hit(50 + randint1(50), "a Scroll of Fire");
 #endif
@@ -971,7 +971,7 @@ take_hit(50+randint1(50), "±ê¤Î´¬Êª");
 			fire_ball(GF_ICE, 0, 175, 4);
 			if (!(p_ptr->oppose_cold || p_ptr->resist_cold || p_ptr->immune_cold))
 #ifdef JP
-take_hit(100+randint1(100), "É¹¤Î´¬Êª");
+take_hit(100+randint1(100), "æ°·ã®å·»ç‰©");
 #else
 				take_hit(100 + randint1(100), "a Scroll of Ice");
 #endif
@@ -985,7 +985,7 @@ take_hit(100+randint1(100), "É¹¤Î´¬Êª");
 			fire_ball(GF_CHAOS, 0, 222, 4);
 			if (!p_ptr->resist_chaos)
 #ifdef JP
-take_hit(111+randint1(111), "¥í¥°¥ë¥¹¤Î´¬Êª");
+take_hit(111+randint1(111), "ãƒ­ã‚°ãƒ«ã‚¹ã®å·»ç‰©");
 #else
 				take_hit(111 + randint1(111), "a Scroll of Logrus");
 #endif
@@ -1003,12 +1003,12 @@ take_hit(111+randint1(111), "¥í¥°¥ë¥¹¤Î´¬Êª");
 			err = get_rnd_line("rumors.txt", 0, Rumor);
 #endif
 			/* An error occured */
-			if (err) strcpy(Rumor, _("±³¤Î±½¤â¤¢¤ë¡£", "Some rumors are wrong."));
-			msg_print(_("´¬Êª¤Ë¤Ï¥á¥Ã¥»¡¼¥¸¤¬½ñ¤«¤ì¤Æ¤¤¤ë:", "There is message on the scroll. It says:"));
+			if (err) strcpy(Rumor, _("å˜˜ã®å™‚ã‚‚ã‚ã‚‹ã€‚", "Some rumors are wrong."));
+			msg_print(_("å·»ç‰©ã«ã¯ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒæ›¸ã‹ã‚Œã¦ã„ã‚‹:", "There is message on the scroll. It says:"));
 			msg_print(NULL);
 			msg_format("%s", Rumor);
 			msg_print(NULL);
-			msg_print(_("´¬Êª¤Ï±ì¤òÎ©¤Æ¤Æ¾Ã¤¨µî¤Ã¤¿¡ª", "The scroll disappears in a puff of smoke!"));
+			msg_print(_("å·»ç‰©ã¯ç…™ã‚’ç«‹ã¦ã¦æ¶ˆãˆå»ã£ãŸï¼", "The scroll disappears in a puff of smoke!"));
 			ident = TRUE;
 			break;
 		}
@@ -1078,7 +1078,7 @@ void do_cmd_read_scroll(void)
 	if (p_ptr->blind)
 	{
 #ifdef JP
-		msg_print("ÌÜ¤¬¸«¤¨¤Ê¤¤¡£");
+		msg_print("ç›®ãŒè¦‹ãˆãªã„ã€‚");
 #else
 		msg_print("You can't see anything.");
 #endif
@@ -1088,7 +1088,7 @@ void do_cmd_read_scroll(void)
 	if (no_lite())
 	{
 #ifdef JP
-		msg_print("ÌÀ¤«¤ê¤¬¤Ê¤¤¤Î¤Ç¡¢°Å¤¯¤ÆÆÉ¤á¤Ê¤¤¡£");
+		msg_print("æ˜ã‹ã‚ŠãŒãªã„ã®ã§ã€æš—ãã¦èª­ã‚ãªã„ã€‚");
 #else
 		msg_print("You have no light to read by.");
 #endif
@@ -1098,7 +1098,7 @@ void do_cmd_read_scroll(void)
 	if (p_ptr->confused)
 	{
 #ifdef JP
-		msg_print("º®Íğ¤·¤Æ¤¤¤ÆÆÉ¤á¤Ê¤¤¡£");
+		msg_print("æ··ä¹±ã—ã¦ã„ã¦èª­ã‚ãªã„ã€‚");
 #else
 		msg_print("You are too confused!");
 #endif
@@ -1112,8 +1112,8 @@ void do_cmd_read_scroll(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î´¬Êª¤òÆÉ¤ß¤Ş¤¹¤«? ";
-	s = "ÆÉ¤á¤ë´¬Êª¤¬¤Ê¤¤¡£";
+	q = "ã©ã®å·»ç‰©ã‚’èª­ã¿ã¾ã™ã‹? ";
+	s = "èª­ã‚ã‚‹å·»ç‰©ãŒãªã„ã€‚";
 #else
 	q = "Read which scroll? ";
 	s = "You have no scrolls to read.";
@@ -1192,7 +1192,7 @@ static void do_cmd_use_staff_aux(int item)
 	if ((item < 0) && (o_ptr->number > 1))
 	{
 #ifdef JP
-		msg_print("¤Ş¤º¤Ï¥¹¥¿¥Ã¥Õ¤ò½¦¤ï¤Ê¤±¤ì¤Ğ¡£");
+		msg_print("ã¾ãšã¯ã‚¹ã‚¿ãƒƒãƒ•ã‚’æ‹¾ã‚ãªã‘ã‚Œã°ã€‚");
 #else
 		msg_print("You must first pick up the staffs.");
 #endif
@@ -1214,7 +1214,7 @@ static void do_cmd_use_staff_aux(int item)
 	{
 		if (flush_failure) flush();
 #ifdef JP
-		msg_print("¥¹¥¿¥Ã¥Õ¤ò¤¦¤Ş¤¯»È¤¨¤Ê¤«¤Ã¤¿¡£");
+		msg_print("ã‚¹ã‚¿ãƒƒãƒ•ã‚’ã†ã¾ãä½¿ãˆãªã‹ã£ãŸã€‚");
 #else
 		msg_print("You failed to use the staff properly.");
 #endif
@@ -1227,7 +1227,7 @@ static void do_cmd_use_staff_aux(int item)
 	{
 		if (flush_failure) flush();
 #ifdef JP
-		msg_print("¤³¤Î¥¹¥¿¥Ã¥Õ¤Ë¤Ï¤â¤¦ËâÎÏ¤¬»Ä¤Ã¤Æ¤¤¤Ê¤¤¡£");
+		msg_print("ã“ã®ã‚¹ã‚¿ãƒƒãƒ•ã«ã¯ã‚‚ã†é­”åŠ›ãŒæ®‹ã£ã¦ã„ãªã„ã€‚");
 #else
 		msg_print("The staff has no charges left.");
 #endif
@@ -1268,7 +1268,7 @@ static void do_cmd_use_staff_aux(int item)
 				if (!p_ptr->blind)
 				{
 #ifdef JP
-					msg_print("¥¹¥¿¥Ã¥Õ¤Ï°ì½Ö¥Ö¥ë¡¼¤Ëµ±¤¤¤¿...");
+					msg_print("ã‚¹ã‚¿ãƒƒãƒ•ã¯ä¸€ç¬ãƒ–ãƒ«ãƒ¼ã«è¼ã„ãŸ...");
 #else
 					msg_print("The staff glows blue for a moment...");
 #endif
@@ -1287,7 +1287,7 @@ static void do_cmd_use_staff_aux(int item)
 			if (!p_ptr->blind)
 			{
 #ifdef JP
-				msg_print("¥¹¥¿¥Ã¥Õ¤ÎÀè¤¬ÌÀ¤ë¤¯µ±¤¤¤¿...");
+				msg_print("ã‚¹ã‚¿ãƒƒãƒ•ã®å…ˆãŒæ˜ã‚‹ãè¼ã„ãŸ...");
 #else
 				msg_print("The end of the staff glows brightly...");
 #endif
@@ -1431,7 +1431,7 @@ static void do_cmd_use_staff_aux(int item)
 				ident = TRUE;
 			else
 #ifdef JP
-				msg_print("¥À¥ó¥¸¥ç¥ó¤¬ÍÉ¤ì¤¿¡£");
+				msg_print("ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ãŒæºã‚ŒãŸã€‚");
 #else
 				msg_print("The dungeon trembles.");
 #endif
@@ -1452,7 +1452,7 @@ static void do_cmd_use_staff_aux(int item)
 			int prob = (p_ptr->lev * 2);
 
 #ifdef JP
-			msg_print("¤¢¤Ê¤¿¤ÏË¾¤ß¤Î¤â¤Î¤ò¼ê¤ËÆş¤ì¤é¤ì¤ë¡ª");
+			msg_print("ã‚ãªãŸã¯æœ›ã¿ã®ã‚‚ã®ã‚’æ‰‹ã«å…¥ã‚Œã‚‰ã‚Œã‚‹ï¼");
 #else
 			msg_print("You may wish for an object.");
 #endif
@@ -1468,7 +1468,7 @@ static void do_cmd_use_staff_aux(int item)
 			if ((r < 1) && (!p_ptr->blind))	/* failed */
 			{
 #ifdef JP
-				msg_print("¥¹¥¿¥Ã¥Õ¤Ï°ì½Ö¥Ö¥ë¡¼¤Ëµ±¤¤¤¿...");
+				msg_print("ã‚¹ã‚¿ãƒƒãƒ•ã¯ä¸€ç¬ãƒ–ãƒ«ãƒ¼ã«è¼ã„ãŸ...");
 #else
 				msg_print("The staff glows blue for a moment...");
 #endif
@@ -1534,7 +1534,7 @@ static void do_cmd_use_staff_aux(int item)
 
 		/* Message */
 #ifdef JP
-		msg_print("¥¹¥¿¥Ã¥Õ¤ò¤Ş¤È¤á¤Ê¤ª¤·¤¿¡£");
+		msg_print("ã‚¹ã‚¿ãƒƒãƒ•ã‚’ã¾ã¨ã‚ãªãŠã—ãŸã€‚");
 #else
 		msg_print("You unstack your staff.");
 #endif
@@ -1565,8 +1565,8 @@ void do_cmd_use_staff(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥¹¥¿¥Ã¥Õ¤ò»È¤¤¤Ş¤¹¤«? ";
-	s = "»È¤¨¤ë¥¹¥¿¥Ã¥Õ¤¬¤Ê¤¤¡£";
+	q = "ã©ã®ã‚¹ã‚¿ãƒƒãƒ•ã‚’ä½¿ã„ã¾ã™ã‹? ";
+	s = "ä½¿ãˆã‚‹ã‚¹ã‚¿ãƒƒãƒ•ãŒãªã„ã€‚";
 #else
 	q = "Use which staff? ";
 	s = "You have no staff to use.";
@@ -1620,7 +1620,7 @@ static void do_cmd_aim_wand_aux(int item)
 	if ((item < 0) && (o_ptr->number > 1))
 	{
 #ifdef JP
-		msg_print("¤Ş¤º¤Ï¥ï¥ó¥É¤ò½¦¤ï¤Ê¤±¤ì¤Ğ¡£");
+		msg_print("ã¾ãšã¯ãƒ¯ãƒ³ãƒ‰ã‚’æ‹¾ã‚ãªã‘ã‚Œã°ã€‚");
 #else
 		msg_print("You must first pick up the wands.");
 #endif
@@ -1646,7 +1646,7 @@ static void do_cmd_aim_wand_aux(int item)
 	{
 		if (flush_failure) flush();
 #ifdef JP
-		msg_print("¥ï¥ó¥É¤ò¤¦¤Ş¤¯»È¤¨¤Ê¤«¤Ã¤¿¡£");
+		msg_print("ãƒ¯ãƒ³ãƒ‰ã‚’ã†ã¾ãä½¿ãˆãªã‹ã£ãŸã€‚");
 #else
 		msg_print("You failed to use the wand properly.");
 #endif
@@ -1659,7 +1659,7 @@ static void do_cmd_aim_wand_aux(int item)
 	{
 		if (flush_failure) flush();
 #ifdef JP
-		msg_print("¤³¤Î¥ï¥ó¥É¤Ë¤Ï¤â¤¦ËâÎÏ¤¬»Ä¤Ã¤Æ¤¤¤Ê¤¤¡£");
+		msg_print("ã“ã®ãƒ¯ãƒ³ãƒ‰ã«ã¯ã‚‚ã†é­”åŠ›ãŒæ®‹ã£ã¦ã„ãªã„ã€‚");
 #else
 		msg_print("The wand has no charges left.");
 #endif
@@ -1733,7 +1733,7 @@ static void do_cmd_aim_wand_aux(int item)
 		case SV_WAND_LITE:
 		{
 #ifdef JP
-			msg_print("ÀÄ¤¯µ±¤¯¸÷Àş¤¬Êü¤¿¤ì¤¿¡£");
+			msg_print("é’ãè¼ãå…‰ç·šãŒæ”¾ãŸã‚ŒãŸã€‚");
 #else
 			msg_print("A line of blue shimmering light appears.");
 #endif
@@ -1811,7 +1811,7 @@ static void do_cmd_aim_wand_aux(int item)
 		case SV_WAND_WONDER:
 		{
 #ifdef JP
-			msg_print("¤ª¤Ã¤È¡¢Ææ¤Î¥ï¥ó¥É¤ò»ÏÆ°¤µ¤»¤¿¡£");
+			msg_print("ãŠã£ã¨ã€è¬ã®ãƒ¯ãƒ³ãƒ‰ã‚’å§‹å‹•ã•ã›ãŸã€‚");
 #else
 			msg_print("Oops.  Wand of wonder activated.");
 #endif
@@ -1925,8 +1925,8 @@ void do_cmd_aim_wand(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥ï¥ó¥É¤ÇÁÀ¤¤¤Ş¤¹¤«? ";
-	s = "»È¤¨¤ë¥ï¥ó¥É¤¬¤Ê¤¤¡£";
+	q = "ã©ã®ãƒ¯ãƒ³ãƒ‰ã§ç‹™ã„ã¾ã™ã‹? ";
+	s = "ä½¿ãˆã‚‹ãƒ¯ãƒ³ãƒ‰ãŒãªã„ã€‚";
 #else
 	q = "Aim which wand? ";
 	s = "You have no wand to aim.";
@@ -1976,7 +1976,7 @@ static void do_cmd_zap_rod_aux(int item)
 	if ((item < 0) && (o_ptr->number > 1))
 	{
 #ifdef JP
-		msg_print("¤Ş¤º¤Ï¥í¥Ã¥É¤ò½¦¤ï¤Ê¤±¤ì¤Ğ¡£");
+		msg_print("ã¾ãšã¯ãƒ­ãƒƒãƒ‰ã‚’æ‹¾ã‚ãªã‘ã‚Œã°ã€‚");
 #else
 		msg_print("You must first pick up the rods.");
 #endif
@@ -2007,7 +2007,7 @@ static void do_cmd_zap_rod_aux(int item)
 	{
 		if (flush_failure) flush();
 #ifdef JP
-		msg_print("¤¦¤Ş¤¯¥í¥Ã¥É¤ò»È¤¨¤Ê¤«¤Ã¤¿¡£");
+		msg_print("ã†ã¾ããƒ­ãƒƒãƒ‰ã‚’ä½¿ãˆãªã‹ã£ãŸã€‚");
 #else
 		msg_print("You failed to use the rod properly.");
 #endif
@@ -2022,7 +2022,7 @@ static void do_cmd_zap_rod_aux(int item)
 	{
 		if (flush_failure) flush();
 #ifdef JP
-		msg_print("¤³¤Î¥í¥Ã¥É¤Ï¤Ş¤ÀËâÎÏ¤ò½¼Å¶¤·¤Æ¤¤¤ëºÇÃæ¤À¡£");
+		msg_print("ã“ã®ãƒ­ãƒƒãƒ‰ã¯ã¾ã é­”åŠ›ã‚’å……å¡«ã—ã¦ã„ã‚‹æœ€ä¸­ã ã€‚");
 #else
 		msg_print("The rod is still charging.");
 #endif
@@ -2033,7 +2033,7 @@ static void do_cmd_zap_rod_aux(int item)
 	{
 		if (flush_failure) flush();
 #ifdef JP
-		msg_print("¤½¤Î¥í¥Ã¥É¤Ï¤Ş¤À½¼Å¶Ãæ¤Ç¤¹¡£");
+		msg_print("ãã®ãƒ­ãƒƒãƒ‰ã¯ã¾ã å……å¡«ä¸­ã§ã™ã€‚");
 #else
 		msg_print("The rods are all still charging.");
 #endif
@@ -2267,8 +2267,8 @@ void do_cmd_zap_rod(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥í¥Ã¥É¤ò¿¶¤ê¤Ş¤¹¤«? ";
-	s = "»È¤¨¤ë¥í¥Ã¥É¤¬¤Ê¤¤¡£";
+	q = "ã©ã®ãƒ­ãƒƒãƒ‰ã‚’æŒ¯ã‚Šã¾ã™ã‹? ";
+	s = "ä½¿ãˆã‚‹ãƒ­ãƒƒãƒ‰ãŒãªã„ã€‚";
 #else
 	q = "Zap which rod? ";
 	s = "You have no rod to zap.";
@@ -2318,7 +2318,7 @@ void ring_of_power(int dir)
 		{
 			/* Message */
 #ifdef JP
-			msg_print("¤¢¤Ê¤¿¤Ï°­À­¤Î¥ª¡¼¥é¤ËÊñ¤ß¹ş¤Ş¤ì¤¿¡£");
+			msg_print("ã‚ãªãŸã¯æ‚ªæ€§ã®ã‚ªãƒ¼ãƒ©ã«åŒ…ã¿è¾¼ã¾ã‚ŒãŸã€‚");
 #else
 			msg_print("You are surrounded by a malignant aura.");
 #endif
@@ -2345,7 +2345,7 @@ void ring_of_power(int dir)
 		{
 			/* Message */
 #ifdef JP
-			msg_print("¤¢¤Ê¤¿¤Ï¶¯ÎÏ¤Ê¥ª¡¼¥é¤ËÊñ¤ß¹ş¤Ş¤ì¤¿¡£");
+			msg_print("ã‚ãªãŸã¯å¼·åŠ›ãªã‚ªãƒ¼ãƒ©ã«åŒ…ã¿è¾¼ã¾ã‚ŒãŸã€‚");
 #else
 			msg_print("You are surrounded by a powerful aura.");
 #endif
@@ -2422,7 +2422,7 @@ static void do_cmd_activate_aux(int item)
 	if (!can_use_device(lev, (bool)(o_ptr->ident & IDENT_CURSED)))
 	{
 		if (flush_failure) flush();
-		msg_print(_("¤¦¤Ş¤¯»ÏÆ°¤µ¤»¤ë¤³¤È¤¬¤Ç¤­¤Ê¤«¤Ã¤¿¡£", "You failed to activate it properly."));
+		msg_print(_("ã†ã¾ãå§‹å‹•ã•ã›ã‚‹ã“ã¨ãŒã§ããªã‹ã£ãŸã€‚", "You failed to activate it properly."));
  		sound(SOUND_STORE2);  /* (Sound substitute) HACK! No fail sound, use strore 2*/
 		return;
 	}
@@ -2430,12 +2430,12 @@ static void do_cmd_activate_aux(int item)
 	/* Check the recharge */
 	if (o_ptr->timeout)
 	{
-		msg_print(_("¤½¤ì¤ÏÈù¤«¤Ë²»¤òÎ©¤Æ¡¢µ±¤­¡¢¾Ã¤¨¤¿...", "It whines, glows and fades..."));
+		msg_print(_("ãã‚Œã¯å¾®ã‹ã«éŸ³ã‚’ç«‹ã¦ã€è¼ãã€æ¶ˆãˆãŸ...", "It whines, glows and fades..."));
 		return;
 	}
 
 	/* Activate the artifact */
-	msg_print(_("»ÏÆ°¤µ¤»¤¿...", "You activate it..."));
+	msg_print(_("å§‹å‹•ã•ã›ãŸ...", "You activate it..."));
 
 	/* Sound */
 	sound(SOUND_ACT_ARTIFACT);
@@ -2453,7 +2453,7 @@ static void do_cmd_activate_aux(int item)
 	}
 
 	/* Mistake */
-	msg_print(_("¤ª¤Ã¤È¡¢¤³¤Î¥¢¥¤¥Æ¥à¤Ï»ÏÆ°¤Ç¤­¤Ê¤¤¡£",
+	msg_print(_("ãŠã£ã¨ã€ã“ã®ã‚¢ã‚¤ãƒ†ãƒ ã¯å§‹å‹•ã§ããªã„ã€‚",
 		"Oops.  That object cannot be activated."));
 }
 
@@ -2469,8 +2469,8 @@ void do_cmd_activate(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥¢¥¤¥Æ¥à¤ò»ÏÆ°¤µ¤»¤Ş¤¹¤«? ";
-	s = "»ÏÆ°¤Ç¤­¤ë¥¢¥¤¥Æ¥à¤òÁõÈ÷¤·¤Æ¤¤¤Ê¤¤¡£";
+	q = "ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’å§‹å‹•ã•ã›ã¾ã™ã‹? ";
+	s = "å§‹å‹•ã§ãã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã‚’è£…å‚™ã—ã¦ã„ãªã„ã€‚";
 #else
 	q = "Activate which item? ";
 	s = "You have nothing to activate.";
@@ -2553,8 +2553,8 @@ void do_cmd_use(void)
 
 	/* Get an item */
 #ifdef JP
-q = "¤É¤ì¤ò»È¤¤¤Ş¤¹¤«¡©";
-s = "»È¤¨¤ë¤â¤Î¤¬¤¢¤ê¤Ş¤»¤ó¡£";
+q = "ã©ã‚Œã‚’ä½¿ã„ã¾ã™ã‹ï¼Ÿ";
+s = "ä½¿ãˆã‚‹ã‚‚ã®ãŒã‚ã‚Šã¾ã›ã‚“ã€‚";
 #else
 	q = "Use which item? ";
 	s = "You have nothing to use.";
@@ -2633,7 +2633,7 @@ s = "»È¤¨¤ë¤â¤Î¤¬¤¢¤ê¤Ş¤»¤ó¡£";
 			if (p_ptr->blind)
 			{
 #ifdef JP
-msg_print("ÌÜ¤¬¸«¤¨¤Ê¤¤¡£");
+msg_print("ç›®ãŒè¦‹ãˆãªã„ã€‚");
 #else
 				msg_print("You can't see anything.");
 #endif
@@ -2643,7 +2643,7 @@ msg_print("ÌÜ¤¬¸«¤¨¤Ê¤¤¡£");
 			if (no_lite())
 			{
 #ifdef JP
-msg_print("ÌÀ¤«¤ê¤¬¤Ê¤¤¤Î¤Ç¡¢°Å¤¯¤ÆÆÉ¤á¤Ê¤¤¡£");
+msg_print("æ˜ã‹ã‚ŠãŒãªã„ã®ã§ã€æš—ãã¦èª­ã‚ãªã„ã€‚");
 #else
 				msg_print("You have no light to read by.");
 #endif
@@ -2653,7 +2653,7 @@ msg_print("ÌÀ¤«¤ê¤¬¤Ê¤¤¤Î¤Ç¡¢°Å¤¯¤ÆÆÉ¤á¤Ê¤¤¡£");
 			if (p_ptr->confused)
 			{
 #ifdef JP
-msg_print("º®Íğ¤·¤Æ¤¤¤ÆÆÉ¤á¤Ê¤¤¡ª");
+msg_print("æ··ä¹±ã—ã¦ã„ã¦èª­ã‚ãªã„ï¼");
 #else
 				msg_print("You are too confused!");
 #endif
@@ -2698,8 +2698,8 @@ void do_cmd_use_device(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤ì¤ò»È¤¤¤Ş¤¹¤«¡©";
-	s = "»È¤¨¤ë¤â¤Î¤¬¤¢¤ê¤Ş¤»¤ó¡£";
+	q = "ã©ã‚Œã‚’ä½¿ã„ã¾ã™ã‹ï¼Ÿ";
+	s = "ä½¿ãˆã‚‹ã‚‚ã®ãŒã‚ã‚Šã¾ã›ã‚“ã€‚";
 #else
 	q = "Use which item? ";
 	s = "You have nothing to use.";

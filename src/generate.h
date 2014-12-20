@@ -1,4 +1,4 @@
-
+﻿
 #define SAFE_MAX_ATTEMPTS 5000
 
 /*

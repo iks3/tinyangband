@@ -31,44 +31,44 @@
 
 N:7:Farmer Maggot
 screams, 'Don't hurt a poor helpless hobbit!'
-#J:¤Ï¶«¤ó¤À¡£¡Ö¤³¤Î°¥¤ì¤ÇÌµÄñ¹³¤Ê¥Û¥Ó¥Ã¥È¤ò»¦¤µ¤Ê¤¤¤Ç¤¯¤ì¡ª¡×
+#J:ã¯å«ã‚“ã ã€‚ã€Œã“ã®å“€ã‚Œã§ç„¡æŠµæŠ—ãªãƒ›ãƒ“ãƒƒãƒˆã‚’æ®ºã•ãªã„ã§ãã‚Œï¼ã€
 yells, 'Where are my vicious dogs when I need them?'
-#J:¤Ï¶«¤ó¤À¡£¡Ö¤¢¤Îº¤¤Ã¤¿¸¤¤É¤â¤Ï¤³¤ÎÂç»ö¤Ê»ş¤Ë¤É¤³¤Ë¤¤¤ë¤ó¤À¡ª¡×
+#J:ã¯å«ã‚“ã ã€‚ã€Œã‚ã®å›°ã£ãŸçŠ¬ã©ã‚‚ã¯ã“ã®å¤§äº‹ãªæ™‚ã«ã©ã“ã«ã„ã‚‹ã‚“ã ï¼ã€
 
 N:18:Grip, Farmer Maggot's dog
 N:19:Wolf, Farmer Maggot's dog
 N:20:Fang, Farmer Maggot's dog
 whimpers.
-#J:¤Ï¥¯¥ó¥¯¥óÌÄ¤¤¤¿¡£
+#J:ã¯ã‚¯ãƒ³ã‚¯ãƒ³é³´ã„ãŸã€‚
 pines.
 limps away, howling.
-#J:¤ÏÊÒÂ­¤ò°ú¤­¤º¤Ã¤Æ¤Û¤¨¤¿¡£
+#J:ã¯ç‰‡è¶³ã‚’å¼•ããšã£ã¦ã»ãˆãŸã€‚
 howls.
-#J:¤Ï¤¦¤Ê¤Ã¤¿¡£
+#J:ã¯ã†ãªã£ãŸã€‚
 looks at you sadly.
-#J:¤ÏÈá¤·¤½¤¦¤Ë¤¢¤Ê¤¿¤ò¸«¤¿¡£
+#J:ã¯æ‚²ã—ãã†ã«ã‚ãªãŸã‚’è¦‹ãŸã€‚
 
-#J:#¥¹¥á¥¢¥´¥ë¸ì¤Ï ÆüËÜ¤ÎÂè°ì¿Í¼Ô Tessi ¤µ¤ó¤Ë´Æ½¤¤·¤Æ¤¤¤¿¤À¤­¤Ş¤·¤¿¡£
+#J:#ã‚¹ãƒ¡ã‚¢ã‚´ãƒ«èªã¯ æ—¥æœ¬ã®ç¬¬ä¸€äººè€… Tessi ã•ã‚“ã«ç›£ä¿®ã—ã¦ã„ãŸã ãã¾ã—ãŸã€‚
 N:23:Smeagol
 says, 'Don't hurt us, mastersisis.'
-#J:#'Don't hurt us'¤Ï¡Ö¤·¤É¤¤¤³¤È¤·¤Ê¤¤¤Ç¤¯¤ì¤è¤¦¡×
-#J:#¤À¤È¤ª¤â¤¦¤ó¤Ç¤¹¤¬'mastersisis'¤ß¤¿¤¤¤ÊÉ½¸½¤Ï¸«Åö¤¿¤ê¤Ş¤»¤ó¤Ç¤·¤¿
-#J:#'-- sss --'¤ß¤¿¤¤¤Î¤Ï¤¢¤ë¤ó¤Ç¤¹¤¬...
-#J:#Ìõ¤¹¤È¤·¤¿¤é¡ÖÃ¶Æá¡¢---¥¹¡¢¥¹¡¢¥¹---¡×¤«¡ÖÃ¶Æá¡×¤Ç¤·¤ç¤¦¤«¡©
-#J:¡Ö¤·¤É¤¤¤³¤È¤·¤Ê¤¤¤Ç¤¯¤ì¤è¤¦¡¢Ã¶Æá¡¢---¥¹¡¢¥¹¡¢¥¹---¡×
+#J:#'Don't hurt us'ã¯ã€Œã—ã©ã„ã“ã¨ã—ãªã„ã§ãã‚Œã‚ˆã†ã€
+#J:#ã ã¨ãŠã‚‚ã†ã‚“ã§ã™ãŒ'mastersisis'ã¿ãŸã„ãªè¡¨ç¾ã¯è¦‹å½“ãŸã‚Šã¾ã›ã‚“ã§ã—ãŸ
+#J:#'-- sss --'ã¿ãŸã„ã®ã¯ã‚ã‚‹ã‚“ã§ã™ãŒ...
+#J:#è¨³ã™ã¨ã—ãŸã‚‰ã€Œæ—¦é‚£ã€---ã‚¹ã€ã‚¹ã€ã‚¹---ã€ã‹ã€Œæ—¦é‚£ã€ã§ã—ã‚‡ã†ã‹ï¼Ÿ
+#J:ã€Œã—ã©ã„ã“ã¨ã—ãªã„ã§ãã‚Œã‚ˆã†ã€æ—¦é‚£ã€---ã‚¹ã€ã‚¹ã€ã‚¹---ã€
 says, 'Poor Smeagol, poor Smeagol.'
-#J:# Tessi ¤µ¤óÌõ
-#J:¡Ö¤«¤ï¤¤¤½¤¦¤Ê¥¹¥á¥¢¥´¥ë¡¢¤«¤ï¤¤¤½¤¦¤Ê¥¹¥á¥¢¥´¥ë¡£¡×
+#J:# Tessi ã•ã‚“è¨³
+#J:ã€Œã‹ã‚ã„ãã†ãªã‚¹ãƒ¡ã‚¢ã‚´ãƒ«ã€ã‹ã‚ã„ãã†ãªã‚¹ãƒ¡ã‚¢ã‚´ãƒ«ã€‚ã€
 says, 'No AH! Don't hurtsis us.'
-#J:¡Ö¤¢¤¡¡ª¤¤¤ä¤À¤è¤¦¡¢¤·¤É¤¤¤³¤È¤·¤Ê¤¤¤Ç¤¯¤ì¤è¤¦¡£¡×
+#J:ã€Œã‚ãï¼ã„ã‚„ã ã‚ˆã†ã€ã—ã©ã„ã“ã¨ã—ãªã„ã§ãã‚Œã‚ˆã†ã€‚ã€
 
 N:35:Wormtongue, Agent of Saruman
 begs you to spare his miserable life.
-#J:¤Ï°¥¤ì¤Ã¤İ¤¯Ì¿¸ğ¤¤¤ò¤·¤¿¡£
+#J:ã¯å“€ã‚Œã£ã½ãå‘½ä¹ã„ã‚’ã—ãŸã€‚
 whines, 'This is not my fault!'
-#J:¤Ï°¥¤ì¤Ã¤İ¤¯µã¤¤¤¿¡£¡Ö»ä¤Î¤»¤¤¤Ç¤Ï¤Ê¤¤¡ª¡×
+#J:ã¯å“€ã‚Œã£ã½ãæ³£ã„ãŸã€‚ã€Œç§ã®ã›ã„ã§ã¯ãªã„ï¼ã€
 screams, 'Help! Help!'
-#J:¤Ï¶«¤ó¤À¡£¡Ö½õ¤±¤Æ¡ª½õ¤±¤Æ¡ª¡×
+#J:ã¯å«ã‚“ã ã€‚ã€ŒåŠ©ã‘ã¦ï¼åŠ©ã‘ã¦ï¼ã€
 
 N:40:Radbug, the Snaga
 N:41:Lagduf, the Snaga
@@ -83,17 +83,17 @@ N:98:Ugluk, the Uruk
 N:99:Lugdush, the Uruk
 N:108:Azog, King of the Uruk-Hai
 screams, 'Hey, orcs have rights too!'
-#J:¤Ï¶«¤ó¤À¡£¡Ö¤ª¤¤¡ª¥ª¡¼¥¯¤Ë¤â¸¢Íø¤¬¤¢¤ë¤ó¤À¤¾¡ª¡×
+#J:ã¯å«ã‚“ã ã€‚ã€ŒãŠã„ï¼ã‚ªãƒ¼ã‚¯ã«ã‚‚æ¨©åˆ©ãŒã‚ã‚‹ã‚“ã ãï¼ã€
 says, 'You're just prejudiced against orc-kind, aren't you?'
-#J:¡Ö¤ª¤Ş¤¨¤Ï¥ª¡¼¥¯¤ËÂĞ¤·¤ÆÊĞ¸«¤ò»ı¤Ã¤Æ¤ë¤À¤±¤Ê¤ó¤¸¤ã¤Ê¤¤¤«¡©¡×
+#J:ã€ŒãŠã¾ãˆã¯ã‚ªãƒ¼ã‚¯ã«å¯¾ã—ã¦åè¦‹ã‚’æŒã£ã¦ã‚‹ã ã‘ãªã‚“ã˜ã‚ƒãªã„ã‹ï¼Ÿã€
 begs, 'Spare me and I'll get you Ringil! Really!'
-#J:¡Ö½õ¤±¤Æ¤¯¤ì¡ª¡Ø¥ê¥ó¥®¥ë¡Ù¤ò¤ä¤ë¤«¤é¡ª¥Û¥ó¥È¤À¡ª¡×
+#J:ã€ŒåŠ©ã‘ã¦ãã‚Œï¼ã€ãƒªãƒ³ã‚®ãƒ«ã€ã‚’ã‚„ã‚‹ã‹ã‚‰ï¼ãƒ›ãƒ³ãƒˆã ï¼ã€
 says, 'Next time, I'm bringing more Uruks with me!'
-#J:¡Öº£ÅÙ¤Ï¤â¤Ã¤È¥¦¥ë¥¯¤ò¤¿¤¯¤µ¤óÏ¢¤ì¤Æ¤¯¤ë¤«¤é¤Ê¡ª¡×
+#J:ã€Œä»Šåº¦ã¯ã‚‚ã£ã¨ã‚¦ãƒ«ã‚¯ã‚’ãŸãã•ã‚“é€£ã‚Œã¦ãã‚‹ã‹ã‚‰ãªï¼ã€
 says, 'Don't hate me because I'm ugly!'
-#J:¡Ö½¹¤¤¤«¤é¤Ã¤ÆÁş¤Ş¤Ê¤¤¤Ç¤¯¤ì¡ª¡×
+#J:ã€Œé†œã„ã‹ã‚‰ã£ã¦æ†ã¾ãªã„ã§ãã‚Œï¼ã€
 whimpers and grovels.
-#J:¤Ï¥·¥¯¥·¥¯µã¤¤¤Æ¤Ò¤ìÉú¤·¤¿¡£
+#J:ã¯ã‚·ã‚¯ã‚·ã‚¯æ³£ã„ã¦ã²ã‚Œä¼ã—ãŸã€‚
 
 N:116:Bert the Stone Troll
 N:117:Bill the Stone Troll
@@ -101,30 +101,30 @@ N:118:Tom the Stone Troll
 says, 'Now, stop it!'
 yells, 'Ey, watch it, you cheeky sod!'
 screams, 'Me mates'll settle yer hash!'
-#J:¡Ö²¶¤Î¥À¥Á¤¬¤ª¤á¤¨¤òÈ¬Îö¤­¤Ë¤¹¤ë¤¼¡ª¡×
+#J:ã€Œä¿ºã®ãƒ€ãƒãŒãŠã‚ãˆã‚’å…«è£‚ãã«ã™ã‚‹ãœï¼ã€
 
 # Saruman's first line is a paraphrase from LoTR when he insults Theoden.
 
 N:132:Saruman of Many Colours
 says, 'Wait! Look behind you!'
-#J:¡ÖÂÔ¤Æ¡ª¸å¤í¤ò¸«¤Æ¤ß¤í¡ª¡×
+#J:ã€Œå¾…ã¦ï¼å¾Œã‚ã‚’è¦‹ã¦ã¿ã‚ï¼ã€
 howls, 'Wormtongue! Where are you, you bastard?'
-#J:¡Ö¥Ø¥Ó¤ÎÀå¡ª¤É¤³¤Ø¹Ô¤Ã¤¿¡ª¤³¤Î´ÖÈ´¤±¤á¡ª¡×
+#J:ã€Œãƒ˜ãƒ“ã®èˆŒï¼ã©ã“ã¸è¡Œã£ãŸï¼ã“ã®é–“æŠœã‘ã‚ï¼ã€
 
 N:137:Smaug the Golden
 groans in disbelief.
 roars furiously.
-#J:#Bard ¤Î¼Í¤¿¹õ¤¤Ìğ¤Ç¥¹¥Ş¥¦¥°¤Ï»à¤Ë¤Ş¤¹¡£
+#J:#Bard ã®å°„ãŸé»’ã„çŸ¢ã§ã‚¹ãƒã‚¦ã‚°ã¯æ­»ã«ã¾ã™ã€‚
 howls, 'Black Arrow? NOOOO!'
-#J:¡Ö¹õ¤¤Ìğ¡©¤ä¤á¤Æ¤¯¤ì¡Á¡Á¡ª¡×
+#J:ã€Œé»’ã„çŸ¢ï¼Ÿã‚„ã‚ã¦ãã‚Œï½ï½ï¼ã€
 howls, 'This CAN'T be happening!'
-#J:¡Ö¤½¤ó¤Ê¥Ğ¥«¤Ê¡ª¡×
+#J:ã€Œãã‚“ãªãƒã‚«ãªï¼ã€
 
 N:142:Glaurung, Father of the Dragons
 writhes as he spouts black blood from many wounds.
-#J:¤ÏÂçÎÌ¤Î½ı¸ı¤«¤é¹õ¤¤·ì¤ò¿á¤­½Ğ¤·¤Æ¤Î¤¿¤¦¤Á²ó¤Ã¤¿¡£
+#J:ã¯å¤§é‡ã®å‚·å£ã‹ã‚‰é»’ã„è¡€ã‚’å¹ãå‡ºã—ã¦ã®ãŸã†ã¡å›ã£ãŸã€‚
 says, 'I shall be avenged!'
-#J:¡Ö³Ğ¤¨¤Æ¤ª¤ì¡ª¡×
+#J:ã€Œè¦šãˆã¦ãŠã‚Œï¼ã€
 
 N:147:Ancalagon the Black
 writhes as he spouts acidic blood from many wounds.
@@ -136,111 +136,111 @@ wails, 'Nooooo!'
 N:151:Draugluin, Sire of All Werewolves
 N:152:Carcharoth, the Jaws of Thirst
 cringes and whimpers.
-#J:½Ì¤ß¤¢¤¬¤Ã¤Æ¥¯¥ó¥¯¥óÌÄ¤¤¤¿¡£
+#J:ç¸®ã¿ã‚ãŒã£ã¦ã‚¯ãƒ³ã‚¯ãƒ³é³´ã„ãŸã€‚
 says, 'Look, I promise I won't bite the mailman anymore!'
-#J:¡Ö¤â¤¦Í¹ÊØÇÛÃ£¿Í¤ò³ú¤Ş¤Ê¤¤¤ÈÌóÂ«¤¹¤ë¡ª¡×
+#J:ã€Œã‚‚ã†éƒµä¾¿é…é”äººã‚’å™›ã¾ãªã„ã¨ç´„æŸã™ã‚‹ï¼ã€
 says, 'Hey, put that rolled-up newspaper down!'
-#J:¡Ö¤ª¤¤¡ª¤½¤Î´İ¤á¤¿¿·Ê¹»æ¤ò¿¶¤ê¤«¤¶¤¹¤Î¤Ï¤ä¤á¤Æ¤¯¤ì¡ª¡×
+#J:ã€ŒãŠã„ï¼ãã®ä¸¸ã‚ãŸæ–°èç´™ã‚’æŒ¯ã‚Šã‹ã–ã™ã®ã¯ã‚„ã‚ã¦ãã‚Œï¼ã€
 
 N:154:Gothmog, the High Captain of Balrogs
 screams, 'This CAN'T be happening!'
-#J:¡Ö¤½¤ó¤Ê¥Ğ¥«¤Ê¡ª¡×
+#J:ã€Œãã‚“ãªãƒã‚«ãªï¼ã€
 shouts, 'Kill me if you want, the Boss will getcha!'
-#J:¡Ö»¦¤¹¤Ê¤é»¦¤»¡ª¥Ü¥¹¤¬ÌÛ¤Ã¤Á¤ã¤¤¤Ê¤¤¤¾¡ª¡×
+#J:ã€Œæ®ºã™ãªã‚‰æ®ºã›ï¼ãƒœã‚¹ãŒé»™ã£ã¡ã‚ƒã„ãªã„ãï¼ã€
 
 N:*:Default lines
 says: 'I am too young to die.'
-#J:¡Ö²¶¤Î¿ÍÀ¸¤Ï¤Ş¤À¤Ş¤ÀÄ¹¤¤¤ó¤À¡£¡×
+#J:ã€Œä¿ºã®äººç”Ÿã¯ã¾ã ã¾ã é•·ã„ã‚“ã ã€‚ã€
 says: 'Ok, ok! I get: no more pals.'
-#J:¡ÖOK, OK, Ê¬¤«¤Ã¤¿¤è¡£¤â¤¦Ãç´Ö¸Æ¤Ğ¤Ê¤¤¡£¡×
+#J:ã€ŒOK, OK, åˆ†ã‹ã£ãŸã‚ˆã€‚ã‚‚ã†ä»²é–“å‘¼ã°ãªã„ã€‚ã€
 screams: 'Help, ho!'
 screams: 'What ho! Help!'
 says: 'You will pay for this!'
-#J:¡Ö²±¤¨¤Æ¤í¤è¡ª¡×
+#J:ã€Œæ†¶ãˆã¦ã‚ã‚ˆï¼ã€
 says: 'Violence is no solution!'
-#J:¡ÖË½ÎÏ¤Ï²¿¤Î²ò·è¤Ë¤â¤Ê¤é¤Ê¤¤¤¾¡ª¡×
+#J:ã€Œæš´åŠ›ã¯ä½•ã®è§£æ±ºã«ã‚‚ãªã‚‰ãªã„ãï¼ã€
 says: 'I thought you liked me.'
 says: 'Such senseless violence! I don't understand it!'
-#J:¡Ö¤Ê¤ó¤Æ¤Ğ¤«¤²¤¿Ë½ÎÏ¤À¡ª²¶¤Ë¤ÏÍı²ò¤Ç¤­¤ó¡ª¡×
+#J:ã€Œãªã‚“ã¦ã°ã‹ã’ãŸæš´åŠ›ã ï¼ä¿ºã«ã¯ç†è§£ã§ãã‚“ï¼ã€
 screams: 'Ho! Murder! Murder!'
-#J:¡Ö¤¦¤ï¤¡¡£¿Í»¦¤·¡ª¿Í»¦¤·¡ª¡×
+#J:ã€Œã†ã‚ãã€‚äººæ®ºã—ï¼äººæ®ºã—ï¼ã€
 says: 'Look, behind you!'
 screams: 'Run away!'
-#J:¡ÖÆ¨¤²¤í¡ª¡×
+#J:ã€Œé€ƒã’ã‚ï¼ã€
 screams: 'Run to the hills! Run for your lives!'
 says: 'Wait! Spare me and I'll make you rich! Money isn't a problem!'
-#J:¡ÖÂÔ¤Æ¡ª½õ¤±¤Æ¤¯¤ì¤ì¤Ğ¶â»ı¤Á¤Ë¤·¤Æ¤ä¤ë¡ª¤¤¤¯¤é¤Ç¤â¤ä¤ë¤¾¡ª¡×
+#J:ã€Œå¾…ã¦ï¼åŠ©ã‘ã¦ãã‚Œã‚Œã°é‡‘æŒã¡ã«ã—ã¦ã‚„ã‚‹ï¼ã„ãã‚‰ã§ã‚‚ã‚„ã‚‹ãï¼ã€
 says: 'I'll be back...'
 says: 'Hey -- I've got lawyers!'
-#J:¡Ö¤ª¤¤¡ªÊÛ¸î»Î¤ò¸Æ¤Ö¤¾¡ª¡×
+#J:ã€ŒãŠã„ï¼å¼è­·å£«ã‚’å‘¼ã¶ãï¼ã€
 says: 'All my possession for a moment of time!'
 says: 'Hey, it was only a joke, all right?'
-#J:¡Ö¤Ï¤Ï¡¢¤Á¤ç¤Ã¤È¤·¤¿¾éÃÌ¤À¤è¡£Ê¬¤«¤ë¤À¤í¡©¡×
+#J:ã€Œã¯ã¯ã€ã¡ã‚‡ã£ã¨ã—ãŸå†—è«‡ã ã‚ˆã€‚åˆ†ã‹ã‚‹ã ã‚ï¼Ÿã€
 says: 'Stop!'
-#J:¡ÖÂÔ¤Æ¡ª¡×
+#J:ã€Œå¾…ã¦ï¼ã€
 says: 'Cut it out, will you?'
-#J:¡Ö¤ä¤á¤Æ¤¯¤ì¡ª¤¿¤Î¤à¡£¡×
+#J:ã€Œã‚„ã‚ã¦ãã‚Œï¼ãŸã®ã‚€ã€‚ã€
 says: 'I will not kneel. Strike!'
 screams: 'Cowards! Why did you not protect me?'
-#J:¡Ö²²ÉÂ¼Ô¤É¤â¤á¡ª¤Ê¤¼»ä¤ò¼é¤é¤Ê¤«¤Ã¤¿¤ó¤À¡ª¡×
+#J:ã€Œè‡†ç—…è€…ã©ã‚‚ã‚ï¼ãªãœç§ã‚’å®ˆã‚‰ãªã‹ã£ãŸã‚“ã ï¼ã€
 screams: 'Idiots! I am surrounded by incompetent idiots!'
 says: 'I don't wanna die, I'm a god, why can't I live on?'
 yells: 'Someone call the Gendarmes!'
-#J:¡Ö¤À¤ì¤«·ûÊ¼¤ò¸Æ¤Ù¡ª¡×
+#J:ã€Œã ã‚Œã‹æ†²å…µã‚’å‘¼ã¹ï¼ã€
 screams: 'Keep that lunatic away from me!'
-#J:¡Ö¤¢¤Î¥­¥Á¥¬¥¤¤ò²¶¤Ë¶áÉÕ¤±¤ë¤Ê¡ª¡×
+#J:ã€Œã‚ã®ã‚­ãƒã‚¬ã‚¤ã‚’ä¿ºã«è¿‘ä»˜ã‘ã‚‹ãªï¼ã€
 shouts: 'Drop that weapon, now!'
-#J:¡ÖÉğ´ï¤ò¼Î¤Æ¤í¡ªº£¤¹¤°¤Ë¡ª¡×
+#J:ã€Œæ­¦å™¨ã‚’æ¨ã¦ã‚ï¼ä»Šã™ãã«ï¼ã€
 says: 'Fool! You don't know what you're doing!'
-#J:¡Ö¥Ğ¥«¼Ô¡ª¼«Ê¬¤¬²¿¤ò¤ä¤Ã¤Æ¤¤¤ë¤«Ê¬¤«¤Ã¤Æ¤ë¤Î¤«¡ª¡×
+#J:ã€Œãƒã‚«è€…ï¼è‡ªåˆ†ãŒä½•ã‚’ã‚„ã£ã¦ã„ã‚‹ã‹åˆ†ã‹ã£ã¦ã‚‹ã®ã‹ï¼ã€
 screams for help!
-#J:¤Ï½õ¤±¤òµá¤á¤Æ¶«¤ó¤À¡£
+#J:ã¯åŠ©ã‘ã‚’æ±‚ã‚ã¦å«ã‚“ã ã€‚
 begs for mercy.
-#J:¤Ï»üÈá¤ò¸ğ¤¦¤¿¡£
+#J:ã¯æ…ˆæ‚²ã‚’ä¹ã†ãŸã€‚
 sobs.
-#J:¤Ï¥Ù¥½¤ò¤«¤¤¤Æ¤¤¤ë¡£
+#J:ã¯ãƒ™ã‚½ã‚’ã‹ã„ã¦ã„ã‚‹ã€‚
 screams: 'Help! The maniac's murdering me!'
-#J:¡Ö½õ¤±¤Æ¤¯¤ì¡ª¥¤¥«¥ì¤¿ÅÛ¤¬²¶¤ò»¦¤½¤¦¤È¤·¤Æ¤ë¡ª¡×
+#J:ã€ŒåŠ©ã‘ã¦ãã‚Œï¼ã‚¤ã‚«ãƒ¬ãŸå¥´ãŒä¿ºã‚’æ®ºãã†ã¨ã—ã¦ã‚‹ï¼ã€
 says: 'Just what is it you want? Money? Babes? I can arrange it...'
-#J:¡Ö²¿¤¬Ë¾¤ß¤À¡©¶â¤«¡©½÷¤«¡©²¿¤Ç¤âÍÑ°Õ¤¹¤ë¤¾...¡×
+#J:ã€Œä½•ãŒæœ›ã¿ã ï¼Ÿé‡‘ã‹ï¼Ÿå¥³ã‹ï¼Ÿä½•ã§ã‚‚ç”¨æ„ã™ã‚‹ã...ã€
 says: 'Wait! Let's make a deal!'
-#J:¡ÖÂÔ¤Æ¡ª¼è¤ê°ú¤­¤ò¤·¤è¤¦¡ª¡×
+#J:ã€Œå¾…ã¦ï¼å–ã‚Šå¼•ãã‚’ã—ã‚ˆã†ï¼ã€
 says: 'Just can't stop this surmounting terror!'
 says: 'If there is a God, then why has he let me die?'
-#J:¡Ö¤â¤·¿À¤¬¤¤¤ë¤Ê¤é¡¢¤Ê¤¼»ä¤ò½õ¤±¤Æ¤¯¤ì¤Ê¤¤¤ó¤À¡©¡×
+#J:ã€Œã‚‚ã—ç¥ãŒã„ã‚‹ãªã‚‰ã€ãªãœç§ã‚’åŠ©ã‘ã¦ãã‚Œãªã„ã‚“ã ï¼Ÿã€
 says: 'I know where I'm going -- out!'
 says: 'No hope, no life, just pain and fear.'
-#J:¡ÖË¾¤ß¤Ï¤Ê¤¤¡¢Ì¿¤â¤Ê¤¤¡¢¤¿¤À¶ìÄË¤È¶²Éİ¤À¤±¤À¡£¡×
+#J:ã€Œæœ›ã¿ã¯ãªã„ã€å‘½ã‚‚ãªã„ã€ãŸã è‹¦ç—›ã¨ææ€–ã ã‘ã ã€‚ã€
 says: 'I am a fugitive, hunted down like game.'
 says: 'You'll live to regret this blasphemous offence!'
 says: 'All my life's blood is slowly draining away...'
 asks: 'Should we be fighting at all?'
-#J:¡Ö²¶¤¿¤Á¤Ï¤½¤â¤½¤âÆ®¤¦É¬Í×¤¬¤¢¤ë¤Î¤«¡©¡×
+#J:ã€Œä¿ºãŸã¡ã¯ãã‚‚ãã‚‚é—˜ã†å¿…è¦ãŒã‚ã‚‹ã®ã‹ï¼Ÿã€
 asks: 'What are we fighting for?'
-#J:¡Ö²¶¤¿¤Á¤Ï²¿¤Î¤¿¤á¤ËÆ®¤Ã¤Æ¤¤¤ë¤ó¤À¡©¡×
+#J:ã€Œä¿ºãŸã¡ã¯ä½•ã®ãŸã‚ã«é—˜ã£ã¦ã„ã‚‹ã‚“ã ï¼Ÿã€
 asks you: 'Can you say you are proud of what you've done?'
-#J:¡Ö¼«Ê¬¤Î¤·¤Æ¤¤¤ë»ö¤Ë¸Ø¤ê¤ò»ı¤Ã¤Æ¤¤¤ë¤È¸À¤¨¤ë¤«¡©¡×
+#J:ã€Œè‡ªåˆ†ã®ã—ã¦ã„ã‚‹äº‹ã«èª‡ã‚Šã‚’æŒã£ã¦ã„ã‚‹ã¨è¨€ãˆã‚‹ã‹ï¼Ÿã€
 says: 'Every minute I get weaker...'
 says: 'All my life I've run away...'
 says: 'All that I see, absolute horror!'
 says: 'I have fallen prey to failure.'
 says: 'Just leave me alone!'
-#J:¡Ö¤Û¤Ã¤È¤¤¤Æ¤¯¤ì¡ª¡×
+#J:ã€Œã»ã£ã¨ã„ã¦ãã‚Œï¼ã€
 says: 'Please, save me!'
-#J:¡Ö¤ª¤Í¤¬¤¤¤À¡¢½õ¤±¤Æ¤¯¤ì¡£¡×
+#J:ã€ŒãŠã­ãŒã„ã ã€åŠ©ã‘ã¦ãã‚Œã€‚ã€
 says: 'You've won a battle, but I'll win the war!'
 says: 'You've won this round, next time it's *my* turn!'
 says: 'Another time, another battlefield, *my* victory.'
 says: 'I've got to keep running.'
 says: 'It's all so futile!'
 says: 'Cowards live to fight another day.'
-#J:#°Ê²¼£³¹Ô¡¢¥á¥¿¥ê¥«¡¢fade to black ¤È¤¤¤¦¶Ê¤Î²Î»ì¤é¤·¤¤
+#J:#ä»¥ä¸‹ï¼“è¡Œã€ãƒ¡ã‚¿ãƒªã‚«ã€fade to black ã¨ã„ã†æ›²ã®æ­Œè©ã‚‰ã—ã„
 says: 'Life it seems will fade away, drifting further every day.'
 says: 'Emptiness is filling me, to the point of agony.'
 says: 'Cannot stand this hell I feel!'
 cries: 'Someone help me, oh please God help me!'
-#J:¡Ö¤À¤ì¤«¡¢½õ¤±¤Æ¤¯¤ì¡ª ¤ª¤ª¿À¤è¡¢¤ª´ê¤¤¤À¤«¤é½õ¤±¤Æ¤¯¤ì¡ª¡×
+#J:ã€Œã ã‚Œã‹ã€åŠ©ã‘ã¦ãã‚Œï¼ ãŠãŠç¥ã‚ˆã€ãŠé¡˜ã„ã ã‹ã‚‰åŠ©ã‘ã¦ãã‚Œï¼ã€
 cries: 'Please! I have a mate and six siblings!'
-#J:¡Ö¤ª´ê¤¤¤À¡ª»ä¤Ë¤ÏºÊ¤È6¿Í¤Î»Ò¶¡¤¬¤¤¤ë¤ó¤À¡ª¡×
+#J:ã€ŒãŠé¡˜ã„ã ï¼ç§ã«ã¯å¦»ã¨6äººã®å­ä¾›ãŒã„ã‚‹ã‚“ã ï¼ã€
 cries: 'Mama, they try and break me!'
-#J:¡Ö¥Ş¥Ş¡ª¤ä¤Ä¤é¤¬ËÍ¤ò»¦¤½¤¦¤È¤¹¤ë¤è¡ª¡×
+#J:ã€Œãƒãƒï¼ã‚„ã¤ã‚‰ãŒåƒ•ã‚’æ®ºãã†ã¨ã™ã‚‹ã‚ˆï¼ã€

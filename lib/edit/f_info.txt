@@ -38,7 +38,7 @@ V:2.8.1
 
 # 0x00 --> nothing
 
-N:0:²¿¤â¤Ê¤¤
+N:0:ä½•ã‚‚ãªã„
 E:nothing
 G: :w
 W:2
@@ -46,14 +46,14 @@ W:2
 
 # 0x01 --> open floor
 
-N:1:¾²
+N:1:åºŠ
 E:open floor
 G:.:w:LIT
 W:5
 
 # 0x02 --> invisible trap (drawn as open floor)
 
-N:2:±£¤ì¤¿¥È¥é¥Ã¥×
+N:2:éš ã‚ŒãŸãƒˆãƒ©ãƒƒãƒ—
 E:invisible trap
 G:.:w:LIT
 M:1
@@ -61,193 +61,193 @@ W:5
 
 # 0x03 --> glyph of warding
 
-N:3:·ë³¦¤ÎÌæ¾Ï
+N:3:çµç•Œã®ç´‹ç« 
 E:glyph of warding
 G:;:y:LIT
 W:20
 
 # 0x04 --> open door
 
-N:4:³«¤¤¤¿¥É¥¢
+N:4:é–‹ã„ãŸãƒ‰ã‚¢
 E:open door
 G:':U
 W:15
 
 # 0x05 --> broken door
 
-N:5:²õ¤ì¤¿¥É¥¢
+N:5:å£Šã‚ŒãŸãƒ‰ã‚¢
 E:broken door
 G:':u
 W:15
 
 # 0x06 --> up stairs (perm)
 
-N:6:¾å¤ê³¬ÃÊ
+N:6:ä¸Šã‚Šéšæ®µ
 E:up staircase
 G:<:w:LIT
 W:25
 
 # 0x07 --> down stairs (perm)
 
-N:7:²¼¤ê³¬ÃÊ
+N:7:ä¸‹ã‚Šéšæ®µ
 E:down staircase
 G:>:w:LIT
 W:25
 
-N:8:¥¯¥¨¥¹¥ÈÆş¸ı
+N:8:ã‚¯ã‚¨ã‚¹ãƒˆå…¥å£
 E:quest entrance
 G:>:y
 W:25
 
-N:9:¥¯¥¨¥¹¥È½Ğ¸ı
+N:9:ã‚¯ã‚¨ã‚¹ãƒˆå‡ºå£
 E:quest exit
 G:<:y
 W:25
 
-N:10:¥¯¥¨¥¹¥È²¼¤ê³¬ÃÊ
+N:10:ã‚¯ã‚¨ã‚¹ãƒˆä¸‹ã‚Šéšæ®µ
 E:quest down level
 G:>:r
 W:25
 
-N:11:¥¯¥¨¥¹¥È¾å¤¬¤ê³¬ÃÊ
+N:11:ã‚¯ã‚¨ã‚¹ãƒˆä¸ŠãŒã‚Šéšæ®µ
 E:quest up level
 G:<:r
 W:25
 
-N:12:³¹¤Î½Ğ¸ı
+N:12:è¡—ã®å‡ºå£
 E:town exit
 G:>:g
 W:25
 
 # 0x0C --> up stairs (perm)
 
-N:13:¾å¤ê¹£Æ»
+N:13:ä¸Šã‚Šå‘é“
 E:shaft up
 G:<:U:LIT
 W:25
 
 # 0x0D --> down stairs (perm)
 
-N:14:²¼¤ê¹£Æ»
+N:14:ä¸‹ã‚Šå‘é“
 E:shaft down
 G:>:U:LIT
 W:25
 
 # 0x10 --> visible trap -- trap door
 
-N:16:¥È¥é¥Ã¥×¡¦¥É¥¢
+N:16:ãƒˆãƒ©ãƒƒãƒ—ãƒ»ãƒ‰ã‚¢
 E:trap door
 G:^:w:LIT
 W:20
 
 # 0x11 --> visible trap -- open pit
 
-N:17:Íî¤È¤··ê
+N:17:è½ã¨ã—ç©´
 E:pit
 G:^:s:LIT
 W:20
 
 # 0x12 --> visible trap -- spiked pit
 
-N:18:Íî¤È¤··ê
+N:18:è½ã¨ã—ç©´
 E:pit
 G:^:s:LIT
 W:20
 
 # 0x13 --> visible trap -- poison pit
 
-N:19:Íî¤È¤··ê
+N:19:è½ã¨ã—ç©´
 E:pit
 G:^:s:LIT
 W:20
 
 # 0x14 --> visible trap -- rune -- summon
 
-N:20:¼Ù°­¤Ê¥ë¡¼¥ó
+N:20:é‚ªæ‚ªãªãƒ«ãƒ¼ãƒ³
 E:evil rune
 G:^:G:LIT
 W:20
 
 # 0x15 --> visible trap -- rune -- teleport
 
-N:21:´ñÌ¯¤Ê¥ë¡¼¥ó
+N:21:å¥‡å¦™ãªãƒ«ãƒ¼ãƒ³
 E:strange rune
 G:^:o:LIT
 W:20
 
 # 0x16 --> visible trap -- spot -- fire
 
-N:22:¾Ç¤²¤¿¾ì½ê
+N:22:ç„¦ã’ãŸå ´æ‰€
 E:discolored spot
 G:^:u:LIT
 W:20
 
 # 0x17 --> visible trap -- spot -- acid
 
-N:23:¾Ç¤²¤¿¾ì½ê
+N:23:ç„¦ã’ãŸå ´æ‰€
 E:discolored spot
 G:^:u:LIT
 W:20
 
 # 0x18 --> visible trap -- dart -- slow
 
-N:24:¥À¡¼¥Ä¡¦¥È¥é¥Ã¥×
+N:24:ãƒ€ãƒ¼ãƒ„ãƒ»ãƒˆãƒ©ãƒƒãƒ—
 E:dart trap
 G:^:r:LIT
 W:20
 
 # 0x19 --> visible trap -- dart -- lose str
 
-N:25:¥À¡¼¥Ä¡¦¥È¥é¥Ã¥×
+N:25:ãƒ€ãƒ¼ãƒ„ãƒ»ãƒˆãƒ©ãƒƒãƒ—
 E:dart trap
 G:^:r:LIT
 W:20
 
 # 0x1A --> visible trap -- dart -- lose dex
 
-N:26:¥À¡¼¥Ä¡¦¥È¥é¥Ã¥×
+N:26:ãƒ€ãƒ¼ãƒ„ãƒ»ãƒˆãƒ©ãƒƒãƒ—
 E:dart trap
 G:^:r:LIT
 W:20
 
 # 0x1B --> visible trap -- dart -- lose con
 
-N:27:¥À¡¼¥Ä¡¦¥È¥é¥Ã¥×
+N:27:ãƒ€ãƒ¼ãƒ„ãƒ»ãƒˆãƒ©ãƒƒãƒ—
 E:dart trap
 G:^:r:LIT
 W:20
 
 # 0x1C --> visible trap -- gas -- blind
 
-N:28:¥¬¥¹¡¦¥È¥é¥Ã¥×
+N:28:ã‚¬ã‚¹ãƒ»ãƒˆãƒ©ãƒƒãƒ—
 E:gas trap
 G:^:g:LIT
 W:20
 
 # 0x1D --> visible trap -- gas -- confuse
 
-N:29:¥¬¥¹¡¦¥È¥é¥Ã¥×
+N:29:ã‚¬ã‚¹ãƒ»ãƒˆãƒ©ãƒƒãƒ—
 E:gas trap
 G:^:g:LIT
 W:20
 
 # 0x1E --> visible trap -- gas -- poison
 
-N:30:¥¬¥¹¡¦¥È¥é¥Ã¥×
+N:30:ã‚¬ã‚¹ãƒ»ãƒˆãƒ©ãƒƒãƒ—
 E:gas trap
 G:^:g:LIT
 W:20
 
 # 0x1F --> visible trap -- gas -- sleep
 
-N:31:¥¬¥¹¡¦¥È¥é¥Ã¥×
+N:31:ã‚¬ã‚¹ãƒ»ãƒˆãƒ©ãƒƒãƒ—
 E:gas trap
 G:^:g:LIT
 W:20
 
 # 0x2x --> locked door (power 0)
 
-N:32:¥É¥¢
+N:32:ãƒ‰ã‚¢
 E:door
 G:+:U
 M:32
@@ -255,7 +255,7 @@ W:17
 
 # 0x2x --> locked door (power 1)
 
-N:33:¸°¤Î¤«¤«¤Ã¤¿¥É¥¢
+N:33:éµã®ã‹ã‹ã£ãŸãƒ‰ã‚¢
 E:locked door
 G:+:U
 M:32
@@ -263,7 +263,7 @@ W:17
 
 # 0x2x --> locked door (power 2)
 
-N:34:¸°¤Î¤«¤«¤Ã¤¿¥É¥¢
+N:34:éµã®ã‹ã‹ã£ãŸãƒ‰ã‚¢
 E:locked door
 G:+:U
 M:32
@@ -271,7 +271,7 @@ W:17
 
 # 0x2x --> locked door (power 3)
 
-N:35:¸°¤Î¤«¤«¤Ã¤¿¥É¥¢
+N:35:éµã®ã‹ã‹ã£ãŸãƒ‰ã‚¢
 E:locked door
 G:+:U
 M:32
@@ -279,7 +279,7 @@ W:17
 
 # 0x2x --> locked door (power 4)
 
-N:36:¸°¤Î¤«¤«¤Ã¤¿¥É¥¢
+N:36:éµã®ã‹ã‹ã£ãŸãƒ‰ã‚¢
 E:locked door
 G:+:U
 M:32
@@ -287,7 +287,7 @@ W:17
 
 # 0x2x --> locked door (power 5)
 
-N:37:¸°¤Î¤«¤«¤Ã¤¿¥É¥¢
+N:37:éµã®ã‹ã‹ã£ãŸãƒ‰ã‚¢
 E:locked door
 G:+:U
 M:32
@@ -295,7 +295,7 @@ W:17
 
 # 0x2x --> locked door (power 6)
 
-N:38:¸°¤Î¤«¤«¤Ã¤¿¥É¥¢
+N:38:éµã®ã‹ã‹ã£ãŸãƒ‰ã‚¢
 E:locked door
 G:+:U
 M:32
@@ -303,7 +303,7 @@ W:17
 
 # 0x2x --> locked door (power 7)
 
-N:39:¸°¤Î¤«¤«¤Ã¤¿¥É¥¢
+N:39:éµã®ã‹ã‹ã£ãŸãƒ‰ã‚¢
 E:locked door
 G:+:U
 M:32
@@ -311,7 +311,7 @@ W:17
 
 # 0x2x --> jammed door (power 0)
 
-N:40:¤¯¤µ¤Ó¤¬ÂÇ¤¿¤ì¤¿¥É¥¢
+N:40:ãã•ã³ãŒæ‰“ãŸã‚ŒãŸãƒ‰ã‚¢
 E:jammed door
 G:+:U
 M:32
@@ -319,7 +319,7 @@ W:17
 
 # 0x2x --> jammed door (power 1)
 
-N:41:¤¯¤µ¤Ó¤¬ÂÇ¤¿¤ì¤¿¥É¥¢
+N:41:ãã•ã³ãŒæ‰“ãŸã‚ŒãŸãƒ‰ã‚¢
 E:jammed door
 G:+:U
 M:32
@@ -327,7 +327,7 @@ W:17
 
 # 0x2x --> jammed door (power 2)
 
-N:42:¤¯¤µ¤Ó¤¬ÂÇ¤¿¤ì¤¿¥É¥¢
+N:42:ãã•ã³ãŒæ‰“ãŸã‚ŒãŸãƒ‰ã‚¢
 E:jammed door
 G:+:U
 M:32
@@ -335,7 +335,7 @@ W:17
 
 # 0x2x --> jammed door (power 3)
 
-N:43:¤¯¤µ¤Ó¤¬ÂÇ¤¿¤ì¤¿¥É¥¢
+N:43:ãã•ã³ãŒæ‰“ãŸã‚ŒãŸãƒ‰ã‚¢
 E:jammed door
 G:+:U
 M:32
@@ -343,7 +343,7 @@ W:17
 
 # 0x2x --> jammed door (power 4)
 
-N:44:¤¯¤µ¤Ó¤¬ÂÇ¤¿¤ì¤¿¥É¥¢
+N:44:ãã•ã³ãŒæ‰“ãŸã‚ŒãŸãƒ‰ã‚¢
 E:jammed door
 G:+:U
 M:32
@@ -351,7 +351,7 @@ W:17
 
 # 0x2x --> jammed door (power 5)
 
-N:45:¤¯¤µ¤Ó¤¬ÂÇ¤¿¤ì¤¿¥É¥¢
+N:45:ãã•ã³ãŒæ‰“ãŸã‚ŒãŸãƒ‰ã‚¢
 E:jammed door
 G:+:U
 M:32
@@ -359,7 +359,7 @@ W:17
 
 # 0x2x --> jammed door (power 6)
 
-N:46:¤¯¤µ¤Ó¤¬ÂÇ¤¿¤ì¤¿¥É¥¢
+N:46:ãã•ã³ãŒæ‰“ãŸã‚ŒãŸãƒ‰ã‚¢
 E:jammed door
 G:+:U
 M:32
@@ -367,7 +367,7 @@ W:17
 
 # 0x2x --> jammed door (power 7)
 
-N:47:¤¯¤µ¤Ó¤¬ÂÇ¤¿¤ì¤¿¥É¥¢
+N:47:ãã•ã³ãŒæ‰“ãŸã‚ŒãŸãƒ‰ã‚¢
 E:jammed door
 G:+:U
 M:32
@@ -375,7 +375,7 @@ W:17
 
 # 0x30 --> secret door
 
-N:48:±£¤·¥É¥¢
+N:48:éš ã—ãƒ‰ã‚¢
 E:secret door
 G:#:w:LIT
 M:56
@@ -383,28 +383,28 @@ W:10
 
 # 0x31 --> rubble
 
-N:49:´äÀĞ
+N:49:å²©çŸ³
 E:pile of rubble
 G:::w:LIT
 W:13
 
 # 0x32 --> magma vein
 
-N:50:ÍÏ´ä¤Î¹ÛÌ®
+N:50:æº¶å²©ã®é‰±è„ˆ
 E:magma vein
 G:%:s:LIT
 W:12
 
 # 0x33 --> quartz vein
 
-N:51:ÀĞ±Ñ¤Î¹ÛÌ®
+N:51:çŸ³è‹±ã®é‰±è„ˆ
 E:quartz vein
 G:%:w:LIT
 W:11
 
 # 0x34 --> magma vein + treasure
 
-N:52:ÍÏ´ä¤Î¹ÛÌ®
+N:52:æº¶å²©ã®é‰±è„ˆ
 E:magma vein
 G:%:s:LIT
 M:50
@@ -412,7 +412,7 @@ W:12
 
 # 0x35 --> quartz vein + treasure
 
-N:53:ÀĞ±Ñ¤Î¹ÛÌ®
+N:53:çŸ³è‹±ã®é‰±è„ˆ
 E:quartz vein
 G:%:w:LIT
 M:51
@@ -420,28 +420,28 @@ W:11
 
 # 0x36 --> magma vein + known treasure
 
-N:54:ºâÊõ¤ò´ŞÍ­¤·¤¿ÍÏ´ä¤Î¹ÛÌ®
+N:54:è²¡å®ã‚’å«æœ‰ã—ãŸæº¶å²©ã®é‰±è„ˆ
 E:magma vein with treasure
 G:*:o:LIT
 W:19
 
 # 0x37 --> quartz vein + known treasure
 
-N:55:ºâÊõ¤ò´ŞÍ­¤·¤¿ÀĞ±Ñ¤Î¹ÛÌ®
+N:55:è²¡å®ã‚’å«æœ‰ã—ãŸçŸ³è‹±ã®é‰±è„ˆ
 E:quartz vein with treasure
 G:*:o:LIT
 W:19
 
 # 0x38 --> granite wall -- basic
 
-N:56:²ÖÖ¾´ä¤ÎÊÉ
+N:56:èŠ±å´—å²©ã®å£
 E:granite wall
 G:#:w:LIT
 W:10
 
 # 0x39 --> granite wall -- inner
 
-N:57:²ÖÖ¾´ä¤ÎÊÉ
+N:57:èŠ±å´—å²©ã®å£
 E:granite wall
 G:#:w:LIT
 M:56
@@ -449,7 +449,7 @@ W:10
 
 # 0x3A --> granite wall -- outer
 
-N:58:²ÖÖ¾´ä¤ÎÊÉ
+N:58:èŠ±å´—å²©ã®å£
 E:granite wall
 G:#:w:LIT
 M:56
@@ -457,7 +457,7 @@ W:10
 
 # 0x3B --> granite wall -- solid
 
-N:59:²ÖÖ¾´ä¤ÎÊÉ
+N:59:èŠ±å´—å²©ã®å£
 E:granite wall
 G:#:w:LIT
 M:56
@@ -465,14 +465,14 @@ W:10
 
 # 0x3C --> permanent wall -- basic (perm)
 
-N:60:±Êµ×´ä¤ÎÊÉ
+N:60:æ°¸ä¹…å²©ã®å£
 E:permanent wall
 G:#:U:LIT
 W:20
 
 # 0x3D --> permanent wall -- inner (perm)
 
-N:61:±Êµ×´ä¤ÎÊÉ
+N:61:æ°¸ä¹…å²©ã®å£
 E:permanent wall
 G:#:U:LIT
 M:60
@@ -480,7 +480,7 @@ W:20
 
 # 0x3E --> permanent wall -- outer (perm)
 
-N:62:±Êµ×´ä¤ÎÊÉ
+N:62:æ°¸ä¹…å²©ã®å£
 E:permanent wall
 G:#:U:LIT
 M:60
@@ -488,345 +488,345 @@ W:20
 
 # 0x3F --> permanent wall -- solid (perm)
 
-N:63:±Êµ×´ä¤ÎÊÉ
+N:63:æ°¸ä¹…å²©ã®å£
 E:permanent wall
 G:#:U:LIT
 M:60
 W:20
 
-N:64:ÇúÈ¯¥ë¡¼¥ó
+N:64:çˆ†ç™ºãƒ«ãƒ¼ãƒ³
 E:explosive rune
 G:*:R:LIT
 W:20
 
-N:65:¥Ñ¥¿¡¼¥ó½ĞÈ¯ÅÀ
+N:65:ãƒ‘ã‚¿ãƒ¼ãƒ³å‡ºç™ºç‚¹
 E:Pattern startpoint
 G:*:w
 W:20
 
-N:66:¥Ñ¥¿¡¼¥ó¤Î°ìÉô
+N:66:ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸€éƒ¨
 E:section of the Pattern
 G:*:B
 W:20
 
-N:67:¥Ñ¥¿¡¼¥ó¤Î°ìÉô
+N:67:ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸€éƒ¨
 E:section of the Pattern
 G:*:b
 W:20
 
-N:68:¥Ñ¥¿¡¼¥ó¤Î°ìÉô
+N:68:ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸€éƒ¨
 E:section of the Pattern
 G:*:B
 W:20
 
-N:69:¥Ñ¥¿¡¼¥ó¤Î°ìÉô
+N:69:ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸€éƒ¨
 E:section of the Pattern
 G:*:b
 W:20
 
-N:70:¥Ñ¥¿¡¼¥ó¤Î°ìÉô
+N:70:ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸€éƒ¨
 E:section of the Pattern
 G:*:W
 W:20
 
-N:71:¥Ñ¥¿¡¼¥ó¤Î°ìÉô(discharged)
+N:71:ãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸€éƒ¨(discharged)
 E:section of the Pattern (discharged)
 G:*:W
 W:20
 
-N:72:¥Ñ¥¿¡¼¥ó½Ğ¸ı
+N:72:ãƒ‘ã‚¿ãƒ¼ãƒ³å‡ºå£
 E:Pattern exit
 G:*:w
 W:20
 
-N:73:²õ¤ì¤¿¥Ñ¥¿¡¼¥ó¤Î°ìÉô
+N:73:å£Šã‚ŒãŸãƒ‘ã‚¿ãƒ¼ãƒ³ã®ä¸€éƒ¨
 E:corrupted section of the Pattern
 G:*:D
 W:20
 
 # 0x4A --> shop -- general store (perm)
 
-N:74:»¨²ß²°
+N:74:é›‘è²¨å±‹
 E:General Store
 G:1:U
 W:20
 
 # 0x4B --> shop -- armoury (perm)
 
-N:75:ËÉ¶ñ²°
+N:75:é˜²å…·å±‹
 E:Armoury
 G:2:s
 W:20
 
 # 0x4C --> shop -- weapon shop (perm)
 
-N:76:Éğ´ïÀìÌçÅ¹
+N:76:æ­¦å™¨å°‚é–€åº—
 E:Weapon Smiths
 G:3:w
 W:20
 
 # 0x4D --> shop -- temple (perm)
 
-N:77:»û±¡
+N:77:å¯ºé™¢
 E:Temple
 G:4:g
 W:20
 
 # 0x4E --> shop -- alchemist (perm)
 
-N:78:Ï£¶â½Ñ¤ÎÅ¹
+N:78:éŒ¬é‡‘è¡“ã®åº—
 E:Alchemy Shop
 G:5:b
 W:20
 
 # 0x4F --> shop -- magic shop (perm)
 
-N:79:ËâË¡¤ÎÅ¹
+N:79:é­”æ³•ã®åº—
 E:Magic Shop
 G:6:r
 W:20
 
 # 0x50 --> shop -- black market (perm)
 
-N:80:¥Ö¥é¥Ã¥¯¡¦¥Ş¡¼¥±¥Ã¥È
+N:80:ãƒ–ãƒ©ãƒƒã‚¯ãƒ»ãƒãƒ¼ã‚±ãƒƒãƒˆ
 E:Black Market
 G:7:D
 W:20
 
 # 0x51 --> shop -- home (perm)
 
-N:81:²æ¤¬²È
+N:81:æˆ‘ãŒå®¶
 E:Home
 G:8:y
 W:20
 
 # 0x52 --> shop -- egostore (perm)
 
-N:82:Èş½Ñ¾¦
+N:82:ç¾è¡“å•†
 E:Atelier
 G:9:o
 W:20
 
 # 0x53 --> terrain -- deep water
 
-N:83:¿¼¤¤¿å
+N:83:æ·±ã„æ°´
 E:pool of deep water
 G:~:b:LIT
 W:20
 
-N:84:Àõ¤¤¿å¤ÎÎ®¤ì
+N:84:æµ…ã„æ°´ã®æµã‚Œ
 E:stream of shallow water
 G:~:B:LIT
 W:20
 
-N:85:¿¼¤¤ÍÏ´äÎ¯¤ê
+N:85:æ·±ã„æº¶å²©æºœã‚Š
 E:pool of deep lava
 G:~:r:LIT
 W:20
 
-N:86:Àõ¤¤ÍÏ´ä¤ÎÎ®¤ì
+N:86:æµ…ã„æº¶å²©ã®æµã‚Œ
 E:stream of shallow lava
 G:~:U:LIT
 W:20
 
-N:87:°Å¤¤·ê
+N:87:æš—ã„ç©´
 E:dark pit
 G:#:D
 W:20
 
-N:88:º½ÃÏ
+N:88:ç ‚åœ°
 E:dirt
 G:.:u:LIT
 W:6
 
-N:89:ÁğÃÏ
+N:89:è‰åœ°
 E:patch of grass
 G:.:g:LIT
 W:6
 
-N:90:¥³¥ó¥Ñ¥¯¥È¥ë¡¼¥ó
+N:90:ã‚³ãƒ³ãƒ‘ã‚¯ãƒˆãƒ«ãƒ¼ãƒ³
 E:compact rune
 G:^:D:LIT
 W:20
 
-N:91:¸«¤¨¤Ê¤¤ÊÉ
+N:91:è¦‹ãˆãªã„å£
 E:invisible wall
 G:.:w:LIT
 M:1
 W:5
 
 # Used by view_unsafe_grids option
-N:92:Ì¤ÃÎ¤ÎÃÏ·Á (Ì¤´¶ÃÎ)
+N:92:æœªçŸ¥ã®åœ°å½¢ (æœªæ„ŸçŸ¥)
 E:unknown grid (not detected)
 G:x:D
 W:2
 
-N:96:ÌÚ
+N:96:æœ¨
 E:tree
 G:#:G:LIT
 W:6
 
-N:97:»³Ì®
+N:97:å±±è„ˆ
 E:mountain chain
 G:^:U:LIT
 W:20
 
-N:128:·úÊª
+N:128:å»ºç‰©
 E:Building
 G:+:U
 W:20
 
-N:129:·úÊª
+N:129:å»ºç‰©
 E:Building
 G:+:U
 W:20
 
-N:130:·úÊª
+N:130:å»ºç‰©
 E:Building
 G:+:U
 W:20
 
-N:131:·úÊª
+N:131:å»ºç‰©
 E:Building
 G:+:U
 W:20
 
-N:132:·úÊª
+N:132:å»ºç‰©
 E:Building
 G:+:U
 W:20
 
-N:133:·úÊª
+N:133:å»ºç‰©
 E:Building
 G:+:U
 W:20
 
-N:134:·úÊª
+N:134:å»ºç‰©
 E:Building
 G:+:U
 W:20
 
-N:135:·úÊª
+N:135:å»ºç‰©
 E:Building
 G:+:o
 W:20
 
-N:136:·úÊª
+N:136:å»ºç‰©
 E:Building
 G:+:R
 W:20
 
-N:137:·úÊª
+N:137:å»ºç‰©
 E:Building
 G:+:G
 W:20
 
-N:138:·úÊª
+N:138:å»ºç‰©
 E:Building
 G:+:v
 W:20
 
-N:139:·úÊª
+N:139:å»ºç‰©
 E:Building
 G:+:u
 W:20
 
-N:140:·úÊª
+N:140:å»ºç‰©
 E:Building
 G:+:w
 W:20
 
-N:141:·úÊª
+N:141:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:142:·úÊª
+N:142:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:143:·úÊª
+N:143:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:144:·úÊª
+N:144:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:145:·úÊª
+N:145:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:146:·úÊª
+N:146:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:147:·úÊª
+N:147:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:148:·úÊª
+N:148:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:149:·úÊª
+N:149:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:150:·úÊª
+N:150:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:151:·úÊª
+N:151:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:152:·úÊª
+N:152:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:153:·úÊª
+N:153:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:154:·úÊª
+N:154:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:155:·úÊª
+N:155:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:156:·úÊª
+N:156:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:157:·úÊª
+N:157:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:158:·úÊª
+N:158:å»ºç‰©
 E:Building
 G:+:B
 W:20
 
-N:159:·úÊª
+N:159:å»ºç‰©
 E:Building
 G:+:B
 W:20

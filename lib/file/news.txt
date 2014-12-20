@@ -10,7 +10,7 @@
        New ZAngband code:    Robert Ruehlmann < rr9@angband.org >
     ZAngband 2.3.0 - ???:    The ZAngband DevTeam
        Japanese ZAngband:    M.Itakura < m-itakura@geocities.co.jp >
-                Hengband:    Mr.hoge <combat-echizen¡÷geocities.co.jp>
+                Hengband:    Mr.hoge <combat-echizenï¼ geocities.co.jp>
                 XAngband:    XAngband DevTeam
 
              TinyAngband:    XAngband DevTeam

@@ -1,4 +1,4 @@
-/* File: cmd2.c */
+ï»¿/* File: cmd2.c */
 
 /* Purpose: Movement commands (part 2) */
 
@@ -29,7 +29,7 @@ void do_cmd_go_up(void)
 	{
 		/* Success */
 #ifdef JP
-		msg_print("¾å¤Î³¬¤ËÅĞ¤Ã¤¿¡£");
+		msg_print("ä¸Šã®éšã«ç™»ã£ãŸã€‚");
 #else
 		msg_print("You enter the up staircase.");
 #endif
@@ -63,7 +63,7 @@ void do_cmd_go_up(void)
 	if (c_ptr->feat != FEAT_LESS && c_ptr->feat != FEAT_LESS_LESS)
 	{
 #ifdef JP
-		msg_print("¤³¤³¤Ë¤Ï¾å¤ê³¬ÃÊ¤¬¸«Åö¤¿¤é¤Ê¤¤¡£");
+		msg_print("ã“ã“ã«ã¯ä¸Šã‚Šéšæ®µãŒè¦‹å½“ãŸã‚‰ãªã„ã€‚");
 #else
 		msg_print("I see no up staircase here.");
 #endif
@@ -79,7 +79,7 @@ void do_cmd_go_up(void)
 		if (confirm_stairs)
 		{
 #ifdef JP
-			if (get_check("ËÜÅö¤Ë¤³¤Î³¬¤òµî¤ê¤Ş¤¹¤«¡©"))
+			if (get_check("æœ¬å½“ã«ã“ã®éšã‚’å»ã‚Šã¾ã™ã‹ï¼Ÿ"))
 #else
 			if (get_check("Really leave the level? "))
 #endif
@@ -114,7 +114,7 @@ void do_cmd_go_up(void)
 		else
 		{
 #ifdef JP
-			msg_print("³¬ÃÊ¤ò¾å¤Ã¤Æ¿·¤¿¤Ê¤ëÌÂµÜ¤Ø¤ÈÂ­¤òÆ§¤ßÆş¤ì¤¿¡£");
+			msg_print("éšæ®µã‚’ä¸Šã£ã¦æ–°ãŸãªã‚‹è¿·å®®ã¸ã¨è¶³ã‚’è¸ã¿å…¥ã‚ŒãŸã€‚");
 #else
 			msg_print("You enter a maze of up staircases.");
 #endif
@@ -176,7 +176,7 @@ void do_cmd_go_down(void)
 	if (c_ptr->feat == FEAT_QUEST_DOWN)
 	{
 #ifdef JP
-		msg_print("²¼¤Î³¬¤Ë¹ß¤ê¤¿¡£");
+		msg_print("ä¸‹ã®éšã«é™ã‚ŠãŸã€‚");
 #else
 		msg_print("You enter the down staircase.");
 #endif
@@ -210,7 +210,7 @@ void do_cmd_go_down(void)
 	if ((c_ptr->feat != FEAT_MORE) && (c_ptr->feat != FEAT_MORE_MORE) && !fall_trap)
 	{
 #ifdef JP
-		msg_print("¤³¤³¤Ë¤Ï²¼¤ê³¬ÃÊ¤¬¸«Åö¤¿¤é¤Ê¤¤¡£");
+		msg_print("ã“ã“ã«ã¯ä¸‹ã‚Šéšæ®µãŒè¦‹å½“ãŸã‚‰ãªã„ã€‚");
 #else
 		msg_print("I see no down staircase here.");
 #endif
@@ -230,7 +230,7 @@ void do_cmd_go_down(void)
 		if (confirm_stairs)
 		{
 #ifdef JP
-			if (get_check("ËÜÅö¤Ë¤³¤Î³¬¤òµî¤ê¤Ş¤¹¤«¡©"))
+			if (get_check("æœ¬å½“ã«ã“ã®éšã‚’å»ã‚Šã¾ã™ã‹ï¼Ÿ"))
 #else
 			if (get_check("Really leave the level? "))
 #endif
@@ -254,14 +254,14 @@ void do_cmd_go_down(void)
 
 		if (fall_trap)
 #ifdef JP
-			msg_print("¤ï¤¶¤ÈÍî¤·¸Í¤ËÍî¤Á¤¿¡£");
+			msg_print("ã‚ã–ã¨è½ã—æˆ¸ã«è½ã¡ãŸã€‚");
 #else
 			msg_print("You deliberately jump through the trap door.");
 #endif
 		else /* Success */
 		{
 #ifdef JP
-			msg_print("³¬ÃÊ¤ò²¼¤ê¤Æ¿·¤¿¤Ê¤ëÌÂµÜ¤Ø¤ÈÂ­¤òÆ§¤ßÆş¤ì¤¿¡£");
+			msg_print("éšæ®µã‚’ä¸‹ã‚Šã¦æ–°ãŸãªã‚‹è¿·å®®ã¸ã¨è¶³ã‚’è¸ã¿å…¥ã‚ŒãŸã€‚");
 #else
 			msg_print("You enter a maze of down staircases.");
 #endif
@@ -498,8 +498,8 @@ static void chest_trap(int y, int x, s16b o_idx)
 	if (trap & (CHEST_LOSE_STR))
 	{
 #ifdef JP
-		msg_print("»Å³İ¤±¤é¤ì¤Æ¤¤¤¿¾®¤µ¤Ê¿Ë¤Ë»É¤µ¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª");
-		take_hit(damroll(1, 4), "ÆÇ¿Ë");
+		msg_print("ä»•æ›ã‘ã‚‰ã‚Œã¦ã„ãŸå°ã•ãªé‡ã«åˆºã•ã‚Œã¦ã—ã¾ã£ãŸï¼");
+		take_hit(damroll(1, 4), "æ¯’é‡");
 #else
 		msg_print("A small needle has pricked you!");
 		take_hit(damroll(1, 4), "a poison needle");
@@ -512,8 +512,8 @@ static void chest_trap(int y, int x, s16b o_idx)
 	if (trap & (CHEST_LOSE_CON))
 	{
 #ifdef JP
-		msg_print("»Å³İ¤±¤é¤ì¤Æ¤¤¤¿¾®¤µ¤Ê¿Ë¤Ë»É¤µ¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª");
-		take_hit(damroll(1, 4), "ÆÇ¿Ë");
+		msg_print("ä»•æ›ã‘ã‚‰ã‚Œã¦ã„ãŸå°ã•ãªé‡ã«åˆºã•ã‚Œã¦ã—ã¾ã£ãŸï¼");
+		take_hit(damroll(1, 4), "æ¯’é‡");
 #else
 		msg_print("A small needle has pricked you!");
 		take_hit(damroll(1, 4), "a poison needle");
@@ -526,7 +526,7 @@ static void chest_trap(int y, int x, s16b o_idx)
 	if (trap & (CHEST_POISON))
 	{
 #ifdef JP
-		msg_print("ÆÍÇ¡¿á¤­½Ğ¤·¤¿ÎĞ¿§¤Î¥¬¥¹¤ËÊñ¤ß¹ş¤Ş¤ì¤¿¡ª");
+		msg_print("çªå¦‚å¹ãå‡ºã—ãŸç·‘è‰²ã®ã‚¬ã‚¹ã«åŒ…ã¿è¾¼ã¾ã‚ŒãŸï¼");
 #else
 		msg_print("A puff of green gas surrounds you!");
 #endif
@@ -541,7 +541,7 @@ static void chest_trap(int y, int x, s16b o_idx)
 	if (trap & (CHEST_PARALYZE))
 	{
 #ifdef JP
-		msg_print("ÆÍÇ¡¿á¤­½Ğ¤·¤¿²«¿§¤¤¥¬¥¹¤ËÊñ¤ß¹ş¤Ş¤ì¤¿¡ª");
+		msg_print("çªå¦‚å¹ãå‡ºã—ãŸé»„è‰²ã„ã‚¬ã‚¹ã«åŒ…ã¿è¾¼ã¾ã‚ŒãŸï¼");
 #else
 		msg_print("A puff of yellow gas surrounds you!");
 #endif
@@ -558,7 +558,7 @@ static void chest_trap(int y, int x, s16b o_idx)
 	{
 		int num = 2 + randint1(3);
 #ifdef JP
-		msg_print("ÆÍÇ¡¿á¤­½Ğ¤·¤¿±ì¤ËÊñ¤ß¹ş¤Ş¤ì¤¿¡ª");
+		msg_print("çªå¦‚å¹ãå‡ºã—ãŸç…™ã«åŒ…ã¿è¾¼ã¾ã‚ŒãŸï¼");
 #else
 		msg_print("You are enveloped in a cloud of smoke!");
 #endif
@@ -577,8 +577,8 @@ static void chest_trap(int y, int x, s16b o_idx)
 	if (trap & (CHEST_EXPLODE))
 	{
 #ifdef JP
-		msg_print("ÆÍÁ³¡¢È¢¤¬ÇúÈ¯¤·¤¿¡ª");
-		msg_print("È¢¤ÎÃæ¤ÎÊª¤Ï¤¹¤Ù¤ÆÊ´¡¹¤ËºÕ¤±»¶¤Ã¤¿¡ª");
+		msg_print("çªç„¶ã€ç®±ãŒçˆ†ç™ºã—ãŸï¼");
+		msg_print("ç®±ã®ä¸­ã®ç‰©ã¯ã™ã¹ã¦ç²‰ã€…ã«ç •ã‘æ•£ã£ãŸï¼");
 #else
 		msg_print("There is a sudden explosion!");
 		msg_print("Everything inside the chest is destroyed!");
@@ -587,7 +587,7 @@ static void chest_trap(int y, int x, s16b o_idx)
 		o_ptr->pval = 0;
 		sound(SOUND_BR_FIRE); /* No explode sound - use breath fire instead */
 #ifdef JP
-		take_hit(damroll(5, 8), "ÇúÈ¯¤¹¤ëÈ¢");
+		take_hit(damroll(5, 8), "çˆ†ç™ºã™ã‚‹ç®±");
 #else
 		take_hit(damroll(5, 8), "an exploding chest");
 #endif
@@ -640,7 +640,7 @@ static bool do_cmd_open_chest(int y, int x, s16b o_idx)
 		if (randint0(100) < j)
 		{
 #ifdef JP
-			msg_print("¸°¤ò¤Ï¤º¤·¤¿¡£");
+			msg_print("éµã‚’ã¯ãšã—ãŸã€‚");
 #else
 			msg_print("You have picked the lock.");
 #endif
@@ -656,7 +656,7 @@ static bool do_cmd_open_chest(int y, int x, s16b o_idx)
 			more = TRUE;
 			if (flush_failure) flush();
 #ifdef JP
-			msg_print("¸°¤ò¤Ï¤º¤»¤Ê¤«¤Ã¤¿¡£");
+			msg_print("éµã‚’ã¯ãšã›ãªã‹ã£ãŸã€‚");
 #else
 			msg_print("You failed to pick the lock.");
 #endif
@@ -827,7 +827,7 @@ static bool do_cmd_open_aux(int y, int x)
 	{
 		/* Stuck */
 #ifdef JP
-		msg_print("¥É¥¢¤Ï¤¬¤Ã¤Á¤ê¤ÈÊÄ¤¸¤é¤ì¤Æ¤¤¤ë¤è¤¦¤À¡£");
+		msg_print("ãƒ‰ã‚¢ã¯ãŒã£ã¡ã‚Šã¨é–‰ã˜ã‚‰ã‚Œã¦ã„ã‚‹ã‚ˆã†ã ã€‚");
 #else
 		msg_print("The door appears to be stuck.");
 #endif
@@ -858,7 +858,7 @@ static bool do_cmd_open_aux(int y, int x)
 		{
 			/* Message */
 #ifdef JP
-			msg_print("¸°¤ò¤Ï¤º¤·¤¿¡£");
+			msg_print("éµã‚’ã¯ãšã—ãŸã€‚");
 #else
 			msg_print("You have picked the lock.");
 #endif
@@ -885,7 +885,7 @@ static bool do_cmd_open_aux(int y, int x)
 
 			/* Message */
 #ifdef JP
-			msg_print("¸°¤ò¤Ï¤º¤»¤Ê¤«¤Ã¤¿¡£");
+			msg_print("éµã‚’ã¯ãšã›ãªã‹ã£ãŸã€‚");
 #else
 			msg_print("You failed to pick the lock.");
 #endif
@@ -985,7 +985,7 @@ void do_cmd_open(void)
 		{
 			/* Message */
 #ifdef JP
-		msg_print("¤½¤³¤Ë¤Ï³«¤±¤ë¤â¤Î¤¬¸«Åö¤¿¤é¤Ê¤¤¡£");
+		msg_print("ãã“ã«ã¯é–‹ã‘ã‚‹ã‚‚ã®ãŒè¦‹å½“ãŸã‚‰ãªã„ã€‚");
 #else
 			msg_print("You see nothing there to open.");
 #endif
@@ -1001,7 +1001,7 @@ void do_cmd_open(void)
 
 			/* Message */
 #ifdef JP
-		msg_print("¥â¥ó¥¹¥¿¡¼¤¬Î©¤Á¤Õ¤µ¤¬¤Ã¤Æ¤¤¤ë¡ª");
+		msg_print("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒç«‹ã¡ãµã•ãŒã£ã¦ã„ã‚‹ï¼");
 #else
 			msg_print("There is a monster in the way!");
 #endif
@@ -1059,7 +1059,7 @@ static bool do_cmd_close_aux(int y, int x)
 	{
 		/* Message */
 #ifdef JP
-		msg_print("¥É¥¢¤Ï²õ¤ì¤Æ¤·¤Ş¤Ã¤Æ¤¤¤ë¡£");
+		msg_print("ãƒ‰ã‚¢ã¯å£Šã‚Œã¦ã—ã¾ã£ã¦ã„ã‚‹ã€‚");
 #else
 		msg_print("The door appears to be broken.");
 #endif
@@ -1137,7 +1137,7 @@ void do_cmd_close(void)
 		{
 			/* Message */
 #ifdef JP
-		msg_print("¤½¤³¤Ë¤ÏÊÄ¤¸¤ë¤â¤Î¤¬¸«Åö¤¿¤é¤Ê¤¤¡£");
+		msg_print("ãã“ã«ã¯é–‰ã˜ã‚‹ã‚‚ã®ãŒè¦‹å½“ãŸã‚‰ãªã„ã€‚");
 #else
 			msg_print("You see nothing there to close.");
 #endif
@@ -1152,7 +1152,7 @@ void do_cmd_close(void)
 
 			/* Message */
 #ifdef JP
-		msg_print("¥â¥ó¥¹¥¿¡¼¤¬Î©¤Á¤Õ¤µ¤¬¤Ã¤Æ¤¤¤ë¡ª");
+		msg_print("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒç«‹ã¡ãµã•ãŒã£ã¦ã„ã‚‹ï¼");
 #else
 			msg_print("There is a monster in the way!");
 #endif
@@ -1185,7 +1185,7 @@ static bool do_cmd_tunnel_test(int y, int x)
 	{
 		/* Message */
 #ifdef JP
-		msg_print("¤½¤³¤Ë¤Ï²¿¤â¸«Åö¤¿¤é¤Ê¤¤¡£");
+		msg_print("ãã“ã«ã¯ä½•ã‚‚è¦‹å½“ãŸã‚‰ãªã„ã€‚");
 #else
 		msg_print("You see nothing there.");
 #endif
@@ -1200,7 +1200,7 @@ static bool do_cmd_tunnel_test(int y, int x)
 	{
 		/* Message */
 #ifdef JP
-		msg_print("¤½¤³¤Ë¤Ï·¡¤ë¤â¤Î¤¬¸«Åö¤¿¤é¤Ê¤¤¡£");
+		msg_print("ãã“ã«ã¯æ˜ã‚‹ã‚‚ã®ãŒè¦‹å½“ãŸã‚‰ãªã„ã€‚");
 #else
 		msg_print("You see nothing there to tunnel.");
 #endif
@@ -1280,7 +1280,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 	    (c_ptr->feat <= FEAT_PERM_SOLID))
 	{
 #ifdef JP
-		msg_print("¤³¤Î´ä¤Ï¹Å¤¹¤®¤Æ·¡¤ì¤Ê¤¤¤è¤¦¤À¡£");
+		msg_print("ã“ã®å²©ã¯ç¡¬ã™ãã¦æ˜ã‚Œãªã„ã‚ˆã†ã ã€‚");
 #else
 		msg_print("This seems to be permanent rock.");
 #endif
@@ -1291,7 +1291,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 	else if (c_ptr->feat == FEAT_MOUNTAIN)
 	{
 #ifdef JP
-		msg_print("¤½¤³¤Ï·¡¤ì¤Ê¤¤!");
+		msg_print("ãã“ã¯æ˜ã‚Œãªã„!");
 #else
 		msg_print("You can't tunnel through that!");
 #endif
@@ -1304,7 +1304,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		if ((p_ptr->skill_dig > 10 + randint0(400)) && twall(y, x, FEAT_GRASS))
 		{
 #ifdef JP
-			msg_print("ÌÚ¤òÀÚ¤êÊ§¤Ã¤¿¡£");
+			msg_print("æœ¨ã‚’åˆ‡ã‚Šæ‰•ã£ãŸã€‚");
 #else
 			msg_print("You have cleared away the trees.");
 #endif
@@ -1315,7 +1315,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		{
 			/* We may continue chopping */
 #ifdef JP
-			msg_print("ÌÚ¤òÀÚ¤Ã¤Æ¤¤¤ë¡£");
+			msg_print("æœ¨ã‚’åˆ‡ã£ã¦ã„ã‚‹ã€‚");
 #else
 			msg_print("You chop away at the tree.");
 #endif
@@ -1336,7 +1336,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		if ((p_ptr->skill_dig > 40 + randint0(1600)) && twall(y, x, FEAT_FLOOR))
 		{
 #ifdef JP
-			msg_print("·ê¤ò·¡¤ê½ª¤¨¤¿¡£");
+			msg_print("ç©´ã‚’æ˜ã‚Šçµ‚ãˆãŸã€‚");
 #else
 			msg_print("You have finished the tunnel.");
 #endif
@@ -1347,7 +1347,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		{
 			/* We may continue tunelling */
 #ifdef JP
-			msg_print("²ÖÖ¾´ä¤ÎÊÉ¤Ë·ê¤ò·¡¤Ã¤Æ¤¤¤ë¡£");
+			msg_print("èŠ±å´—å²©ã®å£ã«ç©´ã‚’æ˜ã£ã¦ã„ã‚‹ã€‚");
 #else
 			msg_print("You tunnel into the granite wall.");
 #endif
@@ -1394,7 +1394,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 
 				/* Message */
 #ifdef JP
-				msg_print("²¿¤«¤òÈ¯¸«¤·¤¿¡ª");
+				msg_print("ä½•ã‹ã‚’ç™ºè¦‹ã—ãŸï¼");
 #else
 				msg_print("You have found something!");
 #endif
@@ -1406,7 +1406,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 			{
 				/* Message */
 #ifdef JP
-				msg_print("·ê¤ò·¡¤ê½ª¤¨¤¿¡£");
+				msg_print("ç©´ã‚’æ˜ã‚Šçµ‚ãˆãŸã€‚");
 #else
 				msg_print("You have finished the tunnel.");
 #endif
@@ -1418,7 +1418,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		{
 			/* Message, continue digging */
 #ifdef JP
-			msg_print("ÀĞ±Ñ¤Î¹ÛÌ®¤Ë·ê¤ò·¡¤Ã¤Æ¤¤¤ë¡£");
+			msg_print("çŸ³è‹±ã®é‰±è„ˆã«ç©´ã‚’æ˜ã£ã¦ã„ã‚‹ã€‚");
 #else
 			msg_print("You tunnel into the quartz vein.");
 #endif
@@ -1431,7 +1431,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		{
 			/* Message, continue digging */
 #ifdef JP
-			msg_print("ÍÏ´ä¤Î¹ÛÌ®¤Ë·ê¤ò·¡¤Ã¤Æ¤¤¤ë¡£");
+			msg_print("æº¶å²©ã®é‰±è„ˆã«ç©´ã‚’æ˜ã£ã¦ã„ã‚‹ã€‚");
 #else
 			msg_print("You tunnel into the magma vein.");
 #endif
@@ -1450,7 +1450,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		{
 			/* Message */
 #ifdef JP
-			msg_print("´äÀĞ¤ò¤¯¤º¤·¤¿¡£");
+			msg_print("å²©çŸ³ã‚’ããšã—ãŸã€‚");
 #else
 			msg_print("You have removed the rubble.");
 #endif
@@ -1465,7 +1465,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 				if (player_can_see_bold(y, x))
 				{
 #ifdef JP
-					msg_print("²¿¤«¤òÈ¯¸«¤·¤¿¡ª");
+					msg_print("ä½•ã‹ã‚’ç™ºè¦‹ã—ãŸï¼");
 #else
 					msg_print("You have found something!");
 #endif
@@ -1476,7 +1476,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		{
 			/* Message, keep digging */
 #ifdef JP
-			msg_print("´äÀĞ¤ò¤¯¤º¤·¤Æ¤¤¤ë¡£");
+			msg_print("å²©çŸ³ã‚’ããšã—ã¦ã„ã‚‹ã€‚");
 #else
 			msg_print("You dig in the rubble.");
 #endif
@@ -1491,7 +1491,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		if ((p_ptr->skill_dig > 30 + randint0(1200)) && twall(y, x, FEAT_FLOOR))
 		{
 #ifdef JP
-			msg_print("·ê¤ò·¡¤ê½ª¤¨¤¿¡£");
+			msg_print("ç©´ã‚’æ˜ã‚Šçµ‚ãˆãŸã€‚");
 #else
 			msg_print("You have finished the tunnel.");
 #endif
@@ -1502,7 +1502,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		{
 			/* We may continue tunelling */
 #ifdef JP
-			msg_print("²ÖÖ¾´ä¤ÎÊÉ¤Ë·ê¤ò·¡¤Ã¤Æ¤¤¤ë¡£");
+			msg_print("èŠ±å´—å²©ã®å£ã«ç©´ã‚’æ˜ã£ã¦ã„ã‚‹ã€‚");
 #else
 			msg_print("You tunnel into the granite wall.");
 #endif
@@ -1520,7 +1520,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		if ((p_ptr->skill_dig > 30 + randint0(1200)) && twall(y, x, FEAT_FLOOR))
 		{
 #ifdef JP
-			msg_print("·ê¤ò·¡¤ê½ª¤¨¤¿¡£");
+			msg_print("ç©´ã‚’æ˜ã‚Šçµ‚ãˆãŸã€‚");
 #else
 			msg_print("You have finished the tunnel.");
 #endif
@@ -1531,7 +1531,7 @@ static bool do_cmd_tunnel_aux(int y, int x)
 		{
 			/* We may continue tunelling */
 #ifdef JP
-			msg_print("¥É¥¢¤Ë·ê¤ò³«¤±¤Æ¤¤¤ë¡£");
+			msg_print("ãƒ‰ã‚¢ã«ç©´ã‚’é–‹ã‘ã¦ã„ã‚‹ã€‚");
 #else
 			msg_print("You tunnel into the door.");
 #endif
@@ -1599,7 +1599,7 @@ void do_cmd_tunnel(void)
 		{
 			/* Message */
 #ifdef JP
-			msg_print("¥É¥¢¤Ï·¡¤ì¤Ê¤¤¡£");
+			msg_print("ãƒ‰ã‚¢ã¯æ˜ã‚Œãªã„ã€‚");
 #else
 			msg_print("You cannot tunnel through doors.");
 #endif
@@ -1612,7 +1612,7 @@ void do_cmd_tunnel(void)
 		{
 			/* Message */
 #ifdef JP
-			msg_print("¶õµ¤¤Ï·¡¤ì¤Ê¤¤¡£");
+			msg_print("ç©ºæ°—ã¯æ˜ã‚Œãªã„ã€‚");
 #else
 			msg_print("You cannot tunnel through air.");
 #endif
@@ -1623,7 +1623,7 @@ void do_cmd_tunnel(void)
 		else if (c_ptr->feat == FEAT_MOUNTAIN)
 		{
 #ifdef JP
-			msg_print("¤½¤³¤Ï·¡¤ì¤Ê¤¤¡£");
+			msg_print("ãã“ã¯æ˜ã‚Œãªã„ã€‚");
 #else
 			msg_print("You can't tunnel through that!");
 #endif
@@ -1638,7 +1638,7 @@ void do_cmd_tunnel(void)
 
 			/* Message */
 #ifdef JP
-		msg_print("¥â¥ó¥¹¥¿¡¼¤¬Î©¤Á¤Õ¤µ¤¬¤Ã¤Æ¤¤¤ë¡ª");
+		msg_print("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒç«‹ã¡ãµã•ãŒã£ã¦ã„ã‚‹ï¼");
 #else
 			msg_print("There is a monster in the way!");
 #endif
@@ -1692,7 +1692,7 @@ bool easy_open_door(int y, int x)
 	{
 		/* Stuck */
 #ifdef JP
-		msg_print("¥É¥¢¤Ï¤¬¤Ã¤Á¤ê¤ÈÊÄ¤¸¤é¤ì¤Æ¤¤¤ë¤è¤¦¤À¡£");
+		msg_print("ãƒ‰ã‚¢ã¯ãŒã£ã¡ã‚Šã¨é–‰ã˜ã‚‰ã‚Œã¦ã„ã‚‹ã‚ˆã†ã ã€‚");
 #else
 		msg_print("The door appears to be stuck.");
 #endif
@@ -1723,7 +1723,7 @@ bool easy_open_door(int y, int x)
 		{
 			/* Message */
 #ifdef JP
-			msg_print("¸°¤ò¤Ï¤º¤·¤¿¡£");
+			msg_print("éµã‚’ã¯ãšã—ãŸã€‚");
 #else
 			msg_print("You have picked the lock.");
 #endif
@@ -1750,7 +1750,7 @@ bool easy_open_door(int y, int x)
 
 			/* Message */
 #ifdef JP
-			msg_print("¸°¤ò¤Ï¤º¤»¤Ê¤«¤Ã¤¿¡£");
+			msg_print("éµã‚’ã¯ãšã›ãªã‹ã£ãŸã€‚");
 #else
 			msg_print("You failed to pick the lock.");
 #endif
@@ -1817,7 +1817,7 @@ static bool do_cmd_disarm_chest(int y, int x, s16b o_idx)
 	if (!object_known_p(o_ptr))
 	{
 #ifdef JP
-		msg_print("¥È¥é¥Ã¥×¤¬¸«¤¢¤¿¤é¤Ê¤¤¡£");
+		msg_print("ãƒˆãƒ©ãƒƒãƒ—ãŒè¦‹ã‚ãŸã‚‰ãªã„ã€‚");
 #else
 		msg_print("I don't see any traps.");
 #endif
@@ -1828,7 +1828,7 @@ static bool do_cmd_disarm_chest(int y, int x, s16b o_idx)
 	else if (o_ptr->pval <= 0)
 	{
 #ifdef JP
-		msg_print("È¢¤Ë¤Ï¥È¥é¥Ã¥×¤¬»Å³İ¤±¤é¤ì¤Æ¤¤¤Ê¤¤¡£");
+		msg_print("ç®±ã«ã¯ãƒˆãƒ©ãƒƒãƒ—ãŒä»•æ›ã‘ã‚‰ã‚Œã¦ã„ãªã„ã€‚");
 #else
 		msg_print("The chest is not trapped.");
 #endif
@@ -1839,7 +1839,7 @@ static bool do_cmd_disarm_chest(int y, int x, s16b o_idx)
 	else if (!chest_traps[o_ptr->pval])
 	{
 #ifdef JP
-		msg_print("È¢¤Ë¤Ï¥È¥é¥Ã¥×¤¬»Å³İ¤±¤é¤ì¤Æ¤¤¤Ê¤¤¡£");
+		msg_print("ç®±ã«ã¯ãƒˆãƒ©ãƒƒãƒ—ãŒä»•æ›ã‘ã‚‰ã‚Œã¦ã„ãªã„ã€‚");
 #else
 		msg_print("The chest is not trapped.");
 #endif
@@ -1850,7 +1850,7 @@ static bool do_cmd_disarm_chest(int y, int x, s16b o_idx)
 	else if (randint0(100) < j)
 	{
 #ifdef JP
-		msg_print("È¢¤Ë»Å³İ¤±¤é¤ì¤Æ¤¤¤¿¥È¥é¥Ã¥×¤ò²ò½ü¤·¤¿¡£");
+		msg_print("ç®±ã«ä»•æ›ã‘ã‚‰ã‚Œã¦ã„ãŸãƒˆãƒ©ãƒƒãƒ—ã‚’è§£é™¤ã—ãŸã€‚");
 #else
 		msg_print("You have disarmed the chest.");
 #endif
@@ -1866,7 +1866,7 @@ static bool do_cmd_disarm_chest(int y, int x, s16b o_idx)
 		more = TRUE;
 		if (flush_failure) flush();
 #ifdef JP
-		msg_print("È¢¤Î¥È¥é¥Ã¥×²ò½ü¤Ë¼ºÇÔ¤·¤¿¡£");
+		msg_print("ç®±ã®ãƒˆãƒ©ãƒƒãƒ—è§£é™¤ã«å¤±æ•—ã—ãŸã€‚");
 #else
 		msg_print("You failed to disarm the chest.");
 #endif
@@ -1877,7 +1877,7 @@ static bool do_cmd_disarm_chest(int y, int x, s16b o_idx)
 	else
 	{
 #ifdef JP
-		msg_print("¥È¥é¥Ã¥×¤òºîÆ°¤µ¤»¤Æ¤·¤Ş¤Ã¤¿¡ª");
+		msg_print("ãƒˆãƒ©ãƒƒãƒ—ã‚’ä½œå‹•ã•ã›ã¦ã—ã¾ã£ãŸï¼");
 #else
 		msg_print("You set off a trap!");
 #endif
@@ -1943,7 +1943,7 @@ bool do_cmd_disarm_aux(int y, int x, int dir)
 	{
 		/* Message */
 #ifdef JP
-		msg_format("%s¤ò²ò½ü¤·¤¿¡£", name);
+		msg_format("%sã‚’è§£é™¤ã—ãŸã€‚", name);
 #else
 		msg_format("You have disarmed the %s.", name);
 #endif
@@ -1970,7 +1970,7 @@ bool do_cmd_disarm_aux(int y, int x, int dir)
 
 		/* Message */
 #ifdef JP
-		msg_format("%s¤Î²ò½ü¤Ë¼ºÇÔ¤·¤¿¡£", name);
+		msg_format("%sã®è§£é™¤ã«å¤±æ•—ã—ãŸã€‚", name);
 #else
 		msg_format("You failed to disarm the %s.", name);
 #endif
@@ -1985,7 +1985,7 @@ bool do_cmd_disarm_aux(int y, int x, int dir)
 	{
 		/* Message */
 #ifdef JP
-		msg_format("%s¤òºîÆ°¤µ¤»¤Æ¤·¤Ş¤Ã¤¿¡ª", name);
+		msg_format("%sã‚’ä½œå‹•ã•ã›ã¦ã—ã¾ã£ãŸï¼", name);
 #else
 		msg_format("You set off the %s!", name);
 #endif
@@ -2059,7 +2059,7 @@ void do_cmd_disarm(void)
 		{
 			/* Message */
 #ifdef JP
-		msg_print("¤½¤³¤Ë¤Ï²ò½ü¤¹¤ë¤â¤Î¤¬¸«Åö¤¿¤é¤Ê¤¤¡£");
+		msg_print("ãã“ã«ã¯è§£é™¤ã™ã‚‹ã‚‚ã®ãŒè¦‹å½“ãŸã‚‰ãªã„ã€‚");
 #else
 			msg_print("You see nothing there to disarm.");
 #endif
@@ -2071,7 +2071,7 @@ void do_cmd_disarm(void)
 		{
 			/* Message */
 #ifdef JP
-		msg_print("¥â¥ó¥¹¥¿¡¼¤¬Î©¤Á¤Õ¤µ¤¬¤Ã¤Æ¤¤¤ë¡ª");
+		msg_print("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒç«‹ã¡ãµã•ãŒã£ã¦ã„ã‚‹ï¼");
 #else
 			msg_print("There is a monster in the way!");
 #endif
@@ -2127,7 +2127,7 @@ static bool do_cmd_bash_aux(int y, int x, int dir)
 
 	/* Message */
 #ifdef JP
-	msg_print("¥É¥¢¤ËÂÎÅö¤¿¤ê¤ò¤·¤¿¡ª");
+	msg_print("ãƒ‰ã‚¢ã«ä½“å½“ãŸã‚Šã‚’ã—ãŸï¼");
 #else
 	msg_print("You smash into the door!");
 #endif
@@ -2151,7 +2151,7 @@ static bool do_cmd_bash_aux(int y, int x, int dir)
 	{
 		/* Message */
 #ifdef JP
-		msg_print("¥É¥¢¤ò²õ¤·¤¿¡ª");
+		msg_print("ãƒ‰ã‚¢ã‚’å£Šã—ãŸï¼");
 #else
 		msg_print("The door crashes open!");
 #endif
@@ -2186,7 +2186,7 @@ static bool do_cmd_bash_aux(int y, int x, int dir)
 	{
 		/* Message */
 #ifdef JP
-		msg_print("¤³¤Î¥É¥¢¤Ï´è¾æ¤À¡£");
+		msg_print("ã“ã®ãƒ‰ã‚¢ã¯é ‘ä¸ˆã ã€‚");
 #else
 		msg_print("The door holds firm.");
 #endif
@@ -2201,7 +2201,7 @@ static bool do_cmd_bash_aux(int y, int x, int dir)
 	{
 		/* Message */
 #ifdef JP
-		msg_print("ÂÎ¤Î¥Ğ¥é¥ó¥¹¤ò¤¯¤º¤·¤Æ¤·¤Ş¤Ã¤¿¡£");
+		msg_print("ä½“ã®ãƒãƒ©ãƒ³ã‚¹ã‚’ããšã—ã¦ã—ã¾ã£ãŸã€‚");
 #else
 		msg_print("You are off-balance.");
 #endif
@@ -2268,7 +2268,7 @@ void do_cmd_bash(void)
 		{
 			/* Message */
 #ifdef JP
-		msg_print("¤½¤³¤Ë¤ÏÂÎÅö¤¿¤ê¤¹¤ë¤â¤Î¤¬¸«Åö¤¿¤é¤Ê¤¤¡£");
+		msg_print("ãã“ã«ã¯ä½“å½“ãŸã‚Šã™ã‚‹ã‚‚ã®ãŒè¦‹å½“ãŸã‚‰ãªã„ã€‚");
 #else
 			msg_print("You see nothing there to bash.");
 #endif
@@ -2283,7 +2283,7 @@ void do_cmd_bash(void)
 
 			/* Message */
 #ifdef JP
-		msg_print("¥â¥ó¥¹¥¿¡¼¤¬Î©¤Á¤Õ¤µ¤¬¤Ã¤Æ¤¤¤ë¡ª");
+		msg_print("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒç«‹ã¡ãµã•ãŒã£ã¦ã„ã‚‹ï¼");
 #else
 			msg_print("There is a monster in the way!");
 #endif
@@ -2404,7 +2404,7 @@ void do_cmd_alter(void)
 		{
 			/* Oops */
 #ifdef JP
-			msg_print("²¿¤â¤Ê¤¤¶õÃæ¤ò¹¶·â¤·¤¿¡£");
+			msg_print("ä½•ã‚‚ãªã„ç©ºä¸­ã‚’æ”»æ’ƒã—ãŸã€‚");
 #else
 			msg_print("You attack the empty air.");
 #endif
@@ -2478,7 +2478,7 @@ void do_cmd_spike(void)
 		{
 			/* Message */
 #ifdef JP
-		msg_print("¤½¤³¤Ë¤Ï¤¯¤µ¤Ó¤òÂÇ¤Æ¤ë¤â¤Î¤¬¸«Åö¤¿¤é¤Ê¤¤¡£");
+		msg_print("ãã“ã«ã¯ãã•ã³ã‚’æ‰“ã¦ã‚‹ã‚‚ã®ãŒè¦‹å½“ãŸã‚‰ãªã„ã€‚");
 #else
 			msg_print("You see nothing there to spike.");
 #endif
@@ -2490,7 +2490,7 @@ void do_cmd_spike(void)
 		{
 			/* Message */
 #ifdef JP
-		msg_print("¤¯¤µ¤Ó¤ò»ı¤Ã¤Æ¤¤¤Ê¤¤¡ª");
+		msg_print("ãã•ã³ã‚’æŒã£ã¦ã„ãªã„ï¼");
 #else
 			msg_print("You have no spikes!");
 #endif
@@ -2505,7 +2505,7 @@ void do_cmd_spike(void)
 
 			/* Message */
 #ifdef JP
-		msg_print("¥â¥ó¥¹¥¿¡¼¤¬Î©¤Á¤Õ¤µ¤¬¤Ã¤Æ¤¤¤ë¡ª");
+		msg_print("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒç«‹ã¡ãµã•ãŒã£ã¦ã„ã‚‹ï¼");
 #else
 			msg_print("There is a monster in the way!");
 #endif
@@ -2523,7 +2523,7 @@ void do_cmd_spike(void)
 
 			/* Successful jamming */
 #ifdef JP
-		msg_print("¥É¥¢¤Ë¤¯¤µ¤Ó¤òÂÇ¤Á¹ş¤ó¤À¡£");
+		msg_print("ãƒ‰ã‚¢ã«ãã•ã³ã‚’æ‰“ã¡è¾¼ã‚“ã ã€‚");
 #else
 			msg_print("You jam the door with a spike.");
 #endif
@@ -2598,7 +2598,7 @@ void do_cmd_run(void)
 	if (p_ptr->confused)
 	{
 #ifdef JP
-		msg_print("º®Íğ¤·¤Æ¤¤¤ÆÁö¤ì¤Ê¤¤¡ª");
+		msg_print("æ··ä¹±ã—ã¦ã„ã¦èµ°ã‚Œãªã„ï¼");
 #else
 		msg_print("You are too confused!");
 #endif
@@ -2696,7 +2696,7 @@ void do_cmd_stay(int pickup)
 			quest[q_index].status = QUEST_STATUS_COMPLETED;
 			quest[q_index].complev = (byte)p_ptr->lev;
 #ifdef JP
-			msg_print("¥¯¥¨¥¹¥È¤òÃ£À®¤·¤¿¡ª");
+			msg_print("ã‚¯ã‚¨ã‚¹ãƒˆã‚’é”æˆã—ãŸï¼");
 #else
 			msg_print("You accomplished your quest!");
 #endif
@@ -2725,7 +2725,7 @@ void do_cmd_rest(void)
 	if (command_arg <= 0)
 	{
 #ifdef JP
-		cptr p = "µÙ·Æ (0-9999, '*' ¤Ç HP/MP, '&' ¤ÇÉ¬Í×¤Ê¤À¤±): ";
+		cptr p = "ä¼‘æ†© (0-9999, '*' ã§ HP/MP, '&' ã§å¿…è¦ãªã ã‘): ";
 #else
 		cptr p = "Rest (0-9999, '*' for HP/SP, '&' as needed): ";
 #endif
@@ -2898,7 +2898,7 @@ static s16b critical_shot(object_type *o_ptr, int chance,
 	if (!visible)
 	{
 #ifdef JP
-		msg_format("%s¤¬Å¨¤òÊáÂª¤·¤¿¡£", o_name);
+		msg_format("%sãŒæ•µã‚’æ•æ‰ã—ãŸã€‚", o_name);
 #else
 		msg_format("The %s finds a mark.", o_name);
 #endif
@@ -2916,7 +2916,7 @@ static s16b critical_shot(object_type *o_ptr, int chance,
 		if (sleeping_bonus && visible)
 		{
 #ifdef JP
-			msg_print("¥â¥ó¥¹¥¿¡¼¤òÍğË½¤ËÌÜ³Ğ¤á¤µ¤»¤¿¡ª");
+			msg_print("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’ä¹±æš´ã«ç›®è¦šã‚ã•ã›ãŸï¼");
 #else
 			msg_print("You rudely awaken the monster!");
 #endif
@@ -2935,7 +2935,7 @@ static s16b critical_shot(object_type *o_ptr, int chance,
 			if (visible)
 			{
 #ifdef JP
-					msg_format("%s¤¬%s¤òÄ¾·â¤·¤¿¡£", o_name, m_name);
+					msg_format("%sãŒ%sã‚’ç›´æ’ƒã—ãŸã€‚", o_name, m_name);
 #else
 					msg_format("The %s strikes %s.", o_name, m_name);
 #endif
@@ -2948,8 +2948,8 @@ static s16b critical_shot(object_type *o_ptr, int chance,
 			if (visible)
 			{
 #ifdef JP
-				if (stick) msg_format("%s¤¬%s¤ËÆÍ¤­»É¤µ¤Ã¤¿¡£", o_name, m_name);
-				else msg_format("%s¤¬%s¤Ë¿©¤¤¹ş¤ó¤À¡£", o_name, m_name);
+				if (stick) msg_format("%sãŒ%sã«çªãåˆºã•ã£ãŸã€‚", o_name, m_name);
+				else msg_format("%sãŒ%sã«é£Ÿã„è¾¼ã‚“ã ã€‚", o_name, m_name);
 #else
 				msg_format("The %s penetrates %s.", o_name, m_name);
 #endif
@@ -2962,7 +2962,7 @@ static s16b critical_shot(object_type *o_ptr, int chance,
 			if (visible)
 			{
 #ifdef JP
-				msg_format("%s¤¬%s¤ò´ÓÄÌ¤·¤¿¡ª", o_name, m_name);
+				msg_format("%sãŒ%sã‚’è²«é€šã—ãŸï¼", o_name, m_name);
 #else
 				msg_format("The %s transpierces %s!", o_name, m_name);
 #endif
@@ -2977,7 +2977,7 @@ static s16b critical_shot(object_type *o_ptr, int chance,
 		if (visible)
 		{
 #ifdef JP
-			msg_format("%s¤¬%s¤ËÌ¿Ãæ¤·¤¿¡£", o_name, m_name);
+			msg_format("%sãŒ%sã«å‘½ä¸­ã—ãŸã€‚", o_name, m_name);
 #else
 			msg_format("The %s hits %s.", o_name, m_name);
 #endif
@@ -3537,7 +3537,7 @@ int do_cmd_fire_aux(int item, object_type *j_ptr)
 
 		/* Let player know that weapon is activated. */
 #ifdef JP
-		msg_format("%s¤Ï¤¦¤Ê¤ê¤ò¤¢¤²¤ÆÈô¤ó¤À¡ª", o_name);
+		msg_format("%sã¯ã†ãªã‚Šã‚’ã‚ã’ã¦é£›ã‚“ã ï¼", o_name);
 #endif
 	}
 
@@ -3573,7 +3573,7 @@ int do_cmd_fire_aux(int item, object_type *j_ptr)
 	{
 		/* Message. */
 #ifdef JP
-		msg_print("Ìğ¤¬¶õÃæ¤ÇÈ¿Å¾¤·¤Æ¤¢¤Ê¤¿¤ËÅö¤¿¤Ã¤¿¡ª");
+		msg_print("çŸ¢ãŒç©ºä¸­ã§åè»¢ã—ã¦ã‚ãªãŸã«å½“ãŸã£ãŸï¼");
 #else
 		msg_print("Your missile turns in midair and strikes you!");
 #endif
@@ -3583,7 +3583,7 @@ int do_cmd_fire_aux(int item, object_type *j_ptr)
 
 		/* Inflict both normal and wound damage. */
 #ifdef JP
-		take_hit(tdam, "±¢¸ı¤ÎÌğ");
+		take_hit(tdam, "é™°å£ã®çŸ¢");
 #else
 		take_hit(tdam, "ammo of backbiting.");
 #endif
@@ -3687,7 +3687,7 @@ int do_cmd_fire_aux(int item, object_type *j_ptr)
 
 				/* Assume a default death */
 #ifdef JP
-				cptr note_dies = "¤Ï»à¤ó¤À¡£";
+				cptr note_dies = "ã¯æ­»ã‚“ã ã€‚";
 #else
 				cptr note_dies = " dies.";
 #endif
@@ -3697,7 +3697,7 @@ int do_cmd_fire_aux(int item, object_type *j_ptr)
 				{
 					/* Special note at death */
 #ifdef JP
-					note_dies = "¤òÅİ¤·¤¿¡£";
+					note_dies = "ã‚’å€’ã—ãŸã€‚";
 #else
 					note_dies = " is destroyed.";
 #endif
@@ -3730,7 +3730,7 @@ int do_cmd_fire_aux(int item, object_type *j_ptr)
 				if (wizard)
 				{
 #ifdef JP
-					msg_format("%d/%d ¤Î¥À¥á¡¼¥¸¤òÍ¿¤¨¤¿¡£", tdam, m_ptr->hp);
+					msg_format("%d/%d ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆãŸã€‚", tdam, m_ptr->hp);
 #else
 					msg_format("You do %d (out of %d) damage.", tdam, m_ptr->hp);
 #endif
@@ -3755,7 +3755,7 @@ int do_cmd_fire_aux(int item, object_type *j_ptr)
 					{
 						if (i_ptr->name1) stick_to = TRUE;
 #ifdef JP
-						msg_format("%s¤Ï%s¤ËÆÍ¤­»É¤µ¤Ã¤¿¡ª", o_name, m_name);
+						msg_format("%sã¯%sã«çªãåˆºã•ã£ãŸï¼", o_name, m_name);
 #else
 						msg_format("%^s have stuck into %^s!", o_name, m_name);
 #endif
@@ -3775,7 +3775,7 @@ int do_cmd_fire_aux(int item, object_type *j_ptr)
 
 						/* Message */
 #ifdef JP
-						msg_format("%^s¤Ï¶²Éİ¤·¤ÆÆ¨¤²½Ğ¤·¤¿¡ª", m_name);
+						msg_format("%^sã¯ææ€–ã—ã¦é€ƒã’å‡ºã—ãŸï¼", m_name);
 #else
 						msg_format("%^s flees in terror!", m_name);
 #endif
@@ -3806,7 +3806,7 @@ int do_cmd_fire_aux(int item, object_type *j_ptr)
 
 		if (!o_idx)
 		{
-			msg_format("%s¤Ï¤É¤³¤«¤Ø¹Ô¤Ã¤¿¡£", o_name);
+			msg_format("%sã¯ã©ã“ã‹ã¸è¡Œã£ãŸã€‚", o_name);
 			if (i_ptr->name1)
 			{
 				a_info[i_ptr->name1].cur_num = 0;
@@ -3860,7 +3860,7 @@ int do_cmd_fire(void)
 	if (!j_ptr->tval)
 	{
 #ifdef JP
-		msg_print("¼Í·âÍÑ¤ÎÉğ´ï¤ò»ı¤Ã¤Æ¤¤¤Ê¤¤¡£");
+		msg_print("å°„æ’ƒç”¨ã®æ­¦å™¨ã‚’æŒã£ã¦ã„ãªã„ã€‚");
 #else
 		msg_print("You have nothing to fire with.");
 #endif
@@ -3873,8 +3873,8 @@ int do_cmd_fire(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤ì¤ò·â¤Á¤Ş¤¹¤«? ";
-	s = "È¯¼Í¤µ¤ì¤ë¥¢¥¤¥Æ¥à¤¬¤¢¤ê¤Ş¤»¤ó¡£";
+	q = "ã©ã‚Œã‚’æ’ƒã¡ã¾ã™ã‹? ";
+	s = "ç™ºå°„ã•ã‚Œã‚‹ã‚¢ã‚¤ãƒ†ãƒ ãŒã‚ã‚Šã¾ã›ã‚“ã€‚";
 #else
 	q = "Fire which item? ";
 	s = "You have nothing to fire.";
@@ -3951,7 +3951,7 @@ static void do_cmd_throw_aux(int item, int mult)
 	{
 		/* Oops */
 #ifdef JP
-		msg_print("¤Õ¡¼¤à¡¢¤É¤¦¤ä¤é¼ö¤ï¤ì¤Æ¤¤¤ë¤è¤¦¤À¡£");
+		msg_print("ãµãƒ¼ã‚€ã€ã©ã†ã‚„ã‚‰å‘ªã‚ã‚Œã¦ã„ã‚‹ã‚ˆã†ã ã€‚");
 #else
 		msg_print("Hmmm, it seems to be cursed.");
 #endif
@@ -4126,7 +4126,7 @@ static void do_cmd_throw_aux(int item, int mult)
 
 				/* Assume a default death */
 #ifdef JP
-				cptr note_dies = "¤Ï»à¤ó¤À¡£";
+				cptr note_dies = "ã¯æ­»ã‚“ã ã€‚";
 #else
 				cptr note_dies = " dies.";
 #endif
@@ -4136,7 +4136,7 @@ static void do_cmd_throw_aux(int item, int mult)
 				{
 					/* Special note at death */
 #ifdef JP
-					note_dies = "¤òÅİ¤·¤¿¡£";
+					note_dies = "ã‚’å€’ã—ãŸã€‚";
 #else
 					note_dies = " is destroyed.";
 #endif
@@ -4183,7 +4183,7 @@ static void do_cmd_throw_aux(int item, int mult)
 				if (wizard)
 				{
 #ifdef JP
-					msg_format("%d/%d¤Î¥À¥á¡¼¥¸¤òÍ¿¤¨¤¿¡£",
+					msg_format("%d/%dã®ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆãŸã€‚",
 #else
 					msg_format("You do %d (out of %d) damage.",
 #endif
@@ -4219,7 +4219,7 @@ static void do_cmd_throw_aux(int item, int mult)
 
 						/* Message */
 #ifdef JP
-						msg_format("%^s¤Ï¶²Éİ¤·¤ÆÆ¨¤²½Ğ¤·¤¿¡ª", m_name);
+						msg_format("%^sã¯ææ€–ã—ã¦é€ƒã’å‡ºã—ãŸï¼", m_name);
 #else
 						msg_format("%^s flees in terror!", m_name);
 #endif
@@ -4243,13 +4243,13 @@ static void do_cmd_throw_aux(int item, int mult)
 		if (!(summon_named_creature(y, x, q_ptr->pval, FALSE, FALSE,
 				(bool)!(q_ptr->ident & IDENT_CURSED))))
 #ifdef JP
-			msg_print("¿Í·Á¤ÏÇ±¤¸¶Ê¤¬¤êºÕ¤±»¶¤Ã¤Æ¤·¤Ş¤Ã¤¿¡ª");
+			msg_print("äººå½¢ã¯æ»ã˜æ›²ãŒã‚Šç •ã‘æ•£ã£ã¦ã—ã¾ã£ãŸï¼");
 #else
 			msg_print("The Figurine writhes and then shatters.");
 #endif
 		else if (q_ptr->ident & IDENT_CURSED)
 #ifdef JP
-			msg_print("¤³¤ì¤Ï¤¢¤Ş¤êÎÉ¤¯¤Ê¤¤µ¤¤¬¤¹¤ë¡£");
+			msg_print("ã“ã‚Œã¯ã‚ã¾ã‚Šè‰¯ããªã„æ°—ãŒã™ã‚‹ã€‚");
 #else
 			msg_print("You have a bad feeling about this.");
 #endif
@@ -4262,7 +4262,7 @@ static void do_cmd_throw_aux(int item, int mult)
 		{
 			/* Message */
 #ifdef JP
-			msg_format("%s¤ÏºÕ¤±»¶¤Ã¤¿¡ª", o_name);
+			msg_format("%sã¯ç •ã‘æ•£ã£ãŸï¼", o_name);
 #else
 			msg_format("The %s shatters!", o_name);
 #endif
@@ -4279,7 +4279,7 @@ static void do_cmd_throw_aux(int item, int mult)
 					char m_name[80];
 					monster_desc(m_name, &m_list[cave[y][x].m_idx], 0);
 #ifdef JP
-					msg_format("%s¤ÏÅÜ¤Ã¤¿¡ª", m_name);
+					msg_format("%sã¯æ€’ã£ãŸï¼", m_name);
 #else
 					msg_format("%^s gets angry!", m_name);
 #endif
@@ -4314,7 +4314,7 @@ static void do_cmd_throw_aux(int item, int mult)
 			if((back_chance > 37) && !p_ptr->blind && (item >= 0))
 			{
 #ifdef JP
-				msg_format("%s¤¬¼ê¸µ¤ËÊÖ¤Ã¤Æ¤­¤¿¡£", o_name);
+				msg_format("%sãŒæ‰‹å…ƒã«è¿”ã£ã¦ããŸã€‚", o_name);
 #else
 				msg_format("%s comes back to you.", o_name);
 #endif
@@ -4325,7 +4325,7 @@ static void do_cmd_throw_aux(int item, int mult)
 				if (item >= 0)
 				{
 #ifdef JP
-					msg_format("%s¤ò¼õ¤±Â»¤Í¤¿¡ª", o_name);
+					msg_format("%sã‚’å—ã‘æã­ãŸï¼", o_name);
 #else
 					msg_format("%s backs, but you can't catch!", o_name);
 #endif
@@ -4333,7 +4333,7 @@ static void do_cmd_throw_aux(int item, int mult)
 				else
 				{
 #ifdef JP
-					msg_format("%s¤¬ÊÖ¤Ã¤Æ¤­¤¿¡£", o_name);
+					msg_format("%sãŒè¿”ã£ã¦ããŸã€‚", o_name);
 #else
 					msg_format("%s comes back.", o_name);
 #endif
@@ -4345,7 +4345,7 @@ static void do_cmd_throw_aux(int item, int mult)
 		else
 		{
 #ifdef JP
-			msg_format("%s¤¬ÊÖ¤Ã¤Æ¤³¤Ê¤«¤Ã¤¿¡ª", o_name);
+			msg_format("%sãŒè¿”ã£ã¦ã“ãªã‹ã£ãŸï¼", o_name);
 #else
 			msg_format("%s doesn't back!", o_name);
 #endif
@@ -4417,8 +4417,8 @@ void do_cmd_throw(int mult)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥¢¥¤¥Æ¥à¤òÅê¤²¤Ş¤¹¤«? ";
-	s = "Åê¤²¤ë¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
+	q = "ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’æŠ•ã’ã¾ã™ã‹? ";
+	s = "æŠ•ã’ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ãŒãªã„ã€‚";
 #else
 	q = "Throw which item? ";
 	s = "You have nothing to throw.";
@@ -4545,7 +4545,7 @@ void do_cmd_travel(void)
 	if ((x == px) && (y == py))
 	{
 #ifdef JP
-		msg_print("¤¹¤Ç¤Ë¤½¤³¤Ë¤¤¤Ş¤¹¡ª");
+		msg_print("ã™ã§ã«ãã“ã«ã„ã¾ã™ï¼");
 #else
 		msg_print("You are already there!!");
 #endif
@@ -4555,7 +4555,7 @@ void do_cmd_travel(void)
 	if ((cave[y][x].info & CAVE_MARK) && !cave_floor_bold(y, x))
 	{
 #ifdef JP
-		msg_print("¤½¤³¤Ë¤Ï¹Ô¤¯¤³¤È¤¬¤Ç¤­¤Ş¤»¤ó¡ª");
+		msg_print("ãã“ã«ã¯è¡Œãã“ã¨ãŒã§ãã¾ã›ã‚“ï¼");
 #else
 		msg_print("You cannot travel there!");
 #endif

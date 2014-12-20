@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * File: streams.c
  * Purpose: Used by dungeon generation. This file holds all the
  * functions that are applied to a level after the rest has been
@@ -253,7 +253,7 @@ void build_streamer(int feat, int chance)
 			if (cheat_room)
 			{
 #ifdef JP
-msg_print("·Ù¹ğ¡ª¥¹¥È¥ê¡¼¥Ş¡¼¤òÇÛÃÖ¤Ç¤­¤Ş¤»¤ó¡ª");
+msg_print("è­¦å‘Šï¼ã‚¹ãƒˆãƒªãƒ¼ãƒãƒ¼ã‚’é…ç½®ã§ãã¾ã›ã‚“ï¼");
 #else
 				msg_print("Warning! Could not place streamer!");
 #endif
@@ -328,7 +328,7 @@ void destroy_level(void)
 
 	/* Note destroyed levels */
 #ifdef JP
-if (cheat_room) msg_print("ÇË²õ¤µ¤ì¤¿³¬");
+if (cheat_room) msg_print("ç ´å£Šã•ã‚ŒãŸéš");
 #else
 	if (cheat_room) msg_print("Destroyed Level");
 #endif

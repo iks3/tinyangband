@@ -1,4 +1,4 @@
-/* File: object2.c */
+ï»¿/* File: object2.c */
 
 /* Purpose: Object code, part 2 */
 
@@ -326,7 +326,7 @@ void compact_objects(int size)
 	{
 		/* Message */
 #ifdef JP
-msg_print("¥¢¥¤¥Æ¥à¾ğÊó¤ò°µ½Ì¤·¤Æ¤¤¤Ş¤¹...");
+msg_print("ã‚¢ã‚¤ãƒ†ãƒ æƒ…å ±ã‚’åœ§ç¸®ã—ã¦ã„ã¾ã™...");
 #else
 		msg_print("Compacting objects...");
 #endif
@@ -548,7 +548,7 @@ s16b o_pop(void)
 
 	/* Warn the player (except during dungeon creation) */
 #ifdef JP
-if (character_dungeon) msg_print("¥¢¥¤¥Æ¥à¤¬Â¿¤¹¤®¤ë¡ª");
+if (character_dungeon) msg_print("ã‚¢ã‚¤ãƒ†ãƒ ãŒå¤šã™ãã‚‹ï¼");
 #else
 	if (character_dungeon) msg_print("Too many objects!");
 #endif
@@ -846,7 +846,7 @@ s32b flag_cost(const object_type * o_ptr, int plusses)
 	f2 &= ~(k_ptr->flags2);
 	f3 &= ~(k_ptr->flags3);
 
-	/* ¸µ¡¹³ÎÄê¤·¤Æ¤¤¤ëÇ½ÎÏ¤ò½ü¤¯ */
+	/* å…ƒã€…ç¢ºå®šã—ã¦ã„ã‚‹èƒ½åŠ›ã‚’é™¤ã */
 	if (o_ptr->name1)
 	{
 		artifact_type *a_ptr = &a_info[o_ptr->name1];
@@ -1687,7 +1687,7 @@ s16b lookup_kind(int tval, int sval)
 
 	/* Oops */
 #ifdef JP
-msg_format("¥¢¥¤¥Æ¥à¤¬¤Ê¤¤ (%d,%d)", tval, sval);
+msg_format("ã‚¢ã‚¤ãƒ†ãƒ ãŒãªã„ (%d,%d)", tval, sval);
 #else
 	msg_format("No object (%d,%d)", tval, sval);
 #endif
@@ -1859,7 +1859,7 @@ static void object_mention(object_type *o_ptr)
 	{
 		/* Silly message */
 #ifdef JP
-msg_format("ÅÁÀâ¤Î¥¢¥¤¥Æ¥à (%s)", o_name);
+msg_format("ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ  (%s)", o_name);
 #else
 		msg_format("Artifact (%s)", o_name);
 #endif
@@ -1870,7 +1870,7 @@ msg_format("ÅÁÀâ¤Î¥¢¥¤¥Æ¥à (%s)", o_name);
 	else if (o_ptr->art_name)
 	{
 #ifdef JP
-msg_print("¥é¥ó¥À¥à¡¦¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È");
+msg_print("ãƒ©ãƒ³ãƒ€ãƒ ãƒ»ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆ");
 #else
 		msg_print("Random artifact");
 #endif
@@ -1882,7 +1882,7 @@ msg_print("¥é¥ó¥À¥à¡¦¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È");
 	{
 		/* Silly message */
 #ifdef JP
-msg_format("Ì¾¤Î¤¢¤ë¥¢¥¤¥Æ¥à (%s)", o_name);
+msg_format("åã®ã‚ã‚‹ã‚¢ã‚¤ãƒ†ãƒ  (%s)", o_name);
 #else
 		msg_format("Ego-item (%s)", o_name);
 #endif
@@ -1894,7 +1894,7 @@ msg_format("Ì¾¤Î¤¢¤ë¥¢¥¤¥Æ¥à (%s)", o_name);
 	{
 		/* Silly message */
 #ifdef JP
-msg_format("¥¢¥¤¥Æ¥à (%s)", o_name);
+msg_format("ã‚¢ã‚¤ãƒ†ãƒ  (%s)", o_name);
 #else
 		msg_format("Object (%s)", o_name);
 #endif
@@ -3205,7 +3205,7 @@ static void a_m_aux_4(object_type *o_ptr, int level, int power)
 			if (cheat_peek)
 			{
 #ifdef JP
-msg_format("%s¤Î¿Í·Á, %s",
+msg_format("%sã®äººå½¢, %s",
 #else
 				msg_format("Figurine of %s, %s",
 #endif
@@ -3264,7 +3264,7 @@ msg_format("%s¤Î¿Í·Á, %s",
 			if (cheat_peek)
 			{
 #ifdef JP
-msg_format("%s¤Î»àÂÎ, ¿¼¤µ +%d",
+msg_format("%sã®æ­»ä½“, æ·±ã• +%d",
 #else
 				msg_format("Corpse of %s, depth +%d",
 #endif
@@ -3299,7 +3299,7 @@ msg_format("%s¤Î»àÂÎ, ¿¼¤µ +%d",
 			if (cheat_peek)
 			{
 #ifdef JP
-msg_format("%s¤ÎÁü", r_name + r_ptr->name);
+msg_format("%sã®åƒ", r_name + r_ptr->name);
 #else
 				msg_format("Statue of %s", r_name + r_ptr->name);
 #endif
@@ -4051,7 +4051,7 @@ s16b drop_near(object_type *j_ptr, int chance, int y, int x)
 	{
 		/* Message */
 #ifdef JP
-		msg_format("%s¤Ï¾Ã¤¨¤¿¡£", o_name);
+		msg_format("%sã¯æ¶ˆãˆãŸã€‚", o_name);
 #else
 		msg_format("The %s disappear%s.",
 			   o_name, (plural ? "" : "s"));
@@ -4060,7 +4060,7 @@ s16b drop_near(object_type *j_ptr, int chance, int y, int x)
 
 		/* Debug */
 #ifdef JP
-		if (wizard) msg_print("(ÇËÂ»)");
+		if (wizard) msg_print("(ç ´æ)");
 #else
 		if (wizard) msg_print("(breakage)");
 #endif
@@ -4173,7 +4173,7 @@ s16b drop_near(object_type *j_ptr, int chance, int y, int x)
 	{
 		/* Message */
 #ifdef JP
-		msg_format("%s¤Ï¾Ã¤¨¤¿¡£", o_name);
+		msg_format("%sã¯æ¶ˆãˆãŸã€‚", o_name);
 #else
 		msg_format("The %s disappear%s.",
 			   o_name, (plural ? "" : "s"));
@@ -4182,7 +4182,7 @@ s16b drop_near(object_type *j_ptr, int chance, int y, int x)
 
 		/* Debug */
 #ifdef JP
-if (wizard) msg_print("(¾²¥¹¥Ú¡¼¥¹¤¬¤Ê¤¤)");
+if (wizard) msg_print("(åºŠã‚¹ãƒšãƒ¼ã‚¹ãŒãªã„)");
 #else
 		if (wizard) msg_print("(no floor space)");
 #endif
@@ -4248,7 +4248,7 @@ if (wizard) msg_print("(¾²¥¹¥Ú¡¼¥¹¤¬¤Ê¤¤)");
 			{
 				/* Message */
 #ifdef JP
-				msg_format("%s¤¬ÍĞ´ä¤ÎÃæ¤ÇÇ³¤¨¤Æ¤·¤Ş¤Ã¤¿¡£",o_name);
+				msg_format("%sãŒç†”å²©ã®ä¸­ã§ç‡ƒãˆã¦ã—ã¾ã£ãŸã€‚",o_name);
 #else
 				msg_format("The %s%s burns in the lava.",
 					o_name, (plural ? "" : "s"));
@@ -4258,7 +4258,7 @@ if (wizard) msg_print("(¾²¥¹¥Ú¡¼¥¹¤¬¤Ê¤¤)");
 
 			/* Debug */
 #ifdef JP
-			if (wizard) msg_print("(ÍĞ´ä¤È¤ÎÀÜ¿¨)");
+			if (wizard) msg_print("(ç†”å²©ã¨ã®æ¥è§¦)");
 #else
 			if (wizard) msg_print("(contact with lava)");
 #endif
@@ -4275,7 +4275,7 @@ if (wizard) msg_print("(¾²¥¹¥Ú¡¼¥¹¤¬¤Ê¤¤)");
 			{
 				/* Message */
 #ifdef JP
- msg_format("%s¤¬¾Ã¤¨¤Æ¤·¤Ş¤Ã¤¿¡£",o_name);
+ msg_format("%sãŒæ¶ˆãˆã¦ã—ã¾ã£ãŸã€‚",o_name);
 #else
 				msg_format("The %s disappear%s.",
 					o_name, (plural ? "" : "s"));
@@ -4285,7 +4285,7 @@ if (wizard) msg_print("(¾²¥¹¥Ú¡¼¥¹¤¬¤Ê¤¤)");
 
 			/* Debug */
 #ifdef JP
-if (wizard) msg_print("(¿å¤È¤ÎÀÜ¿¨)");
+if (wizard) msg_print("(æ°´ã¨ã®æ¥è§¦)");
 #else
 			if (wizard) msg_print("(contact with water)");
 #endif
@@ -4332,7 +4332,7 @@ if (wizard) msg_print("(¿å¤È¤ÎÀÜ¿¨)");
 	{
 		/* Message */
 #ifdef JP
-		msg_format("%s¤Ï¾Ã¤¨¤¿¡£", o_name);
+		msg_format("%sã¯æ¶ˆãˆãŸã€‚", o_name);
 #else
 		msg_format("The %s disappear%s.",
 			   o_name, (plural ? "" : "s"));
@@ -4341,7 +4341,7 @@ if (wizard) msg_print("(¿å¤È¤ÎÀÜ¿¨)");
 
 		/* Debug */
 #ifdef JP
-if (wizard) msg_print("(¥¢¥¤¥Æ¥à¤¬Â¿²á¤®¤ë)");
+if (wizard) msg_print("(ã‚¢ã‚¤ãƒ†ãƒ ãŒå¤šéãã‚‹)");
 #else
 		if (wizard) msg_print("(too many objects)");
 #endif
@@ -4396,7 +4396,7 @@ if (wizard) msg_print("(¥¢¥¤¥Æ¥à¤¬Â¿²á¤®¤ë)");
 	if (chance && (by == py) && (bx == px))
 	{
 #ifdef JP
-msg_print("²¿¤«¤¬Â­²¼¤ËÅ¾¤¬¤Ã¤Æ¤­¤¿¡£");
+msg_print("ä½•ã‹ãŒè¶³ä¸‹ã«è»¢ãŒã£ã¦ããŸã€‚");
 #else
 		msg_print("You feel something roll beneath your feet.");
 #endif
@@ -4544,11 +4544,11 @@ void inven_item_charges(int item)
 #ifdef JP
 	if (o_ptr->pval <= 0)
 	{
-		msg_print("¤â¤¦ËâÎÏ¤¬»Ä¤Ã¤Æ¤¤¤Ê¤¤¡£");
+		msg_print("ã‚‚ã†é­”åŠ›ãŒæ®‹ã£ã¦ã„ãªã„ã€‚");
 	}
 	else
 	{
-		msg_format("¤¢¤È %d ²óÊ¬¤ÎËâÎÏ¤¬»Ä¤Ã¤Æ¤¤¤ë¡£", o_ptr->pval);
+		msg_format("ã‚ã¨ %d å›åˆ†ã®é­”åŠ›ãŒæ®‹ã£ã¦ã„ã‚‹ã€‚", o_ptr->pval);
 	}
 #else
 	/* Multiple charges */
@@ -4582,15 +4582,15 @@ void inven_item_describe(int item)
 
 	/* Print a message */
 #ifdef JP
-	/* "no more" ¤Î¾ì¹ç¤Ï¤³¤Á¤é¤ÇÉ½¼¨¤¹¤ë */
+	/* "no more" ã®å ´åˆã¯ã“ã¡ã‚‰ã§è¡¨ç¤ºã™ã‚‹ */
 	if (o_ptr->number <= 0)
 	{
-		/*FIRST*//*¤³¤³¤Ï¤â¤¦ÄÌ¤é¤Ê¤¤¤«¤â*/
-		msg_format("¤â¤¦%s¤ò»ı¤Ã¤Æ¤¤¤Ê¤¤¡£", o_name);
+		/*FIRST*//*ã“ã“ã¯ã‚‚ã†é€šã‚‰ãªã„ã‹ã‚‚*/
+		msg_format("ã‚‚ã†%sã‚’æŒã£ã¦ã„ãªã„ã€‚", o_name);
 	}
 	else
 	{
-		msg_format("¤Ş¤À %s¤ò»ı¤Ã¤Æ¤¤¤ë¡£", o_name);
+		msg_format("ã¾ã  %sã‚’æŒã£ã¦ã„ã‚‹ã€‚", o_name);
 	}
 #else
 	msg_format("You have %s.", o_name);
@@ -4718,11 +4718,11 @@ void floor_item_charges(int item)
 #ifdef JP
 	if (o_ptr->pval <= 0)
 	{
-		msg_print("¤³¤Î¾²¾å¤Î¥¢¥¤¥Æ¥à¤Ï¡¢¤â¤¦ËâÎÏ¤¬»Ä¤Ã¤Æ¤¤¤Ê¤¤¡£");
+		msg_print("ã“ã®åºŠä¸Šã®ã‚¢ã‚¤ãƒ†ãƒ ã¯ã€ã‚‚ã†é­”åŠ›ãŒæ®‹ã£ã¦ã„ãªã„ã€‚");
 	}
 	else
 	{
-		msg_format("¤³¤Î¾²¾å¤Î¥¢¥¤¥Æ¥à¤Ï¡¢¤¢¤È %d ²óÊ¬¤ÎËâÎÏ¤¬»Ä¤Ã¤Æ¤¤¤ë¡£", o_ptr->pval);
+		msg_format("ã“ã®åºŠä¸Šã®ã‚¢ã‚¤ãƒ†ãƒ ã¯ã€ã‚ã¨ %d å›åˆ†ã®é­”åŠ›ãŒæ®‹ã£ã¦ã„ã‚‹ã€‚", o_ptr->pval);
 	}
 #else
 	/* Multiple charges */
@@ -4756,14 +4756,14 @@ void floor_item_describe(int item)
 
 	/* Print a message */
 #ifdef JP
-	/* "no more" ¤Î¾ì¹ç¤Ï¤³¤Á¤é¤ÇÉ½¼¨¤òÊ¬¤±¤ë */
+	/* "no more" ã®å ´åˆã¯ã“ã¡ã‚‰ã§è¡¨ç¤ºã‚’åˆ†ã‘ã‚‹ */
 	if (o_ptr->number <= 0)
 	{
-		msg_format("¾²¾å¤Ë¤Ï¡¢¤â¤¦%s¤Ï¤Ê¤¤¡£", o_name);
+		msg_format("åºŠä¸Šã«ã¯ã€ã‚‚ã†%sã¯ãªã„ã€‚", o_name);
 	}
 	else
 	{
-		msg_format("¾²¾å¤Ë¤Ï¡¢¤Ş¤À %s¤¬¤¢¤ë¡£", o_name);
+		msg_format("åºŠä¸Šã«ã¯ã€ã¾ã  %sãŒã‚ã‚‹ã€‚", o_name);
 	}
 #else
 	msg_format("You see %s.", o_name);
@@ -5119,7 +5119,7 @@ s16b inven_takeoff(int item, int amt)
 	if (item == INVEN_WIELD)
 	{
 #ifdef JP
-		act = "¤òÁõÈ÷¤«¤é¤Ï¤º¤·¤¿";
+		act = "ã‚’è£…å‚™ã‹ã‚‰ã¯ãšã—ãŸ";
 #else
 		act = "You were wielding";
 #endif
@@ -5129,7 +5129,7 @@ s16b inven_takeoff(int item, int amt)
 	else if (item == INVEN_BOW)
 	{
 #ifdef JP
-		act = "¤òÁõÈ÷¤«¤é¤Ï¤º¤·¤¿";
+		act = "ã‚’è£…å‚™ã‹ã‚‰ã¯ãšã—ãŸ";
 #else
 		act = "You were holding";
 #endif
@@ -5139,7 +5139,7 @@ s16b inven_takeoff(int item, int amt)
 	else if (item == INVEN_LITE)
 	{
 #ifdef JP
-		act = "¤ò¸÷¸»¤«¤é¤Ï¤º¤·¤¿";
+		act = "ã‚’å…‰æºã‹ã‚‰ã¯ãšã—ãŸ";
 #else
 		act = "You were holding";
 #endif
@@ -5149,7 +5149,7 @@ s16b inven_takeoff(int item, int amt)
 	else
 	{
 #ifdef JP
-		act = "¤òÁõÈ÷¤«¤é¤Ï¤º¤·¤¿";
+		act = "ã‚’è£…å‚™ã‹ã‚‰ã¯ãšã—ãŸ";
 #else
 		act = "You were wearing";
 #endif
@@ -5164,7 +5164,7 @@ s16b inven_takeoff(int item, int amt)
 
 	/* Message */
 #ifdef JP
-	msg_format("%s(%c)%s¡£", o_name, index_to_label(slot), act);
+	msg_format("%s(%c)%sã€‚", o_name, index_to_label(slot), act);
 #else
 	msg_format("%s %s (%c).", act, o_name, index_to_label(slot));
 #endif
@@ -5230,7 +5230,7 @@ void inven_drop(int item, int amt)
 
 	/* Message */
 #ifdef JP
-msg_format("%s(%c)¤òÍî¤È¤·¤¿¡£", o_name, index_to_label(item));
+msg_format("%s(%c)ã‚’è½ã¨ã—ãŸã€‚", o_name, index_to_label(item));
 #else
 	msg_format("You drop %s (%c).", o_name, index_to_label(item));
 #endif
@@ -5257,7 +5257,7 @@ msg_format("%s(%c)¤òÍî¤È¤·¤¿¡£", o_name, index_to_label(item));
 		object_desc(o_name, q_ptr, 0);
 
 #ifdef JP
-		msg_format("%s¤ò±¦¼ê¤Ç¹½¤¨¤¿¡£", o_name);
+		msg_format("%sã‚’å³æ‰‹ã§æ§‹ãˆãŸã€‚", o_name);
 #else
 		msg_format("You are weilding %s in your right hand.", o_name);
 #endif
@@ -5373,7 +5373,7 @@ void combine_pack(void)
 
 	/* Message */
 #ifdef JP
-	if (flag) msg_print("¥¶¥Ã¥¯¤ÎÃæ¤Î¥¢¥¤¥Æ¥à¤ò¤Ş¤È¤áÄ¾¤·¤¿¡£");
+	if (flag) msg_print("ã‚¶ãƒƒã‚¯ã®ä¸­ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã¾ã¨ã‚ç›´ã—ãŸã€‚");
 #else
 	if (flag) msg_print("You combine some items in your pack.");
 #endif
@@ -5444,7 +5444,7 @@ void reorder_pack(void)
 
 	/* Message */
 #ifdef JP
-if (flag) msg_print("¥¶¥Ã¥¯¤ÎÃæ¤Î¥¢¥¤¥Æ¥à¤òÊÂ¤ÙÄ¾¤·¤¿¡£");
+if (flag) msg_print("ã‚¶ãƒƒã‚¯ã®ä¸­ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ä¸¦ã¹ç›´ã—ãŸã€‚");
 #else
 	if (flag) msg_print("You reorder some items in your pack.");
 #endif
@@ -5932,8 +5932,8 @@ bool process_warning(int xx, int yy)
 			o_ptr = choose_warning_item();
 			if (o_ptr) object_desc(o_name, o_ptr, OD_OMIT_PREFIX | OD_NAME_ONLY);
 #ifdef JP
-			else strcpy(o_name, "ÂÎ"); /* Warning ability without item */
-			msg_format("%s¤¬±Ô¤¯¿Ì¤¨¤¿¡ª", o_name);
+			else strcpy(o_name, "ä½“"); /* Warning ability without item */
+			msg_format("%sãŒé‹­ãéœ‡ãˆãŸï¼", o_name);
 #else
 			else strcpy(o_name, "body"); /* Warning ability without item */
 			msg_format("Your %s pulsates sharply!", o_name);
@@ -5951,8 +5951,8 @@ bool process_warning(int xx, int yy)
 		o_ptr = choose_warning_item();
 		if (o_ptr) object_desc(o_name, o_ptr, OD_OMIT_PREFIX | OD_NAME_ONLY);
 #ifdef JP
-		else strcpy(o_name, "ÂÎ"); /* Warning ability without item */
-		msg_format("%s¤¬¿Ì¤¨¤¿¡ª", o_name);
+		else strcpy(o_name, "ä½“"); /* Warning ability without item */
+		msg_format("%sãŒéœ‡ãˆãŸï¼", o_name);
 #else
 		else strcpy(o_name, "body"); /* Warning ability without item */
 		msg_format("Your %s pulsates!", o_name);

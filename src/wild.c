@@ -1,4 +1,4 @@
-/* File: wild.c */
+﻿/* File: wild.c */
 
 /* Purpose: Wilderness generation */
 

@@ -1,4 +1,4 @@
-/* File: init2.c */
+ï»¿/* File: init2.c */
 
 /* Purpose: Initialization (part 2) -BEN- */
 
@@ -257,15 +257,15 @@ cptr err_str[PARSE_ERROR_MAX] =
 {
 	NULL,
 #ifdef JP
-	"Ê¸Ë¡¥¨¥é¡¼",
-	"¸Å¤¤¥Õ¥¡¥¤¥ë",
-	"µ­Ï¿¥Ø¥Ã¥À¤¬¤Ê¤¤",
-	"ÉÔÏ¢Â³¥ì¥³¡¼¥É",
-	"¤ª¤«¤·¤Ê¥Õ¥é¥°Â¸ºß",
-	"Ì¤ÄêµÁÌ¿Îá",
-	"¥á¥â¥êÉÔÂ­",
-	"ºÂÉ¸ÈÏ°Ï³°",
-	"°ú¿ôÉÔÂ­",
+	"æ–‡æ³•ã‚¨ãƒ©ãƒ¼",
+	"å¤ã„ãƒ•ã‚¡ã‚¤ãƒ«",
+	"è¨˜éŒ²ãƒ˜ãƒƒãƒ€ãŒãªã„",
+	"ä¸é€£ç¶šãƒ¬ã‚³ãƒ¼ãƒ‰",
+	"ãŠã‹ã—ãªãƒ•ãƒ©ã‚°å­˜åœ¨",
+	"æœªå®šç¾©å‘½ä»¤",
+	"ãƒ¡ãƒ¢ãƒªä¸è¶³",
+	"åº§æ¨™ç¯„å›²å¤–",
+	"å¼•æ•°ä¸è¶³",
 #else
 	"parse error",
 	"obsolete file",
@@ -491,7 +491,7 @@ static errr init_info(cptr filename, header *head,
 
 		/* Parse it */
 #ifdef JP
-		if (!fp) quit(format("'%s.txt'¥Õ¥¡¥¤¥ë¤ò¥ª¡¼¥×¥ó¤Ç¤­¤Ş¤»¤ó¡£", filename));
+		if (!fp) quit(format("'%s.txt'ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã§ãã¾ã›ã‚“ã€‚", filename));
 #else
 		if (!fp) quit(format("Cannot open '%s.txt' file.", filename));
 #endif
@@ -509,16 +509,16 @@ static errr init_info(cptr filename, header *head,
 
 #ifdef JP
 			/* Error string */
-			oops = ((err > 0) ? err_str[err] : "Ì¤ÃÎ¤Î");
+			oops = ((err > 0) ? err_str[err] : "æœªçŸ¥ã®");
 
 			/* Oops */
-			msg_format("'%s.txt'¥Õ¥¡¥¤¥ë¤Î %d ¹ÔÌÜ¤Ë¥¨¥é¡¼¡£", filename, error_line);
-			msg_format("¥ì¥³¡¼¥É %d ¤Ï '%s' ¥¨¥é¡¼¤¬¤¢¤ê¤Ş¤¹¡£", error_idx, oops);
-			msg_format("¹½Ê¸ '%s'¡£", buf);
+			msg_format("'%s.txt'ãƒ•ã‚¡ã‚¤ãƒ«ã® %d è¡Œç›®ã«ã‚¨ãƒ©ãƒ¼ã€‚", filename, error_line);
+			msg_format("ãƒ¬ã‚³ãƒ¼ãƒ‰ %d ã¯ '%s' ã‚¨ãƒ©ãƒ¼ãŒã‚ã‚Šã¾ã™ã€‚", error_idx, oops);
+			msg_format("æ§‹æ–‡ '%s'ã€‚", buf);
 			msg_print(NULL);
 
 			/* Quit */
-			quit(format("'%s.txt'¥Õ¥¡¥¤¥ë¤Ë¥¨¥é¡¼", filename));
+			quit(format("'%s.txt'ãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚¨ãƒ©ãƒ¼", filename));
 #else
 			/* Error string */
 			oops = (((err > 0) && (err < PARSE_ERROR_MAX)) ? err_str[err] : "unknown");
@@ -592,7 +592,7 @@ static errr init_info(cptr filename, header *head,
 
 		/* Process existing "raw" file */
 #ifdef JP
-		if (fd < 0) quit(format("'%s.raw'¥Õ¥¡¥¤¥ë¤ò¥í¡¼¥É¤Ç¤­¤Ş¤»¤ó¡£", filename));
+		if (fd < 0) quit(format("'%s.raw'ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ­ãƒ¼ãƒ‰ã§ãã¾ã›ã‚“ã€‚", filename));
 #else
 		if (fd < 0) quit(format("Cannot load '%s.raw' file.", filename));
 #endif
@@ -606,7 +606,7 @@ static errr init_info(cptr filename, header *head,
 
 		/* Error */
 #ifdef JP
-		if (err) quit(format("'%s.raw'¥Õ¥¡¥¤¥ë¤ò²òÀÏ¤Ç¤­¤Ş¤»¤ó¡£", filename));
+		if (err) quit(format("'%s.raw'ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è§£æã§ãã¾ã›ã‚“ã€‚", filename));
 #else
 		if (err) quit(format("Cannot parse '%s.raw' file.", filename));
 #endif
@@ -1114,10 +1114,10 @@ static errr init_towns(void)
 
 			/* Assume full stock */
 			/*
-			* ²æ¤¬²È¤¬ 20 ¥Ú¡¼¥¸¤Ş¤Ç»È¤¨¤ë±£¤·µ¡Ç½¤Î¤¿¤á¤Î½àÈ÷¡£
-			* ±£¤·¥ª¥×¥·¥ç¥ó¤¬Í­¸ú¤Ç¤â¤½¤¦¤Ç¤Ê¤¯¤Æ¤â°ì±ş¥¹¥Ú¡¼¥¹
-			* ¤òºî¤Ã¤Æ¤ª¤¯¡£
-			* £Ú¤Ç¤Ï³¹¤¬Áı¤¨¤¿¤Î¤Ç£±£°¥Ú¡¼¥¸¤Ë¡£
+			* æˆ‘ãŒå®¶ãŒ 20 ãƒšãƒ¼ã‚¸ã¾ã§ä½¿ãˆã‚‹éš ã—æ©Ÿèƒ½ã®ãŸã‚ã®æº–å‚™ã€‚
+			* éš ã—ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãŒæœ‰åŠ¹ã§ã‚‚ãã†ã§ãªãã¦ã‚‚ä¸€å¿œã‚¹ãƒšãƒ¼ã‚¹
+			* ã‚’ä½œã£ã¦ãŠãã€‚
+			* ï¼ºã§ã¯è¡—ãŒå¢—ãˆãŸã®ã§ï¼‘ï¼ãƒšãƒ¼ã‚¸ã«ã€‚
 			*/
 			if (j == STORE_HOME)
 			{
@@ -1293,10 +1293,10 @@ static errr init_other(void)
 
 	/* The "basic" feelings */
 #ifdef JP
-	(void)quark_add("¼ö¤ï¤ì¤Æ¤¤¤ë");
-	(void)quark_add("²õ¤ì¤Æ¤¤¤ë");
-	(void)quark_add("ÊÂ");
-	(void)quark_add("¾å¼Á");
+	(void)quark_add("å‘ªã‚ã‚Œã¦ã„ã‚‹");
+	(void)quark_add("å£Šã‚Œã¦ã„ã‚‹");
+	(void)quark_add("ä¸¦");
+	(void)quark_add("ä¸Šè³ª");
 #else
 	(void)quark_add("cursed");
 	(void)quark_add("broken");
@@ -1307,10 +1307,10 @@ static errr init_other(void)
 
 	/* The "extra" feelings */
 #ifdef JP
-	(void)quark_add("¹âµéÉÊ");
-	(void)quark_add("Ìµ²ÁÃÍ");
-	(void)quark_add("ÆÃÊÌÀ½");
-	(void)quark_add("¶²¤í¤·¤¤");
+	(void)quark_add("é«˜ç´šå“");
+	(void)quark_add("ç„¡ä¾¡å€¤");
+	(void)quark_add("ç‰¹åˆ¥è£½");
+	(void)quark_add("æã‚ã—ã„");
 #else
 	(void)quark_add("excellent");
 	(void)quark_add("worthless");
@@ -1321,8 +1321,8 @@ static errr init_other(void)
 
 	/* Some extra strings */
 #ifdef JP
-	(void)quark_add("¼ö¤¤¤Ê¤·");
-	(void)quark_add("Çä½ĞÃæ");
+	(void)quark_add("å‘ªã„ãªã—");
+	(void)quark_add("å£²å‡ºä¸­");
 #else
 	(void)quark_add("uncursed");
 	(void)quark_add("on sale");
@@ -1493,7 +1493,7 @@ static errr init_alloc(void)
 
 	/* Paranoia */
 #ifdef JP
-	if (!num[0]) quit("Ä®¤Î¥â¥ó¥¹¥¿¡¼¤¬¤Ê¤¤¡ª");
+	if (!num[0]) quit("ç”ºã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒãªã„ï¼");
 #else
 	if (!num[0]) quit("No town monsters!");
 #endif
@@ -1586,16 +1586,16 @@ static void init_angband_aux(cptr why)
 
 #ifdef JP
 	/* Explain */
-	plog("'lib'¥Ç¥£¥ì¥¯¥È¥ê¤¬Â¸ºß¤·¤Ê¤¤¤«²õ¤ì¤Æ¤¤¤ë¤è¤¦¤Ç¤¹¡£");
+	plog("'lib'ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãŒå­˜åœ¨ã—ãªã„ã‹å£Šã‚Œã¦ã„ã‚‹ã‚ˆã†ã§ã™ã€‚");
 
 	/* More details */
-	plog("¤Ò¤ç¤Ã¤È¤¹¤ë¤È¥¢¡¼¥«¥¤¥Ö¤¬Àµ¤·¤¯²òÅà¤µ¤ì¤Æ¤¤¤Ê¤¤¤Î¤«¤â¤·¤ì¤Ş¤»¤ó¡£");
+	plog("ã²ã‚‡ã£ã¨ã™ã‚‹ã¨ã‚¢ãƒ¼ã‚«ã‚¤ãƒ–ãŒæ­£ã—ãè§£å‡ã•ã‚Œã¦ã„ãªã„ã®ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“ã€‚");
 
 	/* Explain */
-	plog("³ºÅö¤¹¤ë'README'¥Õ¥¡¥¤¥ë¤òÆÉ¤ó¤Ç³ÎÇ§¤·¤Æ¤ß¤Æ²¼¤µ¤¤¡£");
+	plog("è©²å½“ã™ã‚‹'README'ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã‚“ã§ç¢ºèªã—ã¦ã¿ã¦ä¸‹ã•ã„ã€‚");
 
 	/* Quit with error */
-	quit("Ã×Ì¿Åª¤Ê¥¨¥é¡¼¡£");
+	quit("è‡´å‘½çš„ãªã‚¨ãƒ©ãƒ¼ã€‚");
 #else
 	/* Explain */
 	plog("The 'lib' directory is probably missing or broken.");
@@ -1691,7 +1691,7 @@ void init_angband(void)
 
 		/* Message */
 #ifdef JP
-	sprintf(why, "'%s'¥Õ¥¡¥¤¥ë¤Ë¥¢¥¯¥»¥¹¤Ç¤­¤Ş¤»¤ó!", buf);
+	sprintf(why, "'%s'ãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚¢ã‚¯ã‚»ã‚¹ã§ãã¾ã›ã‚“!", buf);
 #else
 		sprintf(why, "Cannot access the '%s' file!", buf);
 #endif
@@ -1765,7 +1765,7 @@ void init_angband(void)
 
 			/* Message */
 #ifdef JP
-			sprintf(why, "'%s'¥Õ¥¡¥¤¥ë¤òºîÀ®¤Ç¤­¤Ş¤»¤ó!", buf);
+			sprintf(why, "'%s'ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã§ãã¾ã›ã‚“!", buf);
 #else
 			sprintf(why, "Cannot create the '%s' file!", buf);
 #endif
@@ -1784,8 +1784,8 @@ void init_angband(void)
 
 	/* Initialize misc. values */
 #ifdef JP
-	note("[ÊÑ¿ô¤ò½é´ü²½¤·¤Æ¤¤¤Ş¤¹...(¤½¤ÎÂ¾)");
-	if (init_misc()) quit("¤½¤ÎÂ¾¤ÎÊÑ¿ô¤ò½é´ü²½¤Ç¤­¤Ş¤»¤ó");
+	note("[å¤‰æ•°ã‚’åˆæœŸåŒ–ã—ã¦ã„ã¾ã™...(ãã®ä»–)");
+	if (init_misc()) quit("ãã®ä»–ã®å¤‰æ•°ã‚’åˆæœŸåŒ–ã§ãã¾ã›ã‚“");
 #else
 	note("[Initializing values... (misc)]");
 	if (init_misc()) quit("Cannot initialize misc. values");
@@ -1794,8 +1794,8 @@ void init_angband(void)
 
 	/* Initialize feature info */
 #ifdef JP
-	note("[¥Ç¡¼¥¿¤Î½é´ü²½Ãæ... (ÃÏ·Á)]");
-	if (init_f_info()) quit("ÃÏ·Á½é´ü²½ÉÔÇ½");
+	note("[ãƒ‡ãƒ¼ã‚¿ã®åˆæœŸåŒ–ä¸­... (åœ°å½¢)]");
+	if (init_f_info()) quit("åœ°å½¢åˆæœŸåŒ–ä¸èƒ½");
 #else
 	note("[Initializing arrays... (features)]");
 	if (init_f_info()) quit("Cannot initialize features");
@@ -1804,8 +1804,8 @@ void init_angband(void)
 
 	/* Initialize object info */
 #ifdef JP
-	note("[¥Ç¡¼¥¿¤Î½é´ü²½Ãæ... (¥¢¥¤¥Æ¥à)]");
-	if (init_k_info()) quit("¥¢¥¤¥Æ¥à½é´ü²½ÉÔÇ½");
+	note("[ãƒ‡ãƒ¼ã‚¿ã®åˆæœŸåŒ–ä¸­... (ã‚¢ã‚¤ãƒ†ãƒ )]");
+	if (init_k_info()) quit("ã‚¢ã‚¤ãƒ†ãƒ åˆæœŸåŒ–ä¸èƒ½");
 #else
 	note("[Initializing arrays... (objects)]");
 	if (init_k_info()) quit("Cannot initialize objects");
@@ -1814,8 +1814,8 @@ void init_angband(void)
 
 	/* Initialize artifact info */
 #ifdef JP
-	note("[¥Ç¡¼¥¿¤Î½é´ü²½Ãæ... (ÅÁÀâ¤Î¥¢¥¤¥Æ¥à)]");
-	if (init_a_info()) quit("ÅÁÀâ¤Î¥¢¥¤¥Æ¥à½é´ü²½ÉÔÇ½");
+	note("[ãƒ‡ãƒ¼ã‚¿ã®åˆæœŸåŒ–ä¸­... (ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ )]");
+	if (init_a_info()) quit("ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ åˆæœŸåŒ–ä¸èƒ½");
 #else
 	note("[Initializing arrays... (artifacts)]");
 	if (init_a_info()) quit("Cannot initialize artifacts");
@@ -1824,8 +1824,8 @@ void init_angband(void)
 
 	/* Initialize ego-item info */
 #ifdef JP
-	note("[¥Ç¡¼¥¿¤Î½é´ü²½Ãæ... (Ì¾¤Î¤¢¤ë¥¢¥¤¥Æ¥à)]");
-	if (init_e_info()) quit("Ì¾¤Î¤¢¤ë¥¢¥¤¥Æ¥à½é´ü²½ÉÔÇ½");
+	note("[ãƒ‡ãƒ¼ã‚¿ã®åˆæœŸåŒ–ä¸­... (åã®ã‚ã‚‹ã‚¢ã‚¤ãƒ†ãƒ )]");
+	if (init_e_info()) quit("åã®ã‚ã‚‹ã‚¢ã‚¤ãƒ†ãƒ åˆæœŸåŒ–ä¸èƒ½");
 #else
 	note("[Initializing arrays... (ego-items)]");
 	if (init_e_info()) quit("Cannot initialize ego-items");
@@ -1834,8 +1834,8 @@ void init_angband(void)
 
 	/* Initialize monster info */
 #ifdef JP
-	note("[¥Ç¡¼¥¿¤Î½é´ü²½Ãæ... (¥â¥ó¥¹¥¿¡¼)]");
-	if (init_r_info()) quit("¥â¥ó¥¹¥¿¡¼½é´ü²½ÉÔÇ½");
+	note("[ãƒ‡ãƒ¼ã‚¿ã®åˆæœŸåŒ–ä¸­... (ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼)]");
+	if (init_r_info()) quit("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼åˆæœŸåŒ–ä¸èƒ½");
 #else
 	note("[Initializing arrays... (monsters)]");
 	if (init_r_info()) quit("Cannot initialize monsters");
@@ -1844,8 +1844,8 @@ void init_angband(void)
 
 	/* Initialize magic info */
 #ifdef JP
-	note("[¥Ç¡¼¥¿¤Î½é´ü²½Ãæ... (ËâË¡)]");
-	if (init_m_info()) quit("ËâË¡½é´ü²½ÉÔÇ½");
+	note("[ãƒ‡ãƒ¼ã‚¿ã®åˆæœŸåŒ–ä¸­... (é­”æ³•)]");
+	if (init_m_info()) quit("é­”æ³•åˆæœŸåŒ–ä¸èƒ½");
 #else
 	note("[Initializing arrays... (magic)]");
 	if (init_m_info()) quit("Cannot initialize magic");
@@ -1854,8 +1854,8 @@ void init_angband(void)
 	
 	/* Initialize wilderness array */
 #ifdef JP
-	note("[ÇÛÎó¤ò½é´ü²½¤·¤Æ¤¤¤Ş¤¹... (¹ÓÌî)]");
-	if (init_wilderness()) quit("¹ÓÌî¤ò½é´ü²½¤Ç¤­¤Ş¤»¤ó");
+	note("[é…åˆ—ã‚’åˆæœŸåŒ–ã—ã¦ã„ã¾ã™... (è’é‡)]");
+	if (init_wilderness()) quit("è’é‡ã‚’åˆæœŸåŒ–ã§ãã¾ã›ã‚“");
 #else
 	note("[Initializing arrays... (wilderness)]");
 	if (init_wilderness()) quit("Cannot initialize wilderness");
@@ -1864,8 +1864,8 @@ void init_angband(void)
 
 	/* Initialize town array */
 #ifdef JP
-	note("[ÇÛÎó¤ò½é´ü²½¤·¤Æ¤¤¤Ş¤¹... (³¹)]");
-	if (init_towns()) quit("³¹¤ò½é´ü²½¤Ç¤­¤Ş¤»¤ó");
+	note("[é…åˆ—ã‚’åˆæœŸåŒ–ã—ã¦ã„ã¾ã™... (è¡—)]");
+	if (init_towns()) quit("è¡—ã‚’åˆæœŸåŒ–ã§ãã¾ã›ã‚“");
 #else
 	note("[Initializing arrays... (towns)]");
 	if (init_towns()) quit("Cannot initialize towns");
@@ -1874,8 +1874,8 @@ void init_angband(void)
 
 	/* Initialize building array */
 #ifdef JP
-	note("[ÇÛÎó¤ò½é´ü²½¤·¤Æ¤¤¤Ş¤¹... (·úÊª)]");
-	if (init_buildings()) quit("·úÊª¤ò½é´ü²½¤Ç¤­¤Ş¤»¤ó");
+	note("[é…åˆ—ã‚’åˆæœŸåŒ–ã—ã¦ã„ã¾ã™... (å»ºç‰©)]");
+	if (init_buildings()) quit("å»ºç‰©ã‚’åˆæœŸåŒ–ã§ãã¾ã›ã‚“");
 #else
 	note("[Initializing arrays... (buildings)]");
 	if (init_buildings()) quit("Cannot initialize buildings");
@@ -1884,8 +1884,8 @@ void init_angband(void)
 
 	/* Initialize quest array */
 #ifdef JP
-	note("[ÇÛÎó¤ò½é´ü²½¤·¤Æ¤¤¤Ş¤¹... (¥¯¥¨¥¹¥È)]");
-	if (init_quests()) quit("¥¯¥¨¥¹¥È¤ò½é´ü²½¤Ç¤­¤Ş¤»¤ó");
+	note("[é…åˆ—ã‚’åˆæœŸåŒ–ã—ã¦ã„ã¾ã™... (ã‚¯ã‚¨ã‚¹ãƒˆ)]");
+	if (init_quests()) quit("ã‚¯ã‚¨ã‚¹ãƒˆã‚’åˆæœŸåŒ–ã§ãã¾ã›ã‚“");
 #else
 	note("[Initializing arrays... (quests)]");
 	if (init_quests()) quit("Cannot initialize quests");
@@ -1894,8 +1894,8 @@ void init_angband(void)
 
 	/* Initialize some other arrays */
 #ifdef JP
-	note("[¥Ç¡¼¥¿¤Î½é´ü²½Ãæ... (¤½¤ÎÂ¾)]");
-	if (init_other()) quit("¤½¤ÎÂ¾¤Î¥Ç¡¼¥¿½é´ü²½ÉÔÇ½");
+	note("[ãƒ‡ãƒ¼ã‚¿ã®åˆæœŸåŒ–ä¸­... (ãã®ä»–)]");
+	if (init_other()) quit("ãã®ä»–ã®ãƒ‡ãƒ¼ã‚¿åˆæœŸåŒ–ä¸èƒ½");
 #else
 	note("[Initializing arrays... (other)]");
 	if (init_other()) quit("Cannot initialize other stuff");
@@ -1905,8 +1905,8 @@ void init_angband(void)
 	/* Initialize some other arrays */
 #ifdef JP
 	/* translation */
-	note("[¥Ç¡¼¥¿¤Î½é´ü²½Ãæ... (¥¢¥í¥±¡¼¥·¥ç¥ó)]");
-	if (init_alloc()) quit("¥¢¥í¥±¡¼¥·¥ç¥ó¡¦¥¹¥¿¥Ã¥Õ½é´ü²½ÉÔÇ½");
+	note("[ãƒ‡ãƒ¼ã‚¿ã®åˆæœŸåŒ–ä¸­... (ã‚¢ãƒ­ã‚±ãƒ¼ã‚·ãƒ§ãƒ³)]");
+	if (init_alloc()) quit("ã‚¢ãƒ­ã‚±ãƒ¼ã‚·ãƒ§ãƒ³ãƒ»ã‚¹ã‚¿ãƒƒãƒ•åˆæœŸåŒ–ä¸èƒ½");
 #else
 	note("[Initializing arrays... (alloc)]");
 	if (init_alloc()) quit("Cannot initialize alloc stuff");
@@ -1918,7 +1918,7 @@ void init_angband(void)
 
 	/* Initialize feature info */
 #ifdef JP
-	note("[¥æ¡¼¥¶¡¼ÀßÄê¥Õ¥¡¥¤¥ë¤ò½é´ü²½¤·¤Æ¤¤¤Ş¤¹...]");
+	note("[ãƒ¦ãƒ¼ã‚¶ãƒ¼è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’åˆæœŸåŒ–ã—ã¦ã„ã¾ã™...]");
 #else
 	note("[Initializing user pref files...]");
 #endif
@@ -1950,7 +1950,7 @@ void init_angband(void)
 
 	/* Done */
 #ifdef JP
-	note("[½é´ü²½½ªÎ»]");
+	note("[åˆæœŸåŒ–çµ‚äº†]");
 #else
 	note("[Initialization complete]");
 #endif

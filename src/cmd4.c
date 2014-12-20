@@ -1,4 +1,4 @@
-/* File: cmd4.c */
+ï»¿/* File: cmd4.c */
 
 /* Purpose: Interface commands */
 
@@ -94,7 +94,7 @@ static void remove_auto_dump(cptr orig_file)
 	if (!tmp_fff)
 	{
 #ifdef JP
-	    msg_format("°ì»ş¥Õ¥¡¥¤¥ë %s ¤òºîÀ®¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¡£", tmp_file);
+	    msg_format("ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ« %s ã‚’ä½œæˆã§ãã¾ã›ã‚“ã§ã—ãŸã€‚", tmp_file);
 #else
 	    msg_format("Failed to create temporary file %s.", tmp_file);
 #endif
@@ -276,7 +276,7 @@ static bool open_auto_dump(cptr buf, cptr mark)
 	/* Failure */
 	if (!auto_dump_stream) {
 #ifdef JP
-		msg_format("%s ¤ò³«¤¯¤³¤È¤¬¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¡£", buf);
+		msg_format("%s ã‚’é–‹ãã“ã¨ãŒã§ãã¾ã›ã‚“ã§ã—ãŸã€‚", buf);
 #else
 		msg_format("Failed to open %s.", buf);
 #endif
@@ -293,8 +293,8 @@ static bool open_auto_dump(cptr buf, cptr mark)
 	auto_dump_line_num = 0;
 
 #ifdef JP
-	auto_dump_printf("# *·Ù¹ğ!!* °Ê¹ß¤Î¹Ô¤Ï¼«Æ°À¸À®¤µ¤ì¤¿¤â¤Î¤Ç¤¹¡£\n");
-	auto_dump_printf("# *·Ù¹ğ!!* ¸å¤Ç¼«Æ°Åª¤Ëºï½ü¤µ¤ì¤ë¤Î¤ÇÊÔ½¸¤·¤Ê¤¤¤Ç¤¯¤À¤µ¤¤¡£\n");
+	auto_dump_printf("# *è­¦å‘Š!!* ä»¥é™ã®è¡Œã¯è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸã‚‚ã®ã§ã™ã€‚\n");
+	auto_dump_printf("# *è­¦å‘Š!!* å¾Œã§è‡ªå‹•çš„ã«å‰Šé™¤ã•ã‚Œã‚‹ã®ã§ç·¨é›†ã—ãªã„ã§ãã ã•ã„ã€‚\n");
 #else
 	auto_dump_printf("# *Warning!*  The lines below are an automatic dump.\n");
 	auto_dump_printf("# Don't edit them; changes will be deleted and replaced automatically.\n");
@@ -315,8 +315,8 @@ static void close_auto_dump(void)
 	sprintf(footer_mark_str, auto_dump_footer, auto_dump_mark);
 
 #ifdef JP
-	auto_dump_printf("# *·Ù¹ğ!!* °Ê¾å¤Î¹Ô¤Ï¼«Æ°À¸À®¤µ¤ì¤¿¤â¤Î¤Ç¤¹¡£\n");
-	auto_dump_printf("# *·Ù¹ğ!!* ¸å¤Ç¼«Æ°Åª¤Ëºï½ü¤µ¤ì¤ë¤Î¤ÇÊÔ½¸¤·¤Ê¤¤¤Ç¤¯¤À¤µ¤¤¡£\n");
+	auto_dump_printf("# *è­¦å‘Š!!* ä»¥ä¸Šã®è¡Œã¯è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸã‚‚ã®ã§ã™ã€‚\n");
+	auto_dump_printf("# *è­¦å‘Š!!* å¾Œã§è‡ªå‹•çš„ã«å‰Šé™¤ã•ã‚Œã‚‹ã®ã§ç·¨é›†ã—ãªã„ã§ãã ã•ã„ã€‚\n");
 #else
 	auto_dump_printf("# *Warning!*  The lines above are an automatic dump.\n");
 	auto_dump_printf("# Don't edit them; changes will be deleted and replaced automatically.\n");
@@ -509,7 +509,7 @@ void do_cmd_messages(int num_now)
 		/* Display header XXX XXX XXX */
 #ifdef JP
 		/* translation */
-		prt(format("°ÊÁ°¤Î¥á¥Ã¥»¡¼¥¸ %d-%d Á´Éô¤Ç(%d)",
+		prt(format("ä»¥å‰ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ %d-%d å…¨éƒ¨ã§(%d)",
 			   i, i + j - 1, n), 0, 0);
 #else
 		prt(format("Message Recall (%d-%d of %d)",
@@ -518,7 +518,7 @@ void do_cmd_messages(int num_now)
 
 		/* Display prompt (not very informative) */
 #ifdef JP
-		prt("[ 'p' ¤Ç¹¹¤Ë¸Å¤¤¤â¤Î, 'n' ¤Ç¹¹¤Ë¿·¤·¤¤¤â¤Î, '/' ¤Ç¸¡º÷, ESC ¤ÇÃæÃÇ ]", hgt - 1, 0);
+		prt("[ 'p' ã§æ›´ã«å¤ã„ã‚‚ã®, 'n' ã§æ›´ã«æ–°ã—ã„ã‚‚ã®, '/' ã§æ¤œç´¢, ESC ã§ä¸­æ–­ ]", hgt - 1, 0);
 #else
 		prt("[Press 'p' for older, 'n' for newer, ..., or ESCAPE]", hgt - 1, 0);
 #endif
@@ -538,7 +538,7 @@ void do_cmd_messages(int num_now)
 		case '=':
 			/* Prompt */
 #ifdef JP
-			prt("¶¯Ä´: ", hgt - 1, 0);
+			prt("å¼·èª¿: ", hgt - 1, 0);
 #else
 			prt("Show: ", hgt - 1, 0);
 #endif
@@ -563,7 +563,7 @@ void do_cmd_messages(int num_now)
 
 				/* Prompt */
 #ifdef JP
-				prt("¸¡º÷: ", hgt - 1, 0);
+				prt("æ¤œç´¢: ", hgt - 1, 0);
 #else
 				prt("Find: ", hgt - 1, 0);
 #endif
@@ -681,42 +681,42 @@ static option_type cheat_info[CHEAT_MAX] =
 {
 	{ &cheat_peek,		FALSE,	255,	0x01, 0x00,
 #ifdef JP
-	"cheat_peek",		"¥¢¥¤¥Æ¥à¤ÎÀ¸À®¤ò¤Î¤¾¤­¸«¤ë" },
+	"cheat_peek",		"ã‚¢ã‚¤ãƒ†ãƒ ã®ç”Ÿæˆã‚’ã®ããè¦‹ã‚‹" },
 #else
 	"cheat_peek",		"Peek into object creation" },
 #endif
 
 	{ &cheat_hear,		FALSE,	255,	0x02, 0x00,
 #ifdef JP
-	"cheat_hear",		"¥â¥ó¥¹¥¿¡¼¤ÎÀ¸À®¤ò¤Î¤¾¤­¸«¤ë" },
+	"cheat_hear",		"ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®ç”Ÿæˆã‚’ã®ããè¦‹ã‚‹" },
 #else
 	"cheat_hear",		"Peek into monster creation" },
 #endif
 
 	{ &cheat_room,		FALSE,	255,	0x04, 0x00,
 #ifdef JP
-	"cheat_room",		"¥À¥ó¥¸¥ç¥ó¤ÎÀ¸À®¤ò¤Î¤¾¤­¸«¤ë" },
+	"cheat_room",		"ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®ç”Ÿæˆã‚’ã®ããè¦‹ã‚‹" },
 #else
 	"cheat_room",		"Peek into dungeon creation" },
 #endif
 
 	{ &cheat_xtra,		FALSE,	255,	0x08, 0x00,
 #ifdef JP
-	"cheat_xtra",		"¤½¤ÎÂ¾¤Î»ö¤ò¤Î¤¾¤­¸«¤ë" },
+	"cheat_xtra",		"ãã®ä»–ã®äº‹ã‚’ã®ããè¦‹ã‚‹" },
 #else
 	"cheat_xtra",		"Peek into something else" },
 #endif
 
 	{ &cheat_know,		FALSE,	255,	0x10, 0x00,
 #ifdef JP
-	"cheat_know",		"´°Á´¤Ê¥â¥ó¥¹¥¿¡¼¤Î»×¤¤½Ğ¤òÃÎ¤ë" },
+	"cheat_know",		"å®Œå…¨ãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®æ€ã„å‡ºã‚’çŸ¥ã‚‹" },
 #else
 	"cheat_know",		"Know complete monster info" },
 #endif
 
 	{ &cheat_live,		FALSE,	255,	0x20, 0x00,
 #ifdef JP
-	"cheat_live",		"»à¤ò²óÈò¤¹¤ë¤³¤È¤ò²ÄÇ½¤Ë¤¹¤ë" }
+	"cheat_live",		"æ­»ã‚’å›é¿ã™ã‚‹ã“ã¨ã‚’å¯èƒ½ã«ã™ã‚‹" }
 #else
 	"cheat_live",		"Allow player to avoid death" }
 #endif
@@ -740,18 +740,18 @@ static void do_cmd_options_cheat(cptr info)
 	{
 		/* Prompt XXX XXX XXX */
 #ifdef JP
-		sprintf(buf, "%s ( ¥ê¥¿¡¼¥ó¤Ç¼¡¤Ø, y/n ¤Ç¥»¥Ã¥È, ESC ¤Ç·èÄê )", info);
+		sprintf(buf, "%s ( ãƒªã‚¿ãƒ¼ãƒ³ã§æ¬¡ã¸, y/n ã§ã‚»ãƒƒãƒˆ, ESC ã§æ±ºå®š )", info);
 #else
 		sprintf(buf, "%s (RET to advance, y/n to set, ESC to accept) ", info);
 #endif
 		prt(buf, 0, 0);
 
 #ifdef JP
-		/* º¾µ½¥ª¥×¥·¥ç¥ó¤ò¤¦¤Ã¤«¤ê¤¤¤¸¤Ã¤Æ¤·¤Ş¤¦¿Í¤¬¤¤¤ë¤è¤¦¤Ê¤Î¤ÇÃí°Õ */
-		prt("                                 <<  Ãí°Õ  >>", 11, 0);
-		prt("      º¾µ½¥ª¥×¥·¥ç¥ó¤ò°ìÅÙ¤Ç¤âÀßÄê¤¹¤ë¤È¡¢¥¹¥³¥¢µ­Ï¿¤¬»Ä¤é¤Ê¤¯¤Ê¤ê¤Ş¤¹¡ª", 12, 0);
-		prt("      ¸å¤Ë²ò½ü¤·¤Æ¤â¥À¥á¤Ç¤¹¤Î¤Ç¡¢¾¡Íø¼Ô¤òÌÜ»Ø¤¹Êı¤Ï¤³¤³¤Î¥ª¥×¥·¥ç¥ó¤Ï¤¤", 13, 0);
-		prt("      ¤¸¤é¤Ê¤¤¤è¤¦¤Ë¤·¤Æ²¼¤µ¤¤¡£", 14, 0);
+		/* è©æ¬ºã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ã†ã£ã‹ã‚Šã„ã˜ã£ã¦ã—ã¾ã†äººãŒã„ã‚‹ã‚ˆã†ãªã®ã§æ³¨æ„ */
+		prt("                                 <<  æ³¨æ„  >>", 11, 0);
+		prt("      è©æ¬ºã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ä¸€åº¦ã§ã‚‚è¨­å®šã™ã‚‹ã¨ã€ã‚¹ã‚³ã‚¢è¨˜éŒ²ãŒæ®‹ã‚‰ãªããªã‚Šã¾ã™ï¼", 12, 0);
+		prt("      å¾Œã«è§£é™¤ã—ã¦ã‚‚ãƒ€ãƒ¡ã§ã™ã®ã§ã€å‹åˆ©è€…ã‚’ç›®æŒ‡ã™æ–¹ã¯ã“ã“ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯ã„", 13, 0);
+		prt("      ã˜ã‚‰ãªã„ã‚ˆã†ã«ã—ã¦ä¸‹ã•ã„ã€‚", 14, 0);
 #endif
 		/* Display the options */
 		for (i = 0; i < n; i++)
@@ -765,7 +765,7 @@ static void do_cmd_options_cheat(cptr info)
 			sprintf(buf, "%-48s: %s  (%s)",
 			    cheat_info[i].o_desc,
 #ifdef JP
-			    (*cheat_info[i].o_var ? "¤Ï¤¤  " : "¤¤¤¤¤¨"),
+			    (*cheat_info[i].o_var ? "ã¯ã„  " : "ã„ã„ãˆ"),
 #else
 			    (*cheat_info[i].o_var ? "yes" : "no "),
 #endif
@@ -810,7 +810,7 @@ static void do_cmd_options_cheat(cptr info)
 				if (!noscore && take_notes)
 				{
 #ifdef JP
-					add_note("º¾µ½¥â¡¼¥É", 'W');
+					add_note("è©æ¬ºãƒ¢ãƒ¼ãƒ‰", 'W');
 #else
 					add_note("Cheat mode", 'W');
 #endif
@@ -844,14 +844,14 @@ static option_type autosave_info[2] =
 {
 	{ (bool *)(&autosave_l), FALSE, 255, 0x01, 0x00,
 #ifdef JP
-	"autosave_l", "¿·¤·¤¤³¬¤ËÆş¤ëÅÙ¤Ë¼«Æ°¥»¡¼¥Ö¤¹¤ë" },
+	"autosave_l", "æ–°ã—ã„éšã«å…¥ã‚‹åº¦ã«è‡ªå‹•ã‚»ãƒ¼ãƒ–ã™ã‚‹" },
 #else
 	"autosave_l", "Autosave when entering new levels" },
 #endif
 
 	{ (bool *)(&autosave_t), FALSE, 255, 0x02, 0x00,
 #ifdef JP
-	"autosave_t", "°ìÄê¥¿¡¼¥óËè¤Ë¼«Æ°¥»¡¼¥Ö¤¹¤ë" },
+	"autosave_t", "ä¸€å®šã‚¿ãƒ¼ãƒ³æ¯ã«è‡ªå‹•ã‚»ãƒ¼ãƒ–ã™ã‚‹" },
 #else
 	"autosave_t", "Timed autosave" },
 #endif
@@ -894,7 +894,7 @@ static void do_cmd_options_autosave(cptr info)
 	{
 		/* Prompt XXX XXX XXX */
 #ifdef JP
-		sprintf(buf, "%s ( ¥ê¥¿¡¼¥ó¤Ç¼¡¤Ø, y/n ¤Ç¥»¥Ã¥È, F ¤ÇÉÑÅÙ¤òÆşÎÏ, ESC ¤Ç·èÄê ) ", info);
+		sprintf(buf, "%s ( ãƒªã‚¿ãƒ¼ãƒ³ã§æ¬¡ã¸, y/n ã§ã‚»ãƒƒãƒˆ, F ã§é »åº¦ã‚’å…¥åŠ›, ESC ã§æ±ºå®š ) ", info);
 #else
 		sprintf(buf, "%s (RET to advance, y/n to set, 'F' for frequency, ESC to accept) ", info);
 #endif
@@ -912,7 +912,7 @@ static void do_cmd_options_autosave(cptr info)
 			sprintf(buf, "%-48s: %s  (%s)",
 			    autosave_info[i].o_desc,
 #ifdef JP
-			    (*autosave_info[i].o_var ? "¤Ï¤¤  " : "¤¤¤¤¤¨"),
+			    (*autosave_info[i].o_var ? "ã¯ã„  " : "ã„ã„ãˆ"),
 #else
 			    (*autosave_info[i].o_var ? "yes" : "no "),
 #endif
@@ -921,7 +921,7 @@ static void do_cmd_options_autosave(cptr info)
 		}
 
 #ifdef JP
-		prt(format("¼«Æ°¥»¡¼¥Ö¤ÎÉÑÅÙ¡§ %d ¥¿¡¼¥óËè",  autosave_freq), 5, 0);
+		prt(format("è‡ªå‹•ã‚»ãƒ¼ãƒ–ã®é »åº¦ï¼š %d ã‚¿ãƒ¼ãƒ³æ¯",  autosave_freq), 5, 0);
 #else
 		prt(format("Timed autosave frequency: every %d turns",  autosave_freq), 5, 0);
 #endif
@@ -980,7 +980,7 @@ static void do_cmd_options_autosave(cptr info)
 			{
 				autosave_freq = toggle_frequency(autosave_freq);
 #ifdef JP
-				prt(format("¼«Æ°¥»¡¼¥Ö¤ÎÉÑÅÙ¡§ %d ¥¿¡¼¥óËè", 
+				prt(format("è‡ªå‹•ã‚»ãƒ¼ãƒ–ã®é »åº¦ï¼š %d ã‚¿ãƒ¼ãƒ³æ¯", 
 #else
 				prt(format("Timed autosave frequency: every %d turns",
 #endif
@@ -1022,15 +1022,15 @@ void do_cmd_options_hitpoint_warning(cptr info)
 	{
 		/* Prompt XXX XXX XXX */
 #ifdef JP
-		sprintf(buf, "%s ( ¥ê¥¿¡¼¥ó¤Ç¼¡¤Ø, y/n ¤Ç¥»¥Ã¥È, ESC ¤Ç·èÄê ) ", info);
+		sprintf(buf, "%s ( ãƒªã‚¿ãƒ¼ãƒ³ã§æ¬¡ã¸, y/n ã§ã‚»ãƒƒãƒˆ, ESC ã§æ±ºå®š ) ", info);
 #else
 		sprintf(buf, "%s (RET to advance, y/n to set, ESC to accept) ", info);
 #endif
 		prt(buf, 0, 0);
 
 #ifdef JP
-		prt("·Ù¹ğ¤ò¹Ô¤¦¥Ò¥Ã¥È¥İ¥¤¥ó¥È  ¡§ 10%  20%  30%  40%  50%  60%  70%  80%  90%", 3, 0);
-		prt("·Ù¹ğ¤ò¹Ô¤¦¥Ş¥¸¥Ã¥¯¥İ¥¤¥ó¥È¡§ 10%  20%  30%  40%  50%  60%  70%  80%  90%", 4, 0);
+		prt("è­¦å‘Šã‚’è¡Œã†ãƒ’ãƒƒãƒˆãƒã‚¤ãƒ³ãƒˆ  ï¼š 10%  20%  30%  40%  50%  60%  70%  80%  90%", 3, 0);
+		prt("è­¦å‘Šã‚’è¡Œã†ãƒã‚¸ãƒƒã‚¯ãƒã‚¤ãƒ³ãƒˆï¼š 10%  20%  30%  40%  50%  60%  70%  80%  90%", 4, 0);
 #else
 		prt("       Hitpoint Warning   :  10%  20%  30%  40%  50%  60%  70%  80%  90%", 3, 0);
 		prt("       Spellpoint Warning :  10%  20%  30%  40%  50%  60%  70%  80%  90%", 4, 0);
@@ -1045,7 +1045,7 @@ void do_cmd_options_hitpoint_warning(cptr info)
 			((k == 1) ? TERM_L_BLUE : TERM_YELLOW), buf);
 
 #ifdef JP
-		prt("¡Ô°Ê²¼¤Î¥ª¥×¥·¥ç¥ó¤ò»ÈÍÑ¤¹¤ë¤È¡¢·Ù¹ğ¤¬¤è¤ê¶¯ÎÏ¤Ë¤Ê¤ê¤Ş¤¹¡£¡Õ", 6, 0);
+		prt("ã€Šä»¥ä¸‹ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ä½¿ç”¨ã™ã‚‹ã¨ã€è­¦å‘ŠãŒã‚ˆã‚Šå¼·åŠ›ã«ãªã‚Šã¾ã™ã€‚ã€‹", 6, 0);
 #else
 		prt("<<Following options make hitpoint warning stronger.>>", 6, 0);
 #endif
@@ -1061,7 +1061,7 @@ void do_cmd_options_hitpoint_warning(cptr info)
 			sprintf(buf, "%-48s: %s  (%.19s)",
 				option_info[opt[i]].o_desc,
 #ifdef JP
-				(*option_info[opt[i]].o_var ? "¤Ï¤¤  " : "¤¤¤¤¤¨"),
+				(*option_info[opt[i]].o_var ? "ã¯ã„  " : "ã„ã„ãˆ"),
 #else
 				(*option_info[opt[i]].o_var ? "yes" : "no "),
 #endif
@@ -1201,8 +1201,8 @@ void do_cmd_options_aux(int page, cptr info)
 	Term_clear();
 
 #ifdef JP
-		if (page == OPT_AUTODESTROY_PAGE) c_prt(TERM_YELLOW, "°Ê²¼¤Î¥ª¥×¥·¥ç¥ó¤Ï¡¢´Ê°×¼«Æ°ÇË²õ¤ò»ÈÍÑ¤¹¤ë¤È¤­¤Î¤ßÍ­¸ú", 6, 6);
-		if (page == OPT_PLAYRECORD_PAGE) c_prt(TERM_YELLOW, "°Ê²¼¤Î¥ª¥×¥·¥ç¥ó¤Ï¡¢¥×¥ì¥¤µ­Ï¿¤¹¤ë¤È¤­¤Î¤ßÍ­¸ú", 6, 6);
+		if (page == OPT_AUTODESTROY_PAGE) c_prt(TERM_YELLOW, "ä»¥ä¸‹ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯ã€ç°¡æ˜“è‡ªå‹•ç ´å£Šã‚’ä½¿ç”¨ã™ã‚‹ã¨ãã®ã¿æœ‰åŠ¹", 6, 6);
+		if (page == OPT_PLAYRECORD_PAGE) c_prt(TERM_YELLOW, "ä»¥ä¸‹ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯ã€ãƒ—ãƒ¬ã‚¤è¨˜éŒ²ã™ã‚‹ã¨ãã®ã¿æœ‰åŠ¹", 6, 6);
 #else
 		if (page == OPT_AUTODESTROY_PAGE) c_prt(TERM_YELLOW, "Following options will protect items from easy auto-destroyer.", 6, 3);
 		if (page == OPT_PLAYRECORD_PAGE) c_prt(TERM_YELLOW, "Following options won't work if take_note option is off.", 6, 3);
@@ -1213,7 +1213,7 @@ void do_cmd_options_aux(int page, cptr info)
 	{
 		/* Prompt XXX XXX XXX */
 #ifdef JP
-		sprintf(buf, "%s ( ¥ê¥¿¡¼¥ó¤Ç¼¡¤Ø, %sESC ¤Ç·èÄê ) ", info, browse_only ? "" : "y/n ¤Ç¥»¥Ã¥È, ");
+		sprintf(buf, "%s ( ãƒªã‚¿ãƒ¼ãƒ³ã§æ¬¡ã¸, %sESC ã§æ±ºå®š ) ", info, browse_only ? "" : "y/n ã§ã‚»ãƒƒãƒˆ, ");
 #else
 		sprintf(buf, "%s (RET to advance, %s) ", info, browse_only ? "ESC to exit" : "y/n to set, ESC to accept");
 #endif
@@ -1231,7 +1231,7 @@ void do_cmd_options_aux(int page, cptr info)
 			sprintf(buf, "%-48s: %s  (%.19s)",
 				option_info[opt[i]].o_desc,
 #ifdef JP
-				(*option_info[opt[i]].o_var ? "¤Ï¤¤  " : "¤¤¤¤¤¨"),
+				(*option_info[opt[i]].o_var ? "ã¯ã„  " : "ã„ã„ãˆ"),
 #else
 				(*option_info[opt[i]].o_var ? "yes" : "no "),
 #endif
@@ -1349,7 +1349,7 @@ static void do_cmd_options_win(void)
 	{
 		/* Prompt XXX XXX XXX */
 #ifdef JP
-		prt("¥¦¥£¥ó¥É¥¦¡¦¥Õ¥é¥° (<Êı¸ş>¤Ç°ÜÆ°, t¤Ç¥Á¥§¥ó¥¸, y/n ¤Ç¥»¥Ã¥È, ESC)", 0, 0);
+		prt("ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ»ãƒ•ãƒ©ã‚° (<æ–¹å‘>ã§ç§»å‹•, tã§ãƒã‚§ãƒ³ã‚¸, y/n ã§ã‚»ãƒƒãƒˆ, ESC)", 0, 0);
 #else
 		prt("Window Flags (<dir>, t, y, n, ESC) ", 0, 0);
 #endif
@@ -1380,7 +1380,7 @@ static void do_cmd_options_win(void)
 
 			/* Unused option */
 #ifdef JP
-			if (!str) str = "(Ì¤»ÈÍÑ)";
+			if (!str) str = "(æœªä½¿ç”¨)";
 #else
 			if (!str) str = "(Unused option)";
 #endif
@@ -1508,22 +1508,22 @@ static struct opts
 option_fields[OPT_NUM] =
 {
 #ifdef JP
-	{ '1', "    ¥­¡¼ÆşÎÏ     ¥ª¥×¥·¥ç¥ó", 3 },
-	{ '2', "    ²èÌÌ½ĞÎÏ     ¥ª¥×¥·¥ç¥ó", 4 },
-	{ '3', "  ¥²¡¼¥à¥×¥ì¥¤   ¥ª¥×¥·¥ç¥ó", 5 },
-	{ '4', "  ¹ÔÆ°Ãæ»ß´Ø·¸   ¥ª¥×¥·¥ç¥ó", 6 },
-	{ '5', "     ¸úÎ¨²½      ¥ª¥×¥·¥ç¥ó", 7 },
-	{ '6', "  ´Ê°×¼«Æ°ÇË²õ   ¥ª¥×¥·¥ç¥ó", 8 },
-	{ '7', "      ·Ù¹ğ       ¥ª¥×¥·¥ç¥ó", 9 },
-	{ 'r', "   ¥×¥ì¥¤µ­Ï¿    ¥ª¥×¥·¥ç¥ó", 10 },
-	{ 'p', "¼«Æ°½¦¤¤¥¨¥Ç¥£¥¿", 12 },
-	{ 'd', " ´ğËÜ¥¦¥§¥¤¥ÈÎÌ", 13 },
-	{ 'a', "   ¼«Æ°¥»¡¼¥Ö    ¥ª¥×¥·¥ç¥ó", 14 },
-	{ 'w', "¥¦¥£¥ó¥É¥¦¥Õ¥é¥°", 15 },
-	{ 's', "   ÀßÄê¤ÎÊİÂ¸   ", 16 },
+	{ '1', "    ã‚­ãƒ¼å…¥åŠ›     ã‚ªãƒ—ã‚·ãƒ§ãƒ³", 3 },
+	{ '2', "    ç”»é¢å‡ºåŠ›     ã‚ªãƒ—ã‚·ãƒ§ãƒ³", 4 },
+	{ '3', "  ã‚²ãƒ¼ãƒ ãƒ—ãƒ¬ã‚¤   ã‚ªãƒ—ã‚·ãƒ§ãƒ³", 5 },
+	{ '4', "  è¡Œå‹•ä¸­æ­¢é–¢ä¿‚   ã‚ªãƒ—ã‚·ãƒ§ãƒ³", 6 },
+	{ '5', "     åŠ¹ç‡åŒ–      ã‚ªãƒ—ã‚·ãƒ§ãƒ³", 7 },
+	{ '6', "  ç°¡æ˜“è‡ªå‹•ç ´å£Š   ã‚ªãƒ—ã‚·ãƒ§ãƒ³", 8 },
+	{ '7', "      è­¦å‘Š       ã‚ªãƒ—ã‚·ãƒ§ãƒ³", 9 },
+	{ 'r', "   ãƒ—ãƒ¬ã‚¤è¨˜éŒ²    ã‚ªãƒ—ã‚·ãƒ§ãƒ³", 10 },
+	{ 'p', "è‡ªå‹•æ‹¾ã„ã‚¨ãƒ‡ã‚£ã‚¿", 12 },
+	{ 'd', " åŸºæœ¬ã‚¦ã‚§ã‚¤ãƒˆé‡", 13 },
+	{ 'a', "   è‡ªå‹•ã‚»ãƒ¼ãƒ–    ã‚ªãƒ—ã‚·ãƒ§ãƒ³", 14 },
+	{ 'w', "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ•ãƒ©ã‚°", 15 },
+	{ 's', "   è¨­å®šã®ä¿å­˜   ", 16 },
 
-	{ 'b', "      ½é´ü       ¥ª¥×¥·¥ç¥ó", 18 },
-	{ 'c', "      º¾µ½       ¥ª¥×¥·¥ç¥ó", 19 },
+	{ 'b', "      åˆæœŸ       ã‚ªãƒ—ã‚·ãƒ§ãƒ³", 18 },
+	{ 'c', "      è©æ¬º       ã‚ªãƒ—ã‚·ãƒ§ãƒ³", 19 },
 #else
 	{ '1', "Input Options", 3 },
 	{ '2', "Output Options", 4 },
@@ -1572,7 +1572,7 @@ void do_cmd_options(void)
 
 		/* Why are we here */
 #ifdef JP
-		prt("[ ¥ª¥×¥·¥ç¥ó¤ÎÀßÄê ]", 1, 0);
+		prt("[ ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®è¨­å®š ]", 1, 0);
 #else
 		prt("TinyAngband options", 1, 0);
 #endif
@@ -1589,7 +1589,7 @@ void do_cmd_options(void)
 			}
 
 #ifdef JP
-			prt("<Êı¸ş>¤Ç°ÜÆ°, Enter¤Ç·èÄê, ESC¤Ç¥­¥ã¥ó¥»¥ë: ", 21, 0);
+			prt("<æ–¹å‘>ã§ç§»å‹•, Enterã§æ±ºå®š, ESCã§ã‚­ãƒ£ãƒ³ã‚»ãƒ«: ", 21, 0);
 #else
 			prt("Move to <dir>, Select to Enter, Cancel to ESC: ", 0, 0);
 #endif
@@ -1638,7 +1638,7 @@ void do_cmd_options(void)
 			{
 				/* Process the general options */
 #ifdef JP
-				do_cmd_options_aux(1, "¥­¡¼ÆşÎÏ¥ª¥×¥·¥ç¥ó");
+				do_cmd_options_aux(1, "ã‚­ãƒ¼å…¥åŠ›ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
 #else
 				do_cmd_options_aux(1, "Input Options");
 #endif
@@ -1650,7 +1650,7 @@ void do_cmd_options(void)
 			{
 				/* Spawn */
 #ifdef JP
-				do_cmd_options_aux(2, "²èÌÌ½ĞÎÏ¥ª¥×¥·¥ç¥ó");
+				do_cmd_options_aux(2, "ç”»é¢å‡ºåŠ›ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
 #else
 				do_cmd_options_aux(2, "Output Options");
 #endif
@@ -1662,7 +1662,7 @@ void do_cmd_options(void)
 			{
 				/* Spawn */
 #ifdef JP
-				do_cmd_options_aux(3, "¥²¡¼¥à¥×¥ì¥¤¡¦¥ª¥×¥·¥ç¥ó");
+				do_cmd_options_aux(3, "ã‚²ãƒ¼ãƒ ãƒ—ãƒ¬ã‚¤ãƒ»ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
 #else
 				do_cmd_options_aux(3, "Game-Play Options");
 #endif
@@ -1674,7 +1674,7 @@ void do_cmd_options(void)
 			{
 				/* Spawn */
 #ifdef JP
-				do_cmd_options_aux(4, "¹ÔÆ°Ãæ»ß´Ø·¸¤Î¥ª¥×¥·¥ç¥ó");
+				do_cmd_options_aux(4, "è¡Œå‹•ä¸­æ­¢é–¢ä¿‚ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
 #else
 				do_cmd_options_aux(4, "Disturbance Options");
 #endif
@@ -1685,7 +1685,7 @@ void do_cmd_options(void)
 			case '5':
 			{
 #ifdef JP
-				do_cmd_options_aux(5, "¸úÎ¨²½¥ª¥×¥·¥ç¥ó");
+				do_cmd_options_aux(5, "åŠ¹ç‡åŒ–ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
 #else
 				do_cmd_options_aux(5, "Efficiency Options");
 #endif
@@ -1697,7 +1697,7 @@ void do_cmd_options(void)
 			{
 				/* Spawn */
 #ifdef JP
-				do_cmd_options_aux(7, "´Ê°×¼«Æ°ÇË²õ¥ª¥×¥·¥ç¥ó");
+				do_cmd_options_aux(7, "ç°¡æ˜“è‡ªå‹•ç ´å£Šã‚ªãƒ—ã‚·ãƒ§ãƒ³");
 #else
 				do_cmd_options_aux(7, "Object auto-destruction Options");
 #endif
@@ -1707,7 +1707,7 @@ void do_cmd_options(void)
 			case '7':
 			{
 #ifdef JP
-				do_cmd_options_hitpoint_warning("·Ù¹ğ¥ª¥×¥·¥ç¥ó");
+				do_cmd_options_hitpoint_warning("è­¦å‘Šã‚ªãƒ—ã‚·ãƒ§ãƒ³");
 #else
 				do_cmd_options_hitpoint_warning("Warning Option");
 #endif
@@ -1719,7 +1719,7 @@ void do_cmd_options(void)
 			{
 				/* Spawn */
 #ifdef JP
-				do_cmd_options_aux(8, "¥²¡¼¥àÆñ°×ÅÙ¥ª¥×¥·¥ç¥ó");
+				do_cmd_options_aux(8, "ã‚²ãƒ¼ãƒ é›£æ˜“åº¦ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
 #else
 				do_cmd_options_aux(8, "Difficulty Options");
 #endif
@@ -1731,7 +1731,7 @@ void do_cmd_options(void)
 			{
 				/* Spawn */
 #ifdef JP
-				do_cmd_options_aux(9, "¥×¥ì¥¤µ­Ï¿¥ª¥×¥·¥ç¥ó");
+				do_cmd_options_aux(9, "ãƒ—ãƒ¬ã‚¤è¨˜éŒ²ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
 #else
 				do_cmd_options_aux(9, "Play record Options");
 #endif
@@ -1743,7 +1743,7 @@ void do_cmd_options(void)
 			{
 				/* Spawn */
 #ifdef JP
-				do_cmd_options_aux(6, (!wizard || !allow_debug_opts) ? "½é´ü¥ª¥×¥·¥ç¥ó(»²¾È¤Î¤ß)" : "½é´ü¥ª¥×¥·¥ç¥ó");
+				do_cmd_options_aux(6, (!wizard || !allow_debug_opts) ? "åˆæœŸã‚ªãƒ—ã‚·ãƒ§ãƒ³(å‚ç…§ã®ã¿)" : "åˆæœŸã‚ªãƒ—ã‚·ãƒ§ãƒ³");
 #else
 				do_cmd_options_aux(6, (!wizard || !allow_debug_opts) ? "Birth Options(browse only)" : "Birth Options");
 #endif
@@ -1762,7 +1762,7 @@ void do_cmd_options(void)
 
 				/* Spawn */
 #ifdef JP
-				do_cmd_options_cheat("º¾µ½»Õ¤Ï·è¤·¤Æ¾¡Íø¤Ç¤­¤Ê¤¤¡ª");
+				do_cmd_options_cheat("è©æ¬ºå¸«ã¯æ±ºã—ã¦å‹åˆ©ã§ããªã„ï¼");
 #else
 				do_cmd_options_cheat("Cheaters never win");
 #endif
@@ -1772,7 +1772,7 @@ void do_cmd_options(void)
 			case 'a':
 			{
 #ifdef JP
-				do_cmd_options_autosave("¼«Æ°¥»¡¼¥Ö");
+				do_cmd_options_autosave("è‡ªå‹•ã‚»ãƒ¼ãƒ–");
 #else
 				do_cmd_options_autosave("Autosave");
 #endif
@@ -1804,7 +1804,7 @@ void do_cmd_options(void)
 				/* Prompt */
 				clear_from(17);
 #ifdef JP
-				prt("¥³¥Ş¥ó¥É: ´ğËÜ¥¦¥§¥¤¥ÈÎÌ", 18, 0);
+				prt("ã‚³ãƒãƒ³ãƒ‰: åŸºæœ¬ã‚¦ã‚§ã‚¤ãƒˆé‡", 18, 0);
 #else
 				prt("Command: Base Delay Factor", 18, 0);
 #endif
@@ -1814,14 +1814,14 @@ void do_cmd_options(void)
 				{
 					int msec = delay_factor * delay_factor * delay_factor;
 #ifdef JP
-					prt(format("¸½ºß¤Î¥¦¥§¥¤¥È: %d (%d¥ß¥êÉÃ)",
+					prt(format("ç¾åœ¨ã®ã‚¦ã‚§ã‚¤ãƒˆ: %d (%dãƒŸãƒªç§’)",
 #else
 					prt(format("Current base delay factor: %d (%d msec)",
 #endif
 
 						   delay_factor, msec), 22, 0);
 #ifdef JP
-					prt("¥¦¥§¥¤¥È (0-9) ESC¤Ç·èÄê: ", 20, 0);
+					prt("ã‚¦ã‚§ã‚¤ãƒˆ (0-9) ESCã§æ±ºå®š: ", 20, 0);
 #else
 					prt("Delay Factor (0-9 or ESC to accept): ", 20, 0);
 #endif
@@ -1875,7 +1875,7 @@ void do_cmd_options(void)
 
 				/* Success message */
 #ifdef JP
-				msg_print("¥Ç¥Õ¥©¥ë¥È¥ª¥×¥·¥ç¥ó¤òÊİÂ¸¤·¤Ş¤·¤¿¡£");
+				msg_print("ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚");
 #else
 				msg_print("Saved default options.");
 #endif
@@ -1918,7 +1918,7 @@ void do_cmd_pref(void)
 
 	/* Ask for a "user pref command" */
 #ifdef JP
-	if (!get_string("ÀßÄêÊÑ¹¹¥³¥Ş¥ó¥É: ", buf, 80)) return;
+	if (!get_string("è¨­å®šå¤‰æ›´ã‚³ãƒãƒ³ãƒ‰: ", buf, 80)) return;
 #else
 	if (!get_string("Pref: ", buf, 80)) return;
 #endif
@@ -1931,7 +1931,7 @@ void do_cmd_pref(void)
 void do_cmd_reload_autopick(void)
 {
 #ifdef JP
-	if (!get_check("¼«Æ°½¦¤¤ÀßÄê¥Õ¥¡¥¤¥ë¤ò¥í¡¼¥É¤·¤Ş¤¹¤«? ")) return;
+	if (!get_check("è‡ªå‹•æ‹¾ã„è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ­ãƒ¼ãƒ‰ã—ã¾ã™ã‹? ")) return;
 #else
 	if (!get_check("Reload auto-pick preference file? ")) return;
 #endif
@@ -1964,7 +1964,7 @@ static errr macro_dump(cptr fname)
 
 	/* Start dumping */
 #ifdef JP
-	auto_dump_printf("\n# ¼«Æ°¥Ş¥¯¥í¥»¡¼¥Ö\n\n");
+	auto_dump_printf("\n# è‡ªå‹•ãƒã‚¯ãƒ­ã‚»ãƒ¼ãƒ–\n\n");
 #else
 	auto_dump_printf("\n# Automatic macro dump\n\n");
 #endif
@@ -2121,7 +2121,7 @@ static errr keymap_dump(cptr fname)
 
 	/* Start dumping */
 #ifdef JP
-	auto_dump_printf("\n# ¼«Æ°¥­¡¼ÇÛÃÖ¥»¡¼¥Ö\n\n");
+	auto_dump_printf("\n# è‡ªå‹•ã‚­ãƒ¼é…ç½®ã‚»ãƒ¼ãƒ–\n\n");
 #else
 	auto_dump_printf("\n# Automatic keymap dump\n\n");
 #endif
@@ -2205,14 +2205,14 @@ void do_cmd_macros(void)
 
 		/* Describe */
 #ifdef JP
-		prt("[ ¥Ş¥¯¥í¤ÎÀßÄê ]", 2, 0);
+		prt("[ ãƒã‚¯ãƒ­ã®è¨­å®š ]", 2, 0);
 #else
 		prt("Interact with Macros", 2, 0);
 #endif
 
 		/* Describe that action */
 #ifdef JP
-		prt("¥Ş¥¯¥í¹ÔÆ°¤¬(¤â¤·¤¢¤ì¤Ğ)²¼¤ËÉ½¼¨¤µ¤ì¤Ş¤¹:", 20, 0);
+		prt("ãƒã‚¯ãƒ­è¡Œå‹•ãŒ(ã‚‚ã—ã‚ã‚Œã°)ä¸‹ã«è¡¨ç¤ºã•ã‚Œã¾ã™:", 20, 0);
 #else
 		prt("Current action (if any) shown below:", 20, 0);
 #endif
@@ -2226,22 +2226,22 @@ void do_cmd_macros(void)
 
 		/* Selections */
 #ifdef JP
-		prt("(1) ¥æ¡¼¥¶¡¼ÀßÄê¥Õ¥¡¥¤¥ë¤Î¥í¡¼¥É", 4, 5);
+		prt("(1) ãƒ¦ãƒ¼ã‚¶ãƒ¼è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ­ãƒ¼ãƒ‰", 4, 5);
 #else
 		prt("(1) Load a user pref file", 4, 5);
 #endif
 
 #ifdef ALLOW_MACROS
 #ifdef JP
-		prt("(2) ¥Õ¥¡¥¤¥ë¤Ë¥Ş¥¯¥í¤òÄÉ²Ã", 5, 5);
-		prt("(3) ¥Ş¥¯¥í¤Î³ÎÇ§", 6, 5);
-		prt("(4) ¥Ş¥¯¥í¤ÎºîÀ®", 7, 5);
-		prt("(5) ¥Ş¥¯¥í¤Îºï½ü", 8, 5);
-		prt("(6) ¥Õ¥¡¥¤¥ë¤Ë¥­¡¼ÇÛÃÖ¤òÄÉ²Ã", 9, 5);
-		prt("(7) ¥­¡¼ÇÛÃÖ¤Î³ÎÇ§", 10, 5);
-		prt("(8) ¥­¡¼ÇÛÃÖ¤ÎºîÀ®", 11, 5);
-		prt("(9) ¥­¡¼ÇÛÃÖ¤Îºï½ü", 12, 5);
-		prt("(0) ¥Ş¥¯¥í¹ÔÆ°¤ÎÆşÎÏ", 13, 5);
+		prt("(2) ãƒ•ã‚¡ã‚¤ãƒ«ã«ãƒã‚¯ãƒ­ã‚’è¿½åŠ ", 5, 5);
+		prt("(3) ãƒã‚¯ãƒ­ã®ç¢ºèª", 6, 5);
+		prt("(4) ãƒã‚¯ãƒ­ã®ä½œæˆ", 7, 5);
+		prt("(5) ãƒã‚¯ãƒ­ã®å‰Šé™¤", 8, 5);
+		prt("(6) ãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚­ãƒ¼é…ç½®ã‚’è¿½åŠ ", 9, 5);
+		prt("(7) ã‚­ãƒ¼é…ç½®ã®ç¢ºèª", 10, 5);
+		prt("(8) ã‚­ãƒ¼é…ç½®ã®ä½œæˆ", 11, 5);
+		prt("(9) ã‚­ãƒ¼é…ç½®ã®å‰Šé™¤", 12, 5);
+		prt("(0) ãƒã‚¯ãƒ­è¡Œå‹•ã®å…¥åŠ›", 13, 5);
 #else
 		prt("(2) Append macros to a file", 5, 5);
 		prt("(3) Query a macro", 6, 5);
@@ -2258,7 +2258,7 @@ void do_cmd_macros(void)
 
 		/* Prompt */
 #ifdef JP
-		prt("¥³¥Ş¥ó¥É: ", 16, 0);
+		prt("ã‚³ãƒãƒ³ãƒ‰: ", 16, 0);
 #else
 		prt("Command: ", 16, 0);
 #endif
@@ -2276,14 +2276,14 @@ void do_cmd_macros(void)
 
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥æ¡¼¥¶¡¼ÀßÄê¥Õ¥¡¥¤¥ë¤Î¥í¡¼¥É", 16, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ãƒ¦ãƒ¼ã‚¶ãƒ¼è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ­ãƒ¼ãƒ‰", 16, 0);
 #else
 			prt("Command: Load a user pref file", 16, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥Õ¥¡¥¤¥ë: ", 18, 0);
+			prt("ãƒ•ã‚¡ã‚¤ãƒ«: ", 18, 0);
 #else
 			prt("File: ", 18, 0);
 #endif
@@ -2299,7 +2299,7 @@ void do_cmd_macros(void)
 			if (-2 == err)
 			{
 #ifdef JP
-				msg_format("É¸½à¤ÎÀßÄê¥Õ¥¡¥¤¥ë'%s'¤òÆÉ¤ß¹ş¤ß¤Ş¤·¤¿¡£", tmp);
+				msg_format("æ¨™æº–ã®è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«'%s'ã‚’èª­ã¿è¾¼ã¿ã¾ã—ãŸã€‚", tmp);
 #else
 				msg_format("Loaded default '%s'.", tmp);
 #endif
@@ -2308,7 +2308,7 @@ void do_cmd_macros(void)
 			{
 				/* Prompt */
 #ifdef JP
-				msg_format("'%s'¤ÎÆÉ¤ß¹ş¤ß¤Ë¼ºÇÔ¤·¤Ş¤·¤¿¡ª", tmp);
+				msg_format("'%s'ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸï¼", tmp);
 #else
 				msg_format("Failed to load '%s'!");
 #endif
@@ -2316,7 +2316,7 @@ void do_cmd_macros(void)
 			else
 			{
 #ifdef JP
-				msg_format("'%s'¤òÆÉ¤ß¹ş¤ß¤Ş¤·¤¿¡£", tmp);
+				msg_format("'%s'ã‚’èª­ã¿è¾¼ã¿ã¾ã—ãŸã€‚", tmp);
 #else
 				msg_format("Loaded '%s'.", tmp);
 #endif
@@ -2330,14 +2330,14 @@ void do_cmd_macros(void)
 		{
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥Ş¥¯¥í¤ò¥Õ¥¡¥¤¥ë¤ËÄÉ²Ã¤¹¤ë", 16, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ãƒã‚¯ãƒ­ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«è¿½åŠ ã™ã‚‹", 16, 0);
 #else
 			prt("Command: Append macros to a file", 16, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥Õ¥¡¥¤¥ë: ", 18, 0);
+			prt("ãƒ•ã‚¡ã‚¤ãƒ«: ", 18, 0);
 #else
 			prt("File: ", 18, 0);
 #endif
@@ -2353,7 +2353,7 @@ void do_cmd_macros(void)
 
 			/* Prompt */
 #ifdef JP
-			msg_print("¥Ş¥¯¥í¤òÄÉ²Ã¤·¤Ş¤·¤¿¡£");
+			msg_print("ãƒã‚¯ãƒ­ã‚’è¿½åŠ ã—ã¾ã—ãŸã€‚");
 #else
 			msg_print("Appended macros.");
 #endif
@@ -2366,14 +2366,14 @@ void do_cmd_macros(void)
 
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥Ş¥¯¥í¤Î³ÎÇ§", 16, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ãƒã‚¯ãƒ­ã®ç¢ºèª", 16, 0);
 #else
 			prt("Command: Query a macro", 16, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥È¥ê¥¬¡¼¥­¡¼: ", 18, 0);
+			prt("ãƒˆãƒªã‚¬ãƒ¼ã‚­ãƒ¼: ", 18, 0);
 #else
 			prt("Trigger: ", 18, 0);
 #endif
@@ -2389,7 +2389,7 @@ void do_cmd_macros(void)
 			{
 				/* Prompt */
 #ifdef JP
-				msg_print("¤½¤Î¥­¡¼¤Ë¤Ï¥Ş¥¯¥í¤ÏÄêµÁ¤µ¤ì¤Æ¤¤¤Ş¤»¤ó¡£");
+				msg_print("ãã®ã‚­ãƒ¼ã«ã¯ãƒã‚¯ãƒ­ã¯å®šç¾©ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚");
 #else
 				msg_print("Found no macro.");
 #endif
@@ -2409,7 +2409,7 @@ void do_cmd_macros(void)
 
 				/* Prompt */
 #ifdef JP
-				msg_print("¥Ş¥¯¥í¤ò³ÎÇ§¤·¤Ş¤·¤¿¡£");
+				msg_print("ãƒã‚¯ãƒ­ã‚’ç¢ºèªã—ã¾ã—ãŸã€‚");
 #else
 				msg_print("Found a macro.");
 #endif
@@ -2421,14 +2421,14 @@ void do_cmd_macros(void)
 		{
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥Ş¥¯¥í¤ÎºîÀ®", 16, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ãƒã‚¯ãƒ­ã®ä½œæˆ", 16, 0);
 #else
 			prt("Command: Create a macro", 16, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥È¥ê¥¬¡¼¥­¡¼: ", 18, 0);
+			prt("ãƒˆãƒªã‚¬ãƒ¼ã‚­ãƒ¼: ", 18, 0);
 #else
 			prt("Trigger: ", 18, 0);
 #endif
@@ -2441,14 +2441,14 @@ void do_cmd_macros(void)
 
 			/* Help message */
 #ifdef JP
-			c_prt(TERM_L_RED, "¥«¡¼¥½¥ë¥­¡¼¤Îº¸±¦¤Ç¥«¡¼¥½¥ë°ÌÃÖ¤ò°ÜÆ°¡£Backspace¤«Delete¤Ç°ìÊ¸»úºï½ü¡£", 22, 0);
+			c_prt(TERM_L_RED, "ã‚«ãƒ¼ã‚½ãƒ«ã‚­ãƒ¼ã®å·¦å³ã§ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®ã‚’ç§»å‹•ã€‚Backspaceã‹Deleteã§ä¸€æ–‡å­—å‰Šé™¤ã€‚", 22, 0);
 #else
 			c_prt(TERM_L_RED, "Press Left/Right arrow keys to move cursor. Backspace/Delete to delete a char.", 22, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥Ş¥¯¥í¹ÔÆ°: ", 20, 0);
+			prt("ãƒã‚¯ãƒ­è¡Œå‹•: ", 20, 0);
 #else
 			prt("Action: ", 20, 0);
 #endif
@@ -2467,7 +2467,7 @@ void do_cmd_macros(void)
 
 				/* Prompt */
 #ifdef JP
-				msg_print("¥Ş¥¯¥í¤òÄÉ²Ã¤·¤Ş¤·¤¿¡£");
+				msg_print("ãƒã‚¯ãƒ­ã‚’è¿½åŠ ã—ã¾ã—ãŸã€‚");
 #else
 				msg_print("Added a macro.");
 #endif
@@ -2479,14 +2479,14 @@ void do_cmd_macros(void)
 		{
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥Ş¥¯¥í¤Îºï½ü", 16, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ãƒã‚¯ãƒ­ã®å‰Šé™¤", 16, 0);
 #else
 			prt("Command: Remove a macro", 16, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥È¥ê¥¬¡¼¥­¡¼: ", 18, 0);
+			prt("ãƒˆãƒªã‚¬ãƒ¼ã‚­ãƒ¼: ", 18, 0);
 #else
 			prt("Trigger: ", 18, 0);
 #endif
@@ -2499,7 +2499,7 @@ void do_cmd_macros(void)
 
 			/* Prompt */
 #ifdef JP
-			msg_print("¥Ş¥¯¥í¤òºï½ü¤·¤Ş¤·¤¿¡£");
+			msg_print("ãƒã‚¯ãƒ­ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚");
 #else
 			msg_print("Removed a macro.");
 #endif
@@ -2510,14 +2510,14 @@ void do_cmd_macros(void)
 		{
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥­¡¼ÇÛÃÖ¤ò¥Õ¥¡¥¤¥ë¤ËÄÉ²Ã¤¹¤ë", 16, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ã‚­ãƒ¼é…ç½®ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«è¿½åŠ ã™ã‚‹", 16, 0);
 #else
 			prt("Command: Append keymaps to a file", 16, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥Õ¥¡¥¤¥ë: ", 18, 0);
+			prt("ãƒ•ã‚¡ã‚¤ãƒ«: ", 18, 0);
 #else
 			prt("File: ", 18, 0);
 #endif
@@ -2533,7 +2533,7 @@ void do_cmd_macros(void)
 
 			/* Prompt */
 #ifdef JP
-			msg_print("¥­¡¼ÇÛÃÖ¤òÄÉ²Ã¤·¤Ş¤·¤¿¡£");
+			msg_print("ã‚­ãƒ¼é…ç½®ã‚’è¿½åŠ ã—ã¾ã—ãŸã€‚");
 #else
 			msg_print("Appended keymaps.");
 #endif
@@ -2546,14 +2546,14 @@ void do_cmd_macros(void)
 
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥­¡¼ÇÛÃÖ¤Î³ÎÇ§", 16, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ã‚­ãƒ¼é…ç½®ã®ç¢ºèª", 16, 0);
 #else
 			prt("Command: Query a keymap", 16, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("²¡¤¹¥­¡¼: ", 18, 0);
+			prt("æŠ¼ã™ã‚­ãƒ¼: ", 18, 0);
 #else
 			prt("Keypress: ", 18, 0);
 #endif
@@ -2569,7 +2569,7 @@ void do_cmd_macros(void)
 			{
 				/* Prompt */
 #ifdef JP
-				msg_print("¥­¡¼ÇÛÃÖ¤ÏÄêµÁ¤µ¤ì¤Æ¤¤¤Ş¤»¤ó¡£");
+				msg_print("ã‚­ãƒ¼é…ç½®ã¯å®šç¾©ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚");
 #else
 				msg_print("Found no keymap.");
 #endif
@@ -2589,7 +2589,7 @@ void do_cmd_macros(void)
 
 				/* Prompt */
 #ifdef JP
-				msg_print("¥­¡¼ÇÛÃÖ¤ò³ÎÇ§¤·¤Ş¤·¤¿¡£");
+				msg_print("ã‚­ãƒ¼é…ç½®ã‚’ç¢ºèªã—ã¾ã—ãŸã€‚");
 #else
 				msg_print("Found a keymap.");
 #endif
@@ -2601,14 +2601,14 @@ void do_cmd_macros(void)
 		{
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥­¡¼ÇÛÃÖ¤ÎºîÀ®", 16, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ã‚­ãƒ¼é…ç½®ã®ä½œæˆ", 16, 0);
 #else
 			prt("Command: Create a keymap", 16, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("²¡¤¹¥­¡¼: ", 18, 0);
+			prt("æŠ¼ã™ã‚­ãƒ¼: ", 18, 0);
 #else
 			prt("Keypress: ", 18, 0);
 #endif
@@ -2621,14 +2621,14 @@ void do_cmd_macros(void)
 
 			/* Help message */
 #ifdef JP
-			c_prt(TERM_L_RED, "¥«¡¼¥½¥ë¥­¡¼¤Îº¸±¦¤Ç¥«¡¼¥½¥ë°ÌÃÖ¤ò°ÜÆ°¡£Backspace¤«Delete¤Ç°ìÊ¸»úºï½ü¡£", 22, 0);
+			c_prt(TERM_L_RED, "ã‚«ãƒ¼ã‚½ãƒ«ã‚­ãƒ¼ã®å·¦å³ã§ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®ã‚’ç§»å‹•ã€‚Backspaceã‹Deleteã§ä¸€æ–‡å­—å‰Šé™¤ã€‚", 22, 0);
 #else
 			c_prt(TERM_L_RED, "Press Left/Right arrow keys to move cursor. Backspace/Delete to delete a char.", 22, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¹ÔÆ°: ", 20, 0);
+			prt("è¡Œå‹•: ", 20, 0);
 #else
 			prt("Action: ", 20, 0);
 #endif
@@ -2650,7 +2650,7 @@ void do_cmd_macros(void)
 
 				/* Prompt */
 #ifdef JP
-				msg_print("¥­¡¼ÇÛÃÖ¤òÄÉ²Ã¤·¤Ş¤·¤¿¡£");
+				msg_print("ã‚­ãƒ¼é…ç½®ã‚’è¿½åŠ ã—ã¾ã—ãŸã€‚");
 #else
 				msg_print("Added a keymap.");
 #endif
@@ -2662,14 +2662,14 @@ void do_cmd_macros(void)
 		{
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥­¡¼ÇÛÃÖ¤Îºï½ü", 16, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ã‚­ãƒ¼é…ç½®ã®å‰Šé™¤", 16, 0);
 #else
 			prt("Command: Remove a keymap", 16, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("²¡¤¹¥­¡¼: ", 18, 0);
+			prt("æŠ¼ã™ã‚­ãƒ¼: ", 18, 0);
 #else
 			prt("Keypress: ", 18, 0);
 #endif
@@ -2685,7 +2685,7 @@ void do_cmd_macros(void)
 
 			/* Prompt */
 #ifdef JP
-			msg_print("¥­¡¼ÇÛÃÖ¤òºï½ü¤·¤Ş¤·¤¿¡£");
+			msg_print("ã‚­ãƒ¼é…ç½®ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚");
 #else
 			msg_print("Removed a keymap.");
 #endif
@@ -2696,7 +2696,7 @@ void do_cmd_macros(void)
 		{
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥Ş¥¯¥í¹ÔÆ°¤ÎÆşÎÏ", 16, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ãƒã‚¯ãƒ­è¡Œå‹•ã®å…¥åŠ›", 16, 0);
 #else
 			prt("Command: Enter a new action", 16, 0);
 #endif
@@ -2706,14 +2706,14 @@ void do_cmd_macros(void)
 
 			/* Help message */
 #ifdef JP
-			c_prt(TERM_L_RED, "¥«¡¼¥½¥ë¥­¡¼¤Îº¸±¦¤Ç¥«¡¼¥½¥ë°ÌÃÖ¤ò°ÜÆ°¡£Backspace¤«Delete¤Ç°ìÊ¸»úºï½ü¡£", 22, 0);
+			c_prt(TERM_L_RED, "ã‚«ãƒ¼ã‚½ãƒ«ã‚­ãƒ¼ã®å·¦å³ã§ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®ã‚’ç§»å‹•ã€‚Backspaceã‹Deleteã§ä¸€æ–‡å­—å‰Šé™¤ã€‚", 22, 0);
 #else
 			c_prt(TERM_L_RED, "Press Left/Right arrow keys to move cursor. Backspace/Delete to delete a char.", 22, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥Ş¥¯¥í¹ÔÆ°: ", 20, 0);
+			prt("ãƒã‚¯ãƒ­è¡Œå‹•: ", 20, 0);
 #else
 			prt("Action: ", 20, 0);
 #endif
@@ -2749,9 +2749,9 @@ void do_cmd_macros(void)
 static cptr lighting_level_str[F_LIT_MAX] =
 {
 #ifdef JP
-	"É¸½à¿§",
-	"ÌÀ¿§",
-	"°Å¿§",
+	"æ¨™æº–è‰²",
+	"æ˜è‰²",
+	"æš—è‰²",
 #else
 	"standard",
 	"brightly lit",
@@ -2787,29 +2787,29 @@ static bool cmd_visuals_aux(int i, int *num, int max)
 static void print_visuals_menu(cptr choice_msg)
 {
 #ifdef JP
-	prt("[ ²èÌÌÉ½¼¨¤ÎÀßÄê ]", 1, 0);
+	prt("[ ç”»é¢è¡¨ç¤ºã®è¨­å®š ]", 1, 0);
 #else
 	prt("Interact with Visuals", 1, 0);
 #endif
 
 	/* Give some choices */
 #ifdef JP
-	prt("(0) ¥æ¡¼¥¶¡¼ÀßÄê¥Õ¥¡¥¤¥ë¤Î¥í¡¼¥É", 3, 5);
+	prt("(0) ãƒ¦ãƒ¼ã‚¶ãƒ¼è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ­ãƒ¼ãƒ‰", 3, 5);
 #else
 	prt("(0) Load a user pref file", 3, 5);
 #endif
 
 #ifdef ALLOW_VISUALS
 #ifdef JP
-	prt("(1) ¥â¥ó¥¹¥¿¡¼¤Î ¿§/Ê¸»ú ¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤¹", 4, 5);
-	prt("(2) ¥¢¥¤¥Æ¥à¤Î   ¿§/Ê¸»ú ¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤¹", 5, 5);
-	prt("(3) ÃÏ·Á¤Î       ¿§/Ê¸»ú ¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤¹", 6, 5);
-	prt("(4) ¥â¥ó¥¹¥¿¡¼¤Î ¿§/Ê¸»ú ¤òÊÑ¹¹¤¹¤ë (¿ôÃÍÁàºî)", 7, 5);
-	prt("(5) ¥¢¥¤¥Æ¥à¤Î   ¿§/Ê¸»ú ¤òÊÑ¹¹¤¹¤ë (¿ôÃÍÁàºî)", 8, 5);
-	prt("(6) ÃÏ·Á¤Î       ¿§/Ê¸»ú ¤òÊÑ¹¹¤¹¤ë (¿ôÃÍÁàºî)", 9, 5);
-	prt("(7) ¥â¥ó¥¹¥¿¡¼¤Î ¿§/Ê¸»ú ¤òÊÑ¹¹¤¹¤ë (¥·¥ó¥Ü¥ë¥¨¥Ç¥£¥¿)", 10, 5);
-	prt("(8) ¥¢¥¤¥Æ¥à¤Î   ¿§/Ê¸»ú ¤òÊÑ¹¹¤¹¤ë (¥·¥ó¥Ü¥ë¥¨¥Ç¥£¥¿)", 11, 5);
-	prt("(9) ÃÏ·Á¤Î       ¿§/Ê¸»ú ¤òÊÑ¹¹¤¹¤ë (¥·¥ó¥Ü¥ë¥¨¥Ç¥£¥¿)", 12, 5);
+	prt("(1) ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã® è‰²/æ–‡å­— ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã™", 4, 5);
+	prt("(2) ã‚¢ã‚¤ãƒ†ãƒ ã®   è‰²/æ–‡å­— ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã™", 5, 5);
+	prt("(3) åœ°å½¢ã®       è‰²/æ–‡å­— ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã™", 6, 5);
+	prt("(4) ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã® è‰²/æ–‡å­— ã‚’å¤‰æ›´ã™ã‚‹ (æ•°å€¤æ“ä½œ)", 7, 5);
+	prt("(5) ã‚¢ã‚¤ãƒ†ãƒ ã®   è‰²/æ–‡å­— ã‚’å¤‰æ›´ã™ã‚‹ (æ•°å€¤æ“ä½œ)", 8, 5);
+	prt("(6) åœ°å½¢ã®       è‰²/æ–‡å­— ã‚’å¤‰æ›´ã™ã‚‹ (æ•°å€¤æ“ä½œ)", 9, 5);
+	prt("(7) ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã® è‰²/æ–‡å­— ã‚’å¤‰æ›´ã™ã‚‹ (ã‚·ãƒ³ãƒœãƒ«ã‚¨ãƒ‡ã‚£ã‚¿)", 10, 5);
+	prt("(8) ã‚¢ã‚¤ãƒ†ãƒ ã®   è‰²/æ–‡å­— ã‚’å¤‰æ›´ã™ã‚‹ (ã‚·ãƒ³ãƒœãƒ«ã‚¨ãƒ‡ã‚£ã‚¿)", 11, 5);
+	prt("(9) åœ°å½¢ã®       è‰²/æ–‡å­— ã‚’å¤‰æ›´ã™ã‚‹ (ã‚·ãƒ³ãƒœãƒ«ã‚¨ãƒ‡ã‚£ã‚¿)", 12, 5);
 #else
 	prt("(1) Dump monster attr/chars", 4, 5);
 	prt("(2) Dump object attr/chars", 5, 5);
@@ -2825,14 +2825,14 @@ static void print_visuals_menu(cptr choice_msg)
 #endif /* ALLOW_VISUALS */
 
 #ifdef JP
-	prt("(R) ²èÌÌÉ½¼¨ÊıË¡¤Î½é´ü²½", 13, 5);
+	prt("(R) ç”»é¢è¡¨ç¤ºæ–¹æ³•ã®åˆæœŸåŒ–", 13, 5);
 #else
 	prt("(R) Reset visuals", 13, 5);
 #endif
 
 	/* Prompt */
 #ifdef JP
-	prt(format("¥³¥Ş¥ó¥É: %s", choice_msg ? choice_msg : ""), 15, 0);
+	prt(format("ã‚³ãƒãƒ³ãƒ‰: %s", choice_msg ? choice_msg : ""), 15, 0);
 #else
 	prt(format("Command: %s", choice_msg ? choice_msg : ""), 15, 0);
 #endif
@@ -2882,14 +2882,14 @@ void do_cmd_visuals(void)
 		case '0':
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥æ¡¼¥¶¡¼ÀßÄê¥Õ¥¡¥¤¥ë¤Î¥í¡¼¥É", 15, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ãƒ¦ãƒ¼ã‚¶ãƒ¼è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ­ãƒ¼ãƒ‰", 15, 0);
 #else
 			prt("Command: Load a user pref file", 15, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥Õ¥¡¥¤¥ë: ", 17, 0);
+			prt("ãƒ•ã‚¡ã‚¤ãƒ«: ", 17, 0);
 #else
 			prt("File: ", 17, 0);
 #endif
@@ -2915,14 +2915,14 @@ void do_cmd_visuals(void)
 
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥â¥ó¥¹¥¿¡¼¤Î[¿§/Ê¸»ú]¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤·¤Ş¤¹", 15, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®[è‰²/æ–‡å­—]ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã™", 15, 0);
 #else
 			prt("Command: Dump monster attr/chars", 15, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥Õ¥¡¥¤¥ë: ", 17, 0);
+			prt("ãƒ•ã‚¡ã‚¤ãƒ«: ", 17, 0);
 #else
 			prt("File: ", 17, 0);
 #endif
@@ -2941,7 +2941,7 @@ void do_cmd_visuals(void)
 
 			/* Start dumping */
 #ifdef JP
-			auto_dump_printf("\n# ¥â¥ó¥¹¥¿¡¼¤Î[¿§/Ê¸»ú]¤ÎÀßÄê\n\n");
+			auto_dump_printf("\n# ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®[è‰²/æ–‡å­—]ã®è¨­å®š\n\n");
 #else
 			auto_dump_printf("\n# Monster attr/char definitions\n\n");
 #endif
@@ -2967,7 +2967,7 @@ void do_cmd_visuals(void)
 
 			/* Message */
 #ifdef JP
-			msg_print("¥â¥ó¥¹¥¿¡¼¤Î[¿§/Ê¸»ú]¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤·¤Ş¤·¤¿¡£");
+			msg_print("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®[è‰²/æ–‡å­—]ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã—ãŸã€‚");
 #else
 			msg_print("Dumped monster attr/chars.");
 #endif
@@ -2982,14 +2982,14 @@ void do_cmd_visuals(void)
 
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥¢¥¤¥Æ¥à¤Î[¿§/Ê¸»ú]¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤·¤Ş¤¹", 15, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ã‚¢ã‚¤ãƒ†ãƒ ã®[è‰²/æ–‡å­—]ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã™", 15, 0);
 #else
 			prt("Command: Dump object attr/chars", 15, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥Õ¥¡¥¤¥ë: ", 17, 0);
+			prt("ãƒ•ã‚¡ã‚¤ãƒ«: ", 17, 0);
 #else
 			prt("File: ", 17, 0);
 #endif
@@ -3008,7 +3008,7 @@ void do_cmd_visuals(void)
 
 			/* Start dumping */
 #ifdef JP
-			auto_dump_printf("\n# ¥¢¥¤¥Æ¥à¤Î[¿§/Ê¸»ú]¤ÎÀßÄê\n\n");
+			auto_dump_printf("\n# ã‚¢ã‚¤ãƒ†ãƒ ã®[è‰²/æ–‡å­—]ã®è¨­å®š\n\n");
 #else
 			auto_dump_printf("\n# Object attr/char definitions\n\n");
 #endif
@@ -3051,7 +3051,7 @@ void do_cmd_visuals(void)
 
 			/* Message */
 #ifdef JP
-			msg_print("¥¢¥¤¥Æ¥à¤Î[¿§/Ê¸»ú]¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤·¤Ş¤·¤¿¡£");
+			msg_print("ã‚¢ã‚¤ãƒ†ãƒ ã®[è‰²/æ–‡å­—]ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã—ãŸã€‚");
 #else
 			msg_print("Dumped object attr/chars.");
 #endif
@@ -3066,14 +3066,14 @@ void do_cmd_visuals(void)
 
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ÃÏ·Á¤Î[¿§/Ê¸»ú]¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤·¤Ş¤¹", 15, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: åœ°å½¢ã®[è‰²/æ–‡å­—]ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã™", 15, 0);
 #else
 			prt("Command: Dump feature attr/chars", 15, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥Õ¥¡¥¤¥ë: ", 17, 0);
+			prt("ãƒ•ã‚¡ã‚¤ãƒ«: ", 17, 0);
 #else
 			prt("File: ", 17, 0);
 #endif
@@ -3092,7 +3092,7 @@ void do_cmd_visuals(void)
 
 			/* Start dumping */
 #ifdef JP
-			auto_dump_printf("\n# ÃÏ·Á¤Î[¿§/Ê¸»ú]¤ÎÀßÄê\n\n");
+			auto_dump_printf("\n# åœ°å½¢ã®[è‰²/æ–‡å­—]ã®è¨­å®š\n\n");
 #else
 			auto_dump_printf("\n# Feature attr/char definitions\n\n");
 #endif
@@ -3123,7 +3123,7 @@ void do_cmd_visuals(void)
 
 			/* Message */
 #ifdef JP
-			msg_print("ÃÏ·Á¤Î[¿§/Ê¸»ú]¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤·¤Ş¤·¤¿¡£");
+			msg_print("åœ°å½¢ã®[è‰²/æ–‡å­—]ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã—ãŸã€‚");
 #else
 			msg_print("Dumped feature attr/chars.");
 #endif
@@ -3135,14 +3135,14 @@ void do_cmd_visuals(void)
 		case '4':
 		{
 #ifdef JP
-			static cptr choice_msg = "¥â¥ó¥¹¥¿¡¼¤Î[¿§/Ê¸»ú]¤òÊÑ¹¹¤·¤Ş¤¹";
+			static cptr choice_msg = "ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®[è‰²/æ–‡å­—]ã‚’å¤‰æ›´ã—ã¾ã™";
 #else
 			static cptr choice_msg = "Change monster attr/chars";
 #endif
 			static int r = 0;
 
 #ifdef JP
-			prt(format("¥³¥Ş¥ó¥É: %s", choice_msg), 15, 0);
+			prt(format("ã‚³ãƒãƒ³ãƒ‰: %s", choice_msg), 15, 0);
 #else
 			prt(format("Command: %s", choice_msg), 15, 0);
 #endif
@@ -3162,7 +3162,7 @@ void do_cmd_visuals(void)
 				/* Label the object */
 #ifdef JP
 				Term_putstr(5, 17, -1, TERM_WHITE,
-					    format("¥â¥ó¥¹¥¿¡¼ = %d, Ì¾Á° = %-40.40s",
+					    format("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ = %d, åå‰ = %-40.40s",
 						   r, (r_name + r_ptr->name)));
 #else
 				Term_putstr(5, 17, -1, TERM_WHITE,
@@ -3173,7 +3173,7 @@ void do_cmd_visuals(void)
 				/* Label the Default values */
 #ifdef JP
 				Term_putstr(10, 19, -1, TERM_WHITE,
-					    format("½é´üÃÍ  ¿§ / Ê¸»ú = %3u / %3u", da, dc));
+					    format("åˆæœŸå€¤  è‰² / æ–‡å­— = %3u / %3u", da, dc));
 #else
 				Term_putstr(10, 19, -1, TERM_WHITE,
 					    format("Default attr/char = %3u / %3u", da, dc));
@@ -3185,7 +3185,7 @@ void do_cmd_visuals(void)
 				/* Label the Current values */
 #ifdef JP
 				Term_putstr(10, 20, -1, TERM_WHITE,
-					    format("¸½ºßÃÍ  ¿§ / Ê¸»ú = %3u / %3u", ca, cc));
+					    format("ç¾åœ¨å€¤  è‰² / æ–‡å­— = %3u / %3u", ca, cc));
 #else
 				Term_putstr(10, 20, -1, TERM_WHITE,
 					    format("Current attr/char = %3u / %3u", ca, cc));
@@ -3197,7 +3197,7 @@ void do_cmd_visuals(void)
 				/* Prompt */
 #ifdef JP
 				Term_putstr(0, 22, -1, TERM_WHITE,
-					    "¥³¥Ş¥ó¥É (n/N/^N/a/A/^A/c/C/^C/v/V/^V): ");
+					    "ã‚³ãƒãƒ³ãƒ‰ (n/N/^N/a/A/^A/c/C/^C/v/V/^V): ");
 #else
 				Term_putstr(0, 22, -1, TERM_WHITE,
 					    "Command (n/N/^N/a/A/^A/c/C/^C/v/V/^V): ");
@@ -3258,14 +3258,14 @@ void do_cmd_visuals(void)
 		case '5':
 		{
 #ifdef JP
-			static cptr choice_msg = "¥¢¥¤¥Æ¥à¤Î[¿§/Ê¸»ú]¤òÊÑ¹¹¤·¤Ş¤¹";
+			static cptr choice_msg = "ã‚¢ã‚¤ãƒ†ãƒ ã®[è‰²/æ–‡å­—]ã‚’å¤‰æ›´ã—ã¾ã™";
 #else
 			static cptr choice_msg = "Change object attr/chars";
 #endif
 			static int k = 0;
 
 #ifdef JP
-			prt(format("¥³¥Ş¥ó¥É: %s", choice_msg), 15, 0);
+			prt(format("ã‚³ãƒãƒ³ãƒ‰: %s", choice_msg), 15, 0);
 #else
 			prt(format("Command: %s", choice_msg), 15, 0);
 #endif
@@ -3285,7 +3285,7 @@ void do_cmd_visuals(void)
 				/* Label the object */
 #ifdef JP
 				Term_putstr(5, 17, -1, TERM_WHITE,
-					    format("¥¢¥¤¥Æ¥à = %d, Ì¾Á° = %-40.40s",
+					    format("ã‚¢ã‚¤ãƒ†ãƒ  = %d, åå‰ = %-40.40s",
 						   k, k_name + (!k_ptr->flavor ? k_ptr->name : k_ptr->flavor_name)));
 #else
 				Term_putstr(5, 17, -1, TERM_WHITE,
@@ -3296,7 +3296,7 @@ void do_cmd_visuals(void)
 				/* Label the Default values */
 #ifdef JP
 				Term_putstr(10, 19, -1, TERM_WHITE,
-					    format("½é´üÃÍ  ¿§ / Ê¸»ú = %3d / %3d", da, dc));
+					    format("åˆæœŸå€¤  è‰² / æ–‡å­— = %3d / %3d", da, dc));
 #else
 				Term_putstr(10, 19, -1, TERM_WHITE,
 					    format("Default attr/char = %3d / %3d", da, dc));
@@ -3308,7 +3308,7 @@ void do_cmd_visuals(void)
 				/* Label the Current values */
 #ifdef JP
 				Term_putstr(10, 20, -1, TERM_WHITE,
-					    format("¸½ºßÃÍ  ¿§ / Ê¸»ú = %3d / %3d", ca, cc));
+					    format("ç¾åœ¨å€¤  è‰² / æ–‡å­— = %3d / %3d", ca, cc));
 #else
 				Term_putstr(10, 20, -1, TERM_WHITE,
 					    format("Current attr/char = %3d / %3d", ca, cc));
@@ -3320,7 +3320,7 @@ void do_cmd_visuals(void)
 				/* Prompt */
 #ifdef JP
 				Term_putstr(0, 22, -1, TERM_WHITE,
-					    "¥³¥Ş¥ó¥É (n/N/^N/a/A/^A/c/C/^C/v/V/^V): ");
+					    "ã‚³ãƒãƒ³ãƒ‰ (n/N/^N/a/A/^A/c/C/^C/v/V/^V): ");
 #else
 				Term_putstr(0, 22, -1, TERM_WHITE,
 					    "Command (n/N/^N/a/A/^A/c/C/^C/v/V/^V): ");
@@ -3381,7 +3381,7 @@ void do_cmd_visuals(void)
 		case '6':
 		{
 #ifdef JP
-			static cptr choice_msg = "ÃÏ·Á¤Î[¿§/Ê¸»ú]¤òÊÑ¹¹¤·¤Ş¤¹";
+			static cptr choice_msg = "åœ°å½¢ã®[è‰²/æ–‡å­—]ã‚’å¤‰æ›´ã—ã¾ã™";
 #else
 			static cptr choice_msg = "Change feature attr/chars";
 #endif
@@ -3389,7 +3389,7 @@ void do_cmd_visuals(void)
 			static int lighting_level = F_LIT_STANDARD;
 
 #ifdef JP
-			prt(format("¥³¥Ş¥ó¥É: %s", choice_msg), 15, 0);
+			prt(format("ã‚³ãƒãƒ³ãƒ‰: %s", choice_msg), 15, 0);
 #else
 			prt(format("Command: %s", choice_msg), 15, 0);
 #endif
@@ -3410,7 +3410,7 @@ void do_cmd_visuals(void)
 				prt("", 17, 5);
 #ifdef JP
 				Term_putstr(5, 17, -1, TERM_WHITE,
-					    format("ÃÏ·Á = %d, Ì¾Á° = %s, ÌÀÅÙ = %s",
+					    format("åœ°å½¢ = %d, åå‰ = %s, æ˜åº¦ = %s",
 						   f, (f_name + f_ptr->name), lighting_level_str[lighting_level]));
 #else
 				Term_putstr(5, 17, -1, TERM_WHITE,
@@ -3421,7 +3421,7 @@ void do_cmd_visuals(void)
 				/* Label the Default values */
 #ifdef JP
 				Term_putstr(10, 19, -1, TERM_WHITE,
-					    format("½é´üÃÍ  ¿§ / Ê¸»ú = %3d / %3d", da, dc));
+					    format("åˆæœŸå€¤  è‰² / æ–‡å­— = %3d / %3d", da, dc));
 #else
 				Term_putstr(10, 19, -1, TERM_WHITE,
 					    format("Default attr/char = %3d / %3d", da, dc));
@@ -3434,7 +3434,7 @@ void do_cmd_visuals(void)
 				/* Label the Current values */
 #ifdef JP
 				Term_putstr(10, 20, -1, TERM_WHITE,
-					    format("¸½ºßÃÍ  ¿§ / Ê¸»ú = %3d / %3d", ca, cc));
+					    format("ç¾åœ¨å€¤  è‰² / æ–‡å­— = %3d / %3d", ca, cc));
 #else
 				Term_putstr(10, 20, -1, TERM_WHITE,
 					    format("Current attr/char = %3d / %3d", ca, cc));
@@ -3446,7 +3446,7 @@ void do_cmd_visuals(void)
 				/* Prompt */
 #ifdef JP
 				Term_putstr(0, 22, -1, TERM_WHITE,
-					    "¥³¥Ş¥ó¥É (n/N/^N/a/A/^A/c/C/^C/l/L/^L/d/D/^D/v/V/^V): ");
+					    "ã‚³ãƒãƒ³ãƒ‰ (n/N/^N/a/A/^A/c/C/^C/l/L/^L/d/D/^D/v/V/^V): ");
 #else
 				Term_putstr(0, 22, -1, TERM_WHITE,
 					    "Command (n/N/^N/a/A/^A/c/C/^C/l/L/^L/d/D/^D/v/V/^V): ");
@@ -3538,7 +3538,7 @@ void do_cmd_visuals(void)
 
 			/* Message */
 #ifdef JP
-			msg_print("²èÌÌ¾å¤Î[¿§/Ê¸»ú]¤ò½é´üÃÍ¤Ë¥ê¥»¥Ã¥È¤·¤Ş¤·¤¿¡£");
+			msg_print("ç”»é¢ä¸Šã®[è‰²/æ–‡å­—]ã‚’åˆæœŸå€¤ã«ãƒªã‚»ãƒƒãƒˆã—ã¾ã—ãŸã€‚");
 #else
 			msg_print("Visual attr/char tables reset.");
 #endif
@@ -3591,22 +3591,22 @@ void do_cmd_colors(void)
 
 		/* Ask for a choice */
 #ifdef JP
-		prt("[ ¥«¥é¡¼¤ÎÀßÄê ]", 2, 0);
+		prt("[ ã‚«ãƒ©ãƒ¼ã®è¨­å®š ]", 2, 0);
 #else
 		prt("Interact with Colors", 2, 0);
 #endif
 
 		/* Give some choices */
 #ifdef JP
-		prt("(1) ¥æ¡¼¥¶¡¼ÀßÄê¥Õ¥¡¥¤¥ë¤Î¥í¡¼¥É", 4, 5);
+		prt("(1) ãƒ¦ãƒ¼ã‚¶ãƒ¼è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ­ãƒ¼ãƒ‰", 4, 5);
 #else
 		prt("(1) Load a user pref file", 4, 5);
 #endif
 
 #ifdef ALLOW_COLORS
 #ifdef JP
-		prt("(2) ¥«¥é¡¼¤ÎÀßÄê¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤¹", 5, 5);
-		prt("(3) ¥«¥é¡¼¤ÎÀßÄê¤òÊÑ¹¹¤¹¤ë", 6, 5);
+		prt("(2) ã‚«ãƒ©ãƒ¼ã®è¨­å®šã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã™", 5, 5);
+		prt("(3) ã‚«ãƒ©ãƒ¼ã®è¨­å®šã‚’å¤‰æ›´ã™ã‚‹", 6, 5);
 #else
 		prt("(2) Dump colors", 5, 5);
 		prt("(3) Modify colors", 6, 5);
@@ -3615,7 +3615,7 @@ void do_cmd_colors(void)
 
 		/* Prompt */
 #ifdef JP
-		prt("¥³¥Ş¥ó¥É: ", 8, 0);
+		prt("ã‚³ãƒãƒ³ãƒ‰: ", 8, 0);
 #else
 		prt("Command: ", 8, 0);
 #endif
@@ -3631,14 +3631,14 @@ void do_cmd_colors(void)
 		{
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥æ¡¼¥¶¡¼ÀßÄê¥Õ¥¡¥¤¥ë¤ò¥í¡¼¥É¤·¤Ş¤¹", 8, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ãƒ¦ãƒ¼ã‚¶ãƒ¼è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ­ãƒ¼ãƒ‰ã—ã¾ã™", 8, 0);
 #else
 			prt("Command: Load a user pref file", 8, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥Õ¥¡¥¤¥ë: ", 10, 0);
+			prt("ãƒ•ã‚¡ã‚¤ãƒ«: ", 10, 0);
 #else
 			prt("File: ", 10, 0);
 #endif
@@ -3668,14 +3668,14 @@ void do_cmd_colors(void)
 
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥«¥é¡¼¤ÎÀßÄê¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤·¤Ş¤¹", 8, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ã‚«ãƒ©ãƒ¼ã®è¨­å®šã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã™", 8, 0);
 #else
 			prt("Command: Dump colors", 8, 0);
 #endif
 
 			/* Prompt */
 #ifdef JP
-			prt("¥Õ¥¡¥¤¥ë: ", 10, 0);
+			prt("ãƒ•ã‚¡ã‚¤ãƒ«: ", 10, 0);
 #else
 			prt("File: ", 10, 0);
 #endif
@@ -3694,7 +3694,7 @@ void do_cmd_colors(void)
 
 			/* Start dumping */
 #ifdef JP
-			auto_dump_printf("\n# ¥«¥é¡¼¤ÎÀßÄê\n\n");
+			auto_dump_printf("\n# ã‚«ãƒ©ãƒ¼ã®è¨­å®š\n\n");
 #else
 			auto_dump_printf("\n# Color redefinitions\n\n");
 #endif
@@ -3708,7 +3708,7 @@ void do_cmd_colors(void)
 				int bv = angband_color_table[i][3];
 
 #ifdef JP
-				cptr name = "Ì¤ÃÎ";
+				cptr name = "æœªçŸ¥";
 #else
 				cptr name = "unknown";
 #endif
@@ -3721,7 +3721,7 @@ void do_cmd_colors(void)
 
 				/* Dump a comment */
 #ifdef JP
-				auto_dump_printf("# ¥«¥é¡¼ '%s'\n", name);
+				auto_dump_printf("# ã‚«ãƒ©ãƒ¼ '%s'\n", name);
 #else
 				auto_dump_printf("# Color '%s'\n", name);
 #endif
@@ -3736,7 +3736,7 @@ void do_cmd_colors(void)
 
 			/* Message */
 #ifdef JP
-			msg_print("¥«¥é¡¼¤ÎÀßÄê¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤·¤Ş¤·¤¿¡£");
+			msg_print("ã‚«ãƒ©ãƒ¼ã®è¨­å®šã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã—ãŸã€‚");
 #else
 			msg_print("Dumped color redefinitions.");
 #endif
@@ -3749,7 +3749,7 @@ void do_cmd_colors(void)
 
 			/* Prompt */
 #ifdef JP
-			prt("¥³¥Ş¥ó¥É: ¥«¥é¡¼¤ÎÀßÄê¤òÊÑ¹¹¤·¤Ş¤¹", 8, 0);
+			prt("ã‚³ãƒãƒ³ãƒ‰: ã‚«ãƒ©ãƒ¼ã®è¨­å®šã‚’å¤‰æ›´ã—ã¾ã™", 8, 0);
 #else
 			prt("Command: Modify colors", 8, 0);
 #endif
@@ -3775,7 +3775,7 @@ void do_cmd_colors(void)
 
 				/* Describe the color */
 #ifdef JP
-				name = ((a < 16) ? color_names[a] : "Ì¤ÄêµÁ");
+				name = ((a < 16) ? color_names[a] : "æœªå®šç¾©");
 #else
 				name = ((a < 16) ? color_names[a] : "undefined");
 #endif
@@ -3783,7 +3783,7 @@ void do_cmd_colors(void)
 				/* Describe the color */
 #ifdef JP
 				Term_putstr(5, 10, -1, TERM_WHITE,
-					    format("¥«¥é¡¼ = %d, Ì¾Á° = %s", a, name));
+					    format("ã‚«ãƒ©ãƒ¼ = %d, åå‰ = %s", a, name));
 #else
 				Term_putstr(5, 10, -1, TERM_WHITE,
 					    format("Color = %d, Name = %s", a, name));
@@ -3800,7 +3800,7 @@ void do_cmd_colors(void)
 				/* Prompt */
 #ifdef JP
 				Term_putstr(0, 14, -1, TERM_WHITE,
-					    "¥³¥Ş¥ó¥É (n/N/k/K/r/R/g/G/b/B): ");
+					    "ã‚³ãƒãƒ³ãƒ‰ (n/N/k/K/r/R/g/G/b/B): ");
 #else
 				Term_putstr(0, 14, -1, TERM_WHITE,
 					    "Command (n/N/k/K/r/R/g/G/b/B): ");
@@ -3862,7 +3862,7 @@ void do_cmd_note(void)
 
 	/* Input */
 #ifdef JP
-	if (!get_string("¥á¥â: ", buf, 60)) return;
+	if (!get_string("ãƒ¡ãƒ¢: ", buf, 60)) return;
 #else
 	if (!get_string("Note: ", buf, 60)) return;
 #endif
@@ -3878,7 +3878,7 @@ void do_cmd_note(void)
 
 	/* Add note to message recall */
 #ifdef JP
-	msg_format("¥á¥â: %s", buf);
+	msg_format("ãƒ¡ãƒ¢: %s", buf);
 #else
 	msg_format("Note: %s", buf);
 #endif
@@ -3907,67 +3907,67 @@ void do_cmd_version(void)
 static cptr do_cmd_feeling_text[11] =
 {
 #ifdef JP
-	"¤³¤Î³¬¤ÎÊ·°Ïµ¤¤ò´¶¤¸¤È¤ì¤Ê¤«¤Ã¤¿...",
+	"ã“ã®éšã®é›°å›²æ°—ã‚’æ„Ÿã˜ã¨ã‚Œãªã‹ã£ãŸ...",
 #else
 	"Looks like any other level.",
 #endif
 
 #ifdef JP
-	"¤³¤Î³¬¤Ë¤Ï²¿¤«ÆÃÊÌ¤Ê¤â¤Î¤¬¤¢¤ë¤è¤¦¤Êµ¤¤¬¤¹¤ë¡£",
+	"ã“ã®éšã«ã¯ä½•ã‹ç‰¹åˆ¥ãªã‚‚ã®ãŒã‚ã‚‹ã‚ˆã†ãªæ°—ãŒã™ã‚‹ã€‚",
 #else
 	"You feel there is something special about this level.",
 #endif
 
 #ifdef JP
-	"¶²¤í¤·¤¤»à¤Î¸¸¤¬ÌÜ¤ËÉâ¤«¤Ó¡¢µ¤Àä¤·¤½¤¦¤Ë¤Ê¤Ã¤¿¡ª",
+	"æã‚ã—ã„æ­»ã®å¹»ãŒç›®ã«æµ®ã‹ã³ã€æ°—çµ¶ã—ãã†ã«ãªã£ãŸï¼",
 #else
 	"You nearly faint as horrible visions of death fill your mind!",
 #endif
 
 #ifdef JP
-	"¤³¤Î³¬¤Ï¤È¤Æ¤â´í¸±¤Ê¤è¤¦¤À¡£",
+	"ã“ã®éšã¯ã¨ã¦ã‚‚å±é™ºãªã‚ˆã†ã ã€‚",
 #else
 	"This level looks very dangerous.",
 #endif
 
 #ifdef JP
-	"¤È¤Æ¤â°­¤¤Í½´¶¤¬¤¹¤ë...",
+	"ã¨ã¦ã‚‚æ‚ªã„äºˆæ„ŸãŒã™ã‚‹...",
 #else
 	"You have a very bad feeling...",
 #endif
 
 #ifdef JP
-	"°­¤¤Í½´¶¤¬¤¹¤ë...",
+	"æ‚ªã„äºˆæ„ŸãŒã™ã‚‹...",
 #else
 	"You have a bad feeling...",
 #endif
 
 #ifdef JP
-	"²¿¤«¶ÛÄ¥¤¹¤ë¡£",
+	"ä½•ã‹ç·Šå¼µã™ã‚‹ã€‚",
 #else
 	"You feel nervous.",
 #endif
 
 #ifdef JP
-	"Â¿¾¯¤Ï±¿¤¬¸ş¤¤¤Æ¤­¤¿¤«...",
+	"å¤šå°‘ã¯é‹ãŒå‘ã„ã¦ããŸã‹...",
 #else
 	"You feel your luck is turning...",
 #endif
 
 #ifdef JP
-	"¤³¤Î¾ì½ê¤Ï¹¥¤­¤Ë¤Ê¤ì¤Ê¤¤¡£",
+	"ã“ã®å ´æ‰€ã¯å¥½ãã«ãªã‚Œãªã„ã€‚",
 #else
 	"You don't like the look of this place.",
 #endif
 
 #ifdef JP
-	"¤³¤Î³¬¤Ï¤½¤ì¤Ê¤ê¤Ë°ÂÁ´¤Ê¤è¤¦¤À¡£",
+	"ã“ã®éšã¯ãã‚Œãªã‚Šã«å®‰å…¨ãªã‚ˆã†ã ã€‚",
 #else
 	"This level looks reasonably safe.",
 #endif
 
 #ifdef JP
-	"¤Ê¤ó¤ÆÂà¶ş¤Ê¤È¤³¤í¤À..."
+	"ãªã‚“ã¦é€€å±ˆãªã¨ã“ã‚ã ..."
 #else
 	"What a boring place..."
 #endif
@@ -3985,7 +3985,7 @@ void do_cmd_feeling(void)
 	if (p_ptr->inside_quest && quest[p_ptr->inside_quest].type != QUEST_TYPE_RANDOM)
 	{
 #ifdef JP
-		msg_print("Åµ·¿Åª¤Ê¥¯¥¨¥¹¥È¤Î¥À¥ó¥¸¥ç¥ó¤Î¤è¤¦¤À¡£");
+		msg_print("å…¸å‹çš„ãªã‚¯ã‚¨ã‚¹ãƒˆã®ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®ã‚ˆã†ã ã€‚");
 #else
 		msg_print("Looks like a typical quest level.");
 #endif
@@ -3996,7 +3996,7 @@ void do_cmd_feeling(void)
 	else if (p_ptr->town_num && !dun_level)
 	{
 #ifdef JP
-		msg_print("Åµ·¿Åª¤ÊÄ®¤Î¤è¤¦¤À¡£");
+		msg_print("å…¸å‹çš„ãªç”ºã®ã‚ˆã†ã ã€‚");
 #else
 		msg_print("Looks like a typical town.");
 #endif
@@ -4007,7 +4007,7 @@ void do_cmd_feeling(void)
 	else if (!dun_level)
 	{
 #ifdef JP
-		msg_print("Åµ·¿Åª¤Ê¹ÓÌî¤Î¤è¤¦¤À¡£");
+		msg_print("å…¸å‹çš„ãªè’é‡ã®ã‚ˆã†ã ã€‚");
 #else
 		msg_print("Looks like a typical wilderness.");
 #endif
@@ -4025,63 +4025,63 @@ void do_cmd_feeling(void)
 static cptr monster_group_text[] = 
 {
 #ifdef JP
-	"¥æ¥Ë¡¼¥¯",	/* "Uniques" */
-	"¥¢¥ê",
-	"¥³¥¦¥â¥ê",
-	"¥à¥«¥Ç",
-	"¥É¥é¥´¥ó",
-	"ÌÜ¶Ì",
-	"¥Í¥³",
-	"¥´¡¼¥ì¥à",
-	"É¸½à¿Í´Ö·¿À¸Êª",
-	"¥Ù¥È¥Ù¥È",
-	"¥¼¥ê¡¼",
-	"¥³¥Ü¥ë¥É",
-	"¿åÀ³À¸Êª",
-	"¥â¥ë¥É",
-	"¥Ê¡¼¥¬",
-	"¥ª¡¼¥¯",
-	"¿Í´Ö",
-	"»ÍÂ­½Ã",
-	"¥Í¥º¥ß",
-	"¥¹¥±¥ë¥È¥ó",
-	"¥Ç¡¼¥â¥ó",
-	"¥Ü¥ë¥Æ¥Ã¥¯¥¹",
-	"¥¤¥â¥à¥·/Âç·²",
+	"ãƒ¦ãƒ‹ãƒ¼ã‚¯",	/* "Uniques" */
+	"ã‚¢ãƒª",
+	"ã‚³ã‚¦ãƒ¢ãƒª",
+	"ãƒ ã‚«ãƒ‡",
+	"ãƒ‰ãƒ©ã‚´ãƒ³",
+	"ç›®ç‰",
+	"ãƒã‚³",
+	"ã‚´ãƒ¼ãƒ¬ãƒ ",
+	"æ¨™æº–äººé–“å‹ç”Ÿç‰©",
+	"ãƒ™ãƒˆãƒ™ãƒˆ",
+	"ã‚¼ãƒªãƒ¼",
+	"ã‚³ãƒœãƒ«ãƒ‰",
+	"æ°´æ£²ç”Ÿç‰©",
+	"ãƒ¢ãƒ«ãƒ‰",
+	"ãƒŠãƒ¼ã‚¬",
+	"ã‚ªãƒ¼ã‚¯",
+	"äººé–“",
+	"å››è¶³ç£",
+	"ãƒã‚ºãƒŸ",
+	"ã‚¹ã‚±ãƒ«ãƒˆãƒ³",
+	"ãƒ‡ãƒ¼ãƒ¢ãƒ³",
+	"ãƒœãƒ«ãƒ†ãƒƒã‚¯ã‚¹",
+	"ã‚¤ãƒ¢ãƒ ã‚·/å¤§ç¾¤",
 	/* "unused", */
-	"¥¤¡¼¥¯",
-	"¥¾¥ó¥Ó/¥ß¥¤¥é",
-	"Å·»È",
-	"Ä»",
-	"¸¤",
-	/* "¸ÅÂå¥É¥é¥´¥ó/¥ï¥¤¥¢¡¼¥à", */
-	"¥¨¥ì¥á¥ó¥¿¥ë",
-	"¥È¥ó¥Ü",
-	"¥´¡¼¥¹¥È",
-	"»¨¼ï",
-	"º«Ãî",
-	"¥Ø¥Ó",
-	"¥­¥é¡¼¡¦¥Ó¡¼¥È¥ë",
-	"¥ê¥Ã¥Á",
-	"Â¿¼ó¤Îà¨ÃîÎà",
-	/* "Ææ¤ÎÀ¸Êª", */
-	"¥ª¡¼¥¬",
-	"µğÂç¿Í´Ö·¿À¸Êª",
-	"¥¯¥¤¥ë¥¹¥ë¥°",
-	"à¨ÃîÎà/Î¾À¸Îà",
-	"ÃØéá/¥µ¥½¥ê/¥À¥Ë",
-	"¥È¥í¥ë",
-	/* "¾åµé¥Ç¡¼¥â¥ó", */
-	"¥Ğ¥ó¥Ñ¥¤¥¢",
-	"¥ï¥¤¥È/¥ì¥¤¥¹/Åù",
-	"¥¾¡¼¥ó/¥¶¥ì¥ó/Åù",
-	"¥¤¥¨¥Æ¥£",
-	"¥Ï¥¦¥ó¥É",
-	"¥ß¥ß¥Ã¥¯",
-	"ÊÉ/¿¢Êª/µ¤ÂÎ",
-	"¤ª¤Ğ¤±¥­¥Î¥³",
-	"µåÂÎ",
-	"¥×¥ì¥¤¥ä¡¼",
+	"ã‚¤ãƒ¼ã‚¯",
+	"ã‚¾ãƒ³ãƒ“/ãƒŸã‚¤ãƒ©",
+	"å¤©ä½¿",
+	"é³¥",
+	"çŠ¬",
+	/* "å¤ä»£ãƒ‰ãƒ©ã‚´ãƒ³/ãƒ¯ã‚¤ã‚¢ãƒ¼ãƒ ", */
+	"ã‚¨ãƒ¬ãƒ¡ãƒ³ã‚¿ãƒ«",
+	"ãƒˆãƒ³ãƒœ",
+	"ã‚´ãƒ¼ã‚¹ãƒˆ",
+	"é›‘ç¨®",
+	"æ˜†è™«",
+	"ãƒ˜ãƒ“",
+	"ã‚­ãƒ©ãƒ¼ãƒ»ãƒ“ãƒ¼ãƒˆãƒ«",
+	"ãƒªãƒƒãƒ",
+	"å¤šé¦–ã®çˆ¬è™«é¡",
+	/* "è¬ã®ç”Ÿç‰©", */
+	"ã‚ªãƒ¼ã‚¬",
+	"å·¨å¤§äººé–“å‹ç”Ÿç‰©",
+	"ã‚¯ã‚¤ãƒ«ã‚¹ãƒ«ã‚°",
+	"çˆ¬è™«é¡/ä¸¡ç”Ÿé¡",
+	"èœ˜è››/ã‚µã‚½ãƒª/ãƒ€ãƒ‹",
+	"ãƒˆãƒ­ãƒ«",
+	/* "ä¸Šç´šãƒ‡ãƒ¼ãƒ¢ãƒ³", */
+	"ãƒãƒ³ãƒ‘ã‚¤ã‚¢",
+	"ãƒ¯ã‚¤ãƒˆ/ãƒ¬ã‚¤ã‚¹/ç­‰",
+	"ã‚¾ãƒ¼ãƒ³/ã‚¶ãƒ¬ãƒ³/ç­‰",
+	"ã‚¤ã‚¨ãƒ†ã‚£",
+	"ãƒã‚¦ãƒ³ãƒ‰",
+	"ãƒŸãƒŸãƒƒã‚¯",
+	"å£/æ¤ç‰©/æ°—ä½“",
+	"ãŠã°ã‘ã‚­ãƒã‚³",
+	"çƒä½“",
+	"ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼",
 #else
 	"Uniques",
 	"Ant",
@@ -4305,44 +4305,44 @@ static int collect_monsters(int grp_cur, s16b mon_idx[], byte mode)
 static cptr object_group_text[] = 
 {
 #ifdef JP
-	"¿©ÎÁ",		/* "Foods" */
-	"Ìô",		/* "Potions" */
-	"Ìı¤Ä¤Ü",	/* "Flasks" */
-	"´¬Êª",		/* "Scrolls" */
-	"»ØÎØ",		/* "Rings" */
-	"¥¢¥ß¥å¥ì¥Ã¥È",	/* "Amulets" */
-	"¸÷¸»",		/* "Lanterns" */
-	"¥ï¥ó¥É",	/* "Wands" */
-	"¥¹¥¿¥Ã¥Õ",	/* "Staffs" */
-	"¥í¥Ã¥É",	/* "Rods" */
-	"¤¯¤µ¤Ó",
-	"È¢",
-	"¿Í·Á",
-	"Áü",
-	"¥´¥ß",
-	"¶õ¤Î¥Ó¥ó",
-	"¹ü",
-	"»àÂÎ",
-	"Åá·õÎà",	/* "Swords" */
-	"Æß´ï",		/* "Blunt Weapons" */
-	"Ä¹ÊÁÉğ´ï",	/* "Polearms" */
-	"ºÎ·¡Æ»¶ñ",	/* "Diggers" */
-	"Èô¤ÓÆ»¶ñ",	/* "Bows" */
-	"ÃÆ",
-	"Ìğ",
-	"¥Ü¥ë¥È",
-	"·ÚÁõ³»",	/* "Soft Armor" */
-	"½ÅÁõ³»",	/* "Hard Armor" */
-	"¥É¥é¥´¥ó³»",	/* "Dragon Armor" */
-	"½â",	/* "Shields" */
-	"¥¯¥í¡¼¥¯",	/* "Cloaks" */
-	"äÆ¼ê",	/* "Gloves" */
-	"¥Ø¥ë¥á¥Ã¥È",	/* "Helms" */
-	"´§",	/* "Crowns" */
-	"¥Ö¡¼¥Ä",	/* "Boots" */
-	"ËâË¡½ñ",
-	"ºâÊõ",
-	"²¿¤«",
+	"é£Ÿæ–™",		/* "Foods" */
+	"è–¬",		/* "Potions" */
+	"æ²¹ã¤ã¼",	/* "Flasks" */
+	"å·»ç‰©",		/* "Scrolls" */
+	"æŒ‡è¼ª",		/* "Rings" */
+	"ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ",	/* "Amulets" */
+	"å…‰æº",		/* "Lanterns" */
+	"ãƒ¯ãƒ³ãƒ‰",	/* "Wands" */
+	"ã‚¹ã‚¿ãƒƒãƒ•",	/* "Staffs" */
+	"ãƒ­ãƒƒãƒ‰",	/* "Rods" */
+	"ãã•ã³",
+	"ç®±",
+	"äººå½¢",
+	"åƒ",
+	"ã‚´ãƒŸ",
+	"ç©ºã®ãƒ“ãƒ³",
+	"éª¨",
+	"æ­»ä½“",
+	"åˆ€å‰£é¡",	/* "Swords" */
+	"éˆå™¨",		/* "Blunt Weapons" */
+	"é•·æŸ„æ­¦å™¨",	/* "Polearms" */
+	"æ¡æ˜é“å…·",	/* "Diggers" */
+	"é£›ã³é“å…·",	/* "Bows" */
+	"å¼¾",
+	"çŸ¢",
+	"ãƒœãƒ«ãƒˆ",
+	"è»½è£…é§",	/* "Soft Armor" */
+	"é‡è£…é§",	/* "Hard Armor" */
+	"ãƒ‰ãƒ©ã‚´ãƒ³é§",	/* "Dragon Armor" */
+	"ç›¾",	/* "Shields" */
+	"ã‚¯ãƒ­ãƒ¼ã‚¯",	/* "Cloaks" */
+	"ç± æ‰‹",	/* "Gloves" */
+	"ãƒ˜ãƒ«ãƒ¡ãƒƒãƒˆ",	/* "Helms" */
+	"å† ",	/* "Crowns" */
+	"ãƒ–ãƒ¼ãƒ„",	/* "Boots" */
+	"é­”æ³•æ›¸",
+	"è²¡å®",
+	"ä½•ã‹",
 #else
 	"Foods",
 	"Potions",
@@ -4655,7 +4655,7 @@ void do_cmd_save_screen_html_aux(char *filename, int message)
 	if (!fff) {
 		if (message) {
 #ifdef JP
-		    msg_format("¥Õ¥¡¥¤¥ë %s ¤ò³«¤±¤Ş¤»¤ó¤Ç¤·¤¿¡£", filename);
+		    msg_format("ãƒ•ã‚¡ã‚¤ãƒ« %s ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚", filename);
 #else
 		    msg_format("Failed to open file %s.", filename);
 #endif
@@ -4772,7 +4772,7 @@ void do_cmd_save_screen_html_aux(char *filename, int message)
 	/* Message */
 	if (message) {
 #ifdef JP
-	msg_print("²èÌÌ(µ­Ç°»£±Æ)¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤·¤Ş¤·¤¿¡£");
+	msg_print("ç”»é¢(è¨˜å¿µæ’®å½±)ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã—ãŸã€‚");
 #else
 		msg_print("Screen dump saved.");
 #endif
@@ -4878,7 +4878,7 @@ void do_cmd_load_screen(void)
 
 	/* Message */
 #ifdef JP
-	msg_print("¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤µ¤ì¤¿²èÌÌ(µ­Ç°»£±Æ)¤ò¥í¡¼¥É¤·¤Ş¤·¤¿¡£");
+	msg_print("ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã•ã‚ŒãŸç”»é¢(è¨˜å¿µæ’®å½±)ã‚’ãƒ­ãƒ¼ãƒ‰ã—ã¾ã—ãŸã€‚");
 #else
 	msg_print("Screen dump loaded.");
 #endif
@@ -4898,7 +4898,7 @@ static void do_cmd_save_screen_html(void)
 	char buf[1024], tmp[256] = "screen.html";
 
 #ifdef JP
-	if (!get_string("¥Õ¥¡¥¤¥ëÌ¾: ", tmp, 80))
+	if (!get_string("ãƒ•ã‚¡ã‚¤ãƒ«å: ", tmp, 80))
 #else
 	if (!get_string("File name: ", tmp, 80))
 #endif
@@ -4936,7 +4936,7 @@ void do_cmd_save_screen(void)
 	int wid, hgt;
 
 #ifdef JP
-	prt("µ­Ç°»£±Æ¤·¤Ş¤¹¤«¡© [(y)es/(h)tml/(n)o] ", 0, 0);
+	prt("è¨˜å¿µæ’®å½±ã—ã¾ã™ã‹ï¼Ÿ [(y)es/(h)tml/(n)o] ", 0, 0);
 #else
 	prt("Save screen dump? [(y)es/(h)tml/(n)o] ", 0, 0);
 #endif
@@ -4972,7 +4972,7 @@ void do_cmd_save_screen(void)
 	}
 
 #ifdef JP
-	if (html_dump == TRUE || get_check("HTML¤Ç½ĞÎÏ¤·¤Ş¤¹¤«¡©"))
+	if (html_dump == TRUE || get_check("HTMLã§å‡ºåŠ›ã—ã¾ã™ã‹ï¼Ÿ"))
 #else
 	if (html_dump == TRUE || get_check("Save screen dump as HTML? "))
 #endif
@@ -5076,7 +5076,7 @@ void do_cmd_save_screen(void)
 
 		/* Message */
 #ifdef JP
-		msg_print("²èÌÌ(µ­Ç°»£±Æ)¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤·¤Ş¤·¤¿¡£");
+		msg_print("ç”»é¢(è¨˜å¿µæ’®å½±)ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã—ãŸã€‚");
 #else
 		msg_print("Screen dump saved.");
 #endif
@@ -5122,7 +5122,7 @@ static void do_cmd_knowledge_artifacts(void)
 
 	if (!fff) {
 #ifdef JP
-	    msg_format("°ì»ş¥Õ¥¡¥¤¥ë %s ¤òºîÀ®¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¡£", file_name);
+	    msg_format("ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ« %s ã‚’ä½œæˆã§ãã¾ã›ã‚“ã§ã—ãŸã€‚", file_name);
 #else
 	    msg_format("Failed to create temporary file %s.", file_name);
 #endif
@@ -5211,7 +5211,7 @@ static void do_cmd_knowledge_artifacts(void)
 
 		/* Paranoia */
 #ifdef JP
-strcpy(base_name, "Ì¤ÃÎ¤ÎÅÁÀâ¤Î¥¢¥¤¥Æ¥à");
+strcpy(base_name, "æœªçŸ¥ã®ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ ");
 #else
 		strcpy(base_name, "Unknown Artifact");
 #endif
@@ -5259,7 +5259,7 @@ strcpy(base_name, "Ì¤ÃÎ¤ÎÅÁÀâ¤Î¥¢¥¤¥Æ¥à");
 
 	/* Display the file contents */
 #ifdef JP
-	show_file(file_name, "´ûÃÎ¤ÎÅÁÀâ¤Î¥¢¥¤¥Æ¥à", 0, 0);
+	show_file(file_name, "æ—¢çŸ¥ã®ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ ", 0, 0);
 #else
 	show_file(file_name, "Artifacts Seen", 0, 0);
 #endif
@@ -5297,7 +5297,7 @@ static void do_cmd_knowledge_uniques(void)
 
 	if (!fff) {
 #ifdef JP
-	    msg_format("°ì»ş¥Õ¥¡¥¤¥ë %s ¤òºîÀ®¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¡£", file_name);
+	    msg_format("ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ« %s ã‚’ä½œæˆã§ãã¾ã›ã‚“ã§ã—ãŸã€‚", file_name);
 #else
 	    msg_format("Failed to create temporary file %s.", file_name);
 #endif
@@ -5342,7 +5342,7 @@ static void do_cmd_knowledge_uniques(void)
 	{
 		/* No monsters to recall */
 #ifdef JP
-msg_print("´ûÃÎ¤Î¥æ¥Ë¡¼¥¯¡¦¥â¥ó¥¹¥¿¡¼¤Ê¤·¡£");
+msg_print("æ—¢çŸ¥ã®ãƒ¦ãƒ‹ãƒ¼ã‚¯ãƒ»ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãªã—ã€‚");
 #else
 		msg_print("No known uniques.");
 #endif
@@ -5362,7 +5362,7 @@ msg_print("´ûÃÎ¤Î¥æ¥Ë¡¼¥¯¡¦¥â¥ó¥¹¥¿¡¼¤Ê¤·¡£");
 	/* XTRA HACK UNIQHIST */
 	for (i = 0; i <= max_lev; i++)
 	{
-	     fprintf(fff, " %2d-%3d³¬  Åİ %3d  À¸ %3d\n", 
+	     fprintf(fff, " %2d-%3déš  å€’ %3d  ç”Ÿ %3d\n", 
 		     1 + i * 10, 10 + i * 10, n_dead[i], n_alive[i]);
 	}
 	fprintf(fff, "\n");
@@ -5376,10 +5376,10 @@ msg_print("´ûÃÎ¤Î¥æ¥Ë¡¼¥¯¡¦¥â¥ó¥¹¥¿¡¼¤Ê¤·¡£");
 
 		/* Print a message */
 #ifdef JP
-		fprintf(fff, " [%s] %s¤Ï%s¡£\n",
-			(dead ? "ºÑ" : "--"),
+		fprintf(fff, " [%s] %sã¯%sã€‚\n",
+			(dead ? "æ¸ˆ" : "--"),
 			(r_name + r_ptr->name),
-			(dead ? "´û¤Ë»à¤ó¤Ç¤¤¤ë" : "¤Ş¤ÀÀ¸¤­¤Æ¤¤¤ë"));
+			(dead ? "æ—¢ã«æ­»ã‚“ã§ã„ã‚‹" : "ã¾ã ç”Ÿãã¦ã„ã‚‹"));
 #else
 		fprintf(fff, "     %s is %s\n",(r_name + r_ptr->name),
 			(dead ? "dead" : "alive"));
@@ -5395,7 +5395,7 @@ msg_print("´ûÃÎ¤Î¥æ¥Ë¡¼¥¯¡¦¥â¥ó¥¹¥¿¡¼¤Ê¤·¡£");
 
 	/* Display the file contents */
 #ifdef JP
-	show_file(file_name, "´ûÃÎ¤Î¥æ¥Ë¡¼¥¯¡¦¥â¥ó¥¹¥¿¡¼", 0, 0);
+	show_file(file_name, "æ—¢çŸ¥ã®ãƒ¦ãƒ‹ãƒ¼ã‚¯ãƒ»ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼", 0, 0);
 #else
 	show_file(file_name, "Known Uniques", 0, 0);
 #endif
@@ -5578,8 +5578,8 @@ static void do_cmd_knowledge_pets(void)
 
 	fprintf(fff, "----------------------------------------------\n");
 #ifdef JP
-	fprintf(fff, "    ¹ç·×: %d É¤¤Î¥Ú¥Ã¥È\n", t_friends);
-	fprintf(fff, " °İ»ı¥³¥¹¥È: %d%% MP\n", show_upkeep);
+	fprintf(fff, "    åˆè¨ˆ: %d åŒ¹ã®ãƒšãƒƒãƒˆ\n", t_friends);
+	fprintf(fff, " ç¶­æŒã‚³ã‚¹ãƒˆ: %d%% MP\n", show_upkeep);
 #else
 	fprintf(fff, "   Total: %d pet%s.\n",
 		t_friends, (t_friends == 1 ? "" : "s"));
@@ -5593,7 +5593,7 @@ static void do_cmd_knowledge_pets(void)
 
 	/* Display the file contents */
 #ifdef JP
-show_file(file_name, "¸½ºß¤Î¥Ú¥Ã¥È", 0, 0);
+show_file(file_name, "ç¾åœ¨ã®ãƒšãƒƒãƒˆ", 0, 0);
 #else
 	show_file(file_name, "Current Pets", 0, 0);
 #endif
@@ -5627,7 +5627,7 @@ static void do_cmd_knowledge_kill_count(void)
 
 	if (!fff) {
 #ifdef JP
-	    msg_format("°ì»ş¥Õ¥¡¥¤¥ë %s ¤òºîÀ®¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¡£", file_name);
+	    msg_format("ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ« %s ã‚’ä½œæˆã§ãã¾ã›ã‚“ã§ã—ãŸã€‚", file_name);
 #else
 	    msg_format("Failed to create temporary file %s.", file_name);
 #endif
@@ -5655,7 +5655,7 @@ static void do_cmd_knowledge_kill_count(void)
 	{
 		/* No monsters to recall */
 #ifdef JP
-msg_print("´ûÃÎ¤Î¥â¥ó¥¹¥¿¡¼¤Ê¤·¡ª");
+msg_print("æ—¢çŸ¥ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãªã—ï¼");
 #else
 		msg_print("No known monsters!");
 #endif
@@ -5701,21 +5701,21 @@ msg_print("´ûÃÎ¤Î¥â¥ó¥¹¥¿¡¼¤Ê¤·¡ª");
 
 		if (Total < 1)
 #ifdef JP
-			fprintf(fff,"¤¢¤Ê¤¿¤Ï¤Ş¤ÀÅ¨¤òÅİ¤·¤Æ¤¤¤Ê¤¤¡£\n\n");
+			fprintf(fff,"ã‚ãªãŸã¯ã¾ã æ•µã‚’å€’ã—ã¦ã„ãªã„ã€‚\n\n");
 #else
 			fprintf(fff,"You have defeated no enemies yet.\n\n");
 #endif
 
 		else if (Total == 1)
 #ifdef JP
-			fprintf(fff,"¤¢¤Ê¤¿¤Ï°ìÉ¤¤ÎÅ¨¤òÅİ¤·¤Æ¤¤¤ë¡£\n\n");
+			fprintf(fff,"ã‚ãªãŸã¯ä¸€åŒ¹ã®æ•µã‚’å€’ã—ã¦ã„ã‚‹ã€‚\n\n");
 #else
 			fprintf(fff,"You have defeated one enemy.\n\n");
 #endif
 
 		else
 #ifdef JP
-			fprintf(fff,"¤¢¤Ê¤¿¤Ï %ld É¤¤ÎÅ¨¤òÅİ¤·¤Æ¤¤¤ë¡£\n\n", (long int)Total);
+			fprintf(fff,"ã‚ãªãŸã¯ %ld åŒ¹ã®æ•µã‚’å€’ã—ã¦ã„ã‚‹ã€‚\n\n", (long int)Total);
 #else
 			fprintf(fff,"You have defeated %ld enemies.\n\n", (long int)Total);
 #endif
@@ -5748,11 +5748,11 @@ msg_print("´ûÃÎ¤Î¥â¥ó¥¹¥¿¡¼¤Ê¤·¡ª");
 			if (This > 0)
 			{
 #ifdef JP
-/* p,t¤Ï¿Í¤È¿ô¤¨¤ë by ita*/
+/* p,tã¯äººã¨æ•°ãˆã‚‹ by ita*/
 if (my_strchr("pt",r_ptr->d_char))
-fprintf(fff, "     %3d ¿Í¤Î %s\n", This, r_name + r_ptr->name);
+fprintf(fff, "     %3d äººã® %s\n", This, r_name + r_ptr->name);
 else
-fprintf(fff, "     %3d É¤¤Î %s\n", This, r_name + r_ptr->name);
+fprintf(fff, "     %3d åŒ¹ã® %s\n", This, r_name + r_ptr->name);
 #else
 				if (This < 2)
 				{
@@ -5782,7 +5782,7 @@ fprintf(fff, "     %3d É¤¤Î %s\n", This, r_name + r_ptr->name);
 
 	fprintf(fff,"----------------------------------------------\n");
 #ifdef JP
-	fprintf(fff,"    ¹ç·×: %ld É¤¤òÅİ¤·¤¿¡£\n", (long int)Total);
+	fprintf(fff,"    åˆè¨ˆ: %ld åŒ¹ã‚’å€’ã—ãŸã€‚\n", (long int)Total);
 #else
 	fprintf(fff,"   Total: %ld creature%s killed.\n",
 		(long int)Total, (Total == 1 ? "" : "s"));
@@ -5797,7 +5797,7 @@ fprintf(fff, "     %3d É¤¤Î %s\n", This, r_name + r_ptr->name);
 
 	/* Display the file contents */
 #ifdef JP
-show_file(file_name, "Åİ¤·¤¿Å¨¤Î¿ô", 0, 0);
+show_file(file_name, "å€’ã—ãŸæ•µã®æ•°", 0, 0);
 #else
 	show_file(file_name, "Kill Count", 0, 0);
 #endif
@@ -6270,7 +6270,7 @@ static void desc_obj_fake(int k_idx)
 
 	if (!identify_fully_aux(o_ptr, FALSE))
 #ifdef JP
-		msg_print("ÆÃ¤ËÊÑ¤ï¤Ã¤¿¤È¤³¤í¤Ï¤Ê¤¤¤è¤¦¤À¡£");
+		msg_print("ç‰¹ã«å¤‰ã‚ã£ãŸã¨ã“ã‚ã¯ãªã„ã‚ˆã†ã ã€‚");
 #else
 		msg_print("You see nothing special.");
 #endif
@@ -6386,11 +6386,11 @@ static void do_cmd_knowledge_objects(bool *need_redraw, bool visual_only, int di
 			clear_from(0);
 
 #ifdef JP
-			prt(format("%s - ¥¢¥¤¥Æ¥à", !visual_only ? "ÃÎ¼±" : "É½¼¨"), 2, 0);
-			if (direct_k_idx < 0) prt("¥°¥ë¡¼¥×", 4, 0);
-			prt("Ì¾Á°", 4, max + 3);
+			prt(format("%s - ã‚¢ã‚¤ãƒ†ãƒ ", !visual_only ? "çŸ¥è­˜" : "è¡¨ç¤º"), 2, 0);
+			if (direct_k_idx < 0) prt("ã‚°ãƒ«ãƒ¼ãƒ—", 4, 0);
+			prt("åå‰", 4, max + 3);
 			if (wizard || visual_only) prt("Idx", 4, 70);
-			prt("Ê¸»ú", 4, 74);
+			prt("æ–‡å­—", 4, 74);
 #else
 			prt(format("%s - objects", !visual_only ? "Knowledge" : "Visuals"), 2, 0);
 			if (direct_k_idx < 0) prt("Group", 4, 0);
@@ -6471,10 +6471,10 @@ static void do_cmd_knowledge_objects(bool *need_redraw, bool visual_only, int di
 
 		/* Prompt */
 #ifdef JP
-		prt(format("<Êı¸ş>%s%s%s, ESC",
-			(!visual_list && !visual_only) ? ", 'r'¤Ç¾ÜºÙ¤ò¸«¤ë" : "",
-			visual_list ? ", ENTER¤Ç·èÄê" : ", 'v'¤Ç¥·¥ó¥Ü¥ëÊÑ¹¹",
-			(attr_idx || char_idx) ? ", 'c', 'p'¤Ç¥Ú¡¼¥¹¥È" : ", 'c'¤Ç¥³¥Ô¡¼"),
+		prt(format("<æ–¹å‘>%s%s%s, ESC",
+			(!visual_list && !visual_only) ? ", 'r'ã§è©³ç´°ã‚’è¦‹ã‚‹" : "",
+			visual_list ? ", ENTERã§æ±ºå®š" : ", 'v'ã§ã‚·ãƒ³ãƒœãƒ«å¤‰æ›´",
+			(attr_idx || char_idx) ? ", 'c', 'p'ã§ãƒšãƒ¼ã‚¹ãƒˆ" : ", 'c'ã§ã‚³ãƒ”ãƒ¼"),
 			hgt - 1, 0);
 #else
 		prt(format("<dir>%s%s%s, ESC",
@@ -6612,7 +6612,7 @@ static void display_monster_list(int col, int row, int per_page, s16b mon_idx[],
 			/* Display kills */
 			if (!(r_ptr->flags1 & RF1_UNIQUE)) put_str(format("%5d", r_ptr->r_pkills), row + i, 73);
 #ifdef JP
-			else c_put_str((r_ptr->max_num == 0 ? TERM_L_DARK : TERM_WHITE), (r_ptr->max_num == 0 ? "»àË´" : "À¸Â¸"), row + i, 74);
+			else c_put_str((r_ptr->max_num == 0 ? TERM_L_DARK : TERM_WHITE), (r_ptr->max_num == 0 ? "æ­»äº¡" : "ç”Ÿå­˜"), row + i, 74);
 #else
 			else c_put_str((r_ptr->max_num == 0 ? TERM_L_DARK : TERM_WHITE), (r_ptr->max_num == 0 ? " dead" : "alive"), row + i, 73);
 #endif
@@ -6719,12 +6719,12 @@ static void do_cmd_knowledge_monsters(bool *need_redraw, bool visual_only, int d
 			clear_from(0);
 
 #ifdef JP
-			prt(format("%s - ¥â¥ó¥¹¥¿¡¼", !visual_only ? "ÃÎ¼±" : "É½¼¨"), 2, 0);
-			if (direct_r_idx < 0) prt("¥°¥ë¡¼¥×", 4, 0);
-			prt("Ì¾Á°", 4, max + 3);
+			prt(format("%s - ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼", !visual_only ? "çŸ¥è­˜" : "è¡¨ç¤º"), 2, 0);
+			if (direct_r_idx < 0) prt("ã‚°ãƒ«ãƒ¼ãƒ—", 4, 0);
+			prt("åå‰", 4, max + 3);
 			if (wizard || visual_only) prt("Idx", 4, 62);
-			prt("Ê¸»ú", 4, 67);
-			if (!visual_only) prt("»¦³²¿ô", 4, 72);
+			prt("æ–‡å­—", 4, 67);
+			if (!visual_only) prt("æ®ºå®³æ•°", 4, 72);
 #else
 			prt(format("%s - monsters", !visual_only ? "Knowledge" : "Visuals"), 2, 0);
 			if (direct_r_idx < 0) prt("Group", 4, 0);
@@ -6792,10 +6792,10 @@ static void do_cmd_knowledge_monsters(bool *need_redraw, bool visual_only, int d
 
 		/* Prompt */
 #ifdef JP
-		prt(format("<Êı¸ş>%s%s%s, ESC",
-			(!visual_list && !visual_only) ? ", 'r'¤Ç»×¤¤½Ğ¤ò¸«¤ë" : "",
-			visual_list ? ", ENTER¤Ç·èÄê" : ", 'v'¤Ç¥·¥ó¥Ü¥ëÊÑ¹¹",
-			(attr_idx || char_idx) ? ", 'c', 'p'¤Ç¥Ú¡¼¥¹¥È" : ", 'c'¤Ç¥³¥Ô¡¼"),
+		prt(format("<æ–¹å‘>%s%s%s, ESC",
+			(!visual_list && !visual_only) ? ", 'r'ã§æ€ã„å‡ºã‚’è¦‹ã‚‹" : "",
+			visual_list ? ", ENTERã§æ±ºå®š" : ", 'v'ã§ã‚·ãƒ³ãƒœãƒ«å¤‰æ›´",
+			(attr_idx || char_idx) ? ", 'c', 'p'ã§ãƒšãƒ¼ã‚¹ãƒˆ" : ", 'c'ã§ã‚³ãƒ”ãƒ¼"),
 			hgt - 1, 0);
 #else
 		prt(format("<dir>%s%s%s, ESC",
@@ -7060,18 +7060,18 @@ static void do_cmd_knowledge_features(bool *need_redraw, bool visual_only, int d
 			clear_from(0);
 
 #ifdef JP
-			prt("É½¼¨ - ÃÏ·Á", 2, 0);
-			if (direct_f_idx < 0) prt("¥°¥ë¡¼¥×", 4, 0);
-			prt("Ì¾Á°", 4, max + 3);
+			prt("è¡¨ç¤º - åœ°å½¢", 2, 0);
+			if (direct_f_idx < 0) prt("ã‚°ãƒ«ãƒ¼ãƒ—", 4, 0);
+			prt("åå‰", 4, max + 3);
 			if (use_bigtile)
 			{
 				if (wizard || visual_only) prt("Idx", 4, 62);
-				prt("Ê¸»ú ( l/ d)", 4, 66);
+				prt("æ–‡å­— ( l/ d)", 4, 66);
 			}
 			else
 			{
 				if (wizard || visual_only) prt("Idx", 4, 64);
-				prt("Ê¸»ú (l/d)", 4, 68);
+				prt("æ–‡å­— (l/d)", 4, 68);
 			}
 #else
 			prt("Visuals - features", 2, 0);
@@ -7147,9 +7147,9 @@ static void do_cmd_knowledge_features(bool *need_redraw, bool visual_only, int d
 
 		/* Prompt */
 #ifdef JP
-		prt(format("<Êı¸ş>%s, 'd'¤ÇÉ¸½à¸÷¸»¸ú²Ì%s, ESC",
-			visual_list ? ", ENTER¤Ç·èÄê, 'a'¤ÇÂĞ¾İÌÀÅÙÊÑ¹¹" : ", 'v'¤Ç¥·¥ó¥Ü¥ëÊÑ¹¹",
-			(attr_idx || char_idx) ? ", 'c', 'p'¤Ç¥Ú¡¼¥¹¥È" : ", 'c'¤Ç¥³¥Ô¡¼"),
+		prt(format("<æ–¹å‘>%s, 'd'ã§æ¨™æº–å…‰æºåŠ¹æœ%s, ESC",
+			visual_list ? ", ENTERã§æ±ºå®š, 'a'ã§å¯¾è±¡æ˜åº¦å¤‰æ›´" : ", 'v'ã§ã‚·ãƒ³ãƒœãƒ«å¤‰æ›´",
+			(attr_idx || char_idx) ? ", 'c', 'p'ã§ãƒšãƒ¼ã‚¹ãƒˆ" : ", 'c'ã§ã‚³ãƒ”ãƒ¼"),
 			hgt - 1, 0);
 #else
 		prt(format("<dir>%s, 'd' for default lighting%s, ESC",
@@ -7355,7 +7355,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 	ang_sort(quest_num, &dummy, max_quests);
 
 #ifdef JP
-	fprintf(fff, "\n¡ÔÃ£À®¤·¤¿¥¯¥¨¥¹¥È¡Õ\n");
+	fprintf(fff, "\nã€Šé”æˆã—ãŸã‚¯ã‚¨ã‚¹ãƒˆã€‹\n");
 #else
 	fprintf(fff, "\n< Completed Quest >\n");
 #endif
@@ -7389,7 +7389,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 				/* Print the quest info */
 				sprintf(tmp_str,
 #ifdef JP
-					"  %-40s (%3d³¬)            - ¥ì¥Ù¥ë%2d\n",
+					"  %-40s (%3déš)            - ãƒ¬ãƒ™ãƒ«%2d\n",
 #else
 					"  %-40s (Dungeon level: %3d) - level %2d\n",
 #endif
@@ -7399,7 +7399,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 			{
 				/* Print the quest info */
 #ifdef JP
-				sprintf(tmp_str, "  %-40s (´í¸±ÅÙ:%3d³¬ÁêÅö) - ¥ì¥Ù¥ë%2d\n",
+				sprintf(tmp_str, "  %-40s (å±é™ºåº¦:%3déšç›¸å½“) - ãƒ¬ãƒ™ãƒ«%2d\n",
 					quest[num].name, quest[num].level, quest[num].complev);
 #else
 				sprintf(tmp_str, "  %-40s (Danger level: %3d)  - level %2d\n",
@@ -7411,13 +7411,13 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 		}
 	}
 #ifdef JP
-	if (!total) fprintf(fff, "¤Ê¤·\n");
+	if (!total) fprintf(fff, "ãªã—\n");
 #else
 	if (!total) fprintf(fff, "Nothing.\n");
 #endif
 
 #ifdef JP
-	fprintf(fff, "\n¡Ô¼ºÇÔ¤·¤¿¥¯¥¨¥¹¥È¡Õ\n");
+	fprintf(fff, "\nã€Šå¤±æ•—ã—ãŸã‚¯ã‚¨ã‚¹ãƒˆã€‹\n");
 #else
 	fprintf(fff, "\n< Failed Quest >\n");
 #endif
@@ -7450,7 +7450,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 			{
 				/* Print the quest info */
 #ifdef JP
-				sprintf(tmp_str, "  %-40s (%3d³¬)            - ¥ì¥Ù¥ë%2d\n",
+				sprintf(tmp_str, "  %-40s (%3déš)            - ãƒ¬ãƒ™ãƒ«%2d\n",
 					r_name+r_info[quest[num].r_idx].name, quest[num].level, quest[num].complev);
 #else
 				sprintf(tmp_str, "  %-40s (Dungeon level: %3d) - level %2d\n",
@@ -7461,7 +7461,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 			{
 				/* Print the quest info */
 #ifdef JP
-				sprintf(tmp_str, "  %-40s (´í¸±ÅÙ:%3d³¬ÁêÅö) - ¥ì¥Ù¥ë%2d\n",
+				sprintf(tmp_str, "  %-40s (å±é™ºåº¦:%3déšç›¸å½“) - ãƒ¬ãƒ™ãƒ«%2d\n",
 					quest[num].name, quest[num].level, quest[num].complev);
 #else
 				sprintf(tmp_str, "  %-40s (Danger level: %3d)  - level %2d\n",
@@ -7472,7 +7472,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 		}
 	}
 #ifdef JP
-	if (!total) fprintf(fff, "¤Ê¤·\n");
+	if (!total) fprintf(fff, "ãªã—\n");
 #else
 	if (!total) fprintf(fff, "Nothing.\n");
 #endif
@@ -7480,7 +7480,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 	if (wizard)
 	{
 #ifdef JP
-		fprintf(fff, "\n¡Ô»Ä¤ê¤Î¥é¥ó¥À¥à¥¯¥¨¥¹¥È¡Õ\n");
+		fprintf(fff, "\nã€Šæ®‹ã‚Šã®ãƒ©ãƒ³ãƒ€ãƒ ã‚¯ã‚¨ã‚¹ãƒˆã€‹\n");
 #else
 		fprintf(fff, "\n< Remaining Random Quest >\n");
 #endif
@@ -7497,7 +7497,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 
 				/* Print the quest info */
 #ifdef JP
-				sprintf(tmp_str, "%s (%d³¬)\n",
+				sprintf(tmp_str, "%s (%déš)\n",
 #else
 				sprintf(tmp_str, "%s (Dungeon level: %d)\n",
 #endif
@@ -7506,7 +7506,7 @@ void do_cmd_knowledge_quests_aux(FILE *fff)
 			}
 		}
 #ifdef JP
-		if (!total) fprintf(fff, "¤Ê¤·\n");
+		if (!total) fprintf(fff, "ãªã—\n");
 #else
 		if (!total) fprintf(fff, "Nothing.\n");
 #endif
@@ -7535,7 +7535,7 @@ static void do_cmd_knowledge_quests(void)
 	fff = my_fopen_temp(file_name, 1024);
 	if (!fff) {
 #ifdef JP
-	    msg_format("°ì»ş¥Õ¥¡¥¤¥ë %s ¤òºîÀ®¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¡£", file_name);
+	    msg_format("ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ« %s ã‚’ä½œæˆã§ãã¾ã›ã‚“ã§ã—ãŸã€‚", file_name);
 #else
 	    msg_format("Failed to create temporary file %s.", file_name);
 #endif
@@ -7546,8 +7546,8 @@ static void do_cmd_knowledge_quests(void)
 	if (p_ptr->max_dlv > 0)
 	{
 #ifdef JP
-		fprintf(fff, "¡Ôµ¢´Ô¾ì½ê¡Õ\n");
-		fprintf(fff, "  %d ³¬ (%d ¥Õ¥£¡¼¥È)\n\n", p_ptr->max_dlv, p_ptr->max_dlv * 50);
+		fprintf(fff, "ã€Šå¸°é‚„å ´æ‰€ã€‹\n");
+		fprintf(fff, "  %d éš (%d ãƒ•ã‚£ãƒ¼ãƒˆ)\n\n", p_ptr->max_dlv, p_ptr->max_dlv * 50);
 #else
 		fprintf(fff, "< Recall Deapth >\n");
 		fprintf(fff, "  Level %d (%d')\n\n", p_ptr->max_dlv, p_ptr->max_dlv * 50);
@@ -7555,7 +7555,7 @@ static void do_cmd_knowledge_quests(void)
 	}
 
 #ifdef JP
-	fprintf(fff, "¡Ô¿ë¹ÔÃæ¤Î¥¯¥¨¥¹¥È¡Õ\n");
+	fprintf(fff, "ã€Šé‚è¡Œä¸­ã®ã‚¯ã‚¨ã‚¹ãƒˆã€‹\n");
 #else
 	fprintf(fff, "< Current Quest >\n");
 #endif
@@ -7605,7 +7605,7 @@ static void do_cmd_knowledge_quests(void)
 						if (quest[i].max_num > 1)
 						{
 #ifdef JP
-							sprintf(note," - %d ÂÎ¤Î%s¤òÅİ¤¹¡£(¤¢¤È %d ÂÎ)",quest[i].max_num, name, quest[i].max_num-quest[i].cur_num);
+							sprintf(note," - %d ä½“ã®%sã‚’å€’ã™ã€‚(ã‚ã¨ %d ä½“)",quest[i].max_num, name, quest[i].max_num-quest[i].cur_num);
 #else
 							plural_aux(name);
 							sprintf(note," - kill %d %s, have killed %d.",quest[i].max_num, name, quest[i].cur_num);
@@ -7613,7 +7613,7 @@ static void do_cmd_knowledge_quests(void)
 						}
 						else
 #ifdef JP
-							sprintf(note," - %s¤òÅİ¤¹¡£",name);
+							sprintf(note," - %sã‚’å€’ã™ã€‚",name);
 #else
 							sprintf(note," - kill %s.",name);
 #endif
@@ -7621,7 +7621,7 @@ static void do_cmd_knowledge_quests(void)
 					else if (quest[i].type == QUEST_TYPE_KILL_NUMBER)
 					{
 #ifdef JP
-						sprintf(note," - %d ÂÎ¤Î¥â¥ó¥¹¥¿¡¼¤òÅİ¤¹¡£(¤¢¤È %d ÂÎ)",quest[i].max_num, quest[i].max_num-quest[i].cur_num);
+						sprintf(note," - %d ä½“ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’å€’ã™ã€‚(ã‚ã¨ %d ä½“)",quest[i].max_num, quest[i].max_num-quest[i].cur_num);
 #else
 						sprintf(note," - Kill %d monsters, have killed %d.",quest[i].max_num, quest[i].cur_num);
 #endif
@@ -7630,20 +7630,20 @@ static void do_cmd_knowledge_quests(void)
 					{
 						strcpy(name, a_name + a_info[quest[i].k_idx].name);
 #ifdef JP
-						sprintf(note," - %s¤ò¸«¤Ä¤±½Ğ¤¹¡£", name);
+						sprintf(note," - %sã‚’è¦‹ã¤ã‘å‡ºã™ã€‚", name);
 #else
 						sprintf(note," - Find out %s.", name);
 #endif
 					}
 					else if (quest[i].type == QUEST_TYPE_FIND_EXIT)
 #ifdef JP
-						sprintf(note," - Ãµº÷¤¹¤ë¡£");
+						sprintf(note," - æ¢ç´¢ã™ã‚‹ã€‚");
 #else
 						sprintf(note," - Search.");
 #endif
 					else if (quest[i].type == QUEST_TYPE_KILL_ALL)
 #ifdef JP
-						sprintf(note," - Á´¤Æ¤Î¥â¥ó¥¹¥¿¡¼¤òÅİ¤¹¡£");
+						sprintf(note," - å…¨ã¦ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’å€’ã™ã€‚");
 #else
 						sprintf(note," - Kill all monsters.");
 #endif
@@ -7651,7 +7651,7 @@ static void do_cmd_knowledge_quests(void)
 
 				/* Print the quest info */
 #ifdef JP
-				sprintf(tmp_str, "%s (´í¸±ÅÙ:%d³¬ÁêÅö)%s\n",
+				sprintf(tmp_str, "%s (å±é™ºåº¦:%déšç›¸å½“)%s\n",
 #else
 				sprintf(tmp_str, "%s (Danger level: %d)%s\n",
 #endif
@@ -7663,7 +7663,7 @@ static void do_cmd_knowledge_quests(void)
 				if (quest[i].status == QUEST_STATUS_COMPLETED)
 				{
 #ifdef JP
-					sprintf(tmp_str, "  ¥¯¥¨¥¹¥ÈÃ£À® - ¤Ş¤ÀÊó½·¤ò¼õ¤±¤È¤Ã¤Æ¤Ê¤¤¡£\n");
+					sprintf(tmp_str, "  ã‚¯ã‚¨ã‚¹ãƒˆé”æˆ - ã¾ã å ±é…¬ã‚’å—ã‘ã¨ã£ã¦ãªã„ã€‚\n");
 #else
 					sprintf(tmp_str, "  Quest Completed - Unrewarded\n");
 #endif
@@ -7695,7 +7695,7 @@ static void do_cmd_knowledge_quests(void)
 					if (quest[i].max_num > 1)
 					{
 #ifdef JP
-						sprintf(rand_tmp_str,"%s (%d ³¬) - %d ÂÎ¤Î%s¤òÅİ¤¹¡£(¤¢¤È %d ÂÎ)\n",
+						sprintf(rand_tmp_str,"%s (%d éš) - %d ä½“ã®%sã‚’å€’ã™ã€‚(ã‚ã¨ %d ä½“)\n",
 							quest[i].name, quest[i].level,
 							quest[i].max_num, name, quest[i].max_num-quest[i].cur_num);
 #else
@@ -7708,7 +7708,7 @@ static void do_cmd_knowledge_quests(void)
 					else
 					{
 #ifdef JP
-						sprintf(rand_tmp_str,"ËÉ±Ò¼Ô (%d ³¬) - %s¤òÅİ¤¹¡£\n",
+						sprintf(rand_tmp_str,"é˜²è¡›è€… (%d éš) - %sã‚’å€’ã™ã€‚\n",
 #else
 						sprintf(rand_tmp_str,"The Guardian (Dungeon level: %d)\n  Kill %s.\n",
 #endif
@@ -7723,7 +7723,7 @@ static void do_cmd_knowledge_quests(void)
 	if (rand_tmp_str[0]) fputs(rand_tmp_str, fff);
 
 #ifdef JP
-	if (!total) fprintf(fff, "¤Ê¤·\n");
+	if (!total) fprintf(fff, "ãªã—\n");
 #else
 	if (!total) fprintf(fff, "Nothing.\n");
 #endif
@@ -7736,7 +7736,7 @@ static void do_cmd_knowledge_quests(void)
 
 	/* Display the file contents */
 #ifdef JP
-	show_file(file_name, "¥¯¥¨¥¹¥ÈÃ£À®¾õ¶·", 0, 0);
+	show_file(file_name, "ã‚¯ã‚¨ã‚¹ãƒˆé”æˆçŠ¶æ³", 0, 0);
 #else
 	show_file(file_name, "Quest status", 0, 0);
 #endif
@@ -7754,7 +7754,7 @@ static void do_cmd_knowledge_notes(void)
 	if (!take_notes)
 	{
 #ifdef JP
-		msg_print("¥×¥ì¥¤µ­Ï¿¤òºÎ¤Ã¤Æ¤¤¤Ş¤»¤ó¡£");
+		msg_print("ãƒ—ãƒ¬ã‚¤è¨˜éŒ²ã‚’æ¡ã£ã¦ã„ã¾ã›ã‚“ã€‚");
 #else
 		msg_print("You can't see play record.");
 #endif
@@ -7763,7 +7763,7 @@ static void do_cmd_knowledge_notes(void)
 	else
 	{
 #ifdef JP
-		(void) show_file(notes_file(), "¥á¥â", 0, 0);
+		(void) show_file(notes_file(), "ãƒ¡ãƒ¢", 0, 0);
 #else
 		(void) show_file(notes_file(), "Notes", 0, 0);
 #endif
@@ -7773,7 +7773,7 @@ static void do_cmd_knowledge_notes(void)
 
 cptr inven_res_label = 
 #ifdef JP
- "                                »ÀÅÅ²ĞÎäÆÇ¶²°ÅÌÕÍğ¹ì¹ö áãÆ©Ì¿´¶¾ÃÉüÉâ";
+ "                                é…¸é›»ç«å†·æ¯’ææš—ç›²ä¹±è½Ÿç„ ç—ºé€å‘½æ„Ÿæ¶ˆå¾©æµ®";
 #else
  "                                AcElFiCoPoFeDkBlCfSoNt FaSeHlEpSdRgLv";
 #endif
@@ -7807,7 +7807,7 @@ static void do_cmd_knowledge_inven_aux(FILE *fff, object_type *o_ptr,
 
 		object_desc(o_name, o_ptr, OD_NAME_ONLY);
 
-		/* Ì¾Á°¤òÈ¾³Ñ28Ê¸»ú¤Ç¥«¥Ã¥È¡£Â­¤ê¤Ê¤¤»ş¤Ï¥¹¥Ú¡¼¥¹¤ÇËä¤á¤ë */
+		/* åå‰ã‚’åŠè§’28æ–‡å­—ã§ã‚«ãƒƒãƒˆã€‚è¶³ã‚Šãªã„æ™‚ã¯ã‚¹ãƒšãƒ¼ã‚¹ã§åŸ‹ã‚ã‚‹ */
 #ifdef JP
 		i = null_pos_j(o_name, 28);
 #else
@@ -7822,16 +7822,16 @@ static void do_cmd_knowledge_inven_aux(FILE *fff, object_type *o_ptr,
 		if (!(o_ptr->ident & (IDENT_MENTAL))) 
 		{
 #ifdef JP
-			fprintf(fff, "--------ÉÔÌÀ---------- -----ÉÔÌÀ-----\n");
+			fprintf(fff, "--------ä¸æ˜---------- -----ä¸æ˜-----\n");
 #else
 			fprintf(fff, "--------unknown------- -----unknown--\n");
 #endif
 		}
 		else {
 #ifdef JP
-			cptr imm = "¡ö";
-			cptr res = "¡Ü";
-			cptr non = "¡¦";
+			cptr imm = "ï¼Š";
+			cptr res = "ï¼‹";
+			cptr non = "ãƒ»";
 #else
 			cptr imm = "* ";
 			cptr res = "+ ";
@@ -7953,7 +7953,7 @@ static void do_cmd_knowledge_inven(void)
 	if (!fff)
 	{
 #ifdef JP
-		msg_format("°ì»ş¥Õ¥¡¥¤¥ë %s ¤òºîÀ®¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¡£", file_name);
+		msg_format("ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ« %s ã‚’ä½œæˆã§ãã¾ã›ã‚“ã§ã—ãŸã€‚", file_name);
 #else
 		msg_format("Failed to create temporally file %s.", file_name);
 #endif
@@ -7975,7 +7975,7 @@ static void do_cmd_knowledge_inven(void)
 		}
 
 #ifdef JP
-		strcpy(where, "Áõ");
+		strcpy(where, "è£…");
 #else
 		strcpy(where, "E ");
 #endif
@@ -7986,7 +7986,7 @@ static void do_cmd_knowledge_inven(void)
 		}
 
 #ifdef JP
-		strcpy(where, "»ı");
+		strcpy(where, "æŒ");
 #else
 		strcpy(where, "I ");
 #endif
@@ -7999,7 +7999,7 @@ static void do_cmd_knowledge_inven(void)
 		/* Print all homes in the different towns */
 		st_ptr = &town[1].store[STORE_HOME];
 #ifdef JP
-		strcpy(where, "²È");
+		strcpy(where, "å®¶");
 #else
 		strcpy(where, "H ");
 #endif
@@ -8016,7 +8016,7 @@ static void do_cmd_knowledge_inven(void)
 
 	/* Display the file contents */
 #ifdef JP
-	show_file(file_name, "*´ÕÄê*ºÑ¤ßÉğ´ï/ËÉ¶ñ¤ÎÂÑÀ­¥ê¥¹¥È", 0, 0);
+	show_file(file_name, "*é‘‘å®š*æ¸ˆã¿æ­¦å™¨/é˜²å…·ã®è€æ€§ãƒªã‚¹ãƒˆ", 0, 0);
 #else
 	show_file(file_name, "Resistances of *identified* equipment", 0, 0);
 #endif
@@ -8046,7 +8046,7 @@ static void do_cmd_knowledge_home(void)
 	fff = my_fopen_temp(file_name, 1024);
 	if (!fff) {
 #ifdef JP
-	    msg_format("°ì»ş¥Õ¥¡¥¤¥ë %s ¤òºîÀ®¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¡£", file_name);
+	    msg_format("ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ« %s ã‚’ä½œæˆã§ãã¾ã›ã‚“ã§ã—ãŸã€‚", file_name);
 #else
 	    msg_format("Failed to create temporary file %s.", file_name);
 #endif
@@ -8064,7 +8064,7 @@ static void do_cmd_knowledge_home(void)
 		{
 			/* Header with name of the town */
 #ifdef JP
-			fprintf(fff, "  [ ²æ¤¬²È¤Î¥¢¥¤¥Æ¥à ]\n");
+			fprintf(fff, "  [ æˆ‘ãŒå®¶ã®ã‚¢ã‚¤ãƒ†ãƒ  ]\n");
 #else
 			fprintf(fff, "  [Home Inventory]\n");
 #endif
@@ -8074,7 +8074,7 @@ static void do_cmd_knowledge_home(void)
 			for (i = 0; i < st_ptr->stock_num; i++)
 			{
 #ifdef JP
-				if ((i % 12) == 0) fprintf(fff, "\n ( %d ¥Ú¡¼¥¸ )\n", x++);
+				if ((i % 12) == 0) fprintf(fff, "\n ( %d ãƒšãƒ¼ã‚¸ )\n", x++);
 				object_desc(o_name, &st_ptr->stock[i], 0);
 				if (strlen(o_name) <= 80-3)
 				{
@@ -8086,7 +8086,7 @@ static void do_cmd_knowledge_home(void)
 					char *t;
 					for (n = 0, t = o_name; n < 80-3; n++, t++)
 						if(iskanji(*t)) {t++; n++;}
-					if (n == 81-3) n = 79-3; /* ºÇ¸å¤¬´Á»úÈ¾Ê¬ */
+					if (n == 81-3) n = 79-3; /* æœ€å¾ŒãŒæ¼¢å­—åŠåˆ† */
 
 					fprintf(fff, "%c%s %.*s\n", I2A(i%12), paren, n, o_name);
 					fprintf(fff, "   %.77s\n", o_name+n);
@@ -8108,7 +8108,7 @@ static void do_cmd_knowledge_home(void)
 	
 	/* Display the file contents */
 #ifdef JP
-	show_file(file_name, "²æ¤¬²È¤Î¥¢¥¤¥Æ¥à", 0, 0);
+	show_file(file_name, "æˆ‘ãŒå®¶ã®ã‚¢ã‚¤ãƒ†ãƒ ", 0, 0);
 #else
 	show_file(file_name, "Home Inventory", 0, 0);
 #endif
@@ -8133,7 +8133,7 @@ static void do_cmd_knowledge_autopick(void)
 	if (!fff)
 	{
 #ifdef JP
-	    msg_format("°ì»ş¥Õ¥¡¥¤¥ë %s ¤òºîÀ®¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¡£", file_name);
+	    msg_format("ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ« %s ã‚’ä½œæˆã§ãã¾ã›ã‚“ã§ã—ãŸã€‚", file_name);
 #else
 	    msg_format("Failed to create temporary file %s.", file_name);
 #endif
@@ -8144,7 +8144,7 @@ static void do_cmd_knowledge_autopick(void)
 	if (!max_autopick)
 	{
 #ifdef JP
-	    fprintf(fff, "¼«Æ°ÇË²õ/½¦¤¤¤Ë¤Ï²¿¤âÅĞÏ¿¤µ¤ì¤Æ¤¤¤Ş¤»¤ó¡£");
+	    fprintf(fff, "è‡ªå‹•ç ´å£Š/æ‹¾ã„ã«ã¯ä½•ã‚‚ç™»éŒ²ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚");
 #else
 	    fprintf(fff, "No preference for auto picker/destroyer.");
 #endif
@@ -8152,7 +8152,7 @@ static void do_cmd_knowledge_autopick(void)
 	else
 	{
 #ifdef JP
-	    fprintf(fff, "   ¼«Æ°½¦¤¤/ÇË²õ¤Ë¤Ï¸½ºß %d¹ÔÅĞÏ¿¤µ¤ì¤Æ¤¤¤Ş¤¹¡£\n\n", max_autopick);
+	    fprintf(fff, "   è‡ªå‹•æ‹¾ã„/ç ´å£Šã«ã¯ç¾åœ¨ %dè¡Œç™»éŒ²ã•ã‚Œã¦ã„ã¾ã™ã€‚\n\n", max_autopick);
 #else
 	    fprintf(fff, "   There are %d registered lines for auto picker/destroyer.\n\n", max_autopick);
 #endif
@@ -8166,7 +8166,7 @@ static void do_cmd_knowledge_autopick(void)
 		if (act & DONT_AUTOPICK)
 		{
 #ifdef JP
-			tmp = "ÊüÃÖ";
+			tmp = "æ”¾ç½®";
 #else
 			tmp = "Leave";
 #endif
@@ -8174,7 +8174,7 @@ static void do_cmd_knowledge_autopick(void)
 		else if (act & DO_AUTODESTROY)
 		{
 #ifdef JP
-			tmp = "ÇË²õ";
+			tmp = "ç ´å£Š";
 #else
 			tmp = "Destroy";
 #endif
@@ -8182,7 +8182,7 @@ static void do_cmd_knowledge_autopick(void)
 		else
 		{
 #ifdef JP
-			tmp = "½¦¤¦";
+			tmp = "æ‹¾ã†";
 #else
 			tmp = "Pickup";
 #endif
@@ -8204,7 +8204,7 @@ static void do_cmd_knowledge_autopick(void)
 
 	/* Display the file contents */
 #ifdef JP
-	show_file(file_name, "¼«Æ°½¦¤¤/ÇË²õ ÀßÄê¥ê¥¹¥È", 0, 0);
+	show_file(file_name, "è‡ªå‹•æ‹¾ã„/ç ´å£Š è¨­å®šãƒªã‚¹ãƒˆ", 0, 0);
 #else
 	show_file(file_name, "Auto-picker/Destroyer", 0, 0);
 #endif
@@ -8235,8 +8235,8 @@ void do_cmd_knowledge(void)
 
 		/* Ask for a choice */
 #ifdef JP
-		prt(format("%d/2 ¥Ú¡¼¥¸", (p+1)), 2, 65);
-		prt("¸½ºß¤ÎÃÎ¼±¤ò³ÎÇ§¤¹¤ë", 3, 0);
+		prt(format("%d/2 ãƒšãƒ¼ã‚¸", (p+1)), 2, 65);
+		prt("ç¾åœ¨ã®çŸ¥è­˜ã‚’ç¢ºèªã™ã‚‹", 3, 0);
 #else
 		prt(format("page %d/2", (p+1)), 2, 65);
 		prt("Display current knowledge", 3, 0);
@@ -8246,15 +8246,15 @@ void do_cmd_knowledge(void)
 		if (p == 0)
 		{
 #ifdef JP
-			prt("(1) ´ûÃÎ¤Î ÅÁÀâ¤Î¥¢¥¤¥Æ¥à       ¤Î°ìÍ÷",  6, 5);
-			prt("(2) ´ûÃÎ¤Î ¥¢¥¤¥Æ¥à             ¤Î°ìÍ÷",  7, 5);
-			prt("(3) ´ûÃÎ¤Î ¥â¥ó¥¹¥¿¡¼           ¤Î°ìÍ÷",  8, 5);
-			prt("(4) ´ûÃÎ¤Î ¥æ¥Ë¡¼¥¯¡¦¥â¥ó¥¹¥¿¡¼ ¤Î°ìÍ÷",  9, 5);
-			prt("(5) Åİ¤·¤¿Å¨¤Î¿ô                ¤Î°ìÍ÷", 10, 5);
-			prt("(6) ¸½ºß¤Î¥Ú¥Ã¥È                ¤Î°ìÍ÷", 11, 5);
-			prt("(7) ²æ¤¬²È¤Î¥¢¥¤¥Æ¥à            ¤Î°ìÍ÷", 12, 5);
-			prt("(8) *´ÕÄê*ºÑ¤ßÁõÈ÷¤ÎÂÑÀ­        ¤Î°ìÍ÷", 13, 5);
-			prt("(9) ¸½ºß¤ÎÃÏ·Á¤ÎÀßÄê            ¤Î°ìÍ÷", 14, 5);
+			prt("(1) æ—¢çŸ¥ã® ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ        ã®ä¸€è¦§",  6, 5);
+			prt("(2) æ—¢çŸ¥ã® ã‚¢ã‚¤ãƒ†ãƒ              ã®ä¸€è¦§",  7, 5);
+			prt("(3) æ—¢çŸ¥ã® ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼           ã®ä¸€è¦§",  8, 5);
+			prt("(4) æ—¢çŸ¥ã® ãƒ¦ãƒ‹ãƒ¼ã‚¯ãƒ»ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ ã®ä¸€è¦§",  9, 5);
+			prt("(5) å€’ã—ãŸæ•µã®æ•°                ã®ä¸€è¦§", 10, 5);
+			prt("(6) ç¾åœ¨ã®ãƒšãƒƒãƒˆ                ã®ä¸€è¦§", 11, 5);
+			prt("(7) æˆ‘ãŒå®¶ã®ã‚¢ã‚¤ãƒ†ãƒ             ã®ä¸€è¦§", 12, 5);
+			prt("(8) *é‘‘å®š*æ¸ˆã¿è£…å‚™ã®è€æ€§        ã®ä¸€è¦§", 13, 5);
+			prt("(9) ç¾åœ¨ã®åœ°å½¢ã®è¨­å®š            ã®ä¸€è¦§", 14, 5);
 #else
 			prt("(1) Display known artifacts", 6, 5);
 			prt("(2) Display known objects", 7, 5);
@@ -8270,10 +8270,10 @@ void do_cmd_knowledge(void)
 		else
 		{
 #ifdef JP
-			prt("(a) ÆÍÁ³ÊÑ°Û                    ¤Î°ìÍ÷",  6, 5);
-			prt("(b) ¼Â¹ÔÃæ¤Î¥¯¥¨¥¹¥È            ¤Î°ìÍ÷",  7, 5);
-			prt("(c) ¸½ºß¤Î¼«Æ°½¦¤¤/ÇË²õÀßÄê     ¤Î°ìÍ÷",  8, 5);
-			prt("(d) ¥×¥ì¥¤µ­Ï¿                  ¤òÉ½¼¨",  9, 5);
+			prt("(a) çªç„¶å¤‰ç•°                    ã®ä¸€è¦§",  6, 5);
+			prt("(b) å®Ÿè¡Œä¸­ã®ã‚¯ã‚¨ã‚¹ãƒˆ            ã®ä¸€è¦§",  7, 5);
+			prt("(c) ç¾åœ¨ã®è‡ªå‹•æ‹¾ã„/ç ´å£Šè¨­å®š     ã®ä¸€è¦§",  8, 5);
+			prt("(d) ãƒ—ãƒ¬ã‚¤è¨˜éŒ²                  ã‚’è¡¨ç¤º",  9, 5);
 #else
 			prt("(a) Display mutations", 6, 5);
 			prt("(b) Display current quests", 7, 5);
@@ -8284,11 +8284,11 @@ void do_cmd_knowledge(void)
 
 		/* Prompt */
 #ifdef JP
-		prt("-Â³¤¯-", 16, 8);
-		prt("ESC) È´¤±¤ë", 21, 1);
-		prt("SPACE) ¼¡¥Ú¡¼¥¸", 21, 30);
-		/* prt("-) Á°¥Ú¡¼¥¸", 21, 60); */
-		prt("¥³¥Ş¥ó¥É:", 20, 0);
+		prt("-ç¶šã-", 16, 8);
+		prt("ESC) æŠœã‘ã‚‹", 21, 1);
+		prt("SPACE) æ¬¡ãƒšãƒ¼ã‚¸", 21, 30);
+		/* prt("-) å‰ãƒšãƒ¼ã‚¸", 21, 60); */
+		prt("ã‚³ãƒãƒ³ãƒ‰:", 20, 0);
 #else
 		prt("-more-", 16, 8);
 		prt("ESC) Exit menu", 21, 1);
@@ -8405,7 +8405,7 @@ void do_cmd_time(void)
 	full = hour * 100 + min;
 
 #ifdef JP
-	strcpy(desc, "ÊÑ¤Ê»ş¹ï¤À¡£");
+	strcpy(desc, "å¤‰ãªæ™‚åˆ»ã ã€‚");
 #else
 	strcpy(desc, "It is a strange time.");
 #endif
@@ -8413,7 +8413,7 @@ void do_cmd_time(void)
 
 	/* Message */
 #ifdef JP
-	msg_format("%d ÆüÌÜ,»ş¹ï¤Ï%d:%02d %s¤Ç¤¹¡£",
+	msg_format("%d æ—¥ç›®,æ™‚åˆ»ã¯%d:%02d %sã§ã™ã€‚",
 	           day, (hour % 12 == 0) ? 12 : (hour % 12),
 	           min, (hour < 12) ? "AM" : "PM");
 #else

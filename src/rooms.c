@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * File: rooms.c
  * Purpose: make rooms. Used by generate.c when creating dungeons.
  */
@@ -1417,12 +1417,12 @@ static vault_aux_type *pick_vault_type(vault_aux_type *l_ptr)
 static vault_aux_type nest_types[] =
 {
 #ifdef JP
-	{"¥¯¥í¡¼¥ó",     vault_aux_clone,   vault_prep_clone,   5, 3},
-	{"¥¼¥ê¡¼",       vault_aux_jelly,   NULL,               5, 6},
-	{"µ­¹æ¥¯¥í¡¼¥ó", vault_aux_symbol,  vault_prep_symbol, 25, 3},
-	{"¸¤¾®²°",       vault_aux_kennel,  NULL,              50, 2},
-	{"Æ°Êª",         vault_aux_animal,  NULL,              50, 4},
-	{"¥¢¥ó¥Ç¥Ã¥É",   vault_aux_undead,  NULL,              65, 4},
+	{"ã‚¯ãƒ­ãƒ¼ãƒ³",     vault_aux_clone,   vault_prep_clone,   5, 3},
+	{"ã‚¼ãƒªãƒ¼",       vault_aux_jelly,   NULL,               5, 6},
+	{"è¨˜å·ã‚¯ãƒ­ãƒ¼ãƒ³", vault_aux_symbol,  vault_prep_symbol, 25, 3},
+	{"çŠ¬å°å±‹",       vault_aux_kennel,  NULL,              50, 2},
+	{"å‹•ç‰©",         vault_aux_animal,  NULL,              50, 4},
+	{"ã‚¢ãƒ³ãƒ‡ãƒƒãƒ‰",   vault_aux_undead,  NULL,              65, 4},
 #else
 	{"clone",        vault_aux_clone,   vault_prep_clone,   5, 3},
 	{"jelly",        vault_aux_jelly,   NULL,               5, 6},
@@ -1543,7 +1543,7 @@ static bool build_type5(void)
 	{
 		/* Room type */
 #ifdef JP
-		msg_format("¥â¥ó¥¹¥¿¡¼¤ÎÁã (%s)", n_ptr->name);
+		msg_format("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®å·£ (%s)", n_ptr->name);
 #else
 		msg_format("Monster nest (%s)", n_ptr->name);
 #endif
@@ -1568,12 +1568,12 @@ static bool build_type5(void)
 static vault_aux_type pit_types[] =
 {
 #ifdef JP
-	{"¥ª¡¼¥¯",       vault_aux_orc,     NULL,               5, 4},
-	{"¥È¥í¥ë",       vault_aux_troll,   NULL,              20, 4},
-	{"¥¸¥ã¥¤¥¢¥ó¥È", vault_aux_giant,   NULL,              40, 4},
-	{"¥¯¥í¡¼¥ó",     vault_aux_symbol,  vault_prep_symbol, 55, 3},
-	{"¥É¥é¥´¥ó",     vault_aux_dragon,  NULL, 70, 4},
-	{"¥Ç¡¼¥â¥ó",     vault_aux_demon,   NULL,              80, 4},
+	{"ã‚ªãƒ¼ã‚¯",       vault_aux_orc,     NULL,               5, 4},
+	{"ãƒˆãƒ­ãƒ«",       vault_aux_troll,   NULL,              20, 4},
+	{"ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆ", vault_aux_giant,   NULL,              40, 4},
+	{"ã‚¯ãƒ­ãƒ¼ãƒ³",     vault_aux_symbol,  vault_prep_symbol, 55, 3},
+	{"ãƒ‰ãƒ©ã‚´ãƒ³",     vault_aux_dragon,  NULL, 70, 4},
+	{"ãƒ‡ãƒ¼ãƒ¢ãƒ³",     vault_aux_demon,   NULL,              80, 4},
 #else
 	{"orc",          vault_aux_orc,     NULL,               5, 4},
 	{"troll",        vault_aux_troll,   NULL,              20, 4},
@@ -1730,7 +1730,7 @@ static bool build_type6(void)
 	{
 		/* Room type */
 #ifdef JP
-		msg_format("¥â¥ó¥¹¥¿¡¼¤ÎÁã (%s)", n_ptr->name);
+		msg_format("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®å·£ (%s)", n_ptr->name);
 #else
 		msg_format("Monster pit (%s)", n_ptr->name);
 #endif
@@ -2106,7 +2106,7 @@ static bool build_type7(void)
 		if (cheat_room)
 		{
 #ifdef JP
-			msg_print("·Ù¹ğ¡ª¾®¤µ¤ÊÃÏ²¼¼¼¤òÇÛÃÖ¤Ç¤­¤Ş¤»¤ó¡ª");
+			msg_print("è­¦å‘Šï¼å°ã•ãªåœ°ä¸‹å®¤ã‚’é…ç½®ã§ãã¾ã›ã‚“ï¼");
 #else
 			msg_print("Warning! Could not place lesser vault!");
 #endif
@@ -2165,7 +2165,7 @@ static bool build_type7(void)
 
 	/* Message */
 #ifdef JP
-	if (cheat_room) msg_format("¾®¤µ¤ÊÃÏ²¼¼¼(%s)", v_name + v_ptr->name);
+	if (cheat_room) msg_format("å°ã•ãªåœ°ä¸‹å®¤(%s)", v_name + v_ptr->name);
 #else
 	if (cheat_room) msg_format("Lesser vault (%s)", v_name + v_ptr->name);
 #endif
@@ -2206,7 +2206,7 @@ static bool build_type8(void)
 		if (cheat_room)
 		{
 #ifdef JP
-			msg_print("·Ù¹ğ¡ªµğÂç¤ÊÃÏ²¼¼¼¤òÇÛÃÖ¤Ç¤­¤Ş¤»¤ó¡ª");
+			msg_print("è­¦å‘Šï¼å·¨å¤§ãªåœ°ä¸‹å®¤ã‚’é…ç½®ã§ãã¾ã›ã‚“ï¼");
 #else
 			msg_print("Warning! Could not place greater vault!");
 #endif
@@ -2271,7 +2271,7 @@ static bool build_type8(void)
 
 	/* Message */
 #ifdef JP
-	if (cheat_room) msg_format("µğÂç¤ÊÃÏ²¼¼¼(%s)", v_name + v_ptr->name);
+	if (cheat_room) msg_format("å·¨å¤§ãªåœ°ä¸‹å®¤(%s)", v_name + v_ptr->name);
 #else
 	if (cheat_room) msg_format("Greater vault (%s)", v_name + v_ptr->name);
 #endif
@@ -3172,7 +3172,7 @@ void build_lake(int type)
 	if ((type < LAKE_T_LAVA) || (type > LAKE_T_FIRE_VAULT))
 	{
 #ifdef JP
-msg_format("ÉÔÀµ¤Ê¸Ğ¥¿¥¤¥× (%d)", type);
+msg_format("ä¸æ­£ãªæ¹–ã‚¿ã‚¤ãƒ— (%d)", type);
 #else
 		msg_format("Invalid lake type (%d)", type);
 #endif
@@ -3441,7 +3441,7 @@ static void build_bubble_vault(int x0, int y0, int xsize, int ysize)
 
 
 #ifdef JP
-	if (cheat_room) msg_print("Ë¢Êõ¸Ë");
+	if (cheat_room) msg_print("æ³¡å®åº«");
 #else
 	if (cheat_room) msg_print("Bubble Vault");
 #endif
@@ -3601,7 +3601,7 @@ static void build_room_vault(int x0, int y0, int xsize, int ysize)
 	yhsize = ysize / 2;
 
 #ifdef JP
-if (cheat_room) msg_print("Éô²°Êõ¸Ë");
+if (cheat_room) msg_print("éƒ¨å±‹å®åº«");
 #else
 	if (cheat_room) msg_print("Room Vault");
 #endif
@@ -3652,7 +3652,7 @@ static void build_cave_vault(int x0, int y0, int xsiz, int ysiz)
 	ysize = yhsize * 2;
 
 #ifdef JP
-if (cheat_room) msg_print("Æ¶·¢Êõ¸Ë");
+if (cheat_room) msg_print("æ´çªŸå®åº«");
 #else
 	if (cheat_room) msg_print("Cave Vault");
 #endif
@@ -3807,7 +3807,7 @@ static void build_maze_vault(int x0, int y0, int xsize, int ysize)
 	int m, n, num_vertices, *visited;
 
 #ifdef JP
-	if (cheat_room) msg_print("ÌÂÏ©Êõ¸Ë");
+	if (cheat_room) msg_print("è¿·è·¯å®åº«");
 #else
 	if (cheat_room) msg_print("Maze Vault");
 #endif
@@ -3868,7 +3868,7 @@ static void build_mini_c_vault(int x0, int y0, int xsize, int ysize)
 	cave_type *c_ptr;
 
 #ifdef JP
-	if (cheat_room) msg_print("¥ß¥Ë¥Á¥§¥Ã¥«¡¼Êõ¸Ë");
+	if (cheat_room) msg_print("ãƒŸãƒ‹ãƒã‚§ãƒƒã‚«ãƒ¼å®åº«");
 #else
 	if (cheat_room) msg_print("Mini Checker Board Vault");
 #endif
@@ -4134,7 +4134,7 @@ static void build_castle_vault(int x0, int y0, int xsize, int ysize)
 	x2 = x0 + dx;
 
 #ifdef JP
-	if (cheat_room) msg_print("¾ëÊõ¸Ë");
+	if (cheat_room) msg_print("åŸå®åº«");
 #else
 	if (cheat_room) msg_print("Castle Vault");
 #endif
@@ -4249,7 +4249,7 @@ static void build_target_vault(int x0, int y0, int xsize, int ysize)
 	h4 = randint1(32) - 16;
 
 #ifdef JP
-	if (cheat_room) msg_print("¥¿¡¼¥²¥Ã¥ÈÊõ¸Ë");
+	if (cheat_room) msg_print("ã‚¿ãƒ¼ã‚²ãƒƒãƒˆå®åº«");
 #else
 	if (cheat_room) msg_print("Target Vault");
 #endif
@@ -4356,7 +4356,7 @@ static void build_elemental_vault(int x0, int y0, int xsiz, int ysiz)
 
 
 #ifdef JP
-if (cheat_room) msg_print("¥¨¥ì¥á¥ó¥ÈÊõ¸Ë");
+if (cheat_room) msg_print("ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆå®åº«");
 #else
 	if (cheat_room) msg_print("Elemental Vault");
 #endif
@@ -5142,7 +5142,7 @@ static bool build_type15(void)
 	build_stores(y1, x1, stores, n);
 
 #ifdef JP
-	if (cheat_room) msg_print("ÃÏ²¼³¹");
+	if (cheat_room) msg_print("åœ°ä¸‹è¡—");
 #else
 	if (cheat_room) msg_print("Underground Arcade");
 #endif
@@ -5371,7 +5371,7 @@ void generate_rooms(void)
 	if (cheat_room)
 	{
 #ifdef JP
-		msg_format("Éô²°¿ô: %d", rooms_built);
+		msg_format("éƒ¨å±‹æ•°: %d", rooms_built);
 #else
 		msg_format("Number of Rooms: %d", rooms_built);
 #endif

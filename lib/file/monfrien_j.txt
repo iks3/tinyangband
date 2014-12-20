@@ -27,11 +27,11 @@
 
 N:7:Farmer Maggot
 #seems sad about something.
-¤Ï²¿¤«Èá¤·¤½¤¦¤À¡£
+ã¯ä½•ã‹æ‚²ã—ãã†ã ã€‚
 #asks if you have seen his dogs.
-¤ÏÈà¤Î¸¤¤ò¸«¤Ê¤«¤Ã¤¿¤«¤È¿Ò¤Í¤Æ¤¤¤ë¡£
+ã¯å½¼ã®çŠ¬ã‚’è¦‹ãªã‹ã£ãŸã‹ã¨å°‹ã­ã¦ã„ã‚‹ã€‚
 #mumbles something about mushrooms.
-¤Ï¥­¥Î¥³¤¬¤É¤¦¤Î¤È¤Ä¤Ö¤ä¤¤¤Æ¤¤¤ë¡£
+ã¯ã‚­ãƒã‚³ãŒã©ã†ã®ã¨ã¤ã¶ã‚„ã„ã¦ã„ã‚‹ã€‚
 
 N:53:Grip, Farmer Maggot's dog
 N:54:Wolf, Farmer Maggot's dog

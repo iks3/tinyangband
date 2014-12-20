@@ -1,4 +1,4 @@
-/* File: bldg.c */
+ï»¿/* File: bldg.c */
 
 /*
  * Purpose: Building commands
@@ -40,7 +40,7 @@ void have_nightmare(int r_idx)
 	if (saving_throw(p_ptr->skill_sav * 100 / power))
 	{
 #ifdef JP
-	msg_format("Ì´¤ÎÃæ¤Ç%s¤ËÄÉ¤¤¤«¤±¤é¤ì¤¿¡£", m_name);
+	msg_format("å¤¢ã®ä¸­ã§%sã«è¿½ã„ã‹ã‘ã‚‰ã‚ŒãŸã€‚", m_name);
 #else
 		msg_format("%^s chases you through your dreams.", m_name);
 #endif
@@ -54,7 +54,7 @@ void have_nightmare(int r_idx)
 	{
 		/* Something silly happens... */
 #ifdef JP
-msg_format("%s%s¤Î´é¤ò¸«¤Æ¤·¤Ş¤Ã¤¿¡ª",
+msg_format("%s%sã®é¡”ã‚’è¦‹ã¦ã—ã¾ã£ãŸï¼",
 #else
 		msg_format("You behold the %s visage of %s!",
 #endif
@@ -73,7 +73,7 @@ msg_format("%s%s¤Î´é¤ò¸«¤Æ¤·¤Ş¤Ã¤¿¡ª",
 
 	/* Something frightening happens... */
 #ifdef JP
-msg_format("%s%s¤Î´é¤ò¸«¤Æ¤·¤Ş¤Ã¤¿¡ª",
+msg_format("%s%sã®é¡”ã‚’è¦‹ã¦ã—ã¾ã£ãŸï¼",
 #else
 	msg_format("You behold the %s visage of %s!",
 #endif
@@ -148,7 +148,7 @@ msg_format("%s%s¤Î´é¤ò¸«¤Æ¤·¤Ş¤Ã¤¿¡ª",
 		if (happened)
 		{
 #ifdef JP
-msg_print("°ÊÁ°¤è¤êÀµµ¤¤Ç¤Ê¤¯¤Ê¤Ã¤¿µ¤¤¬¤¹¤ë¡£");
+msg_print("ä»¥å‰ã‚ˆã‚Šæ­£æ°—ã§ãªããªã£ãŸæ°—ãŒã™ã‚‹ã€‚");
 #else
 			msg_print("You feel much less sane than before.");
 #endif
@@ -163,7 +163,7 @@ msg_print("°ÊÁ°¤è¤êÀµµ¤¤Ç¤Ê¤¯¤Ê¤Ã¤¿µ¤¤¬¤¹¤ë¡£");
 		if (lose_all_info())
 		{
 #ifdef JP
-msg_print("¤¢¤Ş¤ê¤Î¶²Éİ¤ËÁ´¤Æ¤Î¤³¤È¤òËº¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª");
+msg_print("ã‚ã¾ã‚Šã®ææ€–ã«å…¨ã¦ã®ã“ã¨ã‚’å¿˜ã‚Œã¦ã—ã¾ã£ãŸï¼");
 #else
 			msg_print("You forget everything in your utmost terror!");
 #endif
@@ -190,14 +190,14 @@ msg_print("¤¢¤Ş¤ê¤Î¶²Éİ¤ËÁ´¤Æ¤Î¤³¤È¤òËº¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª");
 				if (!(p_ptr->muta & MUT_MORONIC))
 				{
 #ifdef JP
-					msg_print("¤¢¤Ê¤¿¤Ï´°àú¤ÊÇÏ¼¯¤Ë¤Ê¤Ã¤¿¡ª");
+					msg_print("ã‚ãªãŸã¯å®Œç’§ãªé¦¬é¹¿ã«ãªã£ãŸï¼");
 #else
 					msg_print("You turn into an utter moron!");
 #endif
 					if (p_ptr->muta & MUT_HYPER_INT)
 					{
 #ifdef JP
-						msg_print("¤¢¤Ê¤¿¤ÎÇ¾¤ÏÀ¸ÂÎ¥³¥ó¥Ô¥å¡¼¥¿¤Ç¤Ï¤Ê¤¯¤Ê¤Ã¤¿¡£");
+						msg_print("ã‚ãªãŸã®è„³ã¯ç”Ÿä½“ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ã‚¿ã§ã¯ãªããªã£ãŸã€‚");
 #else
 						msg_print("Your brain is no longer a living computer.");
 #endif
@@ -213,7 +213,7 @@ msg_print("¤¢¤Ş¤ê¤Î¶²Éİ¤ËÁ´¤Æ¤Î¤³¤È¤òËº¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª");
 				if (!(p_ptr->muta & MUT_COWARDICE) && !p_ptr->resist_fear)
 				{
 #ifdef JP
-					msg_print("¤¢¤Ê¤¿¤Ï¥Ñ¥é¥Î¥¤¥¢¤Ë¤Ê¤Ã¤¿¡ª");
+					msg_print("ã‚ãªãŸã¯ãƒ‘ãƒ©ãƒã‚¤ã‚¢ã«ãªã£ãŸï¼");
 #else
 					msg_print("You become paranoid!");
 #endif
@@ -222,7 +222,7 @@ msg_print("¤¢¤Ş¤ê¤Î¶²Éİ¤ËÁ´¤Æ¤Î¤³¤È¤òËº¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª");
 					if (p_ptr->muta & MUT_FEARLESS)
 					{
 #ifdef JP
-						msg_print("¤¢¤Ê¤¿¤Ï¤â¤¦¶²¤ìÃÎ¤é¤º¤Ç¤Ï¤Ê¤¯¤Ê¤Ã¤¿¡£");
+						msg_print("ã‚ãªãŸã¯ã‚‚ã†æã‚ŒçŸ¥ã‚‰ãšã§ã¯ãªããªã£ãŸã€‚");
 #else
 						msg_print("You are no longer fearless.");
 #endif
@@ -239,7 +239,7 @@ msg_print("¤¢¤Ş¤ê¤Î¶²Éİ¤ËÁ´¤Æ¤Î¤³¤È¤òËº¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª");
 				if (!(p_ptr->muta & MUT_HALLU) && !p_ptr->resist_chaos)
 				{
 #ifdef JP
-					msg_print("¸¸³Ğ¤ò¤Ò¤­µ¯¤³¤¹Àº¿ÀºøÍğ¤Ë´Ù¤Ã¤¿¡ª");
+					msg_print("å¹»è¦šã‚’ã²ãèµ·ã“ã™ç²¾ç¥éŒ¯ä¹±ã«é™¥ã£ãŸï¼");
 #else
 					msg_print("You are afflicted by a hallucinatory insanity!");
 #endif
@@ -253,7 +253,7 @@ msg_print("¤¢¤Ş¤ê¤Î¶²Éİ¤ËÁ´¤Æ¤Î¤³¤È¤òËº¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª");
 				if (!(p_ptr->muta & MUT_BERS_RAGE))
 				{
 #ifdef JP
-					msg_print("·ãÎõ¤Ê´¶¾ğ¤ÎÈ¯ºî¤Ë¤ª¤½¤ï¤ì¤ë¤è¤¦¤Ë¤Ê¤Ã¤¿¡ª");
+					msg_print("æ¿€çƒˆãªæ„Ÿæƒ…ã®ç™ºä½œã«ãŠãã‚ã‚Œã‚‹ã‚ˆã†ã«ãªã£ãŸï¼");
 #else
 					msg_print("You become subject to fits of berserk rage!");
 #endif
@@ -289,31 +289,31 @@ bool get_nightmare(int r_idx)
 static cptr find_quest[] =
 {
 #ifdef JP
-"¾²¤Ë¥á¥Ã¥»¡¼¥¸¤¬¹ï¤Ş¤ì¤Æ¤¤¤ë:",
+"åºŠã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒåˆ»ã¾ã‚Œã¦ã„ã‚‹:",
 #else
 	"You find the following inscription in the floor",
 #endif
 
 #ifdef JP
-"ÊÉ¤Ë¥á¥Ã¥»¡¼¥¸¤¬¹ï¤Ş¤ì¤Æ¤¤¤ë:",
+"å£ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒåˆ»ã¾ã‚Œã¦ã„ã‚‹:",
 #else
 	"You see a message inscribed in the wall",
 #endif
 
 #ifdef JP
-"¥á¥Ã¥»¡¼¥¸¤ò¸«¤Ä¤±¤¿:",
+"ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¦‹ã¤ã‘ãŸ:",
 #else
 	"There is a sign saying",
 #endif
 
 #ifdef JP
-"²¿¤«¤¬³¬ÃÊ¤Î¾å¤Ë½ñ¤¤¤Æ¤¢¤ë:",
+"ä½•ã‹ãŒéšæ®µã®ä¸Šã«æ›¸ã„ã¦ã‚ã‚‹:",
 #else
 	"Something is written on the staircase",
 #endif
 
 #ifdef JP
-"´¬Êª¤ò¸«¤Ä¤±¤¿¡£¥á¥Ã¥»¡¼¥¸¤¬½ñ¤¤¤Æ¤¢¤ë:",
+"å·»ç‰©ã‚’è¦‹ã¤ã‘ãŸã€‚ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒæ›¸ã„ã¦ã‚ã‚‹:",
 #else
 	"You find a scroll with the following message",
 #endif
@@ -343,7 +343,7 @@ void quest_discovery(int q_idx)
 	{
 		/* Unique */
 #ifdef JP
-msg_format("Ãí°Õ¤»¤è¡ª¤³¤Î³¬¤Ï%s¤Ë¤è¤Ã¤Æ¼é¤é¤ì¤Æ¤¤¤ë¡ª", name);
+msg_format("æ³¨æ„ã›ã‚ˆï¼ã“ã®éšã¯%sã«ã‚ˆã£ã¦å®ˆã‚‰ã‚Œã¦ã„ã‚‹ï¼", name);
 #else
 		msg_format("Beware, this level is protected by %s!", name);
 #endif
@@ -353,7 +353,7 @@ msg_format("Ãí°Õ¤»¤è¡ª¤³¤Î³¬¤Ï%s¤Ë¤è¤Ã¤Æ¼é¤é¤ì¤Æ¤¤¤ë¡ª", name);
 	{
 		/* Normal monsters */
 #ifdef JP
-msg_format("Ãí°Õ¤·¤í¡ª¤³¤Î³¬¤Ï%dÂÎ¤Î%s¤Ë¤è¤Ã¤Æ¼é¤é¤ì¤Æ¤¤¤ë¡ª", q_num, name);
+msg_format("æ³¨æ„ã—ã‚ï¼ã“ã®éšã¯%dä½“ã®%sã«ã‚ˆã£ã¦å®ˆã‚‰ã‚Œã¦ã„ã‚‹ï¼", q_num, name);
 #else
 		plural_aux(name);
 		msg_format("Be warned, this level is guarded by %d %s!", q_num, name);
@@ -497,7 +497,7 @@ static void building_prt_gold(void)
 	char tmp_str[MAX_NLEN];
 
 #ifdef JP
-	prt("¼ê»ı¤Á¤Î¤ª¶â: ", 23,53);
+	prt("æ‰‹æŒã¡ã®ãŠé‡‘: ", 23,53);
 #else
 	prt("Gold Remaining: ", 23, 53);
 #endif
@@ -525,7 +525,7 @@ static void show_building(building_type* bldg)
 	prt(tmp_str, 2, 50);
 
 #ifdef JP
-	prt("¥³¥Ş¥ó¥É:", 19, 0);
+	prt("ã‚³ãƒãƒ³ãƒ‰:", 19, 0);
 #else
 	prt("You may:", 19, 0);
 #endif
@@ -567,7 +567,7 @@ static void show_building(building_type* bldg)
 				{
 					action_color = TERM_L_DARK;
 #ifdef JP
-					strcpy(buff, "(ÊÄÅ¹)");
+					strcpy(buff, "(é–‰åº—)");
 #else
 					strcpy(buff, "(closed)");
 #endif
@@ -603,7 +603,7 @@ static void show_building(building_type* bldg)
 				{
 					action_color = TERM_L_DARK;
 #ifdef JP
-					strcpy(buff, "(ÊÄÅ¹)");
+					strcpy(buff, "(é–‰åº—)");
 #else
 					strcpy(buff, "(closed)");
 #endif
@@ -630,7 +630,7 @@ static void show_building(building_type* bldg)
 	}
 
 #ifdef JP
-	prt(" ESC) ·úÊª¤ò½Ğ¤ë", 23, 0);
+	prt(" ESC) å»ºç‰©ã‚’å‡ºã‚‹", 23, 0);
 #else
 	prt(" ESC) Exit building", 23, 0);
 #endif
@@ -687,9 +687,9 @@ static void arena_comm(int cmd)
 			{
 				clear_bldg(5, 19);
 #ifdef JP
-prt("¥¢¥ê¡¼¥Ê¤ÎÍ¥¾¡¼Ô¡ª", 5, 0);
-prt("¤ª¤á¤Ç¤È¤¦¡ª¤¢¤Ê¤¿¤ÏÁ´¤Æ¤ÎÅ¨¤òÅİ¤·¤Ş¤·¤¿¡£", 7, 0); 
-prt("¾Ş¶â¤È¤·¤Æ $10,000 ¤¬Í¿¤¨¤é¤ì¤Ş¤¹¡£", 8, 0);
+prt("ã‚¢ãƒªãƒ¼ãƒŠã®å„ªå‹è€…ï¼", 5, 0);
+prt("ãŠã‚ã§ã¨ã†ï¼ã‚ãªãŸã¯å…¨ã¦ã®æ•µã‚’å€’ã—ã¾ã—ãŸã€‚", 7, 0); 
+prt("è³é‡‘ã¨ã—ã¦ $10,000 ãŒä¸ãˆã‚‰ã‚Œã¾ã™ã€‚", 8, 0);
 #else
 				prt("               Arena Victor!", 5, 0);
 				prt("Congratulations!  You have defeated all before you.", 7, 0);
@@ -700,7 +700,7 @@ prt("¾Ş¶â¤È¤·¤Æ $10,000 ¤¬Í¿¤¨¤é¤ì¤Ş¤¹¡£", 8, 0);
 				prt("", 11, 0);
 				p_ptr->au += 10000;
 #ifdef JP
-msg_print("¥¹¥Ú¡¼¥¹¥­¡¼¤ÇÂ³¹Ô");
+msg_print("ã‚¹ãƒšãƒ¼ã‚¹ã‚­ãƒ¼ã§ç¶šè¡Œ");
 #else
 				msg_print("Press the space bar to continue");
 #endif
@@ -711,7 +711,7 @@ msg_print("¥¹¥Ú¡¼¥¹¥­¡¼¤ÇÂ³¹Ô");
 			else if (p_ptr->arena_number > MAX_ARENA_MONS)
 			{
 #ifdef JP
-msg_print("¤¢¤Ê¤¿¤Ï¥¢¥ê¡¼¥Ê¤ËÆş¤ê¡¢¤·¤Ğ¤é¤¯¤Î´Ö±É¸÷¤Ë¤Ò¤¿¤Ã¤¿¡£");
+msg_print("ã‚ãªãŸã¯ã‚¢ãƒªãƒ¼ãƒŠã«å…¥ã‚Šã€ã—ã°ã‚‰ãã®é–“æ „å…‰ã«ã²ãŸã£ãŸã€‚");
 #else
 				msg_print("You enter the arena briefly and bask in your glory.");
 #endif
@@ -730,14 +730,14 @@ msg_print("¤¢¤Ê¤¿¤Ï¥¢¥ê¡¼¥Ê¤ËÆş¤ê¡¢¤·¤Ğ¤é¤¯¤Î´Ö±É¸÷¤Ë¤Ò¤¿¤Ã¤¿¡£");
 		case BACT_POSTER:
 			if (p_ptr->arena_number == MAX_ARENA_MONS)
 #ifdef JP
-msg_print("¤¢¤Ê¤¿¤Ï¾¡Íø¼Ô¤À¡£ ¥¢¥ê¡¼¥Ê¤Ç¤Î¥»¥ì¥â¥Ë¡¼¤Ë»²²Ã¤·¤Ê¤µ¤¤¡£");
+msg_print("ã‚ãªãŸã¯å‹åˆ©è€…ã ã€‚ ã‚¢ãƒªãƒ¼ãƒŠã§ã®ã‚»ãƒ¬ãƒ¢ãƒ‹ãƒ¼ã«å‚åŠ ã—ãªã•ã„ã€‚");
 #else
 				msg_print("You are victorious. Enter the arena for the ceremony.");
 #endif
 
 			else if (p_ptr->arena_number > MAX_ARENA_MONS)
 #ifdef JP
-msg_print("¤¢¤Ê¤¿¤Ï¤¹¤Ù¤Æ¤ÎÅ¨¤Ë¾¡Íø¤·¤¿¡£");
+msg_print("ã‚ãªãŸã¯ã™ã¹ã¦ã®æ•µã«å‹åˆ©ã—ãŸã€‚");
 #else
 				msg_print("You have won against all foes.");
 #endif
@@ -747,7 +747,7 @@ msg_print("¤¢¤Ê¤¿¤Ï¤¹¤Ù¤Æ¤ÎÅ¨¤Ë¾¡Íø¤·¤¿¡£");
 				r_ptr = &r_info[arena_monsters[p_ptr->arena_number]];
 				name = (r_name + r_ptr->name);
 #ifdef JP
-msg_format("%s ¤ËÄ©Àï¤¹¤ë¤â¤Î¤Ï¤¤¤Ê¤¤¤«¡©", name);
+msg_format("%s ã«æŒ‘æˆ¦ã™ã‚‹ã‚‚ã®ã¯ã„ãªã„ã‹ï¼Ÿ", name);
 #else
 				msg_format("Do I hear any challenges against: %s", name);
 #endif
@@ -793,7 +793,7 @@ static void display_fruit(int row, int col, int fruit)
 			c_put_str(TERM_YELLOW, "#     # ", row + 5, col);
 			c_put_str(TERM_YELLOW, "#    #  ", row + 6, col);
 			c_put_str(TERM_YELLOW, ".####   ", row + 7, col);
-			prt(                   " ¥ì¥â¥ó ", row + 8, col);
+			prt(                   " ãƒ¬ãƒ¢ãƒ³ ", row + 8, col);
 #else
 			c_put_str(TERM_YELLOW, "   ####.", row, col);
 			c_put_str(TERM_YELLOW, "  #    #", row + 1, col);
@@ -817,7 +817,7 @@ static void display_fruit(int row, int col, int fruit)
 			c_put_str(TERM_ORANGE, " #....# ", row + 5, col);
 			c_put_str(TERM_ORANGE, "  #..#  ", row + 6, col);
 			c_put_str(TERM_ORANGE, "   ##   ", row + 7, col);
-			prt(                   "¥ª¥ì¥ó¥¸", row + 8, col);
+			prt(                   "ã‚ªãƒ¬ãƒ³ã‚¸", row + 8, col);
 #else
 			c_put_str(TERM_ORANGE, "   ##   ", row, col);
 			c_put_str(TERM_ORANGE, "  #..#  ", row + 1, col);
@@ -833,15 +833,15 @@ static void display_fruit(int row, int col, int fruit)
 			break;
 		case 2: /* sword */
 #ifdef JP
-			c_put_str(TERM_SLATE, "   ¦«   " , row, col);
+			c_put_str(TERM_SLATE, "   Î›   " , row, col);
 			c_put_str(TERM_SLATE, "   ||   " , row + 1, col);
 			c_put_str(TERM_SLATE, "   ||   " , row + 2, col);
 			c_put_str(TERM_SLATE, "   ||   " , row + 3, col);
 			c_put_str(TERM_SLATE, "   ||   " , row + 4, col);
 			c_put_str(TERM_SLATE, "   ||   " , row + 5, col);
-			c_put_str(TERM_UMBER, " |=°¡=| " , row + 6, col);
-			c_put_str(TERM_UMBER, "   ÌÜ   " , row + 7, col);
-			prt(                  " ·õ     " , row + 8, col);
+			c_put_str(TERM_UMBER, " |=äºœ=| " , row + 6, col);
+			c_put_str(TERM_UMBER, "   ç›®   " , row + 7, col);
+			prt(                  " å‰£     " , row + 8, col);
 #else
 			c_put_str(TERM_SLATE, "   /\\  " , row, col);
 			c_put_str(TERM_SLATE, "   ##   " , row + 1, col);
@@ -865,7 +865,7 @@ static void display_fruit(int row, int col, int fruit)
 			c_put_str(TERM_SLATE, " #    # ", row + 5, col);
 			c_put_str(TERM_SLATE, "  #  #  ", row + 6, col);
 			c_put_str(TERM_SLATE, "   ##   ", row + 7, col);
-			prt(                  "  ½â    ", row + 8, col);
+			prt(                  "  ç›¾    ", row + 8, col);
 #else
 			c_put_str(TERM_SLATE, " ###### ", row, col);
 			c_put_str(TERM_SLATE, "#      #", row + 1, col);
@@ -889,7 +889,7 @@ static void display_fruit(int row, int col, int fruit)
 			c_put_str(TERM_VIOLET, " ###### ", row + 5, col);
 			c_put_str(TERM_VIOLET, "  ####  ", row + 6, col);
 			c_put_str(TERM_VIOLET, "   ##   ", row + 7, col);
-			prt(                   " ¥×¥é¥à ", row + 8, col);
+			prt(                   " ãƒ—ãƒ©ãƒ  ", row + 8, col);
 #else
 			c_put_str(TERM_VIOLET, "   ##   ", row, col);
 			c_put_str(TERM_VIOLET, " ###### ", row + 1, col);
@@ -913,7 +913,7 @@ static void display_fruit(int row, int col, int fruit)
 			c_put_str(TERM_RED, "#..##..#", row + 5, col);
 			c_put_str(TERM_RED, "#..##..#", row + 6, col);
 			c_put_str(TERM_RED, " ##  ## ", row + 7, col);
-			prt(                "¥Á¥§¥ê¡¼", row + 8, col);
+			prt(                "ãƒã‚§ãƒªãƒ¼", row + 8, col);
 #else
 			c_put_str(TERM_RED, "      ##", row, col);
 			c_put_str(TERM_RED, "   ###  ", row + 1, col);
@@ -941,7 +941,7 @@ static bool gamble_comm(int cmd)
 	s32b maxbet;
 	s32b oldgold;
 #ifdef JP
-	static const char *fruit[6] = {"¥ì¥â¥ó", "¥ª¥ì¥ó¥¸", "·õ", "½â", "¥×¥é¥à", "¥Á¥§¥ê¡¼"};
+	static const char *fruit[6] = {"ãƒ¬ãƒ¢ãƒ³", "ã‚ªãƒ¬ãƒ³ã‚¸", "å‰£", "ç›¾", "ãƒ—ãƒ©ãƒ ", "ãƒã‚§ãƒªãƒ¼"};
 #else
 	static const char *fruit[6] = {"Lemon", "Orange", "Sword", "Shield", "Plum", "Cherry"};
 #endif
@@ -966,7 +966,7 @@ static bool gamble_comm(int cmd)
 		if (p_ptr->au < 1)
 		{
 #ifdef JP
-			msg_print("¤ª¤¤¡ª¤ª¤Ş¤¨°ìÊ¸¤Ê¤·¤¸¤ã¤Ê¤¤¤«¡ª¤³¤Ã¤«¤é½Ğ¤Æ¤¤¤±¡ª");
+			msg_print("ãŠã„ï¼ãŠã¾ãˆä¸€æ–‡ãªã—ã˜ã‚ƒãªã„ã‹ï¼ã“ã£ã‹ã‚‰å‡ºã¦ã„ã‘ï¼");
 #else
 			msg_print("Hey! You don't have gold - get out of here!");
 #endif
@@ -989,7 +989,7 @@ static bool gamble_comm(int cmd)
 		/* Get the wager */
 		strcpy(out_val, "");
 #ifdef JP
-		sprintf(tmp_str,"ÅÒ¤±¶â (1-%ld)¡©", (long int)maxbet);
+		sprintf(tmp_str,"è³­ã‘é‡‘ (1-%ld)ï¼Ÿ", (long int)maxbet);
 #else
 		sprintf(tmp_str,"Your wager (1-%ld) ? ", (long int)maxbet);
 #endif
@@ -1009,7 +1009,7 @@ static bool gamble_comm(int cmd)
 			if (wager > p_ptr->au)
 			{
 #ifdef JP
-				msg_print("¤ª¤¤¡ª¶â¤¬Â­¤ê¤Ê¤¤¤¸¤ã¤Ê¤¤¤«¡ª½Ğ¤Æ¤¤¤±¡ª");
+				msg_print("ãŠã„ï¼é‡‘ãŒè¶³ã‚Šãªã„ã˜ã‚ƒãªã„ã‹ï¼å‡ºã¦ã„ã‘ï¼");
 #else
 				msg_print("Hey! You don't have the gold - get out of here!");
 #endif
@@ -1020,7 +1020,7 @@ static bool gamble_comm(int cmd)
 			else if (wager > maxbet)
 			{
 #ifdef JP
-				msg_format("%ld¥´¡¼¥ë¥É¤À¤±¼õ¤±¤è¤¦¡£»Ä¤ê¤Ï¼è¤Ã¤È¤­¤Ê¡£", (long int)maxbet);
+				msg_format("%ldã‚´ãƒ¼ãƒ«ãƒ‰ã ã‘å—ã‘ã‚ˆã†ã€‚æ®‹ã‚Šã¯å–ã£ã¨ããªã€‚", (long int)maxbet);
 #else
 				msg_format("I'll take %ld gold of that. Keep the rest.", (long int)maxbet);
 #endif
@@ -1029,7 +1029,7 @@ static bool gamble_comm(int cmd)
 			else if (wager < 1)
 			{
 #ifdef JP
-				msg_print("£Ï£Ë¡¢£±¥´¡¼¥ë¥É¤«¤é¤Ï¤¸¤á¤è¤¦¡£");
+				msg_print("ï¼¯ï¼«ã€ï¼‘ã‚´ãƒ¼ãƒ«ãƒ‰ã‹ã‚‰ã¯ã˜ã‚ã‚ˆã†ã€‚");
 #else
 				msg_print("Ok, we'll start with 1 gold.");
 #endif
@@ -1041,14 +1041,14 @@ static bool gamble_comm(int cmd)
 			oldgold = p_ptr->au;
 
 #ifdef JP
-			sprintf(tmp_str, "¥²¡¼¥àÁ°¤Î½ê»ı¶â: %9ld", (long int)oldgold);
+			sprintf(tmp_str, "ã‚²ãƒ¼ãƒ å‰ã®æ‰€æŒé‡‘: %9ld", (long int)oldgold);
 #else
 			sprintf(tmp_str, "Gold before game: %9ld", (long int)oldgold);
 #endif
 			prt(tmp_str, 20, 2);
 
 #ifdef JP
-			sprintf(tmp_str, "¸½ºß¤Î³İ¤±¶â:     %9ld", (long int)wager);
+			sprintf(tmp_str, "ç¾åœ¨ã®æ›ã‘é‡‘:     %9ld", (long int)wager);
 #else
 			sprintf(tmp_str, "Current Wager:    %9ld", (long int)wager);
 #endif
@@ -1064,7 +1064,7 @@ static bool gamble_comm(int cmd)
 				{
 				 case BACT_IN_BETWEEN: /* Game of In-Between */
 #ifdef JP
-					c_put_str(TERM_GREEN, "¥¤¥ó¡¦¥Ó¥È¥¤¡¼¥ó",5,2);
+					c_put_str(TERM_GREEN, "ã‚¤ãƒ³ãƒ»ãƒ“ãƒˆã‚¤ãƒ¼ãƒ³",5,2);
 #else
 					c_put_str(TERM_GREEN, "In Between", 5, 2);
 #endif
@@ -1074,13 +1074,13 @@ static bool gamble_comm(int cmd)
 					roll2 = randint1(10);
 					choice = randint1(10);
 #ifdef JP
-					sprintf(tmp_str, "¹õ¥À¥¤¥¹: %d        ¹õ¥À¥¤¥¹: %d", roll1, roll2);
+					sprintf(tmp_str, "é»’ãƒ€ã‚¤ã‚¹: %d        é»’ãƒ€ã‚¤ã‚¹: %d", roll1, roll2);
 #else
 					sprintf(tmp_str, "Black die: %d       Black Die: %d", roll1, roll2);
 #endif
 					prt(tmp_str, 8, 3);
 #ifdef JP
-					sprintf(tmp_str, "ÀÖ¥À¥¤¥¹: %d", choice);
+					sprintf(tmp_str, "èµ¤ãƒ€ã‚¤ã‚¹: %d", choice);
 #else
 					sprintf(tmp_str, "Red die: %d", choice);
 #endif
@@ -1091,7 +1091,7 @@ static bool gamble_comm(int cmd)
 					break;
 				case BACT_CRAPS:  /* Game of Craps */
 #ifdef JP
-					c_put_str(TERM_GREEN, "¥¯¥é¥Ã¥×¥¹", 5, 2);
+					c_put_str(TERM_GREEN, "ã‚¯ãƒ©ãƒƒãƒ—ã‚¹", 5, 2);
 #else
 					c_put_str(TERM_GREEN, "Craps", 5, 2);
 #endif
@@ -1102,7 +1102,7 @@ static bool gamble_comm(int cmd)
 					roll3 = roll1 + roll2;
 					choice = roll3;
 #ifdef JP
-					sprintf(tmp_str, "£±¿¶¤ê¤á: %d %d      Total: %d", roll1, 
+					sprintf(tmp_str, "ï¼‘æŒ¯ã‚Šã‚: %d %d      Total: %d", roll1, 
 #else
 					sprintf(tmp_str, "First roll: %d %d    Total: %d", roll1,
 #endif
@@ -1116,7 +1116,7 @@ static bool gamble_comm(int cmd)
 						do
 						{
 #ifdef JP
-							msg_print("¤Ê¤Ë¤«¥­¡¼¤ò²¡¤¹¤È¤â¤¦°ì²ó¿¶¤ê¤Ş¤¹¡£");
+							msg_print("ãªã«ã‹ã‚­ãƒ¼ã‚’æŠ¼ã™ã¨ã‚‚ã†ä¸€å›æŒ¯ã‚Šã¾ã™ã€‚");
 #else
 							msg_print("Hit any key to roll again");
 #endif
@@ -1126,7 +1126,7 @@ static bool gamble_comm(int cmd)
 							roll3 = roll1 + roll2;
 
 #ifdef JP
-							sprintf(tmp_str, "½ĞÌÜ: %d %d          ¹ç·×:      %d",
+							sprintf(tmp_str, "å‡ºç›®: %d %d          åˆè¨ˆ:      %d",
 #else
 							sprintf(tmp_str, "Roll result: %d %d   Total:     %d",
 #endif
@@ -1143,7 +1143,7 @@ static bool gamble_comm(int cmd)
 					win = FALSE;
 					odds = 8;
 #ifdef JP
-					c_put_str(TERM_GREEN, "¥ë¡¼¥ì¥Ã¥È", 5, 2);
+					c_put_str(TERM_GREEN, "ãƒ«ãƒ¼ãƒ¬ãƒƒãƒˆ", 5, 2);
 #else
 					c_put_str(TERM_GREEN, "Wheel", 5, 2);
 #endif
@@ -1151,7 +1151,7 @@ static bool gamble_comm(int cmd)
 					prt("--------------------------------", 8, 3);
 					strcpy(out_val, "");
 #ifdef JP
-					get_string("²¿ÈÖ¡© (0-9): ", out_val, 32);
+					get_string("ä½•ç•ªï¼Ÿ (0-9): ", out_val, 32);
 #else
 					get_string("Pick a number (0-9): ", out_val, 32);
 #endif
@@ -1160,7 +1160,7 @@ static bool gamble_comm(int cmd)
 					if (choice < 0)
 					{
 #ifdef JP
-						msg_print("0ÈÖ¤Ë¤·¤È¤¯¤¼¡£");
+						msg_print("0ç•ªã«ã—ã¨ããœã€‚");
 #else
 						msg_print("I'll put you down for 0.");
 #endif
@@ -1169,7 +1169,7 @@ static bool gamble_comm(int cmd)
 					else if (choice > 9)
 					{
 #ifdef JP
-						msg_print("£Ï£Ë¡¢9ÈÖ¤Ë¤·¤È¤¯¤¼¡£");
+						msg_print("ï¼¯ï¼«ã€9ç•ªã«ã—ã¨ããœã€‚");
 #else
 						msg_print("Ok, I'll put you down for 9.");
 #endif
@@ -1178,7 +1178,7 @@ static bool gamble_comm(int cmd)
 					msg_print(NULL);
 					roll1 = randint0(10);
 #ifdef JP
-					sprintf(tmp_str, "¥ë¡¼¥ì¥Ã¥È¤Ï²ó¤ê¡¢»ß¤Ş¤Ã¤¿¡£¾¡¼Ô¤Ï %dÈÖ¤À¡£",
+					sprintf(tmp_str, "ãƒ«ãƒ¼ãƒ¬ãƒƒãƒˆã¯å›ã‚Šã€æ­¢ã¾ã£ãŸã€‚å‹è€…ã¯ %dç•ªã ã€‚",
 #else
 					sprintf(tmp_str, "The wheel spins to a stop and the winner is %d",
 #endif
@@ -1192,7 +1192,7 @@ static bool gamble_comm(int cmd)
 
 				case BACT_DICE_SLOTS: /* The Dice Slots */
 #ifdef JP
-					c_put_str(TERM_GREEN, "¥À¥¤¥¹¡¦¥¹¥í¥Ã¥È", 5, 2);
+					c_put_str(TERM_GREEN, "ãƒ€ã‚¤ã‚¹ãƒ»ã‚¹ãƒ­ãƒƒãƒˆ", 5, 2);
 #else
 					c_put_str(TERM_GREEN, "Dice Slots", 5, 2);
 #endif
@@ -1229,13 +1229,13 @@ static bool gamble_comm(int cmd)
 				if (win)
 				{
 #ifdef JP
-					prt("¤¢¤Ê¤¿¤Î¾¡¤Á", 16, 37);
+					prt("ã‚ãªãŸã®å‹ã¡", 16, 37);
 #else
 					prt("YOU WON", 16, 37);
 #endif
 					p_ptr->au += odds * wager;
 #ifdef JP
-					sprintf(tmp_str, "ÇÜÎ¨: %d", odds);
+					sprintf(tmp_str, "å€ç‡: %d", odds);
 #else
 					sprintf(tmp_str, "Payoff: %d", odds);
 #endif
@@ -1244,7 +1244,7 @@ static bool gamble_comm(int cmd)
 				else
 				{
 #ifdef JP
-					prt("¤¢¤Ê¤¿¤ÎÉé¤±", 16, 37);
+					prt("ã‚ãªãŸã®è² ã‘", 16, 37);
 #else
 					prt("You Lost", 16, 37);
 #endif
@@ -1252,13 +1252,13 @@ static bool gamble_comm(int cmd)
 					prt("", 17, 37);
 				}
 #ifdef JP
-				sprintf(tmp_str, "¸½ºß¤Î½ê»ı¶â:    %9ld", (long int)p_ptr->au);
+				sprintf(tmp_str, "ç¾åœ¨ã®æ‰€æŒé‡‘:    %9ld", (long int)p_ptr->au);
 #else
 				sprintf(tmp_str, "Current Gold:     %9ld", (long int)p_ptr->au);
 #endif
 				prt(tmp_str, 22, 2);
 #ifdef JP
-				prt("¤â¤¦°ìÅÙ(Y/N)¡©", 18, 37);
+				prt("ã‚‚ã†ä¸€åº¦(Y/N)ï¼Ÿ", 18, 37);
 				move_cursor(18, 54);
 #else
 				prt("Again(Y/N)?", 18, 37);
@@ -1269,7 +1269,7 @@ static bool gamble_comm(int cmd)
 				if (wager > p_ptr->au)
 				{
 #ifdef JP
-					msg_print("¤ª¤¤¡ª¶â¤¬Â­¤ê¤Ê¤¤¤¸¤ã¤Ê¤¤¤«¡ª¤³¤³¤«¤é½Ğ¤Æ¹Ô¤±¡ª");
+					msg_print("ãŠã„ï¼é‡‘ãŒè¶³ã‚Šãªã„ã˜ã‚ƒãªã„ã‹ï¼ã“ã“ã‹ã‚‰å‡ºã¦è¡Œã‘ï¼");
 #else
 					msg_print("Hey! You don't have the gold - get out of here!");
 #endif
@@ -1286,13 +1286,13 @@ static bool gamble_comm(int cmd)
 			prt("", 18, 37);
 			if (p_ptr->au >= oldgold)
 #ifdef JP
-				msg_print("¡Öº£²ó¤ÏÌÙ¤±¤¿¤Ê¡ª¤Ç¤â¼¡¤Ï¤³¤Ã¤Á¤¬¾¡¤Ã¤Æ¤ä¤ë¤«¤é¤Ê¡¢ÀäÂĞ¤Ë¡ª¡×");
+				msg_print("ã€Œä»Šå›ã¯å„²ã‘ãŸãªï¼ã§ã‚‚æ¬¡ã¯ã“ã£ã¡ãŒå‹ã£ã¦ã‚„ã‚‹ã‹ã‚‰ãªã€çµ¶å¯¾ã«ï¼ã€");
 #else
 				msg_print("You came out a winner! We'll win next time, I'm sure.");
 #endif
 			else
 #ifdef JP
-				msg_print("¡Ö¶â¤ò¥¹¥Ã¤Æ¤·¤Ş¤Ã¤¿¤Ê¡¢¤ï¤Ï¤Ï¡ª¤¦¤Á¤Ëµ¢¤Ã¤¿Êı¤¬¤¤¤¤¤¼¡£¡×");
+				msg_print("ã€Œé‡‘ã‚’ã‚¹ãƒƒã¦ã—ã¾ã£ãŸãªã€ã‚ã¯ã¯ï¼ã†ã¡ã«å¸°ã£ãŸæ–¹ãŒã„ã„ãœã€‚ã€");
 #else
 				msg_print("You lost gold! Haha, better head home.");
 #endif
@@ -1321,7 +1321,7 @@ static bool inn_comm(int cmd)
 			if (p_ptr->food >= PY_FOOD_FULL)
 			{
 #ifdef JP
-				msg_print("º£¤ÏËşÊ¢¤À¡£");
+				msg_print("ä»Šã¯æº€è…¹ã ã€‚");
 #else
 				msg_print("You are full now.");
 #endif
@@ -1329,7 +1329,7 @@ static bool inn_comm(int cmd)
 			}
 
 #ifdef JP
-			msg_print("¥Ğ¡¼¥Æ¥ó¤Ï¤¤¤¯¤é¤«¤Î¿©¤ÙÊª¤È¥Ó¡¼¥ë¤ò¤¯¤ì¤¿¡£");
+			msg_print("ãƒãƒ¼ãƒ†ãƒ³ã¯ã„ãã‚‰ã‹ã®é£Ÿã¹ç‰©ã¨ãƒ“ãƒ¼ãƒ«ã‚’ãã‚ŒãŸã€‚");
 #else
 			msg_print("The barkeep gives you some gruel and a beer.");
 #endif
@@ -1342,14 +1342,14 @@ static bool inn_comm(int cmd)
 			if ((p_ptr->poisoned) || (p_ptr->cut))
 			{
 #ifdef JP
-				msg_print("¤¢¤Ê¤¿¤ËÉ¬Í×¤Ê¤Î¤ÏÉô²°¤Ç¤Ï¤Ê¤¯¡¢¼£ÎÅ¼Ô¤Ç¤¹¡£");
+				msg_print("ã‚ãªãŸã«å¿…è¦ãªã®ã¯éƒ¨å±‹ã§ã¯ãªãã€æ²»ç™‚è€…ã§ã™ã€‚");
 #else
 				msg_print("You need a healer, not a room.");
 #endif
 
 				msg_print(NULL);
 #ifdef JP
-				msg_print("¤¹¤ß¤Ş¤»¤ó¡¢¤Ç¤â¤¦¤Á¤ÇÃ¯¤«¤Ë»à¤Ê¤ì¤Á¤ãº¤¤ê¤Ş¤¹¤ó¤Ç¡£");
+				msg_print("ã™ã¿ã¾ã›ã‚“ã€ã§ã‚‚ã†ã¡ã§èª°ã‹ã«æ­»ãªã‚Œã¡ã‚ƒå›°ã‚Šã¾ã™ã‚“ã§ã€‚");
 #else
 				msg_print("Sorry, but don't want anyone dying in here.");
 #endif
@@ -1373,7 +1373,7 @@ static bool inn_comm(int cmd)
 				if (ironman_nightmare)
 				{
 #ifdef JP
-					msg_print("Ì²¤ê¤Ë½¢¤¯¤È¶²¤í¤·¤¤¸÷·Ê¤¬¿´¤ò¤è¤®¤Ã¤¿¡£");
+					msg_print("çœ ã‚Šã«å°±ãã¨æã‚ã—ã„å…‰æ™¯ãŒå¿ƒã‚’ã‚ˆãã£ãŸã€‚");
 #else
 					msg_print("Horrible visions flit through your mind as you sleep.");
 #endif
@@ -1393,7 +1393,7 @@ static bool inn_comm(int cmd)
 					get_mon_num_prep(NULL, NULL);
 
 #ifdef JP
-					msg_print("¤¢¤Ê¤¿¤ÏÀä¶«¤·¤ÆÌÜ¤ò³Ğ¤Ş¤·¤¿¡£");
+					msg_print("ã‚ãªãŸã¯çµ¶å«ã—ã¦ç›®ã‚’è¦šã¾ã—ãŸã€‚");
 #else
 					msg_print("You awake screaming.");
 #endif
@@ -1409,7 +1409,7 @@ static bool inn_comm(int cmd)
 					if ((prev_hour >= 6) && (prev_hour <= 17))
 					{
 #ifdef JP
-						msg_print("¤¢¤Ê¤¿¤Ï¥ê¥Õ¥ì¥Ã¥·¥å¤·¤ÆÌÜ³Ğ¤á¡¢Í¼Êı¤ò·Ş¤¨¤¿¡£");
+						msg_print("ã‚ãªãŸã¯ãƒªãƒ•ãƒ¬ãƒƒã‚·ãƒ¥ã—ã¦ç›®è¦šã‚ã€å¤•æ–¹ã‚’è¿ãˆãŸã€‚");
 #else
 						msg_print("You awake refreshed for the evening.");
 #endif
@@ -1417,7 +1417,7 @@ static bool inn_comm(int cmd)
 					else
 					{
 #ifdef JP
-						msg_print("¤¢¤Ê¤¿¤Ï¥ê¥Õ¥ì¥Ã¥·¥å¤·¤ÆÌÜ³Ğ¤á¡¢¿·¤¿¤ÊÆü¤ò·Ş¤¨¤¿¡£");
+						msg_print("ã‚ãªãŸã¯ãƒªãƒ•ãƒ¬ãƒƒã‚·ãƒ¥ã—ã¦ç›®è¦šã‚ã€æ–°ãŸãªæ—¥ã‚’è¿ãˆãŸã€‚");
 #else
 						msg_print("You awake refreshed for the new day.");
 #endif
@@ -1455,7 +1455,7 @@ static void share_gold(void)
 {
 	int i = (p_ptr->lev * 2) * 10;
 #ifdef JP
-msg_format("¡ğ%d ¤ò¼ê¤ËÆş¤ì¤¿¡£", i);
+msg_format("ï¼„%d ã‚’æ‰‹ã«å…¥ã‚ŒãŸã€‚", i);
 #else
 	msg_format("You collect %d gold pieces", i);
 #endif
@@ -1496,7 +1496,7 @@ static void get_questinfo(int questnum)
 
 	/* Print the quest info */
 #ifdef JP
-sprintf(tmp_str, "¥¯¥¨¥¹¥È¾ğÊó (´í¸±ÅÙ: %d ³¬ÁêÅö)", quest[questnum].level);
+sprintf(tmp_str, "ã‚¯ã‚¨ã‚¹ãƒˆæƒ…å ± (å±é™ºåº¦: %d éšç›¸å½“)", quest[questnum].level);
 #else
 	sprintf(tmp_str, "Quest Information (Danger level: %d)", quest[questnum].level);
 #endif
@@ -1533,7 +1533,7 @@ static void castle_quest(void)
 	if (!q_index)
 	{
 #ifdef JP
-		put_str("º£¤Î¤È¤³¤í¥¯¥¨¥¹¥È¤Ï¤¢¤ê¤Ş¤»¤ó¡£", 8, 0);
+		put_str("ä»Šã®ã¨ã“ã‚ã‚¯ã‚¨ã‚¹ãƒˆã¯ã‚ã‚Šã¾ã›ã‚“ã€‚", 8, 0);
 #else
 		put_str("I don't have a quest for you at the moment.", 8, 0);
 #endif
@@ -1566,9 +1566,9 @@ static void castle_quest(void)
 	else if (q_ptr->status == QUEST_STATUS_TAKEN)
 	{
 #ifdef JP
-		put_str("¤¢¤Ê¤¿¤Ï¸½ºß¤Î¥¯¥¨¥¹¥È¤ò½ªÎ»¤µ¤»¤Æ¤¤¤Ş¤»¤ó¡ª", 8, 0);
-		put_str("CTRL-Q¤ò»È¤¨¤Ğ¥¯¥¨¥¹¥È¤Î¾õÂÖ¤¬¥Á¥§¥Ã¥¯¤Ç¤­¤Ş¤¹¡£", 9, 0);
-		put_str("¥¯¥¨¥¹¥È¤ò½ª¤ï¤é¤»¤¿¤éÌá¤Ã¤ÆÍè¤Æ²¼¤µ¤¤¡£", 12, 0);
+		put_str("ã‚ãªãŸã¯ç¾åœ¨ã®ã‚¯ã‚¨ã‚¹ãƒˆã‚’çµ‚äº†ã•ã›ã¦ã„ã¾ã›ã‚“ï¼", 8, 0);
+		put_str("CTRL-Qã‚’ä½¿ãˆã°ã‚¯ã‚¨ã‚¹ãƒˆã®çŠ¶æ…‹ãŒãƒã‚§ãƒƒã‚¯ã§ãã¾ã™ã€‚", 9, 0);
+		put_str("ã‚¯ã‚¨ã‚¹ãƒˆã‚’çµ‚ã‚ã‚‰ã›ãŸã‚‰æˆ»ã£ã¦æ¥ã¦ä¸‹ã•ã„ã€‚", 12, 0);
 #else
 		put_str("You have not completed your current quest yet!", 8, 0);
 		put_str("Use CTRL-Q to check the status of your quest.", 9, 0);
@@ -1608,7 +1608,7 @@ static void castle_quest(void)
 			q_ptr->cur_num = 0;
 			name = (r_name + r_ptr->name);
 #ifdef JP
-			msg_format("¥¯¥¨¥¹¥È: %s¤ò %dÂÎÅİ¤¹", name,q_ptr->max_num);
+			msg_format("ã‚¯ã‚¨ã‚¹ãƒˆ: %sã‚’ %dä½“å€’ã™", name,q_ptr->max_num);
 #else
 			msg_format("Your quest: kill %d %s", q_ptr->max_num, name);
 #endif
@@ -1624,7 +1624,7 @@ static void castle_quest(void)
 
 		/* check */
 #ifdef JP
-		if (!get_check("¤³¤Î¥¯¥¨¥¹¥È¤Î°ÍÍê¤ò¼õ¤±¤Ş¤¹¤«¡©"))
+		if (!get_check("ã“ã®ã‚¯ã‚¨ã‚¹ãƒˆã®ä¾é ¼ã‚’å—ã‘ã¾ã™ã‹ï¼Ÿ"))
 #else
 		if (!get_check("Do you accept this quest? "))
 #endif
@@ -1636,7 +1636,7 @@ static void castle_quest(void)
 		}
 
 #ifdef JP
-		msg_print("¥¯¥¨¥¹¥È¤Î°ÍÍê¤ò¼õ¤±¤Ş¤·¤¿¡£");
+		msg_print("ã‚¯ã‚¨ã‚¹ãƒˆã®ä¾é ¼ã‚’å—ã‘ã¾ã—ãŸã€‚");
 #else
 		msg_print("You accept this quest.");
 #endif
@@ -1698,7 +1698,7 @@ static void compare_weapon_aux2(object_type *o_ptr, int numblows,
 
 	/* Calculate the min and max damage figures */
 #ifdef JP
-	sprintf(tmp_str, "£±¥¿¡¼¥ó: %d-%d ¥À¥á¡¼¥¸",
+	sprintf(tmp_str, "ï¼‘ã‚¿ãƒ¼ãƒ³: %d-%d ãƒ€ãƒ¡ãƒ¼ã‚¸",
 #else
 	sprintf(tmp_str, "Attack: %d-%d damage",
 #endif
@@ -1727,21 +1727,21 @@ static void compare_weapon_aux1(object_type *o_ptr, int col, int r)
 
 	/* Print the relevant lines */
 #ifdef JP
-	if (f1 & TR1_SLAY_HUMAN)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "¿Í´Ö:",  TERM_YELLOW);
-	if (f1 & TR1_SLAY_ANIMAL) compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "Æ°Êª:",  TERM_YELLOW);
-	if (f1 & TR1_SLAY_EVIL)   compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 20, "¼Ù°­:",  TERM_YELLOW);
-	if (f1 & TR1_SLAY_UNDEAD) compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "ÉÔ»à:",  TERM_YELLOW);
-	if (f1 & TR1_SLAY_DEMON)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "°­Ëâ:",  TERM_YELLOW);
-	if (f1 & TR1_SLAY_ORC)    compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "¥ª¡¼¥¯:",  TERM_YELLOW);
-	if (f1 & TR1_SLAY_TROLL)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "¥È¥í¥ë:",  TERM_YELLOW);
-	if (f1 & TR1_SLAY_GIANT)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "µğ¿Í:",  TERM_YELLOW);
-	if (f1 & TR1_SLAY_DRAGON) compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "Îµ:",  TERM_YELLOW);
-	if (f1 & TR1_KILL_DRAGON) compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 50, "Îµ:",  TERM_YELLOW);
-	if (f1 & TR1_BRAND_ACID)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "»ÀÂ°À­:",  TERM_RED);
-	if (f1 & TR1_BRAND_ELEC)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "ÅÅÂ°À­:",  TERM_RED);
-	if (f1 & TR1_BRAND_FIRE)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "±êÂ°À­:",  TERM_RED);
-	if (f1 & TR1_BRAND_COLD)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "ÎäÂ°À­:",  TERM_RED);
-	if (f1 & TR1_BRAND_POIS)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "ÆÇÂ°À­:",  TERM_RED);
+	if (f1 & TR1_SLAY_HUMAN)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "äººé–“:",  TERM_YELLOW);
+	if (f1 & TR1_SLAY_ANIMAL) compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "å‹•ç‰©:",  TERM_YELLOW);
+	if (f1 & TR1_SLAY_EVIL)   compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 20, "é‚ªæ‚ª:",  TERM_YELLOW);
+	if (f1 & TR1_SLAY_UNDEAD) compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "ä¸æ­»:",  TERM_YELLOW);
+	if (f1 & TR1_SLAY_DEMON)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "æ‚ªé­”:",  TERM_YELLOW);
+	if (f1 & TR1_SLAY_ORC)    compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "ã‚ªãƒ¼ã‚¯:",  TERM_YELLOW);
+	if (f1 & TR1_SLAY_TROLL)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "ãƒˆãƒ­ãƒ«:",  TERM_YELLOW);
+	if (f1 & TR1_SLAY_GIANT)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "å·¨äºº:",  TERM_YELLOW);
+	if (f1 & TR1_SLAY_DRAGON) compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 30, "ç«œ:",  TERM_YELLOW);
+	if (f1 & TR1_KILL_DRAGON) compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 50, "ç«œ:",  TERM_YELLOW);
+	if (f1 & TR1_BRAND_ACID)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "é…¸å±æ€§:",  TERM_RED);
+	if (f1 & TR1_BRAND_ELEC)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "é›»å±æ€§:",  TERM_RED);
+	if (f1 & TR1_BRAND_FIRE)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "ç‚å±æ€§:",  TERM_RED);
+	if (f1 & TR1_BRAND_COLD)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "å†·å±æ€§:",  TERM_RED);
+	if (f1 & TR1_BRAND_POIS)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "æ¯’å±æ€§:",  TERM_RED);
 #else
 	if (f1 & TR1_SLAY_HUMAN)  compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "Humans:", TERM_YELLOW);
 	if (f1 & TR1_SLAY_ANIMAL) compare_weapon_aux2(o_ptr, p_ptr->num_blow[0], r++, col, 25, "Animals:", TERM_YELLOW);
@@ -1795,7 +1795,7 @@ static void list_weapon(object_type *o_ptr, int row, int col)
 
 	/* Print the player's number of blows */
 #ifdef JP
-	sprintf(tmp_str, "¹¶·â²ó¿ô: %d", p_ptr->num_blow[0]);
+	sprintf(tmp_str, "æ”»æ’ƒå›æ•°: %d", p_ptr->num_blow[0]);
 #else
 	sprintf(tmp_str, "Number of Blows: %d", p_ptr->num_blow[0]);
 #endif
@@ -1803,9 +1803,9 @@ static void list_weapon(object_type *o_ptr, int row, int col)
 
 #ifdef JP
 	/* Print hit probabilities */
-	sprintf(tmp_str, "Å¨¤ÎAC:   25  50  75 100 150 200");
+	sprintf(tmp_str, "æ•µã®AC:   25  50  75 100 150 200");
 			put_str(tmp_str, row+2, col);
-	sprintf(tmp_str, "Ì¿ÃæÎ¨:  %2d%% %2d%% %2d%% %2d%% %2d%% %2d%%", 
+	sprintf(tmp_str, "å‘½ä¸­ç‡:  %2d%% %2d%% %2d%% %2d%% %2d%% %2d%%", 
 			hit_prob(o_ptr->to_h, 25), hit_prob(o_ptr->to_h, 50),
 			hit_prob(o_ptr->to_h, 75), hit_prob(o_ptr->to_h, 100),
 			hit_prob(o_ptr->to_h, 150), hit_prob(o_ptr->to_h, 200));
@@ -1813,7 +1813,7 @@ static void list_weapon(object_type *o_ptr, int row, int col)
 #endif
 
 #ifdef JP
-	c_put_str(TERM_YELLOW, "²ÄÇ½¤Ê¥À¥á¡¼¥¸:", row+5, col);
+	c_put_str(TERM_YELLOW, "å¯èƒ½ãªãƒ€ãƒ¡ãƒ¼ã‚¸:", row+5, col);
 #else
 	c_put_str(TERM_YELLOW, "Possible Damage:", row+5, col);
 #endif
@@ -1826,7 +1826,7 @@ static void list_weapon(object_type *o_ptr, int row, int col)
 
 	/* Damage for one blow (if it hits) */
 #ifdef JP
-	sprintf(tmp_str, "¹¶·â°ì²ó¤Ë¤Ä¤­ %d-%d",
+	sprintf(tmp_str, "æ”»æ’ƒä¸€å›ã«ã¤ã %d-%d",
 			mindam, maxdam);
 	put_str(tmp_str, row+6, col+1);
 #else
@@ -1841,7 +1841,7 @@ static void list_weapon(object_type *o_ptr, int row, int col)
 
 	/* Damage for the complete attack (if all blows hit) */
 #ifdef JP
-	sprintf(tmp_str, "£±¥¿¡¼¥ó¤Ë¤Ä¤­ %d-%d",
+	sprintf(tmp_str, "ï¼‘ã‚¿ãƒ¼ãƒ³ã«ã¤ã %d-%d",
 			mindam, maxdam);
 	put_str(tmp_str, row+7, col+1);
 #else
@@ -1940,8 +1940,8 @@ static bool compare_weapons(void)
 
 	/* Get the first weapon */
 #ifdef JP
-	q = "Âè°ì¤ÎÉğ´ï¤Ï¡©";
-	s = "Èæ¤Ù¤ë¤â¤Î¤¬¤¢¤ê¤Ş¤»¤ó¡£";
+	q = "ç¬¬ä¸€ã®æ­¦å™¨ã¯ï¼Ÿ";
+	s = "æ¯”ã¹ã‚‹ã‚‚ã®ãŒã‚ã‚Šã¾ã›ã‚“ã€‚";
 #else
 	q = "What is your first weapon? ";
 	s = "You have nothing to compare.";
@@ -1964,8 +1964,8 @@ static bool compare_weapons(void)
 
 	/* Get the second weapon */
 #ifdef JP
-	q = "ÂèÆó¤ÎÉğ´ï¤Ï¡©";
-	s = "Èæ¤Ù¤ë¤â¤Î¤¬¤¢¤ê¤Ş¤»¤ó¡£";
+	q = "ç¬¬äºŒã®æ­¦å™¨ã¯ï¼Ÿ";
+	s = "æ¯”ã¹ã‚‹ã‚‚ã®ãŒã‚ã‚Šã¾ã›ã‚“ã€‚";
 #else
 	q = "What is your second weapon? ";
 	s = "You have nothing to compare.";
@@ -2014,8 +2014,8 @@ static bool compare_weapons(void)
 	calc_bonuses();
 
 #ifdef JP
-	put_str("(°ìÈÖ¹â¤¤¥À¥á¡¼¥¸¤¬Å¬ÍÑ¤µ¤ì¤Ş¤¹¡£Ê£¿ô¤ÎÇÜÂÇ¸ú²Ì¤ÏÂ­¤·»»¤µ¤ì¤Ş¤»¤ó¡£)", 21, 5);
-	put_str("¸½ºß¤ÎÇ½ÎÏ¤«¤éÈ½ÃÇ¤¹¤ë¤È¡¢¤¢¤Ê¤¿¤ÎÉğ´ï¤Ï°Ê²¼¤Î¤è¤¦¤Ê°ÒÎÏ¤òÈ¯´ø¤·¤Ş¤¹: ", 0, 0);
+	put_str("(ä¸€ç•ªé«˜ã„ãƒ€ãƒ¡ãƒ¼ã‚¸ãŒé©ç”¨ã•ã‚Œã¾ã™ã€‚è¤‡æ•°ã®å€æ‰“åŠ¹æœã¯è¶³ã—ç®—ã•ã‚Œã¾ã›ã‚“ã€‚)", 21, 5);
+	put_str("ç¾åœ¨ã®èƒ½åŠ›ã‹ã‚‰åˆ¤æ–­ã™ã‚‹ã¨ã€ã‚ãªãŸã®æ­¦å™¨ã¯ä»¥ä¸‹ã®ã‚ˆã†ãªå¨åŠ›ã‚’ç™ºæ®ã—ã¾ã™: ", 0, 0);
 #else
 	put_str("(Only highest damage applies per monster. Special damage not cumulative.)", 21, 0);
 	put_str("Based on your current abilities, here is what your weapons will do: ", 0, 0);
@@ -2048,8 +2048,8 @@ static bool forge_ego_item(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥¢¥¤¥Æ¥à¤òÃÃ¤¨¤Ş¤¹¤«¡©";
-	s = "ÃÃ¤¨¤é¤ì¤ë¤â¤Î¤¬¤¢¤ê¤Ş¤»¤ó¡£";
+	q = "ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’é›ãˆã¾ã™ã‹ï¼Ÿ";
+	s = "é›ãˆã‚‰ã‚Œã‚‹ã‚‚ã®ãŒã‚ã‚Šã¾ã›ã‚“ã€‚";
 #else
 	q = "Forge which item? ";
 	s = "You have nothing to forge.";
@@ -2066,7 +2066,7 @@ static bool forge_ego_item(void)
 	if (o_ptr->ego_name)
 	{
 #ifdef JP
-		msg_format("¤³¤ì°Ê¾åÃÃ¤¨¤ë¤³¤È¤Ï¤Ç¤­¤Ş¤»¤ó¡ª");
+		msg_format("ã“ã‚Œä»¥ä¸Šé›ãˆã‚‹ã“ã¨ã¯ã§ãã¾ã›ã‚“ï¼");
 #else
 		msg_format("You can not forge it more!");
 #endif
@@ -2077,7 +2077,7 @@ static bool forge_ego_item(void)
 	if (o_ptr->number > 1)
 	{
 #ifdef JP
-		msg_format("°ìÅÙ¤ËÊ£¿ô¤òÃÃ¤¨¤ë¤³¤È¤Ï¤Ç¤­¤Ş¤»¤ó¡ª");
+		msg_format("ä¸€åº¦ã«è¤‡æ•°ã‚’é›ãˆã‚‹ã“ã¨ã¯ã§ãã¾ã›ã‚“ï¼");
 #else
 		msg_format("They are too many to forge at once!");
 #endif
@@ -2090,7 +2090,7 @@ static bool forge_ego_item(void)
 	cost = (object_value_real(q_ptr) + 100000L);
 
 #ifdef JP
-	if (!get_check(format("¡ğ%d¤«¤«¤ê¤Ş¤¹¤¬¤è¤í¤·¤¤¤Ç¤¹¤«¡© ", cost))) return (FALSE);
+	if (!get_check(format("ï¼„%dã‹ã‹ã‚Šã¾ã™ãŒã‚ˆã‚ã—ã„ã§ã™ã‹ï¼Ÿ ", cost))) return (FALSE);
 #else
 	if (!get_check(format("Costs %d gold, okay? ", cost))) return (FALSE);
 #endif
@@ -2100,7 +2100,7 @@ static bool forge_ego_item(void)
 	{
 #ifdef JP
 		basenm = get_object_name(o_ptr);
-		msg_format("%s¤ò²şÎÉ¤¹¤ë¤À¤±¤Î¥´¡¼¥ë¥É¤¬¤¢¤ê¤Ş¤»¤ó¡ª", basenm);
+		msg_format("%sã‚’æ”¹è‰¯ã™ã‚‹ã ã‘ã®ã‚´ãƒ¼ãƒ«ãƒ‰ãŒã‚ã‚Šã¾ã›ã‚“ï¼", basenm);
 #else
 		object_desc(basenm, o_ptr, OD_NAME_ONLY);
 		msg_format("You do not have the gold to improve %s!", basenm);
@@ -2114,7 +2114,7 @@ static bool forge_ego_item(void)
 
 #ifdef JP
 	basenm = get_object_name(o_ptr);
-	msg_format("¡ğ%d ¤Ç%s¤ò²şÎÉ¤·¤Ş¤·¤¿¡£", cost, basenm);
+	msg_format("ï¼„%d ã§%sã‚’æ”¹è‰¯ã—ã¾ã—ãŸã€‚", cost, basenm);
 #else
 	object_desc(basenm, o_ptr, OD_NAME_ONLY);
 	msg_format("Improved %s for %d gold.", basenm, cost);
@@ -2166,8 +2166,8 @@ static bool repair_broken_weapon(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤ÎÀŞ¤ì¤¿Éğ´ï¤ò½¤Éü¤·¤Ş¤¹¤«¡©";
-	s = "½¤Éü¤Ç¤­¤ëÀŞ¤ì¤¿Éğ´ï¤¬¤¢¤ê¤Ş¤»¤ó¡£";
+	q = "ã©ã®æŠ˜ã‚ŒãŸæ­¦å™¨ã‚’ä¿®å¾©ã—ã¾ã™ã‹ï¼Ÿ";
+	s = "ä¿®å¾©ã§ãã‚‹æŠ˜ã‚ŒãŸæ­¦å™¨ãŒã‚ã‚Šã¾ã›ã‚“ã€‚";
 #else
 	q = "Repair which broken weapon? ";
 	s = "You have no broken weapon to repair.";
@@ -2184,7 +2184,7 @@ static bool repair_broken_weapon(void)
 	if (o_ptr->number > 1)
 	{
 #ifdef JP
-		msg_format("°ìÅÙ¤ËÊ£¿ô¤ò½¤Éü¤¹¤ë¤³¤È¤Ï¤Ç¤­¤Ş¤»¤ó¡ª");
+		msg_format("ä¸€åº¦ã«è¤‡æ•°ã‚’ä¿®å¾©ã™ã‚‹ã“ã¨ã¯ã§ãã¾ã›ã‚“ï¼");
 #else
 		msg_format("They are too many to repair at once!");
 #endif
@@ -2205,7 +2205,7 @@ static bool repair_broken_weapon(void)
 	}
 
 #ifdef JP
-	if (!get_check(format("¡ğ%d¤«¤«¤ê¤Ş¤¹¤¬¤è¤í¤·¤¤¤Ç¤¹¤«¡© ", cost))) return FALSE;
+	if (!get_check(format("ï¼„%dã‹ã‹ã‚Šã¾ã™ãŒã‚ˆã‚ã—ã„ã§ã™ã‹ï¼Ÿ ", cost))) return FALSE;
 #else
 	if (!get_check(format("Costs %d gold, okay? ", cost))) return FALSE;
 #endif
@@ -2215,7 +2215,7 @@ static bool repair_broken_weapon(void)
 	{
 #ifdef JP
 		basenm = get_object_name(o_ptr);
-		msg_format("%s¤ò½¤Éü¤¹¤ë¤À¤±¤Î¥´¡¼¥ë¥É¤¬¤¢¤ê¤Ş¤»¤ó¡ª", basenm);
+		msg_format("%sã‚’ä¿®å¾©ã™ã‚‹ã ã‘ã®ã‚´ãƒ¼ãƒ«ãƒ‰ãŒã‚ã‚Šã¾ã›ã‚“ï¼", basenm);
 #else
 		object_desc(basenm, o_ptr, OD_NAME_ONLY);
 		msg_format("You do not have the gold to repair %s!", basenm);
@@ -2251,7 +2251,7 @@ static bool repair_broken_weapon(void)
 		if (!light_sword_num)
 		{
 #ifdef JP
-			msg_print("½¤Éü¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¡£");
+			msg_print("ä¿®å¾©ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚");
 #else
 			msg_print("Failed to repair.");
 #endif
@@ -2283,7 +2283,7 @@ static bool repair_broken_weapon(void)
 		create_named_ego(q_ptr);
 
 #ifdef JP
-		msg_print("¤³¤ì¤Ï¤«¤Ê¤ê¤Î¶ÈÊª¤À¤Ã¤¿¤è¤¦¤À¡£");
+		msg_print("ã“ã‚Œã¯ã‹ãªã‚Šã®æ¥­ç‰©ã ã£ãŸã‚ˆã†ã ã€‚");
 #else
 		msg_print("This blade seems to be exceptionally.");
 #endif
@@ -2291,7 +2291,7 @@ static bool repair_broken_weapon(void)
 
 #ifdef JP
 	basenm = get_object_name(q_ptr);
-	msg_format("¡ğ%d¤Ç%s¤Ë½¤Éü¤·¤Ş¤·¤¿¡£", cost, basenm);
+	msg_format("ï¼„%dã§%sã«ä¿®å¾©ã—ã¾ã—ãŸã€‚", cost, basenm);
 #else
 	object_desc(basenm, q_ptr, OD_NAME_ONLY);
 	msg_format("Repaired into %s for %d gold.", basenm, cost);
@@ -2325,8 +2325,8 @@ static bool enchant_item(int cost, int to_hit, int to_dam, int to_ac)
 
 	clear_bldg(5, 18);
 #ifdef JP
-	prt(format("¸½ºß¤Î¤¢¤Ê¤¿¤Î¥ì¥Ù¥ë¤À¤È¡¢+%d ¤Ş¤Ç²şÎÉ¤Ç¤­¤Ş¤¹¡£", maxenchant), 5, 0);
-	prt(format(" ²şÎÉ¤ÎÎÁ¶â¤Ï°ì¸Ä¤Ë¤Ä¤­¡ğ%d ¤Ç¤¹¡£", cost), 7, 0);
+	prt(format("ç¾åœ¨ã®ã‚ãªãŸã®ãƒ¬ãƒ™ãƒ«ã ã¨ã€+%d ã¾ã§æ”¹è‰¯ã§ãã¾ã™ã€‚", maxenchant), 5, 0);
+	prt(format(" æ”¹è‰¯ã®æ–™é‡‘ã¯ä¸€å€‹ã«ã¤ãï¼„%d ã§ã™ã€‚", cost), 7, 0);
 #else
 	prt(format("  Based on your skill, we can improve up to +%d.", maxenchant), 5, 0);
 	prt(format("  The price for the service is %d gold per item.", cost), 7, 0);
@@ -2334,8 +2334,8 @@ static bool enchant_item(int cost, int to_hit, int to_dam, int to_ac)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¥¢¥¤¥Æ¥à¤ò²şÎÉ¤·¤Ş¤¹¤«¡©";
-	s = "²şÎÉ¤Ç¤­¤ë¤â¤Î¤¬¤¢¤ê¤Ş¤»¤ó¡£";
+	q = "ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ”¹è‰¯ã—ã¾ã™ã‹ï¼Ÿ";
+	s = "æ”¹è‰¯ã§ãã‚‹ã‚‚ã®ãŒã‚ã‚Šã¾ã›ã‚“ã€‚";
 #else
 	q = "Improve which item? ";
 	s = "You have nothing to improve.";
@@ -2351,7 +2351,7 @@ static bool enchant_item(int cost, int to_hit, int to_dam, int to_ac)
 	{
 		object_desc(tmp_str, o_ptr, OD_NAME_ONLY);
 #ifdef JP
-		msg_format("%s¤ò²şÎÉ¤¹¤ë¤À¤±¤Î¥´¡¼¥ë¥É¤¬¤¢¤ê¤Ş¤»¤ó¡ª", tmp_str);
+		msg_format("%sã‚’æ”¹è‰¯ã™ã‚‹ã ã‘ã®ã‚´ãƒ¼ãƒ«ãƒ‰ãŒã‚ã‚Šã¾ã›ã‚“ï¼", tmp_str);
 #else
 		msg_format("You do not have the gold to improve %s!", tmp_str);
 #endif
@@ -2406,7 +2406,7 @@ static bool enchant_item(int cost, int to_hit, int to_dam, int to_ac)
 
 		/* Message */
 #ifdef JP
-		msg_print("²şÎÉ¤Ë¼ºÇÔ¤·¤¿¡£");
+		msg_print("æ”¹è‰¯ã«å¤±æ•—ã—ãŸã€‚");
 #else
 		msg_print("The improvement failed.");
 #endif
@@ -2417,7 +2417,7 @@ static bool enchant_item(int cost, int to_hit, int to_dam, int to_ac)
 	{
 		object_desc(tmp_str, o_ptr, OD_NAME_AND_ENCHANT);
 #ifdef JP
-		msg_format("¡ğ%d ¤Ç%s¤Ë²şÎÉ¤·¤Ş¤·¤¿¡£", cost * o_ptr->number, tmp_str);
+		msg_format("ï¼„%d ã§%sã«æ”¹è‰¯ã—ã¾ã—ãŸã€‚", cost * o_ptr->number, tmp_str);
 #else
 		msg_format("Improved into %s for %d gold.", tmp_str, cost * o_ptr->number);
 #endif
@@ -2458,7 +2458,7 @@ static void building_recharge(void)
 	msg_flag = FALSE;
 	clear_bldg(5, 18);
 #ifdef JP
-	prt("  ºÆ½¼Å¶¤ÎÈñÍÑ¤Ï¥¢¥¤¥Æ¥à¤Î¼ïÎà¤Ë¤è¤ê¤Ş¤¹¡£", 6, 0);
+	prt("  å†å……å¡«ã®è²»ç”¨ã¯ã‚¢ã‚¤ãƒ†ãƒ ã®ç¨®é¡ã«ã‚ˆã‚Šã¾ã™ã€‚", 6, 0);
 #else
 	prt("  The prices of recharge depend on the type.", 6, 0);
 #endif
@@ -2468,8 +2468,8 @@ static void building_recharge(void)
 
 	/* Get an item */
 #ifdef JP
-q = "¤É¤Î¥¢¥¤¥Æ¥à¤ËËâÎÏ¤ò½¼Å¶¤·¤Ş¤¹¤«? ";
-s = "ËâÎÏ¤ò½¼Å¶¤¹¤Ù¤­¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
+q = "ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã«é­”åŠ›ã‚’å……å¡«ã—ã¾ã™ã‹? ";
+s = "é­”åŠ›ã‚’å……å¡«ã™ã¹ãã‚¢ã‚¤ãƒ†ãƒ ãŒãªã„ã€‚";
 #else
 	q = "Recharge which item? ";
 	s = "You have nothing to recharge.";
@@ -2499,7 +2499,7 @@ s = "ËâÎÏ¤ò½¼Å¶¤¹¤Ù¤­¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
 	if (!object_known_p(o_ptr))
 	{
 #ifdef JP
-		msg_format("½¼Å¶¤¹¤ëÁ°¤Ë´ÕÄê¤µ¤ì¤Æ¤¤¤ëÉ¬Í×¤¬¤¢¤ê¤Ş¤¹¡ª");
+		msg_format("å……å¡«ã™ã‚‹å‰ã«é‘‘å®šã•ã‚Œã¦ã„ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼");
 #else
 		msg_format("The item must be identified first!");
 #endif
@@ -2507,7 +2507,7 @@ s = "ËâÎÏ¤ò½¼Å¶¤¹¤Ù¤­¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
 
 		if ((p_ptr->au >= 50) &&
 #ifdef JP
-			get_check("¡ğ50¤Ç´ÕÄê¤·¤Ş¤¹¤«¡© "))
+			get_check("ï¼„50ã§é‘‘å®šã—ã¾ã™ã‹ï¼Ÿ "))
 #else
 			get_check("Identify for 50 gold? "))
 #endif
@@ -2523,7 +2523,7 @@ s = "ËâÎÏ¤ò½¼Å¶¤¹¤Ù¤­¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
 			object_desc(tmp_str, o_ptr, 0);
 
 #ifdef JP
-			msg_format("%s ¤Ç¤¹¡£", tmp_str);
+			msg_format("%s ã§ã™ã€‚", tmp_str);
 #else
 			msg_format("You have: %s.", tmp_str);
 #endif
@@ -2555,7 +2555,7 @@ s = "ËâÎÏ¤ò½¼Å¶¤¹¤Ù¤­¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
 		{
 			/* No recharge necessary */
 #ifdef JP
-			msg_format("¤½¤ì¤ÏºÆ½¼Å¶¤¹¤ëÉ¬Í×¤Ï¤¢¤ê¤Ş¤»¤ó¡£");
+			msg_format("ãã‚Œã¯å†å……å¡«ã™ã‚‹å¿…è¦ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚");
 #else
 			msg_format("That doesn't need to be recharged.");
 #endif
@@ -2586,25 +2586,25 @@ s = "ËâÎÏ¤ò½¼Å¶¤¹¤Ù¤­¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
 	{
 		if ((o_ptr->tval == TV_WAND) && (o_ptr->number == 1))
 #ifdef JP
-			msg_print("¤³¤Î¥ï¥ó¥É¤Ï¤â¤¦½¼Ê¬¤Ë½¼Å¶¤µ¤ì¤Æ¤¤¤Ş¤¹¡£");
+			msg_print("ã“ã®ãƒ¯ãƒ³ãƒ‰ã¯ã‚‚ã†å……åˆ†ã«å……å¡«ã•ã‚Œã¦ã„ã¾ã™ã€‚");
 #else
 			msg_print("This wand is already fully charged.");
 #endif
 		else if ((o_ptr->tval == TV_WAND) && (o_ptr->number > 1))
 #ifdef JP
-			msg_print("¤³¤Î¥ï¥ó¥É¤Ï¤â¤¦½¼Ê¬¤Ë½¼Å¶¤µ¤ì¤Æ¤¤¤Ş¤¹¡£");
+			msg_print("ã“ã®ãƒ¯ãƒ³ãƒ‰ã¯ã‚‚ã†å……åˆ†ã«å……å¡«ã•ã‚Œã¦ã„ã¾ã™ã€‚");
 #else
 			msg_print("These wands are already fully charged.");
 #endif
 		else if ((o_ptr->tval == TV_STAFF) && (o_ptr->number == 1))
 #ifdef JP
-			msg_print("¤³¤Î¥¹¥¿¥Ã¥Õ¤Ï¤â¤¦½¼Ê¬¤Ë½¼Å¶¤µ¤ì¤Æ¤¤¤Ş¤¹¡£");
+			msg_print("ã“ã®ã‚¹ã‚¿ãƒƒãƒ•ã¯ã‚‚ã†å……åˆ†ã«å……å¡«ã•ã‚Œã¦ã„ã¾ã™ã€‚");
 #else
 			msg_print("This staff is already fully charged.");
 #endif
 		else if ((o_ptr->tval == TV_STAFF) && (o_ptr->number > 1))
 #ifdef JP
-			msg_print("¤³¤Î¥¹¥¿¥Ã¥Õ¤Ï¤â¤¦½¼Ê¬¤Ë½¼Å¶¤µ¤ì¤Æ¤¤¤Ş¤¹¡£");
+			msg_print("ã“ã®ã‚¹ã‚¿ãƒƒãƒ•ã¯ã‚‚ã†å……åˆ†ã«å……å¡«ã•ã‚Œã¦ã„ã¾ã™ã€‚");
 #else
 			msg_print("These staffs are already fully charged.");
 #endif
@@ -2617,7 +2617,7 @@ s = "ËâÎÏ¤ò½¼Å¶¤¹¤Ù¤­¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
 	{
 		object_desc(tmp_str, o_ptr, OD_NAME_ONLY);
 #ifdef JP
-		msg_format("%s¤òºÆ½¼Å¶¤¹¤ë¤Ë¤Ï¡ğ%d É¬Í×¤Ç¤¹¡ª", tmp_str,price );
+		msg_format("%sã‚’å†å……å¡«ã™ã‚‹ã«ã¯ï¼„%d å¿…è¦ã§ã™ï¼", tmp_str,price );
 #else
 		msg_format("You need %d gold to recharge %s!", price, tmp_str);
 #endif
@@ -2628,7 +2628,7 @@ s = "ËâÎÏ¤ò½¼Å¶¤¹¤Ù¤­¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
 	if (o_ptr->tval == TV_ROD)
 	{
 #ifdef JP
-		if (get_check(format("¤½¤Î¥í¥Ã¥É¤ò¡ğ%d ¤ÇºÆ½¼Å¶¤·¤Ş¤¹¤«¡©",
+		if (get_check(format("ãã®ãƒ­ãƒƒãƒ‰ã‚’ï¼„%d ã§å†å……å¡«ã—ã¾ã™ã‹ï¼Ÿ",
 					price)))
 #else
 		if (get_check(format("Recharge the %s for %d gold? ",
@@ -2652,7 +2652,7 @@ s = "ËâÎÏ¤ò½¼Å¶¤¹¤Ù¤­¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
 
 		/* Get the quantity for staves and wands */
 #ifdef JP
-		charges = get_quantity(format("°ì²óÊ¬¡ğ%d ¤Ç²¿²óÊ¬½¼Å¶¤·¤Ş¤¹¤«¡©",
+		charges = get_quantity(format("ä¸€å›åˆ†ï¼„%d ã§ä½•å›åˆ†å……å¡«ã—ã¾ã™ã‹ï¼Ÿ",
 #else
 		charges = get_quantity(format("Add how many charges for %d gold? ",
 #endif
@@ -2674,7 +2674,7 @@ s = "ËâÎÏ¤ò½¼Å¶¤¹¤Ù¤­¥¢¥¤¥Æ¥à¤¬¤Ê¤¤¡£";
 	/* Give feedback */
 	object_desc(tmp_str, o_ptr, 0);
 #ifdef JP
-	msg_format("%s¤ò¡ğ%d ¤ÇºÆ½¼Å¶¤·¤Ş¤·¤¿¡£", tmp_str, price);
+	msg_format("%sã‚’ï¼„%d ã§å†å……å¡«ã—ã¾ã—ãŸã€‚", tmp_str, price);
 #else
 	msg_format("%^s %s recharged for %d gold.", tmp_str, ((o_ptr->number > 1) ? "were" : "was"), price);
 #endif
@@ -2718,7 +2718,7 @@ static void building_recharge_all(void)
 	msg_flag = FALSE;
 	clear_bldg(5, 18);
 #ifdef JP
-	prt("  ºÆ½¼Å¶¤ÎÈñÍÑ¤Ï¥¢¥¤¥Æ¥à¤Î¼ïÎà¤Ë¤è¤ê¤Ş¤¹¡£", 6, 0);
+	prt("  å†å……å¡«ã®è²»ç”¨ã¯ã‚¢ã‚¤ãƒ†ãƒ ã®ç¨®é¡ã«ã‚ˆã‚Šã¾ã™ã€‚", 6, 0);
 #else
 	prt("  The prices of recharge depend on the type.", 6, 0);
 #endif
@@ -2778,7 +2778,7 @@ static void building_recharge_all(void)
 	if (!total_cost)
 	{
 #ifdef JP
-		msg_print("½¼Å¶¤¹¤ëÉ¬Í×¤Ï¤¢¤ê¤Ş¤»¤ó¡£");
+		msg_print("å……å¡«ã™ã‚‹å¿…è¦ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚");
 #else
 		msg_print("That doesn't need to be recharged.");
 #endif
@@ -2791,7 +2791,7 @@ static void building_recharge_all(void)
 	if (p_ptr->au < total_cost)
 	{
 #ifdef JP
-		msg_format("¤¹¤Ù¤Æ¤Î¥¢¥¤¥Æ¥à¤òºÆ½¼Å¶¤¹¤ë¤Ë¤Ï¡ğ%d É¬Í×¤Ç¤¹¡ª", total_cost );
+		msg_format("ã™ã¹ã¦ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’å†å……å¡«ã™ã‚‹ã«ã¯ï¼„%d å¿…è¦ã§ã™ï¼", total_cost );
 #else
 		msg_format("You need %d gold to recharge all items!",total_cost);
 #endif
@@ -2800,7 +2800,7 @@ static void building_recharge_all(void)
 	}
 
 #ifdef JP
-	if (!get_check(format("¤¹¤Ù¤Æ¤Î¥¢¥¤¥Æ¥à¤ò ¡ğ%d ¤ÇºÆ½¼Å¶¤·¤Ş¤¹¤«¡©",  total_cost))) return;
+	if (!get_check(format("ã™ã¹ã¦ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ ï¼„%d ã§å†å……å¡«ã—ã¾ã™ã‹ï¼Ÿ",  total_cost))) return;
 #else
 	if (!get_check(format("Recharge all items for %d gold?", total_cost))) return;
 #endif
@@ -2847,7 +2847,7 @@ static void building_recharge_all(void)
 
 	/* Give feedback */
 #ifdef JP
-	msg_format("¡ğ%d ¤ÇºÆ½¼Å¶¤·¤Ş¤·¤¿¡£", total_cost);
+	msg_format("ï¼„%d ã§å†å……å¡«ã—ã¾ã—ãŸã€‚", total_cost);
 #else
 	msg_format("You pay %d gold.", total_cost);
 #endif
@@ -2887,7 +2887,7 @@ static void bldg_process_command(building_type *bldg, int i)
 	    ((bldg->action_restr[i] == 2) && !is_owner(bldg)))
 	{
 #ifdef JP
-		msg_print("¤½¤ì¤òÁªÂò¤¹¤ë¸¢Íø¤Ï¤¢¤ê¤Ş¤»¤ó¡ª");
+		msg_print("ãã‚Œã‚’é¸æŠã™ã‚‹æ¨©åˆ©ã¯ã‚ã‚Šã¾ã›ã‚“ï¼");
 #else
 		msg_print("You have no right to choose that!");
 #endif
@@ -2901,7 +2901,7 @@ static void bldg_process_command(building_type *bldg, int i)
 	     ((bldg->other_costs[i] > p_ptr->au) && !is_owner(bldg))))
 	{
 #ifdef JP
-		msg_print("¤ª¶â¤¬Â­¤ê¤Ş¤»¤ó¡ª");
+		msg_print("ãŠé‡‘ãŒè¶³ã‚Šã¾ã›ã‚“ï¼");
 #else
 		msg_print("You do not have the gold!");
 #endif
@@ -2976,7 +2976,7 @@ static void bldg_process_command(building_type *bldg, int i)
 			break;
 		case BACT_IDENTS: /* needs work */
 #ifdef JP
-			if (!get_check("»ı¤ÁÊª¤òÁ´¤Æ´ÕÄê¤·¤Æ¤è¤í¤·¤¤¤Ç¤¹¤«¡©")) break;
+			if (!get_check("æŒã¡ç‰©ã‚’å…¨ã¦é‘‘å®šã—ã¦ã‚ˆã‚ã—ã„ã§ã™ã‹ï¼Ÿ")) break;
 #else
 			if (!get_check("Do you pay for identify all your possession? ")) break;
 #endif
@@ -2985,7 +2985,7 @@ static void bldg_process_command(building_type *bldg, int i)
 			/* Combine / Reorder the pack (later) */
 			p_ptr->notice |= (PN_COMBINE | PN_REORDER);
 #ifdef JP
-			msg_print(" »ı¤ÁÊªÁ´¤Æ¤¬´ÕÄê¤µ¤ì¤Ş¤·¤¿¡£");
+			msg_print(" æŒã¡ç‰©å…¨ã¦ãŒé‘‘å®šã•ã‚Œã¾ã—ãŸã€‚");
 #else
 			msg_print("Your posessions have been identified.");
 #endif
@@ -3021,7 +3021,7 @@ static void bldg_process_command(building_type *bldg, int i)
 			else
 			{
 #ifdef JP
-				msg_print("º£Æü¤ÎÊ¬¤±Á°¤Ï¤¹¤Ç¤Ë»ÙÊ§¤Ã¤¿¤¾¡ª");
+				msg_print("ä»Šæ—¥ã®åˆ†ã‘å‰ã¯ã™ã§ã«æ”¯æ‰•ã£ãŸãï¼");
 #else
 				msg_print("You just had your daily allowance!");
 #endif
@@ -3041,7 +3041,7 @@ static void bldg_process_command(building_type *bldg, int i)
 			break;
 		case BACT_TELEPORT_LEVEL:
 #ifdef JP
-			amt = get_quantity("²¿³¬¤Ë¥Æ¥ì¥İ¡¼¥È¤·¤Ş¤¹¤«¡©", 98);
+			amt = get_quantity("ä½•éšã«ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã—ã¾ã™ã‹ï¼Ÿ", 98);
 #else
 			amt = get_quantity("Teleport to which level? ", 98);
 #endif
@@ -3050,7 +3050,7 @@ static void bldg_process_command(building_type *bldg, int i)
 				p_ptr->word_recall = 1;
 				p_ptr->max_dlv = amt;
 #ifdef JP
-				msg_print("²ó¤ê¤ÎÂçµ¤¤¬Ä¥¤ê¤Ä¤á¤Æ¤­¤¿...");
+				msg_print("å›ã‚Šã®å¤§æ°—ãŒå¼µã‚Šã¤ã‚ã¦ããŸ...");
 #else
 				msg_print("The air about you becomes charged...");
 #endif
@@ -3063,7 +3063,7 @@ static void bldg_process_command(building_type *bldg, int i)
 			if (!p_ptr->muta)
 			{
 #ifdef JP
-				msg_print("¼£¤¹É¬Í×¤Ï¤Ê¤¤¡£");
+				msg_print("æ²»ã™å¿…è¦ã¯ãªã„ã€‚");
 #else
 				msg_print("You have no mutations.");
 #endif
@@ -3093,7 +3093,7 @@ void do_cmd_quest(void)
 	if (cave[py][px].feat != FEAT_QUEST_ENTER)
 	{
 #ifdef JP
-		msg_print("¤³¤³¤Ë¤Ï¥¯¥¨¥¹¥È¤ÎÆş¸ı¤Ï¤Ê¤¤¡£");
+		msg_print("ã“ã“ã«ã¯ã‚¯ã‚¨ã‚¹ãƒˆã®å…¥å£ã¯ãªã„ã€‚");
 #else
 		msg_print("You see no quest level here.");
 #endif
@@ -3103,8 +3103,8 @@ void do_cmd_quest(void)
 	{
 		/* check */
 #ifdef JP
-		msg_print("¤³¤³¤Ë¤Ï¥¯¥¨¥¹¥È¤Ø¤ÎÆş¸ı¤¬¤¢¤ê¤Ş¤¹¡£");
-		if (!get_check("¥¯¥¨¥¹¥È¤ËÆş¤ê¤Ş¤¹¤«¡©")) return;
+		msg_print("ã“ã“ã«ã¯ã‚¯ã‚¨ã‚¹ãƒˆã¸ã®å…¥å£ãŒã‚ã‚Šã¾ã™ã€‚");
+		if (!get_check("ã‚¯ã‚¨ã‚¹ãƒˆã«å…¥ã‚Šã¾ã™ã‹ï¼Ÿ")) return;
 #else
 		msg_print("There is an entry of a quest.");
 		if (!get_check("Do you enter? ")) return;
@@ -3137,7 +3137,7 @@ void do_cmd_bldg(void)
 		  (cave[py][px].feat <= FEAT_BLDG_TAIL)))
 	{
 #ifdef JP
-		msg_print("¤³¤³¤Ë¤Ï·úÊª¤Ï¤Ê¤¤¡£");
+		msg_print("ã“ã“ã«ã¯å»ºç‰©ã¯ãªã„ã€‚");
 #else
 		msg_print("You see no building here.");
 #endif
@@ -3154,7 +3154,7 @@ void do_cmd_bldg(void)
 	if ((which == 2) && p_ptr->inside_arena && !p_ptr->exit_bldg)
 	{
 #ifdef JP
-		prt("¥²¡¼¥È¤ÏÊÄ¤Ş¤Ã¤Æ¤¤¤ë¡£¥â¥ó¥¹¥¿¡¼¤¬¤¢¤Ê¤¿¤òÂÔ¤Ã¤Æ¤¤¤ë¡ª",0,0);
+		prt("ã‚²ãƒ¼ãƒˆã¯é–‰ã¾ã£ã¦ã„ã‚‹ã€‚ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒã‚ãªãŸã‚’å¾…ã£ã¦ã„ã‚‹ï¼",0,0);
 #else
 		prt("The gates are closed.  The monster awaits!", 0, 0);
 #endif

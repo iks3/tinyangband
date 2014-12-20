@@ -1,4 +1,4 @@
-/* File: files.c */
+ï»¿/* File: files.c */
 
 /* Purpose: code dealing with files (and death) */
 
@@ -34,7 +34,7 @@ void safe_setuid_drop(void)
 	if (setuid(getuid()) != 0)
 	{
 #ifdef JP
-quit("setuid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
+quit("setuid(): æ­£ã—ãè¨±å¯ãŒå–ã‚Œã¾ã›ã‚“ï¼");
 #else
 		quit("setuid(): cannot set permissions correctly!");
 #endif
@@ -43,7 +43,7 @@ quit("setuid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
 	if (setgid(getgid()) != 0)
 	{
 #ifdef JP
-quit("setgid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
+quit("setgid(): æ­£ã—ãè¨±å¯ãŒå–ã‚Œã¾ã›ã‚“ï¼");
 #else
 		quit("setgid(): cannot set permissions correctly!");
 #endif
@@ -55,7 +55,7 @@ quit("setgid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
 	if (setreuid(geteuid(), getuid()) != 0)
 	{
 #ifdef JP
-quit("setreuid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
+quit("setreuid(): æ­£ã—ãè¨±å¯ãŒå–ã‚Œã¾ã›ã‚“ï¼");
 #else
 		quit("setreuid(): cannot set permissions correctly!");
 #endif
@@ -64,7 +64,7 @@ quit("setreuid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
 	if (setregid(getegid(), getgid()) != 0)
 	{
 #ifdef JP
-quit("setregid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
+quit("setregid(): æ­£ã—ãè¨±å¯ãŒå–ã‚Œã¾ã›ã‚“ï¼");
 #else
 		quit("setregid(): cannot set permissions correctly!");
 #endif
@@ -95,7 +95,7 @@ void safe_setuid_grab(void)
 	if (setuid(player_euid) != 0)
 	{
 #ifdef JP
-quit("setuid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
+quit("setuid(): æ­£ã—ãè¨±å¯ãŒå–ã‚Œã¾ã›ã‚“ï¼");
 #else
 		quit("setuid(): cannot set permissions correctly!");
 #endif
@@ -104,7 +104,7 @@ quit("setuid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
 	if (setgid(player_egid) != 0)
 	{
 #ifdef JP
-quit("setgid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
+quit("setgid(): æ­£ã—ãè¨±å¯ãŒå–ã‚Œã¾ã›ã‚“ï¼");
 #else
 		quit("setgid(): cannot set permissions correctly!");
 #endif
@@ -116,7 +116,7 @@ quit("setgid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
 	if (setreuid(geteuid(), getuid()) != 0)
 	{
 #ifdef JP
-quit("setreuid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
+quit("setreuid(): æ­£ã—ãè¨±å¯ãŒå–ã‚Œã¾ã›ã‚“ï¼");
 #else
 		quit("setreuid(): cannot set permissions correctly!");
 #endif
@@ -125,7 +125,7 @@ quit("setreuid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
 	if (setregid(getegid(), getgid()) != 0)
 	{
 #ifdef JP
-quit("setregid(): Àµ¤·¤¯µö²Ä¤¬¼è¤ì¤Ş¤»¤ó¡ª");
+quit("setregid(): æ­£ã—ãè¨±å¯ãŒå–ã‚Œã¾ã›ã‚“ï¼");
 #else
 		quit("setregid(): cannot set permissions correctly!");
 #endif
@@ -605,7 +605,7 @@ errr process_pref_file_command(char *buf)
 				(6 == option_info[i].o_page) && !wizard)
 			{
 #ifdef JP
-				msg_format("½é´ü¥ª¥×¥·¥ç¥ó¤ÏÊÑ¹¹¤Ç¤­¤Ş¤»¤ó! '%s'", buf);
+				msg_format("åˆæœŸã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯å¤‰æ›´ã§ãã¾ã›ã‚“! '%s'", buf);
 #else
 				msg_format("Birth options can not changed! '%s'", buf);
 #endif
@@ -640,7 +640,7 @@ errr process_pref_file_command(char *buf)
 				(6 == option_info[i].o_page) && !wizard)
 			{
 #ifdef JP
-				msg_format("½é´ü¥ª¥×¥·¥ç¥ó¤ÏÊÑ¹¹¤Ç¤­¤Ş¤»¤ó! '%s'", buf);
+				msg_format("åˆæœŸã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯å¤‰æ›´ã§ãã¾ã›ã‚“! '%s'", buf);
 #else
 				msg_format("Birth options can not changed! '%s'", buf);
 #endif
@@ -762,7 +762,7 @@ errr process_pref_file_command(char *buf)
 			if (max_macrotrigger >= MAX_MACRO_TRIG)
 			{
 #ifdef JP
-				msg_print("¥Ş¥¯¥í¥È¥ê¥¬¡¼¤ÎÀßÄê¤¬Â¿¤¹¤®¤Ş¤¹!");
+				msg_print("ãƒã‚¯ãƒ­ãƒˆãƒªã‚¬ãƒ¼ã®è¨­å®šãŒå¤šã™ãã¾ã™!");
 #else
 				msg_print("Too many macro triggers!");
 #endif
@@ -1203,8 +1203,8 @@ static errr process_pref_file_aux(cptr name, bool read_pickpref)
 		/* Print error message */
 		/* ToDo: Add better error messages */
 #ifdef JP
-	      msg_format("¥Õ¥¡¥¤¥ë'%s'¤Î%d¹Ô¤Ç¥¨¥é¡¼ÈÖ¹æ%d¤Î¥¨¥é¡¼.", name, line, err);
-	      msg_format("('%s'¤ò²òÀÏÃæ)", old);
+	      msg_format("ãƒ•ã‚¡ã‚¤ãƒ«'%s'ã®%dè¡Œã§ã‚¨ãƒ©ãƒ¼ç•ªå·%dã®ã‚¨ãƒ©ãƒ¼.", name, line, err);
+	      msg_format("('%s'ã‚’è§£æä¸­)", old);
 #else
 		msg_format("Error %d in line %d of file '%s'.", err, line, name);
 		msg_format("Parsing '%s'", old);
@@ -1545,49 +1545,49 @@ static struct
 } disp_player_line[]
 #ifdef JP
 = {
-	{ 1, 10, 25, "ÂÇ·â½¤Àµ"},
-	{ 1, 10, 25, "ÂÇ·â½¤Àµ(±¦¼ê)"},
+	{ 1, 10, 25, "æ‰“æ’ƒä¿®æ­£"},
+	{ 1, 10, 25, "æ‰“æ’ƒä¿®æ­£(å³æ‰‹)"},
 	{ 1, 10, 25, ""},
 	{ 1, 10, 25, ""},
-	{ 1, 11, 25, "ÂÇ·â½¤Àµ(º¸¼ê)"},
+	{ 1, 11, 25, "æ‰“æ’ƒä¿®æ­£(å·¦æ‰‹)"},
 	{ 1, 11, 25, ""},
 	{ 1, 11, 25, ""},
-	{ 1, 15, 25, "¼Í·â½¤Àµ"},
-	{ 1, 16, 25, "¼Í·âÇÜÎ¨"},
-	{01, 20, 25, "²ÃÂ®"},
-	{ 1, 19, 25, "£Á£Ã"},
-	{29, 13, 21, "¥ì¥Ù¥ë"},
-	{29, 14, 21, "·Ğ¸³ÃÍ"},
-	{29, 15, 21, "ºÇÂç·Ğ¸³"},
-	{29, 16, 21, "¼¡¥ì¥Ù¥ë"},
-	{29, 17, 21, "½ê»ı¶â"},
-	{29, 19, 21, "ÆüÉÕ"},
-	{29, 10, 21, "£È£Ğ"},
-	{29, 11, 21, "£Í£Ğ"},
-	{29, 20, 21, "¥×¥ì¥¤»ş´Ö"},
-	{54, 10, -1, "ÂÇ·â¹¶·â  :"},
-	{54, 11, -1, "¼Í·â¹¶·â  :"},
-	{54, 12, -1, "ËâË¡ËÉ¸æ  :"},
-	{54, 13, -1, "±£Ì©¹ÔÆ°  :"},
-	{54, 15, -1, "ÃÎ³Ğ      :"},
-	{54, 16, -1, "Ãµº÷      :"},
-	{54, 17, -1, "²ò½ü      :"},
-	{54, 18, -1, "ËâË¡Æ»¶ñ  :"},
-	{01, 12, 25, "ÂÇ·â²ó¿ô"},
-	{01, 17, 25, "¼Í·â²ó¿ô"},
-	{01, 13, 25, "Ê¿¶Ñ¥À¥á¡¼¥¸"},
-	{54, 20, -1, "ÀÖ³°Àş»ëÎÏ:"},
-	{26,  1, -1, "Ì¾Á°  : "},
-	{ 1,  3, -1, "À­ÊÌ     : "},
-	{ 1,  4, -1, "¼ïÂ²     : "},
-	{ 1,  5, -1, "¿¦¶È     : "},
-	{ 1,  6, -1, "ËâË¡     : "},
-	{ 1,  7, -1, "¼é¸î¿À   : "},
-	{29,  3, 21, "Ç¯Îğ"},
-	{29,  4, 21, "¿ÈÄ¹"},
-	{29,  5, 21, "ÂÎ½Å"},
-	{29,  6, 21, "¼Ò²ñÅªÃÏ°Ì"},
-	{29,  7, 21, "Â°À­"},
+	{ 1, 15, 25, "å°„æ’ƒä¿®æ­£"},
+	{ 1, 16, 25, "å°„æ’ƒå€ç‡"},
+	{01, 20, 25, "åŠ é€Ÿ"},
+	{ 1, 19, 25, "ï¼¡ï¼£"},
+	{29, 13, 21, "ãƒ¬ãƒ™ãƒ«"},
+	{29, 14, 21, "çµŒé¨“å€¤"},
+	{29, 15, 21, "æœ€å¤§çµŒé¨“"},
+	{29, 16, 21, "æ¬¡ãƒ¬ãƒ™ãƒ«"},
+	{29, 17, 21, "æ‰€æŒé‡‘"},
+	{29, 19, 21, "æ—¥ä»˜"},
+	{29, 10, 21, "ï¼¨ï¼°"},
+	{29, 11, 21, "ï¼­ï¼°"},
+	{29, 20, 21, "ãƒ—ãƒ¬ã‚¤æ™‚é–“"},
+	{54, 10, -1, "æ‰“æ’ƒæ”»æ’ƒ  :"},
+	{54, 11, -1, "å°„æ’ƒæ”»æ’ƒ  :"},
+	{54, 12, -1, "é­”æ³•é˜²å¾¡  :"},
+	{54, 13, -1, "éš å¯†è¡Œå‹•  :"},
+	{54, 15, -1, "çŸ¥è¦š      :"},
+	{54, 16, -1, "æ¢ç´¢      :"},
+	{54, 17, -1, "è§£é™¤      :"},
+	{54, 18, -1, "é­”æ³•é“å…·  :"},
+	{01, 12, 25, "æ‰“æ’ƒå›æ•°"},
+	{01, 17, 25, "å°„æ’ƒå›æ•°"},
+	{01, 13, 25, "å¹³å‡ãƒ€ãƒ¡ãƒ¼ã‚¸"},
+	{54, 20, -1, "èµ¤å¤–ç·šè¦–åŠ›:"},
+	{26,  1, -1, "åå‰  : "},
+	{ 1,  3, -1, "æ€§åˆ¥     : "},
+	{ 1,  4, -1, "ç¨®æ—     : "},
+	{ 1,  5, -1, "è·æ¥­     : "},
+	{ 1,  6, -1, "é­”æ³•     : "},
+	{ 1,  7, -1, "å®ˆè­·ç¥   : "},
+	{29,  3, 21, "å¹´é½¢"},
+	{29,  4, 21, "èº«é•·"},
+	{29,  5, 21, "ä½“é‡"},
+	{29,  6, 21, "ç¤¾ä¼šçš„åœ°ä½"},
+	{29,  7, 21, "å±æ€§"},
 };
 #else
 = {
@@ -1689,7 +1689,7 @@ static cptr likert(int x, int y)
 	{
 		likert_color = TERM_L_DARK;
 #ifdef JP
-		return ("ºÇÄã");
+		return ("æœ€ä½");
 #else
 		return ("Very Bad");
 #endif
@@ -1703,7 +1703,7 @@ static cptr likert(int x, int y)
 		{
 			likert_color = TERM_RED;
 #ifdef JP
-			return ("°­¤¤");
+			return ("æ‚ªã„");
 #else
 			return ("Bad");
 #endif
@@ -1712,7 +1712,7 @@ static cptr likert(int x, int y)
 		{
 			likert_color = TERM_L_RED;
 #ifdef JP
-			return ("Îô¤ë");
+			return ("åŠ£ã‚‹");
 #else
 			return ("Poor");
 #endif
@@ -1722,7 +1722,7 @@ static cptr likert(int x, int y)
 		{
 			likert_color = TERM_ORANGE;
 #ifdef JP
-			return ("ÉáÄÌ");
+			return ("æ™®é€š");
 #else
 			return ("Fair");
 #endif
@@ -1731,7 +1731,7 @@ static cptr likert(int x, int y)
 		{
 			likert_color = TERM_YELLOW;
 #ifdef JP
-			return ("ÎÉ¤¤");
+			return ("è‰¯ã„");
 #else
 			return ("Good");
 #endif
@@ -1740,7 +1740,7 @@ static cptr likert(int x, int y)
 		{
 			likert_color = TERM_YELLOW;
 #ifdef JP
-			return ("ÂçÊÑÎÉ¤¤");
+			return ("å¤§å¤‰è‰¯ã„");
 #else
 			return ("Very Good");
 #endif
@@ -1750,7 +1750,7 @@ static cptr likert(int x, int y)
 		{
 			likert_color = TERM_L_GREEN;
 #ifdef JP
-			return ("Âî±Û");
+			return ("å“è¶Š");
 #else
 			return ("Excellent");
 #endif
@@ -1763,7 +1763,7 @@ static cptr likert(int x, int y)
 		{
 			likert_color = TERM_GREEN;
 #ifdef JP
-			return ("Ä¶±Û");
+			return ("è¶…è¶Š");
 #else
 			return ("Superb");
 #endif
@@ -1775,7 +1775,7 @@ static cptr likert(int x, int y)
 		{
 			likert_color = TERM_BLUE;
 #ifdef JP
-			return ("±ÑÍºÅª");
+			return ("è‹±é›„çš„");
 #else
 			return ("Heroic");
 #endif
@@ -1784,7 +1784,7 @@ static cptr likert(int x, int y)
 		{
 			likert_color = TERM_L_BLUE;
 #ifdef JP
-			sprintf(dummy,"ÅÁÀâÅª [%d]", (int) ((((x / y) -17) * 5) / 2));
+			sprintf(dummy,"ä¼èª¬çš„ [%d]", (int) ((((x / y) -17) * 5) / 2));
 			return dummy;
 #else
 			return ("Legendary");
@@ -2392,17 +2392,17 @@ static void display_player_flag_info(void)
 
 	c_put_str(TERM_WHITE, "abcdefghijkl@", row++, col + 8);
 
-	display_player_flag_aux(row++, col, _("ÂÑ»À  :", "Acid  :"), 2, TR2_RES_ACID, TR2_IM_ACID, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, _("ÂÑÅÅ·â:", "Elec  :"), 2, TR2_RES_ELEC, TR2_IM_ELEC, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, _("ÂÑ²Ğ±ê:", "Fire  :"), 2, TR2_RES_FIRE, TR2_IM_FIRE, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, _("ÂÑÎäµ¤:", "Cold  :"), 2, TR2_RES_COLD, TR2_IM_COLD, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, _("ÂÑÆÇ  :", "Poison:"), 2, TR2_RES_POIS, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, _("ÂÑ¶²Éİ:", "Fear  :"), 2, TR2_RES_FEAR, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, _("ÂÑ°Å¹õ:", "Dark  :"), 2, TR2_RES_DARK, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, _("ÂÑÌÕÌÜ:", "Blind :"), 2, TR2_RES_BLIND, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, _("ÂÑº®Íğ:", "Conf  :"), 2, TR2_RES_CONF, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, _("ÂÑ¹ì²»:", "Sound :"), 2, TR2_RES_SOUND, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, _("ÂÑÃÏ¹ö:", "Nether:"), 2, TR2_RES_NETHER, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("è€é…¸  :", "Acid  :"), 2, TR2_RES_ACID, TR2_IM_ACID, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("è€é›»æ’ƒ:", "Elec  :"), 2, TR2_RES_ELEC, TR2_IM_ELEC, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("è€ç«ç‚:", "Fire  :"), 2, TR2_RES_FIRE, TR2_IM_FIRE, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("è€å†·æ°—:", "Cold  :"), 2, TR2_RES_COLD, TR2_IM_COLD, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("è€æ¯’  :", "Poison:"), 2, TR2_RES_POIS, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("è€ææ€–:", "Fear  :"), 2, TR2_RES_FEAR, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("è€æš—é»’:", "Dark  :"), 2, TR2_RES_DARK, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("è€ç›²ç›®:", "Blind :"), 2, TR2_RES_BLIND, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("è€æ··ä¹±:", "Conf  :"), 2, TR2_RES_CONF, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("è€è½ŸéŸ³:", "Sound :"), 2, TR2_RES_SOUND, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, _("è€åœ°ç„:", "Nether:"), 2, TR2_RES_NETHER, 0, im_f[1], vul_f[1]);
 
 	/*** Set 2 ***/
 
@@ -2412,17 +2412,17 @@ static void display_player_flag_info(void)
 	c_put_str(TERM_WHITE, "abcdefghijkl@", row++, col + 10);
 
 #ifdef JP
-	display_player_flag_aux(row++, col, "²ÃÂ®    :", 1, TR1_SPEED, 0, im_f[0], vul_f[0]);
-	display_player_flag_aux(row++, col, "È¿¼Í    :", 2, TR2_REFLECT, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "ËâË¡Æ»¶ñ:", 1, TR1_MAGIC_MASTERY, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "²Ğ¥ª¡¼¥é:", 3, TR3_SH_FIRE, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "ÅÅ¥ª¡¼¥é:", 3, TR3_SH_ELEC, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "Îä¥ª¡¼¥é:", 3, TR3_SH_COLD, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "ËâÎÏ¸º¾¯:", 3, TR3_DEC_MANA, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "Íğ¥Æ¥ì¥İ:", 3, TR3_TELEPORT, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "È¿¥Æ¥ì¥İ:", 3, TR3_NO_TELE, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "È¿ËâË¡  :", 3, TR3_NO_MAGIC, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "·Ğ¸³µÛ¼ı:", 3, TR3_DRAIN_EXP, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "åŠ é€Ÿ    :", 1, TR1_SPEED, 0, im_f[0], vul_f[0]);
+	display_player_flag_aux(row++, col, "åå°„    :", 2, TR2_REFLECT, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, "é­”æ³•é“å…·:", 1, TR1_MAGIC_MASTERY, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "ç«ã‚ªãƒ¼ãƒ©:", 3, TR3_SH_FIRE, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "é›»ã‚ªãƒ¼ãƒ©:", 3, TR3_SH_ELEC, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "å†·ã‚ªãƒ¼ãƒ©:", 3, TR3_SH_COLD, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "é­”åŠ›æ¸›å°‘:", 3, TR3_DEC_MANA, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "ä¹±ãƒ†ãƒ¬ãƒ:", 3, TR3_TELEPORT, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "åãƒ†ãƒ¬ãƒ:", 3, TR3_NO_TELE, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "åé­”æ³•  :", 3, TR3_NO_MAGIC, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "çµŒé¨“å¸å:", 3, TR3_DRAIN_EXP, 0, im_f[2], vul_f[2]);
 #else
 	display_player_flag_aux(row++, col, "Speed   :", 1, TR1_SPEED, 0, im_f[0], vul_f[0]);
 	display_player_flag_aux(row++, col, "Reflect :", 2, TR2_REFLECT, 0, im_f[1], vul_f[1]);
@@ -2446,17 +2446,17 @@ static void display_player_flag_info(void)
 	c_put_str(TERM_WHITE, "abcdefghijkl@", row++, col + 11);
 
 #ifdef JP
-	display_player_flag_aux(row++, col, "ÂÑËãáã   :", 2, TR2_FREE_ACT, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "Æ©ÌÀ»ëÇ§ :", 3, TR3_SEE_INVIS, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "À¸Ì¿Êİ»ı :", 2, TR2_HOLD_LIFE, 0, im_f[1], vul_f[1]);
-	display_player_flag_aux(row++, col, "¥Æ¥ì¥Ñ¥· :", 3, TR3_TELEPATHY, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "·Ù¹ğ     :", 3, TR3_WARNING, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "ÃÙ¾Ã²½   :", 3, TR3_SLOW_DIGEST, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "µŞ²óÉü   :", 3, TR3_REGEN, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "ÉâÍ·     :", 3, TR3_FEATHER, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "±Ê±ó¸÷¸» :", 3, TR3_LITE, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "È¿´¶     :", 3, TR3_AGGRAVATE, 0, im_f[2], vul_f[2]);
-	display_player_flag_aux(row++, col, "¼Ù°­¼ö   :", 3,
+	display_player_flag_aux(row++, col, "è€éº»ç—º   :", 2, TR2_FREE_ACT, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, "é€æ˜è¦–èª :", 3, TR3_SEE_INVIS, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "ç”Ÿå‘½ä¿æŒ :", 2, TR2_HOLD_LIFE, 0, im_f[1], vul_f[1]);
+	display_player_flag_aux(row++, col, "ãƒ†ãƒ¬ãƒ‘ã‚· :", 3, TR3_TELEPATHY, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "è­¦å‘Š     :", 3, TR3_WARNING, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "é…æ¶ˆåŒ–   :", 3, TR3_SLOW_DIGEST, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "æ€¥å›å¾©   :", 3, TR3_REGEN, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "æµ®éŠ     :", 3, TR3_FEATHER, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "æ°¸é å…‰æº :", 3, TR3_LITE, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "åæ„Ÿ     :", 3, TR3_AGGRAVATE, 0, im_f[2], vul_f[2]);
+	display_player_flag_aux(row++, col, "é‚ªæ‚ªå‘ª   :", 3,
 #else
 	display_player_flag_aux(row++, col, "Free Actn:", 2, TR2_FREE_ACT, 0, im_f[1], vul_f[1]);
 	display_player_flag_aux(row++, col, "SeeInvis.:", 3, TR3_SEE_INVIS, 0, im_f[2], vul_f[2]);
@@ -2483,10 +2483,10 @@ static void display_player_misc_info(void)
 
 	/* Display basics */
 #ifdef JP
-	put_str("Ì¾Á°      :", 2, 1);
-	put_str("À­ÊÌ      :", 3, 1);
-	put_str("¼ïÂ²      :", 4, 1);
-	put_str("¿¦¶È      :", 5, 1);
+	put_str("åå‰      :", 2, 1);
+	put_str("æ€§åˆ¥      :", 3, 1);
+	put_str("ç¨®æ—      :", 4, 1);
+	put_str("è·æ¥­      :", 5, 1);
 #else
 	put_str("Name      :", 2, 1);
 	put_str("Sex       :", 3, 1);
@@ -2501,9 +2501,9 @@ static void display_player_misc_info(void)
 
 	/* Display extras */
 #ifdef JP
-	put_str("¥ì¥Ù¥ë    :", 6, 1);
-	put_str("£È£Ğ(ºÇÂç):", 7, 1);
-	put_str("£Í£Ğ(ºÇÂç):", 8, 1);
+	put_str("ãƒ¬ãƒ™ãƒ«    :", 6, 1);
+	put_str("ï¼¨ï¼°(æœ€å¤§):", 7, 1);
+	put_str("ï¼­ï¼°(æœ€å¤§):", 8, 1);
 #else
 	put_str("Level     :", 6, 1);
 	put_str("Hits(Max) :", 7, 1);
@@ -2554,11 +2554,11 @@ static void display_player_stat_info(void)
 
 	/* Print out the labels for the columns */
 #ifdef JP
-	c_put_str(TERM_WHITE, "Ç½ÎÏ", row-1, stat_col);
-	c_put_str(TERM_BLUE, "  ´ğËÜ", row-1, stat_col+5);
-	c_put_str(TERM_L_BLUE, "¼ïÂ²/¿¦¶È/ÁõÈ÷ ", row-1, stat_col+11);
-	c_put_str(TERM_L_GREEN, "¹ç·×", row-1, stat_col+26);
-	c_put_str(TERM_YELLOW, "¸½ºß", row-1, stat_col+31);
+	c_put_str(TERM_WHITE, "èƒ½åŠ›", row-1, stat_col);
+	c_put_str(TERM_BLUE, "  åŸºæœ¬", row-1, stat_col+5);
+	c_put_str(TERM_L_BLUE, "ç¨®æ—/è·æ¥­/è£…å‚™ ", row-1, stat_col+11);
+	c_put_str(TERM_L_GREEN, "åˆè¨ˆ", row-1, stat_col+26);
+	c_put_str(TERM_YELLOW, "ç¾åœ¨", row-1, stat_col+31);
 #else
 	c_put_str(TERM_WHITE, "Stat", row-1, stat_col);
 	c_put_str(TERM_BLUE, "Intrnl", row-1, stat_col+5);
@@ -2628,7 +2628,7 @@ static void display_player_stat_info(void)
 	/* Header and Footer */
 	c_put_str(TERM_WHITE, "abcdefghijkl@", row - 1, col);
 #ifdef JP
-	c_put_str(TERM_L_GREEN, "Ç½ÎÏ½¤Àµ", row - 2, col);
+	c_put_str(TERM_L_GREEN, "èƒ½åŠ›ä¿®æ­£", row - 2, col);
 #else
 	c_put_str(TERM_L_GREEN, "Modifications", row - 2, col);
 #endif
@@ -2801,13 +2801,13 @@ static void display_player_stat_info(void)
 static cptr object_flag_names[96] =
 {
 #ifdef JP
-	"+ÏÓÎÏ",
-	"+ÃÎÇ½",
-	"+¸­¤µ",
-	"+´ïÍÑ",
-	"+ÂÑµ×",
-	"+Ì¥ÎÏ",
-	"ËâË¡Æ»¶ñ",
+	"+è…•åŠ›",
+	"+çŸ¥èƒ½",
+	"+è³¢ã•",
+	"+å™¨ç”¨",
+	"+è€ä¹…",
+	"+é­…åŠ›",
+	"é­”æ³•é“å…·",
 #else
 	"Add Str",
 	"Add Int",
@@ -2845,12 +2845,12 @@ static cptr object_flag_names[96] =
 	"Cold Brand",
 
 #ifdef JP
-	"ÏÓÎÏ Êİ»ı",
-	"ÃÎÇ½ Êİ»ı",
-	"¸­¤µ Êİ»ı",
-	"´ïÍÑ Êİ»ı",
-	"ÂÑµ× Êİ»ı",
-	"Ì¥ÎÏ Êİ»ı",
+	"è…•åŠ› ä¿æŒ",
+	"çŸ¥èƒ½ ä¿æŒ",
+	"è³¢ã• ä¿æŒ",
+	"å™¨ç”¨ ä¿æŒ",
+	"è€ä¹… ä¿æŒ",
+	"é­…åŠ› ä¿æŒ",
 #else
 	"Sust Str",
 	"Sust Int",
@@ -2863,10 +2863,10 @@ static cptr object_flag_names[96] =
 	NULL,
 	NULL,
 #ifdef JP
-	"Ä¶ÂÑ»À  ",
-	"Ä¶ÂÑÅÅ·â",
-	"Ä¶ÂÑ²Ğ±ê",
-	"Ä¶ÂÑÎäµ¤",
+	"è¶…è€é…¸  ",
+	"è¶…è€é›»æ’ƒ",
+	"è¶…è€ç«ç‚",
+	"è¶…è€å†·æ°—",
 #else
 	"Imm Acid",
 	"Imm Elec",
@@ -2875,15 +2875,15 @@ static cptr object_flag_names[96] =
 #endif
 
 #ifdef JP
-	"ÅêÚ³",
+	"æŠ•æ“²",
 #else
 	"Throwing",
 #endif
 
 #ifdef JP
-	"È¿¼Í",
-	"ÂÑËãáã",
-	"·Ğ¸³ÃÍÊİ»ı",
+	"åå°„",
+	"è€éº»ç—º",
+	"çµŒé¨“å€¤ä¿æŒ",
 #else
 	"Reflect",
 	"Free Act",
@@ -2891,22 +2891,22 @@ static cptr object_flag_names[96] =
 #endif
 
 #ifdef JP
-	"ÂÑ»À  ",
-	"ÂÑÅÅ·â",
-	"ÂÑ²Ğ±ê",
-	"ÂÑÎäµ¤",
-	"ÂÑÆÇ  ",
-	"ÂÑ¶²Éİ",
-	"ÂÑÁ®¸÷",
-	"ÂÑ°Å¹õ",
-	"ÂÑÌÕÌÜ",
-	"ÂÑº®Íğ",
-	"ÂÑ¹ì²»",
-	"ÂÑÇËÊÒ",
-	"ÂÑÃÏ¹ö",
-	"ÂÑ°øº®",
-	"ÂÑ¥«¥ª",
-	"ÂÑÎô²½",
+	"è€é…¸  ",
+	"è€é›»æ’ƒ",
+	"è€ç«ç‚",
+	"è€å†·æ°—",
+	"è€æ¯’  ",
+	"è€ææ€–",
+	"è€é–ƒå…‰",
+	"è€æš—é»’",
+	"è€ç›²ç›®",
+	"è€æ··ä¹±",
+	"è€è½ŸéŸ³",
+	"è€ç ´ç‰‡",
+	"è€åœ°ç„",
+	"è€å› æ··",
+	"è€ã‚«ã‚ª",
+	"è€åŠ£åŒ–",
 #else
 	"Res Acid",
 	"Res Elec",
@@ -2927,9 +2927,9 @@ static cptr object_flag_names[96] =
 #endif
 
 #ifdef JP
-	"²Ğ±ê¥ª¡¼¥é",
+	"ç«ç‚ã‚ªãƒ¼ãƒ©",
 
-	"ÅÅµ¤¥ª¡¼¥é",
+	"é›»æ°—ã‚ªãƒ¼ãƒ©",
 #else
 	"Aura Fire",
 	"Aura Elec",
@@ -2938,34 +2938,34 @@ static cptr object_flag_names[96] =
 	NULL,
 	NULL,
 #ifdef JP
-	"ËÉ¥Æ¥ì¥İ",
-	"È¿ËâË¡",
-	"È¾Êª¼Á²½",
-	"¼Ù°­¤Ê±åÇ°",
+	"é˜²ãƒ†ãƒ¬ãƒ",
+	"åé­”æ³•",
+	"åŠç‰©è³ªåŒ–",
+	"é‚ªæ‚ªãªæ€¨å¿µ",
 	"Easy Know",
 	"Hide Type",
 	"Show Mods",
 	"Insta Art",
-	"ÉâÍ·",
-	"¸÷¸»",
-	"Æ©ÌÀ»ëÇ§",
-	"¥Æ¥ì¥Ñ¥·¡¼",
-	"ÃÙ¾Ã²½",
-	"µŞ²óÉü",
-	"¶¯ÎÏ¼Í·â",
-	"¹âÂ®¼Í·â",
-	"Ìµ½ı »À",
-	"Ìµ½ı ÅÅ",
-	"Ìµ½ı ²Ğ",
-	"Ìµ½ı Îä",
-	"»ÏÆ°",
-	"·Ğ¸³µÛ¼ı",
-	"¥Æ¥ì¥İ¡¼¥È",
-	"È¿´¶",
-	"½ËÊ¡",
-	"¼ö¤¤",
-	"½Å¤¤¼ö¤¤",
-	"±Ê±ó¤Î¼ö¤¤"
+	"æµ®éŠ",
+	"å…‰æº",
+	"é€æ˜è¦–èª",
+	"ãƒ†ãƒ¬ãƒ‘ã‚·ãƒ¼",
+	"é…æ¶ˆåŒ–",
+	"æ€¥å›å¾©",
+	"å¼·åŠ›å°„æ’ƒ",
+	"é«˜é€Ÿå°„æ’ƒ",
+	"ç„¡å‚· é…¸",
+	"ç„¡å‚· é›»",
+	"ç„¡å‚· ç«",
+	"ç„¡å‚· å†·",
+	"å§‹å‹•",
+	"çµŒé¨“å¸å",
+	"ãƒ†ãƒ¬ãƒãƒ¼ãƒˆ",
+	"åæ„Ÿ",
+	"ç¥ç¦",
+	"å‘ªã„",
+	"é‡ã„å‘ªã„",
+	"æ°¸é ã®å‘ªã„"
 #else
 	"NoTeleport",
 	"AntiMagic",
@@ -3342,7 +3342,7 @@ static void display_player_middle(void)
 
 		sprintf(buf, 
 #ifdef JP
-			"%dÆüÌÜ %2d:%02d", 
+			"%dæ—¥ç›® %2d:%02d", 
 #else
 			"Day %d %2d:%02d", 
 #endif
@@ -3413,9 +3413,9 @@ void display_player(int mode)
 		display_player_one_line(ENTRY_PATRON, valar_info[p_ptr->valar_patron].name, TERM_L_BLUE);
 
 		/* Age, Height, Weight, Social */
-		/* ¿ÈÄ¹¤Ï¥»¥ó¥Á¥á¡¼¥È¥ë¤Ë¡¢ÂÎ½Å¤Ï¥­¥í¥°¥é¥à¤ËÊÑ¹¹¤·¤Æ¤¢¤ê¤Ş¤¹ */
+		/* èº«é•·ã¯ã‚»ãƒ³ãƒãƒ¡ãƒ¼ãƒˆãƒ«ã«ã€ä½“é‡ã¯ã‚­ãƒ­ã‚°ãƒ©ãƒ ã«å¤‰æ›´ã—ã¦ã‚ã‚Šã¾ã™ */
 #ifdef JP
-		display_player_one_line(ENTRY_AGE, format("%dºÍ", (int)p_ptr->age), TERM_L_BLUE);
+		display_player_one_line(ENTRY_AGE, format("%dæ‰", (int)p_ptr->age), TERM_L_BLUE);
 		display_player_one_line(ENTRY_HEIGHT, format("%dcm", (int)((p_ptr->ht*254)/100)), TERM_L_BLUE);
 		display_player_one_line(ENTRY_WEIGHT, format("%dkg", (int)((p_ptr->wt*4536)/10000)), TERM_L_BLUE);
 		display_player_one_line(ENTRY_SOCIAL, format("%d  ", (int)p_ptr->sc), TERM_L_BLUE);
@@ -3488,7 +3488,7 @@ void display_player(int mode)
 			char statmsg[1000];
 
 #ifdef JP
-			put_str("(¥­¥ã¥é¥¯¥¿¡¼¤ÎÀ¸¤¤Î©¤Á)", 11, 25);
+			put_str("(ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã®ç”Ÿã„ç«‹ã¡)", 11, 25);
 #else
 			put_str("(Character Background)", 11, 25);
 #endif
@@ -3500,7 +3500,7 @@ void display_player(int mode)
 			if (death && total_winner)
 			{
 #ifdef JP
-				strcpy(statmsg, "¡Ä¤¢¤Ê¤¿¤Ï¾¡Íø¤Î¸å°úÂà¤·¤¿¡£");
+				strcpy(statmsg, "â€¦ã‚ãªãŸã¯å‹åˆ©ã®å¾Œå¼•é€€ã—ãŸã€‚");
 #else
 				strcpy(statmsg, "...You retired from the adventure after the winning.");
 #endif
@@ -3510,7 +3510,7 @@ void display_player(int mode)
 				if (!dun_level)
 				{
 #ifdef JP
-					sprintf(statmsg, "¡Ä¤¢¤Ê¤¿¤Ï%s¤Ç%s¤Ë»¦¤µ¤ì¤¿¡£", map_name(), died_from);
+					sprintf(statmsg, "â€¦ã‚ãªãŸã¯%sã§%sã«æ®ºã•ã‚ŒãŸã€‚", map_name(), died_from);
 #else
 					sprintf(statmsg, "...You were killed by %s in %s.", died_from, map_name());
 #endif
@@ -3525,7 +3525,7 @@ void display_player(int mode)
 
 						process_dungeon_file("q_info.txt", 0, 0, 0, 0);
 #ifdef JP
-						sprintf(statmsg, "¡Ä¤¢¤Ê¤¿¤Ï¡¢¥¯¥¨¥¹¥È¡Ö%s¡×¤Ç%s¤Ë»¦¤µ¤ì¤¿¡£", quest[p_ptr->inside_quest].name, died_from);
+						sprintf(statmsg, "â€¦ã‚ãªãŸã¯ã€ã‚¯ã‚¨ã‚¹ãƒˆã€Œ%sã€ã§%sã«æ®ºã•ã‚ŒãŸã€‚", quest[p_ptr->inside_quest].name, died_from);
 #else
 						sprintf(statmsg, "...You were killed by %s in the quest '%s'.", died_from, quest[p_ptr->inside_quest].name);
 #endif
@@ -3533,7 +3533,7 @@ void display_player(int mode)
 					else
 					{
 #ifdef JP
-						sprintf(statmsg, "¡Ä¤¢¤Ê¤¿¤Ï¡¢%d³¬¤Ç%s¤Ë»¦¤µ¤ì¤¿¡£", dun_level, died_from);
+						sprintf(statmsg, "â€¦ã‚ãªãŸã¯ã€%déšã§%sã«æ®ºã•ã‚ŒãŸã€‚", dun_level, died_from);
 #else
 						sprintf(statmsg, "...You were killed by %s on level %d.", died_from, dun_level);
 #endif
@@ -3545,7 +3545,7 @@ void display_player(int mode)
 				if (!dun_level)
 				{
 #ifdef JP
-					sprintf(statmsg, "¡Ä¤¢¤Ê¤¿¤Ï¸½ºß¡¢%s¤Ë¤¤¤ë¡£", map_name());
+					sprintf(statmsg, "â€¦ã‚ãªãŸã¯ç¾åœ¨ã€%sã«ã„ã‚‹ã€‚", map_name());
 #else
 					sprintf(statmsg, "...Now, you are in %s.", map_name());
 #endif
@@ -3567,7 +3567,7 @@ void display_player(int mode)
 
 						process_dungeon_file("q_info.txt", 0, 0, 0, 0);
 #ifdef JP
-						sprintf(statmsg, "¡Ä¤¢¤Ê¤¿¤Ï¸½ºß¡¢ ¥¯¥¨¥¹¥È¡Ö%s¡×¤ò¿ë¹ÔÃæ¤À¡£", quest[p_ptr->inside_quest].name);
+						sprintf(statmsg, "â€¦ã‚ãªãŸã¯ç¾åœ¨ã€ ã‚¯ã‚¨ã‚¹ãƒˆã€Œ%sã€ã‚’é‚è¡Œä¸­ã ã€‚", quest[p_ptr->inside_quest].name);
 #else
 						sprintf(statmsg, "...Now, you are in the quest '%s'.", quest[p_ptr->inside_quest].name);
 #endif
@@ -3575,7 +3575,7 @@ void display_player(int mode)
 					else
 					{
 #ifdef JP
-						sprintf(statmsg, "¡Ä¤¢¤Ê¤¿¤Ï¸½ºß¡¢%d³¬¤ÇÃµº÷¤·¤Æ¤¤¤ë¡£", dun_level);
+						sprintf(statmsg, "â€¦ã‚ãªãŸã¯ç¾åœ¨ã€%déšã§æ¢ç´¢ã—ã¦ã„ã‚‹ã€‚", dun_level);
 #else
 						sprintf(statmsg, "...Now, you are exploring level %d of.", dun_level);
 #endif
@@ -3652,7 +3652,7 @@ void do_cmd_character(void)
 		/* Prompt */
 		Term_putstr(2, 23, -1, TERM_WHITE,
 #ifdef JP
-"['c'¤ÇÌ¾Á°ÊÑ¹¹, 'f'¤Ç¥Õ¥¡¥¤¥ë¤Ø½ñ½Ğ, 'p'¤ÇÁ°, 'n'¤Ç¼¡, ESC¤Ç½ªÎ»]");
+"['c'ã§åå‰å¤‰æ›´, 'f'ã§ãƒ•ã‚¡ã‚¤ãƒ«ã¸æ›¸å‡º, 'p'ã§å‰, 'n'ã§æ¬¡, ESCã§çµ‚äº†]");
 #else
 			"['c' to change name, 'f' to file, 'p' for previous, 'n' for next, or ESC]");
 #endif
@@ -3675,7 +3675,7 @@ void do_cmd_character(void)
 		{
 			sprintf(tmp, "%s.txt", player_base);
 #ifdef JP
-if (get_string("¥Õ¥¡¥¤¥ë¥Í¡¼¥à: ", tmp, 80))
+if (get_string("ãƒ•ã‚¡ã‚¤ãƒ«ãƒãƒ¼ãƒ : ", tmp, 80))
 #else
 			if (get_string("File name: ", tmp, 80))
 #endif
@@ -3745,7 +3745,7 @@ errr file_character(cptr name, bool full)
 	if (dump_messages)
 	{
 #ifdef JP
-		if (get_check(format("¥á¥Ã¥»¡¼¥¸¥í¥°(%d ¹Ô)¤â½ĞÎÏ¤·¤Ş¤¹¤«¡©", msg_max)))
+		if (get_check(format("ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ­ã‚°(%d è¡Œ)ã‚‚å‡ºåŠ›ã—ã¾ã™ã‹ï¼Ÿ", msg_max)))
 #else
 		if (get_check(format("Dump message logs ? (%d lines)", msg_max)))
 #endif
@@ -3774,7 +3774,7 @@ errr file_character(cptr name, bool full)
 
 		/* Build query */
 #ifdef JP
-		(void)sprintf(out_val, "¸½Â¸¤¹¤ë¥Õ¥¡¥¤¥ë¤Ë¾å½ñ¤­¤·¤Ş¤¹¤«? (%s)", buf);
+		(void)sprintf(out_val, "ç¾å­˜ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã«ä¸Šæ›¸ãã—ã¾ã™ã‹? (%s)", buf);
 #else
 		(void)sprintf(out_val, "Replace existing file %s? ", buf);
 #endif
@@ -3794,7 +3794,7 @@ errr file_character(cptr name, bool full)
 	{
 		/* Message */
 #ifdef JP
-		msg_format("¥­¥ã¥é¥¯¥¿¾ğÊó¤Î¥Õ¥¡¥¤¥ë¤Ø¤Î½ñ¤­½Ğ¤·¤Ë¼ºÇÔ¤·¤Ş¤·¤¿¡ª");
+		msg_format("ã‚­ãƒ£ãƒ©ã‚¯ã‚¿æƒ…å ±ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®æ›¸ãå‡ºã—ã«å¤±æ•—ã—ã¾ã—ãŸï¼");
 #else
 		msg_format("Character dump failed!");
 #endif
@@ -3806,7 +3806,7 @@ errr file_character(cptr name, bool full)
 
 	/* Dump the header */
 #ifdef JP
-	fprintf(fff, "  [%s %d.%d.%d ¥­¥ã¥é¥¯¥¿¾ğÊó]\n\n",
+	fprintf(fff, "  [%s %d.%d.%d ã‚­ãƒ£ãƒ©ã‚¯ã‚¿æƒ…å ±]\n\n",
 		VERSION_NAME, VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
 #else
 	fprintf(fff, "  [%s %d.%d.%d Character Dump]\n\n",
@@ -3900,7 +3900,7 @@ errr file_character(cptr name, bool full)
 	}
 
 #ifdef JP
-	fprintf(fff, "\n  [¥¯¥¨¥¹¥È¾ğÊó]\n\n");
+	fprintf(fff, "\n  [ã‚¯ã‚¨ã‚¹ãƒˆæƒ…å ±]\n\n");
 #else
 	fprintf(fff, "\n  [Quest information]\n\n");
 #endif
@@ -3908,8 +3908,8 @@ errr file_character(cptr name, bool full)
 	if (p_ptr->max_dlv > 0)
 	{
 #ifdef JP
-		fprintf(fff, "¡Ôµ¢´Ô¾ì½ê¡Õ\n");
-		fprintf(fff, "  %d ³¬ (%d ¥Õ¥£¡¼¥È)\n", p_ptr->max_dlv, p_ptr->max_dlv * 50);
+		fprintf(fff, "ã€Šå¸°é‚„å ´æ‰€ã€‹\n");
+		fprintf(fff, "  %d éš (%d ãƒ•ã‚£ãƒ¼ãƒˆ)\n", p_ptr->max_dlv, p_ptr->max_dlv * 50);
 #else
 		fprintf(fff, "< Recall Depth >\n");
 		fprintf(fff, "  Level %d (%d')\n", p_ptr->max_dlv, p_ptr->max_dlv * 50);
@@ -3921,7 +3921,7 @@ errr file_character(cptr name, bool full)
 	if (death && !total_winner)
 	{
 #ifdef JP
-		fprintf(fff, "\n  [»à¤ÌÄ¾Á°¤Î¥á¥Ã¥»¡¼¥¸]\n\n");
+		fprintf(fff, "\n  [æ­»ã¬ç›´å‰ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸]\n\n");
 #else
 		fprintf(fff, "\n  [Last messages]\n\n");
 #endif
@@ -3933,84 +3933,84 @@ errr file_character(cptr name, bool full)
 	}
 
 #ifdef JP
-	fprintf(fff, "\n\n  [¤½¤ÎÂ¾¤Î¾ğÊó]\n");
+	fprintf(fff, "\n\n  [ãã®ä»–ã®æƒ…å ±]\n");
 #else
 	fprintf(fff, "\n\n  [Miscellaneous information]\n");
 #endif
 
 	if (preserve_mode)
 #ifdef JP
-		fprintf(fff, "\n ÊİÂ¸¥â¡¼¥É:         ON");
+		fprintf(fff, "\n ä¿å­˜ãƒ¢ãƒ¼ãƒ‰:         ON");
 #else
 		fprintf(fff, "\n Preserve Mode:      ON");
 #endif
 	else
 #ifdef JP
-		fprintf(fff, "\n ÊİÂ¸¥â¡¼¥É:         OFF");
+		fprintf(fff, "\n ä¿å­˜ãƒ¢ãƒ¼ãƒ‰:         OFF");
 #else
 		fprintf(fff, "\n Preserve Mode:      OFF");
 #endif
 
 	if (ironman_autoscum)
 #ifdef JP
-		fprintf(fff, "\n ¼«Æ°Áª¤ê¹¥¤ß  :     ALWAYS");
+		fprintf(fff, "\n è‡ªå‹•é¸ã‚Šå¥½ã¿  :     ALWAYS");
 #else
 		fprintf(fff, "\n Autoscum:           ALWAYS");
 #endif
 	else if (auto_scum)
 #ifdef JP
-		fprintf(fff, "\n ¼«Æ°Áª¤ê¹¥¤ß  :     ON");
+		fprintf(fff, "\n è‡ªå‹•é¸ã‚Šå¥½ã¿  :     ON");
 #else
 		fprintf(fff, "\n Autoscum:           ON");
 #endif
 	else
 #ifdef JP
-		fprintf(fff, "\n ¼«Æ°Áª¤ê¹¥¤ß  :     OFF");
+		fprintf(fff, "\n è‡ªå‹•é¸ã‚Šå¥½ã¿  :     OFF");
 #else
 		fprintf(fff, "\n Autoscum:           OFF");
 #endif
 	if (ironman_shops)
 #ifdef JP
-		fprintf(fff, "\n Å¹¤Ê¤·:             ON");
+		fprintf(fff, "\n åº—ãªã—:             ON");
 #else
 		fprintf(fff, "\n No Shops:           ON");
 #endif
 
 	if (ironman_downward)
 #ifdef JP
-		fprintf(fff, "\n ³¬ÃÊ¤ò¾å¤¬¤ì¤Ê¤¤:   ON");
+		fprintf(fff, "\n éšæ®µã‚’ä¸ŠãŒã‚Œãªã„:   ON");
 #else
 		fprintf(fff, "\n Diving only:        ON");
 #endif
 	if (ironman_nightmare)
 #ifdef JP
-		fprintf(fff, "\n °­Ì´¥â¡¼¥É:         ON");
+		fprintf(fff, "\n æ‚ªå¤¢ãƒ¢ãƒ¼ãƒ‰:         ON");
 #else
 		fprintf(fff, "\n Nightmare Mode:     ON");
 #endif
 #ifdef JP
-	fprintf(fff, "\n ¥é¥ó¥À¥à¥¯¥¨¥¹¥È¿ô: %d", number_of_quests());
+	fprintf(fff, "\n ãƒ©ãƒ³ãƒ€ãƒ ã‚¯ã‚¨ã‚¹ãƒˆæ•°: %d", number_of_quests());
 #else
 	fprintf(fff, "\n Num. Random Quests: %d", number_of_quests());
 #endif
 
 	if (noscore)
 #ifdef JP
-		fprintf(fff, "\n ²¿¤«ÉÔÀµ¤Ê¤³¤È¤ò¤·¤Æ¤·¤Ş¤Ã¤Æ¤Ş¤¹¡£");
+		fprintf(fff, "\n ä½•ã‹ä¸æ­£ãªã“ã¨ã‚’ã—ã¦ã—ã¾ã£ã¦ã¾ã™ã€‚");
 #else
 		fprintf(fff, "\n You have done something illegal.");
 #endif
 
 	if (X_stupid_monsters)
 #ifdef JP
-		fprintf(fff, "\n Å¨¤Ï¶ò¤«¤Ê¹ÔÆ°¤ò¼è¤ê¤Ş¤¹¡£");
+		fprintf(fff, "\n æ•µã¯æ„šã‹ãªè¡Œå‹•ã‚’å–ã‚Šã¾ã™ã€‚");
 #else
 		fprintf(fff, "\n Your opponents are behaving stupidly.");
 #endif
 
 	if (munchkin_death)
 #ifdef JP
-		fprintf(fff, "\n ¤¢¤Ê¤¿¤Ï»à¤ò²óÈò¤¹¤ë¥¤¥ó¥Á¥­¤ÊÎÏ¤ò»ı¤Ã¤Æ¤¤¤Ş¤¹¡£");
+		fprintf(fff, "\n ã‚ãªãŸã¯æ­»ã‚’å›é¿ã™ã‚‹ã‚¤ãƒ³ãƒã‚­ãªåŠ›ã‚’æŒã£ã¦ã„ã¾ã™ã€‚");
 #else
 		fprintf(fff, "\n You possess munchkinish power over death.");
 #endif
@@ -4044,9 +4044,9 @@ errr file_character(cptr name, bool full)
 
 		if (Total < 1)
 #ifdef JP
-			fprintf(fff,"\n\n ¤Ş¤ÀÅ¨¤òÅİ¤·¤Æ¤¤¤Ş¤»¤ó¡£\n");
+			fprintf(fff,"\n\n ã¾ã æ•µã‚’å€’ã—ã¦ã„ã¾ã›ã‚“ã€‚\n");
 		else
-			fprintf(fff,"\n\n %ld ÂÎ¤ÎÅ¨¤òÅİ¤·¤Æ¤¤¤Ş¤¹¡£\n", (long int)Total);
+			fprintf(fff,"\n\n %ld ä½“ã®æ•µã‚’å€’ã—ã¦ã„ã¾ã™ã€‚\n", (long int)Total);
 #else
 			fprintf(fff,"\n\n You have defeated no enemies yet.\n");
 		else if (Total == 1)
@@ -4059,7 +4059,7 @@ errr file_character(cptr name, bool full)
 	if (p_ptr->muta)
 	{
 #ifdef JP
-		fprintf(fff, "\n\n  [ÆÍÁ³ÊÑ°Û]\n\n");
+		fprintf(fff, "\n\n  [çªç„¶å¤‰ç•°]\n\n");
 #else
 		fprintf(fff, "\n\n  [Mutations]\n\n");
 #endif
@@ -4075,7 +4075,7 @@ errr file_character(cptr name, bool full)
 	if (equip_cnt)
 	{
 #ifdef JP
-		fprintf(fff, "  [ ¥­¥ã¥é¥¯¥¿¤ÎÁõÈ÷ ]\n\n");
+		fprintf(fff, "  [ ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ã®è£…å‚™ ]\n\n");
 #else
 		fprintf(fff, "  [Character Equipment]\n\n");
 #endif
@@ -4093,7 +4093,7 @@ errr file_character(cptr name, bool full)
 
 	/* Dump the inventory */
 #ifdef JP
-	fprintf(fff, "  [ ¥­¥ã¥é¥¯¥¿¤Î»ı¤ÁÊª ]\n\n");
+	fprintf(fff, "  [ ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ã®æŒã¡ç‰© ]\n\n");
 #else
 	fprintf(fff, "  [Character Inventory]\n\n");
 #endif
@@ -4121,7 +4121,7 @@ errr file_character(cptr name, bool full)
 	{
 		/* Header with name of the town */
 #ifdef JP
-		fprintf(fff, "  [ ²æ¤¬²È¤Î¥¢¥¤¥Æ¥à ]\n");
+		fprintf(fff, "  [ æˆ‘ãŒå®¶ã®ã‚¢ã‚¤ãƒ†ãƒ  ]\n");
 #else
 		fprintf(fff, "  [Home Inventory]\n");
 #endif
@@ -4131,7 +4131,7 @@ errr file_character(cptr name, bool full)
 		for (i = 0; i < st_ptr->stock_num; i++)
 		{
 #ifdef JP
-			if ((i % 12) == 0) fprintf(fff, "\n ( %d ¥Ú¡¼¥¸ )\n", x++);
+			if ((i % 12) == 0) fprintf(fff, "\n ( %d ãƒšãƒ¼ã‚¸ )\n", x++);
 			object_desc(o_name, &st_ptr->stock[i], 0);
 			fprintf(fff, "%c%s %s\n", I2A(i%12), paren, o_name);
 #else
@@ -4151,7 +4151,7 @@ errr file_character(cptr name, bool full)
 	if (dmp_msg)
 	{
 #ifdef JP
-		fprintf(fff, "  [¥á¥Ã¥»¡¼¥¸ ¥í¥°(Ä¾Á°¤Î %d ¹Ô)]\n\n", msg_max);
+		fprintf(fff, "  [ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒ­ã‚°(ç›´å‰ã® %d è¡Œ)]\n\n", msg_max);
 #else
 		fprintf(fff, "  [Message Log (last %d messages)]\n\n", msg_max);
 #endif
@@ -4167,7 +4167,7 @@ errr file_character(cptr name, bool full)
 
 	/* Message */
 #ifdef JP
-	msg_print("¥­¥ã¥é¥¯¥¿¾ğÊó¤Î¥Õ¥¡¥¤¥ë¤Ø¤Î½ñ¤­½Ğ¤·¤ËÀ®¸ù¤·¤Ş¤·¤¿¡£");
+	msg_print("ã‚­ãƒ£ãƒ©ã‚¯ã‚¿æƒ…å ±ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®æ›¸ãå‡ºã—ã«æˆåŠŸã—ã¾ã—ãŸã€‚");
 #else
 	msg_print("Character dump successful.");
 #endif
@@ -4472,7 +4472,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 	{
 		/* Caption */
 #ifdef JP
-		sprintf(caption, "¥Ø¥ë¥×¡¦¥Õ¥¡¥¤¥ë'%s'", name);
+		sprintf(caption, "ãƒ˜ãƒ«ãƒ—ãƒ»ãƒ•ã‚¡ã‚¤ãƒ«'%s'", name);
 #else
 		sprintf(caption, "Help file '%s'", name);
 #endif
@@ -4490,7 +4490,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 	{
 		/* Caption */
 #ifdef JP
-		sprintf(caption, "¥¹¥İ¥¤¥é¡¼¡¦¥Õ¥¡¥¤¥ë'%s'", name);
+		sprintf(caption, "ã‚¹ãƒã‚¤ãƒ©ãƒ¼ãƒ»ãƒ•ã‚¡ã‚¤ãƒ«'%s'", name);
 #else
 		sprintf(caption, "Info file '%s'", name);
 #endif
@@ -4508,7 +4508,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 	{
 		/* Message */
 #ifdef JP
-		msg_format("'%s'¤ò¥ª¡¼¥×¥ó¤Ç¤­¤Ş¤»¤ó¡£", name);
+		msg_format("'%s'ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã§ãã¾ã›ã‚“ã€‚", name);
 #else
 		msg_format("Cannot open '%s'.", name);
 #endif
@@ -4680,7 +4680,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 		{
 			/* Wait for it */
 #ifdef JP
-			prt("[ ÈÖ¹æ¤òÆşÎÏ¤·¤Æ²¼¤µ¤¤( ESC¤Ç½ªÎ» ) ]", hgt - 1, 0);
+			prt("[ ç•ªå·ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„( ESCã§çµ‚äº† ) ]", hgt - 1, 0);
 #else
 			prt("[Press a Number, or ESC to exit.]", hgt - 1, 0);
 #endif
@@ -4691,7 +4691,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 		{
 			/* Wait for it */
 #ifdef JP
-			prt("[ ESC ¤Ç½ªÎ» ]", hgt - 1, 0);
+			prt("[ ESC ã§çµ‚äº† ]", hgt - 1, 0);
 #else
 			prt("[Press ESC to exit.]", hgt - 1, 0);
 #endif
@@ -4702,7 +4702,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 		{
 			/* Wait for it */
 #ifdef JP
-			prt("[¥­¡¼:(RET/¥¹¥Ú¡¼¥¹)¢­ (-)¢¬ (?)¥Ø¥ë¥×»ÈÍÑË¡ (ESC)Ìá¤ë]", hgt - 1, 1);
+			prt("[ã‚­ãƒ¼:(RET/ã‚¹ãƒšãƒ¼ã‚¹)â†“ (-)â†‘ (?)ãƒ˜ãƒ«ãƒ—ä½¿ç”¨æ³• (ESC)æˆ»ã‚‹]", hgt - 1, 1);
 #else
 			prt("[Press Return, Space, -, =, /, or ESC to exit.]", hgt - 1, 0);
 #endif
@@ -4729,7 +4729,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 		case '=':
 			/* Get "shower" */
 #ifdef JP
-			prt("¶¯Ä´: ", hgt - 1, 0);
+			prt("å¼·èª¿: ", hgt - 1, 0);
 #else
 			prt("Show: ", hgt - 1, 0);
 #endif
@@ -4755,7 +4755,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 		case KTRL('s'):
 			/* Get "finder" */
 #ifdef JP
-			prt("¸¡º÷: ", hgt - 1, 0);
+			prt("æ¤œç´¢: ", hgt - 1, 0);
 #else
 			prt("Find: ", hgt - 1, 0);
 #endif
@@ -4786,7 +4786,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 			{
 				char tmp[81];
 #ifdef JP
-				prt("¹Ô: ", hgt - 1, 0);
+				prt("è¡Œ: ", hgt - 1, 0);
 #else
 				prt("Goto Line: ", hgt - 1, 0);
 #endif
@@ -4811,7 +4811,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 			{
 				char tmp[81];
 #ifdef JP
-				prt("¥Õ¥¡¥¤¥ë¡¦¥Í¡¼¥à: ", hgt - 1, 0);
+				prt("ãƒ•ã‚¡ã‚¤ãƒ«ãƒ»ãƒãƒ¼ãƒ : ", hgt - 1, 0);
 				strcpy(tmp, "jhelp.hlp");
 #else
 				prt("Goto File: ", hgt - 1, 0);
@@ -4891,7 +4891,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 			strcpy(xtmp, "");
 
 #ifdef JP
-			if (get_string("¥Õ¥¡¥¤¥ëÌ¾: ", xtmp, 80))
+			if (get_string("ãƒ•ã‚¡ã‚¤ãƒ«å: ", xtmp, 80))
 #else
 			if (get_string("File name: ", xtmp, 80))
 #endif
@@ -4920,7 +4920,7 @@ bool show_file(cptr name, cptr what, int line, int mode)
 			if (!(fff && ffp))
 			{
 #ifdef JP
-				msg_print("¥Õ¥¡¥¤¥ë¤ò³«¤±¤Ş¤»¤ó¡£");
+				msg_print("ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã¾ã›ã‚“ã€‚");
 #else
 				msg_print("Failed to open file.");
 #endif
@@ -5007,7 +5007,7 @@ void process_player_name(bool sf)
 	{
 		/* Name too long */
 #ifdef JP
-		quit_fmt("'%s'¤È¤¤¤¦Ì¾Á°¤ÏÄ¹¤¹¤®¤Ş¤¹¡ª", player_name);
+		quit_fmt("'%s'ã¨ã„ã†åå‰ã¯é•·ã™ãã¾ã™ï¼", player_name);
 #else
 		quit_fmt("The name '%s' is too long!", player_name);
 #endif
@@ -5028,7 +5028,7 @@ void process_player_name(bool sf)
 		{
 			/* Illegal characters */
 #ifdef JP
-			quit_fmt("'%s' ¤È¤¤¤¦Ì¾Á°¤ÏÉÔÀµ¤Ê¥³¥ó¥È¥í¡¼¥ë¥³¡¼¥É¤ò´Ş¤ó¤Ç¤¤¤Ş¤¹¡£", player_name);
+			quit_fmt("'%s' ã¨ã„ã†åå‰ã¯ä¸æ­£ãªã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã‚³ãƒ¼ãƒ‰ã‚’å«ã‚“ã§ã„ã¾ã™ã€‚", player_name);
 #else
 			quit_fmt("The name '%s' contains control chars!", player_name);
 #endif
@@ -5175,7 +5175,7 @@ void change_player_name(void)
 
 	/* Prompt and ask */
 #ifdef JP
-	prt("[¾å¤ËÌ¾Á°¤òÆşÎÏ¤·¤Æ¤¯¤À¤µ¤¤¡£ESC¤Ç¥Ç¥Õ¥©¥ë¥È]", 23, 2);
+	prt("[ä¸Šã«åå‰ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚ESCã§ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ]", 23, 2);
 #else
 	prt("[Enter your player's name above, or hit ESCAPE]", 23, 2);
 #endif
@@ -5216,7 +5216,7 @@ void get_character_name(void)
 
 	/* Prompt for a new name */
 #ifdef JP
-	if (get_string("¥­¥ã¥é¥¯¥¿¤ÎÌ¾Á°¤òÆşÎÏ¤·¤Æ²¼¤µ¤¤:", tmp, 15))
+	if (get_string("ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ã®åå‰ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„:", tmp, 15))
 #else
 	if (get_string("Enter a name for your character: ", tmp, 15))
 #endif
@@ -5251,7 +5251,7 @@ void do_cmd_suicide(void)
 	{
 		/* Verify */
 #ifdef JP
-		if (!get_check("°úÂà¤·¤Ş¤¹¤«? ")) return;
+		if (!get_check("å¼•é€€ã—ã¾ã™ã‹? ")) return;
 #else
 		if (!get_check("Do you want to retire? ")) return;
 #endif
@@ -5262,7 +5262,7 @@ void do_cmd_suicide(void)
 	{
 		/* Verify */
 #ifdef JP
-		if (!get_check("ËÜÅö¤Ë¼«»¦¤·¤Ş¤¹¤«¡©")) return;
+		if (!get_check("æœ¬å½“ã«è‡ªæ®ºã—ã¾ã™ã‹ï¼Ÿ")) return;
 #else
 		if (!get_check("Do you really want to commit suicide? ")) return;
 #endif
@@ -5271,7 +5271,7 @@ void do_cmd_suicide(void)
 		{
 			/* Special Verification for suicide */
 #ifdef JP
-			prt("³ÎÇ§¤Î¤¿¤á '@' ¤ò²¡¤·¤Æ²¼¤µ¤¤¡£", 0, 0);
+			prt("ç¢ºèªã®ãŸã‚ '@' ã‚’æŠ¼ã—ã¦ä¸‹ã•ã„ã€‚", 0, 0);
 #else
 			prt("Please verify SUICIDE by typing the '@' sign: ", 0, 0);
 #endif
@@ -5293,7 +5293,7 @@ void do_cmd_suicide(void)
 
 	/* Cause of death */
 #ifdef JP
-	(void)strcpy(died_from, "ÅÓÃæ½ªÎ»");
+	(void)strcpy(died_from, "é€”ä¸­çµ‚äº†");
 #else
 	(void)strcpy(died_from, "Quitting");
 #endif
@@ -5309,7 +5309,7 @@ void do_cmd_save_game(int is_autosave)
 	if (is_autosave)
 	{
 #ifdef JP
-		msg_print("¼«Æ°¥»¡¼¥ÖÃæ");
+		msg_print("è‡ªå‹•ã‚»ãƒ¼ãƒ–ä¸­");
 #else
 		msg_print("Autosaving the game...");
 #endif
@@ -5328,7 +5328,7 @@ void do_cmd_save_game(int is_autosave)
 
 	/* Message */
 #ifdef JP
-	prt("¥²¡¼¥à¤ò¥»¡¼¥Ö¤·¤Æ¤¤¤Ş¤¹...", 0, 0);
+	prt("ã‚²ãƒ¼ãƒ ã‚’ã‚»ãƒ¼ãƒ–ã—ã¦ã„ã¾ã™...", 0, 0);
 #else
 	prt("Saving game...", 0, 0);
 #endif
@@ -5338,7 +5338,7 @@ void do_cmd_save_game(int is_autosave)
 
 	/* The player is not dead */
 #ifdef JP
-	(void)strcpy(died_from, "(¥»¡¼¥Ö)");
+	(void)strcpy(died_from, "(ã‚»ãƒ¼ãƒ–)");
 #else
 	(void)strcpy(died_from, "(saved)");
 #endif
@@ -5350,7 +5350,7 @@ void do_cmd_save_game(int is_autosave)
 	if (save_player())
 	{
 #ifdef JP
-		prt("¥²¡¼¥à¤ò¥»¡¼¥Ö¤·¤Æ¤¤¤Ş¤¹... ½ªÎ»", 0, 0);
+		prt("ã‚²ãƒ¼ãƒ ã‚’ã‚»ãƒ¼ãƒ–ã—ã¦ã„ã¾ã™... çµ‚äº†", 0, 0);
 #else
 		prt("Saving game... done.", 0, 0);
 #endif
@@ -5360,7 +5360,7 @@ void do_cmd_save_game(int is_autosave)
 	else
 	{
 #ifdef JP
-		prt("¥²¡¼¥à¤ò¥»¡¼¥Ö¤·¤Æ¤¤¤Ş¤¹... ¼ºÇÔ¡ª", 0, 0);
+		prt("ã‚²ãƒ¼ãƒ ã‚’ã‚»ãƒ¼ãƒ–ã—ã¦ã„ã¾ã™... å¤±æ•—ï¼", 0, 0);
 #else
 		prt("Saving game... failed!", 0, 0);
 #endif
@@ -5381,7 +5381,7 @@ void do_cmd_save_game(int is_autosave)
 
 	/* Note that the player is not dead */
 #ifdef JP
-	(void)strcpy(died_from, "(¸µµ¤¤ËÀ¸¤­¤Æ¤¤¤ë)");
+	(void)strcpy(died_from, "(å…ƒæ°—ã«ç”Ÿãã¦ã„ã‚‹)");
 #else
 	(void)strcpy(died_from, "(alive and well)");
 #endif
@@ -5608,7 +5608,7 @@ static void print_tomb(void)
 		if (total_winner || (p_ptr->lev > PY_MAX_LEVEL))
 		{
 #ifdef JP
-			p= "°ÎÂç¤Ê¤ë¼Ô";
+			p= "å‰å¤§ãªã‚‹è€…";
 #else
 			p = "Magnificent";
 #endif
@@ -5638,7 +5638,7 @@ static void print_tomb(void)
 		put_str(buf, 10, 11);
 
 #ifdef JP
-(void)sprintf(tmp, "¥ì¥Ù¥ë: %d", (int)p_ptr->lev);
+(void)sprintf(tmp, "ãƒ¬ãƒ™ãƒ«: %d", (int)p_ptr->lev);
 #else
 		(void)sprintf(tmp, "Level: %d", (int)p_ptr->lev);
 #endif
@@ -5647,7 +5647,7 @@ static void print_tomb(void)
 		put_str(buf, 11, 11);
 
 #ifdef JP
-(void)sprintf(tmp, "·Ğ¸³ÃÍ: %ld", (long)p_ptr->exp);
+(void)sprintf(tmp, "çµŒé¨“å€¤: %ld", (long)p_ptr->exp);
 #else
 		(void)sprintf(tmp, "Exp: %ld", (long)p_ptr->exp);
 #endif
@@ -5656,7 +5656,7 @@ static void print_tomb(void)
 		put_str(buf, 12, 11);
 
 #ifdef JP
-(void)sprintf(tmp, "½ê»ı¶â: %ld", (long)p_ptr->au);
+(void)sprintf(tmp, "æ‰€æŒé‡‘: %ld", (long)p_ptr->au);
 #else
 		(void)sprintf(tmp, "AU: %ld", (long)p_ptr->au);
 #endif
@@ -5665,16 +5665,16 @@ static void print_tomb(void)
 		put_str(buf, 13, 11);
 
 #ifdef JP
-	/* Êè¤Ë¹ï¤à¸ÀÍÕ¤ò¥ª¥ê¥¸¥Ê¥ë¤è¤êºÙ¤«¤¯É½¼¨ */
-	if (streq(died_from, "ÅÓÃæ½ªÎ»"))
+	/* å¢“ã«åˆ»ã‚€è¨€è‘‰ã‚’ã‚ªãƒªã‚¸ãƒŠãƒ«ã‚ˆã‚Šç´°ã‹ãè¡¨ç¤º */
+	if (streq(died_from, "é€”ä¸­çµ‚äº†"))
 	{
-		strcpy(tmp, "<¼«»¦>");
+		strcpy(tmp, "<è‡ªæ®º>");
 	}
 	else
 	{
 		if (streq(died_from, "ripe"))
 		{
-			strcpy(tmp, "°úÂà¸å¤ËÅ·¼÷¤òÁ´¤¦");
+			strcpy(tmp, "å¼•é€€å¾Œã«å¤©å¯¿ã‚’å…¨ã†");
 		}
 		else
 		{
@@ -5688,24 +5688,24 @@ static void print_tomb(void)
 	{
 		if( dun_level == 0 )
 		{
-			if(streq(died_from, "ÅÓÃæ½ªÎ»"))
+			if(streq(died_from, "é€”ä¸­çµ‚äº†"))
 			{
-				strcpy(tmp, "Ä®¤Ç»à¤ó¤À");
+				strcpy(tmp, "ç”ºã§æ­»ã‚“ã ");
 			}
 			else
 			{
-				strcpy(tmp, "¤ËÄ®¤Ç»¦¤µ¤ì¤¿");
+				strcpy(tmp, "ã«ç”ºã§æ®ºã•ã‚ŒãŸ");
 			}
 		}
 		else
 		{
-			if(streq(died_from, "ÅÓÃæ½ªÎ»"))
+			if(streq(died_from, "é€”ä¸­çµ‚äº†"))
 			{
-				sprintf(tmp, "ÃÏ²¼ %d ³¬¤Ç»à¤ó¤À", dun_level);
+				sprintf(tmp, "åœ°ä¸‹ %d éšã§æ­»ã‚“ã ", dun_level);
 			}
 			else
 			{
-				sprintf(tmp, "¤ËÃÏ²¼ %d ³¬¤Ç»¦¤µ¤ì¤¿", dun_level);
+				sprintf(tmp, "ã«åœ°ä¸‹ %d éšã§æ®ºã•ã‚ŒãŸ", dun_level);
 			}
 		}
 		center_string(buf, tmp);
@@ -5740,7 +5740,7 @@ static void print_tomb(void)
 		bgm(BGM_DEAD);
 
 #ifdef JP
-msg_format("¤µ¤è¤¦¤Ê¤é¡¢%s!", player_name);
+msg_format("ã•ã‚ˆã†ãªã‚‰ã€%s!", player_name);
 #else
 		msg_format("Goodbye, %s!", player_name);
 #endif
@@ -5806,8 +5806,8 @@ static void show_info(void)
 
 	/* Describe options */
 #ifdef JP
-prt("¥­¥ã¥é¥¯¥¿¡¼¤Îµ­Ï¿¤ò¥Õ¥¡¥¤¥ë¤Ë½ñ¤­½Ğ¤¹¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£", 21, 0);
-prt("¥ê¥¿¡¼¥ó¥­¡¼¤Ç¥­¥ã¥é¥¯¥¿¡¼¤ò¸«¤Ş¤¹¡£ESC¤ÇÃæÃÇ¤·¤Ş¤¹¡£", 22, 0);
+prt("ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã®è¨˜éŒ²ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã™ã“ã¨ãŒã§ãã¾ã™ã€‚", 21, 0);
+prt("ãƒªã‚¿ãƒ¼ãƒ³ã‚­ãƒ¼ã§ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã‚’è¦‹ã¾ã™ã€‚ESCã§ä¸­æ–­ã—ã¾ã™ã€‚", 22, 0);
 #else
 	prt("You may now dump a character record to one or more files.", 21, 0);
 	prt("Then, hit RETURN to see the character, or ESC to abort.", 22, 0);
@@ -5821,7 +5821,7 @@ prt("¥ê¥¿¡¼¥ó¥­¡¼¤Ç¥­¥ã¥é¥¯¥¿¡¼¤ò¸«¤Ş¤¹¡£ESC¤ÇÃæÃÇ¤·¤Ş¤¹¡£", 22, 0);
 
 		/* Prompt */
 #ifdef JP
-put_str("¥Õ¥¡¥¤¥ë¥Í¡¼¥à: ", 23, 0);
+put_str("ãƒ•ã‚¡ã‚¤ãƒ«ãƒãƒ¼ãƒ : ", 23, 0);
 #else
 		put_str("Filename: ", 23, 0);
 #endif
@@ -5852,7 +5852,7 @@ put_str("¥Õ¥¡¥¤¥ë¥Í¡¼¥à: ", 23, 0);
 
 	/* Prompt for inventory */
 #ifdef JP
-prt("²¿¤«¥­¡¼¤ò²¡¤¹¤È¤µ¤é¤Ë¾ğÊó¤¬Â³¤­¤Ş¤¹ (ESC¤ÇÃæÃÇ): ", 23, 0);
+prt("ä½•ã‹ã‚­ãƒ¼ã‚’æŠ¼ã™ã¨ã•ã‚‰ã«æƒ…å ±ãŒç¶šãã¾ã™ (ESCã§ä¸­æ–­): ", 23, 0);
 #else
 	prt("Hit any key to see more information (ESC to abort): ", 23, 0);
 #endif
@@ -5871,7 +5871,7 @@ prt("²¿¤«¥­¡¼¤ò²¡¤¹¤È¤µ¤é¤Ë¾ğÊó¤¬Â³¤­¤Ş¤¹ (ESC¤ÇÃæÃÇ): ", 23, 0);
 		item_tester_full = TRUE;
 		show_equip();
 #ifdef JP
-prt("ÁõÈ÷¤·¤Æ¤¤¤¿¥¢¥¤¥Æ¥à: -Â³¤¯-", 0, 0);
+prt("è£…å‚™ã—ã¦ã„ãŸã‚¢ã‚¤ãƒ†ãƒ : -ç¶šã-", 0, 0);
 #else
 		prt("You are using: -more-", 0, 0);
 #endif
@@ -5886,7 +5886,7 @@ prt("ÁõÈ÷¤·¤Æ¤¤¤¿¥¢¥¤¥Æ¥à: -Â³¤¯-", 0, 0);
 		item_tester_full = TRUE;
 		show_inven();
 #ifdef JP
-prt("»ı¤Ã¤Æ¤¤¤¿¥¢¥¤¥Æ¥à: -Â³¤¯-", 0, 0);
+prt("æŒã£ã¦ã„ãŸã‚¢ã‚¤ãƒ†ãƒ : -ç¶šã-", 0, 0);
 #else
 		prt("You are carrying: -more-", 0, 0);
 #endif
@@ -5928,7 +5928,7 @@ prt("»ı¤Ã¤Æ¤¤¤¿¥¢¥¤¥Æ¥à: -Â³¤¯-", 0, 0);
 
 				/* Caption */
 #ifdef JP
-prt(format("²æ¤¬²È¤ËÃÖ¤¤¤Æ¤¢¤Ã¤¿¥¢¥¤¥Æ¥à ( %d ¥Ú¡¼¥¸): -Â³¤¯-", k+1), 0, 0);
+prt(format("æˆ‘ãŒå®¶ã«ç½®ã„ã¦ã‚ã£ãŸã‚¢ã‚¤ãƒ†ãƒ  ( %d ãƒšãƒ¼ã‚¸): -ç¶šã-", k+1), 0, 0);
 #else
 				prt(format("Your home contains (page %d): -more-", k+1), 0, 0);
 #endif
@@ -5994,13 +5994,13 @@ void close_game(void)
 
 		/* Save memories */
 #ifdef JP
-		if (!munchkin_death || get_check("»à¤ó¤À¥Ç¡¼¥¿¤ò¥»¡¼¥Ö¤·¤Ş¤¹¤«¡© "))
+		if (!munchkin_death || get_check("æ­»ã‚“ã ãƒ‡ãƒ¼ã‚¿ã‚’ã‚»ãƒ¼ãƒ–ã—ã¾ã™ã‹ï¼Ÿ "))
 #else
 		if (!munchkin_death || get_check("Save death? "))
 #endif
 
 #ifdef JP
-if (!save_player()) msg_print("¥»¡¼¥Ö¼ºÇÔ¡ª");
+if (!save_player()) msg_print("ã‚»ãƒ¼ãƒ–å¤±æ•—ï¼");
 #else
 			if (!save_player()) msg_print("death save failed!");
 #endif
@@ -6038,7 +6038,7 @@ if (!save_player()) msg_print("¥»¡¼¥Ö¼ºÇÔ¡ª");
 
 		/* Prompt for scores XXX XXX XXX */
 #ifdef JP
-prt("¥ê¥¿¡¼¥ó¥­¡¼¤« ESC ¥­¡¼¤ò²¡¤·¤Æ²¼¤µ¤¤¡£", 0, 40);
+prt("ãƒªã‚¿ãƒ¼ãƒ³ã‚­ãƒ¼ã‹ ESC ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ä¸‹ã•ã„ã€‚", 0, 40);
 #else
 		prt("Press Return (or Escape).", 0, 40);
 #endif
@@ -6074,7 +6074,7 @@ void exit_game_panic(void)
 {
 	/* If nothing important has happened, just quit */
 #ifdef JP
-if (!character_generated || character_saved) quit("¶ÛµŞ»öÂÖ");
+if (!character_generated || character_saved) quit("ç·Šæ€¥äº‹æ…‹");
 #else
 	if (!character_generated || character_saved) quit("panic");
 #endif
@@ -6100,7 +6100,7 @@ if (!character_generated || character_saved) quit("¶ÛµŞ»öÂÖ");
 
 	/* Indicate panic save */
 #ifdef JP
-(void)strcpy(died_from, "(¶ÛµŞ¥»¡¼¥Ö)");
+(void)strcpy(died_from, "(ç·Šæ€¥ã‚»ãƒ¼ãƒ–)");
 #else
 	(void)strcpy(died_from, "(panic save)");
 #endif
@@ -6108,7 +6108,7 @@ if (!character_generated || character_saved) quit("¶ÛµŞ»öÂÖ");
 
 	/* Panic save, or get worried */
 #ifdef JP
-if (!save_player()) quit("¶ÛµŞ¥»¡¼¥Ö¼ºÇÔ¡ª");
+if (!save_player()) quit("ç·Šæ€¥ã‚»ãƒ¼ãƒ–å¤±æ•—ï¼");
 #else
 	if (!save_player()) quit("panic save failed!");
 #endif
@@ -6116,7 +6116,7 @@ if (!save_player()) quit("¶ÛµŞ¥»¡¼¥Ö¼ºÇÔ¡ª");
 
 	/* Successful panic save */
 #ifdef JP
-quit("¶ÛµŞ¥»¡¼¥ÖÀ®¸ù¡ª");
+quit("ç·Šæ€¥ã‚»ãƒ¼ãƒ–æˆåŠŸï¼");
 #else
 	quit("panic save succeeded!");
 #endif
@@ -6345,7 +6345,7 @@ static void handle_signal_simple(int sig)
 	{
 		/* Mark the savefile */
 #ifdef JP
-(void)strcpy(died_from, "¶¯À©½ªÎ»");
+(void)strcpy(died_from, "å¼·åˆ¶çµ‚äº†");
 #else
 		(void)strcpy(died_from, "Abortion");
 #endif
@@ -6359,7 +6359,7 @@ static void handle_signal_simple(int sig)
 
 		/* Quit */
 #ifdef JP
-quit("¶¯À©½ªÎ»");
+quit("å¼·åˆ¶çµ‚äº†");
 #else
 		quit("interrupt");
 #endif
@@ -6371,7 +6371,7 @@ quit("¶¯À©½ªÎ»");
 	{
 		/* Cause of "death" */
 #ifdef JP
-(void)strcpy(died_from, "¶¯À©½ªÎ»Ãæ");
+(void)strcpy(died_from, "å¼·åˆ¶çµ‚äº†ä¸­");
 #else
 		(void)strcpy(died_from, "Interrupting");
 #endif
@@ -6394,7 +6394,7 @@ quit("¶¯À©½ªÎ»");
 
 		/* Quit */
 #ifdef JP
-quit("¶¯À©½ªÎ»");
+quit("å¼·åˆ¶çµ‚äº†");
 #else
 		quit("interrupt");
 #endif
@@ -6412,7 +6412,7 @@ quit("¶¯À©½ªÎ»");
 
 		/* Display the cause */
 #ifdef JP
-Term_putstr(0, 0, -1, TERM_WHITE, "½ÏÎ¸¤Î¾å¤Î¼«»¦¡ª");
+Term_putstr(0, 0, -1, TERM_WHITE, "ç†Ÿæ…®ã®ä¸Šã®è‡ªæ®ºï¼");
 #else
 		Term_putstr(0, 0, -1, TERM_WHITE, "Contemplating suicide!");
 #endif
@@ -6461,7 +6461,7 @@ static void handle_signal_abort(int sig)
 	/* Give a warning */
 #ifdef JP
 	Term_putstr(0, hgt - 1, -1, TERM_RED,
-"¶²¤í¤·¤¤¥½¥Õ¥È¤Î¥Ğ¥°¤¬Èô¤Ó¤«¤«¤Ã¤Æ¤­¤¿¡ª");
+"æã‚ã—ã„ã‚½ãƒ•ãƒˆã®ãƒã‚°ãŒé£›ã³ã‹ã‹ã£ã¦ããŸï¼");
 #else
 	Term_putstr(0, hgt - 1, -1, TERM_RED,
 		    "A gruesome software bug LEAPS out at you!");
@@ -6470,7 +6470,7 @@ static void handle_signal_abort(int sig)
 
 	/* Message */
 #ifdef JP
-Term_putstr(45, hgt - 1, -1, TERM_RED, "¶ÛµŞ¥»¡¼¥Ö...");
+Term_putstr(45, hgt - 1, -1, TERM_RED, "ç·Šæ€¥ã‚»ãƒ¼ãƒ–...");
 #else
 	Term_putstr(45, hgt - 1, -1, TERM_RED, "Panic save...");
 #endif
@@ -6487,7 +6487,7 @@ Term_putstr(45, hgt - 1, -1, TERM_RED, "¶ÛµŞ¥»¡¼¥Ö...");
 
 	/* Panic save */
 #ifdef JP
-(void)strcpy(died_from, "(¶ÛµŞ¥»¡¼¥Ö)");
+(void)strcpy(died_from, "(ç·Šæ€¥ã‚»ãƒ¼ãƒ–)");
 #else
 	(void)strcpy(died_from, "(panic save)");
 #endif
@@ -6500,7 +6500,7 @@ Term_putstr(45, hgt - 1, -1, TERM_RED, "¶ÛµŞ¥»¡¼¥Ö...");
 	if (save_player())
 	{
 #ifdef JP
-Term_putstr(45, hgt - 1, -1, TERM_RED, "¶ÛµŞ¥»¡¼¥ÖÀ®¸ù¡ª");
+Term_putstr(45, hgt - 1, -1, TERM_RED, "ç·Šæ€¥ã‚»ãƒ¼ãƒ–æˆåŠŸï¼");
 #else
 		Term_putstr(45, hgt - 1, -1, TERM_RED, "Panic save succeeded!");
 #endif
@@ -6511,7 +6511,7 @@ Term_putstr(45, hgt - 1, -1, TERM_RED, "¶ÛµŞ¥»¡¼¥ÖÀ®¸ù¡ª");
 	else
 	{
 #ifdef JP
-Term_putstr(45, hgt - 1, -1, TERM_RED, "¶ÛµŞ¥»¡¼¥Ö¼ºÇÔ¡ª");
+Term_putstr(45, hgt - 1, -1, TERM_RED, "ç·Šæ€¥ã‚»ãƒ¼ãƒ–å¤±æ•—ï¼");
 #else
 		Term_putstr(45, hgt - 1, -1, TERM_RED, "Panic save failed!");
 #endif
@@ -6523,7 +6523,7 @@ Term_putstr(45, hgt - 1, -1, TERM_RED, "¶ÛµŞ¥»¡¼¥Ö¼ºÇÔ¡ª");
 
 	/* Quit */
 #ifdef JP
-quit("¥½¥Õ¥È¤Î¥Ğ¥°");
+quit("ã‚½ãƒ•ãƒˆã®ãƒã‚°");
 #else
 	quit("software bug");
 #endif

@@ -1,4 +1,4 @@
-/* File: mutation.c */
+ï»¿/* File: mutation.c */
 
 /* Purpose: Mutation effects (and racial powers) */
 
@@ -31,7 +31,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_BERS_RAGE;
 #ifdef JP
-			muta_desc = "¤¢¤Ê¤¿¤Ï¶¸Ë½²½¤ÎÈ¯ºî¤òµ¯¤³¤¹¤è¤¦¤Ë¤Ê¤Ã¤¿¡ª";
+			muta_desc = "ã‚ãªãŸã¯ç‹‚æš´åŒ–ã®ç™ºä½œã‚’èµ·ã“ã™ã‚ˆã†ã«ãªã£ãŸï¼";
 #else
 			muta_desc = "You become subject to fits of berserk rage!";
 #endif
@@ -40,7 +40,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_COWARDICE;
 #ifdef JP
-			muta_desc = "¿®¤¸¤é¤ì¤Ê¤¤¤¯¤é¤¤²²ÉÂ¤Ë¤Ê¤Ã¤¿¡ª";
+			muta_desc = "ä¿¡ã˜ã‚‰ã‚Œãªã„ãã‚‰ã„è‡†ç—…ã«ãªã£ãŸï¼";
 #else
 			muta_desc = "You become an incredible coward!";
 #endif
@@ -49,7 +49,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_HALLU;
 #ifdef JP
-			muta_desc = "¤¢¤Ê¤¿¤Ï¸¸³Ğ¤ò°ú¤­µ¯¤³¤¹Àº¿ÀºøÍğ¤Ë¿¯¤µ¤ì¤Æ¤¤¤ë¡£";
+			muta_desc = "ã‚ãªãŸã¯å¹»è¦šã‚’å¼•ãèµ·ã“ã™ç²¾ç¥éŒ¯ä¹±ã«ä¾µã•ã‚Œã¦ã„ã‚‹ã€‚";
 #else
 			muta_desc = "You are afflicted by a hallucinatory insanity!";
 #endif
@@ -58,7 +58,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_NORMALITY;
 #ifdef JP
-			muta_desc = "¤¢¤Ê¤¿¤Ï´ñÌ¯¤Ê¤Û¤ÉÉáÄÌ¤Ë¤Ê¤Ã¤¿µ¤¤¬¤¹¤ë¡£";
+			muta_desc = "ã‚ãªãŸã¯å¥‡å¦™ãªã»ã©æ™®é€šã«ãªã£ãŸæ°—ãŒã™ã‚‹ã€‚";
 #else
 			muta_desc = "You feel strangely normal.";
 #endif
@@ -67,7 +67,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_WASTING;
 #ifdef JP
-			muta_desc = "¤¢¤Ê¤¿¤ÏÆÍÁ³¤ª¤¾¤Ş¤·¤¤¿ê¼åÉÂ¤Ë¤«¤«¤Ã¤¿¡£";
+			muta_desc = "ã‚ãªãŸã¯çªç„¶ãŠãã¾ã—ã„è¡°å¼±ç—…ã«ã‹ã‹ã£ãŸã€‚";
 #else
 			muta_desc = "You suddenly contract a horrible wasting disease.";
 #endif
@@ -76,7 +76,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_RES_TIME;
 #ifdef JP
-			muta_desc = "ÉÔ»à¤Ë¤Ê¤Ã¤¿µ¤Ê¬¤¬¤¹¤ë¡£";
+			muta_desc = "ä¸æ­»ã«ãªã£ãŸæ°—åˆ†ãŒã™ã‚‹ã€‚";
 #else
 			muta_desc = "You feel immortal.";
 #endif
@@ -85,7 +85,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_WARNING;
 #ifdef JP
-			muta_desc = "¤¢¤Ê¤¿¤ÏÆÍÁ³¥Ñ¥é¥Î¥¤¥¢¤Ë¤Ê¤Ã¤¿µ¤¤¬¤¹¤ë¡£";
+			muta_desc = "ã‚ãªãŸã¯çªç„¶ãƒ‘ãƒ©ãƒã‚¤ã‚¢ã«ãªã£ãŸæ°—ãŒã™ã‚‹ã€‚";
 #else
 			muta_desc = "You suddenly feel paranoid.";
 #endif
@@ -94,7 +94,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_HYPER_STR;
 #ifdef JP
-			muta_desc = "Ä¶¿ÍÅª¤Ë¶¯¤¯¤Ê¤Ã¤¿¡ª";
+			muta_desc = "è¶…äººçš„ã«å¼·ããªã£ãŸï¼";
 #else
 			muta_desc = "You turn into a superhuman he-man!";
 #endif
@@ -103,7 +103,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_PUNY;
 #ifdef JP
-			muta_desc = "¶ÚÆù¤¬¼å¤Ã¤Æ¤·¤Ş¤Ã¤¿...";
+			muta_desc = "ç­‹è‚‰ãŒå¼±ã£ã¦ã—ã¾ã£ãŸ...";
 #else
 			muta_desc = "Your muscles wither away...";
 #endif
@@ -112,7 +112,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_HYPER_INT;
 #ifdef JP
-			muta_desc = "¤¢¤Ê¤¿¤ÎÇ¾¤ÏÀ¸ÂÎ¥³¥ó¥Ô¥å¡¼¥¿¤Ë¿Ê²½¤·¤¿¡ª";
+			muta_desc = "ã‚ãªãŸã®è„³ã¯ç”Ÿä½“ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ã‚¿ã«é€²åŒ–ã—ãŸï¼";
 #else
 			muta_desc = "Your brain evolves into a living computer!";
 #endif
@@ -121,7 +121,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_MORONIC;
 #ifdef JP
-			muta_desc = "Ç¾¤¬°à½Ì¤·¤Æ¤·¤Ş¤Ã¤¿...";
+			muta_desc = "è„³ãŒèç¸®ã—ã¦ã—ã¾ã£ãŸ...";
 #else
 			muta_desc = "Your brain withers away...";
 #endif
@@ -130,7 +130,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_RESILIENT;
 #ifdef JP
-			muta_desc = "ÊÂ³°¤ì¤Æ¥¿¥Õ¤Ë¤Ê¤Ã¤¿¡£";
+			muta_desc = "ä¸¦å¤–ã‚Œã¦ã‚¿ãƒ•ã«ãªã£ãŸã€‚";
 #else
 			muta_desc = "You become extraordinarily resilient.";
 #endif
@@ -139,7 +139,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_XTRA_FAT;
 #ifdef JP
-			muta_desc = "¤¢¤Ê¤¿¤Ïµ¤»ı¤Á°­¤¤¤¯¤é¤¤ÂÀ¤Ã¤¿¡ª";
+			muta_desc = "ã‚ãªãŸã¯æ°—æŒã¡æ‚ªã„ãã‚‰ã„å¤ªã£ãŸï¼";
 #else
 			muta_desc = "You become sickeningly fat!";
 #endif
@@ -148,7 +148,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_ALBINO;
 #ifdef JP
-			muta_desc = "¥¢¥ë¥Ó¥Î¤Ë¤Ê¤Ã¤¿¡ª¼å¤¯¤Ê¤Ã¤¿µ¤¤¬¤¹¤ë...";
+			muta_desc = "ã‚¢ãƒ«ãƒ“ãƒã«ãªã£ãŸï¼å¼±ããªã£ãŸæ°—ãŒã™ã‚‹...";
 #else
 			muta_desc = "You turn into an albino! You feel frail...";
 #endif
@@ -157,7 +157,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_FLESH_ROT;
 #ifdef JP
-			muta_desc = "¤¢¤Ê¤¿¤ÎÆùÂÎ¤ÏÉåÇÔ¤¹¤ëÉÂµ¤¤Ë¿¯¤µ¤ì¤¿¡ª";
+			muta_desc = "ã‚ãªãŸã®è‚‰ä½“ã¯è…æ•—ã™ã‚‹ç—…æ°—ã«ä¾µã•ã‚ŒãŸï¼";
 #else
 			muta_desc = "Your flesh is afflicted by a rotting disease!";
 #endif
@@ -166,7 +166,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_SILLY_VOI;
 #ifdef JP
-			muta_desc = "À¼¤¬´ÖÈ´¤±¤Ê¥­¡¼¥­¡¼À¼¤Ë¤Ê¤Ã¤¿¡ª";
+			muta_desc = "å£°ãŒé–“æŠœã‘ãªã‚­ãƒ¼ã‚­ãƒ¼å£°ã«ãªã£ãŸï¼";
 #else
 			muta_desc = "Your voice turns into a ridiculous squeak!";
 #endif
@@ -175,7 +175,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_ILL_NORM;
 #ifdef JP
-			muta_desc = "¿´¤Î°Â¤é¤°¸¸±Æ¤ò±Ç¤·½Ğ¤¹¤è¤¦¤Ë¤Ê¤Ã¤¿¡£";
+			muta_desc = "å¿ƒã®å®‰ã‚‰ãå¹»å½±ã‚’æ˜ ã—å‡ºã™ã‚ˆã†ã«ãªã£ãŸã€‚";
 #else
 			muta_desc = "You start projecting a reassuring image.";
 #endif
@@ -184,7 +184,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_XTRA_EYES;
 #ifdef JP
-			muta_desc = "¿·¤¿¤ËÆó¤Ä¤ÎÌÜ¤¬½ĞÍè¤¿¡ª";
+			muta_desc = "æ–°ãŸã«äºŒã¤ã®ç›®ãŒå‡ºæ¥ãŸï¼";
 #else
 			muta_desc = "You grow an extra pair of eyes!";
 #endif
@@ -193,7 +193,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_XTRA_LEGS;
 #ifdef JP
-			muta_desc = "¿·¤¿¤ËÆóËÜ¤ÎÂ­¤¬À¸¤¨¤Æ¤­¤¿¡ª";
+			muta_desc = "æ–°ãŸã«äºŒæœ¬ã®è¶³ãŒç”Ÿãˆã¦ããŸï¼";
 #else
 			muta_desc = "You grow an extra pair of legs!";
 #endif
@@ -202,7 +202,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_SHORT_LEG;
 #ifdef JP
-			muta_desc = "Â­¤¬Ã»¤¤ÆÍµ¯¤Ë¤Ê¤Ã¤Æ¤·¤Ş¤Ã¤¿¡ª";
+			muta_desc = "è¶³ãŒçŸ­ã„çªèµ·ã«ãªã£ã¦ã—ã¾ã£ãŸï¼";
 #else
 			muta_desc = "Your legs turn into short stubs!";
 #endif
@@ -211,7 +211,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_ELEC_TOUC;
 #ifdef JP
-			muta_desc = "·ì´É¤òÅÅÎ®¤¬Î®¤ì»Ï¤á¤¿¡ª";
+			muta_desc = "è¡€ç®¡ã‚’é›»æµãŒæµã‚Œå§‹ã‚ãŸï¼";
 #else
 			muta_desc = "Electricity starts running through you!";
 #endif
@@ -220,7 +220,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_FIRE_BODY;
 #ifdef JP
-			muta_desc = "¤¢¤Ê¤¿¤ÎÂÎ¤Ï±ê¤Ë¤Ä¤Ä¤Ş¤ì¤Æ¤¤¤ë¡£";
+			muta_desc = "ã‚ãªãŸã®ä½“ã¯ç‚ã«ã¤ã¤ã¾ã‚Œã¦ã„ã‚‹ã€‚";
 #else
 			muta_desc = "Your body is enveloped in flames!";
 #endif
@@ -229,7 +229,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_SCALES;
 #ifdef JP
-			muta_desc = "È©¤¬¹õ¤¤ÎÚ¤ËÊÑ¤ï¤Ã¤¿¡ª";
+			muta_desc = "è‚ŒãŒé»’ã„é±—ã«å¤‰ã‚ã£ãŸï¼";
 #else
 			muta_desc = "Your skin turns into black scales!";
 #endif
@@ -238,7 +238,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_IRON_SKIN;
 #ifdef JP
-			muta_desc = "¤¢¤Ê¤¿¤ÎÈ©¤ÏÅ´¤Ë¤Ê¤Ã¤¿¡ª";
+			muta_desc = "ã‚ãªãŸã®è‚Œã¯é‰„ã«ãªã£ãŸï¼";
 #else
 			muta_desc = "Your skin turns to steel!";
 #endif
@@ -247,7 +247,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_WINGS;
 #ifdef JP
-			muta_desc = "ÇØÃæ¤Ë±©¤¬À¸¤¨¤¿¡£";
+			muta_desc = "èƒŒä¸­ã«ç¾½ãŒç”ŸãˆãŸã€‚";
 #else
 			muta_desc = "You grow a pair of wings.";
 #endif
@@ -256,7 +256,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_FEARLESS;
 #ifdef JP
-			muta_desc = "´°Á´¤ËÉİ¤ìÃÎ¤é¤º¤Ë¤Ê¤Ã¤¿¡£";
+			muta_desc = "å®Œå…¨ã«æ€–ã‚ŒçŸ¥ã‚‰ãšã«ãªã£ãŸã€‚";
 #else
 			muta_desc = "You become completely fearless.";
 #endif
@@ -265,7 +265,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_REGEN;
 #ifdef JP
-			muta_desc = "µŞÂ®¤Ë²óÉü¤·»Ï¤á¤¿¡£";
+			muta_desc = "æ€¥é€Ÿã«å›å¾©ã—å§‹ã‚ãŸã€‚";
 #else
 			muta_desc = "You start regenerating.";
 #endif
@@ -274,7 +274,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_ESP;
 #ifdef JP
-			muta_desc = "¥Æ¥ì¥Ñ¥·¡¼¤ÎÇ½ÎÏ¤òÆÀ¤¿¡ª";
+			muta_desc = "ãƒ†ãƒ¬ãƒ‘ã‚·ãƒ¼ã®èƒ½åŠ›ã‚’å¾—ãŸï¼";
 #else
 			muta_desc = "You develop a telepathic ability!";
 #endif
@@ -283,7 +283,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_LIMBER;
 #ifdef JP
-			muta_desc = "¶ÚÆù¤¬¤·¤Ê¤ä¤«¤Ë¤Ê¤Ã¤¿¡£";
+			muta_desc = "ç­‹è‚‰ãŒã—ãªã‚„ã‹ã«ãªã£ãŸã€‚";
 #else
 			muta_desc = "Your muscles become limber.";
 #endif
@@ -292,7 +292,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_ARTHRITIS;
 #ifdef JP
-			muta_desc = "´ØÀá¤¬ÆÍÁ³ÄË¤ß½Ğ¤·¤¿¡£";
+			muta_desc = "é–¢ç¯€ãŒçªç„¶ç—›ã¿å‡ºã—ãŸã€‚";
 #else
 			muta_desc = "Your joints suddenly hurt.";
 #endif
@@ -301,7 +301,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_VULN_ELEM;
 #ifdef JP
-			muta_desc = "Ì¯¤ËÌµËÉÈ÷¤Ë¤Ê¤Ã¤¿µ¤¤¬¤¹¤ë¡£";
+			muta_desc = "å¦™ã«ç„¡é˜²å‚™ã«ãªã£ãŸæ°—ãŒã™ã‚‹ã€‚";
 #else
 			muta_desc = "You feel strangely exposed.";
 #endif
@@ -310,7 +310,7 @@ bool gain_random_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_MOTION;
 #ifdef JP
-			muta_desc = "ÂÎ¤ÎÆ°ºî¤¬¤è¤êÀµ³Î¤Ë¤Ê¤Ã¤¿¡£";
+			muta_desc = "ä½“ã®å‹•ä½œãŒã‚ˆã‚Šæ­£ç¢ºã«ãªã£ãŸã€‚";
 #else
 			muta_desc = "You move with new assurance.";
 #endif
@@ -333,7 +333,7 @@ bool gain_random_mutation(int choose_mut)
 	if (!muta_chosen)
 	{
 #ifdef JP
-		msg_print("ÉáÄÌ¤Ë¤Ê¤Ã¤¿µ¤¤¬¤¹¤ë¡£");
+		msg_print("æ™®é€šã«ãªã£ãŸæ°—ãŒã™ã‚‹ã€‚");
 #else
 		msg_print("You feel normal.");
 #endif
@@ -342,7 +342,7 @@ bool gain_random_mutation(int choose_mut)
 	else
 	{
 #ifdef JP
-		msg_print("ÆÍÁ³ÊÑ°Û¤·¤¿¡ª");
+		msg_print("çªç„¶å¤‰ç•°ã—ãŸï¼");
 #else
 		msg_print("You mutate!");
 #endif
@@ -356,7 +356,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_HYPER_STR)
 				{
 #ifdef JP
-					msg_print("¤¢¤Ê¤¿¤Ï¤â¤¦Ä¶¿ÍÅª¤Ë¶¯¤¯¤Ï¤Ê¤¤¡ª");
+					msg_print("ã‚ãªãŸã¯ã‚‚ã†è¶…äººçš„ã«å¼·ãã¯ãªã„ï¼");
 #else
 					msg_print("You no longer feel super-strong!");
 #endif
@@ -368,7 +368,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_PUNY)
 				{
 #ifdef JP
-					msg_print("¤¢¤Ê¤¿¤Ï¤â¤¦µõ¼å¤Ç¤Ï¤Ê¤¤¡ª");
+					msg_print("ã‚ãªãŸã¯ã‚‚ã†è™šå¼±ã§ã¯ãªã„ï¼");
 #else
 					msg_print("You no longer feel puny!");
 #endif
@@ -380,7 +380,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_HYPER_INT)
 				{
 #ifdef JP
-					msg_print("¤¢¤Ê¤¿¤ÎÇ¾¤Ï¤â¤¦À¸ÂÎ¥³¥ó¥Ô¥å¡¼¥¿¤Ç¤Ï¤Ê¤¤¡£");
+					msg_print("ã‚ãªãŸã®è„³ã¯ã‚‚ã†ç”Ÿä½“ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ã‚¿ã§ã¯ãªã„ã€‚");
 #else
 					msg_print("Your brain is no longer a living computer.");
 #endif
@@ -392,7 +392,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_MORONIC)
 				{
 #ifdef JP
-					msg_print("¤¢¤Ê¤¿¤Ï¤â¤¦Àº¿ÀÇö¼å¤Ç¤Ï¤Ê¤¤¡£");
+					msg_print("ã‚ãªãŸã¯ã‚‚ã†ç²¾ç¥è–„å¼±ã§ã¯ãªã„ã€‚");
 #else
 					msg_print("You are no longer moronic.");
 #endif
@@ -404,7 +404,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_SCALES)
 				{
 #ifdef JP
-					msg_print("ÎÚ¤¬¤Ê¤¯¤Ê¤Ã¤¿¡£");
+					msg_print("é±—ãŒãªããªã£ãŸã€‚");
 #else
 					msg_print("You lose your scales.");
 #endif
@@ -413,7 +413,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_FLESH_ROT)
 				{
 #ifdef JP
-					msg_print("ÆùÂÎ¤¬ÉåÍğ¤·¤Ê¤¯¤Ê¤Ã¤¿¡£");
+					msg_print("è‚‰ä½“ãŒè…ä¹±ã—ãªããªã£ãŸã€‚");
 #else
 					msg_print("Your flesh rots no longer.");
 #endif
@@ -426,7 +426,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_IRON_SKIN)
 				{
 #ifdef JP
-					msg_print("¤¢¤Ê¤¿¤ÎÈ©¤Ï¤â¤¦Å´¤Ç¤Ï¤Ê¤¤¡£");
+					msg_print("ã‚ãªãŸã®è‚Œã¯ã‚‚ã†é‰„ã§ã¯ãªã„ã€‚");
 #else
 					msg_print("Your skin is no longer made of steel.");
 #endif
@@ -438,7 +438,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_COWARDICE)
 				{
 #ifdef JP
-					msg_print("²²ÉÂ¤Ç¤Ê¤¯¤Ê¤Ã¤¿¡£");
+					msg_print("è‡†ç—…ã§ãªããªã£ãŸã€‚");
 #else
 					msg_print("You are no longer cowardly.");
 #endif
@@ -450,7 +450,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_REGEN)
 				{
 #ifdef JP
-					msg_print("µŞÂ®¤Ë²óÉü¤·¤Ê¤¯¤Ê¤Ã¤¿¡£");
+					msg_print("æ€¥é€Ÿã«å›å¾©ã—ãªããªã£ãŸã€‚");
 #else
 					msg_print("You stop regenerating.");
 #endif
@@ -462,7 +462,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_FLESH_ROT)
 				{
 #ifdef JP
-					msg_print("ÆùÂÎ¤¬ÉåÍğ¤·¤Ê¤¯¤Ê¤Ã¤¿¡£");
+					msg_print("è‚‰ä½“ãŒè…ä¹±ã—ãªããªã£ãŸã€‚");
 #else
 					msg_print("Your flesh stops rotting.");
 #endif
@@ -474,7 +474,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_ARTHRITIS)
 				{
 #ifdef JP
-					msg_print("´ØÀá¤¬ÄË¤¯¤Ê¤¯¤Ê¤Ã¤¿¡£");
+					msg_print("é–¢ç¯€ãŒç—›ããªããªã£ãŸã€‚");
 #else
 					msg_print("Your joints stop hurting.");
 #endif
@@ -486,7 +486,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_LIMBER)
 				{
 #ifdef JP
-					msg_print("¤¢¤Ê¤¿¤Ï¤·¤Ê¤ä¤«¤Ç¤Ê¤¯¤Ê¤Ã¤¿¡£");
+					msg_print("ã‚ãªãŸã¯ã—ãªã‚„ã‹ã§ãªããªã£ãŸã€‚");
 #else
 					msg_print("You no longer feel limber.");
 #endif
@@ -498,7 +498,7 @@ bool gain_random_mutation(int choose_mut)
 				if (p_ptr->muta & MUT_FEARLESS)
 				{
 #ifdef JP
-					msg_print("¶²¤ìÃÎ¤é¤º¤Ç¤Ê¤¯¤Ê¤Ã¤¿¡£");
+					msg_print("æã‚ŒçŸ¥ã‚‰ãšã§ãªããªã£ãŸã€‚");
 #else
 					msg_print("You no longer feel fearless.");
 #endif
@@ -533,7 +533,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_BERS_RAGE;
 #ifdef JP
-			muta_desc = "¶§Ë½²½¤ÎÈ¯ºî¤Ë¤µ¤é¤µ¤ì¤Ê¤¯¤Ê¤Ã¤¿¡ª";
+			muta_desc = "å‡¶æš´åŒ–ã®ç™ºä½œã«ã•ã‚‰ã•ã‚Œãªããªã£ãŸï¼";
 #else
 			muta_desc = "You are no longer subject to fits of berserk rage!";
 #endif
@@ -542,7 +542,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_COWARDICE;
 #ifdef JP
-			muta_desc = "¤â¤¦¿®¤¸¤¬¤¿¤¤¤Û¤É²²ÉÂ¤Ç¤Ï¤Ê¤¯¤Ê¤Ã¤¿¡ª";
+			muta_desc = "ã‚‚ã†ä¿¡ã˜ãŒãŸã„ã»ã©è‡†ç—…ã§ã¯ãªããªã£ãŸï¼";
 #else
 			muta_desc = "You are no longer an incredible coward!";
 #endif
@@ -551,7 +551,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_HALLU;
 #ifdef JP
-			muta_desc = "¸¸³Ğ¤ò¤Ò¤­µ¯¤³¤¹Àº¿À¾ã³²¤òµ¯¤³¤µ¤Ê¤¯¤Ê¤Ã¤¿¡ª";
+			muta_desc = "å¹»è¦šã‚’ã²ãèµ·ã“ã™ç²¾ç¥éšœå®³ã‚’èµ·ã“ã•ãªããªã£ãŸï¼";
 #else
 			muta_desc = "You are no longer afflicted by a hallucinatory insanity!";
 #endif
@@ -560,7 +560,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_NORMALITY;
 #ifdef JP
-			muta_desc = "ÉáÄÌ¤Ë´ñÌ¯¤Ê´¶¤¸¤¬¤¹¤ë¡£";
+			muta_desc = "æ™®é€šã«å¥‡å¦™ãªæ„Ÿã˜ãŒã™ã‚‹ã€‚";
 #else
 			muta_desc = "You feel normally strange.";
 #endif
@@ -569,7 +569,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_WASTING;
 #ifdef JP
-			muta_desc = "¤ª¤¾¤Ş¤·¤¤¿ê¼åÉÂ¤¬¼£¤Ã¤¿¡ª";
+			muta_desc = "ãŠãã¾ã—ã„è¡°å¼±ç—…ãŒæ²»ã£ãŸï¼";
 #else
 			muta_desc = "You are cured of the horrible wasting disease!";
 #endif
@@ -578,7 +578,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_RES_TIME;
 #ifdef JP
-			muta_desc = "ÉÔ»à¤Ç¤Ê¤¯¤Ê¤Ã¤¿µ¤¤¬¤¹¤ë¡£";
+			muta_desc = "ä¸æ­»ã§ãªããªã£ãŸæ°—ãŒã™ã‚‹ã€‚";
 #else
 			muta_desc = "You feel all too mortal.";
 #endif
@@ -587,7 +587,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_WARNING;
 #ifdef JP
-			muta_desc = "¥Ñ¥é¥Î¥¤¥¢¤Ç¤Ê¤¯¤Ê¤Ã¤¿¡£";
+			muta_desc = "ãƒ‘ãƒ©ãƒã‚¤ã‚¢ã§ãªããªã£ãŸã€‚";
 #else
 			muta_desc = "You no longer feel paranoid.";
 #endif
@@ -596,7 +596,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_HYPER_STR;
 #ifdef JP
-			muta_desc = "¶ÚÆù¤¬ÉáÄÌ¤ËÌá¤Ã¤¿¡£";
+			muta_desc = "ç­‹è‚‰ãŒæ™®é€šã«æˆ»ã£ãŸã€‚";
 #else
 			muta_desc = "Your muscles revert to normal.";
 #endif
@@ -605,7 +605,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_PUNY;
 #ifdef JP
-			muta_desc = "¶ÚÆù¤¬ÉáÄÌ¤ËÌá¤Ã¤¿¡£";
+			muta_desc = "ç­‹è‚‰ãŒæ™®é€šã«æˆ»ã£ãŸã€‚";
 #else
 			muta_desc = "Your muscles revert to normal.";
 #endif
@@ -614,7 +614,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_HYPER_INT;
 #ifdef JP
-			muta_desc = "Ç¾¤¬ÉáÄÌ¤ËÌá¤Ã¤¿¡£";
+			muta_desc = "è„³ãŒæ™®é€šã«æˆ»ã£ãŸã€‚";
 #else
 			muta_desc = "Your brain reverts to normal.";
 #endif
@@ -623,7 +623,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_MORONIC;
 #ifdef JP
-			muta_desc = "Ç¾¤¬ÉáÄÌ¤ËÌá¤Ã¤¿¡£";
+			muta_desc = "è„³ãŒæ™®é€šã«æˆ»ã£ãŸã€‚";
 #else
 			muta_desc = "Your brain reverts to normal.";
 #endif
@@ -632,7 +632,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_RESILIENT;
 #ifdef JP
-			muta_desc = "ÉáÄÌ¤Î¾æÉ×¤µ¤ËÌá¤Ã¤¿¡£";
+			muta_desc = "æ™®é€šã®ä¸ˆå¤«ã•ã«æˆ»ã£ãŸã€‚";
 #else
 			muta_desc = "You become ordinarily resilient again.";
 #endif
@@ -641,7 +641,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_XTRA_FAT;
 #ifdef JP
-			muta_desc = "´ñÀ×Åª¤Ê¥À¥¤¥¨¥Ã¥È¤ËÀ®¸ù¤·¤¿¡ª";
+			muta_desc = "å¥‡è·¡çš„ãªãƒ€ã‚¤ã‚¨ãƒƒãƒˆã«æˆåŠŸã—ãŸï¼";
 #else
 			muta_desc = "You benefit from a miracle diet!";
 #endif
@@ -650,7 +650,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_ALBINO;
 #ifdef JP
-			muta_desc = "¥¢¥ë¥Ó¥Î¤Ç¤Ê¤¯¤Ê¤Ã¤¿¡ª";
+			muta_desc = "ã‚¢ãƒ«ãƒ“ãƒã§ãªããªã£ãŸï¼";
 #else
 			muta_desc = "You are no longer an albino!";
 #endif
@@ -659,7 +659,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_FLESH_ROT;
 #ifdef JP
-			muta_desc = "ÆùÂÎ¤òÉåÇÔ¤µ¤»¤ëÉÂµ¤¤¬¼£¤Ã¤¿¡ª";
+			muta_desc = "è‚‰ä½“ã‚’è…æ•—ã•ã›ã‚‹ç—…æ°—ãŒæ²»ã£ãŸï¼";
 #else
 			muta_desc = "Your flesh is no longer afflicted by a rotting disease!";
 #endif
@@ -668,7 +668,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_SILLY_VOI;
 #ifdef JP
-			muta_desc = "À¼¼Á¤¬ÉáÄÌ¤ËÌá¤Ã¤¿¡£";
+			muta_desc = "å£°è³ªãŒæ™®é€šã«æˆ»ã£ãŸã€‚";
 #else
 			muta_desc = "Your voice returns to normal.";
 #endif
@@ -677,7 +677,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_ILL_NORM;
 #ifdef JP
-			muta_desc = "¿´¤¬°Â¤é¤°¸¸±Æ¤ò±Ç¤·½Ğ¤µ¤Ê¤¯¤Ê¤Ã¤¿¡£";
+			muta_desc = "å¿ƒãŒå®‰ã‚‰ãå¹»å½±ã‚’æ˜ ã—å‡ºã•ãªããªã£ãŸã€‚";
 #else
 			muta_desc = "You stop projecting a reassuring image.";
 #endif
@@ -686,7 +686,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_XTRA_EYES;
 #ifdef JP
-			muta_desc = "Í¾Ê¬¤ÊÌÜ¤¬¾Ã¤¨¤Æ¤·¤Ş¤Ã¤¿¡ª";
+			muta_desc = "ä½™åˆ†ãªç›®ãŒæ¶ˆãˆã¦ã—ã¾ã£ãŸï¼";
 #else
 			muta_desc = "Your extra eyes vanish!";
 #endif
@@ -695,7 +695,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_XTRA_LEGS;
 #ifdef JP
-			muta_desc = "Í¾Ê¬¤ÊµÓ¤¬¾Ã¤¨¤Æ¤·¤Ş¤Ã¤¿¡ª";
+			muta_desc = "ä½™åˆ†ãªè„šãŒæ¶ˆãˆã¦ã—ã¾ã£ãŸï¼";
 #else
 			muta_desc = "Your extra legs disappear!";
 #endif
@@ -704,7 +704,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_SHORT_LEG;
 #ifdef JP
-			muta_desc = "µÓ¤ÎÄ¹¤µ¤¬ÉáÄÌ¤ËÌá¤Ã¤¿¡£";
+			muta_desc = "è„šã®é•·ã•ãŒæ™®é€šã«æˆ»ã£ãŸã€‚";
 #else
 			muta_desc = "Your legs lengthen to normal.";
 #endif
@@ -713,7 +713,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_ELEC_TOUC;
 #ifdef JP
-			muta_desc = "ÂÎ¤òÅÅÎ®¤¬Î®¤ì¤Ê¤¯¤Ê¤Ã¤¿¡£";
+			muta_desc = "ä½“ã‚’é›»æµãŒæµã‚Œãªããªã£ãŸã€‚";
 #else
 			muta_desc = "Electricity stops running through you.";
 #endif
@@ -722,7 +722,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_FIRE_BODY;
 #ifdef JP
-			muta_desc = "ÂÎ¤¬±ê¤ËÊñ¤Ş¤ì¤Ê¤¯¤Ê¤Ã¤¿¡£";
+			muta_desc = "ä½“ãŒç‚ã«åŒ…ã¾ã‚Œãªããªã£ãŸã€‚";
 #else
 			muta_desc = "Your body is no longer enveloped in flames.";
 #endif
@@ -731,7 +731,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_SCALES;
 #ifdef JP
-			muta_desc = "ÎÚ¤¬¾Ã¤¨¤¿¡ª";
+			muta_desc = "é±—ãŒæ¶ˆãˆãŸï¼";
 #else
 			muta_desc = "Your scales vanish!";
 #endif
@@ -740,7 +740,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_IRON_SKIN;
 #ifdef JP
-			muta_desc = "È©¤¬Æù¤Ë¤â¤É¤Ã¤¿¡ª";
+			muta_desc = "è‚ŒãŒè‚‰ã«ã‚‚ã©ã£ãŸï¼";
 #else
 			muta_desc = "Your skin reverts to flesh!";
 #endif
@@ -749,7 +749,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_WINGS;
 #ifdef JP
-			muta_desc = "ÇØÃæ¤Î±©º¬¤¬¼è¤ìÍî¤Á¤¿¡£";
+			muta_desc = "èƒŒä¸­ã®ç¾½æ ¹ãŒå–ã‚Œè½ã¡ãŸã€‚";
 #else
 			muta_desc = "Your wings fall off.";
 #endif
@@ -758,7 +758,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_FEARLESS;
 #ifdef JP
-			muta_desc = "ºÆ¤Ó¶²Éİ¤ò´¶¤¸¤ë¤è¤¦¤Ë¤Ê¤Ã¤¿¡£";
+			muta_desc = "å†ã³ææ€–ã‚’æ„Ÿã˜ã‚‹ã‚ˆã†ã«ãªã£ãŸã€‚";
 #else
 			muta_desc = "You begin to feel fear again.";
 #endif
@@ -767,7 +767,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_REGEN;
 #ifdef JP
-			muta_desc = "µŞÂ®²óÉü¤·¤Ê¤¯¤Ê¤Ã¤¿¡£";
+			muta_desc = "æ€¥é€Ÿå›å¾©ã—ãªããªã£ãŸã€‚";
 #else
 			muta_desc = "You stop regenerating.";
 #endif
@@ -776,7 +776,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_ESP;
 #ifdef JP
-			muta_desc = "¥Æ¥ì¥Ñ¥·¡¼¤ÎÇ½ÎÏ¤ò¼º¤Ã¤¿¡ª";
+			muta_desc = "ãƒ†ãƒ¬ãƒ‘ã‚·ãƒ¼ã®èƒ½åŠ›ã‚’å¤±ã£ãŸï¼";
 #else
 			muta_desc = "You lose your telepathic ability!";
 #endif
@@ -785,7 +785,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_LIMBER;
 #ifdef JP
-			muta_desc = "¶ÚÆù¤¬¹Å¤¯¤Ê¤Ã¤¿¡£";
+			muta_desc = "ç­‹è‚‰ãŒç¡¬ããªã£ãŸã€‚";
 #else
 			muta_desc = "Your muscles stiffen.";
 #endif
@@ -794,7 +794,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_ARTHRITIS;
 #ifdef JP
-			muta_desc = "´ØÀá¤¬ÄË¤¯¤Ê¤¯¤Ê¤Ã¤¿¡£";
+			muta_desc = "é–¢ç¯€ãŒç—›ããªããªã£ãŸã€‚";
 #else
 			muta_desc = "Your joints stop hurting.";
 #endif
@@ -803,7 +803,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_VULN_ELEM;
 #ifdef JP
-			muta_desc = "ÌµËÉÈ÷¤Ê´¶¤¸¤Ï¤Ê¤¯¤Ê¤Ã¤¿¡£";
+			muta_desc = "ç„¡é˜²å‚™ãªæ„Ÿã˜ã¯ãªããªã£ãŸã€‚";
 #else
 			muta_desc = "You feel less exposed.";
 #endif
@@ -812,7 +812,7 @@ bool lose_mutation(int choose_mut)
 			muta_class = &(p_ptr->muta);
 			muta_which = MUT_MOTION;
 #ifdef JP
-			muta_desc = "Æ°ºî¤ÎÀµ³Î¤µ¤¬¤Ê¤¯¤Ê¤Ã¤¿¡£";
+			muta_desc = "å‹•ä½œã®æ­£ç¢ºã•ãŒãªããªã£ãŸã€‚";
 #else
 			muta_desc = "You move with less assurance.";
 #endif
@@ -858,7 +858,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_BERS_RAGE)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÏÆùÂÎÌî½Ã²½¤ÎÈ¯ºî¤òµ¯¤³¤¹¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯è‚‰ä½“é‡ç£åŒ–ã®ç™ºä½œã‚’èµ·ã“ã™ã€‚\n");
 #else
 			fprintf(OutFile, " You are subject to berserker fits.\n");
 #endif
@@ -866,7 +866,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_COWARDICE)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ï»ş¡¹²²ÉÂ¤Ë¤Ê¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯æ™‚ã€…è‡†ç—…ã«ãªã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " You are subject to cowardice.\n");
 #endif
@@ -874,7 +874,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_HALLU)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ï¸¸³Ğ¤ò°ú¤­µ¯¤³¤¹Àº¿ÀºøÍğ¤Ë¿¯¤µ¤ì¤Æ¤¤¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯å¹»è¦šã‚’å¼•ãèµ·ã“ã™ç²¾ç¥éŒ¯ä¹±ã«ä¾µã•ã‚Œã¦ã„ã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " You have a hallucinatory insanity.\n");
 #endif
@@ -882,7 +882,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_NORMALITY)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÏÊÑ°Û¤·¤Æ¤¤¤¿¤¬¡¢²óÉü¤·¤Æ¤­¤Æ¤¤¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯å¤‰ç•°ã—ã¦ã„ãŸãŒã€å›å¾©ã—ã¦ãã¦ã„ã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " You may be mutated, but you're recovering.\n");
 #endif
@@ -890,7 +890,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_WASTING)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ï¿ê¼å¤¹¤ë¶²¤í¤·¤¤ÉÂµ¤¤Ë¤«¤«¤Ã¤Æ¤¤¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯è¡°å¼±ã™ã‚‹æã‚ã—ã„ç—…æ°—ã«ã‹ã‹ã£ã¦ã„ã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " You have a horrible wasting disease.\n");
 #endif
@@ -898,7 +898,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_WARNING)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÏÅ¨¤Ë´Ø¤¹¤ë·Ù¹ğ¤ò´¶¤¸¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯æ•µã«é–¢ã™ã‚‹è­¦å‘Šã‚’æ„Ÿã˜ã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " You receive warnings about your foes.\n");
 #endif
@@ -906,7 +906,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_HYPER_STR)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÏÄ¶¿ÍÅª¤Ë¶¯¤¤¡£(ÏÓÎÏ+4)\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯è¶…äººçš„ã«å¼·ã„ã€‚(è…•åŠ›+4)\n");
 #else
 			fprintf(OutFile, " You are superhumanly strong (+4 STR).\n");
 #endif
@@ -914,7 +914,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_PUNY)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ïµõ¼å¤À¡£(ÏÓÎÏ-4)\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯è™šå¼±ã ã€‚(è…•åŠ›-4)\n");
 #else
 			fprintf(OutFile, " You are puny (-4 STR).\n");
 #endif
@@ -922,7 +922,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_HYPER_INT)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÎÇ¾¤ÏÀ¸ÂÎ¥³¥ó¥Ô¥å¡¼¥¿¤À¡£(ÃÎÇ½¡õ¸­¤µ+4)\n");
+			fprintf(OutFile, " ã‚ãªãŸã®è„³ã¯ç”Ÿä½“ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ã‚¿ã ã€‚(çŸ¥èƒ½ï¼†è³¢ã•+4)\n");
 #else
 			fprintf(OutFile, " Your brain is a living computer (+4 INT/WIS).\n");
 #endif
@@ -930,7 +930,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_MORONIC)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÏÀº¿ÀÇö¼å¤À¡£(ÃÎÇ½¡õ¸­¤µ-4)\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯ç²¾ç¥è–„å¼±ã ã€‚(çŸ¥èƒ½ï¼†è³¢ã•-4)\n");
 #else
 			fprintf(OutFile, " You are moronic (-4 INT/WIS).\n");
 #endif
@@ -938,7 +938,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_RESILIENT)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÎÂÎ¤ÏÃÆÎÏÀ­¤ËÉÙ¤ó¤Ç¤¤¤ë¡£(ÂÑµ×+4)\n");
+			fprintf(OutFile, " ã‚ãªãŸã®ä½“ã¯å¼¾åŠ›æ€§ã«å¯Œã‚“ã§ã„ã‚‹ã€‚(è€ä¹…+4)\n");
 #else
 			fprintf(OutFile, " You are very resilient (+4 CON).\n");
 #endif
@@ -946,7 +946,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_XTRA_FAT)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ï¶ËÃ¼¤ËÂÀ¤Ã¤Æ¤¤¤ë¡£(ÂÑµ×+2,¥¹¥Ô¡¼¥É-2)\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯æ¥µç«¯ã«å¤ªã£ã¦ã„ã‚‹ã€‚(è€ä¹…+2,ã‚¹ãƒ”ãƒ¼ãƒ‰-2)\n");
 #else
 			fprintf(OutFile, " You are extremely fat (+2 CON, -2 speed).\n");
 #endif
@@ -954,7 +954,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_ALBINO)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ï¥¢¥ë¥Ó¥Î¤À¡£(ÂÑµ×-4)\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯ã‚¢ãƒ«ãƒ“ãƒã ã€‚(è€ä¹…-4)\n");
 #else
 			fprintf(OutFile, " You are albino (-4 CON).\n");
 #endif
@@ -962,7 +962,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_FLESH_ROT)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÎÆùÂÎ¤ÏÉåÇÔ¤·¤Æ¤¤¤ë¡£(ÂÑµ×-2,Ì¥ÎÏ-1)\n");
+			fprintf(OutFile, " ã‚ãªãŸã®è‚‰ä½“ã¯è…æ•—ã—ã¦ã„ã‚‹ã€‚(è€ä¹…-2,é­…åŠ›-1)\n");
 #else
 			fprintf(OutFile, " Your flesh is rotting (-2 CON, -1 CHR).\n");
 #endif
@@ -970,7 +970,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_SILLY_VOI)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÎÀ¼¤Ï´ÖÈ´¤±¤Ê¥­¡¼¥­¡¼À¼¤À¡£(Ì¥ÎÏ-4)\n");
+			fprintf(OutFile, " ã‚ãªãŸã®å£°ã¯é–“æŠœã‘ãªã‚­ãƒ¼ã‚­ãƒ¼å£°ã ã€‚(é­…åŠ›-4)\n");
 #else
 			fprintf(OutFile, " Your voice is a silly squeak (-4 CHR).\n");
 #endif
@@ -978,7 +978,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_ILL_NORM)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ï¸¸±Æ¤ËÊ¤¤ï¤ì¤Æ¤¤¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯å¹»å½±ã«è¦†ã‚ã‚Œã¦ã„ã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " Your appearance is masked with illusion.\n");
 #endif
@@ -986,7 +986,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_XTRA_EYES)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÏÍ¾Ê¬¤ËÆó¤Ä¤ÎÌÜ¤ò»ı¤Ã¤Æ¤¤¤ë¡£(Ãµº÷+15)\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯ä½™åˆ†ã«äºŒã¤ã®ç›®ã‚’æŒã£ã¦ã„ã‚‹ã€‚(æ¢ç´¢+15)\n");
 #else
 			fprintf(OutFile, " You have an extra pair of eyes (+15 search).\n");
 #endif
@@ -994,7 +994,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_XTRA_LEGS)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÏÍ¾Ê¬¤ËÆóËÜ¤ÎÂ­¤¬À¸¤¨¤Æ¤¤¤ë¡£(²ÃÂ®+3)\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯ä½™åˆ†ã«äºŒæœ¬ã®è¶³ãŒç”Ÿãˆã¦ã„ã‚‹ã€‚(åŠ é€Ÿ+3)\n");
 #else
 			fprintf(OutFile, " You have an extra pair of legs (+3 speed).\n");
 #endif
@@ -1002,7 +1002,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_SHORT_LEG)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÎÂ­¤ÏÃ»¤¤ÆÍµ¯¤À¡£(²ÃÂ®-3)\n");
+			fprintf(OutFile, " ã‚ãªãŸã®è¶³ã¯çŸ­ã„çªèµ·ã ã€‚(åŠ é€Ÿ-3)\n");
 #else
 			fprintf(OutFile, " Your legs are short stubs (-3 speed).\n");
 #endif
@@ -1010,7 +1010,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_ELEC_TOUC)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Î·ì´É¤Ë¤ÏÅÅÎ®¤¬Î®¤ì¤Æ¤¤¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã®è¡€ç®¡ã«ã¯é›»æµãŒæµã‚Œã¦ã„ã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " Electricity is running through your veins.\n");
 #endif
@@ -1018,7 +1018,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_FIRE_BODY)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÎÂÎ¤Ï±ê¤Ë¤Ä¤Ä¤Ş¤ì¤Æ¤¤¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã®ä½“ã¯ç‚ã«ã¤ã¤ã¾ã‚Œã¦ã„ã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " Your body is enveloped in flames.\n");
 #endif
@@ -1026,7 +1026,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_SCALES)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÎÈ©¤ÏÎÚ¤Ë¤Ê¤Ã¤Æ¤¤¤ë¡£(Ì¥ÎÏ-1, AC+10)\n");
+			fprintf(OutFile, " ã‚ãªãŸã®è‚Œã¯é±—ã«ãªã£ã¦ã„ã‚‹ã€‚(é­…åŠ›-1, AC+10)\n");
 #else
 			fprintf(OutFile, " Your skin has turned into scales (-1 CHR, +10 AC).\n");
 #endif
@@ -1034,7 +1034,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_IRON_SKIN)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÎÈ©¤ÏÅ´¤Ç¤Ç¤­¤Æ¤¤¤ë¡£(´ïÍÑ-1, AC+25)\n");
+			fprintf(OutFile, " ã‚ãªãŸã®è‚Œã¯é‰„ã§ã§ãã¦ã„ã‚‹ã€‚(å™¨ç”¨-1, AC+25)\n");
 #else
 			fprintf(OutFile, " Your skin is made of steel (-1 DEX, +25 AC).\n");
 #endif
@@ -1042,7 +1042,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_WINGS)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ï±©¤ò»ı¤Ã¤Æ¤¤¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯ç¾½ã‚’æŒã£ã¦ã„ã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " You have wings.\n");
 #endif
@@ -1050,7 +1050,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_FEARLESS)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÏÁ´¤¯¶²Éİ¤ò´¶¤¸¤Ê¤¤¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯å…¨ãææ€–ã‚’æ„Ÿã˜ãªã„ã€‚\n");
 #else
 			fprintf(OutFile, " You are completely fearless.\n");
 #endif
@@ -1058,7 +1058,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_REGEN)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÏµŞÂ®¤Ë²óÉü¤¹¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯æ€¥é€Ÿã«å›å¾©ã™ã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " You are regenerating.\n");
 #endif
@@ -1066,7 +1066,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_ESP)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ï¥Æ¥ì¥Ñ¥·¡¼¤ò»ı¤Ã¤Æ¤¤¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯ãƒ†ãƒ¬ãƒ‘ã‚·ãƒ¼ã‚’æŒã£ã¦ã„ã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " You are telepathic.\n");
 #endif
@@ -1074,7 +1074,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_LIMBER)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÎÂÎ¤ÏÈó¾ï¤Ë¤·¤Ê¤ä¤«¤À¡£(´ïÍÑ+3)\n");
+			fprintf(OutFile, " ã‚ãªãŸã®ä½“ã¯éå¸¸ã«ã—ãªã‚„ã‹ã ã€‚(å™¨ç”¨+3)\n");
 #else
 			fprintf(OutFile, " Your body is very limber (+3 DEX).\n");
 #endif
@@ -1082,7 +1082,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_ARTHRITIS)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ï¤¤¤Ä¤â´ØÀá¤ËÄË¤ß¤ò´¶¤¸¤Æ¤¤¤ë¡£(´ïÍÑ-3)\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯ã„ã¤ã‚‚é–¢ç¯€ã«ç—›ã¿ã‚’æ„Ÿã˜ã¦ã„ã‚‹ã€‚(å™¨ç”¨-3)\n");
 #else
 			fprintf(OutFile, " Your joints ache constantly (-3 DEX).\n");
 #endif
@@ -1090,7 +1090,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_RES_TIME)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ï»ş´ÖµÕÅ¾¹¶·â¤«¤é¼é¤é¤ì¤Æ¤¤¤ë¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯æ™‚é–“é€†è»¢æ”»æ’ƒã‹ã‚‰å®ˆã‚‰ã‚Œã¦ã„ã‚‹ã€‚\n");
 #else
 			fprintf(OutFile, " You are protected from the ravages of time.\n");
 #endif
@@ -1098,7 +1098,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_VULN_ELEM)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤Ï¸µÁÇ¤Î¹¶·â¤Ë¼å¤¤¡£\n");
+			fprintf(OutFile, " ã‚ãªãŸã¯å…ƒç´ ã®æ”»æ’ƒã«å¼±ã„ã€‚\n");
 #else
 			fprintf(OutFile, " You are susceptible to damage from the elements.\n");
 #endif
@@ -1106,7 +1106,7 @@ void dump_mutations(FILE *OutFile)
 		if (p_ptr->muta & MUT_MOTION)
 		{
 #ifdef JP
-			fprintf(OutFile, " ¤¢¤Ê¤¿¤ÎÆ°ºî¤ÏÀµ³Î¤ÇÎÏ¶¯¤¤¡£(±£Ì©+1)\n");
+			fprintf(OutFile, " ã‚ãªãŸã®å‹•ä½œã¯æ­£ç¢ºã§åŠ›å¼·ã„ã€‚(éš å¯†+1)\n");
 #else
 			fprintf(OutFile, " Your movements are precise and forceful (+1 STL).\n");
 #endif
@@ -1134,7 +1134,7 @@ void do_cmd_knowledge_mutations(void)
 
 	/* Display the file contents */
 #ifdef JP
-show_file(file_name, "ÆÍÁ³ÊÑ°Û", 0, 0);
+show_file(file_name, "çªç„¶å¤‰ç•°", 0, 0);
 #else
 	show_file(file_name, "Mutations", 0, 0);
 #endif
@@ -1191,7 +1191,7 @@ bool mutation_power_aux(u32b power)
 {
 	energy_use = 0;
 #ifdef JP
-	msg_format("Ç½ÎÏ %s ¤Ï¼ÂÁõ¤µ¤ì¤Æ¤¤¤Ş¤»¤ó¡£", power);
+	msg_format("èƒ½åŠ› %s ã¯å®Ÿè£…ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚", power);
 #else
 	msg_format("Power %s not implemented. Oops.", power);
 #endif

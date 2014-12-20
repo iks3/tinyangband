@@ -1,4 +1,4 @@
-/* File: store.c */
+ï»¿/* File: store.c */
 
 /* Purpose: Store commands */
 
@@ -32,12 +32,12 @@ static s16b inner_town_num = 0;
 static cptr comment_1[MAX_COMMENT_1] =
 {
 #ifdef JP
-	"¥ª¡¼¥±¡¼¤À¡£",
-	"·ë¹½¤À¡£",
-	"¤½¤¦¤·¤è¤¦¡ª",
-	"»¿À®¤À¡ª",
-	"¤è¤·¡ª",
-	"¤ï¤«¤Ã¤¿¡ª"
+	"ã‚ªãƒ¼ã‚±ãƒ¼ã ã€‚",
+	"çµæ§‹ã ã€‚",
+	"ãã†ã—ã‚ˆã†ï¼",
+	"è³›æˆã ï¼",
+	"ã‚ˆã—ï¼",
+	"ã‚ã‹ã£ãŸï¼"
 #else
 	"Okay.",
 	"Fine.",
@@ -49,16 +49,16 @@ static cptr comment_1[MAX_COMMENT_1] =
 
 };
 
-/* ¥Ö¥é¥Ã¥¯¥Þ¡¼¥±¥Ã¥ÈÄÉ²Ã¥á¥Ã¥»¡¼¥¸¡Ê¾µÂú¡Ë */
+/* ãƒ–ãƒ©ãƒƒã‚¯ãƒžãƒ¼ã‚±ãƒƒãƒˆè¿½åŠ ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ï¼ˆæ‰¿è«¾ï¼‰ */
 /* Add additional comments for black market (agreement) */
 static cptr comment_1_B[MAX_COMMENT_1] = {
 #ifdef JP
-	"¤Þ¤¢¡¢¤½¤ì¤Ç¤¤¤¤¤ä¡£",
-	"º£Æü¤Ï¤½¤ì¤Ç´ªÊÛ¤·¤Æ¤ä¤ë¡£",
-	"Ê¬¤«¤Ã¤¿¤è¡£",
-	"¤·¤ç¤¦¤¬¤Ê¤¤¡£",
-	"¤½¤ì¤Ç²æËý¤¹¤ë¤è¡£",
-	"¤³¤ó¤Ê¤â¤ó¤À¤í¤¦¡£"
+	"ã¾ã‚ã€ãã‚Œã§ã„ã„ã‚„ã€‚",
+	"ä»Šæ—¥ã¯ãã‚Œã§å‹˜å¼ã—ã¦ã‚„ã‚‹ã€‚",
+	"åˆ†ã‹ã£ãŸã‚ˆã€‚",
+	"ã—ã‚‡ã†ãŒãªã„ã€‚",
+	"ãã‚Œã§æˆ‘æ…¢ã™ã‚‹ã‚ˆã€‚",
+	"ã“ã‚“ãªã‚‚ã‚“ã ã‚ã†ã€‚"
 #else
 	"Well, 'spose that will do.",
 	"I'll let you off at that today.",
@@ -91,7 +91,7 @@ static void say_comment_1(void)
 	if ((randint1(RUMOR_CHANCE) == 1) && speak_unique)
 	{
 #ifdef JP
-		msg_print("Å¹¼ç¤Ï¼ª¤¦¤Á¤·¤¿:");
+		msg_print("åº—ä¸»ã¯è€³ã†ã¡ã—ãŸ:");
 		if (!get_rnd_line_jonly("rumors_j.txt", 0, rumour, 10))
 #else
 		msg_print("The shopkeeper whispers something into your ear:");
@@ -111,10 +111,10 @@ static void say_comment_1(void)
 static cptr comment_2a[MAX_COMMENT_2A] =
 {
 #ifdef JP
-	"¤¦¤ï¤¢¤¢¤¡¤¡¡ª",
-	"¤Ê¤ó¤Æ¤³¤Ã¤¿¡ª",
-	"Ã¯¤«¤¬¤à¤»¤Óµã¤¯À¼¤¬Ê¹¤³¤¨¤ë...¡£",
-	"Å¹¼ç¤¬²ù¤·¤²¤Ë¤ï¤á¤¤¤Æ¤¤¤ë¡ª"
+	"ã†ã‚ã‚ã‚ããï¼",
+	"ãªã‚“ã¦ã“ã£ãŸï¼",
+	"èª°ã‹ãŒã‚€ã›ã³æ³£ãå£°ãŒèžã“ãˆã‚‹...ã€‚",
+	"åº—ä¸»ãŒæ‚”ã—ã’ã«ã‚ã‚ã„ã¦ã„ã‚‹ï¼"
 #else
 	"Arrgghh!",
 	"You bastard!",
@@ -128,10 +128,10 @@ static cptr comment_2a[MAX_COMMENT_2A] =
 static cptr comment_2b[MAX_COMMENT_2B] =
 {
 #ifdef JP
-	"¤¯¤½¤¦¡ª",
-	"¤³¤Î°­Ëâ¤á¡ª",
-	"Å¹¼ç¤¬º¨¤á¤·¤½¤¦¤Ë¸«¤Æ¤¤¤ë¡£",
-	"Å¹¼ç¤¬âË¤ó¤Ç¤¤¤ë¡£"
+	"ããã†ï¼",
+	"ã“ã®æ‚ªé­”ã‚ï¼",
+	"åº—ä¸»ãŒæ¨ã‚ã—ãã†ã«è¦‹ã¦ã„ã‚‹ã€‚",
+	"åº—ä¸»ãŒç¨ã‚“ã§ã„ã‚‹ã€‚"
 #else
 	"Damn!",
 	"You fiend!",
@@ -145,10 +145,10 @@ static cptr comment_2b[MAX_COMMENT_2B] =
 static cptr comment_2c[MAX_COMMENT_2C] =
 {
 #ifdef JP
-	"¤¹¤Ð¤é¤·¤¤¡ª",
-	"·¯¤¬Å·»È¤Ë¸«¤¨¤ë¤è¡ª",
-	"Å¹¼ç¤¬¥¯¥¹¥¯¥¹¾Ð¤Ã¤Æ¤¤¤ë¡£",
-	"Å¹¼ç¤¬ÂçÀ¼¤Ç¾Ð¤Ã¤Æ¤¤¤ë¡£"
+	"ã™ã°ã‚‰ã—ã„ï¼",
+	"å›ãŒå¤©ä½¿ã«è¦‹ãˆã‚‹ã‚ˆï¼",
+	"åº—ä¸»ãŒã‚¯ã‚¹ã‚¯ã‚¹ç¬‘ã£ã¦ã„ã‚‹ã€‚",
+	"åº—ä¸»ãŒå¤§å£°ã§ç¬‘ã£ã¦ã„ã‚‹ã€‚"
 #else
 	"Cool!",
 	"You've made my day!",
@@ -162,10 +162,10 @@ static cptr comment_2c[MAX_COMMENT_2C] =
 static cptr comment_2d[MAX_COMMENT_2D] =
 {
 #ifdef JP
-	"¤ä¤Ã¤Û¤¥¡ª",
-	"¤³¤ó¤Ê¤ª¤¤¤·¤¤»×¤¤¤ò¤·¤¿¤é¡¢¿¿ÌÌÌÜ¤ËÆ¯¤±¤Ê¤¯¤Ê¤ë¤Ê¤¡¡£",
-	"Å¹¼ç¤Ï´ò¤·¤¯¤ÆÄ·¤Í²ó¤Ã¤Æ¤¤¤ë¡£",
-	"Å¹¼ç¤ÏËþÌÌ¤Ë¾Ð¤ß¤ò¤¿¤¿¤¨¤Æ¤¤¤ë¡£"
+	"ã‚„ã£ã»ã…ï¼",
+	"ã“ã‚“ãªãŠã„ã—ã„æ€ã„ã‚’ã—ãŸã‚‰ã€çœŸé¢ç›®ã«åƒã‘ãªããªã‚‹ãªãã€‚",
+	"åº—ä¸»ã¯å¬‰ã—ãã¦è·³ã­å›žã£ã¦ã„ã‚‹ã€‚",
+	"åº—ä¸»ã¯æº€é¢ã«ç¬‘ã¿ã‚’ãŸãŸãˆã¦ã„ã‚‹ã€‚"
 #else
 	"Yipee!",
 	"I think I'll retire!",
@@ -434,7 +434,7 @@ static void mass_produce(object_type *o_ptr)
 	{
 		if (cheat_peek && discount)
 		{
-			msg_print(_("¥é¥ó¥À¥à¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¤ÏÃÍ°ú¤­¤Ê¤·¡£", "No discount on random artifacts."));
+			msg_print(_("ãƒ©ãƒ³ãƒ€ãƒ ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆã¯å€¤å¼•ããªã—ã€‚", "No discount on random artifacts."));
 		}
 		discount = 0;
 	}
@@ -1468,10 +1468,10 @@ static void display_inventory(void)
 	if (st_ptr->stock_num > store_bottom)
 	{
 		/* Show "more" reminder (after the last item) */
-		prt(_("-Â³¤¯-", "-more-"), k + 6, 3);
+		prt(_("-ç¶šã-", "-more-"), k + 6, 3);
 
 		/* Indicate the "current page" */
-		put_str(format(_("(%d¥Ú¡¼¥¸)", "(Page %d)"), store_top / store_bottom + 1), 5, 20);
+		put_str(format(_("(%dãƒšãƒ¼ã‚¸)", "(Page %d)"), store_top / store_bottom + 1), 5, 20);
 	}
 }
 
@@ -1483,7 +1483,7 @@ static void store_prt_gold(void)
 {
 	char out_val[64];
 
-	prt(_("¼ê»ý¤Á¤Î¤ª¶â: ", "Gold Remaining: "), 19 + xtra_stock, 53);
+	prt(_("æ‰‹æŒã¡ã®ãŠé‡‘: ", "Gold Remaining: "), 19 + xtra_stock, 53);
 
 	sprintf(out_val, "%9ld", (long)p_ptr->au);
 	prt(out_val, 19 + xtra_stock, 68);
@@ -1505,13 +1505,13 @@ static void display_store(void)
 	if (cur_store_num == STORE_HOME)
 	{
 		/* Put the owner name */
-		put_str(_("²æ¤¬²È", "Your Home"), 3, _(31, 30));
+		put_str(_("æˆ‘ãŒå®¶", "Your Home"), 3, _(31, 30));
 
 		/* Label the item descriptions */
-		put_str(_("¥¢¥¤¥Æ¥à¤Î°ìÍ÷", "Item Description"), 5, _(4, 3));
+		put_str(_("ã‚¢ã‚¤ãƒ†ãƒ ã®ä¸€è¦§", "Item Description"), 5, _(4, 3));
 
 		/* Show weight label */
-		put_str(_("½Å¤µ", "Weight"), 5, _(72, 70));
+		put_str(_("é‡ã•", "Weight"), 5, _(72, 70));
 	}
 
 	/* Normal stores */
@@ -1529,13 +1529,13 @@ static void display_store(void)
 		prt(buf, 3, 50);
 
 		/* Label the item descriptions */
-		put_str(_("¾¦ÉÊ¤Î°ìÍ÷", "Item Description"), 5, _(7, 3));
+		put_str(_("å•†å“ã®ä¸€è¦§", "Item Description"), 5, _(7, 3));
 
 		/* Show weight label */
-		put_str(_("½Å¤µ", "Weight"), 5, _(62, 60));
+		put_str(_("é‡ã•", "Weight"), 5, _(62, 60));
 
 		/* Label the asking price (in stores) */
-		put_str(_("²Á³Ê", "Price"), 5, _(73, 72));
+		put_str(_("ä¾¡æ ¼", "Price"), 5, _(73, 72));
 	}
 
 	/* Display the current gold */
@@ -1578,8 +1578,8 @@ static int get_stock(int *com_val, cptr pmt, int i, int j)
 	lo = I2A(i);
 	hi = (j > 25) ? toupper(I2A(j - 26)) : I2A(j);
 	(void)sprintf(out_val,
-		_("(%s:%c-%c, ESC¤ÇÃæÃÇ) %s", "(%s %c-%c, ESC to exit) %s"),
-		_(((cur_store_num == STORE_HOME) ? "¥¢¥¤¥Æ¥à" : "¾¦ÉÊ"), "Items"),
+		_("(%s:%c-%c, ESCã§ä¸­æ–­) %s", "(%s %c-%c, ESC to exit) %s"),
+		_(((cur_store_num == STORE_HOME) ? "ã‚¢ã‚¤ãƒ†ãƒ " : "å•†å“"), "Items"),
 				  lo, hi, pmt);
 
 	/* Ask until done */
@@ -1640,7 +1640,7 @@ static bool purchase_haggle(object_type *o_ptr, s32b *price)
 	offer = price_item(o_ptr, ot_ptr->min_inflate, FALSE);
 
 	/* Message summary */
-	msg_print(_("¤¹¤ó¤Ê¤ê¤È¤³¤Î¶â³Û¤Ë¤Þ¤È¤Þ¤Ã¤¿¡£", "You quickly agree upon the price."));
+	msg_print(_("ã™ã‚“ãªã‚Šã¨ã“ã®é‡‘é¡ã«ã¾ã¨ã¾ã£ãŸã€‚", "You quickly agree upon the price."));
 	msg_print(NULL);
 
 	/* Apply Sales Tax */
@@ -1654,8 +1654,8 @@ static bool purchase_haggle(object_type *o_ptr, s32b *price)
 	{
 		char i;
 #ifdef JP
-		prt(format("Äó¼¨²Á³Ê: %d", offer), 1, 0);
-		prt("ËÜÅö¤ËÇã¤¤¤Þ¤¹¤«¡©[Y/n] ", 0, 0);
+		prt(format("æç¤ºä¾¡æ ¼: %d", offer), 1, 0);
+		prt("æœ¬å½“ã«è²·ã„ã¾ã™ã‹ï¼Ÿ[Y/n] ", 0, 0);
 #else
 		prt(format("Offer: %d", offer), 1, 0);
 		prt(format("Really buy %s? [Y/n] ", ((o_ptr->number > 1) ? "them" : "it")), 0, 0);
@@ -1698,7 +1698,7 @@ static bool sell_haggle(object_type *o_ptr, s32b *price)
 	if (offer >= purse)
 	{
 		/* Message */
-		msg_print(_("Â¨ºÂ¤Ë¤³¤Î¶â³Û¤Ë¤Þ¤È¤Þ¤Ã¤¿¡£", "You instantly agree upon the price."));
+		msg_print(_("å³åº§ã«ã“ã®é‡‘é¡ã«ã¾ã¨ã¾ã£ãŸã€‚", "You instantly agree upon the price."));
 		msg_print(NULL);
 
 		/* Offer full purse */
@@ -1709,7 +1709,7 @@ static bool sell_haggle(object_type *o_ptr, s32b *price)
 	else
 	{
 		/* Message summary */
-		msg_print(_("¤¹¤ó¤Ê¤ê¤È¤³¤Î¶â³Û¤Ë¤Þ¤È¤Þ¤Ã¤¿¡£", "You quickly agree upon the price."));
+		msg_print(_("ã™ã‚“ãªã‚Šã¨ã“ã®é‡‘é¡ã«ã¾ã¨ã¾ã£ãŸã€‚", "You quickly agree upon the price."));
 		msg_print(NULL);
 
 		/* Apply Sales Tax */
@@ -1724,8 +1724,8 @@ static bool sell_haggle(object_type *o_ptr, s32b *price)
 	{
 		char i;
 #ifdef JP
-		prt(format("Äó¼¨²Á³Ê: %d", offer), 1, 0);
-		prt("ËÜÅö¤ËÇä¤ê¤Þ¤¹¤«¡©[Y/n] ", 0, 0);
+		prt(format("æç¤ºä¾¡æ ¼: %d", offer), 1, 0);
+		prt("æœ¬å½“ã«å£²ã‚Šã¾ã™ã‹ï¼Ÿ[Y/n] ", 0, 0);
 #else
 		prt(format("Offer: %d", offer), 1, 0);
 		prt(format("Really sell %s? [Y/n] ", ((o_ptr->number > 1) ? "them" : "it")), 0, 0);
@@ -1917,9 +1917,9 @@ static void store_purchase(void)
 	if (st_ptr->stock_num <= 0)
 	{
 		if (cur_store_num == STORE_HOME)
-			msg_print(_("²æ¤¬²È¤Ë¤Ï²¿¤âÃÖ¤¤¤Æ¤¢¤ê¤Þ¤»¤ó¡£", "Your home is empty."));
+			msg_print(_("æˆ‘ãŒå®¶ã«ã¯ä½•ã‚‚ç½®ã„ã¦ã‚ã‚Šã¾ã›ã‚“ã€‚", "Your home is empty."));
 		else
-			msg_print(_("¸½ºß¾¦ÉÊ¤Îºß¸Ë¤òÀÚ¤é¤·¤Æ¤¤¤Þ¤¹¡£", "I am currently out of stock."));
+			msg_print(_("ç¾åœ¨å•†å“ã®åœ¨åº«ã‚’åˆ‡ã‚‰ã—ã¦ã„ã¾ã™ã€‚", "I am currently out of stock."));
 		return;
 	}
 
@@ -1935,13 +1935,13 @@ static void store_purchase(void)
 	switch( cur_store_num )
 	{
 		case STORE_HOME:
-			sprintf(out_val, _("¤É¤Î¥¢¥¤¥Æ¥à¤ò¼è¤ê¤Þ¤¹¤«? ", "Which item do you want to take? "));
+			sprintf(out_val, _("ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’å–ã‚Šã¾ã™ã‹? ", "Which item do you want to take? "));
 			break;
 		case STORE_BLACK:
-			sprintf(out_val, _("¤É¤ì? ", "Waddya want?"));
+			sprintf(out_val, _("ã©ã‚Œ? ", "Waddya want?"));
 			break;
 		default:
-			sprintf(out_val, _("¤É¤ÎÉÊÊª¤¬Íß¤·¤¤¤ó¤À¤¤? ", "Which item are you interested in? "));
+			sprintf(out_val, _("ã©ã®å“ç‰©ãŒæ¬²ã—ã„ã‚“ã ã„? ", "Which item are you interested in? "));
 			break;
 	}
 
@@ -1972,7 +1972,7 @@ static void store_purchase(void)
 	/* Hack -- require room in pack */
 	if (!inven_carry_okay(j_ptr))
 	{
-		msg_print(_("¤½¤ó¤Ê¤Ë¥¢¥¤¥Æ¥à¤ò»ý¤Æ¤Ê¤¤¡£", "You cannot carry that many different items."));
+		msg_print(_("ãã‚“ãªã«ã‚¢ã‚¤ãƒ†ãƒ ã‚’æŒã¦ãªã„ã€‚", "You cannot carry that many different items."));
 		return;
 	}
 
@@ -1988,7 +1988,7 @@ static void store_purchase(void)
 		if ((cur_store_num != STORE_HOME) &&
 			(o_ptr->ident & IDENT_FIXED))
 		{
-			msg_format(_("°ì¤Ä¤Ë¤Ä¤­ $%ld¤Ç¤¹¡£", "That costs %ld gold per item."), (long)(best));
+			msg_format(_("ä¸€ã¤ã«ã¤ã $%ldã§ã™ã€‚", "That costs %ld gold per item."), (long)(best));
 		}
 
 		if (cur_store_num == STORE_HOME)
@@ -2002,7 +2002,7 @@ static void store_purchase(void)
 			{
 				/* Tell the user */
 				/* Even if haggling was on this money is not sufficient to buy one */
-				msg_print(_("¤ª¶â¤¬Â­¤ê¤Þ¤»¤ó¡£", "You do not have enough gold for this item."));
+				msg_print(_("ãŠé‡‘ãŒè¶³ã‚Šã¾ã›ã‚“ã€‚", "You do not have enough gold for this item."));
 
 				/* Abort now */
 				return;
@@ -2027,8 +2027,8 @@ static void store_purchase(void)
 			num = find_inven(o_ptr);
 
 #ifdef JP
-		strnfmt(o_name, sizeof(o_name), "¤¤¤¯¤Ä¤Ç¤¹¤«¡©(%sºÇÂç %d¸Ä) ",  
-			(num ? format("¸½ºß %d¸Ä¡¤", num) : ""),
+		strnfmt(o_name, sizeof(o_name), "ã„ãã¤ã§ã™ã‹ï¼Ÿ(%sæœ€å¤§ %då€‹) ",  
+			(num ? format("ç¾åœ¨ %då€‹ï¼Œ", num) : ""),
 			amt); 
 #else
 		strnfmt(o_name, sizeof(o_name), "%s how many? (%smax %d) ",
@@ -2062,7 +2062,7 @@ static void store_purchase(void)
 	/* Hack -- require room in pack */
 	if (!inven_carry_okay(j_ptr))
 	{
-		msg_print(_("¥¶¥Ã¥¯¤Ë¤½¤Î¥¢¥¤¥Æ¥à¤òÆþ¤ì¤ë·ä´Ö¤¬¤Ê¤¤¡£", "You cannot carry that many items."));
+		msg_print(_("ã‚¶ãƒƒã‚¯ã«ãã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’å…¥ã‚Œã‚‹éš™é–“ãŒãªã„ã€‚", "You cannot carry that many items."));
 		return;
 	}
 
@@ -2086,7 +2086,7 @@ static void store_purchase(void)
 			object_desc(o_name, j_ptr, 0);
 
 			/* Message */
-			msg_format(_("%s(%c)¤ò¹ØÆþ¤¹¤ë¡£", "Buying %s (%c)."), o_name, I2A(item));
+			msg_format(_("%s(%c)ã‚’è³¼å…¥ã™ã‚‹ã€‚", "Buying %s (%c)."), o_name, I2A(item));
 			msg_print(NULL);
 
 			/* Haggle for a final price */
@@ -2128,7 +2128,7 @@ static void store_purchase(void)
 				object_desc(o_name, j_ptr, 0);
 
 				/* Message */
-				msg_format(_("%s¤ò $%ld¤Ç¹ØÆþ¤·¤Þ¤·¤¿¡£", "You bought %s for %ld gold."),
+				msg_format(_("%sã‚’ $%ldã§è³¼å…¥ã—ã¾ã—ãŸã€‚", "You bought %s for %ld gold."),
 					o_name, (long)price);
 
 				/* Erase the inscription */
@@ -2145,7 +2145,7 @@ static void store_purchase(void)
 				object_desc(o_name, &inventory[item_new], 0);
 
 				/* Message */
-				msg_format(_("%s(%c)¤ò¼ê¤ËÆþ¤ì¤¿¡£", "You have %s (%c)."),
+				msg_format(_("%s(%c)ã‚’æ‰‹ã«å…¥ã‚ŒãŸã€‚", "You have %s (%c)."),
 					o_name, index_to_label(item_new));
 
 				/* Auto-inscription */
@@ -2174,7 +2174,7 @@ static void store_purchase(void)
 					if (randint0(STORE_SHUFFLE) == 0)
 					{
 						/* Message */
-						msg_print(_("Å¹¼ç¤Ï°úÂà¤·¤¿¡£", "The shopkeeper retires."));
+						msg_print(_("åº—ä¸»ã¯å¼•é€€ã—ãŸã€‚", "The shopkeeper retires."));
 
 						/* Shuffle the store */
 						store_shuffle(cur_store_num);
@@ -2184,7 +2184,7 @@ static void store_purchase(void)
 					else
 					{
 						/* Message */
-						msg_print(_("Å¹¼ç¤Ï¿·¤¿¤Êºß¸Ë¤ò¼è¤ê½Ð¤·¤¿¡£",
+						msg_print(_("åº—ä¸»ã¯æ–°ãŸãªåœ¨åº«ã‚’å–ã‚Šå‡ºã—ãŸã€‚",
 							"The shopkeeper brings out some new stock."));
 					}
 
@@ -2224,7 +2224,7 @@ static void store_purchase(void)
 			else
 			{
 				/* Simple message */
-				msg_print(_("¤ª¶â¤¬Â­¤ê¤Þ¤»¤ó¡£", "You do not have enough gold."));
+				msg_print(_("ãŠé‡‘ãŒè¶³ã‚Šã¾ã›ã‚“ã€‚", "You do not have enough gold."));
 			}
 		}
 	}
@@ -2244,7 +2244,7 @@ static void store_purchase(void)
 		object_desc(o_name, &inventory[item_new], 0);
 
 		/* Message */
-		msg_format(_("%s(%c)¤ò¼è¤Ã¤¿¡£", "You have %s (%c)."),
+		msg_format(_("%s(%c)ã‚’å–ã£ãŸã€‚", "You have %s (%c)."),
 			 o_name, index_to_label(item_new));
 
 		/* Handle stuff */
@@ -2311,9 +2311,9 @@ static void store_sell(void)
 
 	/* Prepare a prompt */
 	if (cur_store_num == STORE_HOME)
-		q = _("¤É¤Î¥¢¥¤¥Æ¥à¤òÃÖ¤­¤Þ¤¹¤«? ", "Drop which item? ");
+		q = _("ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç½®ãã¾ã™ã‹? ", "Drop which item? ");
 	else
-		q = _("¤É¤Î¥¢¥¤¥Æ¥à¤òÇä¤ê¤Þ¤¹¤«? ", "Sell which item? ");
+		q = _("ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’å£²ã‚Šã¾ã™ã‹? ", "Sell which item? ");
 
 	/* Only allow items the store will buy */
 	item_tester_hook = store_will_buy;
@@ -2321,11 +2321,11 @@ static void store_sell(void)
 	/* Get an item */
 	if (cur_store_num == STORE_HOME)
 	{
-		s = _("ÃÖ¤±¤ë¥¢¥¤¥Æ¥à¤ò»ý¤Ã¤Æ¤¤¤Þ¤»¤ó¡£", "You have nothing that you put in.");
+		s = _("ç½®ã‘ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã‚’æŒã£ã¦ã„ã¾ã›ã‚“ã€‚", "You have nothing that you put in.");
 	}
 	else
 	{
-		s = _("Íß¤·¤¤Êª¤¬¤Ê¤¤¤Ç¤¹¤Í¤¨¡£", "You have nothing that I want.");
+		s = _("æ¬²ã—ã„ç‰©ãŒãªã„ã§ã™ã­ãˆã€‚", "You have nothing that I want.");
 	}
 
 	if (!get_item(&item, q, s, (USE_EQUIP | USE_INVEN | USE_FLOOR))) return;
@@ -2347,7 +2347,7 @@ static void store_sell(void)
 	if ((item >= INVEN_WIELD) && cursed_p(o_ptr))
 	{
 		/* Oops */
-		msg_print(_("¤Õ¡¼¤à¡¢¤É¤¦¤ä¤é¤½¤ì¤Ï¼ö¤ï¤ì¤Æ¤¤¤ë¤è¤¦¤À¤Í¡£", "Hmmm, it seems to be cursed."));
+		msg_print(_("ãµãƒ¼ã‚€ã€ã©ã†ã‚„ã‚‰ãã‚Œã¯å‘ªã‚ã‚Œã¦ã„ã‚‹ã‚ˆã†ã ã­ã€‚", "Hmmm, it seems to be cursed."));
 
 		/* Nope */
 		return;
@@ -2399,9 +2399,9 @@ static void store_sell(void)
 	if (!store_check_num(q_ptr))
 	{
 		if (cur_store_num == STORE_HOME)
-			msg_print(_("²æ¤¬²È¤Ë¤Ï¤â¤¦ÃÖ¤¯¾ì½ê¤¬¤Ê¤¤¡£", "Your home is full."));
+			msg_print(_("æˆ‘ãŒå®¶ã«ã¯ã‚‚ã†ç½®ãå ´æ‰€ãŒãªã„ã€‚", "Your home is full."));
 		else
-			msg_print(_("¤¹¤¤¤Þ¤»¤ó¤¬¡¢Å¹¤Ë¤Ï¤â¤¦ÃÖ¤¯¾ì½ê¤¬¤¢¤ê¤Þ¤»¤ó¡£",
+			msg_print(_("ã™ã„ã¾ã›ã‚“ãŒã€åº—ã«ã¯ã‚‚ã†ç½®ãå ´æ‰€ãŒã‚ã‚Šã¾ã›ã‚“ã€‚",
 			"I have not the room in my store to keep it."));
 		return;
 	}
@@ -2411,7 +2411,7 @@ static void store_sell(void)
 	if (cur_store_num != STORE_HOME)
 	{
 		/* Describe the transaction */
-		msg_format(_("%s(%c)¤òÇäµÑ¤¹¤ë¡£", "Selling %s (%c)."),
+		msg_format(_("%s(%c)ã‚’å£²å´ã™ã‚‹ã€‚", "Selling %s (%c)."),
 			o_name, index_to_label(item));
 		msg_print(NULL);
 
@@ -2470,7 +2470,7 @@ static void store_sell(void)
 			object_desc(o_name, q_ptr, 0);
 
 			/* Describe the result (in message buffer) */
-			msg_format(_("%s¤ò $%ld¤ÇÇäµÑ¤·¤Þ¤·¤¿¡£", "You sold %s for %ld gold."),
+			msg_format(_("%sã‚’ $%ldã§å£²å´ã—ã¾ã—ãŸã€‚", "You sold %s for %ld gold."),
 				o_name, (long)price);
 
 			if (!((o_ptr->tval == TV_FIGURINE) && (value > 0)))
@@ -2522,7 +2522,7 @@ static void store_sell(void)
 		distribute_charges(o_ptr, q_ptr, amt);
 
 		/* Describe */
-		msg_format(_("%s¤òÃÖ¤¤¤¿¡£(%c)", "You drop %s (%c)."), o_name, index_to_label(item));
+		msg_format(_("%sã‚’ç½®ã„ãŸã€‚(%c)", "You drop %s (%c)."), o_name, index_to_label(item));
 
 		/* Take it from the players inventory */
 		inven_item_increase(item, -amt);
@@ -2564,9 +2564,9 @@ static void store_examine(void)
 	if (st_ptr->stock_num <= 0)
 	{
 		if (cur_store_num == STORE_HOME)
-			msg_print(_("²æ¤¬²È¤Ë¤Ï²¿¤âÃÖ¤¤¤Æ¤¢¤ê¤Þ¤»¤ó¡£", "Your home is empty."));
+			msg_print(_("æˆ‘ãŒå®¶ã«ã¯ä½•ã‚‚ç½®ã„ã¦ã‚ã‚Šã¾ã›ã‚“ã€‚", "Your home is empty."));
 		else
-			msg_print(_("¸½ºß¾¦ÉÊ¤Îºß¸Ë¤òÀÚ¤é¤·¤Æ¤¤¤Þ¤¹¡£", "I am currently out of stock."));
+			msg_print(_("ç¾åœ¨å•†å“ã®åœ¨åº«ã‚’åˆ‡ã‚‰ã—ã¦ã„ã¾ã™ã€‚", "I am currently out of stock."));
 		return;
 	}
 
@@ -2578,7 +2578,7 @@ static void store_examine(void)
 	if (i > store_bottom) i = store_bottom;
 
 	/* Prompt */
-	sprintf(out_val, _("¤É¤ì¤òÄ´¤Ù¤Þ¤¹¤«¡©", "Which item do you want to examine? "));
+	sprintf(out_val, _("ã©ã‚Œã‚’èª¿ã¹ã¾ã™ã‹ï¼Ÿ", "Which item do you want to examine? "));
 
 	/* Get the item number to be examined */
 	if (!get_stock(&item, out_val, 0, i - 1)) return;
@@ -2593,7 +2593,7 @@ static void store_examine(void)
 	if (!(o_ptr->ident & IDENT_MENTAL))
 	{
 		/* This can only happen in the home */
-		msg_print(_("¤³¤Î¥¢¥¤¥Æ¥à¤Ë¤Ä¤¤¤ÆÆÃ¤ËÃÎ¤Ã¤Æ¤¤¤ë¤³¤È¤Ï¤Ê¤¤¡£",
+		msg_print(_("ã“ã®ã‚¢ã‚¤ãƒ†ãƒ ã«ã¤ã„ã¦ç‰¹ã«çŸ¥ã£ã¦ã„ã‚‹ã“ã¨ã¯ãªã„ã€‚",
 			"You have no special knowledge about that item."));
 		return;
 	}
@@ -2602,11 +2602,11 @@ static void store_examine(void)
 	object_desc(o_name, o_ptr, 0);
 
 	/* Describe */
-	msg_format(_("%s¤òÄ´¤Ù¤Æ¤¤¤ë...", "Examining %s..."), o_name);
+	msg_format(_("%sã‚’èª¿ã¹ã¦ã„ã‚‹...", "Examining %s..."), o_name);
 
 	/* Describe it fully */
 	if (!identify_fully_aux(o_ptr, TRUE))
-		msg_print(_("ÆÃ¤ËÊÑ¤ï¤Ã¤¿¤È¤³¤í¤Ï¤Ê¤¤¤è¤¦¤À¡£", "You see nothing special."));
+		msg_print(_("ç‰¹ã«å¤‰ã‚ã£ãŸã¨ã“ã‚ã¯ãªã„ã‚ˆã†ã ã€‚", "You see nothing special."));
 
 	return;
 }
@@ -2647,12 +2647,12 @@ static void store_process_command(void)
 			break;
 		}
 
-		/* ÆüËÜ¸ìÈÇÄÉ²Ã */
-		/* 1 ¥Ú¡¼¥¸Ìá¤ë¥³¥Þ¥ó¥É: ²æ¤¬²È¤Î¥Ú¡¼¥¸¿ô¤¬Â¿¤¤¤Î¤Ç½ÅÊõ¤¹¤ë¤Ï¤º By BUG */
+		/* æ—¥æœ¬èªžç‰ˆè¿½åŠ  */
+		/* 1 ãƒšãƒ¼ã‚¸æˆ»ã‚‹ã‚³ãƒžãƒ³ãƒ‰: æˆ‘ãŒå®¶ã®ãƒšãƒ¼ã‚¸æ•°ãŒå¤šã„ã®ã§é‡å®ã™ã‚‹ã¯ãš By BUG */
 		case '-':
 		{
 			if (st_ptr->stock_num <= store_bottom) {
-				msg_print(_("¤³¤ì¤ÇÁ´Éô¤Ç¤¹¡£", "Entire inventory is shown."));
+				msg_print(_("ã“ã‚Œã§å…¨éƒ¨ã§ã™ã€‚", "Entire inventory is shown."));
 			}
 			else{
 				store_top -= store_bottom;
@@ -2668,7 +2668,7 @@ static void store_process_command(void)
 		{
 			if (st_ptr->stock_num <= store_bottom)
 			{
-				msg_print(_("¤³¤ì¤ÇÁ´Éô¤Ç¤¹¡£", "Entire inventory is shown."));
+				msg_print(_("ã“ã‚Œã§å…¨éƒ¨ã§ã™ã€‚", "Entire inventory is shown."));
 			}
 			else
 			{
@@ -2939,7 +2939,7 @@ static void store_process_command(void)
 		/* Hack -- Unknown command */
 		default:
 		{
-			msg_print(_("¤½¤Î¥³¥Þ¥ó¥É¤ÏÅ¹¤ÎÃæ¤Ç¤Ï»È¤¨¤Þ¤»¤ó¡£", "That command does not work in stores."));
+			msg_print(_("ãã®ã‚³ãƒžãƒ³ãƒ‰ã¯åº—ã®ä¸­ã§ã¯ä½¿ãˆã¾ã›ã‚“ã€‚", "That command does not work in stores."));
 			break;
 		}
 	}
@@ -2980,7 +2980,7 @@ void do_cmd_store(void)
 	if (!((c_ptr->feat >= FEAT_SHOP_HEAD) &&
 		  (c_ptr->feat <= FEAT_SHOP_TAIL)))
 	{
-		msg_print(_("¤³¤³¤Ë¤ÏÅ¹¤¬¤¢¤ê¤Þ¤»¤ó¡£", "You see no store here."));
+		msg_print(_("ã“ã“ã«ã¯åº—ãŒã‚ã‚Šã¾ã›ã‚“ã€‚", "You see no store here."));
 		return;
 	}
 
@@ -3006,7 +3006,7 @@ void do_cmd_store(void)
 	if ((town[p_ptr->town_num].store[which].store_open >= turn) ||
 	    (ironman_shops))
 	{
-		msg_print(_("¥É¥¢¤Ë¸°¤¬¤«¤«¤Ã¤Æ¤¤¤ë¡£", "The doors are locked."));
+		msg_print(_("ãƒ‰ã‚¢ã«éµãŒã‹ã‹ã£ã¦ã„ã‚‹ã€‚", "The doors are locked."));
 		p_ptr->town_num = old_town_num;
 		return;
 	}
@@ -3081,45 +3081,45 @@ void do_cmd_store(void)
 
 
 		/* Basic commands */
-		prt(_(" ESC) ·úÊª¤«¤é½Ð¤ë", " ESC) Exit from Building."), 21 + xtra_stock, 0);
+		prt(_(" ESC) å»ºç‰©ã‹ã‚‰å‡ºã‚‹", " ESC) Exit from Building."), 21 + xtra_stock, 0);
 
 		/* Browse if necessary */
 		if (st_ptr->stock_num > store_bottom)
 		{
-			prt(_(" -)Á°¥Ú¡¼¥¸", " -) Previous page"), 22 + xtra_stock, 0);
-			prt(_(" ¥¹¥Ú¡¼¥¹) ¼¡¥Ú¡¼¥¸", " SPACE) Next page"), 23 + xtra_stock, 0);
+			prt(_(" -)å‰ãƒšãƒ¼ã‚¸", " -) Previous page"), 22 + xtra_stock, 0);
+			prt(_(" ã‚¹ãƒšãƒ¼ã‚¹) æ¬¡ãƒšãƒ¼ã‚¸", " SPACE) Next page"), 23 + xtra_stock, 0);
 		}
 
 		/* Home commands */
 		if (cur_store_num == STORE_HOME)
 		{
-			prt(_("g) ¥¢¥¤¥Æ¥à¤ò¼è¤ë", "g) Get an item."), 21 + xtra_stock, 27);
-			prt(_("d) ¥¢¥¤¥Æ¥à¤òÃÖ¤¯", "d) Drop an item."), 22 + xtra_stock, 27);
-			prt(_("x) ²È¤Î¥¢¥¤¥Æ¥à¤òÄ´¤Ù¤ë", "x) eXamine an item in the home."), 23 + xtra_stock, 27);
+			prt(_("g) ã‚¢ã‚¤ãƒ†ãƒ ã‚’å–ã‚‹", "g) Get an item."), 21 + xtra_stock, 27);
+			prt(_("d) ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç½®ã", "d) Drop an item."), 22 + xtra_stock, 27);
+			prt(_("x) å®¶ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’èª¿ã¹ã‚‹", "x) eXamine an item in the home."), 23 + xtra_stock, 27);
 		}
 
 		/* Shop commands XXX XXX XXX */
 		else
 		{
-			prt(_("p) ¾¦ÉÊ¤òÇã¤¦", "p) Purchase an item."), 21 + xtra_stock, 30);
-			prt(_("s) ¥¢¥¤¥Æ¥à¤òÇä¤ë", "s) Sell an item."), 22 + xtra_stock, 30);
-			prt(_("x) ¾¦ÉÊ¤òÄ´¤Ù¤ë", "x) eXamine an item in the shop"), 23 + xtra_stock,30);
+			prt(_("p) å•†å“ã‚’è²·ã†", "p) Purchase an item."), 21 + xtra_stock, 30);
+			prt(_("s) ã‚¢ã‚¤ãƒ†ãƒ ã‚’å£²ã‚‹", "s) Sell an item."), 22 + xtra_stock, 30);
+			prt(_("x) å•†å“ã‚’èª¿ã¹ã‚‹", "x) eXamine an item in the shop"), 23 + xtra_stock,30);
 		}
 
-		/* ´ðËÜÅª¤Ê¥³¥Þ¥ó¥É¤ÎÄÉ²ÃÉ½¼¨ */
-		prt(_("i/e) »ý¤ÁÊª/ÁõÈ÷¤Î°ìÍ÷", "i/e) Inventry/Equipment list"), 21 + xtra_stock, 56);
+		/* åŸºæœ¬çš„ãªã‚³ãƒžãƒ³ãƒ‰ã®è¿½åŠ è¡¨ç¤º */
+		prt(_("i/e) æŒã¡ç‰©/è£…å‚™ã®ä¸€è¦§", "i/e) Inventry/Equipment list"), 21 + xtra_stock, 56);
 
 		if (rogue_like_commands)
 		{
-			prt(_("w/T) ÁõÈ÷¤¹¤ë/¤Ï¤º¤¹", "w/T) Wear/Take off equipment"), 22 + xtra_stock, 56);
+			prt(_("w/T) è£…å‚™ã™ã‚‹/ã¯ãšã™", "w/T) Wear/Take off equipment"), 22 + xtra_stock, 56);
 		}
 		else
 		{
-			prt(_("w/t) ÁõÈ÷¤¹¤ë/¤Ï¤º¤¹", "w/t) Wear/Take off equipment"), 22 + xtra_stock, 56);
+			prt(_("w/t) è£…å‚™ã™ã‚‹/ã¯ãšã™", "w/t) Wear/Take off equipment"), 22 + xtra_stock, 56);
 		}
 
 		/* Prompt */
-		prt(_("¥³¥Þ¥ó¥É:", "You may: "), 20 + xtra_stock, 0);
+		prt(_("ã‚³ãƒžãƒ³ãƒ‰:", "You may: "), 20 + xtra_stock, 0);
 
 		/* Get a command */
 		request_command(TRUE);
@@ -3147,7 +3147,7 @@ void do_cmd_store(void)
 			if (cur_store_num != STORE_HOME)
 			{
 				/* Message */
-				msg_print(_("¥¶¥Ã¥¯¤«¤é¥¢¥¤¥Æ¥à¤¬¤¢¤Õ¤ì¤½¤¦¤Ê¤Î¤Ç¡¢¤¢¤ï¤Æ¤ÆÅ¹¤«¤é½Ð¤¿...",
+				msg_print(_("ã‚¶ãƒƒã‚¯ã‹ã‚‰ã‚¢ã‚¤ãƒ†ãƒ ãŒã‚ãµã‚Œãã†ãªã®ã§ã€ã‚ã‚ã¦ã¦åº—ã‹ã‚‰å‡ºãŸ...",
 					"Your pack is so full that you flee the store..."));
 
 				/* Leave */
@@ -3158,7 +3158,7 @@ void do_cmd_store(void)
 			else if (!store_check_num(o_ptr))
 			{
 				/* Message */
-				msg_print(_("¥¶¥Ã¥¯¤«¤é¥¢¥¤¥Æ¥à¤¬¤¢¤Õ¤ì¤½¤¦¤Ê¤Î¤Ç¡¢¤¢¤ï¤Æ¤Æ²È¤«¤é½Ð¤¿...",
+				msg_print(_("ã‚¶ãƒƒã‚¯ã‹ã‚‰ã‚¢ã‚¤ãƒ†ãƒ ãŒã‚ãµã‚Œãã†ãªã®ã§ã€ã‚ã‚ã¦ã¦å®¶ã‹ã‚‰å‡ºãŸ...",
 					"Your pack is so full that you flee your home..."));
 
 				/* Leave */
@@ -3177,7 +3177,7 @@ void do_cmd_store(void)
 
 
 				/* Give a message */
-				msg_print(_("¥¶¥Ã¥¯¤«¤é¥¢¥¤¥Æ¥à¤¬¤¢¤Õ¤ì¤Æ¤·¤Þ¤Ã¤¿¡ª", "Your pack overflows!"));
+				msg_print(_("ã‚¶ãƒƒã‚¯ã‹ã‚‰ã‚¢ã‚¤ãƒ†ãƒ ãŒã‚ãµã‚Œã¦ã—ã¾ã£ãŸï¼", "Your pack overflows!"));
 
 				/* Get local object */
 				q_ptr = &forge;
@@ -3189,7 +3189,7 @@ void do_cmd_store(void)
 				object_desc(o_name, q_ptr, 0);
 
 				/* Message */
-				msg_format(_("%s¤¬Íî¤Á¤¿¡£(%c)", "You drop %s (%c)."), o_name, index_to_label(item));
+				msg_format(_("%sãŒè½ã¡ãŸã€‚(%c)", "You drop %s (%c)."), o_name, index_to_label(item));
 
 				/* Remove it from the players inventory */
 				inven_item_increase(item, -255);
@@ -3311,7 +3311,7 @@ void store_shuffle(int which)
 
 		/* Mega-Hack -- Note that the item is "on sale" */
 #ifdef JP
-		o_ptr->inscription = quark_add("Çä½ÐÃæ");
+		o_ptr->inscription = quark_add("å£²å‡ºä¸­");
 #else
 		o_ptr->inscription = quark_add("on sale");
 #endif

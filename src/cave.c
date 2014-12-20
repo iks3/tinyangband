@@ -1,4 +1,4 @@
-/* File: cave.c */
+ï»¿/* File: cave.c */
 
 /* Purpose: low level dungeon routines -BEN- */
 
@@ -1987,7 +1987,7 @@ void do_cmd_view_map(void)
 
 	/* Note */
 #ifdef JP
-	prt("¤ªÂÔ¤Á²¼¤µ¤¤...", 0, 0);
+	prt("ãŠå¾…ã¡ä¸‹ã•ã„...", 0, 0);
 #else
 	prt("Please wait...", 0, 0);
 #endif
@@ -2017,7 +2017,7 @@ void do_cmd_view_map(void)
 		while (1)
 		{
 #ifdef JP
-			put_str("²¿¤«¥­¡¼¤ò²¡¤·¤Æ¤¯¤À¤µ¤¤('M':½¦¤¦ 'N':ÊüÃÖ 'K':²õ¤¹¥¢¥¤¥Æ¥à¤òÉ½¼¨)", row_message, 1+ex);
+			put_str("ä½•ã‹ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ãã ã•ã„('M':æ‹¾ã† 'N':æ”¾ç½® 'K':å£Šã™ã‚¢ã‚¤ãƒ†ãƒ ã‚’è¡¨ç¤º)", row_message, 1+ex);
 #else
 			put_str(" Hit M, N(for ~), or K(for !) to display auto-picker items.", row_message, 1);
 #endif
@@ -2068,7 +2068,7 @@ void do_cmd_view_map(void)
 	else
 	{
 #ifdef JP
-		put_str("²¿¤«¥­¡¼¤ò²¡¤¹¤È¥²¡¼¥à¤ËÌá¤ê¤Ş¤¹", row_message, 19+ex);
+		put_str("ä½•ã‹ã‚­ãƒ¼ã‚’æŠ¼ã™ã¨ã‚²ãƒ¼ãƒ ã«æˆ»ã‚Šã¾ã™", row_message, 19+ex);
 #else
 		put_str("Hit any key to continue", row_message, 19);
 #endif

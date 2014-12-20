@@ -1,4 +1,4 @@
-/* File: util.c */
+ï»¿/* File: util.c */
 
 /* Purpose: Angband utilities -BEN- */
 
@@ -64,7 +64,7 @@ int usleep(huge usecs)
 
 	/* Paranoia -- No excessive sleeping */
 #ifdef JP
-	if (usecs > 4000000L) core("ÉÔÅö¤Ê usleep() ¸Æ¤Ó½Ğ¤·");
+	if (usecs > 4000000L) core("ä¸å½“ãª usleep() å‘¼ã³å‡ºã—");
 #else
 	if (usecs > 4000000L) core("Illegal usleep() call");
 #endif
@@ -427,7 +427,7 @@ errr my_fgets(FILE *fff, char *buf, huge n)
 	{
 #ifdef JP
 		/* Convert kanji code first */
-		codeconv(tmp);
+		guess_convert_to_system_encoding(tmp, sizeof(tmp));
 #endif
 		/* Convert weirdness */
 		for (s = tmp; *s; s++)
@@ -462,7 +462,7 @@ errr my_fgets(FILE *fff, char *buf, huge n)
 				buf[i++] = *s++;
 				buf[i++] = *s;
 			}
-			/* È¾³Ñ¤«¤Ê¤ËÂĞ±ş */
+			/* åŠè§’ã‹ãªã«å¯¾å¿œ */
 			else if (iskana(*s))
 			{
 				buf[i++] = *s;
@@ -2235,7 +2235,7 @@ s16b quark_add(cptr str)
 
 	/* Paranoia -- Require room */
 	/* if (quark__num == QUARK_MAX) return (0); */
-	/* quark__str ¤ÎÉ½¤¹ÇÛÎó¤¬Â­¤ê¤Ê¤¤¤È¤­¤Ï realloc ¤ò»î¤ß¤ë -- henkma */
+	/* quark__str ã®è¡¨ã™é…åˆ—ãŒè¶³ã‚Šãªã„ã¨ãã¯ realloc ã‚’è©¦ã¿ã‚‹ -- henkma */
 	if (quark__num == current_quark_max)
 	{
 		quark__str = rnrealloc((vptr)quark__str ,
@@ -2243,12 +2243,12 @@ s16b quark_add(cptr str)
 					sizeof(cptr) * (ONE_STEP_REALLOC_SIZE));
 
 #ifdef JP
-		if(quark__str == NULL) quit("¥á¥â¥ê¡¼ÉÔÂ­!");
+		if(quark__str == NULL) quit("ãƒ¡ãƒ¢ãƒªãƒ¼ä¸è¶³!");
 #else
 		if(quark__str == NULL) quit("Not enough memory !");
 #endif
 
-		/* ¿·¤¿¤Ë³ÎÊİ¤·¤¿¥á¥â¥ê¤Î½é´ü²½ */
+		/* æ–°ãŸã«ç¢ºä¿ã—ãŸãƒ¡ãƒ¢ãƒªã®åˆæœŸåŒ– */
 		for(i = 0; i < ONE_STEP_REALLOC_SIZE; i++)
 		{
 			quark__str[i + current_quark_max] = NULL;
@@ -2394,7 +2394,7 @@ void message_add(cptr str)
 				t++;
 				n++;
 			}
-		if (n == 81) n = 79; /* ºÇ¸å¤ÎÊ¸»ú¤¬´Á»úÈ¾Ê¬ */
+		if (n == 81) n = 79; /* æœ€å¾Œã®æ–‡å­—ãŒæ¼¢å­—åŠåˆ† */
 
 		splitted2 = str + n;
 		strncpy(splitted1, str ,n);
@@ -2648,7 +2648,7 @@ static void msg_flush(int x)
 	{
 		/* Pause for response */
 #ifdef JP
-		Term_putstr(x, 0, -1, a, "-Â³¤¯-");
+		Term_putstr(x, 0, -1, a, "-ç¶šã-");
 #else
 		Term_putstr(x, 0, -1, a, "-more-");
 #endif
@@ -3054,7 +3054,7 @@ void c_roff(byte a, cptr str)
 			if (x < w)
 #ifdef JP
 			{
-			/* ¸½ºß¤¬È¾³ÑÊ¸»ú¤Î¾ì¹ç */
+			/* ç¾åœ¨ãŒåŠè§’æ–‡å­—ã®å ´åˆ */
 			if( !k_flag )
 #endif
 			{
@@ -3078,11 +3078,11 @@ void c_roff(byte a, cptr str)
 #ifdef JP
 			else
 			{
-				/* ¸½ºß¤¬Á´³ÑÊ¸»ú¤Î¤È¤­ */
-				/* Ê¸Æ¬¤¬¡Ö¡£¡×¡Ö¡¢¡×Åù¤Ë¤Ê¤ë¤È¤­¤Ï¡¢¤½¤Î£±¤ÄÁ°¤Î¸ì¤Ç²ş¹Ô */
-				if (strncmp(s, "¡£", 2) == 0 || strncmp(s, "¡¢", 2) == 0
-#if 0                   /* °ìÈÌÅª¤Ë¤Ï¡Ö¥£¡×¡Ö¡¼¡×¤Ï¶ØÂ§¤ÎÂĞ¾İ³° */
-					|| strncmp(s, "¥£", 2) == 0 || strncmp(s, "¡¼", 2) == 0
+				/* ç¾åœ¨ãŒå…¨è§’æ–‡å­—ã®ã¨ã */
+				/* æ–‡é ­ãŒã€Œã€‚ã€ã€Œã€ã€ç­‰ã«ãªã‚‹ã¨ãã¯ã€ãã®ï¼‘ã¤å‰ã®èªã§æ”¹è¡Œ */
+				if (strncmp(s, "ã€‚", 2) == 0 || strncmp(s, "ã€", 2) == 0
+#if 0                   /* ä¸€èˆ¬çš„ã«ã¯ã€Œã‚£ã€ã€Œãƒ¼ã€ã¯ç¦å‰‡ã®å¯¾è±¡å¤– */
+					|| strncmp(s, "ã‚£", 2) == 0 || strncmp(s, "ãƒ¼", 2) == 0
 #endif
 			       ){
 					Term_what(x  , y, &av[x  ], &cv[x  ]);
@@ -3594,7 +3594,7 @@ s16b get_quantity(cptr prompt, int max)
 	{
 		/* Build a prompt */
 #ifdef JP
-		sprintf(tmp, "¤¤¤¯¤Ä¤Ç¤¹¤« (1-%d): ", max);
+		sprintf(tmp, "ã„ãã¤ã§ã™ã‹ (1-%d): ", max);
 #else
 		sprintf(tmp, "Quantity (1-%d): ", max);
 #endif
@@ -3656,7 +3656,7 @@ void pause_line(int row)
 {
 	prt("", row, 0);
 #ifdef JP
-	put_str("[ ²¿¤«¥­¡¼¤ò²¡¤·¤Æ²¼¤µ¤¤ ]", row, 26);
+	put_str("[ ä½•ã‹ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ä¸‹ã•ã„ ]", row, 26);
 #else
 	put_str("[Press any key to continue]", row, 23);
 #endif
@@ -3667,7 +3667,7 @@ void pause_line(int row)
 
 
 /*
- * ¥³¥Ş¥ó¥É¥á¥Ë¥å¡¼
+ * ã‚³ãƒãƒ³ãƒ‰ãƒ¡ãƒ‹ãƒ¥ãƒ¼
  */
 typedef struct
 {
@@ -3680,23 +3680,23 @@ typedef struct
 static menu_naiyou menu_info[10][10] =
 {
 	{
-		{1, 1, FALSE, _("ËâË¡/ÆÃ¼ìÇ½ÎÏ", "Magic/Special") },
-		{2, 2, FALSE, _("¹ÔÆ°", "Action") },
-		{3, 3, FALSE, _("Æ»¶ñ(»ÈÍÑ)", "Items(use)") },
-		{4, 4, FALSE, _("Æ»¶ñ(¤½¤ÎÂ¾)", "Items(other)") },
-		{5, 5, FALSE, _("ÁõÈ÷", "Equip") },
-		{6, 6, FALSE, _("Èâ/È¢", "Door/Box") },
-		{7, 7, FALSE, _("¾ğÊó", "Informations") },
-		{8, 8, FALSE, _("ÀßÄê", "Options") },
-		{9, 9, FALSE, _("¤½¤ÎÂ¾", "Other commands") },
+		{1, 1, FALSE, _("é­”æ³•/ç‰¹æ®Šèƒ½åŠ›", "Magic/Special") },
+		{2, 2, FALSE, _("è¡Œå‹•", "Action") },
+		{3, 3, FALSE, _("é“å…·(ä½¿ç”¨)", "Items(use)") },
+		{4, 4, FALSE, _("é“å…·(ãã®ä»–)", "Items(other)") },
+		{5, 5, FALSE, _("è£…å‚™", "Equip") },
+		{6, 6, FALSE, _("æ‰‰/ç®±", "Door/Box") },
+		{7, 7, FALSE, _("æƒ…å ±", "Informations") },
+		{8, 8, FALSE, _("è¨­å®š", "Options") },
+		{9, 9, FALSE, _("ãã®ä»–", "Other commands") },
 		{ 0, 0, FALSE, "" },
 	},
 
 	{
-		{ 'm', 'm', TRUE, _("»È¤¦", "Use") },
-		{ 'b', 'P', TRUE, _("Ä´¤Ù¤ë", "See tips") },
-		{ 'G', 'G', TRUE, _("³Ğ¤¨¤ë", "Study") },
-		{ 'U', 'O', TRUE, _("ÆÃ¼ìÇ½ÎÏ¤ò»È¤¦", "Special abilities") },
+		{ 'm', 'm', TRUE, _("ä½¿ã†", "Use") },
+		{ 'b', 'P', TRUE, _("èª¿ã¹ã‚‹", "See tips") },
+		{ 'G', 'G', TRUE, _("è¦šãˆã‚‹", "Study") },
+		{ 'U', 'O', TRUE, _("ç‰¹æ®Šèƒ½åŠ›ã‚’ä½¿ã†", "Special abilities") },
 		{ 0, 0, FALSE, "" },
 		{ 0, 0, FALSE, "" },
 		{ 0, 0, FALSE, "" },
@@ -3706,62 +3706,49 @@ static menu_naiyou menu_info[10][10] =
 	},
 
 	{
-		{ 'R', 'R', TRUE, _("µÙÂ©¤¹¤ë", "Rest") },
-		{ 'D', 'D', TRUE, _("æ«¤ò²ò½ü¤¹¤ë", "Disarm a trap") },
-		{ 's', 's', TRUE, _("æ«/±£¤·Èâ¤òÃµ¤¹", "Search") },
-		{ 'l', 'x', TRUE, _("¼ş¤ê¤òÄ´¤Ù¤ë", "Look") },
-		{ '*', '*', TRUE, _("¥¿¡¼¥²¥Ã¥È»ØÄê", "Target") },
-		{ 'T', KTRL('t'), TRUE, _("·ê¤ò·¡¤ë", "Dig") },
-		{ '<', '<', TRUE, _("³¬ÃÊ¤ò¾å¤ë", "Go up stairs") },
-		{ '>', '>', TRUE, _("³¬ÃÊ¤ò²¼¤ê¤ë", "Go down stairs") },
-		{ 'p', 'p', TRUE, _("¥Ú¥Ã¥È¤ËÌ¿Îá¤¹¤ë", "Command pets") },
-		{ 'S', '#', TRUE, _("Ãµº÷¥â¡¼¥É¤ÎON/OFF", "Search mode ON/OFF") }
+		{ 'R', 'R', TRUE, _("ä¼‘æ¯ã™ã‚‹", "Rest") },
+		{ 'D', 'D', TRUE, _("ç½ ã‚’è§£é™¤ã™ã‚‹", "Disarm a trap") },
+		{ 's', 's', TRUE, _("ç½ /éš ã—æ‰‰ã‚’æ¢ã™", "Search") },
+		{ 'l', 'x', TRUE, _("å‘¨ã‚Šã‚’èª¿ã¹ã‚‹", "Look") },
+		{ '*', '*', TRUE, _("ã‚¿ãƒ¼ã‚²ãƒƒãƒˆæŒ‡å®š", "Target") },
+		{ 'T', KTRL('t'), TRUE, _("ç©´ã‚’æ˜ã‚‹", "Dig") },
+		{ '<', '<', TRUE, _("éšæ®µã‚’ä¸Šã‚‹", "Go up stairs") },
+		{ '>', '>', TRUE, _("éšæ®µã‚’ä¸‹ã‚Šã‚‹", "Go down stairs") },
+		{ 'p', 'p', TRUE, _("ãƒšãƒƒãƒˆã«å‘½ä»¤ã™ã‚‹", "Command pets") },
+		{ 'S', '#', TRUE, _("æ¢ç´¢ãƒ¢ãƒ¼ãƒ‰ã®ON/OFF", "Search mode ON/OFF") }
 	},
 
 	{
-		{ 'r', 'r', TRUE, _("´¬Êª¤òÆÉ¤à", "Read a scroll") },
-		{ 'q', 'q', TRUE, _("Ìô¤ò°û¤à", "Drink a potion") },
-		{ 'u', 'Z', TRUE, _("¥¹¥¿¥Ã¥Õ¤ò»È¤¦", "Use a staff") },
-		{ 'a', 'z', TRUE, _("¥ï¥ó¥É¤ÇÁÀ¤¦", "Aim a wand") },
-		{ 'z', 'a', TRUE, _("¥í¥Ã¥É¤ò¿¶¤ë", "Zap a rod") },
-		{ 'A', 'A', TRUE, _("»ÏÆ°¤¹¤ë", "Activate an equipment") },
-		{ 'E', 'E', TRUE, _("¿©¤Ù¤ë", "Eat") },
-		{ 'f', 't', TRUE, _("Èô¤ÓÆ»¶ñ¤Ç·â¤Ä", "Fire missile weapon") },
-		{ 'v', 'v', TRUE, _("Åê¤²¤ë", "Throw an item") },
+		{ 'r', 'r', TRUE, _("å·»ç‰©ã‚’èª­ã‚€", "Read a scroll") },
+		{ 'q', 'q', TRUE, _("è–¬ã‚’é£²ã‚€", "Drink a potion") },
+		{ 'u', 'Z', TRUE, _("ã‚¹ã‚¿ãƒƒãƒ•ã‚’ä½¿ã†", "Use a staff") },
+		{ 'a', 'z', TRUE, _("ãƒ¯ãƒ³ãƒ‰ã§ç‹™ã†", "Aim a wand") },
+		{ 'z', 'a', TRUE, _("ãƒ­ãƒƒãƒ‰ã‚’æŒ¯ã‚‹", "Zap a rod") },
+		{ 'A', 'A', TRUE, _("å§‹å‹•ã™ã‚‹", "Activate an equipment") },
+		{ 'E', 'E', TRUE, _("é£Ÿã¹ã‚‹", "Eat") },
+		{ 'f', 't', TRUE, _("é£›ã³é“å…·ã§æ’ƒã¤", "Fire missile weapon") },
+		{ 'v', 'v', TRUE, _("æŠ•ã’ã‚‹", "Throw an item") },
 		{ 0, 0, FALSE, "" }
 	},
 
 	{
-		{ 'g', 'g', TRUE, _("½¦¤¦", "Get items") },
-		{ 'd', 'd', TRUE, _("Íî¤È¤¹", "Drop an item") },
-		{ 'k', 'k', TRUE, _("²õ¤¹", "Destroy an item") },
-		{ '{', '{', TRUE, _("ÌÃ¤ò¹ï¤à", "Inscribe an item") },
-		{ '}', '}', TRUE, _("ÌÃ¤ò¾Ã¤¹", "Uninscribe an item") },
-		{ 'I', 'I', TRUE, _("Ä´ºº", "Info about an item") },
-		{ 'i', 'i', TRUE, _("¥¢¥¤¥Æ¥à°ìÍ÷", "Inventory list") },
-		{ 0, 0, FALSE, "" },
-		{ 0, 0, FALSE, "" },
-		{ 0, 0, FALSE, "" }
-	},
-
-	{
-		{ 'w', 'w', TRUE, _("ÁõÈ÷¤¹¤ë", "Wear") },
-		{ 't', 'T', TRUE, _("ÁõÈ÷¤ò³°¤¹", "Take off") },
-		{ 'F', 'F', TRUE, _("Ç³ÎÁ¤òÊäµë", "Refuel") },
-		{ 'e', 'e', TRUE, _("ÁõÈ÷°ìÍ÷", "Equipment list") },
-		{ 0, 0, FALSE, "" },
-		{ 0, 0, FALSE, "" },
-		{ 0, 0, FALSE, "" },
+		{ 'g', 'g', TRUE, _("æ‹¾ã†", "Get items") },
+		{ 'd', 'd', TRUE, _("è½ã¨ã™", "Drop an item") },
+		{ 'k', 'k', TRUE, _("å£Šã™", "Destroy an item") },
+		{ '{', '{', TRUE, _("éŠ˜ã‚’åˆ»ã‚€", "Inscribe an item") },
+		{ '}', '}', TRUE, _("éŠ˜ã‚’æ¶ˆã™", "Uninscribe an item") },
+		{ 'I', 'I', TRUE, _("èª¿æŸ»", "Info about an item") },
+		{ 'i', 'i', TRUE, _("ã‚¢ã‚¤ãƒ†ãƒ ä¸€è¦§", "Inventory list") },
 		{ 0, 0, FALSE, "" },
 		{ 0, 0, FALSE, "" },
 		{ 0, 0, FALSE, "" }
 	},
 
 	{
-		{ 'o', 'o', TRUE, _("³«¤±¤ë", "Open") },
-		{ 'c', 'c', TRUE, _("ÊÄ¤¸¤ë", "Close") },
-		{ 'B', 'f', TRUE, _("ÂÎÅö¤¿¤ê¤¹¤ë", "Bash a door") },
-		{ 'j', 'S', TRUE, _("¤¯¤µ¤Ó¤òÂÇ¤Ä", "Jam a door") },
+		{ 'w', 'w', TRUE, _("è£…å‚™ã™ã‚‹", "Wear") },
+		{ 't', 'T', TRUE, _("è£…å‚™ã‚’å¤–ã™", "Take off") },
+		{ 'F', 'F', TRUE, _("ç‡ƒæ–™ã‚’è£œçµ¦", "Refuel") },
+		{ 'e', 'e', TRUE, _("è£…å‚™ä¸€è¦§", "Equipment list") },
 		{ 0, 0, FALSE, "" },
 		{ 0, 0, FALSE, "" },
 		{ 0, 0, FALSE, "" },
@@ -3771,25 +3758,12 @@ static menu_naiyou menu_info[10][10] =
 	},
 
 	{
-		{ 'M', 'M', TRUE, _("¥À¥ó¥¸¥ç¥ó¤ÎÁ´ÂÎ¿Ş", "Full map") },
-		{ 'L', 'W', TRUE, _("°ÌÃÖ¤ò³ÎÇ§", "Map") },
-		{ KTRL('F'), KTRL('F'), TRUE, _("³¬¤ÎÊ·°Ïµ¤", "Level feeling") },
-		{ 'C', 'C', TRUE, _("¥¹¥Æ¡¼¥¿¥¹", "Character status") },
-		{ '/', '/', TRUE, _("Ê¸»ú¤ÎÀâÌÀ", "Identify symbol") },
-		{ KTRL('P'), KTRL('P'), TRUE, _("¥á¥Ã¥»¡¼¥¸ÍúÎò", "Show prev messages") },
-		{ KTRL('T'), KTRL('T'), TRUE,_("¸½ºß¤Î»ş¹ï", "Current time") },
-		{ '~', '~', TRUE, _("¸½ºß¤ÎÃÎ¼±", "Various informations") },
+		{ 'o', 'o', TRUE, _("é–‹ã‘ã‚‹", "Open") },
+		{ 'c', 'c', TRUE, _("é–‰ã˜ã‚‹", "Close") },
+		{ 'B', 'f', TRUE, _("ä½“å½“ãŸã‚Šã™ã‚‹", "Bash a door") },
+		{ 'j', 'S', TRUE, _("ãã•ã³ã‚’æ‰“ã¤", "Jam a door") },
 		{ 0, 0, FALSE, "" },
-		{ 0, 0, FALSE, "" }
-	},
-
-	{
-		{ '=', '=', TRUE, _("¥ª¥×¥·¥ç¥ó", "Set options") },
-		{ '@', '@', TRUE, _("¥Ş¥¯¥í", "Interact with macros") },
-		{ 0, 0, FALSE, _("¼«Æ°½¦¤¤ÀßÄê", "Auto-pickup editor") },
-		{ '%', '%', TRUE, _("²èÌÌÉ½¼¨", "Interact w/ visuals") },
-		{ '&', '&', TRUE, _("¥«¥é¡¼", "Interact with colors(&)") },
-		{ '$', '$', TRUE, _("¼«Æ°½¦¤¤¤ò¥í¡¼¥É", "Reload auto-pick pref") },
+		{ 0, 0, FALSE, "" },
 		{ 0, 0, FALSE, "" },
 		{ 0, 0, FALSE, "" },
 		{ 0, 0, FALSE, "" },
@@ -3797,15 +3771,41 @@ static menu_naiyou menu_info[10][10] =
 	},
 
 	{
-		{ KTRL('X'), KTRL('X'), TRUE, _("¥»¡¼¥Ö&ÃæÃÇ", "Save and quit") },
-		{ KTRL('S'), KTRL('S'), TRUE, _("¥»¡¼¥Ö", "Save") },
-		{ KTRL('R'), KTRL('R'), TRUE, _("ºÆÉÁ²è", "Redraw") },
-		{ '?', '?', TRUE, _("¥Ø¥ë¥×", "Help") },
-		{ ':', ':', TRUE, _("¥á¥â", "Take note") },
-		{ ')', ')', TRUE, _("µ­Ç°»£±Æ", "Dump screen dump") },
-		{ '(', '(', TRUE, _("µ­Ç°»£±Æ¤ÎÉ½¼¨", "Load screen dump") },
-		{ 'V', 'V', TRUE, _("¥Ğ¡¼¥¸¥ç¥ó¾ğÊó", "Version info") },
-		{ 'Q', 'Q', TRUE, _("°úÂà¤¹¤ë", "Quit") },
+		{ 'M', 'M', TRUE, _("ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®å…¨ä½“å›³", "Full map") },
+		{ 'L', 'W', TRUE, _("ä½ç½®ã‚’ç¢ºèª", "Map") },
+		{ KTRL('F'), KTRL('F'), TRUE, _("éšã®é›°å›²æ°—", "Level feeling") },
+		{ 'C', 'C', TRUE, _("ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹", "Character status") },
+		{ '/', '/', TRUE, _("æ–‡å­—ã®èª¬æ˜", "Identify symbol") },
+		{ KTRL('P'), KTRL('P'), TRUE, _("ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å±¥æ­´", "Show prev messages") },
+		{ KTRL('T'), KTRL('T'), TRUE,_("ç¾åœ¨ã®æ™‚åˆ»", "Current time") },
+		{ '~', '~', TRUE, _("ç¾åœ¨ã®çŸ¥è­˜", "Various informations") },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" }
+	},
+
+	{
+		{ '=', '=', TRUE, _("ã‚ªãƒ—ã‚·ãƒ§ãƒ³", "Set options") },
+		{ '@', '@', TRUE, _("ãƒã‚¯ãƒ­", "Interact with macros") },
+		{ 0, 0, FALSE, _("è‡ªå‹•æ‹¾ã„è¨­å®š", "Auto-pickup editor") },
+		{ '%', '%', TRUE, _("ç”»é¢è¡¨ç¤º", "Interact w/ visuals") },
+		{ '&', '&', TRUE, _("ã‚«ãƒ©ãƒ¼", "Interact with colors(&)") },
+		{ '$', '$', TRUE, _("è‡ªå‹•æ‹¾ã„ã‚’ãƒ­ãƒ¼ãƒ‰", "Reload auto-pick pref") },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" },
+		{ 0, 0, FALSE, "" }
+	},
+
+	{
+		{ KTRL('X'), KTRL('X'), TRUE, _("ã‚»ãƒ¼ãƒ–&ä¸­æ–­", "Save and quit") },
+		{ KTRL('S'), KTRL('S'), TRUE, _("ã‚»ãƒ¼ãƒ–", "Save") },
+		{ KTRL('R'), KTRL('R'), TRUE, _("å†æç”»", "Redraw") },
+		{ '?', '?', TRUE, _("ãƒ˜ãƒ«ãƒ—", "Help") },
+		{ ':', ':', TRUE, _("ãƒ¡ãƒ¢", "Take note") },
+		{ ')', ')', TRUE, _("è¨˜å¿µæ’®å½±", "Dump screen dump") },
+		{ '(', '(', TRUE, _("è¨˜å¿µæ’®å½±ã®è¡¨ç¤º", "Load screen dump") },
+		{ 'V', 'V', TRUE, _("ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±", "Version info") },
+		{ 'Q', 'Q', TRUE, _("å¼•é€€ã™ã‚‹", "Quit") },
 		{ 0, 0, FALSE, "" }
 	}
 };
@@ -4067,7 +4067,7 @@ void request_command(int shopping)
 
 			/* Begin the input */
 #ifdef JP
-			prt("²ó¿ô: ", 0, 0);
+			prt("å›æ•°: ", 0, 0);
 #else
 			prt("Count: ", 0, 0);
 #endif
@@ -4087,7 +4087,7 @@ void request_command(int shopping)
 
 					/* Show current count */
 #ifdef JP
-					prt(format("²ó¿ô: %d", command_arg), 0, 0);
+					prt(format("å›æ•°: %d", command_arg), 0, 0);
 #else
 					prt(format("Count: %d", command_arg), 0, 0);
 #endif
@@ -4116,7 +4116,7 @@ void request_command(int shopping)
 
 					/* Show current count */
 #ifdef JP
-					prt(format("²ó¿ô: %d", command_arg), 0, 0);
+					prt(format("å›æ•°: %d", command_arg), 0, 0);
 #else
 					prt(format("Count: %d", command_arg), 0, 0);
 #endif
@@ -4138,7 +4138,7 @@ void request_command(int shopping)
 
 				/* Show current count */
 #ifdef JP
-				prt(format("²ó¿ô: %d", command_arg), 0, 0);
+				prt(format("å›æ•°: %d", command_arg), 0, 0);
 #else
 				prt(format("Count: %d", command_arg), 0, 0);
 #endif
@@ -4153,7 +4153,7 @@ void request_command(int shopping)
 
 				/* Show current count */
 #ifdef JP
-prt(format("²ó¿ô: %d", command_arg), 0, 0);
+prt(format("å›æ•°: %d", command_arg), 0, 0);
 #else
 				prt(format("Count: %d", command_arg), 0, 0);
 #endif
@@ -4165,7 +4165,7 @@ prt(format("²ó¿ô: %d", command_arg), 0, 0);
 			{
 				/* Get a real command */
 #ifdef JP
-				if (!get_com("¥³¥Ş¥ó¥É: ", &cmd))
+				if (!get_com("ã‚³ãƒãƒ³ãƒ‰: ", &cmd))
 #else
 				if (!get_com("Command: ", &cmd))
 #endif
@@ -4186,7 +4186,7 @@ prt(format("²ó¿ô: %d", command_arg), 0, 0);
 		{
 			/* Get a real command */
 #ifdef JP
-			(void)get_com("¥³¥Ş¥ó¥É: ", &cmd);
+			(void)get_com("ã‚³ãƒãƒ³ãƒ‰: ", &cmd);
 #else
 			(void)get_com("Command: ", &cmd);
 #endif
@@ -4315,7 +4315,7 @@ prt(format("²ó¿ô: %d", command_arg), 0, 0);
 			{
 				/* Hack -- Verify command */
 #ifdef JP
-				if (!get_check("ËÜÅö¤Ç¤¹¤«? "))
+				if (!get_check("æœ¬å½“ã§ã™ã‹? "))
 #else
 				if (!get_check("Are you sure? "))
 #endif
@@ -4757,9 +4757,9 @@ void build_gamma_table(int gamma)
 
 
 /*
-*   ÆüËÜ¸ì¤ò´Ş¤àÄ¹¤¤Ê¸»úÎó¤òÅ¬Åö¤Ê°ÌÃÖ¤Ç²ş¹Ô¤·¤Æ¥á¥â¥ê¤Ë½ñ¤­¹ş¤à
-*   Îã: str = "¤¢¤«¤µ¤¿¤Ê abc dddd eeeeeeeee", wlen = 6
-*   ¤Î¤È¤­ tbuf="¤¢¤«¤µ\0¤¿¤Ê\0abc\0dddd\0eeeeee\0eee\0\0"
+*   æ—¥æœ¬èªã‚’å«ã‚€é•·ã„æ–‡å­—åˆ—ã‚’é©å½“ãªä½ç½®ã§æ”¹è¡Œã—ã¦ãƒ¡ãƒ¢ãƒªã«æ›¸ãè¾¼ã‚€
+*   ä¾‹: str = "ã‚ã‹ã•ãŸãª abc dddd eeeeeeeee", wlen = 6
+*   ã®ã¨ã tbuf="ã‚ã‹ã•\0ãŸãª\0abc\0dddd\0eeeeee\0eee\0\0"
 */
 void roff_to_buf(cptr str, int maxlen, char *tbuf, size_t bufsize)
 {
@@ -4789,10 +4789,10 @@ void roff_to_buf(cptr str, int maxlen, char *tbuf, size_t bufsize)
 			ch[1] = str[read_pt+1];
 			ch_len = 2;
 			
-			if (strcmp(ch, "¡£") == 0 ||
-				strcmp(ch, "¡¢") == 0 ||
-				strcmp(ch, "¥£") == 0 ||
-				strcmp(ch, "¡¼") == 0)
+			if (strcmp(ch, "ã€‚") == 0 ||
+				strcmp(ch, "ã€") == 0 ||
+				strcmp(ch, "ã‚£") == 0 ||
+				strcmp(ch, "ãƒ¼") == 0)
 				kinsoku = TRUE;
 		}
 		else if (!isprint(ch[0]))

@@ -1,4 +1,4 @@
-/* File: artifact.c */
+ï»¿/* File: artifact.c */
 
 /* Purpose: Artifact code */
 
@@ -1530,7 +1530,7 @@ bool create_artifact(object_type *o_ptr, bool a_scroll)
 		(void)identify_fully_aux(o_ptr, TRUE);
 		o_ptr->ident |= IDENT_STORE; /* This will be used later on... */
 #ifdef JP
-		if (!(get_string("¤³¤Î¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¤ò²¿¤ÈÌ¾ÉÕ¤±¤Ş¤¹¤«¡©", dummy_name, 80)))
+		if (!(get_string("ã“ã®ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆã‚’ä½•ã¨åä»˜ã‘ã¾ã™ã‹ï¼Ÿ", dummy_name, 80)))
 #else
 		if (!(get_string("What do you want to call the artifact? ", dummy_name, 80)))
 #endif
@@ -1540,13 +1540,13 @@ bool create_artifact(object_type *o_ptr, bool a_scroll)
 		else
 		{
 #ifdef JP
-			strcpy(new_name, "¡Ô");
+			strcpy(new_name, "ã€Š");
 #else
 			strcpy(new_name, "'");
 #endif
 			strcat(new_name, dummy_name);
 #ifdef JP
-			strcat(new_name, "¡Õ¤È¤¤¤¦Ì¾¤Î");
+			strcat(new_name, "ã€‹ã¨ã„ã†åã®");
 #else
 			strcat(new_name, "'");
 #endif
@@ -1567,13 +1567,13 @@ bool create_artifact(object_type *o_ptr, bool a_scroll)
 	{
 		if (artifact_bias)
 #ifdef JP
-			msg_format("±¿¤ÎÊĞ¤Ã¤¿¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È: %d¡£", artifact_bias);
+			msg_format("é‹ã®åã£ãŸã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆ: %dã€‚", artifact_bias);
 #else
 			msg_format("Biased artifact: %d.", artifact_bias);
 #endif
 		else
 #ifdef JP
-			msg_print("¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¤Ë±¿¤ÎÊĞ¤ê¤Ê¤·¡£");
+			msg_print("ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆã«é‹ã®åã‚Šãªã—ã€‚");
 #else
 			msg_print("No bias in artifact.");
 #endif
@@ -1826,7 +1826,7 @@ bool activate_random_artifact(object_type * o_ptr)
 		}
 		case ACT_TERROR:
 		{
-			msg_print(_("¤ª¤É¤í¤ª¤É¤í¤·¤¤²»¤¬ÌÄ¤êÅÏ¤Ã¤¿...",
+			msg_print(_("ãŠã©ã‚ãŠã©ã‚ã—ã„éŸ³ãŒé³´ã‚Šæ¸¡ã£ãŸ...",
 				"You blow a mighty blast; your enemies tremble!"));
 			turn_monsters(40 + p_ptr->lev);
 			break;
@@ -1904,7 +1904,7 @@ bool activate_random_artifact(object_type * o_ptr)
 			{
 				p_ptr->csp = p_ptr->msp;
 				p_ptr->csp_frac = 0;
-				msg_print(_("Æ¬¤¬¥Ï¥Ã¥­¥ê¤È¤·¤¿¡£", "You feel your head clear."));
+				msg_print(_("é ­ãŒãƒãƒƒã‚­ãƒªã¨ã—ãŸã€‚", "You feel your head clear."));
 				p_ptr->redraw |= (PR_MANA);
 				p_ptr->window |= (PW_PLAYER);
 				p_ptr->window |= (PW_SPELL);
@@ -2017,7 +2017,7 @@ bool activate_random_artifact(object_type * o_ptr)
 			monster_race *r_ptr;
 			int i;
 
-			msg_print(_("´ñÌ¯¤Ê¾ì½ê¤¬Æ¬¤ÎÃæ¤ËÉâ¤«¤ó¤À¡¥¡¥¡¥",
+			msg_print(_("å¥‡å¦™ãªå ´æ‰€ãŒé ­ã®ä¸­ã«æµ®ã‹ã‚“ã ï¼ï¼ï¼",
 				"Some strange places show up in your mind. And you see ..."));
 
 			/* Process the monsters (backwards) */
@@ -2033,7 +2033,7 @@ bool activate_random_artifact(object_type * o_ptr)
 					
 				if(r_ptr->flags1 & RF1_UNIQUE)
 				{
-					msg_format(_("%s¡¥ ", "%s. "), r_name + r_ptr->name);
+					msg_format(_("%sï¼ ", "%s. "), r_name + r_ptr->name);
 				}
 			}
 			break;
@@ -2105,7 +2105,7 @@ bool activate_random_artifact(object_type * o_ptr)
 		}
 		case ACT_DIM_DOOR:
 		{
-			msg_print(_("¼¡¸µ¤ÎÈâ¤¬³«¤¤¤¿¡£ÌÜÅªÃÏ¤òÁª¤ó¤Ç²¼¤µ¤¤¡£",
+			msg_print(_("æ¬¡å…ƒã®æ‰‰ãŒé–‹ã„ãŸã€‚ç›®çš„åœ°ã‚’é¸ã‚“ã§ä¸‹ã•ã„ã€‚",
 				"You open a dimensional gate. Choose a destination."));
 			if (!dimension_door()) return FALSE;
 			break;
@@ -2114,7 +2114,7 @@ bool activate_random_artifact(object_type * o_ptr)
 		{
 			if (ironman_downward)
 			{
-				msg_print(_("¤½¤ì¤Ï°ì½Öµ±¤¤¤¿¤¬¤¹¤°¸µ¤ËÌá¤Ã¤¿¡£", "It glows and then fades."));
+				msg_print(_("ãã‚Œã¯ä¸€ç¬è¼ã„ãŸãŒã™ãå…ƒã«æˆ»ã£ãŸã€‚", "It glows and then fades."));
 				return FALSE;
 			}
 			else
@@ -2126,16 +2126,16 @@ bool activate_random_artifact(object_type * o_ptr)
 		case ACT_ARKENSTONE:
 		{
 #ifdef JP
-			msg_print("¥¢¡¼¥±¥óÀĞ¤Ï¤¢¤Ê¤¿¤ÎÂÎÎÏ¤òÃ¥¤Ã¤¿...");
-			take_hit(damroll(3,8), "¥¹¥é¥¤¥ó¤Î¥¢¡¼¥±¥óÀĞ");
-			msg_print("¥¢¡¼¥±¥óÀĞ¤ÏÀÖ¤¯ÌÀ¤ë¤¯¸÷¤Ã¤¿¡ª");
+			msg_print("ã‚¢ãƒ¼ã‚±ãƒ³çŸ³ã¯ã‚ãªãŸã®ä½“åŠ›ã‚’å¥ªã£ãŸ...");
+			take_hit(damroll(3,8), "ã‚¹ãƒ©ã‚¤ãƒ³ã®ã‚¢ãƒ¼ã‚±ãƒ³çŸ³");
+			msg_print("ã‚¢ãƒ¼ã‚±ãƒ³çŸ³ã¯èµ¤ãæ˜ã‚‹ãå…‰ã£ãŸï¼");
 #else
 			msg_print("The Arkenstone drains your vitality...");
 			take_hit(damroll(3, 8), "the Arkenstone of Thrain");
 			msg_print("The Arkenstone flashes bright red!");
 #endif
 			wiz_lite();
-			if (get_check(_("µ¢´Ô¤ÎÎÏ¤ò»È¤¤¤Ş¤¹¤«¡©", "Activate recall? ")))
+			if (get_check(_("å¸°é‚„ã®åŠ›ã‚’ä½¿ã„ã¾ã™ã‹ï¼Ÿ", "Activate recall? ")))
 			{
 				word_of_recall();
 			}
@@ -2309,7 +2309,7 @@ void create_named_ego(object_type *o_ptr)
 				break;
 			default:
 #ifdef JP
-				if (wizard) msg_print("ÌÃÉÕ¥¨¥´¤ÎÇ½ÎÏÄÉ²Ã¤ÇÉÔÀµ¤¬È¯À¸¤·¤Ş¤·¤¿¡ª");
+				if (wizard) msg_print("éŠ˜ä»˜ã‚¨ã‚´ã®èƒ½åŠ›è¿½åŠ ã§ä¸æ­£ãŒç™ºç”Ÿã—ã¾ã—ãŸï¼");
 #else
 				if (wizard) msg_print("Switch error in create_named_ego!");
 #endif

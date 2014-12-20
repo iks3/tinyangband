@@ -1,4 +1,4 @@
-/* File: z-util.c */
+﻿/* File: z-util.c */
 
 /* Purpose: Low level utilities -BEN- */
 

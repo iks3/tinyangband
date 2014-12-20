@@ -5,17 +5,17 @@
           Based on Moria:    Copyright (c) 1985 Robert Alan Koeneke
               and Umoria:    Copyright (c) 1989 James E. Wilson
        Angband 2.7 - 2.9:    Ben Harrison (benh@phial.com)
-            ÆüËÜ¸ìÈÇ 1.2:    ¤·¤È¤·¤ó, sayu, FIRST, TeO
+            æ—¥æœ¬èªç‰ˆ 1.2:    ã—ã¨ã—ã‚“, sayu, FIRST, TeO
        Old ZAngband code:    (Mr) Topi Ylinen < f1toyl@uta.fi >
        New ZAngband code:    Robert Ruehlmann < rr9@angband.org >
     ZAngband 2.3.0 - ???:    The ZAngband DevTeam
-       ZAngband ÆüËÜ¸ìÈÇ:    ÈÄÁÒ½¼ÍÎ < m-itakura@geocities.co.jp >
-                ÊÑ¶òÈÚÅÜ:    Mr.hoge <combat-echizen¡÷geocities.co.jp>
+       ZAngband æ—¥æœ¬èªç‰ˆ:    æ¿å€‰å……æ´‹ < m-itakura@geocities.co.jp >
+                å¤‰æ„šè›®æ€’:    Mr.hoge <combat-echizenï¼ geocities.co.jp>
                 XAngband:    XAngband DevTeam
              TinyAngband:    XAngband DevTeam
 
                   URL: http://xangband.sourceforge.jp/tiny/
                   BBS: http://jbbs.livedoor.jp/game/16689/
 
-         TinyAngband ¤Ï UNIX/X11, Windows,(Macintosh) ¤ÇÆ°ºî¤·¤Æ¤¤¤Ş¤¹¡£
-            ¥Ğ¥°¾ğÊó¤Ê¤É¤Ï¾åµ­URL¤Ë¤¢¤ë·Ç¼¨ÈÄ¤â¤·¤¯¤Ï¤Ø¤ª´ê¤¤¤·¤Ş¤¹¡£
+         TinyAngband ã¯ UNIX/X11, Windows,(Macintosh) ã§å‹•ä½œã—ã¦ã„ã¾ã™ã€‚
+            ãƒã‚°æƒ…å ±ãªã©ã¯ä¸Šè¨˜URLã«ã‚ã‚‹æ²ç¤ºæ¿ã‚‚ã—ãã¯ã¸ãŠé¡˜ã„ã—ã¾ã™ã€‚

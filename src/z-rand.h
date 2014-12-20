@@ -1,4 +1,4 @@
-/* File: z-rand.h */
+﻿/* File: z-rand.h */
 
 #ifndef INCLUDED_Z_RAND_H
 #define INCLUDED_Z_RAND_H

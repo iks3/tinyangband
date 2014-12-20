@@ -1,4 +1,4 @@
-/* File: spells1.c */
+ï»¿/* File: spells1.c */
 
 /* Purpose: Spell projection */
 
@@ -595,7 +595,7 @@ static bool project_f(int who, int r, int y, int x, int dam, int typ)
 				if (known)
 				{
 #ifdef JP
-msg_print("¤Ş¤Ğ¤æ¤¤Á®¸÷¤¬Áö¤Ã¤¿¡ª");
+msg_print("ã¾ã°ã‚†ã„é–ƒå…‰ãŒèµ°ã£ãŸï¼");
 #else
 					msg_print("There is a bright flash of light!");
 #endif
@@ -621,7 +621,7 @@ msg_print("¤Ş¤Ğ¤æ¤¤Á®¸÷¤¬Áö¤Ã¤¿¡ª");
 				if (known)
 				{
 #ifdef JP
-msg_print("¥«¥Á¥Ã¤È²»¤¬¤·¤¿¡ª");
+msg_print("ã‚«ãƒãƒƒã¨éŸ³ãŒã—ãŸï¼");
 #else
 					msg_print("Click!");
 #endif
@@ -660,7 +660,7 @@ msg_print("¥«¥Á¥Ã¤È²»¤¬¤·¤¿¡ª");
 				{
 					/* Message */
 #ifdef JP
-msg_print("¤Ş¤Ğ¤æ¤¤Á®¸÷¤¬Áö¤Ã¤¿¡ª");
+msg_print("ã¾ã°ã‚†ã„é–ƒå…‰ãŒèµ°ã£ãŸï¼");
 #else
 					msg_print("There is a bright flash of light!");
 #endif
@@ -713,7 +713,7 @@ msg_print("¤Ş¤Ğ¤æ¤¤Á®¸÷¤¬Áö¤Ã¤¿¡ª");
 				{
 					/* Message */
 #ifdef JP
-msg_print("²¿¤«¤¬¤Ä¤Ã¤«¤¨¤Æ¥É¥¢¤¬³«¤«¤Ê¤¤¡£");
+msg_print("ä½•ã‹ãŒã¤ã£ã‹ãˆã¦ãƒ‰ã‚¢ãŒé–‹ã‹ãªã„ã€‚");
 #else
 					msg_print("The door seems stuck.");
 #endif
@@ -740,7 +740,7 @@ msg_print("²¿¤«¤¬¤Ä¤Ã¤«¤¨¤Æ¥É¥¢¤¬³«¤«¤Ê¤¤¡£");
 				if (known && (c_ptr->info & (CAVE_MARK)))
 				{
 #ifdef JP
-					msg_print("ÊÉ¤¬ÍÏ¤±¤ÆÅ¥¤Ë¤Ê¤Ã¤¿¡ª");
+					msg_print("å£ãŒæº¶ã‘ã¦æ³¥ã«ãªã£ãŸï¼");
 #else
 					msg_print("The wall turns into mud!");
 #endif
@@ -761,8 +761,8 @@ msg_print("²¿¤«¤¬¤Ä¤Ã¤«¤¨¤Æ¥É¥¢¤¬³«¤«¤Ê¤¤¡£");
 				if (known && (c_ptr->info & (CAVE_MARK)))
 				{
 #ifdef JP
-					msg_print("¹ÛÌ®¤¬ÍÏ¤±¤ÆÅ¥¤Ë¤Ê¤Ã¤¿¡ª");
-					msg_print("²¿¤«¤òÈ¯¸«¤·¤¿¡ª");
+					msg_print("é‰±è„ˆãŒæº¶ã‘ã¦æ³¥ã«ãªã£ãŸï¼");
+					msg_print("ä½•ã‹ã‚’ç™ºè¦‹ã—ãŸï¼");
 #else
 					msg_print("The vein turns into mud!");
 					msg_print("You have found something!");
@@ -787,7 +787,7 @@ msg_print("²¿¤«¤¬¤Ä¤Ã¤«¤¨¤Æ¥É¥¢¤¬³«¤«¤Ê¤¤¡£");
 				if (known && (c_ptr->info & (CAVE_MARK)))
 				{
 #ifdef JP
-					msg_print("¹ÛÌ®¤¬ÍÏ¤±¤ÆÅ¥¤Ë¤Ê¤Ã¤¿¡ª");
+					msg_print("é‰±è„ˆãŒæº¶ã‘ã¦æ³¥ã«ãªã£ãŸï¼");
 #else
 					msg_print("The vein turns into mud!");
 #endif
@@ -810,7 +810,7 @@ msg_print("²¿¤«¤¬¤Ä¤Ã¤«¤¨¤Æ¥É¥¢¤¬³«¤«¤Ê¤¤¡£");
 				if (known && (c_ptr->info & (CAVE_MARK)))
 				{
 #ifdef JP
-					msg_print("´äÀĞ¤¬ÍÏ¤±¤ÆÅ¥¤Ë¤Ê¤Ã¤¿¡ª");
+					msg_print("å²©çŸ³ãŒæº¶ã‘ã¦æ³¥ã«ãªã£ãŸï¼");
 #else
 					msg_print("The rubble turns into mud!");
 #endif
@@ -830,7 +830,7 @@ msg_print("²¿¤«¤¬¤Ä¤Ã¤«¤¨¤Æ¥É¥¢¤¬³«¤«¤Ê¤¤¡£");
 					if (player_can_see_bold(y, x))
 					{
 #ifdef JP
-						msg_print("´äÀĞ¤Î²¼¤Ë²¿¤«±£¤µ¤ì¤Æ¤¤¤¿¡ª");
+						msg_print("å²©çŸ³ã®ä¸‹ã«ä½•ã‹éš ã•ã‚Œã¦ã„ãŸï¼");
 #else
 						msg_print("There was something buried in the rubble!");
 #endif
@@ -849,7 +849,7 @@ msg_print("²¿¤«¤¬¤Ä¤Ã¤«¤¨¤Æ¥É¥¢¤¬³«¤«¤Ê¤¤¡£");
 				if (known && (c_ptr->info & (CAVE_MARK)))
 				{
 #ifdef JP
-					msg_print("¥É¥¢¤¬ÍÏ¤±¤ÆÅ¥¤Ë¤Ê¤Ã¤¿¡ª");
+					msg_print("ãƒ‰ã‚¢ãŒæº¶ã‘ã¦æ³¥ã«ãªã£ãŸï¼");
 #else
 					msg_print("The door turns into mud!");
 #endif
@@ -999,7 +999,7 @@ msg_print("²¿¤«¤¬¤Ä¤Ã¤«¤¨¤Æ¥É¥¢¤¬³«¤«¤Ê¤¤¡£");
 				if (known && (c_ptr->info & (CAVE_MARK)))
 				{
 #ifdef JP
-					msg_print("´äÀĞ¤¬Æğ¤é¤«¤¯¤Ê¤Ã¤¿¡ª");
+					msg_print("å²©çŸ³ãŒè»Ÿã‚‰ã‹ããªã£ãŸï¼");
 #else
 					if (c_ptr->feat == FEAT_RUBBLE)
 						msg_print("The rubble becomes soft!");
@@ -1115,7 +1115,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 				{
 					do_kill = TRUE;
 #ifdef JP
-					note_kill = "Í»¤±¤Æ¤·¤Ş¤Ã¤¿¡ª";
+					note_kill = "èã‘ã¦ã—ã¾ã£ãŸï¼";
 #else
 					note_kill = (plural ? " melt!" : " melts!");
 #endif
@@ -1132,7 +1132,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 				{
 					do_kill = TRUE;
 #ifdef JP
-					note_kill = "²õ¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª";
+					note_kill = "å£Šã‚Œã¦ã—ã¾ã£ãŸï¼";
 #else
 					note_kill = (plural ? " are destroyed!" : " is destroyed!");
 #endif
@@ -1149,7 +1149,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 				{
 					do_kill = TRUE;
 #ifdef JP
-					note_kill = "Ç³¤¨¤Æ¤·¤Ş¤Ã¤¿¡ª";
+					note_kill = "ç‡ƒãˆã¦ã—ã¾ã£ãŸï¼";
 #else
 					note_kill = (plural ? " burn up!" : " burns up!");
 #endif
@@ -1166,7 +1166,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 				{
 					do_kill = TRUE;
 #ifdef JP
-					note_kill = "ºÕ¤±»¶¤Ã¤Æ¤·¤Ş¤Ã¤¿¡ª";
+					note_kill = "ç •ã‘æ•£ã£ã¦ã—ã¾ã£ãŸï¼";
 #else
 					note_kill = (plural ? " shatter!" : " shatters!");
 #endif
@@ -1183,7 +1183,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 				{
 					do_kill = TRUE;
 #ifdef JP
-					note_kill = "Ç³¤¨¤Æ¤·¤Ş¤Ã¤¿¡ª";
+					note_kill = "ç‡ƒãˆã¦ã—ã¾ã£ãŸï¼";
 #else
 					note_kill = (plural ? " burn up!" : " burns up!");
 #endif
@@ -1195,7 +1195,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 					ignore = FALSE;
 					do_kill = TRUE;
 #ifdef JP
-					note_kill = "²õ¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª";
+					note_kill = "å£Šã‚Œã¦ã—ã¾ã£ãŸï¼";
 #else
 					note_kill = (plural ? " are destroyed!" : " is destroyed!");
 #endif
@@ -1212,7 +1212,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 				{
 					do_kill = TRUE;
 #ifdef JP
-					note_kill = "Ç³¤¨¤Æ¤·¤Ş¤Ã¤¿¡ª";
+					note_kill = "ç‡ƒãˆã¦ã—ã¾ã£ãŸï¼";
 #else
 					note_kill = (plural ? " burn up!" : " burns up!");
 #endif
@@ -1224,7 +1224,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 					ignore = FALSE;
 					do_kill = TRUE;
 #ifdef JP
-					note_kill = "ºÕ¤±»¶¤Ã¤Æ¤·¤Ş¤Ã¤¿¡ª";
+					note_kill = "ç •ã‘æ•£ã£ã¦ã—ã¾ã£ãŸï¼";
 #else
 					note_kill = (plural ? " shatter!" : " shatters!");
 #endif
@@ -1244,7 +1244,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 				{
 					do_kill = TRUE;
 #ifdef JP
-					note_kill = "ºÕ¤±»¶¤Ã¤Æ¤·¤Ş¤Ã¤¿¡ª";
+					note_kill = "ç •ã‘æ•£ã£ã¦ã—ã¾ã£ãŸï¼";
 #else
 					note_kill = (plural ? " shatter!" : " shatters!");
 #endif
@@ -1258,7 +1258,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 			{
 				do_kill = TRUE;
 #ifdef JP
-				note_kill = "²õ¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª";
+				note_kill = "å£Šã‚Œã¦ã—ã¾ã£ãŸï¼";
 #else
 				note_kill = (plural ? " are destroyed!" : " is destroyed!");
 #endif
@@ -1270,7 +1270,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 			{
 				do_kill = TRUE;
 #ifdef JP
-				note_kill = "¾øÈ¯¤·¤Æ¤·¤Ş¤Ã¤¿¡ª";
+				note_kill = "è’¸ç™ºã—ã¦ã—ã¾ã£ãŸï¼";
 #else
 				note_kill = (plural ? " evaporate!" : " evaporates!");
 #endif
@@ -1282,7 +1282,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 			{
 				do_kill = TRUE;
 #ifdef JP
-				note_kill = "²õ¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª";
+				note_kill = "å£Šã‚Œã¦ã—ã¾ã£ãŸï¼";
 #else
 				note_kill = (plural ? " are destroyed!" : " is destroyed!");
 #endif
@@ -1299,7 +1299,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 				{
 					do_kill = TRUE;
 #ifdef JP
-					note_kill = "²õ¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª";
+					note_kill = "å£Šã‚Œã¦ã—ã¾ã£ãŸï¼";
 #else
 					note_kill = (plural ? " are destroyed!" : " is destroyed!");
 #endif
@@ -1328,7 +1328,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 						if (known && (o_ptr->marked & OM_FOUND))
 						{
 #ifdef JP
-							msg_print("¥«¥Á¥Ã¤È²»¤¬¤·¤¿¡ª");
+							msg_print("ã‚«ãƒãƒƒã¨éŸ³ãŒã—ãŸï¼");
 #else
 							msg_print("Click!");
 #endif
@@ -1412,7 +1412,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 					if (known)
 					{
 #ifdef JP
-						msg_print("Áü¤¬³èÎÏ¤òÂÓ¤Ó¤¿¤è¤¦¤Êµ¤¤¬¤·¤¿¡£");
+						msg_print("åƒãŒæ´»åŠ›ã‚’å¸¯ã³ãŸã‚ˆã†ãªæ°—ãŒã—ãŸã€‚");
 #else
 						msg_print("You feel life energy pour into the statue.");
 #endif
@@ -1420,7 +1420,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 						if (!success)
 						{
 #ifdef JP
-							msg_print("¡Ä¡Ä¤·¤«¤·¡¢Áü¤Ï´°Á´¤ËÍÏ¤±¤Æ¤·¤Ş¤Ã¤¿¡ª");
+							msg_print("â€¦â€¦ã—ã‹ã—ã€åƒã¯å®Œå…¨ã«æº¶ã‘ã¦ã—ã¾ã£ãŸï¼");
 #else
 							msg_print("... but the statue has melted completely!");
 #endif
@@ -1450,7 +1450,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 				if (known && (o_ptr->marked & OM_FOUND))
 				{
 #ifdef JP
-					msg_format("%s¤Ï±Æ¶Á¤ò¼õ¤±¤Ê¤¤¡ª",
+					msg_format("%sã¯å½±éŸ¿ã‚’å—ã‘ãªã„ï¼",
 							o_name);
 #else
 					msg_format("The %s %s unaffected!",
@@ -1466,7 +1466,7 @@ static bool project_o(int who, int r, int y, int x, int dam, int typ)
 				if (known && (o_ptr->marked & OM_FOUND) && note_kill)
 				{
 #ifdef JP
-					msg_format("%s¤Ï%s", o_name, note_kill);
+					msg_format("%sã¯%s", o_name, note_kill);
 #else
 					msg_format("The %s%s", o_name, note_kill);
 #endif
@@ -1607,7 +1607,7 @@ static bool project_m(int who, int r, int y, int x, int dam, int typ, int flg)
 
 	/* Assume a default death */
 #ifdef JP
-cptr note_dies = "¤Ï»à¤ó¤À¡£";
+cptr note_dies = "ã¯æ­»ã‚“ã ã€‚";
 #else
 	cptr note_dies = " dies.";
 #endif
@@ -1636,7 +1636,7 @@ cptr note_dies = "¤Ï»à¤ó¤À¡£";
 	{
 		/* Special note at death */
 #ifdef JP
-note_dies = "¤òÅİ¤·¤¿¡£";
+note_dies = "ã‚’å€’ã—ãŸã€‚";
 #else
 		note_dies = " is destroyed.";
 #endif
@@ -1660,7 +1660,7 @@ note_dies = "¤òÅİ¤·¤¿¡£";
 			if (r_ptr->flags3 & (RF3_IM_ACID))
 			{
 #ifdef JP
-note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯ã‹ãªã‚Šè€æ€§ãŒã‚ã‚‹ï¼";
 #else
 				note = " resists a lot.";
 #endif
@@ -1678,7 +1678,7 @@ note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡ª";
 			if (r_ptr->flags3 & (RF3_IM_ELEC))
 			{
 #ifdef JP
-note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯ã‹ãªã‚Šè€æ€§ãŒã‚ã‚‹ï¼";
 #else
 				note = " resists a lot.";
 #endif
@@ -1696,7 +1696,7 @@ note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡ª";
 			if (r_ptr->flags3 & (RF3_IM_FIRE))
 			{
 #ifdef JP
-note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯ã‹ãªã‚Šè€æ€§ãŒã‚ã‚‹ï¼";
 #else
 				note = " resists a lot.";
 #endif
@@ -1714,7 +1714,7 @@ note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡ª";
 			if (r_ptr->flags3 & (RF3_IM_COLD))
 			{
 #ifdef JP
-note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯ã‹ãªã‚Šè€æ€§ãŒã‚ã‚‹ï¼";
 #else
 				note = " resists a lot.";
 #endif
@@ -1732,7 +1732,7 @@ note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡ª";
 			if (r_ptr->flags3 & RF3_IM_POIS)
 			{
 #ifdef JP
-note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯ã‹ãªã‚Šè€æ€§ãŒã‚ã‚‹ï¼";
 #else
 				note = " resists a lot.";
 #endif
@@ -1751,7 +1751,7 @@ note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡ª";
 			if (r_ptr->flags3 & RF3_IM_POIS)
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -1771,7 +1771,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			{
 				dam *= 2;
 #ifdef JP
-				note = "¤Ï¤Ò¤É¤¤ÄË¼ê¤ò¼õ¤±¤¿¡£";
+				note = "ã¯ã²ã©ã„ç—›æ‰‹ã‚’å—ã‘ãŸã€‚";
 #else
 				note = " is hit hard.";
 #endif
@@ -1788,7 +1788,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			{
 				dam = 0;
 #ifdef JP
-				note = "¤Ë¤Ï´°Á´¤ÊÂÑÀ­¤¬¤¢¤ë¡£";
+				note = "ã«ã¯å®Œå…¨ãªè€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " is immune.";
 #endif
@@ -1798,7 +1798,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			{
 				dam *= 2;
 #ifdef JP
-				note = "¤Ï¤Ò¤É¤¤ÄË¼ê¤ò¼õ¤±¤¿¡£";
+				note = "ã¯ã²ã©ã„ç—›æ‰‹ã‚’å—ã‘ãŸã€‚";
 #else
 				note = " is hit hard.";
 #endif
@@ -1807,7 +1807,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			else
 			{
 #ifdef JP
-				note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+				note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -1830,7 +1830,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			if (r_ptr->flags3 & RF3_RES_PLAS)
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -1849,7 +1849,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			if (r_ptr->flags3 & RF3_UNDEAD)
 			{
 #ifdef JP
-note = "¤Ë¤Ï´°Á´¤ÊÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯å®Œå…¨ãªè€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " is immune.";
 #endif
@@ -1860,7 +1860,7 @@ note = "¤Ë¤Ï´°Á´¤ÊÂÑÀ­¤¬¤¢¤ë¡£";
 			else if (r_ptr->flags3 & RF3_RES_NETH)
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -1873,7 +1873,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			{
 				dam /= 2;
 #ifdef JP
-note = "¤Ï¤¤¤¯¤é¤«ÂÑÀ­¤ò¼¨¤·¤¿¡£";
+note = "ã¯ã„ãã‚‰ã‹è€æ€§ã‚’ç¤ºã—ãŸã€‚";
 #else
 				note = " resists somewhat.";
 #endif
@@ -1892,7 +1892,7 @@ note = "¤Ï¤¤¤¯¤é¤«ÂÑÀ­¤ò¼¨¤·¤¿¡£";
 
 			{
 #ifdef JP
-				note = "¤Ë¤Ï´°Á´¤ÊÂÑÀ­¤¬¤¢¤ë¡£";
+				note = "ã«ã¯å®Œå…¨ãªè€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " is immune.";
 #endif
@@ -1903,7 +1903,7 @@ note = "¤Ï¤¤¤¯¤é¤«ÂÑÀ­¤ò¼¨¤·¤¿¡£";
 			if (r_ptr->flags3 & RF3_RES_WATE)
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -1924,7 +1924,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			   ((r_ptr->flags3 & RF3_DEMON) && (randint1(3) == 1)))
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -1942,7 +1942,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			if (r_ptr->flags4 & RF4_BR_SHAR)
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -1960,7 +1960,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			if (r_ptr->flags4 & RF4_BR_SHAR)
 			{
 #ifdef JP
-note = "¤Ï¤¤¤¯¤é¤«ÂÑÀ­¤ò¼¨¤·¤¿¡£";
+note = "ã¯ã„ãã‚‰ã‹è€æ€§ã‚’ç¤ºã—ãŸã€‚";
 #else
 				note = " resists somewhat.";
 #endif
@@ -1979,7 +1979,7 @@ note = "¤Ï¤¤¤¯¤é¤«ÂÑÀ­¤ò¼¨¤·¤¿¡£";
 			if (r_ptr->flags4 & RF4_BR_SOUN)
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -1997,7 +1997,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			if (r_ptr->flags4 & RF4_BR_CONF)
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -2007,7 +2007,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			else if (r_ptr->flags3 & RF3_NO_CONF)
 			{
 #ifdef JP
-note = "¤Ï¤¤¤¯¤é¤«ÂÑÀ­¤ò¼¨¤·¤¿¡£";
+note = "ã¯ã„ãã‚‰ã‹è€æ€§ã‚’ç¤ºã—ãŸã€‚";
 #else
 				note = " resists somewhat.";
 #endif
@@ -2024,7 +2024,7 @@ note = "¤Ï¤¤¤¯¤é¤«ÂÑÀ­¤ò¼¨¤·¤¿¡£";
 			if (r_ptr->flags3 & RF3_RES_DISE)
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -2042,7 +2042,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			if (r_ptr->flags3 & RF3_RES_NEXU)
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -2061,7 +2061,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			if (r_ptr->flags4 & RF4_BR_WALL)
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -2078,7 +2078,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			if (r_ptr->flags4 & (RF4_BR_INER))
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -2099,7 +2099,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 					if (!m_ptr->slowed)
 					{
 #ifdef JP
-						note = "¤ÎÆ°¤­¤¬ÃÙ¤¯¤Ê¤Ã¤¿¡£";
+						note = "ã®å‹•ããŒé…ããªã£ãŸã€‚";
 #else
 						note = " starts moving slower.";
 #endif
@@ -2117,7 +2117,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 			if (r_ptr->flags4 & (RF4_BR_TIME))
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -2140,7 +2140,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 				{
 					if (seen) r_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚";
 #else
 					note = " is unaffected!";
 #endif
@@ -2151,7 +2151,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
 				{
 					if (seen) r_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ï¼";
 #else
 					note = " resists!";
 #endif
@@ -2166,7 +2166,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
 			if (r_ptr->flags4 & (RF4_BR_GRAV))
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -2189,7 +2189,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 					if (!m_ptr->slowed)
 					{
 #ifdef JP
-						note = "¤ÎÆ°¤­¤¬ÃÙ¤¯¤Ê¤Ã¤¿¡£";
+						note = "ã®å‹•ããŒé…ããªã£ãŸã€‚";
 #else
 						note = " starts moving slower.";
 #endif
@@ -2208,7 +2208,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 					do_stun = 0;
 					/* No obvious effect */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚";
 #else
 					note = " is unaffected!";
 #endif
@@ -2235,8 +2235,8 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
 			{
 				if (seen) r_ptr->r_flags3 |= (RF3_HURT_ROCK);
 #ifdef JP
-				note = "¤ÎÈéÉæ¤¬¤¿¤À¤ì¤¿¡ª";
-				note_dies = "¤Ï¾øÈ¯¤·¤¿¡ª";
+				note = "ã®çš®è†šãŒãŸã ã‚ŒãŸï¼";
+				note_dies = "ã¯è’¸ç™ºã—ãŸï¼";
 #else
 				note = " loses some skin!";
 				note_dies = " evaporates!";
@@ -2249,7 +2249,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
 				if (randint0(r_ptr->level + 10) > randint0(p_ptr->lev))
 				{
 #ifdef JP
-					note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+					note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 					note = " resists.";
 #endif
@@ -2269,7 +2269,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
 			{
 				dam = 0;
 #ifdef JP
-note = "¤Ï¤¢¤Ê¤¿¤¬¸«¤¨¤Ê¤¤¤Î¤Ç±Æ¶Á¤µ¤ì¤Ê¤¤¡ª";
+note = "ã¯ã‚ãªãŸãŒè¦‹ãˆãªã„ã®ã§å½±éŸ¿ã•ã‚Œãªã„ï¼";
 #else
 				note = " can't see you, and isn't affected!";
 #endif
@@ -2280,7 +2280,7 @@ note = "¤Ï¤¢¤Ê¤¿¤¬¸«¤¨¤Ê¤¤¤Î¤Ç±Æ¶Á¤µ¤ì¤Ê¤¤¡ª";
 			{
 				dam = 0;
 #ifdef JP
-note = "¤Ë¤Ï´°Á´¤ÊÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯å®Œå…¨ãªè€æ€§ãŒã‚ã‚‹ï¼";
 #else
 				note = " is immune!";
 #endif
@@ -2296,7 +2296,7 @@ note = "¤Ë¤Ï´°Á´¤ÊÂÑÀ­¤¬¤¢¤ë¡ª";
 			{
 				dam /= 3;
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -2313,7 +2313,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 				{
 					note = NULL;
 #ifdef JP
-msg_format("%^s¤ÎÂÄÍî¤·¤¿Àº¿À¤Ï¹¶·â¤òÄ·¤ÍÊÖ¤·¤¿¡ª",
+msg_format("%^sã®å •è½ã—ãŸç²¾ç¥ã¯æ”»æ’ƒã‚’è·³ã­è¿”ã—ãŸï¼",
     m_name);
 #else
 					msg_format("%^s%s corrupted mind backlashes your attack!",
@@ -2324,7 +2324,7 @@ msg_format("%^s¤ÎÂÄÍî¤·¤¿Àº¿À¤Ï¹¶·â¤òÄ·¤ÍÊÖ¤·¤¿¡ª",
 					if (randint0(100) < p_ptr->skill_sav)
 					{
 #ifdef JP
-msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 						msg_print("You resist the effects!");
 #endif
@@ -2349,7 +2349,7 @@ msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
 								{
 									if (r_ptr->flags3 & RF3_NO_FEAR)
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚";
 #else
 										note = " is unaffected.";
 #endif
@@ -2384,7 +2384,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
 						break;
 					default:
 #ifdef JP
-note = "¤ÏÌ²¤ê¹ş¤ó¤Ç¤·¤Ş¤Ã¤¿¡ª";
+note = "ã¯çœ ã‚Šè¾¼ã‚“ã§ã—ã¾ã£ãŸï¼";
 #else
 						note = " falls asleep!";
 #endif
@@ -2395,7 +2395,7 @@ note = "¤ÏÌ²¤ê¹ş¤ó¤Ç¤·¤Ş¤Ã¤¿¡ª";
 			}
 
 #ifdef JP
-note_dies = "¤ÎÀº¿À¤ÏÊø²õ¤·¡¢ÆùÂÎ¤ÏÈ´¤±³Ì¤È¤Ê¤Ã¤¿¡£";
+note_dies = "ã®ç²¾ç¥ã¯å´©å£Šã—ã€è‚‰ä½“ã¯æŠœã‘æ®»ã¨ãªã£ãŸã€‚";
 #else
 			note_dies = " collapses, a mindless husk.";
 #endif
@@ -2410,7 +2410,7 @@ note_dies = "¤ÎÀº¿À¤ÏÊø²õ¤·¡¢ÆùÂÎ¤ÏÈ´¤±³Ì¤È¤Ê¤Ã¤¿¡£";
 			{
 				dam = 0;
 #ifdef JP
-note = "¤Ë¤Ï´°Á´¤ÊÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯å®Œå…¨ãªè€æ€§ãŒã‚ã‚‹ï¼";
 #else
 				note = " is immune!";
 #endif
@@ -2426,7 +2426,7 @@ note = "¤Ë¤Ï´°Á´¤ÊÂÑÀ­¤¬¤¢¤ë¡ª";
 			{
 				dam /= 3;
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists.";
 #endif
@@ -2443,7 +2443,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡£";
 				{
 					note = NULL;
 #ifdef JP
-msg_format("%^s¤ÎÂÄÍî¤·¤¿Àº¿À¤Ï¹¶·â¤òÄ·¤ÍÊÖ¤·¤¿¡ª",
+msg_format("%^sã®å •è½ã—ãŸç²¾ç¥ã¯æ”»æ’ƒã‚’è·³ã­è¿”ã—ãŸï¼",
     m_name);
 #else
 					msg_format("%^s%s corrupted mind backlashes your attack!",
@@ -2454,7 +2454,7 @@ msg_format("%^s¤ÎÂÄÍî¤·¤¿Àº¿À¤Ï¹¶·â¤òÄ·¤ÍÊÖ¤·¤¿¡ª",
 					if (randint0(100) < p_ptr->skill_sav)
 					{
 #ifdef JP
-msg_print("¤¢¤Ê¤¿¤Ï¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+msg_print("ã‚ãªãŸã¯åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 						msg_print("You resist the effects!");
 #endif
@@ -2465,7 +2465,7 @@ msg_print("¤¢¤Ê¤¿¤Ï¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
 						/* Injure + mana drain */
 						monster_desc(killer, m_ptr, 0x88);
 #ifdef JP
-msg_print("Ä¶Ç½ÎÏ¥Ñ¥ï¡¼¤òµÛ¤¤¤È¤é¤ì¤¿¡ª");
+msg_print("è¶…èƒ½åŠ›ãƒ‘ãƒ¯ãƒ¼ã‚’å¸ã„ã¨ã‚‰ã‚ŒãŸï¼");
 #else
 						msg_print("Your psychic energy is drained!");
 #endif
@@ -2482,7 +2482,7 @@ msg_print("Ä¶Ç½ÎÏ¥Ñ¥ï¡¼¤òµÛ¤¤¤È¤é¤ì¤¿¡ª");
 			{
 				int b = damroll(5, dam) / 4;
 #ifdef JP
-msg_format("¤¢¤Ê¤¿¤Ï%s¤Î¶ìÄË¤òÄ¶Ç½ÎÏ¥Ñ¥ï¡¼¤ËÊÑ´¹¤·¤¿¡ª",
+msg_format("ã‚ãªãŸã¯%sã®è‹¦ç—›ã‚’è¶…èƒ½åŠ›ãƒ‘ãƒ¯ãƒ¼ã«å¤‰æ›ã—ãŸï¼",
     m_name);
 #else
 				msg_format("You convert %s%s pain into psychic energy!",
@@ -2496,7 +2496,7 @@ msg_format("¤¢¤Ê¤¿¤Ï%s¤Î¶ìÄË¤òÄ¶Ç½ÎÏ¥Ñ¥ï¡¼¤ËÊÑ´¹¤·¤¿¡ª",
 			}
 
 #ifdef JP
-note_dies = "¤ÎÀº¿À¤ÏÊø²õ¤·¡¢ÆùÂÎ¤ÏÈ´¤±³Ì¤È¤Ê¤Ã¤¿¡£";
+note_dies = "ã®ç²¾ç¥ã¯å´©å£Šã—ã€è‚‰ä½“ã¯æŠœã‘æ®»ã¨ãªã£ãŸã€‚";
 #else
 			note_dies = " collapses, a mindless husk.";
 #endif
@@ -2568,7 +2568,7 @@ note_dies = "¤ÎÀº¿À¤ÏÊø²õ¤·¡¢ÆùÂÎ¤ÏÈ´¤±³Ì¤È¤Ê¤Ã¤¿¡£";
 				{
 					note = NULL;
 #ifdef JP
-msg_format("%^s¤ÎÂÄÍî¤·¤¿Àº¿À¤Ï¹¶·â¤òÄ·¤ÍÊÖ¤·¤¿¡ª",
+msg_format("%^sã®å •è½ã—ãŸç²¾ç¥ã¯æ”»æ’ƒã‚’è·³ã­è¿”ã—ãŸï¼",
     m_name);
 #else
 					msg_format("%^s%s corrupted mind backlashes your attack!",
@@ -2579,7 +2579,7 @@ msg_format("%^s¤ÎÂÄÍî¤·¤¿Àº¿À¤Ï¹¶·â¤òÄ·¤ÍÊÖ¤·¤¿¡ª",
 					if (randint0(100) < p_ptr->skill_sav)
 					{
 #ifdef JP
-msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 						msg_print("You resist the effects!");
 #endif
@@ -2600,7 +2600,7 @@ msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
 							{
 								if (r_ptr->flags3 & RF3_NO_FEAR)
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚";
 #else
 									note = " is unaffected.";
 #endif
@@ -2615,7 +2615,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
 				{
 					/* No obvious effect */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 					note = " is unaffected!";
 #endif
@@ -2628,7 +2628,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 				if ((dam > 29) && (randint1(100) < dam))
 				{
 #ifdef JP
-note = "¤¬¤¢¤Ê¤¿¤ËÎìÂ°¤·¤¿¡£";
+note = "ãŒã‚ãªãŸã«éš·å±ã—ãŸã€‚";
 #else
 					note = " is in your thrall!";
 #endif
@@ -2666,7 +2666,7 @@ note = "¤¬¤¢¤Ê¤¿¤ËÎìÂ°¤·¤¿¡£";
 			if (r_ptr->flags3 & RF3_IM_COLD)
 			{
 #ifdef JP
-note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯ã‹ãªã‚Šè€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " resists a lot.";
 #endif
@@ -2696,7 +2696,7 @@ note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡£";
 				}
 
 #ifdef JP
-				note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+				note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 				note = " is unaffected!";
 #endif
@@ -2721,7 +2721,7 @@ note = "¤Ë¤Ï¤«¤Ê¤êÂÑÀ­¤¬¤¢¤ë¡£";
 				}
 
 #ifdef JP
-note = "¤Ë¤Ï´°Á´¤ÊÂÑÀ­¤¬¤¢¤ë¡£";
+note = "ã«ã¯å®Œå…¨ãªè€æ€§ãŒã‚ã‚‹ã€‚";
 #else
 				note = " is immune.";
 #endif
@@ -2735,7 +2735,7 @@ note = "¤Ë¤Ï´°Á´¤ÊÂÑÀ­¤¬¤¢¤ë¡£";
 				 randint1(100) != 66))
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ï¼";
 #else
 				note = " resists!";
 #endif
@@ -2761,7 +2761,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
 			    (r_ptr->level > randint1((dam - 10) < 1 ? 1 : (dam - 10)) + 10))
 			{
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚";
 #else
 				note = " is unaffected!";
 #endif
@@ -2799,7 +2799,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£";
 			if (multiply_monster(c_ptr->m_idx, TRUE, friendly, pet))
 			{
 #ifdef JP
-note = "¤¬Ê¬Îö¤·¤¿¡ª";
+note = "ãŒåˆ†è£‚ã—ãŸï¼";
 #else
 				note = " spawns!";
 #endif
@@ -2833,7 +2833,7 @@ note = "¤¬Ê¬Îö¤·¤¿¡ª";
 
 			/* Message */
 #ifdef JP
-note = "¤ÏÂÎÎÏ¤ò²óÉü¤·¤¿¤è¤¦¤À¡£";
+note = "ã¯ä½“åŠ›ã‚’å›å¾©ã—ãŸã‚ˆã†ã ã€‚";
 #else
 			note = " looks healthier.";
 #endif
@@ -2854,7 +2854,7 @@ note = "¤ÏÂÎÎÏ¤ò²óÉü¤·¤¿¤è¤¦¤À¡£";
 			if (!m_ptr->hasted)
 			{
 #ifdef JP
-				note = "¤ÎÆ°¤­¤¬Â®¤¯¤Ê¤Ã¤¿¡£";
+				note = "ã®å‹•ããŒé€Ÿããªã£ãŸã€‚";
 #else
 				note = " starts moving faster.";
 #endif
@@ -2877,7 +2877,7 @@ note = "¤ÏÂÎÎÏ¤ò²óÉü¤·¤¿¤è¤¦¤À¡£";
 			    (r_ptr->level > randint1((dam - 10) < 1 ? 1 : (dam - 10)) + 10))
 			{
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 				note = " is unaffected!";
 #endif
@@ -2891,7 +2891,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 					if (!m_ptr->slowed)
 					{
 #ifdef JP
-						note = "¤ÎÆ°¤­¤¬ÃÙ¤¯¤Ê¤Ã¤¿¡£";
+						note = "ã®å‹•ããŒé…ããªã£ãŸã€‚";
 #else
 						note = " starts moving slower.";
 #endif
@@ -2923,7 +2923,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 
 				/* No obvious effect */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 				note = " is unaffected!";
 #endif
@@ -2934,7 +2934,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 			{
 				/* Go to sleep (much) later */
 #ifdef JP
-note = "¤ÏÌ²¤ê¹ş¤ó¤Ç¤·¤Ş¤Ã¤¿¡ª";
+note = "ã¯çœ ã‚Šè¾¼ã‚“ã§ã—ã¾ã£ãŸï¼";
 #else
 				note = " falls asleep!";
 #endif
@@ -2958,7 +2958,7 @@ note = "¤ÏÌ²¤ê¹ş¤ó¤Ç¤·¤Ş¤Ã¤¿¡ª";
 			    (r_ptr->level > randint1((dam - 10) < 1 ? 1 : (dam - 10)) + 10))
 			{
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 				note = " is unaffected!";
 #endif
@@ -2969,7 +2969,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 			{
 				/* Go to sleep (much) later */
 #ifdef JP
-note = "¤ÏÆ°¤±¤Ê¤¯¤Ê¤Ã¤¿¡ª";
+note = "ã¯å‹•ã‘ãªããªã£ãŸï¼";
 #else
 				note = " is suspended!";
 #endif
@@ -3004,7 +3004,7 @@ note = "¤ÏÆ°¤±¤Ê¤¯¤Ê¤Ã¤¿¡ª";
 				/* Resist */
 				/* No obvious effect */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 				note = " is unaffected!";
 #endif
@@ -3014,7 +3014,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 			else if (p_ptr->aggravate)
 			{
 #ifdef JP
-note = "¤Ï¤¢¤Ê¤¿¤ËÅ¨°Õ¤òÊú¤¤¤Æ¤¤¤ë¡ª";
+note = "ã¯ã‚ãªãŸã«æ•µæ„ã‚’æŠ±ã„ã¦ã„ã‚‹ï¼";
 #else
 				note = " hates you too much!";
 #endif
@@ -3023,7 +3023,7 @@ note = "¤Ï¤¢¤Ê¤¿¤ËÅ¨°Õ¤òÊú¤¤¤Æ¤¤¤ë¡ª";
 			else
 			{
 #ifdef JP
-note = "¤ÏÆÍÁ³Í§¹¥Åª¤Ë¤Ê¤Ã¤¿¤è¤¦¤À¡ª";
+note = "ã¯çªç„¶å‹å¥½çš„ã«ãªã£ãŸã‚ˆã†ã ï¼";
 #else
 				note = " suddenly seems friendly!";
 #endif
@@ -3049,7 +3049,7 @@ note = "¤ÏÆÍÁ³Í§¹¥Åª¤Ë¤Ê¤Ã¤¿¤è¤¦¤À¡ª";
 			{
 				/* No obvious effect */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 				note = " is unaffected!";
 #endif
@@ -3059,7 +3059,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 			else if (p_ptr->aggravate)
 			{
 #ifdef JP
-note = "¤Ï¤¢¤Ê¤¿¤ËÅ¨°Õ¤òÊú¤¤¤Æ¤¤¤ë¡ª";
+note = "ã¯ã‚ãªãŸã«æ•µæ„ã‚’æŠ±ã„ã¦ã„ã‚‹ï¼";
 #else
 				note = " hates you too much!";
 #endif
@@ -3068,7 +3068,7 @@ note = "¤Ï¤¢¤Ê¤¿¤ËÅ¨°Õ¤òÊú¤¤¤Æ¤¤¤ë¡ª";
 			else
 			{
 #ifdef JP
-note = "¤Ï´û¤Ë¤¢¤Ê¤¿¤ÎÅÛÎì¤À¡ª";
+note = "ã¯æ—¢ã«ã‚ãªãŸã®å¥´éš·ã ï¼";
 #else
 				note = " is in your thrall!";
 #endif
@@ -3102,7 +3102,7 @@ note = "¤Ï´û¤Ë¤¢¤Ê¤¿¤ÎÅÛÎì¤À¡ª";
 				/* Resist */
 				/* No obvious effect */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 				note = " is unaffected!";
 #endif
@@ -3112,7 +3112,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 			else if (p_ptr->aggravate)
 			{
 #ifdef JP
-note = "¤Ï¤¢¤Ê¤¿¤ËÅ¨°Õ¤òÊú¤¤¤Æ¤¤¤ë¡ª";
+note = "ã¯ã‚ãªãŸã«æ•µæ„ã‚’æŠ±ã„ã¦ã„ã‚‹ï¼";
 #else
 				note = " hates you too much!";
 #endif
@@ -3121,7 +3121,7 @@ note = "¤Ï¤¢¤Ê¤¿¤ËÅ¨°Õ¤òÊú¤¤¤Æ¤¤¤ë¡ª";
 			else
 			{
 #ifdef JP
-note = "¤Ï¤Ê¤Ä¤¤¤¿¡£";
+note = "ã¯ãªã¤ã„ãŸã€‚";
 #else
 				note = " is tamed!";
 #endif
@@ -3158,7 +3158,7 @@ note = "¤Ï¤Ê¤Ä¤¤¤¿¡£";
 
 				/* No obvious effect */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 				note = " is unaffected!";
 #endif
@@ -3186,7 +3186,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 
 				/* No obvious effect */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 				note = " is unaffected!";
 #endif
@@ -3216,8 +3216,8 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 
 				/* Special effect */
 #ifdef JP
-note = "¤Ï¸÷¤Ë¿È¤ò¤¹¤¯¤á¤¿¡ª";
-note_dies = "¤Ï¸÷¤ò¼õ¤±¤Æ¤·¤Ü¤ó¤Ç¤·¤Ş¤Ã¤¿¡ª";
+note = "ã¯å…‰ã«èº«ã‚’ã™ãã‚ãŸï¼";
+note_dies = "ã¯å…‰ã‚’å—ã‘ã¦ã—ã¼ã‚“ã§ã—ã¾ã£ãŸï¼";
 #else
 				note = " cringes from the light!";
 				note_dies = " shrivels away in the light!";
@@ -3244,7 +3244,7 @@ note_dies = "¤Ï¸÷¤ò¼õ¤±¤Æ¤·¤Ü¤ó¤Ç¤·¤Ş¤Ã¤¿¡ª";
 			if (r_ptr->flags4 & (RF4_BR_LITE))
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ï¼";
 #else
 				note = " resists.";
 #endif
@@ -3255,8 +3255,8 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
 			{
 				if (seen) r_ptr->r_flags3 |= (RF3_HURT_LITE);
 #ifdef JP
-note = "¤Ï¸÷¤Ë¿È¤ò¤¹¤¯¤á¤¿¡ª";
-note_dies = "¤Ï¸÷¤ò¼õ¤±¤Æ¤·¤Ü¤ó¤Ç¤·¤Ş¤Ã¤¿¡ª";
+note = "ã¯å…‰ã«èº«ã‚’ã™ãã‚ãŸï¼";
+note_dies = "ã¯å…‰ã‚’å—ã‘ã¦ã—ã¼ã‚“ã§ã—ã¾ã£ãŸï¼";
 #else
 				note = " cringes from the light!";
 				note_dies = " shrivels away in the light!";
@@ -3279,7 +3279,7 @@ note_dies = "¤Ï¸÷¤ò¼õ¤±¤Æ¤·¤Ü¤ó¤Ç¤·¤Ş¤Ã¤¿¡ª";
 			    (r_ptr->flags3 & RF3_HURT_LITE))
 			{
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ï¼";
 #else
 				note = " resists.";
 #endif
@@ -3304,8 +3304,8 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
 
 				/* Cute little message */
 #ifdef JP
-				note = "¤ÎÈéÉæ¤¬¤¿¤À¤ì¤¿¡ª";
-				note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
+				note = "ã®çš®è†šãŒãŸã ã‚ŒãŸï¼";
+				note_dies = "ã¯ãƒ‰ãƒ­ãƒ‰ãƒ­ã«æº¶ã‘ãŸï¼";
 #else
 				note = " loses some skin!";
 				note_dies = " dissolves!";
@@ -3337,7 +3337,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
 					{
 						if (seen) r_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 						note = " is unaffected!";
 #endif
@@ -3348,7 +3348,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 					{
 						if (seen) r_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ï¼";
 #else
 						note = " resists!";
 #endif
@@ -3392,7 +3392,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
 					{
 						if (seen) r_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 						note = " is unaffected!";
 #endif
@@ -3403,7 +3403,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 					{
 						if (seen) r_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ï¼";
 #else
 						note = " resists!";
 #endif
@@ -3444,7 +3444,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
 				{
 					if (seen) r_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 					note = " is unaffected!";
 #endif
@@ -3455,7 +3455,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 				{
 					if (seen) r_ptr->r_flags3 |= RF3_RES_TELE;
 #ifdef JP
-note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
+note = "ã«ã¯è€æ€§ãŒã‚ã‚‹ï¼";
 #else
 					note = " resists!";
 #endif
@@ -3499,7 +3499,7 @@ note = "¤Ë¤ÏÂÑÀ­¤¬¤¢¤ë¡ª";
 				{
 					/* No obvious effect */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 					note = " is unaffected!";
 #endif
@@ -3542,7 +3542,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 				{
 					/* No obvious effect */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 					note = " is unaffected!";
 #endif
@@ -3581,7 +3581,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 			{
 				/* No obvious effect */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 				note = " is unaffected!";
 #endif
@@ -3610,8 +3610,8 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 
 				/* Message */
 #ifdef JP
-note = "¤Ï¿È¿Ì¤¤¤·¤¿¡£";
-note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
+note = "ã¯èº«éœ‡ã„ã—ãŸã€‚";
+note_dies = "ã¯ãƒ‰ãƒ­ãƒ‰ãƒ­ã«æº¶ã‘ãŸï¼";
 #else
 				note = " shudders.";
 				note_dies = " dissolves!";
@@ -3647,8 +3647,8 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 
 				/* Message */
 #ifdef JP
-note = "¤Ï¿È¿Ì¤¤¤·¤¿¡£";
-note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
+note = "ã¯èº«éœ‡ã„ã—ãŸã€‚";
+note_dies = "ã¯ãƒ‰ãƒ­ãƒ‰ãƒ­ã«æº¶ã‘ãŸï¼";
 #else
 				note = " shudders.";
 				note_dies = " dissolves!";
@@ -3683,8 +3683,8 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 
 				/* Message */
 #ifdef JP
-note = "¤Ï¿È¿Ì¤¤¤·¤¿¡£";
-note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
+note = "ã¯èº«éœ‡ã„ã—ãŸã€‚";
+note_dies = "ã¯ãƒ‰ãƒ­ãƒ‰ãƒ­ã«æº¶ã‘ãŸï¼";
 #else
 				note = " shudders.";
 				note_dies = " dissolves!";
@@ -3716,8 +3716,8 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 
 				/* Message */
 #ifdef JP
-note = "¤Ï¿È¿Ì¤¤¤·¤¿¡£";
-note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
+note = "ã¯èº«éœ‡ã„ã—ãŸã€‚";
+note_dies = "ã¯ãƒ‰ãƒ­ãƒ‰ãƒ­ã«æº¶ã‘ãŸï¼";
 #else
 				note = " shudders.";
 				note_dies = " dissolves!";
@@ -3752,8 +3752,8 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 
 				/* Message */
 #ifdef JP
-note = "¤Ï¿È¿Ì¤¤¤·¤¿¡£";
-note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
+note = "ã¯èº«éœ‡ã„ã—ãŸã€‚";
+note_dies = "ã¯ãƒ‰ãƒ­ãƒ‰ãƒ­ã«æº¶ã‘ãŸï¼";
 #else
 				note = " shudders.";
 				note_dies = " dissolves!";
@@ -3782,8 +3782,8 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 
 			/* Message */
 #ifdef JP
-note = "¤Ï¿È¿Ì¤¤¤·¤¿¡£";
-note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
+note = "ã¯èº«éœ‡ã„ã—ãŸã€‚";
+note_dies = "ã¯ãƒ‰ãƒ­ãƒ‰ãƒ­ã«æº¶ã‘ãŸï¼";
 #else
 			note = " shudders.";
 			note_dies = " dissolves!";
@@ -3801,7 +3801,7 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 			if ((y != py) || (x != px))
 			{
 #ifdef JP
-				msg_print("ÁÇÁá¤¯Áê¼ê¤Î²û¤ËÆş¤ê¹ş¤ó¤À¡ª");
+				msg_print("ç´ æ—©ãç›¸æ‰‹ã®æ‡ã«å…¥ã‚Šè¾¼ã‚“ã ï¼");
 #else
 				msg_format("You quickly jump in and attack %s!", m_name);
 #endif
@@ -3811,7 +3811,7 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 			else
 			{
 #ifdef JP
-				msg_print("¹¶·â¤Ï¶õ¤òÀÚ¤Ã¤¿¡£");
+				msg_print("æ”»æ’ƒã¯ç©ºã‚’åˆ‡ã£ãŸã€‚");
 #else
 				msg_print("You attack the empty air.");
 #endif
@@ -3827,15 +3827,15 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 			if ((p_ptr->inside_quest && quest[p_ptr->inside_quest].type != QUEST_TYPE_RANDOM))
 			{
 #ifdef JP
-				msg_format("%^s¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡£", m_name);
+				msg_format("%^sã«ã¯åŠ¹æœãŒãªã‹ã£ãŸã€‚", m_name);
 #else
 				msg_format("%^s is unaffected. ", m_name);
 #endif
 			}
-			else if(remove_monster(dam, c_ptr->m_idx, "¾ÃÌÇ"))
+			else if(remove_monster(dam, c_ptr->m_idx, "æ¶ˆæ»…"))
 			{
 #ifdef JP
-				msg_format("%s¤Ï¾ÃÌÇ¤·¤¿¡ª",m_name);
+				msg_format("%sã¯æ¶ˆæ»…ã—ãŸï¼",m_name);
 #else
 				msg_format("%^s disappered!",m_name);
 #endif
@@ -3873,7 +3873,7 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 					int i;
 					object_type forge;
 #ifdef JP
-					msg_format("%^s¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª", m_name);
+					msg_format("%^sã¯ãƒ‰ãƒ­ãƒ‰ãƒ­ã«æº¶ã‘ãŸï¼", m_name);
 #else
 					msg_format("%^s dissolves!", m_name);
 #endif
@@ -3907,7 +3907,7 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 			else
 			{
 #ifdef JP
-				msg_print("¹¶·â¤Ï¶õ¤òÀÚ¤Ã¤¿¡£");
+				msg_print("æ”»æ’ƒã¯ç©ºã‚’åˆ‡ã£ãŸã€‚");
 #else
 				msg_print("You attack the empty air.");
 #endif
@@ -3950,7 +3950,7 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 	/* GF_PSY_SPEAR bypass invulnerability */
 		if (m_ptr->invulner)
 #ifdef JP
-			msg_print("¸÷¤Î·õ¤¬ÌµÅ¨¤Î¥Ğ¥ê¥¢¤ò»Â¤êÎö¤¤¤¿¡ª");
+			msg_print("å…‰ã®å‰£ãŒç„¡æ•µã®ãƒãƒªã‚¢ã‚’æ–¬ã‚Šè£‚ã„ãŸï¼");
 #else
 			msg_print("The barrier is penetrated!");
 #endif
@@ -3978,7 +3978,7 @@ note_dies = "¤Ï¥É¥í¥É¥í¤ËÍÏ¤±¤¿¡ª";
 
 			/* Monster polymorphs */
 #ifdef JP
-note = "¤¬ÊÑ¿È¤·¤¿¡ª";
+note = "ãŒå¤‰èº«ã—ãŸï¼";
 #else
 			note = " changes!";
 #endif
@@ -3997,7 +3997,7 @@ note = "¤¬ÊÑ¿È¤·¤¿¡ª";
 		{
 			/* No polymorph */
 #ifdef JP
-note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
+note = "ã«ã¯åŠ¹æœãŒãªã‹ã£ãŸï¼";
 #else
 			note = " is unaffected!";
 #endif
@@ -4013,7 +4013,7 @@ note = "¤Ë¤Ï¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª";
 
 		/* Message */
 #ifdef JP
-note = "¤¬¾Ã¤¨µî¤Ã¤¿¡ª";
+note = "ãŒæ¶ˆãˆå»ã£ãŸï¼";
 #else
 		note = " disappears!";
 #endif
@@ -4041,7 +4041,7 @@ note = "¤¬¾Ã¤¨µî¤Ã¤¿¡ª";
 		if (m_ptr->stunned)
 		{
 #ifdef JP
-note = "¤Ï¤Ò¤É¤¯¤â¤¦¤í¤¦¤È¤·¤¿¡£";
+note = "ã¯ã²ã©ãã‚‚ã†ã‚ã†ã¨ã—ãŸã€‚";
 #else
 			note = " is more dazed.";
 #endif
@@ -4051,7 +4051,7 @@ note = "¤Ï¤Ò¤É¤¯¤â¤¦¤í¤¦¤È¤·¤¿¡£";
 		else
 		{
 #ifdef JP
-note = "¤Ï¤â¤¦¤í¤¦¤È¤·¤¿¡£";
+note = "ã¯ã‚‚ã†ã‚ã†ã¨ã—ãŸã€‚";
 #else
 			note = " is dazed.";
 #endif
@@ -4079,7 +4079,7 @@ note = "¤Ï¤â¤¦¤í¤¦¤È¤·¤¿¡£";
 		if (m_ptr->confused)
 		{
 #ifdef JP
-note = "¤Ï¤µ¤é¤Ëº®Íğ¤·¤¿¤è¤¦¤À¡£";
+note = "ã¯ã•ã‚‰ã«æ··ä¹±ã—ãŸã‚ˆã†ã ã€‚";
 #else
 			note = " looks more confused.";
 #endif
@@ -4091,7 +4091,7 @@ note = "¤Ï¤µ¤é¤Ëº®Íğ¤·¤¿¤è¤¦¤À¡£";
 		else
 		{
 #ifdef JP
-note = "¤Ïº®Íğ¤·¤¿¤è¤¦¤À¡£";
+note = "ã¯æ··ä¹±ã—ãŸã‚ˆã†ã ã€‚";
 #else
 			note = " looks confused.";
 #endif
@@ -4169,7 +4169,7 @@ msg_format("%s%s", m_name, note);
 			if (sad)
 			{
 #ifdef JP
-msg_print("¾¯¤·Èá¤·¤¤µ¤Ê¬¤¬¤·¤¿¡£");
+msg_print("å°‘ã—æ‚²ã—ã„æ°—åˆ†ãŒã—ãŸã€‚");
 #else
 				msg_print("You feel sad for a moment.");
 #endif
@@ -4250,7 +4250,7 @@ msg_format("%^s%s", m_name, note);
 
 				/* Message */
 #ifdef JP
-msg_format("%^s¤Ï¶²Éİ¤·¤ÆÆ¨¤²½Ğ¤·¤¿¡ª", m_name);
+msg_format("%^sã¯ææ€–ã—ã¦é€ƒã’å‡ºã—ãŸï¼", m_name);
 #else
 				msg_format("%^s flees in terror!", m_name);
 #endif
@@ -4368,8 +4368,8 @@ static bool project_p(int who, int r, int y, int x, int dam, int typ, int a_rad)
 		int max_attempts = 10;
 
 #ifdef JP
-if (blind) msg_print("²¿¤«¤¬Ä·¤ÍÊÖ¤Ã¤¿¡ª");
-    else msg_print("¹¶·â¤¬Ä·¤ÍÊÖ¤Ã¤¿¡ª");
+if (blind) msg_print("ä½•ã‹ãŒè·³ã­è¿”ã£ãŸï¼");
+    else msg_print("æ”»æ’ƒãŒè·³ã­è¿”ã£ãŸï¼");
 #else
 		if (blind) msg_print("Something bounces!");
 		else msg_print("The attack bounces!");
@@ -4427,7 +4427,7 @@ if (blind) msg_print("²¿¤«¤¬Ä·¤ÍÊÖ¤Ã¤¿¡ª");
 		case GF_ACID:
 		{
 #ifdef JP
-if (fuzzy) msg_print("»À¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("é…¸ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by acid!");
 #endif
@@ -4440,7 +4440,7 @@ if (fuzzy) msg_print("»À¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_FIRE:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²Ğ±ê¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ç«ç‚ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by fire!");
 #endif
@@ -4453,7 +4453,7 @@ if (fuzzy) msg_print("²Ğ±ê¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_COLD:
 		{
 #ifdef JP
-if (fuzzy) msg_print("Îäµ¤¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("å†·æ°—ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by cold!");
 #endif
@@ -4466,7 +4466,7 @@ if (fuzzy) msg_print("Îäµ¤¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_ELEC:
 		{
 #ifdef JP
-if (fuzzy) msg_print("ÅÅ·â¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("é›»æ’ƒã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by lightning!");
 #endif
@@ -4479,7 +4479,7 @@ if (fuzzy) msg_print("ÅÅ·â¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_POIS:
 		{
 #ifdef JP
-if (fuzzy) msg_print("ÆÇ¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("æ¯’ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by poison!");
 #endif
@@ -4506,7 +4506,7 @@ if (fuzzy) msg_print("ÆÇ¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_NUKE:
 		{
 #ifdef JP
-if (fuzzy) msg_print("Êü¼ÍÇ½¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("æ”¾å°„èƒ½ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by radiation!");
 #endif
@@ -4521,7 +4521,7 @@ if (fuzzy) msg_print("Êü¼ÍÇ½¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 				if (randint1(5) == 1) /* 6 */
 				{
 #ifdef JP
-msg_print("´ñ·ÁÅª¤ÊÊÑ¿È¤ò¿ë¤²¤¿¡ª");
+msg_print("å¥‡å½¢çš„ãªå¤‰èº«ã‚’é‚ã’ãŸï¼");
 #else
 					msg_print("You undergo a freakish metamorphosis!");
 #endif
@@ -4544,7 +4544,7 @@ msg_print("´ñ·ÁÅª¤ÊÊÑ¿È¤ò¿ë¤²¤¿¡ª");
 		case GF_MISSILE:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something!");
 #endif
@@ -4557,7 +4557,7 @@ if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_HOLY_FIRE:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something!");
 #endif
@@ -4575,7 +4575,7 @@ if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_HELL_FIRE:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something!");
 #endif
@@ -4594,7 +4594,7 @@ if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_ARROW:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«±Ô¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹é‹­ã„ã‚‚ã®ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something sharp!");
 #endif
@@ -4607,7 +4607,7 @@ if (fuzzy) msg_print("²¿¤«±Ô¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_PLASMA:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«¤È¤Æ¤âÇ®¤¤¤â¤Î¤Ç¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹ã¨ã¦ã‚‚ç†±ã„ã‚‚ã®ã§ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something *HOT*!");
 #endif
@@ -4634,7 +4634,7 @@ if (fuzzy) msg_print("²¿¤«¤È¤Æ¤âÇ®¤¤¤â¤Î¤Ç¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_NETHER:
 		{
 #ifdef JP
-			if (fuzzy) msg_print("ÃÏ¹ö¤ÎÎÏ¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+			if (fuzzy) msg_print("åœ°ç„ã®åŠ›ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by nether forces!");
 #endif
@@ -4648,7 +4648,7 @@ if (fuzzy) msg_print("²¿¤«¤È¤Æ¤âÇ®¤¤¤â¤Î¤Ç¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 				if (p_ptr->hold_life && (randint0(100) < 75))
 				{
 #ifdef JP
-					msg_print("¤·¤«¤·¼«¸Ê¤ÎÀ¸Ì¿ÎÏ¤ò¼é¤ê¤­¤Ã¤¿¡ª");
+					msg_print("ã—ã‹ã—è‡ªå·±ã®ç”Ÿå‘½åŠ›ã‚’å®ˆã‚Šãã£ãŸï¼");
 #else
 					msg_print("You keep hold of your life force!");
 #endif
@@ -4656,7 +4656,7 @@ if (fuzzy) msg_print("²¿¤«¤È¤Æ¤âÇ®¤¤¤â¤Î¤Ç¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 				else if (p_ptr->hold_life)
 				{
 #ifdef JP
-					msg_print("À¸Ì¿ÎÏ¤¬¾¯¤·ÂÎ¤«¤éÈ´¤±Íî¤Á¤¿µ¤¤¬¤¹¤ë¡ª");
+					msg_print("ç”Ÿå‘½åŠ›ãŒå°‘ã—ä½“ã‹ã‚‰æŠœã‘è½ã¡ãŸæ°—ãŒã™ã‚‹ï¼");
 #else
 					msg_print("You feel your life slipping away!");
 #endif
@@ -4665,7 +4665,7 @@ if (fuzzy) msg_print("²¿¤«¤È¤Æ¤âÇ®¤¤¤â¤Î¤Ç¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 				else
 				{
 #ifdef JP
-					msg_print("À¸Ì¿ÎÏ¤¬ÂÎ¤«¤éµÛ¤¤¼è¤é¤ì¤¿µ¤¤¬¤¹¤ë¡ª");
+					msg_print("ç”Ÿå‘½åŠ›ãŒä½“ã‹ã‚‰å¸ã„å–ã‚‰ã‚ŒãŸæ°—ãŒã™ã‚‹ï¼");
 #else
 					msg_print("You feel your life draining away!");
 #endif
@@ -4681,7 +4681,7 @@ if (fuzzy) msg_print("²¿¤«¤È¤Æ¤âÇ®¤¤¤â¤Î¤Ç¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_WATER:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«¼¾¤Ã¤¿¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹æ¹¿ã£ãŸã‚‚ã®ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something wet!");
 #endif
@@ -4708,7 +4708,7 @@ if (fuzzy) msg_print("²¿¤«¼¾¤Ã¤¿¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_CHAOS:
 		{
 #ifdef JP
-if (fuzzy) msg_print("ÌµÃá½ø¤ÎÇÈÆ°¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ç„¡ç§©åºã®æ³¢å‹•ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by a wave of anarchy!");
 #endif
@@ -4727,7 +4727,7 @@ if (fuzzy) msg_print("ÌµÃá½ø¤ÎÇÈÆ°¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 				if (randint1(3) == 1)
 				{
 #ifdef JP
-msg_print("¤¢¤Ê¤¿¤Î¿ÈÂÎ¤Ï¥«¥ª¥¹¤ÎÎÏ¤ÇÇ±¤¸¶Ê¤²¤é¤ì¤¿¡ª");
+msg_print("ã‚ãªãŸã®èº«ä½“ã¯ã‚«ã‚ªã‚¹ã®åŠ›ã§æ»ã˜æ›²ã’ã‚‰ã‚ŒãŸï¼");
 #else
 					msg_print("Your body is twisted by chaos!");
 #endif
@@ -4740,7 +4740,7 @@ msg_print("¤¢¤Ê¤¿¤Î¿ÈÂÎ¤Ï¥«¥ª¥¹¤ÎÎÏ¤ÇÇ±¤¸¶Ê¤²¤é¤ì¤¿¡ª");
 				if (p_ptr->hold_life && (randint0(100) < 75))
 				{
 #ifdef JP
-msg_print("¤·¤«¤·¼«¸Ê¤ÎÀ¸Ì¿ÎÏ¤ò¼é¤ê¤­¤Ã¤¿¡ª");
+msg_print("ã—ã‹ã—è‡ªå·±ã®ç”Ÿå‘½åŠ›ã‚’å®ˆã‚Šãã£ãŸï¼");
 #else
 					msg_print("You keep hold of your life force!");
 #endif
@@ -4749,7 +4749,7 @@ msg_print("¤·¤«¤·¼«¸Ê¤ÎÀ¸Ì¿ÎÏ¤ò¼é¤ê¤­¤Ã¤¿¡ª");
 				else if (p_ptr->hold_life)
 				{
 #ifdef JP
-msg_print("À¸Ì¿ÎÏ¤¬¾¯¤·ÂÎ¤«¤éÈ´¤±Íî¤Á¤¿µ¤¤¬¤¹¤ë¡ª");
+msg_print("ç”Ÿå‘½åŠ›ãŒå°‘ã—ä½“ã‹ã‚‰æŠœã‘è½ã¡ãŸæ°—ãŒã™ã‚‹ï¼");
 #else
 					msg_print("You feel your life slipping away!");
 #endif
@@ -4759,7 +4759,7 @@ msg_print("À¸Ì¿ÎÏ¤¬¾¯¤·ÂÎ¤«¤éÈ´¤±Íî¤Á¤¿µ¤¤¬¤¹¤ë¡ª");
 				else
 				{
 #ifdef JP
-msg_print("À¸Ì¿ÎÏ¤¬ÂÎ¤«¤éµÛ¤¤¼è¤é¤ì¤¿µ¤¤¬¤¹¤ë¡ª");
+msg_print("ç”Ÿå‘½åŠ›ãŒä½“ã‹ã‚‰å¸ã„å–ã‚‰ã‚ŒãŸæ°—ãŒã™ã‚‹ï¼");
 #else
 					msg_print("You feel your life draining away!");
 #endif
@@ -4780,7 +4780,7 @@ msg_print("À¸Ì¿ÎÏ¤¬ÂÎ¤«¤éµÛ¤¤¼è¤é¤ì¤¿µ¤¤¬¤¹¤ë¡ª");
 		case GF_SHARDS:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«±Ô¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹é‹­ã„ã‚‚ã®ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something sharp!");
 #endif
@@ -4807,7 +4807,7 @@ if (fuzzy) msg_print("²¿¤«±Ô¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_SOUND:
 		{
 #ifdef JP
-if (fuzzy) msg_print("¹ì²»¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("è½ŸéŸ³ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by a loud noise!");
 #endif
@@ -4835,7 +4835,7 @@ if (fuzzy) msg_print("¹ì²»¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_CONFUSION:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«º®Íğ¤¹¤ë¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹æ··ä¹±ã™ã‚‹ã‚‚ã®ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something puzzling!");
 #endif
@@ -4856,7 +4856,7 @@ if (fuzzy) msg_print("²¿¤«º®Íğ¤¹¤ë¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_DISENCHANT:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«¤µ¤¨¤Ê¤¤¤â¤Î¤Ç¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹ã•ãˆãªã„ã‚‚ã®ã§ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something static!");
 #endif
@@ -4877,7 +4877,7 @@ if (fuzzy) msg_print("²¿¤«¤µ¤¨¤Ê¤¤¤â¤Î¤Ç¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_NEXUS:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«´ñÌ¯¤Ê¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹å¥‡å¦™ãªã‚‚ã®ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something strange!");
 #endif
@@ -4898,7 +4898,7 @@ if (fuzzy) msg_print("²¿¤«´ñÌ¯¤Ê¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_FORCE:
 		{
 #ifdef JP
-if (fuzzy) msg_print("±¿Æ°¥¨¥Í¥ë¥®¡¼¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("é‹å‹•ã‚¨ãƒãƒ«ã‚®ãƒ¼ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by kinetic force!");
 #endif
@@ -4916,7 +4916,7 @@ if (fuzzy) msg_print("±¿Æ°¥¨¥Í¥ë¥®¡¼¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_ROCKET:
 		{
 #ifdef JP
-if (fuzzy) msg_print("ÇúÈ¯¤¬¤¢¤Ã¤¿¡ª");
+if (fuzzy) msg_print("çˆ†ç™ºãŒã‚ã£ãŸï¼");
 #else
 			if (fuzzy) msg_print("There is an explosion!");
 #endif
@@ -4947,7 +4947,7 @@ if (fuzzy) msg_print("ÇúÈ¯¤¬¤¢¤Ã¤¿¡ª");
 		case GF_INERTIA:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«ÃÙ¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹é…ã„ã‚‚ã®ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something slow!");
 #endif
@@ -4961,7 +4961,7 @@ if (fuzzy) msg_print("²¿¤«ÃÙ¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_LITE:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something!");
 #endif
@@ -4978,7 +4978,7 @@ if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 			if (p_ptr->prace == RACE_VAMPIRE)
 			{
 #ifdef JP
-				msg_print("¸÷¤ÇÆùÂÎ¤¬¾Ç¤¬¤µ¤ì¤¿¡ª");
+				msg_print("å…‰ã§è‚‰ä½“ãŒç„¦ãŒã•ã‚ŒãŸï¼");
 #else
 				msg_print("The light scorches your flesh!");
 #endif
@@ -4992,7 +4992,7 @@ if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 				p_ptr->tim_wraith = 0;
 				p_ptr->wraith_form = FALSE;
 #ifdef JP
-msg_print("Á®¸÷¤Î¤¿¤áÈóÊª¼ÁÅª¤Ê±Æ¤ÎÂ¸ºß¤Ç¤¤¤é¤ì¤Ê¤¯¤Ê¤Ã¤¿¡£");
+msg_print("é–ƒå…‰ã®ãŸã‚éç‰©è³ªçš„ãªå½±ã®å­˜åœ¨ã§ã„ã‚‰ã‚Œãªããªã£ãŸã€‚");
 #else
 				msg_print("The light forces you out of your incorporeal shadow form.");
 #endif
@@ -5011,7 +5011,7 @@ msg_print("Á®¸÷¤Î¤¿¤áÈóÊª¼ÁÅª¤Ê±Æ¤ÎÂ¸ºß¤Ç¤¤¤é¤ì¤Ê¤¯¤Ê¤Ã¤¿¡£");
 		case GF_DARK:
 		{
 #ifdef JP
-			if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+			if (fuzzy) msg_print("ä½•ã‹ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something!");
 #endif
@@ -5039,7 +5039,7 @@ msg_print("Á®¸÷¤Î¤¿¤áÈóÊª¼ÁÅª¤Ê±Æ¤ÎÂ¸ºß¤Ç¤¤¤é¤ì¤Ê¤¯¤Ê¤Ã¤¿¡£");
 		case GF_TIME:
 		{
 #ifdef JP
-			if (fuzzy) msg_print("²áµî¤«¤é¤Î¾×·â¤Ë¹¶·â¤µ¤ì¤¿¡ª");
+			if (fuzzy) msg_print("éå»ã‹ã‚‰ã®è¡æ’ƒã«æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by a blast from the past!");
 #endif
@@ -5049,7 +5049,7 @@ msg_print("Á®¸÷¤Î¤¿¤áÈóÊª¼ÁÅª¤Ê±Æ¤ÎÂ¸ºß¤Ç¤¤¤é¤ì¤Ê¤¯¤Ê¤Ã¤¿¡£");
 				dam *= 4;
 				dam /= (randint1(6) + 6);
 #ifdef JP
-				msg_print("»ş´Ö¤¬ÄÌ¤ê²á¤®¤Æ¤¤¤¯µ¤¤¬¤¹¤ë¡£");
+				msg_print("æ™‚é–“ãŒé€šã‚Šéãã¦ã„ãæ°—ãŒã™ã‚‹ã€‚");
 #else
 				msg_print("You feel as if time is passing you by.");
 #endif
@@ -5061,7 +5061,7 @@ msg_print("Á®¸÷¤Î¤¿¤áÈóÊª¼ÁÅª¤Ê±Æ¤ÎÂ¸ºß¤Ç¤¤¤é¤ì¤Ê¤¯¤Ê¤Ã¤¿¡£");
 					case 1: case 2: case 3: case 4: case 5:
 					{
 #ifdef JP
-msg_print("¿ÍÀ¸¤¬µÕÌá¤ê¤·¤¿µ¤¤¬¤¹¤ë¡£");
+msg_print("äººç”ŸãŒé€†æˆ»ã‚Šã—ãŸæ°—ãŒã™ã‚‹ã€‚");
 #else
 						msg_print("You feel life has clocked back.");
 #endif
@@ -5075,12 +5075,12 @@ msg_print("¿ÍÀ¸¤¬µÕÌá¤ê¤·¤¿µ¤¤¬¤¹¤ë¡£");
 						switch (randint1(6))
 						{
 #ifdef JP
-case 1: k = A_STR; act = "¶¯¤¯"; break;
-case 2: k = A_INT; act = "ÁïÌÀ¤Ç"; break;
-case 3: k = A_WIS; act = "¸­ÌÀ¤Ç"; break;
-case 4: k = A_DEX; act = "´ïÍÑ¤Ç"; break;
-case 5: k = A_CON; act = "·ò¹¯¤Ç"; break;
-case 6: k = A_CHR; act = "Èş¤·¤¯"; break;
+case 1: k = A_STR; act = "å¼·ã"; break;
+case 2: k = A_INT; act = "è¡æ˜ã§"; break;
+case 3: k = A_WIS; act = "è³¢æ˜ã§"; break;
+case 4: k = A_DEX; act = "å™¨ç”¨ã§"; break;
+case 5: k = A_CON; act = "å¥åº·ã§"; break;
+case 6: k = A_CHR; act = "ç¾ã—ã"; break;
 #else
 							case 1: k = A_STR; act = "strong"; break;
 							case 2: k = A_INT; act = "bright"; break;
@@ -5093,7 +5093,7 @@ case 6: k = A_CHR; act = "Èş¤·¤¯"; break;
 						}
 
 #ifdef JP
-msg_format("¤¢¤Ê¤¿¤Ï°ÊÁ°¤Û¤É%s¤Ê¤¯¤Ê¤Ã¤Æ¤·¤Ş¤Ã¤¿...¡£", act);
+msg_format("ã‚ãªãŸã¯ä»¥å‰ã»ã©%sãªããªã£ã¦ã—ã¾ã£ãŸ...ã€‚", act);
 #else
 						msg_format("You're not as %s as you used to be...", act);
 #endif
@@ -5108,7 +5108,7 @@ msg_format("¤¢¤Ê¤¿¤Ï°ÊÁ°¤Û¤É%s¤Ê¤¯¤Ê¤Ã¤Æ¤·¤Ş¤Ã¤¿...¡£", act);
 					case 10:
 					{
 #ifdef JP
-msg_print("¤¢¤Ê¤¿¤Ï°ÊÁ°¤Û¤ÉÎÏ¶¯¤¯¤Ê¤¯¤Ê¤Ã¤Æ¤·¤Ş¤Ã¤¿...¡£");
+msg_print("ã‚ãªãŸã¯ä»¥å‰ã»ã©åŠ›å¼·ããªããªã£ã¦ã—ã¾ã£ãŸ...ã€‚");
 #else
 						msg_print("You're not as powerful as you used to be...");
 #endif
@@ -5132,8 +5132,8 @@ msg_print("¤¢¤Ê¤¿¤Ï°ÊÁ°¤Û¤ÉÎÏ¶¯¤¯¤Ê¤¯¤Ê¤Ã¤Æ¤·¤Ş¤Ã¤¿...¡£");
 		case GF_GRAVITY:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«½Å¤¤¤â¤Î¤Ç¤Ç¹¶·â¤µ¤ì¤¿¡ª");
-msg_print("¼şÊÕ¤Î½ÅÎÏ¤¬¤æ¤¬¤ó¤À¡£");
+if (fuzzy) msg_print("ä½•ã‹é‡ã„ã‚‚ã®ã§ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
+msg_print("å‘¨è¾ºã®é‡åŠ›ãŒã‚†ãŒã‚“ã ã€‚");
 #else
 			if (fuzzy) msg_print("You are hit by something heavy!");
 			msg_print("Gravity warps around you.");
@@ -5165,7 +5165,7 @@ msg_print("¼şÊÕ¤Î½ÅÎÏ¤¬¤æ¤¬¤ó¤À¡£");
 		case GF_DISINTEGRATE:
 		{
 #ifdef JP
-if (fuzzy) msg_print("½ã¿è¤Ê¥¨¥Í¥ë¥®¡¼¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ç´”ç²‹ãªã‚¨ãƒãƒ«ã‚®ãƒ¼ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by pure energy!");
 #endif
@@ -5176,7 +5176,7 @@ if (fuzzy) msg_print("½ã¿è¤Ê¥¨¥Í¥ë¥®¡¼¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_OLD_HEAL:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«À¸Ì¿ÎÏ¤òÃ¥¤¦¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹ç”Ÿå‘½åŠ›ã‚’å¥ªã†ã‚‚ã®ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something invigorating!");
 #endif
@@ -5188,7 +5188,7 @@ if (fuzzy) msg_print("²¿¤«À¸Ì¿ÎÏ¤òÃ¥¤¦¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_OLD_SPEED:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something!");
 #endif
@@ -5200,7 +5200,7 @@ if (fuzzy) msg_print("²¿¤«¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_OLD_SLOW:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«ÃÙ¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹é…ã„ã‚‚ã®ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something slow!");
 #endif
@@ -5213,7 +5213,7 @@ if (fuzzy) msg_print("²¿¤«ÃÙ¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		{
 			if (p_ptr->free_act) break;
 #ifdef JP
-if (fuzzy) msg_print("Ì²¤Ã¤Æ¤·¤Ş¤Ã¤¿¡ª");
+if (fuzzy) msg_print("çœ ã£ã¦ã—ã¾ã£ãŸï¼");
 #else
 			if (fuzzy) msg_print("You fall asleep!");
 #endif
@@ -5222,7 +5222,7 @@ if (fuzzy) msg_print("Ì²¤Ã¤Æ¤·¤Ş¤Ã¤¿¡ª");
 			if (ironman_nightmare)
 			{
 #ifdef JP
-msg_print("¶²¤í¤·¤¤¸÷·Ê¤¬Æ¬¤ËÉâ¤«¤ó¤Ç¤­¤¿¡£");
+msg_print("æã‚ã—ã„å…‰æ™¯ãŒé ­ã«æµ®ã‹ã‚“ã§ããŸã€‚");
 #else
 				msg_print("A horrible vision enters your mind.");
 #endif
@@ -5246,7 +5246,7 @@ msg_print("¶²¤í¤·¤¤¸÷·Ê¤¬Æ¬¤ËÉâ¤«¤ó¤Ç¤­¤¿¡£");
 		case GF_MANA:
 		{
 #ifdef JP
-if (fuzzy) msg_print("ËâË¡¤Î¥ª¡¼¥é¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("é­”æ³•ã®ã‚ªãƒ¼ãƒ©ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by an aura of magic!");
 #endif
@@ -5259,7 +5259,7 @@ if (fuzzy) msg_print("ËâË¡¤Î¥ª¡¼¥é¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_PSY_SPEAR:
 		{
 #ifdef JP
-if (fuzzy) msg_print("¥¨¥Í¥ë¥®¡¼¤Î²ô¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ã‚¨ãƒãƒ«ã‚®ãƒ¼ã®å¡Šã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by an energy!");
 #endif
@@ -5272,7 +5272,7 @@ if (fuzzy) msg_print("¥¨¥Í¥ë¥®¡¼¤Î²ô¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_METEOR:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«¤¬¶õ¤«¤é¤¢¤Ê¤¿¤ÎÆ¬¾å¤ËÍî¤Á¤Æ¤­¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹ãŒç©ºã‹ã‚‰ã‚ãªãŸã®é ­ä¸Šã«è½ã¡ã¦ããŸï¼");
 #else
 			if (fuzzy) msg_print("Something falls from the sky on you!");
 #endif
@@ -5291,7 +5291,7 @@ if (fuzzy) msg_print("²¿¤«¤¬¶õ¤«¤é¤¢¤Ê¤¿¤ÎÆ¬¾å¤ËÍî¤Á¤Æ¤­¤¿¡ª");
 		case GF_ICE:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«±Ô¤¯Îä¤¿¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹é‹­ãå†·ãŸã„ã‚‚ã®ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something sharp and cold!");
 #endif
@@ -5318,7 +5318,7 @@ if (fuzzy) msg_print("²¿¤«±Ô¤¯Îä¤¿¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
 		case GF_DEATH_RAY:
 		{
 #ifdef JP
-if (fuzzy) msg_print("²¿¤«Èó¾ï¤ËÎä¤¿¤¤¤â¤Î¤Ç¹¶·â¤µ¤ì¤¿¡ª");
+if (fuzzy) msg_print("ä½•ã‹éå¸¸ã«å†·ãŸã„ã‚‚ã®ã§æ”»æ’ƒã•ã‚ŒãŸï¼");
 #else
 			if (fuzzy) msg_print("You are hit by something extremely cold!");
 #endif
@@ -6009,7 +6009,7 @@ bool project(int who, int rad, int y, int x, int dam, int typ, u16b flg)
 
 		if ((y2 == py) && (x2 == px))
 		{
-			msg_print("¤¢¤Ê¤¿¤Ï¤½¤Î¾ì¤ÇÈô¤ÓÄ·¤Í¤¿¡£");
+			msg_print("ã‚ãªãŸã¯ãã®å ´ã§é£›ã³è·³ã­ãŸã€‚");
 			teleport_player_to(ny, nx);
 		}
 		else
@@ -6428,7 +6428,7 @@ bool project(int who, int rad, int y, int x, int dam, int typ, u16b flg)
 					if (m_list[cave[y][x].m_idx].ml)
 					{
 #ifdef JP
-						msg_print("¹¶·â¤ÏÄ·¤ÍÊÖ¤Ã¤¿¡ª");
+						msg_print("æ”»æ’ƒã¯è·³ã­è¿”ã£ãŸï¼");
 #else
 						msg_print("The attack bounces!");
 #endif

@@ -9,9 +9,9 @@ N:23:Smeagol
 says, 'We hates, hates, hatesss!'
 
 N:771:Saruman of Many Colours
-#����ʪ��ǤΥ���դΥѥ��ǥ�
-#���ϡ֤��󤿤λ�������ࡣ���󤿤����ࡪ�Ǥϡ��路�ϹԤ�����
-#�֤��󤿤�̵��������ࡣ���󤿤����ࡪ�Ǥϡ��路���¤�����
+#指輪物語でのセリフのパロディ
+#元は「あんたの慈悲を憎む。あんたを憎む！では、わしは行く。」
+#「あんたの無慈悲を憎む。あんたを憎む！では、わしは逝く。」
 
 N:*:Default
 shouts, 'AAAARRRGGGHHH!!!'

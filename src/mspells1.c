@@ -1,4 +1,4 @@
-/* File: mspells1.c */
+ï»¿/* File: mspells1.c */
 
 /* Purpose: Monster spells (attack player) */
 
@@ -484,7 +484,7 @@ void curse_equipment(int chance, int heavy_chance)
 		char o_name[256];
 		object_desc(o_name, o_ptr, OD_OMIT_PREFIX | OD_NAME_ONLY);
 #ifdef JP
-msg_format("%s¤Ï¼ö¤¤¤òÄ·¤ÍÊÖ¤·¤¿¡ª", o_name,
+msg_format("%sã¯å‘ªã„ã‚’è·³ã­è¿”ã—ãŸï¼", o_name,
 #else
 		msg_format("Your %s resist%s cursing!", o_name,
 #endif
@@ -514,7 +514,7 @@ msg_format("%s¤Ï¼ö¤¤¤òÄ·¤ÍÊÖ¤·¤¿¡ª", o_name,
 	if (changed)
 	{
 #ifdef JP
-msg_print("°­°Õ¤ËËş¤Á¤¿¹õ¤¤¥ª¡¼¥é¤¬¤¢¤Ê¤¿¤ò¤È¤ê¤Ş¤¤¤¿...");
+msg_print("æ‚ªæ„ã«æº€ã¡ãŸé»’ã„ã‚ªãƒ¼ãƒ©ãŒã‚ãªãŸã‚’ã¨ã‚Šã¾ã„ãŸ...");
 #else
 		msg_print("There is a malignant black aura surrounding you...");
 #endif
@@ -1024,7 +1024,7 @@ bool make_attack_spell(int m_idx)
 	{
 		/* Message */
 #ifdef JP
-		msg_format("%^s¤Ï¼öÊ¸¤ò¾§¤¨¤è¤¦¤È¤·¤¿¤¬¼ºÇÔ¤·¤¿¡£", m_name);
+		msg_format("%^sã¯å‘ªæ–‡ã‚’å”±ãˆã‚ˆã†ã¨ã—ãŸãŒå¤±æ•—ã—ãŸã€‚", m_name);
 #else
 		msg_format("%^s tries to cast a spell, but fails.", m_name);
 #endif
@@ -1039,7 +1039,7 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			msg_format("%^s¤¬¤«¤ó¹â¤¤¶âÀÚ¤êÀ¼¤ò¤¢¤²¤¿¡£", m_name);
+			msg_format("%^sãŒã‹ã‚“é«˜ã„é‡‘åˆ‡ã‚Šå£°ã‚’ã‚ã’ãŸã€‚", m_name);
 #else
 			msg_format("%^s makes a high pitched shriek.", m_name);
 #endif
@@ -1053,8 +1053,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¡Ö¤Õ¤ó¤Ã¡ª¡×", m_name);
-			else msg_format("%^s¤¬Âç¤­¤Ê´ä¤òÅê¤²¤¿¡£", m_name);
+			if (blind) msg_format("%^sã€Œãµã‚“ã£ï¼ã€", m_name);
+			else msg_format("%^sãŒå¤§ããªå²©ã‚’æŠ•ã’ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s shouts, 'Haa!!'.", m_name);
 			else msg_format("%^s throws a large rock.", m_name);
@@ -1071,8 +1071,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤òÎÏ¶¯¤¯¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥¹¥¿¡¼¡¦¥Ğ¡¼¥¹¥È¤Î¼öÊ¸¤òÇ°¤¸¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’åŠ›å¼·ãã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚¹ã‚¿ãƒ¼ãƒ»ãƒãƒ¼ã‚¹ãƒˆã®å‘ªæ–‡ã‚’å¿µã˜ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles powerfully.", m_name);
 			else msg_format("%^s invokes a star burst.", m_name);
@@ -1088,8 +1088,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¼Í¤Ã¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥í¥±¥Ã¥È¤òÈ¯¼Í¤·¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’å°„ã£ãŸã€‚", m_name);
+			else msg_format("%^sãŒãƒ­ã‚±ãƒƒãƒˆã‚’ç™ºå°„ã—ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s shoots something.", m_name);
 			else msg_format("%^s fires a rocket.", m_name);
@@ -1107,8 +1107,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬´ñÌ¯¤Ê²»¤òÈ¯¤·¤¿¡£", m_name);
-			else msg_format("%^s¤¬Ìğ¤òÊü¤Ã¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒå¥‡å¦™ãªéŸ³ã‚’ç™ºã—ãŸã€‚", m_name);
+			else msg_format("%^sãŒçŸ¢ã‚’æ”¾ã£ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s makes a strange noise.", m_name);
 			else msg_format("%^s fires an arrow.", m_name);
@@ -1125,8 +1125,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬´ñÌ¯¤Ê²»¤òÈ¯¤·¤¿¡£", m_name);
-			else msg_format("%^s¤¬Ìğ¤òÊü¤Ã¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒå¥‡å¦™ãªéŸ³ã‚’ç™ºã—ãŸã€‚", m_name);
+			else msg_format("%^sãŒçŸ¢ã‚’æ”¾ã£ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s makes a strange noise.", m_name);
 			else msg_format("%^s fires an arrow!", m_name);
@@ -1143,8 +1143,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬´ñÌ¯¤Ê²»¤òÈ¯¤·¤¿¡£", m_name);
-			else msg_format("%s¤¬¥Ü¥ë¥È¤ò·â¤Ã¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒå¥‡å¦™ãªéŸ³ã‚’ç™ºã—ãŸã€‚", m_name);
+			else msg_format("%sãŒãƒœãƒ«ãƒˆã‚’æ’ƒã£ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s makes a strange noise.", m_name);
 			else msg_format("%^s fires a bolt.", m_name);
@@ -1161,8 +1161,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬´ñÌ¯¤Ê²»¤òÈ¯¤·¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥Ü¥ë¥È¤ò·â¤Ã¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒå¥‡å¦™ãªéŸ³ã‚’ç™ºã—ãŸã€‚", m_name);
+			else msg_format("%^sãŒãƒœãƒ«ãƒˆã‚’æ’ƒã£ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s makes a strange noise.", m_name);
 			else msg_format("%^s fires a bolt!", m_name);
@@ -1178,8 +1178,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬»À¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé…¸ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes acid.", m_name);
@@ -1195,8 +1195,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬°ğºÊ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒç¨²å¦»ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes lightning.", m_name);
@@ -1212,8 +1212,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬²Ğ±ê¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒç«ç‚ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes fire.", m_name);
@@ -1229,8 +1229,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬Îäµ¤¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒå†·æ°—ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes frost.", m_name);
@@ -1246,8 +1246,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥¬¥¹¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚¬ã‚¹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes gas.", m_name);
@@ -1264,8 +1264,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ÃÏ¹ö¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒåœ°ç„ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes nether.", m_name);
@@ -1281,8 +1281,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬Á®¸÷¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé–ƒå…‰ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes light.", m_name);
@@ -1298,8 +1298,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬°Å¹õ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒæš—é»’ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes darkness.", m_name);
@@ -1315,8 +1315,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬º®Íğ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒæ··ä¹±ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes confusion.", m_name);
@@ -1332,8 +1332,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¹ì²»¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒè½ŸéŸ³ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes sound.", m_name);
@@ -1349,8 +1349,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥«¥ª¥¹¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚«ã‚ªã‚¹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes chaos.", m_name);
@@ -1366,8 +1366,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬Îô²½¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒåŠ£åŒ–ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes disenchantment.", m_name);
@@ -1383,8 +1383,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬°ø²Ìº®Íğ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒå› æœæ··ä¹±ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes nexus.", m_name);
@@ -1400,8 +1400,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬»ş´ÖµÕÅ¾¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒæ™‚é–“é€†è»¢ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes time.", m_name);
@@ -1416,8 +1416,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ÃÙÆß¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé…éˆã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes inertia.", m_name);
@@ -1432,8 +1432,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬½ÅÎÏ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé‡åŠ›ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes gravity.", m_name);
@@ -1448,8 +1448,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ÇËÊÒ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒç ´ç‰‡ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes shards.", m_name);
@@ -1465,8 +1465,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥×¥é¥º¥Ş¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒãƒ—ãƒ©ã‚ºãƒã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes plasma.", m_name);
@@ -1481,8 +1481,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥Õ¥©¡¼¥¹¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒãƒ•ã‚©ãƒ¼ã‚¹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes force.", m_name);
@@ -1497,8 +1497,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%s¤¬ËâÎÏ¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%sãŒé­”åŠ›ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes mana.", m_name);
@@ -1513,8 +1513,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬Êü¼ÍÇ½µå¤òÊü¤Ã¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒæ”¾å°„èƒ½çƒã‚’æ”¾ã£ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a ball of radiation.", m_name);
@@ -1530,8 +1530,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬Êü¼ÍÀ­ÇÑ´şÊª¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒæ”¾å°„æ€§å»ƒæ£„ç‰©ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes toxic waste.", m_name);
@@ -1547,8 +1547,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬¶²¤í¤·¤²¤Ë¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥«¥ª¥¹µå¤òÊü¤Ã¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒæã‚ã—ã’ã«ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚«ã‚ªã‚¹çƒã‚’æ”¾ã£ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles frighteningly.", m_name);
 			else msg_format("%^s casts chaos ball.", m_name);
@@ -1564,8 +1564,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬Ê¬²ò¤Î¥Ö¥ì¥¹¤òÅÇ¤¤¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒåˆ†è§£ã®ãƒ–ãƒ¬ã‚¹ã‚’åã„ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s breathes.", m_name);
 			else msg_format("%^s breathes disintegration.", m_name);
@@ -1581,8 +1581,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥¢¥·¥Ã¥É¡¦¥Ü¡¼¥ë¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚¢ã‚·ãƒƒãƒ‰ãƒ»ãƒœãƒ¼ãƒ«ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts an acid ball.", m_name);
@@ -1599,8 +1599,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥µ¥ó¥À¡¼¡¦¥Ü¡¼¥ë¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚µãƒ³ãƒ€ãƒ¼ãƒ»ãƒœãƒ¼ãƒ«ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a lightning ball.", m_name);
@@ -1617,8 +1617,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥Õ¥¡¥¤¥¢¡¦¥Ü¡¼¥ë¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒãƒ•ã‚¡ã‚¤ã‚¢ãƒ»ãƒœãƒ¼ãƒ«ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a fire ball.", m_name);
@@ -1635,8 +1635,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥¢¥¤¥¹¡¦¥Ü¡¼¥ë¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚¢ã‚¤ã‚¹ãƒ»ãƒœãƒ¼ãƒ«ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a frost ball.", m_name);
@@ -1653,8 +1653,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬°­½­±À¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒæ‚ªè‡­é›²ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a stinking cloud.", m_name);
@@ -1671,8 +1671,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ÃÏ¹öµå¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒåœ°ç„çƒã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a nether ball.", m_name);
@@ -1689,10 +1689,10 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬Î®¤ì¤ë¤è¤¦¤Ê¿È¿¶¤ê¤ò¤·¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒæµã‚Œã‚‹ã‚ˆã†ãªèº«æŒ¯ã‚Šã‚’ã—ãŸã€‚", m_name);
 
-			msg_print("¤¢¤Ê¤¿¤Ï±²´¬¤­¤Ë°û¤ß¹ş¤Ş¤ì¤¿¡£");
+			msg_print("ã‚ãªãŸã¯æ¸¦å·»ãã«é£²ã¿è¾¼ã¾ã‚ŒãŸã€‚");
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s gestures fluidly.", m_name);
@@ -1710,8 +1710,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤òÎÏ¶¯¤¯¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâÎÏ¤ÎÍò¤Î¼öÊ¸¤òÇ°¤¸¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’åŠ›å¼·ãã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”åŠ›ã®åµã®å‘ªæ–‡ã‚’å¿µã˜ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles powerfully.", m_name);
 			else msg_format("%^s invokes a mana storm.", m_name);
@@ -1726,8 +1726,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤òÎÏ¶¯¤¯¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬°Å¹õ¤ÎÍò¤Î¼öÊ¸¤òÇ°¤¸¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’åŠ›å¼·ãã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒæš—é»’ã®åµã®å‘ªæ–‡ã‚’å¿µã˜ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles powerfully.", m_name);
 			else msg_format("%^s invokes a darkness storm.", m_name);
@@ -1751,7 +1751,7 @@ bool make_attack_spell(int m_idx)
 
 				/* Basic message */
 #ifdef JP
-				msg_format("%^s¤ËÀº¿À¥¨¥Í¥ë¥®¡¼¤òµÛ¤¤¼è¤é¤ì¤Æ¤·¤Ş¤Ã¤¿¡ª", m_name);
+				msg_format("%^sã«ç²¾ç¥ã‚¨ãƒãƒ«ã‚®ãƒ¼ã‚’å¸ã„å–ã‚‰ã‚Œã¦ã—ã¾ã£ãŸï¼", m_name);
 #else
 				msg_format("%^s draws psychic energy from you!", m_name);
 #endif
@@ -1794,7 +1794,7 @@ bool make_attack_spell(int m_idx)
 					if (seen)
 					{
 #ifdef JP
-						msg_format("%^s¤Ïµ¤Ê¬¤¬ÎÉ¤µ¤½¤¦¤À¡£", m_name);
+						msg_format("%^sã¯æ°—åˆ†ãŒè‰¯ã•ãã†ã ã€‚", m_name);
 #else
 						msg_format("%^s appears healthier.", m_name);
 #endif
@@ -1813,7 +1813,7 @@ bool make_attack_spell(int m_idx)
 			if (!seen)
 			{
 #ifdef JP
-				msg_print("²¿¤«¤¬¤¢¤Ê¤¿¤ÎÀº¿À¤ËÇ°¤òÊü¤Ã¤Æ¤¤¤ë¤è¤¦¤À¡£");
+				msg_print("ä½•ã‹ãŒã‚ãªãŸã®ç²¾ç¥ã«å¿µã‚’æ”¾ã£ã¦ã„ã‚‹ã‚ˆã†ã ã€‚");
 #else
 				msg_print("You feel something focusing on your mind.");
 #endif
@@ -1821,7 +1821,7 @@ bool make_attack_spell(int m_idx)
 			else
 			{
 #ifdef JP
-				msg_format("%^s¤¬¤¢¤Ê¤¿¤ÎÆ·¤ò¤¸¤Ã¤È¤Ë¤é¤ó¤Ç¤¤¤ë¡£", m_name);
+				msg_format("%^sãŒã‚ãªãŸã®ç³ã‚’ã˜ã£ã¨ã«ã‚‰ã‚“ã§ã„ã‚‹ã€‚", m_name);
 #else
 				msg_format("%^s gazes deep into your eyes.", m_name);
 #endif
@@ -1830,7 +1830,7 @@ bool make_attack_spell(int m_idx)
 			if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_print("You resist the effects!");
 #endif
@@ -1838,7 +1838,7 @@ bool make_attack_spell(int m_idx)
 			else
 			{
 #ifdef JP
-				msg_print("ÎîÅª¥¨¥Í¥ë¥®¡¼¤ÇÀº¿À¤¬¹¶·â¤µ¤ì¤¿¡£");
+				msg_print("éœŠçš„ã‚¨ãƒãƒ«ã‚®ãƒ¼ã§ç²¾ç¥ãŒæ”»æ’ƒã•ã‚ŒãŸã€‚");
 #else
 				msg_print("Your mind is blasted by psionic energy.");
 #endif
@@ -1866,7 +1866,7 @@ bool make_attack_spell(int m_idx)
 			if (!seen)
 			{
 #ifdef JP
-				msg_print("²¿¤«¤¬¤¢¤Ê¤¿¤ÎÀº¿À¤ËÇ°¤òÊü¤Ã¤Æ¤¤¤ë¤è¤¦¤À¡£");
+				msg_print("ä½•ã‹ãŒã‚ãªãŸã®ç²¾ç¥ã«å¿µã‚’æ”¾ã£ã¦ã„ã‚‹ã‚ˆã†ã ã€‚");
 #else
 				msg_print("You feel something focusing on your mind.");
 #endif
@@ -1874,7 +1874,7 @@ bool make_attack_spell(int m_idx)
 			else
 			{
 #ifdef JP
-				msg_format("%^s¤¬¤¢¤Ê¤¿¤ÎÆ·¤ò¤¸¤Ã¤È¸«¤Æ¤¤¤ë¡£", m_name);
+				msg_format("%^sãŒã‚ãªãŸã®ç³ã‚’ã˜ã£ã¨è¦‹ã¦ã„ã‚‹ã€‚", m_name);
 #else
 				msg_format("%^s looks deep into your eyes.", m_name);
 #endif
@@ -1883,7 +1883,7 @@ bool make_attack_spell(int m_idx)
 			if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_print("You resist the effects!");
 #endif
@@ -1891,7 +1891,7 @@ bool make_attack_spell(int m_idx)
 			else
 			{
 #ifdef JP
-				msg_print("ÎîÅª¥¨¥Í¥ë¥®¡¼¤ÇÀº¿À¤¬¹¶·â¤µ¤ì¤¿¡£");
+				msg_print("éœŠçš„ã‚¨ãƒãƒ«ã‚®ãƒ¼ã§ç²¾ç¥ãŒæ”»æ’ƒã•ã‚ŒãŸã€‚");
 #else
 				msg_print("Your mind is blasted by psionic energy.");
 #endif
@@ -1929,8 +1929,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¤¢¤Ê¤¿¤ò»Ø¤µ¤·¤Æ¼ö¤Ã¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚ãªãŸã‚’æŒ‡ã•ã—ã¦å‘ªã£ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s points at you and curses.", m_name);
@@ -1939,7 +1939,7 @@ bool make_attack_spell(int m_idx)
 			if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_print("You resist the effects!");
 #endif
@@ -1958,8 +1958,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¤¢¤Ê¤¿¤ò»Ø¤µ¤·¤Æ¶²¤í¤·¤²¤Ë¼ö¤Ã¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚ãªãŸã‚’æŒ‡ã•ã—ã¦æã‚ã—ã’ã«å‘ªã£ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s points at you and curses horribly.", m_name);
@@ -1968,7 +1968,7 @@ bool make_attack_spell(int m_idx)
 			if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_print("You resist the effects!");
 #endif
@@ -1987,8 +1987,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤òÂçÀ¼¤Ç¶«¤ó¤À¡£", m_name);
-			else msg_format("%^s¤¬¤¢¤Ê¤¿¤ò»Ø¤µ¤·¤Æ¶²¤í¤·¤²¤Ë¼öÊ¸¤ò¾§¤¨¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’å¤§å£°ã§å«ã‚“ã ã€‚", m_name);
+			else msg_format("%^sãŒã‚ãªãŸã‚’æŒ‡ã•ã—ã¦æã‚ã—ã’ã«å‘ªæ–‡ã‚’å”±ãˆãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles loudly.", m_name);
 			else msg_format("%^s points at you, incanting terribly!", m_name);
@@ -1997,7 +1997,7 @@ bool make_attack_spell(int m_idx)
 			if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_print("You resist the effects!");
 #endif
@@ -2016,8 +2016,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬¡Ö»à¤Í¡ª¡×¤È¶«¤ó¤À¡£", m_name);
-			else msg_format("%^s¤¬¤¢¤Ê¤¿¤ò»Ø¤µ¤·¤Æ¡Ö»à¤Í¡ª¡×¤È¶«¤ó¤À¡£", m_name);
+			if (blind) msg_format("%^sãŒã€Œæ­»ã­ï¼ã€ã¨å«ã‚“ã ã€‚", m_name);
+			else msg_format("%^sãŒã‚ãªãŸã‚’æŒ‡ã•ã—ã¦ã€Œæ­»ã­ï¼ã€ã¨å«ã‚“ã ã€‚", m_name);
 #else
 			if (blind) msg_format("%^s screams the word 'DIE!'", m_name);
 			else msg_format("%^s points at you, screaming the word DIE!", m_name);
@@ -2026,7 +2026,7 @@ bool make_attack_spell(int m_idx)
 			if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_print("You resist the effects!");
 #endif
@@ -2045,8 +2045,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥¢¥·¥Ã¥É¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚¢ã‚·ãƒƒãƒ‰ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a acid bolt.", m_name);
@@ -2065,8 +2065,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥µ¥ó¥À¡¼¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚µãƒ³ãƒ€ãƒ¼ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a lightning bolt.", m_name);
@@ -2085,8 +2085,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥Õ¥¡¥¤¥¢¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒãƒ•ã‚¡ã‚¤ã‚¢ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a fire bolt.", m_name);
@@ -2105,8 +2105,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥¢¥¤¥¹¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚¢ã‚¤ã‚¹ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a frost bolt.", m_name);
@@ -2125,8 +2125,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥İ¥¤¥º¥ó¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒãƒã‚¤ã‚ºãƒ³ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a poison bolt.", m_name);
@@ -2145,8 +2145,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ÃÏ¹ö¤ÎÌğ¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒåœ°ç„ã®çŸ¢ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a nether bolt.", m_name);
@@ -2165,8 +2165,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥¦¥©¡¼¥¿¡¼¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚¦ã‚©ãƒ¼ã‚¿ãƒ¼ãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a water bolt.", m_name);
@@ -2184,8 +2184,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâÎÏ¤ÎÌğ¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”åŠ›ã®çŸ¢ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a mana bolt.", m_name);
@@ -2202,8 +2202,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥×¥é¥º¥Ş¡¦¥Ü¥ë¥È¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒãƒ—ãƒ©ã‚ºãƒãƒ»ãƒœãƒ«ãƒˆã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a plasma bolt.", m_name);
@@ -2221,8 +2221,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¶Ë´¨¤ÎÌğ¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒæ¥µå¯’ã®çŸ¢ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts an ice bolt.", m_name);
@@ -2241,8 +2241,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥Ş¥¸¥Ã¥¯¡¦¥ß¥µ¥¤¥ë¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒãƒã‚¸ãƒƒã‚¯ãƒ»ãƒŸã‚µã‚¤ãƒ«ã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a magic missile.", m_name);
@@ -2259,8 +2259,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¯¤È¡¢¶²¤í¤·¤²¤Ê²»¤¬Ê¹¤³¤¨¤¿¡£", m_name);
-			else msg_format("%^s¤¬¶²¤í¤·¤²¤Ê¸¸³Ğ¤òºî¤ê½Ğ¤·¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ãã¨ã€æã‚ã—ã’ãªéŸ³ãŒèã“ãˆãŸã€‚", m_name);
+			else msg_format("%^sãŒæã‚ã—ã’ãªå¹»è¦šã‚’ä½œã‚Šå‡ºã—ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles, and you hear scary noises.", m_name);
 			else msg_format("%^s casts a fearful illusion.", m_name);
@@ -2270,7 +2270,7 @@ bool make_attack_spell(int m_idx)
 			if (p_ptr->resist_fear)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¶²Éİ¤Ë¿¯¤µ¤ì¤Ê¤«¤Ã¤¿¡£");
+				msg_print("ã—ã‹ã—ææ€–ã«ä¾µã•ã‚Œãªã‹ã£ãŸã€‚");
 #else
 				msg_print("You refuse to be frightened.");
 #endif
@@ -2278,7 +2278,7 @@ bool make_attack_spell(int m_idx)
 			else if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¶²Éİ¤Ë¿¯¤µ¤ì¤Ê¤«¤Ã¤¿¡£");
+				msg_print("ã—ã‹ã—ææ€–ã«ä¾µã•ã‚Œãªã‹ã£ãŸã€‚");
 #else
 				msg_print("You refuse to be frightened.");
 #endif
@@ -2297,8 +2297,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¼öÊ¸¤ò¾§¤¨¤Æ¤¢¤Ê¤¿¤ÎÌÜ¤ò¤¯¤é¤Ş¤·¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒå‘ªæ–‡ã‚’å”±ãˆã¦ã‚ãªãŸã®ç›®ã‚’ãã‚‰ã¾ã—ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s casts a spell, burning your eyes!", m_name);
@@ -2307,7 +2307,7 @@ bool make_attack_spell(int m_idx)
 			if (p_ptr->resist_blind)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹æœãŒãªã‹ã£ãŸï¼");
 #else
 				msg_print("You are unaffected!");
 #endif
@@ -2315,7 +2315,7 @@ bool make_attack_spell(int m_idx)
 			else if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_print("You resist the effects!");
 #endif
@@ -2334,8 +2334,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¯¤È¡¢Æ¬¤òÇº¤Ş¤¹²»¤¬¤·¤¿¡£", m_name);
-			else msg_format("%^s¤¬Í¶ÏÇÅª¤Ê¸¸³Ğ¤òºî¤ê½Ğ¤·¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ãã¨ã€é ­ã‚’æ‚©ã¾ã™éŸ³ãŒã—ãŸã€‚", m_name);
+			else msg_format("%^sãŒèª˜æƒ‘çš„ãªå¹»è¦šã‚’ä½œã‚Šå‡ºã—ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles, and you hear puzzling noises.", m_name);
 			else msg_format("%^s creates a mesmerising illusion.", m_name);
@@ -2344,7 +2344,7 @@ bool make_attack_spell(int m_idx)
 			if (p_ptr->resist_conf)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸¸³Ğ¤Ë¤Ï¤À¤Ş¤µ¤ì¤Ê¤«¤Ã¤¿¡£");
+				msg_print("ã—ã‹ã—å¹»è¦šã«ã¯ã ã¾ã•ã‚Œãªã‹ã£ãŸã€‚");
 #else
 				msg_print("You disbelieve the feeble spell.");
 #endif
@@ -2352,7 +2352,7 @@ bool make_attack_spell(int m_idx)
 			else if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸¸³Ğ¤Ë¤Ï¤À¤Ş¤µ¤ì¤Ê¤«¤Ã¤¿¡£");
+				msg_print("ã—ã‹ã—å¹»è¦šã«ã¯ã ã¾ã•ã‚Œãªã‹ã£ãŸã€‚");
 #else
 				msg_print("You disbelieve the feeble spell.");
 #endif
@@ -2371,7 +2371,7 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			msg_format("%^s¤¬¤¢¤Ê¤¿¤Î¶ÚÎÏ¤òµÛ¤¤¼è¤í¤¦¤È¤·¤¿¡ª", m_name);
+			msg_format("%^sãŒã‚ãªãŸã®ç­‹åŠ›ã‚’å¸ã„å–ã‚ã†ã¨ã—ãŸï¼", m_name);
 #else
 			msg_format("%^s drains power from your muscles!", m_name);
 #endif
@@ -2379,7 +2379,7 @@ bool make_attack_spell(int m_idx)
 			if (p_ptr->free_act)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹æœãŒãªã‹ã£ãŸï¼");
 #else
 				msg_print("You are unaffected!");
 #endif
@@ -2387,7 +2387,7 @@ bool make_attack_spell(int m_idx)
 			else if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_print("You resist the effects!");
 #endif
@@ -2406,8 +2406,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¤¢¤Ê¤¿¤ÎÌÜ¤ò¤¸¤Ã¤È¸«¤Ä¤á¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚ãªãŸã®ç›®ã‚’ã˜ã£ã¨è¦‹ã¤ã‚ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s stares deep into your eyes!", m_name);
@@ -2416,7 +2416,7 @@ bool make_attack_spell(int m_idx)
 			if (p_ptr->free_act)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹æœãŒãªã‹ã£ãŸï¼");
 #else
 				msg_print("You are unaffected!");
 #endif
@@ -2424,7 +2424,7 @@ bool make_attack_spell(int m_idx)
 			else if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_format("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_format("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_format("You resist the effects!");
 #endif
@@ -2442,8 +2442,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¼«Ê¬¤ÎÂÎ¤ËÇ°¤òÁ÷¤Ã¤¿¡£", m_name, m_poss);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒè‡ªåˆ†ã®ä½“ã«å¿µã‚’é€ã£ãŸã€‚", m_name, m_poss);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s concentrates on %s body.", m_name, m_poss);
@@ -2453,7 +2453,7 @@ bool make_attack_spell(int m_idx)
 			if (!m_ptr->hasted)
 			{
 #ifdef JP
-				msg_format("%^s¤ÎÆ°¤­¤¬Â®¤¯¤Ê¤Ã¤¿¡£", m_name);
+				msg_format("%^sã®å‹•ããŒé€Ÿããªã£ãŸã€‚", m_name);
 #else
 				msg_format("%^s starts moving faster.", m_name);
 #endif
@@ -2469,7 +2469,7 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			msg_format("%^s¤¬<ÇËÌÇ¤Î¼ê>¤òÊü¤Ã¤¿¡ª", m_name);
+			msg_format("%^sãŒ<ç ´æ»…ã®æ‰‹>ã‚’æ”¾ã£ãŸï¼", m_name);
 #else
 			msg_format("%^s invokes the Hand of Doom!", m_name);
 #endif
@@ -2477,7 +2477,7 @@ bool make_attack_spell(int m_idx)
 			if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_format("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_format("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_format("You resist the effects!");
 #endif
@@ -2486,7 +2486,7 @@ bool make_attack_spell(int m_idx)
 			{
 				int dummy = (((s32b) ((65 + randint1(25)) * (p_ptr->chp))) / 100);
 #ifdef JP
-				msg_print("¤¢¤Ê¤¿¤ÏÌ¿¤¬Çö¤Ş¤Ã¤Æ¤¤¤¯¤è¤¦¤Ë´¶¤¸¤¿¡ª");
+				msg_print("ã‚ãªãŸã¯å‘½ãŒè–„ã¾ã£ã¦ã„ãã‚ˆã†ã«æ„Ÿã˜ãŸï¼");
 #else
 				msg_print("Your feel your life fade away!");
 #endif
@@ -2505,8 +2505,8 @@ bool make_attack_spell(int m_idx)
 
 			/* Message */
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¼«Ê¬¤Î½ı¤Ë½¸Ãæ¤·¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒè‡ªåˆ†ã®å‚·ã«é›†ä¸­ã—ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s concentrates on %s wounds.", m_name, m_poss);
@@ -2523,8 +2523,8 @@ bool make_attack_spell(int m_idx)
 
 				/* Message */
 #ifdef JP
-				if (seen) msg_format("%^s¤Ï´°Á´¤Ë¼£¤Ã¤¿¡ª", m_name);
-				else msg_format("%^s¤Ï´°Á´¤Ë¼£¤Ã¤¿¤è¤¦¤À¡ª", m_name);
+				if (seen) msg_format("%^sã¯å®Œå…¨ã«æ²»ã£ãŸï¼", m_name);
+				else msg_format("%^sã¯å®Œå…¨ã«æ²»ã£ãŸã‚ˆã†ã ï¼", m_name);
 #else
 				if (seen) msg_format("%^s looks completely healed!", m_name);
 				else msg_format("%^s sounds completely healed!", m_name);
@@ -2536,8 +2536,8 @@ bool make_attack_spell(int m_idx)
 			{
 				/* Message */
 #ifdef JP
-				if (seen) msg_format("%^s¤ÏÂÎÎÏ¤ò²óÉü¤·¤¿¤è¤¦¤À¡£", m_name);
-				else msg_format("%^s¤ÏÂÎÎÏ¤ò²óÉü¤·¤¿¤è¤¦¤À¡£", m_name);
+				if (seen) msg_format("%^sã¯ä½“åŠ›ã‚’å›å¾©ã—ãŸã‚ˆã†ã ã€‚", m_name);
+				else msg_format("%^sã¯ä½“åŠ›ã‚’å›å¾©ã—ãŸã‚ˆã†ã ã€‚", m_name);
 #else
 				if (seen) msg_format("%^s looks healthier.", m_name);
 				else msg_format("%^s sounds healthier.", m_name);
@@ -2557,7 +2557,7 @@ bool make_attack_spell(int m_idx)
 
 				/* Message */
 #ifdef JP
-				msg_format("%^s¤ÏÍ¦µ¤¤ò¼è¤êÌá¤·¤¿¡£", m_name, m_poss);
+				msg_format("%^sã¯å‹‡æ°—ã‚’å–ã‚Šæˆ»ã—ãŸã€‚", m_name, m_poss);
 #else
 				msg_format("%^s recovers %s courage.", m_name, m_poss);
 #endif
@@ -2572,8 +2572,8 @@ bool make_attack_spell(int m_idx)
 
 			/* Message */
 #ifdef JP
-			if (!seen) msg_format("%^s¤¬²¿¤«¤òÎÏ¶¯¤¯¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%s¤ÏÌµ½ı¤Îµå¤Î¼öÊ¸¤ò¾§¤¨¤¿¡£", m_name);
+			if (!seen) msg_format("%^sãŒä½•ã‹ã‚’åŠ›å¼·ãã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%sã¯ç„¡å‚·ã®çƒã®å‘ªæ–‡ã‚’å”±ãˆãŸã€‚", m_name);
 #else
 			if (!seen) msg_format("%^s mumbles powerfully.", m_name);
 			else msg_format("%^s casts a Globe of Invulnerability.", m_name);
@@ -2593,7 +2593,7 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			msg_format("%^s¤¬½Ö»ş¤Ë¾Ã¤¨¤¿¡£", m_name);
+			msg_format("%^sãŒç¬æ™‚ã«æ¶ˆãˆãŸã€‚", m_name);
 #else
 			msg_format("%^s blinks away.", m_name);
 #endif
@@ -2607,7 +2607,7 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			msg_format("%^s¤¬¥Æ¥ì¥İ¡¼¥È¤·¤¿¡£", m_name);
+			msg_format("%^sãŒãƒ†ãƒ¬ãƒãƒ¼ãƒˆã—ãŸã€‚", m_name);
 #else
 			msg_format("%^s teleports away.", m_name);
 #endif
@@ -2633,7 +2633,7 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			msg_format("%^s¤¬¤¢¤Ê¤¿¤ò°ú¤­Ìá¤·¤¿¡£", m_name);
+			msg_format("%^sãŒã‚ãªãŸã‚’å¼•ãæˆ»ã—ãŸã€‚", m_name);
 #else
 			msg_format("%^s commands you to return.", m_name);
 #endif
@@ -2647,7 +2647,7 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			msg_format("%^s¤Ë¥Æ¥ì¥İ¡¼¥È¤µ¤»¤é¤ì¤¿¡£", m_name);
+			msg_format("%^sã«ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã•ã›ã‚‰ã‚ŒãŸã€‚", m_name);
 #else
 			msg_format("%^s teleports you away.", m_name);
 #endif
@@ -2661,8 +2661,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«´ñÌ¯¤Ê¸ÀÍÕ¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¤¢¤Ê¤¿¤ÎÂ­¤ò»Ø¤µ¤·¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹å¥‡å¦™ãªè¨€è‘‰ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚ãªãŸã®è¶³ã‚’æŒ‡ã•ã—ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles strangely.", m_name);
 			else msg_format("%^s gestures at your feet.", m_name);
@@ -2671,7 +2671,7 @@ bool make_attack_spell(int m_idx)
 			if (p_ptr->resist_nexus)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸ú²Ì¤¬¤Ê¤«¤Ã¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹æœãŒãªã‹ã£ãŸï¼");
 #else
 				msg_print("You are unaffected!");
 #endif
@@ -2679,7 +2679,7 @@ bool make_attack_spell(int m_idx)
 			else if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_print("You resist the effects!");
 #endif
@@ -2704,8 +2704,8 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬°Å°Ç¤ÎÃæ¤Ç¼ê¤ò¿¶¤Ã¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒæš—é—‡ã®ä¸­ã§æ‰‹ã‚’æŒ¯ã£ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s gestures in shadow.", m_name);
@@ -2719,8 +2719,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤Æ¼Ù°­¤ËÈù¾Ğ¤ó¤À¡£", m_name);
-			else msg_format("%^s¤¬¼öÊ¸¤ò¾§¤¨¤Æ¼Ù°­¤ËÈù¾Ğ¤ó¤À¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ã¦é‚ªæ‚ªã«å¾®ç¬‘ã‚“ã ã€‚", m_name);
+			else msg_format("%^sãŒå‘ªæ–‡ã‚’å”±ãˆã¦é‚ªæ‚ªã«å¾®ç¬‘ã‚“ã ã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles, and then cackles evilly.", m_name);
 			else msg_format("%^s casts a spell and cackles evilly.", m_name);
@@ -2736,7 +2736,7 @@ bool make_attack_spell(int m_idx)
 			if (!direct) break;
 			disturb(1, 0);
 #ifdef JP
-			msg_format("%^s¤¬¤¢¤Ê¤¿¤Îµ­²±¤ò¾Ãµî¤·¤è¤¦¤È¤·¤Æ¤¤¤ë¡£", m_name);
+			msg_format("%^sãŒã‚ãªãŸã®è¨˜æ†¶ã‚’æ¶ˆå»ã—ã‚ˆã†ã¨ã—ã¦ã„ã‚‹ã€‚", m_name);
 #else
 			msg_format("%^s tries to blank your mind.", m_name);
 #endif
@@ -2744,7 +2744,7 @@ bool make_attack_spell(int m_idx)
 			if (randint0(100) < p_ptr->skill_sav)
 			{
 #ifdef JP
-				msg_print("¤·¤«¤·¸úÎÏ¤òÄ·¤ÍÊÖ¤·¤¿¡ª");
+				msg_print("ã—ã‹ã—åŠ¹åŠ›ã‚’è·³ã­è¿”ã—ãŸï¼");
 #else
 				msg_print("You resist the effects!");
 #endif
@@ -2752,7 +2752,7 @@ bool make_attack_spell(int m_idx)
 			else if (lose_all_info())
 			{
 #ifdef JP
-				msg_print("µ­²±¤¬Çö¤ì¤Æ¤·¤Ş¤Ã¤¿¡£");
+				msg_print("è¨˜æ†¶ãŒè–„ã‚Œã¦ã—ã¾ã£ãŸã€‚");
 #else
 				msg_print("Your memories fade away.");
 #endif
@@ -2765,7 +2765,7 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			msg_format("%^s¤¬ÀÅ¤«¤Ë¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
+			msg_format("%^sãŒé™ã‹ã«ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
 #else
 			msg_format("%^s mutters quietly.", m_name);
 #endif
@@ -2778,9 +2778,9 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤ÏËâË¡¤Ç%s¤ò¾¤´­¤·¤¿¡£", m_name,
-				((r_ptr->flags1) & RF1_UNIQUE ? "¼ê²¼" : "Ãç´Ö"));
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sã¯é­”æ³•ã§%sã‚’å¬å–šã—ãŸã€‚", m_name,
+				((r_ptr->flags1) & RF1_UNIQUE ? "æ‰‹ä¸‹" : "ä»²é–“"));
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons %s %s.", m_name, m_poss,
@@ -2899,7 +2899,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_KIN, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("Â¿¤¯¤Î¤â¤Î¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("å¤šãã®ã‚‚ã®ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear many things appear nearby.");
 #endif
@@ -2911,9 +2911,9 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬¥µ¥¤¥Ğ¡¼¥Ç¡¼¥â¥ó¤ò¾¤´­¤·¤¿¡ª", m_name);
-			if (blind && count) msg_print("½Å¸ü¤ÊÂ­²»¤¬¶á¤¯¤ÇÊ¹¤³¤¨¤ë¡£");
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒã‚µã‚¤ãƒãƒ¼ãƒ‡ãƒ¼ãƒ¢ãƒ³ã‚’å¬å–šã—ãŸï¼", m_name);
+			if (blind && count) msg_print("é‡åšãªè¶³éŸ³ãŒè¿‘ãã§èã“ãˆã‚‹ã€‚");
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons Cyberdemons!", m_name);
@@ -2929,8 +2929,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤ÇÃç´Ö¤ò¾¤´­¤·¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§ä»²é–“ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons help!", m_name);
@@ -2942,7 +2942,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, 0, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("²¿¤«¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("ä½•ã‹ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear something appear nearby.");
 #endif
@@ -2954,8 +2954,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤Ç¥â¥ó¥¹¥¿¡¼¤ò¾¤´­¤·¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons monsters!", m_name);
@@ -2967,7 +2967,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, 0, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("Â¿¤¯¤Î¤â¤Î¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("å¤šãã®ã‚‚ã®ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear many things appear nearby.");
 #endif
@@ -2979,8 +2979,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤Ç¥¢¥ê¤ò¾¤´­¤·¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§ã‚¢ãƒªã‚’å¬å–šã—ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons ants.", m_name);
@@ -2992,7 +2992,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_ANT, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("Â¿¤¯¤Î¤â¤Î¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("å¤šãã®ã‚‚ã®ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear many things appear nearby.");
 #endif
@@ -3004,8 +3004,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤Ç¥¯¥â¤ò¾¤´­¤·¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§ã‚¯ãƒ¢ã‚’å¬å–šã—ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons spiders.", m_name);
@@ -3017,7 +3017,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_SPIDER, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("Â¿¤¯¤Î¤â¤Î¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("å¤šãã®ã‚‚ã®ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear many things appear nearby.");
 #endif
@@ -3029,8 +3029,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤Ç¥Ï¥¦¥ó¥É¤ò¾¤´­¤·¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§ãƒã‚¦ãƒ³ãƒ‰ã‚’å¬å–šã—ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons hounds.", m_name);
@@ -3042,7 +3042,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_HOUND, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("Â¿¤¯¤Î¤â¤Î¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("å¤šãã®ã‚‚ã®ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear many things appear nearby.");
 #endif
@@ -3054,8 +3054,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤Ç¥Ò¥É¥é¤ò¾¤´­¤·¤¿¡£", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§ãƒ’ãƒ‰ãƒ©ã‚’å¬å–šã—ãŸã€‚", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons hydras.", m_name);
@@ -3067,7 +3067,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_HYDRA, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("Â¿¤¯¤Î¤â¤Î¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("å¤šãã®ã‚‚ã®ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear many things appear nearby.");
 #endif
@@ -3079,8 +3079,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤ÇÅ·»È¤ò¾¤´­¤·¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§å¤©ä½¿ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons an angel!", m_name);
@@ -3092,7 +3092,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_ANGEL, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("²¿¤«¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("ä½•ã‹ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear something appear nearby.");
 #endif
@@ -3104,8 +3104,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤ÇÃÏ¹ö¤Î¶¯Å¨¤ò¾¤´­¤·¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§åœ°ç„ã®å¼·æ•µã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons a hellish adversary!", m_name);
@@ -3117,7 +3117,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_DEMON, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("²¿¤«¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("ä½•ã‹ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear something appear nearby.");
 #endif
@@ -3129,8 +3129,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤Ç¥¢¥ó¥Ç¥Ã¥É¤Î¶¯Å¨¤ò¾¤´­¤·¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§ã‚¢ãƒ³ãƒ‡ãƒƒãƒ‰ã®å¼·æ•µã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons an undead adversary!", m_name);
@@ -3142,7 +3142,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_UNDEAD, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("²¿¤«¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("ä½•ã‹ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear something appear nearby.");
 #endif
@@ -3154,8 +3154,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤Ç¥É¥é¥´¥ó¤ò¾¤´­¤·¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§ãƒ‰ãƒ©ã‚´ãƒ³ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons a dragon!", m_name);
@@ -3167,7 +3167,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_DRAGON, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("²¿¤«¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("ä½•ã‹ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear something appear nearby.");
 #endif
@@ -3179,8 +3179,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤Ç¶¯ÎÏ¤Ê¥¢¥ó¥Ç¥Ã¥É¤ò¾¤´­¤·¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§å¼·åŠ›ãªã‚¢ãƒ³ãƒ‡ãƒƒãƒ‰ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons greater undead!", m_name);
@@ -3192,7 +3192,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_HI_UNDEAD, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("´Ö¶á¤Ç²¿¤«Â¿¤¯¤Î¤â¤Î¤¬Çç¤¤²ó¤ë²»¤¬Ê¹¤³¤¨¤ë¡£");
+			if (blind && count) msg_print("é–“è¿‘ã§ä½•ã‹å¤šãã®ã‚‚ã®ãŒé€™ã„å›ã‚‹éŸ³ãŒèã“ãˆã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear many creepy things appear nearby.");
 #endif
@@ -3204,8 +3204,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤Ç¸ÅÂå¥É¥é¥´¥ó¤ò¾¤´­¤·¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§å¤ä»£ãƒ‰ãƒ©ã‚´ãƒ³ã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons ancient dragons!", m_name);
@@ -3217,7 +3217,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_HI_DRAGON, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("Â¿¤¯¤ÎÎÏ¶¯¤¤¤â¤Î¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬Ê¹¤³¤¨¤ë¡£");
+			if (blind && count) msg_print("å¤šãã®åŠ›å¼·ã„ã‚‚ã®ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒèã“ãˆã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear many powerful things appear nearby.");
 #endif
@@ -3229,8 +3229,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤ÇÃÏ¹ö¤Î¶¯Å¨¤ò¾¤´­¤·¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§åœ°ç„ã®å¼·æ•µã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons a hellish adversary!", m_name);
@@ -3242,7 +3242,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_HI_DEMON, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("²¿¤«¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬¤¹¤ë¡£");
+			if (blind && count) msg_print("ä½•ã‹ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒã™ã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear something appear nearby.");
 #endif
@@ -3254,8 +3254,8 @@ bool make_attack_spell(int m_idx)
 		{
 			disturb(1, 0);
 #ifdef JP
-			if (blind) msg_format("%^s¤¬²¿¤«¤ò¤Ä¤Ö¤ä¤¤¤¿¡£", m_name);
-			else msg_format("%^s¤¬ËâË¡¤ÇÆÃÊÌ¤Ê¶¯Å¨¤ò¾¤´­¤·¤¿¡ª", m_name);
+			if (blind) msg_format("%^sãŒä½•ã‹ã‚’ã¤ã¶ã‚„ã„ãŸã€‚", m_name);
+			else msg_format("%^sãŒé­”æ³•ã§ç‰¹åˆ¥ãªå¼·æ•µã‚’å¬å–šã—ãŸï¼", m_name);
 #else
 			if (blind) msg_format("%^s mumbles.", m_name);
 			else msg_format("%^s magically summons special opponents!", m_name);
@@ -3271,7 +3271,7 @@ bool make_attack_spell(int m_idx)
 				count += summon_specific(m_idx, y, x, rlev, SUMMON_HI_UNDEAD, TRUE, FALSE, FALSE);
 			}
 #ifdef JP
-			if (blind && count) msg_print("Â¿¤¯¤ÎÎÏ¶¯¤¤¤â¤Î¤¬´Ö¶á¤Ë¸½¤ì¤¿²»¤¬Ê¹¤³¤¨¤ë¡£");
+			if (blind && count) msg_print("å¤šãã®åŠ›å¼·ã„ã‚‚ã®ãŒé–“è¿‘ã«ç¾ã‚ŒãŸéŸ³ãŒèã“ãˆã‚‹ã€‚");
 #else
 			if (blind && count) msg_print("You hear many powerful things appear nearby.");
 #endif

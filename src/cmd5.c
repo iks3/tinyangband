@@ -1,4 +1,4 @@
-/* File: cmd5.c */
+ï»¿/* File: cmd5.c */
 
 /* Purpose: Spell/Prayer commands */
 
@@ -18,42 +18,42 @@ static const char *spell_tips[MAX_REALM][MAX_SPELLS] =
 {
 #ifdef JP
 	{
-		"¶á¤¯¤Î¼Ù°­¤Ê¥â¥ó¥¹¥¿¡¼¤ò´¶ÃÎ¤¹¤ë¡£",
-		"²ø²æ¤ÈÂÎÎÏ¤ò¾¯¤·²óÉü¤µ¤»¤ë¡£",
-		"°ìÄê»ş´Ö¡¢Ì¿ÃæÎ¨¤ÈAC¤Ë¥Ü¡¼¥Ê¥¹¤òÆÀ¤ë¡£",
-		"¸÷¸»¤¬¾È¤é¤·¤Æ¤¤¤ëÈÏ°Ï¤«Éô²°Á´ÂÎ¤ò±Êµ×¤ËÌÀ¤ë¤¯¤¹¤ë¡£",
-		"¶á¤¯¤ÎÁ´¤Æ¤Îæ«¤ÈÈâ¤È³¬ÃÊ¤ò´¶ÃÎ¤¹¤ë¡£",
-		"ËşÊ¢¤Ë¤¹¤ë¡£",
-		"À»¤Ê¤ëÎÏ¤ò¤â¤ÄÊõ¼î¤òÊü¤Ä¡£¼Ù°­¤Ê¥â¥ó¥¹¥¿¡¼¤ËÂĞ¤·¤ÆÂç¤­¤Ê¥À¥á¡¼¥¸¤òÍ¿¤¨¤ë¤¬¡¢Á±ÎÉ¤Ê¥â¥ó¥¹¥¿¡¼¤Ë¤Ï¸ú²Ì¤¬¤Ê¤¤¡£",
-		"°ìÄê»ş´Ö¡¢±ê¡¢Îäµ¤¤ËÂĞ¤¹¤ëÂÑÀ­¤òÆÀ¤ë¡£ÁõÈ÷¤Ë¤è¤ëÂÑÀ­¤ËÎßÀÑ¤¹¤ë¡£",
+		"è¿‘ãã®é‚ªæ‚ªãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’æ„ŸçŸ¥ã™ã‚‹ã€‚",
+		"æ€ªæˆ‘ã¨ä½“åŠ›ã‚’å°‘ã—å›å¾©ã•ã›ã‚‹ã€‚",
+		"ä¸€å®šæ™‚é–“ã€å‘½ä¸­ç‡ã¨ACã«ãƒœãƒ¼ãƒŠã‚¹ã‚’å¾—ã‚‹ã€‚",
+		"å…‰æºãŒç…§ã‚‰ã—ã¦ã„ã‚‹ç¯„å›²ã‹éƒ¨å±‹å…¨ä½“ã‚’æ°¸ä¹…ã«æ˜ã‚‹ãã™ã‚‹ã€‚",
+		"è¿‘ãã®å…¨ã¦ã®ç½ ã¨æ‰‰ã¨éšæ®µã‚’æ„ŸçŸ¥ã™ã‚‹ã€‚",
+		"æº€è…¹ã«ã™ã‚‹ã€‚",
+		"è–ãªã‚‹åŠ›ã‚’ã‚‚ã¤å®ç ã‚’æ”¾ã¤ã€‚é‚ªæ‚ªãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã«å¯¾ã—ã¦å¤§ããªãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹ãŒã€å–„è‰¯ãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã«ã¯åŠ¹æœãŒãªã„ã€‚",
+		"ä¸€å®šæ™‚é–“ã€ç‚ã€å†·æ°—ã«å¯¾ã™ã‚‹è€æ€§ã‚’å¾—ã‚‹ã€‚è£…å‚™ã«ã‚ˆã‚‹è€æ€§ã«ç´¯ç©ã™ã‚‹ã€‚",
 
-		"ÂÎÎÏ¤òÂçÉı¤Ë²óÉü¤µ¤»¡¢Éé½ı¤ÈÛ¯Û°¾õÂÖ¤âÁ´²÷¤¹¤ë¡£",
-		"¥¢¥¤¥Æ¥à¤Ë¤«¤«¤Ã¤¿¼å¤¤¼ö¤¤¤ò²ò½ü¤¹¤ë¡£",
-		"¤¹¤Ù¤Æ¤Î¥¹¥Æ¡¼¥¿¥¹¤È·Ğ¸³ÃÍ¤ò²óÉü¤¹¤ë¡£",
-		"¼şÊÕ¤ÎÃÏ·Á¤ò´¶ÃÎ¤¹¤ë¡£",
-		"»ë³¦Æâ¤ÎÁ´¤Æ¤Î¼Ù°­¤Ê¥â¥ó¥¹¥¿¡¼¤Ë¥À¥á¡¼¥¸¤òÍ¿¤¨¤ë¡£",
-		"¶Ë¤á¤Æ¶¯ÎÏ¤Ê²óÉü¼öÊ¸¤Ç¡¢Éé½ı¤ÈÛ¯Û°¾õÂÖ¤âÁ´²÷¤¹¤ë¡£",
-		"Éğ´ï¤ò½ËÊ¡¤¹¤ë¡£¶¯ÎÏ¤Ê¼ö¤¤¤Î¤«¤«¤Ã¤¿Éğ´ï¤Ë¤ÏÄñ¹³¤µ¤ì¤ë¡£¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¤ò½ËÊ¡¤·¤è¤¦¤È¤·¤Æ¼ºÇÔ¤¹¤ë¤ÈÎô²½¤¹¤ë¡£",
-		"Á®¸÷¤Îµå¤òÊü¤Ä¡£",
+		"ä½“åŠ›ã‚’å¤§å¹…ã«å›å¾©ã•ã›ã€è² å‚·ã¨æœ¦æœ§çŠ¶æ…‹ã‚‚å…¨å¿«ã™ã‚‹ã€‚",
+		"ã‚¢ã‚¤ãƒ†ãƒ ã«ã‹ã‹ã£ãŸå¼±ã„å‘ªã„ã‚’è§£é™¤ã™ã‚‹ã€‚",
+		"ã™ã¹ã¦ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã¨çµŒé¨“å€¤ã‚’å›å¾©ã™ã‚‹ã€‚",
+		"å‘¨è¾ºã®åœ°å½¢ã‚’æ„ŸçŸ¥ã™ã‚‹ã€‚",
+		"è¦–ç•Œå†…ã®å…¨ã¦ã®é‚ªæ‚ªãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã«ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹ã€‚",
+		"æ¥µã‚ã¦å¼·åŠ›ãªå›å¾©å‘ªæ–‡ã§ã€è² å‚·ã¨æœ¦æœ§çŠ¶æ…‹ã‚‚å…¨å¿«ã™ã‚‹ã€‚",
+		"æ­¦å™¨ã‚’ç¥ç¦ã™ã‚‹ã€‚å¼·åŠ›ãªå‘ªã„ã®ã‹ã‹ã£ãŸæ­¦å™¨ã«ã¯æŠµæŠ—ã•ã‚Œã‚‹ã€‚ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆã‚’ç¥ç¦ã—ã‚ˆã†ã¨ã—ã¦å¤±æ•—ã™ã‚‹ã¨åŠ£åŒ–ã™ã‚‹ã€‚",
+		"é–ƒå…‰ã®çƒã‚’æ”¾ã¤ã€‚",
 	},
 	{
-		"¼å¤¤ËâË¡¤ÎÌğ¤òÊü¤Ä¡£",
-		"¶áµ÷Î¥¤Î¥Æ¥ì¥İ¡¼¥È¤ò¤¹¤ë¡£",
-		"¶á¤¯¤ÎÁ´¤Æ¤Î¸«¤¨¤ë¥â¥ó¥¹¥¿¡¼¤ò´¶ÃÎ¤¹¤ë¡£",
-		"±óµ÷Î¥¤Î¥Æ¥ì¥İ¡¼¥È¤ò¤¹¤ë¡£",
-		"ËâË¡¤Îµå¤òÊü¤Ä¡£",
-		"¼şÊÕ¤ÎÃÏ·Á¤ò´¶ÃÎ¤¹¤ë¡£",
-		"¥â¥ó¥¹¥¿¡¼1ÂÎ¤ò¥Æ¥ì¥İ¡¼¥È¤µ¤»¤ë¡£Äñ¹³¤µ¤ì¤ë¤ÈÌµ¸ú¡£",
-		"¾®¤µ¤ÊÊ¬²ò¤Îµå¤òÊü¤Ä¡£ÊÉ¤âÊ¬²ò¤Ç¤­¤ë¡£",
+		"å¼±ã„é­”æ³•ã®çŸ¢ã‚’æ”¾ã¤ã€‚",
+		"è¿‘è·é›¢ã®ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã‚’ã™ã‚‹ã€‚",
+		"è¿‘ãã®å…¨ã¦ã®è¦‹ãˆã‚‹ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’æ„ŸçŸ¥ã™ã‚‹ã€‚",
+		"é è·é›¢ã®ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã‚’ã™ã‚‹ã€‚",
+		"é­”æ³•ã®çƒã‚’æ”¾ã¤ã€‚",
+		"å‘¨è¾ºã®åœ°å½¢ã‚’æ„ŸçŸ¥ã™ã‚‹ã€‚",
+		"ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼1ä½“ã‚’ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã•ã›ã‚‹ã€‚æŠµæŠ—ã•ã‚Œã‚‹ã¨ç„¡åŠ¹ã€‚",
+		"å°ã•ãªåˆ†è§£ã®çƒã‚’æ”¾ã¤ã€‚å£ã‚‚åˆ†è§£ã§ãã‚‹ã€‚",
 
-		"°ìÄê»ş´Ö¡¢Éğ´ï¤Ë²Ğ±êÂ°À­¤òÍ¿¤¨¤ë¡£",
-		"ÃÏ¾å¤Ë¤¤¤ë¤È¤­¤Ï¥À¥ó¥¸¥ç¥ó¤ÎºÇ¿¼³¬¤Ø¡¢¥À¥ó¥¸¥ç¥ó¤Ë¤¤¤ë¤È¤­¤ÏÃÏ¾å¤Ø¤È°ÜÆ°¤¹¤ë¡£",
-		"¥¢¥¤¥Æ¥à¤ò1¤Ä¼±ÊÌ¤¹¤ë¡£",
-		"À¸Êª¤ËÍ­¸ú¤Ê¶¯ÎÏ¤ÊÌğ¤òÊü¤Ä¡£",
-		"°ìÄê»ş´Ö¡¢¥Æ¥ì¥Ñ¥·¡¼Ç½ÎÏ¤òÆÀ¤ë¡£",
-		"°ìÄê»ş´Ö¡¢²ÃÂ®¤¹¤ë¡£",
-		"¶á¤¯¤ÎÁ´¤Æ¤Î¥â¥ó¥¹¥¿¡¼¡¢æ«¡¢Èâ¡¢³¬ÃÊ¡¢ºâÊõ¡¢¤½¤·¤Æ¥¢¥¤¥Æ¥à¤ò´¶ÃÎ¤¹¤ë¡£",
-		"µğÂç¤ÊÃÏ¹ö¤Î±ê¤Îµå¤òÊü¤Ä¡£Á±ÎÉ¤Ê¥â¥ó¥¹¥¿¡¼¤ËÂĞ¤·¤Æ¤µ¤é¤ËÂç¤­¤Ê¥À¥á¡¼¥¸¤òÍ¿¤¨¤ë¡£",
+		"ä¸€å®šæ™‚é–“ã€æ­¦å™¨ã«ç«ç‚å±æ€§ã‚’ä¸ãˆã‚‹ã€‚",
+		"åœ°ä¸Šã«ã„ã‚‹ã¨ãã¯ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã®æœ€æ·±éšã¸ã€ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ã«ã„ã‚‹ã¨ãã¯åœ°ä¸Šã¸ã¨ç§»å‹•ã™ã‚‹ã€‚",
+		"ã‚¢ã‚¤ãƒ†ãƒ ã‚’1ã¤è­˜åˆ¥ã™ã‚‹ã€‚",
+		"ç”Ÿç‰©ã«æœ‰åŠ¹ãªå¼·åŠ›ãªçŸ¢ã‚’æ”¾ã¤ã€‚",
+		"ä¸€å®šæ™‚é–“ã€ãƒ†ãƒ¬ãƒ‘ã‚·ãƒ¼èƒ½åŠ›ã‚’å¾—ã‚‹ã€‚",
+		"ä¸€å®šæ™‚é–“ã€åŠ é€Ÿã™ã‚‹ã€‚",
+		"è¿‘ãã®å…¨ã¦ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã€ç½ ã€æ‰‰ã€éšæ®µã€è²¡å®ã€ãã—ã¦ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ„ŸçŸ¥ã™ã‚‹ã€‚",
+		"å·¨å¤§ãªåœ°ç„ã®ç‚ã®çƒã‚’æ”¾ã¤ã€‚å–„è‰¯ãªãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã«å¯¾ã—ã¦ã•ã‚‰ã«å¤§ããªãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹ã€‚",
 	},
 #else
 	{
@@ -134,7 +134,7 @@ static int get_spell(int *sn, cptr prompt, int sval, bool known, int use_realm)
 	char        out_val[160];
 #ifdef JP
 	char        jverb_buf[128];
-	cptr        p = ((mp_ptr->spell_type == ST_PRAYER) ? "µ§¤ê" : "¼öÊ¸");
+	cptr        p = ((mp_ptr->spell_type == ST_PRAYER) ? "ç¥ˆã‚Š" : "å‘ªæ–‡");
 #else
 	cptr        p = ((mp_ptr->spell_type == ST_PRAYER) ? "prayer" : "spell");
 #endif
@@ -202,7 +202,7 @@ static int get_spell(int *sn, cptr prompt, int sval, bool known, int use_realm)
 	/* Build a prompt (accept all spells) */
 #ifdef JP
 	jverb( prompt, jverb_buf, JVERB_AND );
-	(void) strnfmt(out_val, 78, "(%^s:%c-%c, '*'¤Ç°ìÍ÷, ESC¤ÇÃæÃÇ) ¤É¤Î%s¤ò%^s¤Ş¤¹¤«? ",
+	(void) strnfmt(out_val, 78, "(%^s:%c-%c, '*'ã§ä¸€è¦§, ESCã§ä¸­æ–­) ã©ã®%sã‚’%^sã¾ã™ã‹? ",
 		p, I2A(0), I2A(num - 1), p, jverb_buf );
 #else
 	(void)strnfmt(out_val, 78, "(%^ss %c-%c, *=List, ESC=exit) %^s which %s? ",
@@ -271,7 +271,7 @@ static int get_spell(int *sn, cptr prompt, int sval, bool known, int use_realm)
 		{
 			bell();
 #ifdef JP
-			msg_format("¤½¤Î%s¤ò%s¤³¤È¤Ï¤Ç¤­¤Ş¤»¤ó¡£", p, prompt);
+			msg_format("ãã®%sã‚’%sã“ã¨ã¯ã§ãã¾ã›ã‚“ã€‚", p, prompt);
 #else
 			msg_format("You may not %s that %s.", prompt, p);
 #endif
@@ -289,8 +289,8 @@ static int get_spell(int *sn, cptr prompt, int sval, bool known, int use_realm)
 			/* Prompt */
 #ifdef JP
 			jverb( prompt, jverb_buf, JVERB_AND);
-			/* ±ÑÆüÀÚ¤êÂØ¤¨µ¡Ç½¤ËÂĞ±ş */
-			(void)strnfmt(tmp_val, 78, "%s(MP%d, ¼ºÇÔÎ¨%d%%)¤ò%s¤Ş¤¹¤«? ",
+			/* è‹±æ—¥åˆ‡ã‚Šæ›¿ãˆæ©Ÿèƒ½ã«å¯¾å¿œ */
+			(void)strnfmt(tmp_val, 78, "%s(MP%d, å¤±æ•—ç‡%d%%)ã‚’%sã¾ã™ã‹? ",
 				spell_names[use_realm -1][spell % 32],
 				get_modified_smana(s_ptr), spell_chance(spell, use_realm -1), jverb_buf);
 #else
@@ -362,7 +362,7 @@ void do_cmd_browse(void)
 	if (!(p_ptr->realm1 || p_ptr->realm2))
 	{
 #ifdef JP
-		msg_print("ËÜ¤òÆÉ¤à¤³¤È¤¬¤Ç¤­¤Ê¤¤¡ª");
+		msg_print("æœ¬ã‚’èª­ã‚€ã“ã¨ãŒã§ããªã„ï¼");
 #else
 		msg_print("You cannot read books!");
 #endif
@@ -374,8 +374,8 @@ void do_cmd_browse(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤ÎËÜ¤òÆÉ¤ß¤Ş¤¹¤«? ";
-	s = "ÆÉ¤á¤ëËÜ¤¬¤Ê¤¤¡£";
+	q = "ã©ã®æœ¬ã‚’èª­ã¿ã¾ã™ã‹? ";
+	s = "èª­ã‚ã‚‹æœ¬ãŒãªã„ã€‚";
 #else
 	q = "Browse which book? ";
 	s = "You have no books that you can read.";
@@ -429,7 +429,7 @@ void do_cmd_browse(void)
 	{
 		/* Ask for a spell, allow cancel */
 #ifdef JP
-		if (!get_spell(&spell, "ÆÉ¤à", o_ptr->sval, TRUE, use_realm))
+		if (!get_spell(&spell, "èª­ã‚€", o_ptr->sval, TRUE, use_realm))
 #else
 		if (!get_spell(&spell, "browse", o_ptr->sval, TRUE, use_realm))
 #endif
@@ -442,7 +442,7 @@ void do_cmd_browse(void)
 
 			/* Notify that there's nothing to see, and wait. */
 #ifdef JP
-			prt("ÆÉ¤á¤ë¼öÊ¸¤¬¤Ê¤¤¡£", 0, 0);
+			prt("èª­ã‚ã‚‹å‘ªæ–‡ãŒãªã„ã€‚", 0, 0);
 #else
 			prt("No spells to browse.", 0, 0);
 #endif
@@ -487,7 +487,7 @@ void do_cmd_study(void)
 	int	spell = -1;
 
 #ifdef JP
-	cptr p = ((mp_ptr->spell_type == ST_PRAYER) ? "µ§¤ê" : "¼öÊ¸");
+	cptr p = ((mp_ptr->spell_type == ST_PRAYER) ? "ç¥ˆã‚Š" : "å‘ªæ–‡");
 #else
 	cptr p = ((mp_ptr->spell_type == ST_PRAYER) ? "prayer" : "spell");
 #endif
@@ -499,7 +499,7 @@ void do_cmd_study(void)
 	if (!p_ptr->realm1)
 	{
 #ifdef JP
-		msg_print("ËÜ¤òÆÉ¤à¤³¤È¤¬¤Ç¤­¤Ê¤¤¡ª");
+		msg_print("æœ¬ã‚’èª­ã‚€ã“ã¨ãŒã§ããªã„ï¼");
 #else
 		msg_print("You cannot read books!");
 #endif
@@ -509,7 +509,7 @@ void do_cmd_study(void)
 	if (p_ptr->blind || no_lite())
 	{
 #ifdef JP
-		msg_print("ÌÜ¤¬¸«¤¨¤Ê¤¤¡ª");
+		msg_print("ç›®ãŒè¦‹ãˆãªã„ï¼");
 #else
 		msg_print("You cannot see!");
 #endif
@@ -519,7 +519,7 @@ void do_cmd_study(void)
 	if (p_ptr->confused)
 	{
 #ifdef JP
-		msg_print("º®Íğ¤·¤Æ¤¤¤ÆÆÉ¤á¤Ê¤¤¡ª");
+		msg_print("æ··ä¹±ã—ã¦ã„ã¦èª­ã‚ãªã„ï¼");
 #else
 		msg_print("You are too confused!");
 #endif
@@ -529,7 +529,7 @@ void do_cmd_study(void)
 	if (!(p_ptr->new_spells))
 	{
 #ifdef JP
-		msg_format("¿·¤·¤¤%s¤ò³Ğ¤¨¤ë¤³¤È¤Ï¤Ç¤­¤Ê¤¤¡ª", p);
+		msg_format("æ–°ã—ã„%sã‚’è¦šãˆã‚‹ã“ã¨ã¯ã§ããªã„ï¼", p);
 #else
 		msg_format("You cannot learn any new %ss!", p);
 #endif
@@ -538,9 +538,9 @@ void do_cmd_study(void)
 
 #ifdef JP
 	if( p_ptr->new_spells < 10 )
-		msg_format("¤¢¤È %d ¤Ä¤Î%s¤ò³Ø¤Ù¤ë¡£", p_ptr->new_spells, p);
+		msg_format("ã‚ã¨ %d ã¤ã®%sã‚’å­¦ã¹ã‚‹ã€‚", p_ptr->new_spells, p);
 	else
-		msg_format("¤¢¤È %d ¸Ä¤Î%s¤ò³Ø¤Ù¤ë¡£", p_ptr->new_spells, p);
+		msg_format("ã‚ã¨ %d å€‹ã®%sã‚’å­¦ã¹ã‚‹ã€‚", p_ptr->new_spells, p);
 #else
 	msg_format("You can learn %d new %s%s.", p_ptr->new_spells, p,
 		(p_ptr->new_spells == 1?"":"s"));
@@ -553,8 +553,8 @@ void do_cmd_study(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤ÎËÜ¤«¤é³Ø¤Ó¤Ş¤¹¤«? ";
-	s = "ÆÉ¤á¤ëËÜ¤¬¤Ê¤¤¡£";
+	q = "ã©ã®æœ¬ã‹ã‚‰å­¦ã³ã¾ã™ã‹? ";
+	s = "èª­ã‚ã‚‹æœ¬ãŒãªã„ã€‚";
 #else
 	q = "Study which book? ";
 	s = "You have no books that you can read.";
@@ -592,7 +592,7 @@ void do_cmd_study(void)
 	{
 		/* Ask for a spell, allow cancel */
 #ifdef JP
-		if (!get_spell(&spell, "³Ø¤Ö", sval, FALSE, tval2realm(o_ptr->tval))
+		if (!get_spell(&spell, "å­¦ã¶", sval, FALSE, tval2realm(o_ptr->tval))
 		    && (spell == -1)) return;
 #else
 		if (!get_spell(&spell, "study", sval, FALSE, tval2realm(o_ptr->tval))
@@ -634,7 +634,7 @@ void do_cmd_study(void)
 	{
 		/* Message */
 #ifdef JP
-		msg_format("¤½¤ÎËÜ¤Ë¤Ï³Ø¤Ö¤Ù¤­%s¤¬¤Ê¤¤¡£", p);
+		msg_format("ãã®æœ¬ã«ã¯å­¦ã¶ã¹ã%sãŒãªã„ã€‚", p);
 #else
 		msg_format("You cannot learn any %ss in that book.", p);
 #endif
@@ -670,8 +670,8 @@ void do_cmd_study(void)
 
 	/* Mention the result */
 #ifdef JP
-	/* ±ÑÆüÀÚ¤êÂØ¤¨µ¡Ç½¤ËÂĞ±ş */
-		msg_format("%s¤Î%s¤ò³Ø¤ó¤À¡£",
+	/* è‹±æ—¥åˆ‡ã‚Šæ›¿ãˆæ©Ÿèƒ½ã«å¯¾å¿œ */
+		msg_format("%sã®%sã‚’å­¦ã‚“ã ã€‚",
 			    spell_names
 		[(increment ? p_ptr->realm2 - 1 : p_ptr->realm1 - 1)][spell % 32] ,p);
 #else
@@ -692,9 +692,9 @@ void do_cmd_study(void)
 		/* Message */
 #ifdef JP
 			if( p_ptr->new_spells < 10 )
-				msg_format("¤¢¤È %d ¤Ä¤Î%s¤ò³Ø¤Ù¤ë¡£", p_ptr->new_spells, p);
+				msg_format("ã‚ã¨ %d ã¤ã®%sã‚’å­¦ã¹ã‚‹ã€‚", p_ptr->new_spells, p);
 			else
-				msg_format("¤¢¤È %d ¸Ä¤Î%s¤ò³Ø¤Ù¤ë¡£", p_ptr->new_spells, p);
+				msg_format("ã‚ã¨ %d å€‹ã®%sã‚’å­¦ã¹ã‚‹ã€‚", p_ptr->new_spells, p);
 #else
 		msg_format("You can learn %d more %s%s.",
 			p_ptr->new_spells, p,
@@ -763,7 +763,7 @@ static bool cast_life_spell(int spell)
 		if (remove_curse())
 		{
 #ifdef JP
-			msg_print("Ã¯¤«¤Ë¸«¼é¤é¤ì¤Æ¤¤¤ë¤è¤¦¤Êµ¤¤¬¤¹¤ë¡£");
+			msg_print("èª°ã‹ã«è¦‹å®ˆã‚‰ã‚Œã¦ã„ã‚‹ã‚ˆã†ãªæ°—ãŒã™ã‚‹ã€‚");
 #else
 			msg_print("You feel as if someone is watching over you.");
 #endif
@@ -799,7 +799,7 @@ static bool cast_life_spell(int spell)
 		break;
 	default:
 #ifdef JP
-		msg_format("¤¢¤Ê¤¿¤ÏÉÔÌÀ¤Ê¥é¥¤¥Õ¤Î¼öÊ¸ %d ¤ò¾§¤¨¤¿¡£", spell);
+		msg_format("ã‚ãªãŸã¯ä¸æ˜ãªãƒ©ã‚¤ãƒ•ã®å‘ªæ–‡ %d ã‚’å”±ãˆãŸã€‚", spell);
 #else
 		msg_format("You cast an unknown Life spell: %d.", spell);
 #endif
@@ -884,11 +884,11 @@ static bool cast_sorcery_spell(int spell)
 	case 15: /* Hell Fire */
 		if (!get_aim_dir(&dir)) return FALSE;
 		fire_ball(GF_HELL_FIRE, dir, 150 + (plev * 6), 4);
-		take_hit(7 + randint1(10), "¼öÊ¸¤ò¾§¤¨¤¿ÈèÏ«");
+		take_hit(7 + randint1(10), "å‘ªæ–‡ã‚’å”±ãˆãŸç–²åŠ´");
 		break;
 	default:
 #ifdef JP
-		msg_format("¤¢¤Ê¤¿¤ÏÉÔÌÀ¤Ê¥½¡¼¥µ¥ê¡¼¤Î¼öÊ¸ %d ¤ò¾§¤¨¤¿¡£", spell);
+		msg_format("ã‚ãªãŸã¯ä¸æ˜ãªã‚½ãƒ¼ã‚µãƒªãƒ¼ã®å‘ªæ–‡ %d ã‚’å”±ãˆãŸã€‚", spell);
 #else
 		msg_format("You cast an unknown Sorcery spell: %d.", spell);
 #endif
@@ -912,7 +912,7 @@ void do_cmd_cast(void)
 	byte use_mana;
 
 #ifdef JP
-	const cptr prayer = ((mp_ptr->spell_type == ST_PRAYER) ? "µ§¤ê" : "¼öÊ¸");
+	const cptr prayer = ((mp_ptr->spell_type == ST_PRAYER) ? "ç¥ˆã‚Š" : "å‘ªæ–‡");
 #else
 	const cptr prayer = ((mp_ptr->spell_type == ST_PRAYER) ? "prayer" : "spell");
 #endif
@@ -927,7 +927,7 @@ void do_cmd_cast(void)
 	if (!p_ptr->realm1)
 	{
 #ifdef JP
-		msg_print("¼öÊ¸¤ò¾§¤¨¤é¤ì¤Ê¤¤¡ª");
+		msg_print("å‘ªæ–‡ã‚’å”±ãˆã‚‰ã‚Œãªã„ï¼");
 #else
 		msg_print("You cannot cast spells!");
 #endif
@@ -938,7 +938,7 @@ void do_cmd_cast(void)
 	if (p_ptr->blind || no_lite())
 	{
 #ifdef JP
-		msg_print("ÌÜ¤¬¸«¤¨¤Ê¤¤¡ª");
+		msg_print("ç›®ãŒè¦‹ãˆãªã„ï¼");
 #else
 		msg_print("You cannot see!");
 #endif
@@ -949,7 +949,7 @@ void do_cmd_cast(void)
 	if (p_ptr->confused)
 	{
 #ifdef JP
-		msg_print("º®Íğ¤·¤Æ¤¤¤Æ³Ø¤Ù¤Ê¤¤¡ª");
+		msg_print("æ··ä¹±ã—ã¦ã„ã¦å­¦ã¹ãªã„ï¼");
 #else
 		msg_print("You are too confused!");
 #endif
@@ -961,8 +961,8 @@ void do_cmd_cast(void)
 
 	/* Get an item */
 #ifdef JP
-	q = "¤É¤Î¼öÊ¸½ñ¤ò»È¤¤¤Ş¤¹¤«? ";
-	s = "¼öÊ¸½ñ¤¬¤Ê¤¤¡ª";
+	q = "ã©ã®å‘ªæ–‡æ›¸ã‚’ä½¿ã„ã¾ã™ã‹? ";
+	s = "å‘ªæ–‡æ›¸ãŒãªã„ï¼";
 #else
 	q = "Use which book? ";
 	s = "You have no spell books!";
@@ -1001,10 +1001,10 @@ void do_cmd_cast(void)
 	/* Ask for a spell */
 #ifdef JP
 	if (!get_spell(&spell,  
-		((mp_ptr->spell_type == ST_PRAYER) ? "±Ó¾§¤¹¤ë" : "¾§¤¨¤ë"),
+		((mp_ptr->spell_type == ST_PRAYER) ? "è© å”±ã™ã‚‹" : "å”±ãˆã‚‹"),
 		sval, TRUE, realm))
 	{
-		if (spell == -2) msg_format("¤½¤ÎËÜ¤Ë¤ÏÃÎ¤Ã¤Æ¤¤¤ë%s¤¬¤Ê¤¤¡£", prayer);
+		if (spell == -2) msg_format("ãã®æœ¬ã«ã¯çŸ¥ã£ã¦ã„ã‚‹%sãŒãªã„ã€‚", prayer);
 		return;
 	}
 #else
@@ -1030,8 +1030,8 @@ void do_cmd_cast(void)
 	{
 		/* Warning */
 #ifdef JP
-		msg_format("¤½¤Î%s¤ò%s¤Î¤Ë½½Ê¬¤Ê¥Ş¥¸¥Ã¥¯¥İ¥¤¥ó¥È¤¬¤Ê¤¤¡£",prayer,
-			((mp_ptr->spell_type == ST_PRAYER) ? "±Ó¾§¤¹¤ë" : "¾§¤¨¤ë"));
+		msg_format("ãã®%sã‚’%sã®ã«ååˆ†ãªãƒã‚¸ãƒƒã‚¯ãƒã‚¤ãƒ³ãƒˆãŒãªã„ã€‚",prayer,
+			((mp_ptr->spell_type == ST_PRAYER) ? "è© å”±ã™ã‚‹" : "å”±ãˆã‚‹"));
 #else
 		msg_format("You do not have enough mana to %s this %s.",
 			((mp_ptr->spell_type == ST_PRAYER) ? "recite" : "cast"),
@@ -1041,7 +1041,7 @@ void do_cmd_cast(void)
 
 		/* Verify */
 #ifdef JP
-		if (!get_check("¤½¤ì¤Ç¤âÄ©Àï¤·¤Ş¤¹¤«? ")) return;
+		if (!get_check("ãã‚Œã§ã‚‚æŒ‘æˆ¦ã—ã¾ã™ã‹? ")) return;
 #else
 		if (!get_check("Attempt it anyway? ")) return;
 #endif
@@ -1057,7 +1057,7 @@ void do_cmd_cast(void)
 		if (flush_failure) flush();
 
 #ifdef JP
-		msg_format("%s¤ò¤¦¤Ş¤¯¾§¤¨¤é¤ì¤Ê¤«¤Ã¤¿¡ª", prayer);
+		msg_format("%sã‚’ã†ã¾ãå”±ãˆã‚‰ã‚Œãªã‹ã£ãŸï¼", prayer);
 #else
 		msg_format("You failed to get the %s off!", prayer);
 #endif
@@ -1129,7 +1129,7 @@ void do_cmd_cast(void)
 
 		/* Message */
 #ifdef JP
-		msg_print("Àº¿À¤ò½¸Ãæ¤·¤¹¤®¤Æµ¤¤ò¼º¤Ã¤Æ¤·¤Ş¤Ã¤¿¡ª");
+		msg_print("ç²¾ç¥ã‚’é›†ä¸­ã—ã™ãã¦æ°—ã‚’å¤±ã£ã¦ã—ã¾ã£ãŸï¼");
 #else
 		msg_print("You faint from the effort!");
 #endif
@@ -1144,7 +1144,7 @@ void do_cmd_cast(void)
 
 			/* Message */
 #ifdef JP
-			msg_print("ÂÎ¤ò°­¤¯¤·¤Æ¤·¤Ş¤Ã¤¿¡ª");
+			msg_print("ä½“ã‚’æ‚ªãã—ã¦ã—ã¾ã£ãŸï¼");
 #else
 			msg_print("You have damaged your health!");
 #endif
@@ -1225,7 +1225,7 @@ int calculate_upkeep(void)
 #ifdef TRACK_FRIENDS
 		if (wizard)
 #ifdef JP
-			msg_format("Í§¹¥Åª¥â¥ó¥¹¥¿¡¼: %d ÂÎ", total_friends);
+			msg_format("å‹å¥½çš„ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼: %d ä½“", total_friends);
 #else
 			msg_format("Total friends: %d.", total_friends);
 #endif
@@ -1242,7 +1242,7 @@ int calculate_upkeep(void)
 #ifdef TRACK_FRIENDS
 			if (wizard)
 #ifdef JP
-			msg_format("¥ì¥Ù¥ë %d, °İ»ı£Í£Ğ %d", total_friend_levels, upkeep_factor);
+			msg_format("ãƒ¬ãƒ™ãƒ« %d, ç¶­æŒï¼­ï¼° %d", total_friend_levels, upkeep_factor);
 #else
 			msg_format("Levels %d, upkeep %d", total_friend_levels, upkeep_factor);
 #endif
@@ -1267,7 +1267,7 @@ void do_cmd_pet_dismiss(void)
 	monster_type *m_ptr;
 
 #ifdef JP
-	if (get_check("¤¹¤Ù¤Æ¤Î¥Ú¥Ã¥È¤òÊü¤·¤Ş¤¹¤«¡©")) all_pets = TRUE;
+	if (get_check("ã™ã¹ã¦ã®ãƒšãƒƒãƒˆã‚’æ”¾ã—ã¾ã™ã‹ï¼Ÿ")) all_pets = TRUE;
 #else
 	if (get_check("Dismiss all pets? ")) all_pets = TRUE;
 #endif
@@ -1296,7 +1296,7 @@ void do_cmd_pet_dismiss(void)
 				handle_stuff();
 
 #ifdef JP
-				sprintf(check_friend, "%s¤òÊü¤·¤Ş¤¹¤«¡© [Yes/No/All]", friend_name);
+				sprintf(check_friend, "%sã‚’æ”¾ã—ã¾ã™ã‹ï¼Ÿ [Yes/No/All]", friend_name);
 #else
 				sprintf(check_friend, "Dismiss %s? [Yes/No/All]", friend_name);
 #endif
@@ -1337,7 +1337,7 @@ void do_cmd_pet_dismiss(void)
 
 	Term_erase(0, 0, 255);
 #ifdef JP
-	msg_format("%d É¤¤Î¥Ú¥Ã¥È¤òÊü¤·¤Ş¤·¤¿¡£", Dismissed);
+	msg_format("%d åŒ¹ã®ãƒšãƒƒãƒˆã‚’æ”¾ã—ã¾ã—ãŸã€‚", Dismissed);
 #else
 	msg_format("You have dismissed %d pet%s.", Dismissed,
 		(Dismissed == 1 ? "" : "s"));
@@ -1383,7 +1383,7 @@ void do_cmd_pet(void)
 	if (pets)
 	{
 #ifdef JP
-		power_desc[num] = "¥Ú¥Ã¥È¤òÊü¤¹";
+		power_desc[num] = "ãƒšãƒƒãƒˆã‚’æ”¾ã™";
 #else
 		power_desc[num] = "dismiss pets";
 #endif
@@ -1391,7 +1391,7 @@ void do_cmd_pet(void)
 	}
 
 #ifdef JP
-	power_desc[num] = "¶á¤¯¤Ë¤¤¤í";
+	power_desc[num] = "è¿‘ãã«ã„ã‚";
 #else
 	power_desc[num] = "stay close";
 #endif
@@ -1400,7 +1400,7 @@ void do_cmd_pet(void)
 	powers[num++] = PET_STAY_CLOSE;
 
 #ifdef JP
-	power_desc[num] = "¤Ä¤¤¤ÆÍè¤¤";
+	power_desc[num] = "ã¤ã„ã¦æ¥ã„";
 #else
 	power_desc[num] = "follow me";
 #endif
@@ -1409,7 +1409,7 @@ void do_cmd_pet(void)
 	powers[num++] = PET_FOLLOW_ME;
 
 #ifdef JP
-	power_desc[num] = "Å¨¤ò¸«¤Ä¤±¤ÆÅİ¤»";
+	power_desc[num] = "æ•µã‚’è¦‹ã¤ã‘ã¦å€’ã›";
 #else
 	power_desc[num] = "seek and destroy";
 #endif
@@ -1418,7 +1418,7 @@ void do_cmd_pet(void)
 	powers[num++] = PET_SEEK_AND_DESTROY;
 
 #ifdef JP
-	power_desc[num] = "¾¯¤·Î¥¤ì¤Æ¤¤¤í";
+	power_desc[num] = "å°‘ã—é›¢ã‚Œã¦ã„ã‚";
 #else
 	power_desc[num] = "give me space";
 #endif
@@ -1427,7 +1427,7 @@ void do_cmd_pet(void)
 	powers[num++] = PET_ALLOW_SPACE;
 
 #ifdef JP
-	power_desc[num] = "Î¥¤ì¤Æ¤¤¤í";
+	power_desc[num] = "é›¢ã‚Œã¦ã„ã‚";
 #else
 	power_desc[num] = "stay away";
 #endif
@@ -1438,7 +1438,7 @@ void do_cmd_pet(void)
 	if (p_ptr->pet_open_doors)
 	{
 #ifdef JP
-		power_desc[num] = "¥É¥¢¤ò³«¤±¤µ¤»¤ë";
+		power_desc[num] = "ãƒ‰ã‚¢ã‚’é–‹ã‘ã•ã›ã‚‹";
 #else
 		power_desc[num] = "pets may open doors";
 #endif
@@ -1446,7 +1446,7 @@ void do_cmd_pet(void)
 	else
 	{
 #ifdef JP
-		power_desc[num] = "¥É¥¢¤ò³«¤±¤µ¤»¤Ê¤¤";
+		power_desc[num] = "ãƒ‰ã‚¢ã‚’é–‹ã‘ã•ã›ãªã„";
 #else
 		power_desc[num] = "pets may not open doors";
 #endif
@@ -1456,7 +1456,7 @@ void do_cmd_pet(void)
 	if (p_ptr->pet_pickup_items)
 	{
 #ifdef JP
-		power_desc[num] = "¥¢¥¤¥Æ¥à¤ò½¦¤ï¤»¤ë";
+		power_desc[num] = "ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ‹¾ã‚ã›ã‚‹";
 #else
 		power_desc[num] = "pets may pick up items";
 #endif
@@ -1464,7 +1464,7 @@ void do_cmd_pet(void)
 	else
 	{
 #ifdef JP
-		power_desc[num] = "¥¢¥¤¥Æ¥à¤ò½¦¤ï¤»¤Ê¤¤";
+		power_desc[num] = "ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ‹¾ã‚ã›ãªã„";
 #else
 		power_desc[num] = "pets may not pick up items";
 #endif
@@ -1480,7 +1480,7 @@ void do_cmd_pet(void)
 	{
 		/* Build a prompt (accept all spells) */
 #ifdef JP
-		strnfmt(out_val, 78, "(¥³¥Ş¥ó¥É %c-%c¡¢'*'=°ìÍ÷¡¢ESC=½ªÎ») ¥³¥Ş¥ó¥É¤òÁª¤ó¤Ç¤¯¤À¤µ¤¤:",
+		strnfmt(out_val, 78, "(ã‚³ãƒãƒ³ãƒ‰ %c-%cã€'*'=ä¸€è¦§ã€ESC=çµ‚äº†) ã‚³ãƒãƒ³ãƒ‰ã‚’é¸ã‚“ã§ãã ã•ã„:",
 #else
 		strnfmt(out_val, 78, "(Command %c-%c, *=List, ESC=exit) Select a command: ",
 #endif
@@ -1489,7 +1489,7 @@ void do_cmd_pet(void)
 	else
 	{
 #ifdef JP
-		strnfmt(out_val, 78, "(¥³¥Ş¥ó¥É %c-%c¡¢'*'=°ìÍ÷¡¢ESC=½ªÎ») ¥³¥Ş¥ó¥É¤òÁª¤ó¤Ç¤¯¤À¤µ¤¤:",
+		strnfmt(out_val, 78, "(ã‚³ãƒãƒ³ãƒ‰ %c-%cã€'*'=ä¸€è¦§ã€ESC=çµ‚äº†) ã‚³ãƒãƒ³ãƒ‰ã‚’é¸ã‚“ã§ãã ã•ã„:",
 #else
 		strnfmt(out_val, 78, "(Command %c-%c, *=List, ESC=exit) Select a command: ",
 #endif
@@ -1607,7 +1607,7 @@ void do_cmd_pet(void)
 		{
 			/* Prompt */
 #ifdef JP
-			strnfmt(buf, 78, "%s¤ò»È¤¤¤Ş¤¹¤«¡© ", power_desc[i]);
+			strnfmt(buf, 78, "%sã‚’ä½¿ã„ã¾ã™ã‹ï¼Ÿ ", power_desc[i]);
 #else
 			strnfmt(buf, 78, "Use %s? ", power_desc[i]);
 #endif

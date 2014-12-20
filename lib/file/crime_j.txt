@@ -3,50 +3,50 @@ N:54:Wolf, Farmer Maggot's dog
 N:55:Fang, Farmer Maggot's dog
 
 N:*:Default
-¶¯Åğ
-½ı³²
+å¼·ç›—
+å‚·å®³
 #murder.
-»¦¿Í
+æ®ºäºº
 #arson.
-Êü²Ğ
+æ”¾ç«
 #rape.
-ÉØ½÷Ë½¹Ô
+å©¦å¥³æš´è¡Œ
 #assault and battery.
 #theft.
-ÀàÅğ
+çªƒç›—
 #extortion.
-¶²³å
+æå–
 #rape, assault and battery.
-ÉØ½÷Ë½¹ÔµÚ¤Ó½ı³²
+å©¦å¥³æš´è¡ŒåŠã³å‚·å®³
 #embezzlement.
-²£ÎÎ
+æ¨ªé ˜
 #embezzlement and theft.
 #theft and murder.
-¶¯Åğ»¦¿Í
+å¼·ç›—æ®ºäºº
 #kidnapping.
-Í¶²ı
+èª˜æ‹
 #stealing.
 #fraud.
-º¾µ½
+è©æ¬º
 #fraud and embezzlement.
 #counterfeiting.
-ÄÌ²ßµ¶Â¤
+é€šè²¨å½é€ 
 #smuggling.
-Ì©Í¢
+å¯†è¼¸
 #horse theft.
-ÇÏÅ¥ËÀ
+é¦¬æ³¥æ£’
 #shoplifting.
-Ëü°ú¤­
+ä¸‡å¼•ã
 #treason.
-È¿µÕ
+åé€†
 #pillaging.
 #rape and pillage.
 #cruelty to animals.
-Æ°ÊªµÔÂÔ
+å‹•ç‰©è™å¾…
 #dealing drugs.
-ËãÌôÇäÇã
+éº»è–¬å£²è²·
 #murder for hire.
-°ÑÂ÷»¦¿Í
+å§”è¨—æ®ºäºº
 #luring souls to destruction.
 #smashing holy relics.
 #glorying in chaos.
@@ -54,7 +54,7 @@ N:*:Default
 #desecration of holy places.
 #conspiring to topple bastions.
 #abuse of self-appointed privilege.
-¿¦¸¢ÍğÍÑ
+è·æ¨©ä¹±ç”¨
 #leaguing with the underworld.
 #spawning minions of darkness.
 #the desolation of kingdoms.

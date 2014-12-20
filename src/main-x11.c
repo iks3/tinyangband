@@ -1,4 +1,4 @@
-/* File: main-x11.c */
+ï»¿/* File: main-x11.c */
 
 /*
  * Copyright (c) 1997 Ben Harrison, and others
@@ -11,15 +11,15 @@
 
 #ifdef _JP
 /*
- * ÆüËÜ¸ì(EUC-JAPAN)ÂĞ±ş (-DJP)
- *    ¡¦´Á»ú¥Õ¥©¥ó¥È¤Î°·¤¤¤òÄÉ²Ã
- *    ¡¦ÆüËÜ¸ì¤ò´Ş¤àÊ¸»úÎó¤ÎÉ½¼¨¥ë¡¼¥Á¥ó XDrawMultiString() ¤ÎÄÉ²Ã
- *    ¡¦ÆüËÜ¸ì¤ÎÉ½¼¨Éı¤Ï¡¤¥Õ¥©¥ó¥È¤Î¾ğÊó¤Ë¤è¤é¤¹ASCII¥Õ¥©¥ó¥È¤Î2ÇÜ¤Ë¸ÇÄê
+ * æ—¥æœ¬èª(EUC-JAPAN)å¯¾å¿œ (-DJP)
+ *    ãƒ»æ¼¢å­—ãƒ•ã‚©ãƒ³ãƒˆã®æ‰±ã„ã‚’è¿½åŠ 
+ *    ãƒ»æ—¥æœ¬èªã‚’å«ã‚€æ–‡å­—åˆ—ã®è¡¨ç¤ºãƒ«ãƒ¼ãƒãƒ³ XDrawMultiString() ã®è¿½åŠ 
+ *    ãƒ»æ—¥æœ¬èªã®è¡¨ç¤ºå¹…ã¯ï¼Œãƒ•ã‚©ãƒ³ãƒˆã®æƒ…å ±ã«ã‚ˆã‚‰ã™ASCIIãƒ•ã‚©ãƒ³ãƒˆã®2å€ã«å›ºå®š
  *
- * Ì¤ÂĞ±ş
- *      EUCÈ¾³Ñ¤Î°·¤¤
+ * æœªå¯¾å¿œ
+ *      EUCåŠè§’ã®æ‰±ã„
  *
- * 1996/6/7  Íû ¹¸¿­ (ri@kuis.kyoto-u.ac.jp)
+ * 1996/6/7  æ æ™ƒä¼¸ (ri@kuis.kyoto-u.ac.jp)
  */
 #endif
 /*
@@ -1311,7 +1311,7 @@ static errr Infofnt_prepare(XFontStruct *info)
 		if(ascent < (*fontinfo)->ascent) ascent = (*fontinfo)->ascent;
 		if(descent < (*fontinfo)->descent) descent = (*fontinfo)->descent;
 		if(((*fontinfo)->max_byte1) > 0){
-			/* Â¿¥Ğ¥¤¥ÈÊ¸»ú¤Î¾ì¹ç¤ÏÉıÈ¾Ê¬(Ã¼¿ôÀÚ¤ê¾å¤²)¤ÇÉ¾²Á¤¹¤ë */
+			/* å¤šãƒã‚¤ãƒˆæ–‡å­—ã®å ´åˆã¯å¹…åŠåˆ†(ç«¯æ•°åˆ‡ã‚Šä¸Šã’)ã§è©•ä¾¡ã™ã‚‹ */
 			if(width < (cs->width+1)/2) width = (cs->width+1)/2;
 		}else{
 			if(width < cs->width) width = cs->width;
@@ -1511,7 +1511,7 @@ static errr Infofnt_init_data(cptr name)
 
 #ifdef _JP
 /*
- * EUCÆüËÜ¸ì¥³¡¼¥É¤ò´Ş¤àÊ¸»úÎó¤òÉ½¼¨¤¹¤ë (Xlib)
+ * EUCæ—¥æœ¬èªã‚³ãƒ¼ãƒ‰ã‚’å«ã‚€æ–‡å­—åˆ—ã‚’è¡¨ç¤ºã™ã‚‹ (Xlib)
  */
 static void
 XDrawMultiString(display,d,gc, x, y, string, len, afont, 
@@ -1540,48 +1540,48 @@ XDrawMultiString(display,d,gc, x, y, string, len, afont,
 #ifdef TOFU      
       if ( (*str) == 0x7f ) {
 	  
-	  /* 0x7F¤Ï¢£¤Ç·è¤áÂÇ¤Á */
+	  /* 0x7Fã¯â– ã§æ±ºã‚æ‰“ã¡ */
 	  
-	  /* Ï¢Â³¤¹¤ë0x7F¤ÎÄ¹¤µ¤ò¸¡½Ğ */
+	  /* é€£ç¶šã™ã‚‹0x7Fã®é•·ã•ã‚’æ¤œå‡º */
 	  slen = 0;
 	  while ( str < endp && (*str) == 0x7f ) {
 	      slen++; 
 	      str++;
 	  }
 	  
-	  /* ÉÁ²è */
+	  /* æç”» */
 	  XFillRectangle( display, d, gc, x, y-afont_ascent, 
 			  slen * afont_width, afont_height);
  
-	  /* ¥İ¥¤¥ó¥¿¤ò¿Ê¤á¤ë */
+	  /* ãƒã‚¤ãƒ³ã‚¿ã‚’é€²ã‚ã‚‹ */
 	  x += afont_width * slen;
       } 
       else  
 #endif
       if ( iskanji(*str) ) {
 	  
-	  /* UJIS¤Î»Ï¤Ş¤ê */
+	  /* UJISã®å§‹ã¾ã‚Š */
 	  
-	  /* Ï¢Â³¤¹¤ëUJISÊ¸»ú¤ÎÄ¹¤µ¤ò¸¡½Ğ */
+	  /* é€£ç¶šã™ã‚‹UJISæ–‡å­—ã®é•·ã•ã‚’æ¤œå‡º */
 	  slen = 0;
 	  while ( str < endp && *str && iskanji(*str) ) {
 	      kanji[slen].byte1 = *str++ & 0x7f;
 	      kanji[slen++].byte2 = *str++ & 0x7f;
 	  }
 	  
-	  /* ÉÁ²è */
+	  /* æç”» */
 	  XSetFont( display, gc, kfont->fid );
 	  XDrawImageString16( display, d, gc, x, y, kanji, slen );
 
  
-	  /* ¥İ¥¤¥ó¥¿¤ò¿Ê¤á¤ë */
+	  /* ãƒã‚¤ãƒ³ã‚¿ã‚’é€²ã‚ã‚‹ */
 	  x += kfont_width * slen;
 	  
       } else {
 	  
-	  /* Èó´Á»ú(=ASCII¤È²¾Äê)¤Î»Ï¤Ş¤ê */
+	  /* éæ¼¢å­—(=ASCIIã¨ä»®å®š)ã®å§‹ã¾ã‚Š */
 	  
-	  /* Ï¢Â³¤¹¤ëASCIIÊ¸»ú¤ò¸¡½Ğ */
+	  /* é€£ç¶šã™ã‚‹ASCIIæ–‡å­—ã‚’æ¤œå‡º */
 	  p = str;
 	  slen = 0;
 	  while ( str < endp && *str && !iskanji(*str) ) {
@@ -1592,11 +1592,11 @@ XDrawMultiString(display,d,gc, x, y, string, len, afont,
 	      slen++;
 	  }
 	  
-	  /* ÉÁ²è */
+	  /* æç”» */
 	  XSetFont( display, gc, afont->fid );
 	  XDrawImageString( display, d, gc, x, y, p, slen );
 	  
-	  /* ¥İ¥¤¥ó¥¿¤ò¿Ê¤á¤ë */
+	  /* ãƒã‚¤ãƒ³ã‚¿ã‚’é€²ã‚ã‚‹ */
 	  x += afont_width * slen;
       }
     }
@@ -1663,7 +1663,7 @@ static errr Infofnt_text_std(int x, int y, cptr str, int len)
 	{
 		/* Note that the Infoclr is set up to contain the Infofnt */
 #ifdef _JP
-		/* ´Á»ú¥Õ¥©¥ó¥È¤ÎÉ½¼¨Éı¤Ï ASCII¥Õ¥©¥ó¥È¤Î2ÇÜ¤Ë¸ÇÄê */
+		/* æ¼¢å­—ãƒ•ã‚©ãƒ³ãƒˆã®è¡¨ç¤ºå¹…ã¯ ASCIIãƒ•ã‚©ãƒ³ãƒˆã®2å€ã«å›ºå®š */
 		XDrawMultiString(Metadpy->dpy, Infowin->win, Infoclr->gc,
 				 x, y, str, len,
 				 Infofnt->info, Infofnt->wid, Infofnt->hgt,

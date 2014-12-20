@@ -1,4 +1,4 @@
-/* File: init1.c */
+ï»¿/* File: init1.c */
 
 /* Purpose: Initialization (part 1) -BEN- */
 
@@ -1042,8 +1042,8 @@ errr parse_f_info(char *buf, header *head)
 	else if (!f_ptr) return (3);
 
 #ifdef JP
-	/* ±Ñ¸ìÌ¾¤òÆÉ¤à¥ë¡¼¥Á¥ó¤òÄÉ²Ã */
-	/* 'E' ¤«¤é»Ï¤Ş¤ë¹Ô¤Ï±Ñ¸ìÌ¾¤È¤·¤Æ¤¤¤ë */
+	/* è‹±èªåã‚’èª­ã‚€ãƒ«ãƒ¼ãƒãƒ³ã‚’è¿½åŠ  */
+	/* 'E' ã‹ã‚‰å§‹ã¾ã‚‹è¡Œã¯è‹±èªåã¨ã—ã¦ã„ã‚‹ */
 	else if (buf[0] == 'E')
 	{
 		/* nothing to do */
@@ -1218,7 +1218,7 @@ static errr grab_one_kind_flag(object_kind *k_ptr, cptr what)
 
 	/* Oops */
 #ifdef JP
-	msg_format("Ì¤ÃÎ¤Î¥¢¥¤¥Æ¥à¡¦¥Õ¥é¥° '%s'¡£", what);
+	msg_format("æœªçŸ¥ã®ã‚¢ã‚¤ãƒ†ãƒ ãƒ»ãƒ•ãƒ©ã‚° '%s'ã€‚", what);
 #else
 	msg_format("Unknown object flag '%s'.", what);
 #endif
@@ -1253,7 +1253,7 @@ static int grab_one_activation_flag(cptr what)
 	 }
 
 	/* Oops */
-	msg_format(_("Ì¤ÃÎ¤ÎÈ¯Æ°¡¦¥Õ¥é¥° '%s'¡£", "Unknown activation flag '%s'."), what);
+	msg_format(_("æœªçŸ¥ã®ç™ºå‹•ãƒ»ãƒ•ãƒ©ã‚° '%s'ã€‚", "Unknown activation flag '%s'."), what);
 
 	/* Error */
 	return (0);
@@ -1330,8 +1330,8 @@ errr parse_k_info(char *buf, header *head)
 
 
 #ifdef JP
-	/* ±Ñ¸ìÌ¾¤òÆÉ¤à¥ë¡¼¥Á¥ó¤òÄÉ²Ã */
-	/* 'E' ¤«¤é»Ï¤Ş¤ë¹Ô¤Ï±Ñ¸ìÌ¾¤È¤·¤Æ¤¤¤ë */
+	/* è‹±èªåã‚’èª­ã‚€ãƒ«ãƒ¼ãƒãƒ³ã‚’è¿½åŠ  */
+	/* 'E' ã‹ã‚‰å§‹ã¾ã‚‹è¡Œã¯è‹±èªåã¨ã—ã¦ã„ã‚‹ */
 	else if (buf[0] == 'E')
 	{
 		/* nothing to do */
@@ -1583,7 +1583,7 @@ static errr grab_one_artifact_flag(artifact_type *a_ptr, cptr what)
 
 	/* Oops */
 #ifdef JP
-	msg_format("Ì¤ÃÎ¤ÎÅÁÀâ¤Î¥¢¥¤¥Æ¥à¡¦¥Õ¥é¥° '%s'¡£", what);
+	msg_format("æœªçŸ¥ã®ä¼èª¬ã®ã‚¢ã‚¤ãƒ†ãƒ ãƒ»ãƒ•ãƒ©ã‚° '%s'ã€‚", what);
 #else
 	msg_format("Unknown artifact flag '%s'.", what);
 #endif
@@ -1653,8 +1653,8 @@ errr parse_a_info(char *buf, header *head)
 
 
 #ifdef JP
-	/* ±Ñ¸ìÌ¾¤òÆÉ¤à¥ë¡¼¥Á¥ó¤òÄÉ²Ã */
-	/* 'E' ¤«¤é»Ï¤Ş¤ë¹Ô¤Ï±Ñ¸ìÌ¾¤È¤·¤Æ¤¤¤ë */
+	/* è‹±èªåã‚’èª­ã‚€ãƒ«ãƒ¼ãƒãƒ³ã‚’è¿½åŠ  */
+	/* 'E' ã‹ã‚‰å§‹ã¾ã‚‹è¡Œã¯è‹±èªåã¨ã—ã¦ã„ã‚‹ */
 	else if (buf[0] == 'E')
 	{
 		/* nothing to do */
@@ -1835,7 +1835,7 @@ static bool grab_one_ego_item_flag(ego_item_type *e_ptr, cptr what)
 
 	/* Oops */
 #ifdef JP
-	msg_format("Ì¤ÃÎ¤ÎÌ¾¤Î¤¢¤ë¥¢¥¤¥Æ¥à¡¦¥Õ¥é¥° '%s'¡£", what);
+	msg_format("æœªçŸ¥ã®åã®ã‚ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ãƒ»ãƒ•ãƒ©ã‚° '%s'ã€‚", what);
 #else
 	msg_format("Unknown ego-item flag '%s'.", what);
 #endif
@@ -1906,8 +1906,8 @@ errr parse_e_info(char *buf, header *head)
 
 
 #ifdef JP
-	/* ±Ñ¸ìÌ¾¤òÆÉ¤à¥ë¡¼¥Á¥ó¤òÄÉ²Ã */
-	/* 'E' ¤«¤é»Ï¤Ş¤ë¹Ô¤Ï±Ñ¸ìÌ¾ */
+	/* è‹±èªåã‚’èª­ã‚€ãƒ«ãƒ¼ãƒãƒ³ã‚’è¿½åŠ  */
+	/* 'E' ã‹ã‚‰å§‹ã¾ã‚‹è¡Œã¯è‹±èªå */
 	else if (buf[0] == 'E')
 	{
 		/* nothing to do */
@@ -2097,7 +2097,7 @@ static errr grab_one_basic_flag(monster_race *r_ptr, cptr what)
 
 	/* Oops */
 #ifdef JP
-	msg_format("Ì¤ÃÎ¤Î¥â¥ó¥¹¥¿¡¼¡¦¥Õ¥é¥° '%s'¡£", what);
+	msg_format("æœªçŸ¥ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãƒ»ãƒ•ãƒ©ã‚° '%s'ã€‚", what);
 #else
 	msg_format("Unknown monster flag '%s'.", what);
 #endif
@@ -2147,7 +2147,7 @@ static errr grab_one_spell_flag(monster_race *r_ptr, cptr what)
 
 	/* Oops */
 #ifdef JP
-	msg_format("Ì¤ÃÎ¤Î¥â¥ó¥¹¥¿¡¼¡¦¥Õ¥é¥° '%s'¡£", what);
+	msg_format("æœªçŸ¥ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãƒ»ãƒ•ãƒ©ã‚° '%s'ã€‚", what);
 #else
 	msg_format("Unknown monster flag '%s'.", what);
 #endif
@@ -2213,8 +2213,8 @@ errr parse_r_info(char *buf, header *head)
 
 
 #ifdef JP
-	/* ±Ñ¸ìÌ¾¤òÆÉ¤à¥ë¡¼¥Á¥ó¤òÄÉ²Ã */
-	/* 'E' ¤«¤é»Ï¤Ş¤ë¹Ô¤Ï±Ñ¸ìÌ¾ */
+	/* è‹±èªåã‚’èª­ã‚€ãƒ«ãƒ¼ãƒãƒ³ã‚’è¿½åŠ  */
+	/* 'E' ã‹ã‚‰å§‹ã¾ã‚‹è¡Œã¯è‹±èªå */
 	else if (buf[0] == 'E')
 	{
 		/* Acquire the Text */
@@ -3629,7 +3629,7 @@ errr process_dungeon_file(cptr name, int ymin, int xmin, int ymax, int xmax)
 		/* Oops */
 		msg_format("Error %d (%s) at line %d of '%s'.", err, oops, num, name);
 #ifdef JP
-msg_format("'%s'¤ò²òÀÏÃæ¡£", buf);
+msg_format("'%s'ã‚’è§£æä¸­ã€‚", buf);
 #else
 		msg_format("Parsing '%s'.", buf);
 #endif

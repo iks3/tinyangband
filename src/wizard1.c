@@ -1,4 +1,4 @@
-/* File: wizard1.c */
+ï»¿/* File: wizard1.c */
 
 /* Purpose: Spoiler generation -BEN- */
 
@@ -23,22 +23,22 @@ static cptr attr_to_text(byte a)
 	switch (a)
 	{
 #ifdef JP
-	case TERM_DARK:    return ("   XXX¿§");
-	case TERM_WHITE:   return ("    Çò¿§");
-	case TERM_SLATE:   return ("  ÀÄ³¥¿§");
-	case TERM_ORANGE:  return ("¥ª¥ì¥ó¥¸");
-	case TERM_RED:     return ("    ÀÖ¿§");
-	case TERM_GREEN:   return ("    ÎĞ¿§");
-	case TERM_BLUE:    return ("    ÀÄ¿§");
-	case TERM_UMBER:   return ("  àèàá¿§");
-	case TERM_L_DARK:  return ("    ³¥¿§");
-	case TERM_L_WHITE: return ("ÌÀÀÄ³¥¿§");
-	case TERM_VIOLET:  return ("    »ç¿§");
-	case TERM_YELLOW:  return ("    ²«¿§");
-	case TERM_L_RED:   return ("  ÌÀÀÖ¿§");
-	case TERM_L_GREEN: return ("  ÌÀÎĞ¿§");
-	case TERM_L_BLUE:  return ("  ÌÀÀÄ¿§");
-	case TERM_L_UMBER: return ("ÌÀàèàá¿§");
+	case TERM_DARK:    return ("   XXXè‰²");
+	case TERM_WHITE:   return ("    ç™½è‰²");
+	case TERM_SLATE:   return ("  é’ç°è‰²");
+	case TERM_ORANGE:  return ("ã‚ªãƒ¬ãƒ³ã‚¸");
+	case TERM_RED:     return ("    èµ¤è‰²");
+	case TERM_GREEN:   return ("    ç·‘è‰²");
+	case TERM_BLUE:    return ("    é’è‰²");
+	case TERM_UMBER:   return ("  ç¥ç€è‰²");
+	case TERM_L_DARK:  return ("    ç°è‰²");
+	case TERM_L_WHITE: return ("æ˜é’ç°è‰²");
+	case TERM_VIOLET:  return ("    ç´«è‰²");
+	case TERM_YELLOW:  return ("    é»„è‰²");
+	case TERM_L_RED:   return ("  æ˜èµ¤è‰²");
+	case TERM_L_GREEN: return ("  æ˜ç·‘è‰²");
+	case TERM_L_BLUE:  return ("  æ˜é’è‰²");
+	case TERM_L_UMBER: return ("æ˜ç¥ç€è‰²");
 #else
 	case TERM_DARK:    return ("    xxx");
 	case TERM_WHITE:   return ("  White");
@@ -61,7 +61,7 @@ static cptr attr_to_text(byte a)
 
 	/* Oops */
 #ifdef JP
-	return ("    ÊÑ¤Ê");
+	return ("    å¤‰ãª");
 #else
 	return ("   Icky");
 #endif
@@ -91,44 +91,44 @@ typedef struct
 static grouper group_item[] =
 {
 #ifdef JP
-	{ TV_SHOT,          "¼Í·âÊª" },
+	{ TV_SHOT,          "å°„æ’ƒç‰©" },
 	{ TV_ARROW,         NULL },
 	{ TV_BOLT,          NULL },
-	{ TV_BOW,           "µİ" },
+	{ TV_BOW,           "å¼“" },
 
-	{ TV_SWORD,         "Éğ´ï" },
+	{ TV_SWORD,         "æ­¦å™¨" },
 	{ TV_POLEARM,       NULL },
 	{ TV_HAFTED,        NULL },
 	{ TV_DIGGING,       NULL },
 
-	{ TV_SOFT_ARMOR,    "ËÉ¶ñ¡ÊÂÎ¡Ë" },
+	{ TV_SOFT_ARMOR,    "é˜²å…·ï¼ˆä½“ï¼‰" },
 	{ TV_HARD_ARMOR,    NULL },
 	{ TV_DRAG_ARMOR,    NULL },
-	{ TV_CLOAK,         "ËÉ¶ñ¡Ê¤½¤ÎÂ¾¡Ë" },
+	{ TV_CLOAK,         "é˜²å…·ï¼ˆãã®ä»–ï¼‰" },
 	{ TV_SHIELD,        NULL },
 	{ TV_HELM,          NULL },
 	{ TV_CROWN,         NULL },
 	{ TV_GLOVES,        NULL },
 	{ TV_BOOTS,         NULL },
 
-	{ TV_AMULET,        "¥¢¥ß¥å¥ì¥Ã¥È" },
-	{ TV_RING,          "»ØÎØ" },
-	{ TV_SCROLL,        "´¬Êª" },
-	{ TV_POTION,        "Ìô" },
-	{ TV_FOOD,          "¿©ÎÁ" },
+	{ TV_AMULET,        "ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ" },
+	{ TV_RING,          "æŒ‡è¼ª" },
+	{ TV_SCROLL,        "å·»ç‰©" },
+	{ TV_POTION,        "è–¬" },
+	{ TV_FOOD,          "é£Ÿæ–™" },
 
-	{ TV_ROD,           "¥í¥Ã¥É" },
-	{ TV_WAND,          "¥ï¥ó¥É" },
-	{ TV_STAFF,         "¥¹¥¿¥Ã¥Õ" },
+	{ TV_ROD,           "ãƒ­ãƒƒãƒ‰" },
+	{ TV_WAND,          "ãƒ¯ãƒ³ãƒ‰" },
+	{ TV_STAFF,         "ã‚¹ã‚¿ãƒƒãƒ•" },
 
-	{ TV_LIFE_BOOK,     "ËâË¡½ñ¡ÊÀ¸Ì¿¡Ë" },
-	{ TV_SORCERY_BOOK,  "ËâË¡½ñ¡ÊÀç½Ñ¡Ë" },
+	{ TV_LIFE_BOOK,     "é­”æ³•æ›¸ï¼ˆç”Ÿå‘½ï¼‰" },
+	{ TV_SORCERY_BOOK,  "é­”æ³•æ›¸ï¼ˆä»™è¡“ï¼‰" },
 
-	{ TV_CHEST,         "È¢" },
-	{ TV_FIGURINE,      "¿Í·Á" },
-	{ TV_STATUE,        "Áü" },
-	{ TV_CORPSE,        "»àÂÎ" },
-	{ TV_SPIKE,         "¤½¤ÎÂ¾" },
+	{ TV_CHEST,         "ç®±" },
+	{ TV_FIGURINE,      "äººå½¢" },
+	{ TV_STATUE,        "åƒ" },
+	{ TV_CORPSE,        "æ­»ä½“" },
+	{ TV_SPIKE,         "ãã®ä»–" },
 	{ TV_LITE,          NULL },
 	{ TV_FLASK,         NULL },
 	{ TV_JUNK,          NULL },
@@ -440,27 +440,27 @@ static void spoil_obj_desc(cptr fname)
 static grouper group_artifact[] =
 {
 #ifdef JP
-	{ TV_SWORD,             "Åá·õ" },
-	{ TV_POLEARM,           "Áä/Éà" },
-	{ TV_HAFTED,            "Æß´ï" },
-	{ TV_DIGGING,           "¥·¥ã¥Ù¥ë/¤Ä¤ë¤Ï¤·" },
-	{ TV_BOW,               "Èô¤ÓÆ»¶ñ" },
-	{ TV_ARROW,             "Ìğ" },
+	{ TV_SWORD,             "åˆ€å‰£" },
+	{ TV_POLEARM,           "æ§/æ–§" },
+	{ TV_HAFTED,            "éˆå™¨" },
+	{ TV_DIGGING,           "ã‚·ãƒ£ãƒ™ãƒ«/ã¤ã‚‹ã¯ã—" },
+	{ TV_BOW,               "é£›ã³é“å…·" },
+	{ TV_ARROW,             "çŸ¢" },
 
-	{ TV_SOFT_ARMOR,        "³»" },
+	{ TV_SOFT_ARMOR,        "é§" },
 	{ TV_HARD_ARMOR,        NULL },
 	{ TV_DRAG_ARMOR,        NULL },
 
-	{ TV_CLOAK,             "¥¯¥í¡¼¥¯" },
-	{ TV_SHIELD,            "½â" },
-	{ TV_HELM,              "³õ/´§" },
+	{ TV_CLOAK,             "ã‚¯ãƒ­ãƒ¼ã‚¯" },
+	{ TV_SHIELD,            "ç›¾" },
+	{ TV_HELM,              "å…œ/å† " },
 	{ TV_CROWN,             NULL },
-	{ TV_GLOVES,            "äÆ¼ê" },
-	{ TV_BOOTS,             "·¤" },
+	{ TV_GLOVES,            "ç± æ‰‹" },
+	{ TV_BOOTS,             "é´" },
 
-	{ TV_LITE,              "¸÷¸»" },
-	{ TV_AMULET,            "¥¢¥ß¥å¥ì¥Ã¥È" },
-	{ TV_RING,              "»ØÎØ" },
+	{ TV_LITE,              "å…‰æº" },
+	{ TV_AMULET,            "ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ" },
+	{ TV_RING,              "æŒ‡è¼ª" },
 #else
 	{ TV_SWORD,             "Edged Weapons" },
 	{ TV_POLEARM,           "Polearms" },
@@ -519,12 +519,12 @@ struct flag_desc
 static flag_desc stat_flags_desc[] =
 {
 #ifdef JP
-	{ TR1_STR,        "ÏÓÎÏ" },
-	{ TR1_INT,        "ÃÎÇ½" },
-	{ TR1_WIS,        "¸­¤µ" },
-	{ TR1_DEX,        "´ïÍÑ¤µ" },
-	{ TR1_CON,        "ÂÑµ×ÎÏ" },
-	{ TR1_CHR,        "Ì¥ÎÏ" }
+	{ TR1_STR,        "è…•åŠ›" },
+	{ TR1_INT,        "çŸ¥èƒ½" },
+	{ TR1_WIS,        "è³¢ã•" },
+	{ TR1_DEX,        "å™¨ç”¨ã•" },
+	{ TR1_CON,        "è€ä¹…åŠ›" },
+	{ TR1_CHR,        "é­…åŠ›" }
 #else
 	{ TR1_STR,        "STR" },
 	{ TR1_INT,        "INT" },
@@ -543,13 +543,13 @@ static flag_desc stat_flags_desc[] =
 static flag_desc pval_flags1_desc[] =
 {
 #ifdef JP
-	{ TR1_STEALTH,    "±£Ì©" },
-	{ TR1_SEARCH,     "Ãµº÷" },
-	{ TR1_INFRA,      "ÀÖ³°Àş»ëÎÏ" },
-	{ TR1_TUNNEL,     "ºÎ·¡" },
-	{ TR1_BLOWS,      "¹¶·â²ó¿ô" },
-	{ TR1_SPEED,      "¥¹¥Ô¡¼¥É" },
-	{ TR1_MAGIC_MASTERY, "ËâË¡Æ»¶ñ»ÈÍÑ" }
+	{ TR1_STEALTH,    "éš å¯†" },
+	{ TR1_SEARCH,     "æ¢ç´¢" },
+	{ TR1_INFRA,      "èµ¤å¤–ç·šè¦–åŠ›" },
+	{ TR1_TUNNEL,     "æ¡æ˜" },
+	{ TR1_BLOWS,      "æ”»æ’ƒå›æ•°" },
+	{ TR1_SPEED,      "ã‚¹ãƒ”ãƒ¼ãƒ‰" },
+	{ TR1_MAGIC_MASTERY, "é­”æ³•é“å…·ä½¿ç”¨" }
 #else
 	{ TR1_STEALTH,    "Stealth" },
 	{ TR1_SEARCH,     "Searching" },
@@ -568,16 +568,16 @@ static flag_desc pval_flags1_desc[] =
 static flag_desc slay_flags_desc[] =
 {
 #ifdef JP
-	{ TR1_SLAY_HUMAN,         "¿Í´Ö" },
-	{ TR1_SLAY_ANIMAL,        "Æ°Êª" },
-	{ TR1_SLAY_EVIL,          "¼Ù°­" },
-	{ TR1_SLAY_UNDEAD,        "¥¢¥ó¥Ç¥Ã¥É" },
-	{ TR1_SLAY_DEMON,         "°­Ëâ" },
-	{ TR1_SLAY_ORC,           "¥ª¡¼¥¯" },
-	{ TR1_SLAY_TROLL,         "¥È¥í¥ë" },
-	{ TR1_SLAY_GIANT,         "µğ¿Í" },
-	{ TR1_SLAY_DRAGON,        "¥É¥é¥´¥ó" },
-	{ TR1_KILL_DRAGON,        "*¥É¥é¥´¥ó*" },
+	{ TR1_SLAY_HUMAN,         "äººé–“" },
+	{ TR1_SLAY_ANIMAL,        "å‹•ç‰©" },
+	{ TR1_SLAY_EVIL,          "é‚ªæ‚ª" },
+	{ TR1_SLAY_UNDEAD,        "ã‚¢ãƒ³ãƒ‡ãƒƒãƒ‰" },
+	{ TR1_SLAY_DEMON,         "æ‚ªé­”" },
+	{ TR1_SLAY_ORC,           "ã‚ªãƒ¼ã‚¯" },
+	{ TR1_SLAY_TROLL,         "ãƒˆãƒ­ãƒ«" },
+	{ TR1_SLAY_GIANT,         "å·¨äºº" },
+	{ TR1_SLAY_DRAGON,        "ãƒ‰ãƒ©ã‚´ãƒ³" },
+	{ TR1_KILL_DRAGON,        "*ãƒ‰ãƒ©ã‚´ãƒ³*" },
 #else
 	{ TR1_SLAY_HUMAN,         "Human" },
 	{ TR1_SLAY_ANIMAL,        "Animal" },
@@ -603,16 +603,16 @@ static flag_desc slay_flags_desc[] =
 static flag_desc brand_flags_desc[] =
 {
 #ifdef JP
-	{ TR1_BRAND_ACID,         "ÍÏ²ò" },
-	{ TR1_BRAND_ELEC,         "ÅÅ·â" },
-	{ TR1_BRAND_FIRE,         "¾Æ´ş" },
-	{ TR1_BRAND_COLD,         "Åà·ë" },
-	{ TR1_BRAND_POIS,         "ÆÇ»¦" },
+	{ TR1_BRAND_ACID,         "æº¶è§£" },
+	{ TR1_BRAND_ELEC,         "é›»æ’ƒ" },
+	{ TR1_BRAND_FIRE,         "ç„¼æ£„" },
+	{ TR1_BRAND_COLD,         "å‡çµ" },
+	{ TR1_BRAND_POIS,         "æ¯’æ®º" },
 
-	{ TR1_CHAOTIC,            "º®ÆÙ" },
-	{ TR1_VAMPIRIC,           "µÛ·ì" },
-	{ TR1_IMPACT,             "ÃÏ¿Ì" },
-	{ TR1_VORPAL,             "ÀÚ¤ìÌ£" },
+	{ TR1_CHAOTIC,            "æ··æ²Œ" },
+	{ TR1_VAMPIRIC,           "å¸è¡€" },
+	{ TR1_IMPACT,             "åœ°éœ‡" },
+	{ TR1_VORPAL,             "åˆ‡ã‚Œå‘³" },
 #else
 	{ TR1_BRAND_ACID,         "Acid Brand" },
 	{ TR1_BRAND_ELEC,         "Lightning Brand" },
@@ -634,22 +634,22 @@ static flag_desc brand_flags_desc[] =
 static const flag_desc resist_flags_desc[] =
 {
 #ifdef JP
-	{ TR2_RES_ACID,   "»À" },
-	{ TR2_RES_ELEC,   "ÅÅ·â" },
-	{ TR2_RES_FIRE,   "²Ğ±ê" },
-	{ TR2_RES_COLD,   "Îäµ¤" },
-	{ TR2_RES_POIS,   "ÆÇ" },
-	{ TR2_RES_FEAR,   "¶²Éİ"},
-	{ TR2_RES_LITE,   "Á®¸÷" },
-	{ TR2_RES_DARK,   "°Å¹õ" },
-	{ TR2_RES_BLIND,  "ÌÕÌÜ" },
-	{ TR2_RES_CONF,   "º®Íğ" },
-	{ TR2_RES_SOUND,  "¹ì²»" },
-	{ TR2_RES_SHARDS, "ÇËÊÒ" },
-	{ TR2_RES_NETHER, "ÃÏ¹ö" },
-	{ TR2_RES_NEXUS,  "°ø²Ìº®Íğ" },
-	{ TR2_RES_CHAOS,  "¥«¥ª¥¹" },
-	{ TR2_RES_DISEN,  "Îô²½" },
+	{ TR2_RES_ACID,   "é…¸" },
+	{ TR2_RES_ELEC,   "é›»æ’ƒ" },
+	{ TR2_RES_FIRE,   "ç«ç‚" },
+	{ TR2_RES_COLD,   "å†·æ°—" },
+	{ TR2_RES_POIS,   "æ¯’" },
+	{ TR2_RES_FEAR,   "ææ€–"},
+	{ TR2_RES_LITE,   "é–ƒå…‰" },
+	{ TR2_RES_DARK,   "æš—é»’" },
+	{ TR2_RES_BLIND,  "ç›²ç›®" },
+	{ TR2_RES_CONF,   "æ··ä¹±" },
+	{ TR2_RES_SOUND,  "è½ŸéŸ³" },
+	{ TR2_RES_SHARDS, "ç ´ç‰‡" },
+	{ TR2_RES_NETHER, "åœ°ç„" },
+	{ TR2_RES_NEXUS,  "å› æœæ··ä¹±" },
+	{ TR2_RES_CHAOS,  "ã‚«ã‚ªã‚¹" },
+	{ TR2_RES_DISEN,  "åŠ£åŒ–" },
 #else
 	{ TR2_RES_ACID,   "Acid" },
 	{ TR2_RES_ELEC,   "Lightning" },
@@ -677,10 +677,10 @@ static const flag_desc resist_flags_desc[] =
 static const flag_desc immune_flags_desc[] =
 {
 #ifdef JP
-	{ TR2_IM_ACID,    "»À" },
-	{ TR2_IM_ELEC,    "ÅÅ·â" },
-	{ TR2_IM_FIRE,    "²Ğ±ê" },
-	{ TR2_IM_COLD,    "Îäµ¤" },
+	{ TR2_IM_ACID,    "é…¸" },
+	{ TR2_IM_ELEC,    "é›»æ’ƒ" },
+	{ TR2_IM_FIRE,    "ç«ç‚" },
+	{ TR2_IM_COLD,    "å†·æ°—" },
 #else
 	{ TR2_IM_ACID,    "Acid" },
 	{ TR2_IM_ELEC,    "Lightning" },
@@ -696,12 +696,12 @@ static const flag_desc immune_flags_desc[] =
 static const flag_desc sustain_flags_desc[] =
 {
 #ifdef JP
-	{ TR2_SUST_STR,   "ÏÓÎÏ" },
-	{ TR2_SUST_INT,   "ÃÎÇ½" },
-	{ TR2_SUST_WIS,   "¸­¤µ" },
-	{ TR2_SUST_DEX,   "´ïÍÑ¤µ" },
-	{ TR2_SUST_CON,   "ÂÑµ×ÎÏ" },
-	{ TR2_SUST_CHR,   "Ì¥ÎÏ" },
+	{ TR2_SUST_STR,   "è…•åŠ›" },
+	{ TR2_SUST_INT,   "çŸ¥èƒ½" },
+	{ TR2_SUST_WIS,   "è³¢ã•" },
+	{ TR2_SUST_DEX,   "å™¨ç”¨ã•" },
+	{ TR2_SUST_CON,   "è€ä¹…åŠ›" },
+	{ TR2_SUST_CHR,   "é­…åŠ›" },
 #else
 	{ TR2_SUST_STR,   "STR" },
 	{ TR2_SUST_INT,   "INT" },
@@ -719,10 +719,10 @@ static const flag_desc sustain_flags_desc[] =
 static const flag_desc misc_flags2_desc[] =
 {
 #ifdef JP
-	{ TR2_THROW,      "ÅêÚ³" },
-	{ TR2_REFLECT,    "È¿¼Í" },
-	{ TR2_FREE_ACT,   "ËãáãÃÎ¤é¤º" },
-	{ TR2_HOLD_LIFE,  "À¸Ì¿ÎÏ°İ»ı" },
+	{ TR2_THROW,      "æŠ•æ“²" },
+	{ TR2_REFLECT,    "åå°„" },
+	{ TR2_FREE_ACT,   "éº»ç—ºçŸ¥ã‚‰ãš" },
+	{ TR2_HOLD_LIFE,  "ç”Ÿå‘½åŠ›ç¶­æŒ" },
 #else
 	{ TR2_THROW,      "Throwing" },
 	{ TR2_REFLECT,    "Reflection" },
@@ -741,23 +741,23 @@ static const flag_desc misc_flags2_desc[] =
 static const flag_desc misc_flags3_desc[] =
 {
 #ifdef JP
-	{ TR3_SH_FIRE,            "²Ğ±ê¥ª¡¼¥é" },
-	{ TR3_SH_ELEC,            "ÅÅ·â¥ª¡¼¥é" },
-	{ TR3_SH_COLD,            "Îäµ¤¥ª¡¼¥é" },
-	{ TR3_NO_TELE,            "È¿¥Æ¥ì¥İ¡¼¥È" },
-	{ TR3_NO_MAGIC,           "È¿ËâË¡" },
-	{ TR3_WRAITH,             "Í©ÂÎ²½" },
-	{ TR3_FEATHER,            "ÉâÍ·" },
-	{ TR3_SEE_INVIS,          "²Ä»ëÆ©ÌÀ" },
-	{ TR3_TELEPATHY,          "¥Æ¥ì¥Ñ¥·¡¼" },
-	{ TR3_SLOW_DIGEST,        "ÃÙ¾Ã²½" },
-	{ TR3_REGEN,              "µŞÂ®²óÉü" },
-	{ TR3_WARNING,            "·Ù¹ğ" },
-	{ TR3_XTRA_SHOTS,         "ÄÉ²Ã¼Í·â" },        /* always +1? */
-	{ TR3_DRAIN_EXP,          "·Ğ¸³ÃÍµÛ¼ı" },
-	{ TR3_AGGRAVATE,          "È¿´¶" },
-	{ TR3_BLESSED,            "½ËÊ¡" },
-	{ TR3_DEC_MANA,           "¾ÃÈñËâÎÏ¸º¾¯" },
+	{ TR3_SH_FIRE,            "ç«ç‚ã‚ªãƒ¼ãƒ©" },
+	{ TR3_SH_ELEC,            "é›»æ’ƒã‚ªãƒ¼ãƒ©" },
+	{ TR3_SH_COLD,            "å†·æ°—ã‚ªãƒ¼ãƒ©" },
+	{ TR3_NO_TELE,            "åãƒ†ãƒ¬ãƒãƒ¼ãƒˆ" },
+	{ TR3_NO_MAGIC,           "åé­”æ³•" },
+	{ TR3_WRAITH,             "å¹½ä½“åŒ–" },
+	{ TR3_FEATHER,            "æµ®éŠ" },
+	{ TR3_SEE_INVIS,          "å¯è¦–é€æ˜" },
+	{ TR3_TELEPATHY,          "ãƒ†ãƒ¬ãƒ‘ã‚·ãƒ¼" },
+	{ TR3_SLOW_DIGEST,        "é…æ¶ˆåŒ–" },
+	{ TR3_REGEN,              "æ€¥é€Ÿå›å¾©" },
+	{ TR3_WARNING,            "è­¦å‘Š" },
+	{ TR3_XTRA_SHOTS,         "è¿½åŠ å°„æ’ƒ" },        /* always +1? */
+	{ TR3_DRAIN_EXP,          "çµŒé¨“å€¤å¸å" },
+	{ TR3_AGGRAVATE,          "åæ„Ÿ" },
+	{ TR3_BLESSED,            "ç¥ç¦" },
+	{ TR3_DEC_MANA,           "æ¶ˆè²»é­”åŠ›æ¸›å°‘" },
 #else
 	{ TR3_SH_FIRE,            "Fiery Aura" },
 	{ TR3_SH_ELEC,            "Electric Aura" },
@@ -957,7 +957,7 @@ static void analyze_pval (object_type *o_ptr, pval_info_type *p_ptr)
 	if ((f1 & all_stats) == all_stats)
 	{
 #ifdef JP
-		*affects_list++ = "Á´Ç½ÎÏ";
+		*affects_list++ = "å…¨èƒ½åŠ›";
 #else
 		*affects_list++ = "All stats";
 #endif
@@ -1054,7 +1054,7 @@ static void analyze_sustains (object_type *o_ptr, cptr *sustain_list)
 	if ((f2 & all_sustains) == all_sustains)
 	{
 #ifdef JP
-		*sustain_list++ = "Á´Ç½ÎÏ";
+		*sustain_list++ = "å…¨èƒ½åŠ›";
 #else
 		*sustain_list++ = "All stats";
 #endif
@@ -1095,7 +1095,7 @@ static void analyze_misc_magic (object_type *o_ptr, cptr *misc_list)
 	if ((o_ptr->tval == TV_LITE) && artifact_p(o_ptr))
 	{
 #ifdef JP
-		*misc_list++ = "±Êµ×¸÷¸»(È¾·Â3)";
+		*misc_list++ = "æ°¸ä¹…å…‰æº(åŠå¾„3)";
 #else
 		*misc_list++ = "Permanent Light(3)";
 #endif
@@ -1107,7 +1107,7 @@ static void analyze_misc_magic (object_type *o_ptr, cptr *misc_list)
 	if (f3 & (TR3_LITE))
 	{
 #ifdef JP
-		*misc_list++ = "±Êµ×¸÷¸»(È¾·Â1)";
+		*misc_list++ = "æ°¸ä¹…å…‰æº(åŠå¾„1)";
 #else
 		*misc_list++ = "Permanent Light(1)";
 #endif
@@ -1122,7 +1122,7 @@ static void analyze_misc_magic (object_type *o_ptr, cptr *misc_list)
 	if (f3 & TR3_TY_CURSE)
 	{
 #ifdef JP
-		*misc_list++ = "ÂÀ¸Å¤Î±åÇ°";
+		*misc_list++ = "å¤ªå¤ã®æ€¨å¿µ";
 #else
 		*misc_list++ = "Ancient Curse";
 #endif
@@ -1131,7 +1131,7 @@ static void analyze_misc_magic (object_type *o_ptr, cptr *misc_list)
 	if (f3 & TR3_PERMA_CURSE)
 	{
 #ifdef JP
-		*misc_list++ = "±Ê±ó¤Î¼ö¤¤";
+		*misc_list++ = "æ°¸é ã®å‘ªã„";
 #else
 		*misc_list++ = "Permanently Cursed";
 #endif
@@ -1139,7 +1139,7 @@ static void analyze_misc_magic (object_type *o_ptr, cptr *misc_list)
 	else if (f3 & TR3_HEAVY_CURSE)
 	{
 #ifdef JP
-		*misc_list++ = "¶¯ÎÏ¤Ê¼ö¤¤";
+		*misc_list++ = "å¼·åŠ›ãªå‘ªã„";
 #else
 		*misc_list++ = "Heavily Cursed";
 #endif
@@ -1147,7 +1147,7 @@ static void analyze_misc_magic (object_type *o_ptr, cptr *misc_list)
 	else if (f3 & TR3_CURSED)
 	{
 #ifdef JP
-		*misc_list++ = "¼ö¤¤";
+		*misc_list++ = "å‘ªã„";
 #else
 		*misc_list++ = "Cursed";
 #endif
@@ -1169,7 +1169,7 @@ static void analyze_misc (object_type *o_ptr, char *misc_desc)
 	artifact_type *a_ptr = &a_info[o_ptr->name1];
 
 #ifdef JP
-	sprintf(misc_desc, "¥ì¥Ù¥ë %u, ´õ¾¯ÅÙ %u, %d.%d kg, ¡ğ%ld",
+	sprintf(misc_desc, "ãƒ¬ãƒ™ãƒ« %u, å¸Œå°‘åº¦ %u, %d.%d kg, ï¼„%ld",
 		a_ptr->level, a_ptr->rarity,
 		lbtokg1(a_ptr->weight), lbtokg2(a_ptr->weight), (long int)a_ptr->cost);
 #else
@@ -1366,7 +1366,7 @@ static void spoiler_print_art(obj_desc_list *art_ptr)
 	{
 		/* Mention the effects of pval */
 #ifdef JP
-		sprintf(buf, "%s¤Î½¤Àµ:", pval_ptr->pval_desc);
+		sprintf(buf, "%sã®ä¿®æ­£:", pval_ptr->pval_desc);
 #else
 		sprintf(buf, "%s to", pval_ptr->pval_desc);
 #endif
@@ -1376,15 +1376,15 @@ static void spoiler_print_art(obj_desc_list *art_ptr)
 	/* Now deal with the description lists */
 
 #ifdef JP
-	spoiler_outlist("ÂĞ:", art_ptr->slays, ITEM_SEP);
+	spoiler_outlist("å¯¾:", art_ptr->slays, ITEM_SEP);
 
-	spoiler_outlist("Éğ´ïÂ°À­:", art_ptr->brands, LIST_SEP);
+	spoiler_outlist("æ­¦å™¨å±æ€§:", art_ptr->brands, LIST_SEP);
 
-	spoiler_outlist("ÌÈ±Ö:", art_ptr->immunities, ITEM_SEP);
+	spoiler_outlist("å…ç–«:", art_ptr->immunities, ITEM_SEP);
 
-	spoiler_outlist("ÂÑÀ­:", art_ptr->resistances, ITEM_SEP);
+	spoiler_outlist("è€æ€§:", art_ptr->resistances, ITEM_SEP);
 
-	spoiler_outlist("°İ»ı:", art_ptr->sustains, ITEM_SEP);
+	spoiler_outlist("ç¶­æŒ:", art_ptr->sustains, ITEM_SEP);
 #else
 	spoiler_outlist("Slay", art_ptr->slays, ITEM_SEP);
 
@@ -1403,7 +1403,7 @@ static void spoiler_print_art(obj_desc_list *art_ptr)
 	if (art_ptr->activation)
 	{
 #ifdef JP
-		fprintf(fff, "%sÈ¯Æ°: %s\n", INDENT1, art_ptr->activation);
+		fprintf(fff, "%sç™ºå‹•: %s\n", INDENT1, art_ptr->activation);
 #else
 		fprintf(fff, "%sActivates for %s\n", INDENT1, art_ptr->activation);
 #endif
@@ -1428,7 +1428,7 @@ void dump_object(FILE *fp, object_type *o_ptr)
 	{
 		/* Mention the effects of pval */
 #ifdef JP
-		sprintf(buf, "  %s¤Î½¤Àµ:", pval_ptr->pval_desc);
+		sprintf(buf, "  %sã®ä¿®æ­£:", pval_ptr->pval_desc);
 #else
 		sprintf(buf, "  %s to", pval_ptr->pval_desc);
 #endif
@@ -1438,15 +1438,15 @@ void dump_object(FILE *fp, object_type *o_ptr)
 	/* Now deal with the description lists */
 
 #ifdef JP
-	spoiler_outlist("  ÂĞ:", obj.slays, ITEM_SEP);
+	spoiler_outlist("  å¯¾:", obj.slays, ITEM_SEP);
 
-	spoiler_outlist("  Éğ´ïÂ°À­:", obj.brands, LIST_SEP);
+	spoiler_outlist("  æ­¦å™¨å±æ€§:", obj.brands, LIST_SEP);
 
-	spoiler_outlist("  ÌÈ±Ö:", obj.immunities, ITEM_SEP);
+	spoiler_outlist("  å…ç–«:", obj.immunities, ITEM_SEP);
 
-	spoiler_outlist("  ÂÑÀ­:", obj.resistances, ITEM_SEP);
+	spoiler_outlist("  è€æ€§:", obj.resistances, ITEM_SEP);
 
-	spoiler_outlist("  °İ»ı:", obj.sustains, ITEM_SEP);
+	spoiler_outlist("  ç¶­æŒ:", obj.sustains, ITEM_SEP);
 #else
 	spoiler_outlist("  Slay", obj.slays, ITEM_SEP);
 
@@ -1465,7 +1465,7 @@ void dump_object(FILE *fp, object_type *o_ptr)
 	if (obj.activation)
 	{
 #ifdef JP
-		fprintf(fff, "%s  È¯Æ°: %s\n", INDENT1, obj.activation);
+		fprintf(fff, "%s  ç™ºå‹•: %s\n", INDENT1, obj.activation);
 #else
 		fprintf(fff, "%s  Activates for %s\n", INDENT1, obj.activation);
 #endif
@@ -1768,7 +1768,7 @@ static void spoil_mon_desc(cptr fname)
  */
 static cptr wd_che[3] =
 #ifdef JP
-{ "¤½¤ì", "Èà", "Èà½÷" };
+{ "ãã‚Œ", "å½¼", "å½¼å¥³" };
 #else
 { "It", "He", "She" };
 #endif
@@ -1867,10 +1867,10 @@ static void spoil_out(cptr str)
 		  }
 		  else{
 		    if( iskanji2 && 
-			strncmp(str, "¡£", 2) != 0 && 
-			strncmp(str, "¡¢", 2) != 0 &&
-			strncmp(str, "¥£", 2) != 0 &&
-			strncmp(str, "¡¼", 2) != 0) roff_s = roff_p;
+			strncmp(str, "ã€‚", 2) != 0 && 
+			strncmp(str, "ã€", 2) != 0 &&
+			strncmp(str, "ã‚£", 2) != 0 &&
+			strncmp(str, "ãƒ¼", 2) != 0) roff_s = roff_p;
 		  }
 #else
 			if (ch == ' ') roff_s = roff_p;
@@ -2047,21 +2047,21 @@ static void spoil_mon_info(cptr fname)
 		spoil_out(r_text + r_ptr->text);
 #ifdef JP
 		spoil_out(" ");
-		spoil_out("¤³¤Î");
+		spoil_out("ã“ã®");
 
-		if (flags2 & RF2_ELDRITCH_HORROR) spoil_out("¶¸µ¤¤òÍ¶¤¦");/*nuke me*/
-		if (flags3 & RF3_ANIMAL)          spoil_out("¼«Á³³¦¤Î");
-		if (flags3 & RF3_EVIL)            spoil_out("¼Ù°­¤Ê¤ë");
-		if (flags3 & RF3_GOOD)            spoil_out("Á±ÎÉ¤Ê");
-		if (flags3 & RF3_UNDEAD)          spoil_out("¥¢¥ó¥Ç¥Ã¥É¤Î");
+		if (flags2 & RF2_ELDRITCH_HORROR) spoil_out("ç‹‚æ°—ã‚’èª˜ã†");/*nuke me*/
+		if (flags3 & RF3_ANIMAL)          spoil_out("è‡ªç„¶ç•Œã®");
+		if (flags3 & RF3_EVIL)            spoil_out("é‚ªæ‚ªãªã‚‹");
+		if (flags3 & RF3_GOOD)            spoil_out("å–„è‰¯ãª");
+		if (flags3 & RF3_UNDEAD)          spoil_out("ã‚¢ãƒ³ãƒ‡ãƒƒãƒ‰ã®");
 
-		if (flags3 & RF3_DRAGON)   spoil_out("¥É¥é¥´¥ó");
-		else if (flags3 & RF3_DEMON)    spoil_out("¥Ç¡¼¥â¥ó");
-		else if (flags3 & RF3_GIANT)    spoil_out("¥¸¥ã¥¤¥¢¥ó¥È");
-		else if (flags3 & RF3_TROLL)    spoil_out("¥È¥í¥ë");
-		else if (flags3 & RF3_ORC)      spoil_out("¥ª¡¼¥¯");
-		else if (flags3 & RF3_HUMAN)    spoil_out("¿Í´Ö");/*nuke me*/
-		else                            spoil_out("¥â¥ó¥¹¥¿¡¼");
+		if (flags3 & RF3_DRAGON)   spoil_out("ãƒ‰ãƒ©ã‚´ãƒ³");
+		else if (flags3 & RF3_DEMON)    spoil_out("ãƒ‡ãƒ¼ãƒ¢ãƒ³");
+		else if (flags3 & RF3_GIANT)    spoil_out("ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆ");
+		else if (flags3 & RF3_TROLL)    spoil_out("ãƒˆãƒ­ãƒ«");
+		else if (flags3 & RF3_ORC)      spoil_out("ã‚ªãƒ¼ã‚¯");
+		else if (flags3 & RF3_HUMAN)    spoil_out("äººé–“");/*nuke me*/
+		else                            spoil_out("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼");
 #else
 		spoil_out("  ");
 		spoil_out("This");
@@ -2082,7 +2082,7 @@ static void spoil_mon_info(cptr fname)
 #endif
 
 #ifdef JP
-		spoil_out("¤Ï");
+		spoil_out("ã¯");
 #else
 		spoil_out(" moves");
 #endif
@@ -2090,7 +2090,7 @@ static void spoil_mon_info(cptr fname)
 		if ((flags1 & (RF1_RAND_50)) && (flags1 & (RF1_RAND_25)))
 		{
 #ifdef JP
-			spoil_out("¤«¤Ê¤êÉÔµ¬Â§¤Ë");
+			spoil_out("ã‹ãªã‚Šä¸è¦å‰‡ã«");
 #else
 			spoil_out(" extremely erratically");
 #endif
@@ -2098,7 +2098,7 @@ static void spoil_mon_info(cptr fname)
 		else if (flags1 & (RF1_RAND_50))
 		{
 #ifdef JP
-			spoil_out("´öÊ¬ÉÔµ¬Â§¤Ë");
+			spoil_out("å¹¾åˆ†ä¸è¦å‰‡ã«");
 #else
 			spoil_out(" somewhat erratically");
 #endif
@@ -2106,7 +2106,7 @@ static void spoil_mon_info(cptr fname)
 		else if (flags1 & (RF1_RAND_25))
 		{
 #ifdef JP
-			spoil_out("¾¯¡¹ÉÔµ¬Â§¤Ë");
+			spoil_out("å°‘ã€…ä¸è¦å‰‡ã«");
 #else
 			spoil_out(" a bit erratically");
 #endif
@@ -2114,25 +2114,25 @@ static void spoil_mon_info(cptr fname)
 		else
 		{
 #ifdef JP
-			spoil_out("ÉáÄÌ¤Ë");
+			spoil_out("æ™®é€šã«");
 #else
 			spoil_out(" normally");
 #endif
 		}
 
 #ifdef JP
-		spoil_out("Æ°¤¤¤Æ¤¤¤ë");
+		spoil_out("å‹•ã„ã¦ã„ã‚‹");
 #endif
 		if (flags1 & (RF1_NEVER_MOVE))
 		{
 #ifdef JP
-			spoil_out("¤¬¡¢¿¯Æş¼Ô¤òÄÉÀ×¤·¤Ê¤¤");
+			spoil_out("ãŒã€ä¾µå…¥è€…ã‚’è¿½è·¡ã—ãªã„");
 #else
 			spoil_out(", but does not deign to chase intruders");
 #endif
 		}
 #ifdef JP
-		spoil_out("¡£");
+		spoil_out("ã€‚");
 #else
 		spoil_out(".  ");
 #endif
@@ -2140,8 +2140,8 @@ static void spoil_mon_info(cptr fname)
 		if (!r_ptr->level || (flags1 & (RF1_FORCE_DEPTH)))
 		{
 #ifdef JP
-			if(r_ptr->level == 0) sprintf(buf, "%s¤ÏÃÏ¾å¤Ë¤Î¤ß½Ğ¸½¤¹¤ë¡£", wd_che[msex]);
-			else sprintf(buf, "%s¤Ï%d³¬°Ê¹ß¤Ë¤·¤«½Ğ¸½¤·¤Ê¤¤¡£", wd_che[msex], r_ptr->level);
+			if(r_ptr->level == 0) sprintf(buf, "%sã¯åœ°ä¸Šã«ã®ã¿å‡ºç¾ã™ã‚‹ã€‚", wd_che[msex]);
+			else sprintf(buf, "%sã¯%déšä»¥é™ã«ã—ã‹å‡ºç¾ã—ãªã„ã€‚", wd_che[msex], r_ptr->level);
 #else
 			sprintf(buf, "%s is never found out of depth.  ", wd_che[msex]);
 #endif
@@ -2151,7 +2151,7 @@ static void spoil_mon_info(cptr fname)
 		if (flags1 & (RF1_FORCE_SLEEP))
 		{
 #ifdef JP
-			sprintf(buf, "%s¤ÏÉáÃÊ¤ÏÌ²¤Ã¤Æ¤¤¤ë¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯æ™®æ®µã¯çœ ã£ã¦ã„ã‚‹ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s is always created sluggish.  ", wd_che[msex]);
 #endif
@@ -2161,7 +2161,7 @@ static void spoil_mon_info(cptr fname)
 		if ((flags2 & RF2_AURA_FIRE) && (flags2 & RF2_AURA_ELEC) && (flags3 & RF3_AURA_COLD))
 		{
 #ifdef JP
-			sprintf(buf, "%s¤Ï±ê¤ÈÉ¹¤È¥¹¥Ñ¡¼¥¯¤ËÊñ¤Ş¤ì¤Æ¤¤¤ë¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯ç‚ã¨æ°·ã¨ã‚¹ãƒ‘ãƒ¼ã‚¯ã«åŒ…ã¾ã‚Œã¦ã„ã‚‹ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s is surrounded by flames and electricity.  ", wd_che[msex]);
 #endif
@@ -2170,7 +2170,7 @@ static void spoil_mon_info(cptr fname)
 		else if ((flags2 & RF2_AURA_FIRE) && (flags2 & RF2_AURA_ELEC))
 		{
 #ifdef JP
-			sprintf(buf, "%s¤Ï±ê¤È¥¹¥Ñ¡¼¥¯¤ËÊñ¤Ş¤ì¤Æ¤¤¤ë¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯ç‚ã¨ã‚¹ãƒ‘ãƒ¼ã‚¯ã«åŒ…ã¾ã‚Œã¦ã„ã‚‹ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s is surrounded by flames and electricity.  ", wd_che[msex]);
 #endif
@@ -2179,7 +2179,7 @@ static void spoil_mon_info(cptr fname)
 		else if ((flags2 & RF2_AURA_FIRE) && (flags3 & RF3_AURA_COLD))
 		{
 #ifdef JP
-			sprintf(buf, "%s¤Ï±ê¤ÈÉ¹¤ËÊñ¤Ş¤ì¤Æ¤¤¤ë¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯ç‚ã¨æ°·ã«åŒ…ã¾ã‚Œã¦ã„ã‚‹ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s is surrounded by flames and electricity.  ", wd_che[msex]);
 #endif
@@ -2188,7 +2188,7 @@ static void spoil_mon_info(cptr fname)
 		else if ((flags3 & RF3_AURA_COLD) && (flags2 & RF2_AURA_ELEC))
 		{
 #ifdef JP
-			sprintf(buf, "%s¤ÏÉ¹¤È¥¹¥Ñ¡¼¥¯¤ËÊñ¤Ş¤ì¤Æ¤¤¤ë¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯æ°·ã¨ã‚¹ãƒ‘ãƒ¼ã‚¯ã«åŒ…ã¾ã‚Œã¦ã„ã‚‹ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s is surrounded by ice and electricity.  ", wd_che[msex]);
 #endif
@@ -2197,7 +2197,7 @@ static void spoil_mon_info(cptr fname)
 		else if (flags2 & RF2_AURA_FIRE)
 		{
 #ifdef JP
-			sprintf(buf, "%s¤Ï±ê¤ËÊñ¤Ş¤ì¤Æ¤¤¤ë¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯ç‚ã«åŒ…ã¾ã‚Œã¦ã„ã‚‹ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s is surrounded by flames.  ", wd_che[msex]);
 #endif
@@ -2206,7 +2206,7 @@ static void spoil_mon_info(cptr fname)
 		else if (flags3 & RF3_AURA_COLD)
 		{
 #ifdef JP
-			sprintf(buf, "%s¤ÏÉ¹¤ËÊñ¤Ş¤ì¤Æ¤¤¤ë¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯æ°·ã«åŒ…ã¾ã‚Œã¦ã„ã‚‹ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s is surrounded by ice.  ", wd_che[msex]);
 #endif
@@ -2215,7 +2215,7 @@ static void spoil_mon_info(cptr fname)
 		else if (flags2 & RF2_AURA_ELEC)
 		{
 #ifdef JP
-			sprintf(buf, "%s¤Ï¥¹¥Ñ¡¼¥¯¤ËÊñ¤Ş¤ì¤Æ¤¤¤ë¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯ã‚¹ãƒ‘ãƒ¼ã‚¯ã«åŒ…ã¾ã‚Œã¦ã„ã‚‹ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s is surrounded by electricity.  ", wd_che[msex]);
 #endif
@@ -2225,7 +2225,7 @@ static void spoil_mon_info(cptr fname)
 		if (flags2 & (RF2_REFLECTING))
 		{
 #ifdef JP
-			sprintf(buf, "%s¤ÏÌğ¤Î¼öÊ¸¤òÄ·¤ÍÊÖ¤¹¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯çŸ¢ã®å‘ªæ–‡ã‚’è·³ã­è¿”ã™ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s reflects bolt spells.  ", wd_che[msex]);
 #endif
@@ -2236,7 +2236,7 @@ static void spoil_mon_info(cptr fname)
 		if ((flags1 & RF1_ESCORT) || (flags1 & RF1_ESCORTS))
 		{
 #ifdef JP
-			sprintf(buf, "%s¤ÏÄÌ¾ï¸î±Ò¤òÈ¼¤Ã¤Æ¸½¤ì¤ë¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯é€šå¸¸è­·è¡›ã‚’ä¼´ã£ã¦ç¾ã‚Œã‚‹ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s usually appears with escorts.  ", wd_che[msex]);
 #endif
@@ -2247,7 +2247,7 @@ static void spoil_mon_info(cptr fname)
 		else if ((flags1 & RF1_FRIEND) || (flags1 & RF1_FRIENDS))
 		{
 #ifdef JP
-			sprintf(buf, "%s¤ÏÄÌ¾ï½¸ÃÄ¤Ç¸½¤ì¤ë¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯é€šå¸¸é›†å›£ã§ç¾ã‚Œã‚‹ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s usually appears in groups.  ", wd_che[msex]);
 #endif
@@ -2257,13 +2257,13 @@ static void spoil_mon_info(cptr fname)
 		/* Collect inate attacks */
 		vn = 0;
 #ifdef JP
-		if (flags4 & RF4_SHRIEK)  vp[vn++] = "ÈáÌÄ¤Ç½õ¤±¤òµá¤á¤ë";
-		if (flags4 & RF4_THROW)   vp[vn++] = "´ä¤òÅê¤²¤ë";
-		if (flags4 & RF4_ROCKET)  vp[vn++] = "¥í¥±¥Ã¥È¤òÈ¯¼Í¤¹¤ë";
-		if (flags4 & RF4_ARROW_1) vp[vn++] = "Ìğ¤ò·â¤Ä";
-		if (flags4 & RF4_ARROW_2) vp[vn++] = "¿ô²óÌğ¤ò·â¤Ä";
-		if (flags4 & RF4_ARROW_3) vp[vn++] = "¼Í·â¤ò¤¹¤ë";
-		if (flags4 & RF4_ARROW_4) vp[vn++] = "¿ô²ó¼Í·â¤ò¤¹¤ë";
+		if (flags4 & RF4_SHRIEK)  vp[vn++] = "æ‚²é³´ã§åŠ©ã‘ã‚’æ±‚ã‚ã‚‹";
+		if (flags4 & RF4_THROW)   vp[vn++] = "å²©ã‚’æŠ•ã’ã‚‹";
+		if (flags4 & RF4_ROCKET)  vp[vn++] = "ãƒ­ã‚±ãƒƒãƒˆã‚’ç™ºå°„ã™ã‚‹";
+		if (flags4 & RF4_ARROW_1) vp[vn++] = "çŸ¢ã‚’æ’ƒã¤";
+		if (flags4 & RF4_ARROW_2) vp[vn++] = "æ•°å›çŸ¢ã‚’æ’ƒã¤";
+		if (flags4 & RF4_ARROW_3) vp[vn++] = "å°„æ’ƒã‚’ã™ã‚‹";
+		if (flags4 & RF4_ARROW_4) vp[vn++] = "æ•°å›å°„æ’ƒã‚’ã™ã‚‹";
 #else
 		if (flags4 & RF4_SHRIEK)  vp[vn++] = "shriek for help";
 		if (flags4 & RF4_THROW)   vp[vn++] = "throw a rock";
@@ -2277,7 +2277,7 @@ static void spoil_mon_info(cptr fname)
 		if (vn)
 		{
 #ifdef JP
-			sprintf(buf, "%s¤Ï", wd_che[msex]);
+			sprintf(buf, "%sã¯", wd_che[msex]);
 #else
 			sprintf(buf, "%s", wd_che[msex]);
 #endif
@@ -2290,7 +2290,7 @@ static void spoil_mon_info(cptr fname)
 				{
 					jverb(vp[i],jverb_buf, JVERB_OR);
 					spoil_out(jverb_buf);
-					spoil_out("¤ê¡¢");
+					spoil_out("ã‚Šã€");
 				}
 				else  spoil_out(vp[i]);
 #else
@@ -2301,7 +2301,7 @@ static void spoil_mon_info(cptr fname)
 #endif
 			}
 #ifdef JP
-			spoil_out("¤³¤È¤¬¤Ç¤­¤ë¡£");
+			spoil_out("ã“ã¨ãŒã§ãã‚‹ã€‚");
 #else
 			spoil_out(".  ");
 #endif
@@ -2310,28 +2310,28 @@ static void spoil_mon_info(cptr fname)
 		/* Collect breaths */
 		vn = 0;
 #ifdef JP
-		if (flags4 & (RF4_BR_ACID)) vp[vn++] = "»À";
-		if (flags4 & (RF4_BR_ELEC)) vp[vn++] = "°ğºÊ";
-		if (flags4 & (RF4_BR_FIRE)) vp[vn++] = "²Ğ±ê";
-		if (flags4 & (RF4_BR_COLD)) vp[vn++] = "Îäµ¤";
-		if (flags4 & (RF4_BR_POIS)) vp[vn++] = "ÆÇ";
-		if (flags4 & (RF4_BR_NETH)) vp[vn++] = "ÃÏ¹ö";
-		if (flags4 & (RF4_BR_LITE)) vp[vn++] = "Á®¸÷";
-		if (flags4 & (RF4_BR_DARK)) vp[vn++] = "°Å¹õ";
-		if (flags4 & (RF4_BR_CONF)) vp[vn++] = "º®Íğ";
-		if (flags4 & (RF4_BR_SOUN)) vp[vn++] = "¹ì²»";
-		if (flags4 & (RF4_BR_CHAO)) vp[vn++] = "¥«¥ª¥¹";
-		if (flags4 & (RF4_BR_DISE)) vp[vn++] = "Îô²½";
-		if (flags4 & (RF4_BR_NEXU)) vp[vn++] = "°ø²Ìº®Íğ";
-		if (flags4 & (RF4_BR_TIME)) vp[vn++] = "»ş´ÖµÕÅ¾";
-		if (flags4 & (RF4_BR_INER)) vp[vn++] = "ÃÙÆß";
-		if (flags4 & (RF4_BR_GRAV)) vp[vn++] = "½ÅÎÏ";
-		if (flags4 & (RF4_BR_SHAR)) vp[vn++] = "ÇËÊÒ";
-		if (flags4 & (RF4_BR_PLAS)) vp[vn++] = "¥×¥é¥º¥Ş";
-		if (flags4 & (RF4_BR_WALL)) vp[vn++] = "¥Õ¥©¡¼¥¹";
-		if (flags4 & (RF4_BR_MANA)) vp[vn++] = "ËâÎÏ";
-		if (flags4 & (RF4_BR_NUKE)) vp[vn++] = "Êü¼ÍÀ­ÇÑ´şÊª";
-		if (flags4 & (RF4_BR_DISI)) vp[vn++] = "Ê¬²ò";
+		if (flags4 & (RF4_BR_ACID)) vp[vn++] = "é…¸";
+		if (flags4 & (RF4_BR_ELEC)) vp[vn++] = "ç¨²å¦»";
+		if (flags4 & (RF4_BR_FIRE)) vp[vn++] = "ç«ç‚";
+		if (flags4 & (RF4_BR_COLD)) vp[vn++] = "å†·æ°—";
+		if (flags4 & (RF4_BR_POIS)) vp[vn++] = "æ¯’";
+		if (flags4 & (RF4_BR_NETH)) vp[vn++] = "åœ°ç„";
+		if (flags4 & (RF4_BR_LITE)) vp[vn++] = "é–ƒå…‰";
+		if (flags4 & (RF4_BR_DARK)) vp[vn++] = "æš—é»’";
+		if (flags4 & (RF4_BR_CONF)) vp[vn++] = "æ··ä¹±";
+		if (flags4 & (RF4_BR_SOUN)) vp[vn++] = "è½ŸéŸ³";
+		if (flags4 & (RF4_BR_CHAO)) vp[vn++] = "ã‚«ã‚ªã‚¹";
+		if (flags4 & (RF4_BR_DISE)) vp[vn++] = "åŠ£åŒ–";
+		if (flags4 & (RF4_BR_NEXU)) vp[vn++] = "å› æœæ··ä¹±";
+		if (flags4 & (RF4_BR_TIME)) vp[vn++] = "æ™‚é–“é€†è»¢";
+		if (flags4 & (RF4_BR_INER)) vp[vn++] = "é…éˆ";
+		if (flags4 & (RF4_BR_GRAV)) vp[vn++] = "é‡åŠ›";
+		if (flags4 & (RF4_BR_SHAR)) vp[vn++] = "ç ´ç‰‡";
+		if (flags4 & (RF4_BR_PLAS)) vp[vn++] = "ãƒ—ãƒ©ã‚ºãƒ";
+		if (flags4 & (RF4_BR_WALL)) vp[vn++] = "ãƒ•ã‚©ãƒ¼ã‚¹";
+		if (flags4 & (RF4_BR_MANA)) vp[vn++] = "é­”åŠ›";
+		if (flags4 & (RF4_BR_NUKE)) vp[vn++] = "æ”¾å°„æ€§å»ƒæ£„ç‰©";
+		if (flags4 & (RF4_BR_DISI)) vp[vn++] = "åˆ†è§£";
 #else
 		if (flags4 & (RF4_BR_ACID)) vp[vn++] = "acid";
 		if (flags4 & (RF4_BR_ELEC)) vp[vn++] = "lightning";
@@ -2361,7 +2361,7 @@ static void spoil_mon_info(cptr fname)
 		{
 			breath = TRUE;
 #ifdef JP
-			sprintf(buf, "%s¤Ï", wd_che[msex]);
+			sprintf(buf, "%sã¯", wd_che[msex]);
 #else
 			sprintf(buf, "%s", wd_che[msex]);
 #endif
@@ -2370,7 +2370,7 @@ static void spoil_mon_info(cptr fname)
 			for (i = 0; i < vn; i++)
 			{
 #ifdef JP
-				if ( i != 0 ) spoil_out("¤ä");
+				if ( i != 0 ) spoil_out("ã‚„");
 #else
 				if (!i) spoil_out(" may breathe ");
 				else if (i < vn-1) spoil_out(", ");
@@ -2379,9 +2379,9 @@ static void spoil_mon_info(cptr fname)
 				spoil_out(vp[i]);
 			}
 #ifdef JP
-			spoil_out("¤Î¥Ö¥ì¥¹¤ò");
-			if (flags2 & (RF2_POWERFUL)) spoil_out("¶¯ÎÏ¤Ë");
-			spoil_out("ÅÇ¤¯¤³¤È¤¬¤¢");
+			spoil_out("ã®ãƒ–ãƒ¬ã‚¹ã‚’");
+			if (flags2 & (RF2_POWERFUL)) spoil_out("å¼·åŠ›ã«");
+			spoil_out("åãã“ã¨ãŒã‚");
 #else
 			if (flags2 & (RF2_POWERFUL)) spoil_out(" powerfully");
 #endif
@@ -2390,73 +2390,73 @@ static void spoil_mon_info(cptr fname)
 		/* Collect spells */
 		vn = 0;
 #ifdef JP
-		if (flags5 & (RF5_BA_ACID))           vp[vn++] = "¥¢¥·¥Ã¥É¡¦¥Ü¡¼¥ë";
-		if (flags5 & (RF5_BA_ELEC))           vp[vn++] = "¥µ¥ó¥À¡¼¡¦¥Ü¡¼¥ë";
-		if (flags5 & (RF5_BA_FIRE))           vp[vn++] = "¥Õ¥¡¥¤¥¢¡¦¥Ü¡¼¥ë";
-		if (flags5 & (RF5_BA_COLD))           vp[vn++] = "¥¢¥¤¥¹¡¦¥Ü¡¼¥ë";
-		if (flags5 & (RF5_BA_POIS))           vp[vn++] = "°­½­±À";
-		if (flags5 & (RF5_BA_NETH))           vp[vn++] = "ÃÏ¹öµå";
-		if (flags5 & (RF5_BA_WATE))           vp[vn++] = "¥¦¥©¡¼¥¿¡¼¡¦¥Ü¡¼¥ë";
-		if (flags4 & (RF4_BA_NUKE))           vp[vn++] = "Êü¼ÍÇ½µå";
-		if (flags5 & (RF5_BA_MANA))           vp[vn++] = "ËâÎÏ¤ÎÍò";
-		if (flags5 & (RF5_BA_DARK))           vp[vn++] = "°Å¹õ¤ÎÍò";
-		if (flags4 & (RF4_BA_LITE))           vp[vn++] = "¥¹¥¿¡¼¡¦¥Ğ¡¼¥¹¥È";
-		if (flags4 & (RF4_BA_CHAO))           vp[vn++] = "¥«¥ª¥¹µå";
-		if (flags6 & (RF6_HAND_DOOM))         vp[vn++] = "ÇËÌÇ¤Î¼ê";
-		if (flags5 & (RF5_DRAIN_MANA))        vp[vn++] = "ËâÎÏµÛ¼ı";
-		if (flags5 & (RF5_MIND_BLAST))        vp[vn++] = "Àº¿À¹¶·â";
-		if (flags5 & (RF5_BRAIN_SMASH))       vp[vn++] = "Ç¾¹¶·â";
-		if (flags5 & (RF5_CAUSE_1))           vp[vn++] = "·Ú½ı¡Ü¼ö¤¤";
-		if (flags5 & (RF5_CAUSE_2))           vp[vn++] = "½Å½ı¡Ü¼ö¤¤";
-		if (flags5 & (RF5_CAUSE_3))           vp[vn++] = "Ã×Ì¿½ı¡Ü¼ö¤¤";
-		if (flags5 & (RF5_CAUSE_4))           vp[vn++] = "ÉÎ»à½ı";
-		if (flags5 & (RF5_BO_ACID))           vp[vn++] = "¥¢¥·¥Ã¥É¡¦¥Ü¥ë¥È";
-		if (flags5 & (RF5_BO_ELEC))           vp[vn++] = "¥µ¥ó¥À¡¼¡¦¥Ü¥ë¥È";
-		if (flags5 & (RF5_BO_FIRE))           vp[vn++] = "¥Õ¥¡¥¤¥¢¡¦¥Ü¥ë¥È";
-		if (flags5 & (RF5_BO_COLD))           vp[vn++] = "¥¢¥¤¥¹¡¦¥Ü¥ë¥È";
-		if (flags5 & (RF5_BO_POIS))           vp[vn++] = "¥İ¥¤¥º¥ó¡¦¥Ü¥ë¥È";
-		if (flags5 & (RF5_BO_NETH))           vp[vn++] = "ÃÏ¹ö¤ÎÌğ";
-		if (flags5 & (RF5_BO_WATE))           vp[vn++] = "¥¦¥©¡¼¥¿¡¼¡¦¥Ü¥ë¥È";
-		if (flags5 & (RF5_BO_MANA))           vp[vn++] = "ËâÎÏ¤ÎÌğ";
-		if (flags5 & (RF5_BO_PLAS))           vp[vn++] = "¥×¥é¥º¥Ş¡¦¥Ü¥ë¥È";
-		if (flags5 & (RF5_BO_ICEE))           vp[vn++] = "¶Ë´¨¤ÎÌğ";
-		if (flags5 & (RF5_MISSILE))           vp[vn++] = "¥Ş¥¸¥Ã¥¯¥ß¥µ¥¤¥ë";
-		if (flags5 & (RF5_SCARE))             vp[vn++] = "¶²Éİ";
-		if (flags5 & (RF5_BLIND))             vp[vn++] = "ÌÜ¤¯¤é¤Ş¤·";
-		if (flags5 & (RF5_CONF))              vp[vn++] = "º®Íğ";
-		if (flags5 & (RF5_SLOW))              vp[vn++] = "¸ºÂ®";
-		if (flags5 & (RF5_HOLD))              vp[vn++] = "Ëãáã";
-		if (flags6 & (RF6_HASTE))             vp[vn++] = "²ÃÂ®";
-		if (flags6 & (RF6_HEAL))              vp[vn++] = "¼£Ìş";
-		if (flags6 & (RF6_INVULNER))          vp[vn++] = "ÌµÅ¨²½";
-		if (flags6 & (RF6_BLINK))             vp[vn++] = "¥·¥ç¡¼¥È¥Æ¥ì¥İ¡¼¥È";
-		if (flags6 & (RF6_TPORT))             vp[vn++] = "¥Æ¥ì¥İ¡¼¥È";
-		if (flags6 & (RF6_XXX3))              vp[vn++] = "²¿¤«";
-		if (flags6 & (RF6_XXX4))              vp[vn++] = "²¿¤«";
-		if (flags6 & (RF6_TELE_TO))           vp[vn++] = "¥Æ¥ì¥İ¡¼¥È¥Ğ¥Ã¥¯";
-		if (flags6 & (RF6_TELE_AWAY))         vp[vn++] = "¥Æ¥ì¥İ¡¼¥È¥¢¥¦¥§¥¤";
-		if (flags6 & (RF6_TELE_LEVEL))        vp[vn++] = "¥ì¥Ù¥ë¥Æ¥ì¥İ¡¼¥È";
-		if (flags6 & (RF6_XXX5))              vp[vn++] = "²¿¤«";
-		if (flags6 & (RF6_DARKNESS))          vp[vn++] = "°Å°Ç";
-		if (flags6 & (RF6_TRAPS))             vp[vn++] = "¥È¥é¥Ã¥×";
-		if (flags6 & (RF6_FORGET))            vp[vn++] = "µ­²±¾Ãµî";
-		if (flags6 & (RF6_RAISE_DEAD))        vp[vn++] = "»à¼ÔÉü³è";
-		if (flags6 & (RF6_S_MONSTER))         vp[vn++] = "¥â¥ó¥¹¥¿¡¼°ìÂÎ¾¤´­";
-		if (flags6 & (RF6_S_MONSTERS))        vp[vn++] = "¥â¥ó¥¹¥¿¡¼Ê£¿ô¾¤´­";
-		if (flags6 & (RF6_S_KIN))             vp[vn++] = "µß±ç¾¤´­";
-		if (flags6 & (RF6_S_ANT))             vp[vn++] = "¥¢¥ê¾¤´­";
-		if (flags6 & (RF6_S_SPIDER))          vp[vn++] = "¥¯¥â¾¤´­";
-		if (flags6 & (RF6_S_HOUND))           vp[vn++] = "¥Ï¥¦¥ó¥É¾¤´­";
-		if (flags6 & (RF6_S_HYDRA))           vp[vn++] = "¥Ò¥É¥é¾¤´­";
-		if (flags6 & (RF6_S_ANGEL))           vp[vn++] = "Å·»È¾¤´­";
-		if (flags6 & (RF6_S_DEMON))           vp[vn++] = "¥Ç¡¼¥â¥ó¾¤´­";
-		if (flags6 & (RF6_S_UNDEAD))          vp[vn++] = "¥¢¥ó¥Ç¥Ã¥É¾¤´­";
-		if (flags6 & (RF6_S_DRAGON))          vp[vn++] = "¥É¥é¥´¥ó¾¤´­";
-		if (flags6 & (RF6_S_HI_UNDEAD))       vp[vn++] = "¶¯ÎÏ¤Ê¥¢¥ó¥Ç¥Ã¥É¾¤´­";
-		if (flags6 & (RF6_S_HI_DRAGON))       vp[vn++] = "¾åµé¥É¥é¥´¥ó¾¤´­";
-		if (flags6 & (RF6_S_CYBER))           vp[vn++] = "¥µ¥¤¥Ğ¡¼¥Ç¡¼¥â¥ó¾¤´­";
-		if (flags6 & (RF6_S_HI_DEMON))        vp[vn++] = "¾åµé¥Ç¡¼¥â¥ó¾¤´­";
-		if (flags6 & (RF6_S_UNIQUE))          vp[vn++] = "¥æ¥Ë¡¼¥¯¥â¥ó¥¹¥¿¡¼¾¤´­";
+		if (flags5 & (RF5_BA_ACID))           vp[vn++] = "ã‚¢ã‚·ãƒƒãƒ‰ãƒ»ãƒœãƒ¼ãƒ«";
+		if (flags5 & (RF5_BA_ELEC))           vp[vn++] = "ã‚µãƒ³ãƒ€ãƒ¼ãƒ»ãƒœãƒ¼ãƒ«";
+		if (flags5 & (RF5_BA_FIRE))           vp[vn++] = "ãƒ•ã‚¡ã‚¤ã‚¢ãƒ»ãƒœãƒ¼ãƒ«";
+		if (flags5 & (RF5_BA_COLD))           vp[vn++] = "ã‚¢ã‚¤ã‚¹ãƒ»ãƒœãƒ¼ãƒ«";
+		if (flags5 & (RF5_BA_POIS))           vp[vn++] = "æ‚ªè‡­é›²";
+		if (flags5 & (RF5_BA_NETH))           vp[vn++] = "åœ°ç„çƒ";
+		if (flags5 & (RF5_BA_WATE))           vp[vn++] = "ã‚¦ã‚©ãƒ¼ã‚¿ãƒ¼ãƒ»ãƒœãƒ¼ãƒ«";
+		if (flags4 & (RF4_BA_NUKE))           vp[vn++] = "æ”¾å°„èƒ½çƒ";
+		if (flags5 & (RF5_BA_MANA))           vp[vn++] = "é­”åŠ›ã®åµ";
+		if (flags5 & (RF5_BA_DARK))           vp[vn++] = "æš—é»’ã®åµ";
+		if (flags4 & (RF4_BA_LITE))           vp[vn++] = "ã‚¹ã‚¿ãƒ¼ãƒ»ãƒãƒ¼ã‚¹ãƒˆ";
+		if (flags4 & (RF4_BA_CHAO))           vp[vn++] = "ã‚«ã‚ªã‚¹çƒ";
+		if (flags6 & (RF6_HAND_DOOM))         vp[vn++] = "ç ´æ»…ã®æ‰‹";
+		if (flags5 & (RF5_DRAIN_MANA))        vp[vn++] = "é­”åŠ›å¸å";
+		if (flags5 & (RF5_MIND_BLAST))        vp[vn++] = "ç²¾ç¥æ”»æ’ƒ";
+		if (flags5 & (RF5_BRAIN_SMASH))       vp[vn++] = "è„³æ”»æ’ƒ";
+		if (flags5 & (RF5_CAUSE_1))           vp[vn++] = "è»½å‚·ï¼‹å‘ªã„";
+		if (flags5 & (RF5_CAUSE_2))           vp[vn++] = "é‡å‚·ï¼‹å‘ªã„";
+		if (flags5 & (RF5_CAUSE_3))           vp[vn++] = "è‡´å‘½å‚·ï¼‹å‘ªã„";
+		if (flags5 & (RF5_CAUSE_4))           vp[vn++] = "ç€•æ­»å‚·";
+		if (flags5 & (RF5_BO_ACID))           vp[vn++] = "ã‚¢ã‚·ãƒƒãƒ‰ãƒ»ãƒœãƒ«ãƒˆ";
+		if (flags5 & (RF5_BO_ELEC))           vp[vn++] = "ã‚µãƒ³ãƒ€ãƒ¼ãƒ»ãƒœãƒ«ãƒˆ";
+		if (flags5 & (RF5_BO_FIRE))           vp[vn++] = "ãƒ•ã‚¡ã‚¤ã‚¢ãƒ»ãƒœãƒ«ãƒˆ";
+		if (flags5 & (RF5_BO_COLD))           vp[vn++] = "ã‚¢ã‚¤ã‚¹ãƒ»ãƒœãƒ«ãƒˆ";
+		if (flags5 & (RF5_BO_POIS))           vp[vn++] = "ãƒã‚¤ã‚ºãƒ³ãƒ»ãƒœãƒ«ãƒˆ";
+		if (flags5 & (RF5_BO_NETH))           vp[vn++] = "åœ°ç„ã®çŸ¢";
+		if (flags5 & (RF5_BO_WATE))           vp[vn++] = "ã‚¦ã‚©ãƒ¼ã‚¿ãƒ¼ãƒ»ãƒœãƒ«ãƒˆ";
+		if (flags5 & (RF5_BO_MANA))           vp[vn++] = "é­”åŠ›ã®çŸ¢";
+		if (flags5 & (RF5_BO_PLAS))           vp[vn++] = "ãƒ—ãƒ©ã‚ºãƒãƒ»ãƒœãƒ«ãƒˆ";
+		if (flags5 & (RF5_BO_ICEE))           vp[vn++] = "æ¥µå¯’ã®çŸ¢";
+		if (flags5 & (RF5_MISSILE))           vp[vn++] = "ãƒã‚¸ãƒƒã‚¯ãƒŸã‚µã‚¤ãƒ«";
+		if (flags5 & (RF5_SCARE))             vp[vn++] = "ææ€–";
+		if (flags5 & (RF5_BLIND))             vp[vn++] = "ç›®ãã‚‰ã¾ã—";
+		if (flags5 & (RF5_CONF))              vp[vn++] = "æ··ä¹±";
+		if (flags5 & (RF5_SLOW))              vp[vn++] = "æ¸›é€Ÿ";
+		if (flags5 & (RF5_HOLD))              vp[vn++] = "éº»ç—º";
+		if (flags6 & (RF6_HASTE))             vp[vn++] = "åŠ é€Ÿ";
+		if (flags6 & (RF6_HEAL))              vp[vn++] = "æ²»ç™’";
+		if (flags6 & (RF6_INVULNER))          vp[vn++] = "ç„¡æ•µåŒ–";
+		if (flags6 & (RF6_BLINK))             vp[vn++] = "ã‚·ãƒ§ãƒ¼ãƒˆãƒ†ãƒ¬ãƒãƒ¼ãƒˆ";
+		if (flags6 & (RF6_TPORT))             vp[vn++] = "ãƒ†ãƒ¬ãƒãƒ¼ãƒˆ";
+		if (flags6 & (RF6_XXX3))              vp[vn++] = "ä½•ã‹";
+		if (flags6 & (RF6_XXX4))              vp[vn++] = "ä½•ã‹";
+		if (flags6 & (RF6_TELE_TO))           vp[vn++] = "ãƒ†ãƒ¬ãƒãƒ¼ãƒˆãƒãƒƒã‚¯";
+		if (flags6 & (RF6_TELE_AWAY))         vp[vn++] = "ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã‚¢ã‚¦ã‚§ã‚¤";
+		if (flags6 & (RF6_TELE_LEVEL))        vp[vn++] = "ãƒ¬ãƒ™ãƒ«ãƒ†ãƒ¬ãƒãƒ¼ãƒˆ";
+		if (flags6 & (RF6_XXX5))              vp[vn++] = "ä½•ã‹";
+		if (flags6 & (RF6_DARKNESS))          vp[vn++] = "æš—é—‡";
+		if (flags6 & (RF6_TRAPS))             vp[vn++] = "ãƒˆãƒ©ãƒƒãƒ—";
+		if (flags6 & (RF6_FORGET))            vp[vn++] = "è¨˜æ†¶æ¶ˆå»";
+		if (flags6 & (RF6_RAISE_DEAD))        vp[vn++] = "æ­»è€…å¾©æ´»";
+		if (flags6 & (RF6_S_MONSTER))         vp[vn++] = "ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ä¸€ä½“å¬å–š";
+		if (flags6 & (RF6_S_MONSTERS))        vp[vn++] = "ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼è¤‡æ•°å¬å–š";
+		if (flags6 & (RF6_S_KIN))             vp[vn++] = "æ•‘æ´å¬å–š";
+		if (flags6 & (RF6_S_ANT))             vp[vn++] = "ã‚¢ãƒªå¬å–š";
+		if (flags6 & (RF6_S_SPIDER))          vp[vn++] = "ã‚¯ãƒ¢å¬å–š";
+		if (flags6 & (RF6_S_HOUND))           vp[vn++] = "ãƒã‚¦ãƒ³ãƒ‰å¬å–š";
+		if (flags6 & (RF6_S_HYDRA))           vp[vn++] = "ãƒ’ãƒ‰ãƒ©å¬å–š";
+		if (flags6 & (RF6_S_ANGEL))           vp[vn++] = "å¤©ä½¿å¬å–š";
+		if (flags6 & (RF6_S_DEMON))           vp[vn++] = "ãƒ‡ãƒ¼ãƒ¢ãƒ³å¬å–š";
+		if (flags6 & (RF6_S_UNDEAD))          vp[vn++] = "ã‚¢ãƒ³ãƒ‡ãƒƒãƒ‰å¬å–š";
+		if (flags6 & (RF6_S_DRAGON))          vp[vn++] = "ãƒ‰ãƒ©ã‚´ãƒ³å¬å–š";
+		if (flags6 & (RF6_S_HI_UNDEAD))       vp[vn++] = "å¼·åŠ›ãªã‚¢ãƒ³ãƒ‡ãƒƒãƒ‰å¬å–š";
+		if (flags6 & (RF6_S_HI_DRAGON))       vp[vn++] = "ä¸Šç´šãƒ‰ãƒ©ã‚´ãƒ³å¬å–š";
+		if (flags6 & (RF6_S_CYBER))           vp[vn++] = "ã‚µã‚¤ãƒãƒ¼ãƒ‡ãƒ¼ãƒ¢ãƒ³å¬å–š";
+		if (flags6 & (RF6_S_HI_DEMON))        vp[vn++] = "ä¸Šç´šãƒ‡ãƒ¼ãƒ¢ãƒ³å¬å–š";
+		if (flags6 & (RF6_S_UNIQUE))          vp[vn++] = "ãƒ¦ãƒ‹ãƒ¼ã‚¯ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼å¬å–š";
 #else
 		if (flags5 & (RF5_BA_ACID))           vp[vn++] = "produce acid balls";
 		if (flags5 & (RF5_BA_ELEC))           vp[vn++] = "produce lightning balls";
@@ -2533,7 +2533,7 @@ static void spoil_mon_info(cptr fname)
 			if (breath)
 			{
 #ifdef JP
-				spoil_out("¤ê¡¢¤Ê¤ª¤«¤Ä");
+				spoil_out("ã‚Šã€ãªãŠã‹ã¤");
 #else
 				spoil_out(", and is also");
 #endif
@@ -2541,7 +2541,7 @@ static void spoil_mon_info(cptr fname)
 			else
 			{
 #ifdef JP
-				sprintf(buf, "%s¤Ï", wd_che[msex]);
+				sprintf(buf, "%sã¯", wd_che[msex]);
 #else
 				sprintf(buf, "%s is", wd_che[msex]);
 #endif
@@ -2550,10 +2550,10 @@ static void spoil_mon_info(cptr fname)
 
 #ifdef JP
 			/* Adverb */
-			if (flags2 & (RF2_SMART)) spoil_out("Åª³Î¤Ë");
+			if (flags2 & (RF2_SMART)) spoil_out("çš„ç¢ºã«");
 
 			/* Verb Phrase */
-			spoil_out("ËâË¡¤ò»È¤¦¤³¤È¤¬¤Ç¤­¡¢");
+			spoil_out("é­”æ³•ã‚’ä½¿ã†ã“ã¨ãŒã§ãã€");
 #else
 			spoil_out(" magical, casting spells");
 			if (flags2 & (RF2_SMART)) spoil_out(" intelligently");
@@ -2562,7 +2562,7 @@ static void spoil_mon_info(cptr fname)
 			for (i = 0; i < vn; i++)
 			{
 #ifdef JP
-				if ( i != 0 ) spoil_out("¡¢");
+				if ( i != 0 ) spoil_out("ã€");
 #else
 				if (!i) spoil_out(" which ");
 				else if (i < vn-1) spoil_out(", ");
@@ -2571,14 +2571,14 @@ static void spoil_mon_info(cptr fname)
 				spoil_out(vp[i]);
 			}
 #ifdef JP
-			spoil_out("¤Î¼öÊ¸¤ò¾§¤¨¤ë¤³¤È¤¬¤¢");
+			spoil_out("ã®å‘ªæ–‡ã‚’å”±ãˆã‚‹ã“ã¨ãŒã‚");
 #endif
 		}
 
 		if (breath || magic)
 		{
 #ifdef JP
-			sprintf(buf, "¤ë(³ÎÎ¨:Ìó1/%d)¡£",
+			sprintf(buf, "ã‚‹(ç¢ºç‡:ç´„1/%d)ã€‚",
 				200 / (r_ptr->freq_inate + r_ptr->freq_spell));
 			spoil_out(buf);
 #else
@@ -2591,14 +2591,14 @@ static void spoil_mon_info(cptr fname)
 		/* Collect special abilities. */
 		vn = 0;
 #ifdef JP
-		if (flags2 & (RF2_OPEN_DOOR)) vp[vn++] = "¥É¥¢¤ò³«¤±¤ë";
-		if (flags2 & (RF2_BASH_DOOR)) vp[vn++] = "¥É¥¢¤òÂÇ¤ÁÇË¤ë";
-		if (flags2 & (RF2_PASS_WALL)) vp[vn++] = "ÊÉ¤ò¤¹¤êÈ´¤±¤ë";
-		if (flags2 & (RF2_KILL_WALL)) vp[vn++] = "ÊÉ¤ò·¡¤ê¿Ê¤à";
-		if (flags2 & (RF2_MOVE_BODY)) vp[vn++] = "¼å¤¤¥â¥ó¥¹¥¿¡¼¤ò²¡¤·¤Î¤±¤ë";
-		if (flags2 & (RF2_KILL_BODY)) vp[vn++] = "¼å¤¤¥â¥ó¥¹¥¿¡¼¤òÅİ¤¹";
-		if (flags2 & (RF2_TAKE_ITEM)) vp[vn++] = "¥¢¥¤¥Æ¥à¤ò½¦¤¦";
-		if (flags2 & (RF2_KILL_ITEM)) vp[vn++] = "¥¢¥¤¥Æ¥à¤ò²õ¤¹";
+		if (flags2 & (RF2_OPEN_DOOR)) vp[vn++] = "ãƒ‰ã‚¢ã‚’é–‹ã‘ã‚‹";
+		if (flags2 & (RF2_BASH_DOOR)) vp[vn++] = "ãƒ‰ã‚¢ã‚’æ‰“ã¡ç ´ã‚‹";
+		if (flags2 & (RF2_PASS_WALL)) vp[vn++] = "å£ã‚’ã™ã‚ŠæŠœã‘ã‚‹";
+		if (flags2 & (RF2_KILL_WALL)) vp[vn++] = "å£ã‚’æ˜ã‚Šé€²ã‚€";
+		if (flags2 & (RF2_MOVE_BODY)) vp[vn++] = "å¼±ã„ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’æŠ¼ã—ã®ã‘ã‚‹";
+		if (flags2 & (RF2_KILL_BODY)) vp[vn++] = "å¼±ã„ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’å€’ã™";
+		if (flags2 & (RF2_TAKE_ITEM)) vp[vn++] = "ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ‹¾ã†";
+		if (flags2 & (RF2_KILL_ITEM)) vp[vn++] = "ã‚¢ã‚¤ãƒ†ãƒ ã‚’å£Šã™";
 #else
 		if (flags2 & (RF2_OPEN_DOOR)) vp[vn++] = "open doors";
 		if (flags2 & (RF2_BASH_DOOR)) vp[vn++] = "bash down doors";
@@ -2615,7 +2615,7 @@ static void spoil_mon_info(cptr fname)
 		{
 			spoil_out(wd_che[msex]);
 #ifdef JP
-			spoil_out("¤Ï");
+			spoil_out("ã¯");
 #endif
 			for (i = 0; i < vn; i++)
 			{
@@ -2624,7 +2624,7 @@ static void spoil_mon_info(cptr fname)
 				{
 					jverb(vp[i],jverb_buf, JVERB_AND);
 					spoil_out(jverb_buf);
-					spoil_out("¡¢");
+					spoil_out("ã€");
 				}
 				else  spoil_out(vp[i]);
 #else
@@ -2635,7 +2635,7 @@ static void spoil_mon_info(cptr fname)
 #endif
 			}
 #ifdef JP
-			spoil_out("¤³¤È¤¬¤Ç¤­¤ë¡£");
+			spoil_out("ã“ã¨ãŒã§ãã‚‹ã€‚");
 #else
 			spoil_out(".  ");
 #endif
@@ -2645,7 +2645,7 @@ static void spoil_mon_info(cptr fname)
 		{
 			spoil_out(wd_che[msex]);
 #ifdef JP
-			spoil_out("¤ÏÆ©ÌÀ¤ÇÌÜ¤Ë¸«¤¨¤Ê¤¤¡£");
+			spoil_out("ã¯é€æ˜ã§ç›®ã«è¦‹ãˆãªã„ã€‚");
 #else
 			spoil_out(" is invisible.  ");
 #endif
@@ -2654,7 +2654,7 @@ static void spoil_mon_info(cptr fname)
 		{
 			spoil_out(wd_che[msex]);
 #ifdef JP
-			spoil_out("¤ÏÎä·ìÆ°Êª¤Ç¤¢¤ë¡£");
+			spoil_out("ã¯å†·è¡€å‹•ç‰©ã§ã‚ã‚‹ã€‚");
 #else
 			spoil_out(" is cold blooded.  ");
 #endif
@@ -2663,7 +2663,7 @@ static void spoil_mon_info(cptr fname)
 		{
 			spoil_out(wd_che[msex]);
 #ifdef JP
-			spoil_out("¤Ï¥Æ¥ì¥Ñ¥·¡¼¤Ç¤Ï´¶ÃÎ¤Ç¤­¤Ê¤¤¡£");
+			spoil_out("ã¯ãƒ†ãƒ¬ãƒ‘ã‚·ãƒ¼ã§ã¯æ„ŸçŸ¥ã§ããªã„ã€‚");
 #else
 			spoil_out(" is not detected by telepathy.  ");
 #endif
@@ -2672,7 +2672,7 @@ static void spoil_mon_info(cptr fname)
 		{
 			spoil_out(wd_che[msex]);
 #ifdef JP
-			spoil_out("¤Ï¤Ş¤ì¤Ë¥Æ¥ì¥Ñ¥·¡¼¤Ç´¶ÃÎ¤Ç¤­¤ë¡£");
+			spoil_out("ã¯ã¾ã‚Œã«ãƒ†ãƒ¬ãƒ‘ã‚·ãƒ¼ã§æ„ŸçŸ¥ã§ãã‚‹ã€‚");
 #else
 			spoil_out(" is rarely detected by telepathy.  ");
 #endif
@@ -2681,7 +2681,7 @@ static void spoil_mon_info(cptr fname)
 		{
 			spoil_out(wd_che[msex]);
 #ifdef JP
-			spoil_out("¤ÏÇúÈ¯Åª¤ËÁı¿£¤¹¤ë¡£");
+			spoil_out("ã¯çˆ†ç™ºçš„ã«å¢—æ®–ã™ã‚‹ã€‚");
 #else
 			spoil_out(" breeds explosively.  ");
 #endif
@@ -2690,7 +2690,7 @@ static void spoil_mon_info(cptr fname)
 		{
 			spoil_out(wd_che[msex]);
 #ifdef JP
-			spoil_out("¤ÏÁÇÁá¤¯ÂÎÎÏ¤ò²óÉü¤¹¤ë¡£");
+			spoil_out("ã¯ç´ æ—©ãä½“åŠ›ã‚’å›å¾©ã™ã‚‹ã€‚");
 #else
 			spoil_out(" regenerates quickly.  ");
 #endif
@@ -2699,10 +2699,10 @@ static void spoil_mon_info(cptr fname)
 		/* Collect susceptibilities */
 		vn = 0;
 #ifdef JP
-		if (flags3 & (RF3_HURT_ROCK)) vp[vn++] = "´ä¤ò½üµî¤¹¤ë¤â¤Î";
-		if (flags3 & (RF3_HURT_LITE)) vp[vn++] = "ÌÀ¤ë¤¤¸÷";
-		if (flags3 & (RF3_HURT_FIRE)) vp[vn++] = "²Ğ";
-		if (flags3 & (RF3_HURT_COLD)) vp[vn++] = "Îäµ¤";
+		if (flags3 & (RF3_HURT_ROCK)) vp[vn++] = "å²©ã‚’é™¤å»ã™ã‚‹ã‚‚ã®";
+		if (flags3 & (RF3_HURT_LITE)) vp[vn++] = "æ˜ã‚‹ã„å…‰";
+		if (flags3 & (RF3_HURT_FIRE)) vp[vn++] = "ç«";
+		if (flags3 & (RF3_HURT_COLD)) vp[vn++] = "å†·æ°—";
 #else
 		if (flags3 & (RF3_HURT_ROCK)) vp[vn++] = "rock remover";
 		if (flags3 & (RF3_HURT_LITE)) vp[vn++] = "bright light";
@@ -2713,7 +2713,7 @@ static void spoil_mon_info(cptr fname)
 		if (vn)
 		{
 #ifdef JP
-			sprintf(buf, "%s¤Ë¤Ï", wd_che[msex]);
+			sprintf(buf, "%sã«ã¯", wd_che[msex]);
 #else
 			sprintf(buf, "%s", wd_che[msex]);
 #endif
@@ -2722,7 +2722,7 @@ static void spoil_mon_info(cptr fname)
 			for (i = 0; i < vn; i++)
 			{
 #ifdef JP
-				if ( i != 0 ) spoil_out("¤ä");
+				if ( i != 0 ) spoil_out("ã‚„");
 #else
 				if (i == 0) spoil_out(" is hurt by ");
 				else if (i < vn-1) spoil_out(", ");
@@ -2733,7 +2733,7 @@ static void spoil_mon_info(cptr fname)
 
 			/* End */
 #ifdef JP
-			spoil_out("¤Ç¥À¥á¡¼¥¸¤òÍ¿¤¨¤é¤ì¤ë¡£");
+			spoil_out("ã§ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‰ã‚Œã‚‹ã€‚");
 #else
 			spoil_out(".  ");
 #endif
@@ -2742,11 +2742,11 @@ static void spoil_mon_info(cptr fname)
 		/* Collect immunities */
 		vn = 0;
 #ifdef JP
-		if (flags3 & (RF3_IM_ACID)) vp[vn++] = "»À";
-		if (flags3 & (RF3_IM_ELEC)) vp[vn++] = "ÅÅ·â";
-		if (flags3 & (RF3_IM_FIRE)) vp[vn++] = "²Ğ";
-		if (flags3 & (RF3_IM_COLD)) vp[vn++] = "Îäµ¤";
-		if (flags3 & (RF3_IM_POIS)) vp[vn++] = "ÆÇ";
+		if (flags3 & (RF3_IM_ACID)) vp[vn++] = "é…¸";
+		if (flags3 & (RF3_IM_ELEC)) vp[vn++] = "é›»æ’ƒ";
+		if (flags3 & (RF3_IM_FIRE)) vp[vn++] = "ç«";
+		if (flags3 & (RF3_IM_COLD)) vp[vn++] = "å†·æ°—";
+		if (flags3 & (RF3_IM_POIS)) vp[vn++] = "æ¯’";
 #else
 		if (flags3 & (RF3_IM_ACID)) vp[vn++] = "acid";
 		if (flags3 & (RF3_IM_ELEC)) vp[vn++] = "lightning";
@@ -2758,7 +2758,7 @@ static void spoil_mon_info(cptr fname)
 		if (vn)
 		{
 #ifdef JP
-			sprintf(buf, "%s¤Ï", wd_che[msex]);
+			sprintf(buf, "%sã¯", wd_che[msex]);
 #else
 			sprintf(buf, "%s", wd_che[msex]);
 #endif
@@ -2766,7 +2766,7 @@ static void spoil_mon_info(cptr fname)
 			for (i = 0; i < vn; i++)
 			{
 #ifdef JP
-				if ( i != 0 ) spoil_out("¤È");
+				if ( i != 0 ) spoil_out("ã¨");
 #else
 				if (!i) spoil_out(" resists ");
 				else if (i < vn-1) spoil_out(", ");
@@ -2775,7 +2775,7 @@ static void spoil_mon_info(cptr fname)
 				spoil_out(vp[i]);
 			}
 #ifdef JP
-			spoil_out("¤ÎÂÑÀ­¤ò»ı¤Ã¤Æ¤¤¤ë¡£");
+			spoil_out("ã®è€æ€§ã‚’æŒã£ã¦ã„ã‚‹ã€‚");
 #else
 			spoil_out(".  ");
 #endif
@@ -2784,22 +2784,22 @@ static void spoil_mon_info(cptr fname)
 		/* Collect resistances */
 		vn = 0;
 #ifdef JP
-		if (flags4 & RF4_BR_LITE)    vp[vn++] = "Á®¸÷";
-		if ((flags4 & RF4_BR_DARK) || (flags3 & RF3_ORC) || (flags3 & RF3_HURT_LITE)) vp[vn++] = "Á®¸÷";
-		if ((flags3 & RF3_RES_NETH) || (flags3 & RF3_UNDEAD)) vp[vn++] = "ÃÏ¹ö";
-		if (flags3 & (RF3_RES_WATE)) vp[vn++] = "¿å";
-		if (flags3 & (RF3_RES_PLAS)) vp[vn++] = "¥×¥é¥º¥Ş";
-		if (flags4 & RF4_BR_SHAR) vp[vn++] = "ÇËÊÒ";
-		if (flags4 & RF4_BR_SOUN) vp[vn++] = "¹ì²»";
-		if (flags4 & RF4_BR_CONF) vp[vn++] = "º®Íğ";
-		if (flags4 & RF4_BR_CHAO) vp[vn++] = "¥«¥ª¥¹";
-		if (flags3 & (RF3_RES_NEXU)) vp[vn++] = "°ø²Ìº®Íğ";
-		if (flags3 & (RF3_RES_DISE)) vp[vn++] = "Îô²½";
-		if (flags4 & RF4_BR_WALL) vp[vn++] = "¥Õ¥©¡¼¥¹";
-		if (flags4 & RF4_BR_INER) vp[vn++] = "ÃÙÆß";
-		if (flags4 & RF4_BR_TIME) vp[vn++] = "»ş´ÖµÕÅ¾";
-		if (flags4 & RF4_BR_GRAV) vp[vn++] = "½ÅÎÏ";
-		if ((flags3 & RF3_RES_TELE) && !(r_ptr->flags1 & RF1_UNIQUE)) vp[vn++] = "¥Æ¥ì¥İ¡¼¥È";
+		if (flags4 & RF4_BR_LITE)    vp[vn++] = "é–ƒå…‰";
+		if ((flags4 & RF4_BR_DARK) || (flags3 & RF3_ORC) || (flags3 & RF3_HURT_LITE)) vp[vn++] = "é–ƒå…‰";
+		if ((flags3 & RF3_RES_NETH) || (flags3 & RF3_UNDEAD)) vp[vn++] = "åœ°ç„";
+		if (flags3 & (RF3_RES_WATE)) vp[vn++] = "æ°´";
+		if (flags3 & (RF3_RES_PLAS)) vp[vn++] = "ãƒ—ãƒ©ã‚ºãƒ";
+		if (flags4 & RF4_BR_SHAR) vp[vn++] = "ç ´ç‰‡";
+		if (flags4 & RF4_BR_SOUN) vp[vn++] = "è½ŸéŸ³";
+		if (flags4 & RF4_BR_CONF) vp[vn++] = "æ··ä¹±";
+		if (flags4 & RF4_BR_CHAO) vp[vn++] = "ã‚«ã‚ªã‚¹";
+		if (flags3 & (RF3_RES_NEXU)) vp[vn++] = "å› æœæ··ä¹±";
+		if (flags3 & (RF3_RES_DISE)) vp[vn++] = "åŠ£åŒ–";
+		if (flags4 & RF4_BR_WALL) vp[vn++] = "ãƒ•ã‚©ãƒ¼ã‚¹";
+		if (flags4 & RF4_BR_INER) vp[vn++] = "é…éˆ";
+		if (flags4 & RF4_BR_TIME) vp[vn++] = "æ™‚é–“é€†è»¢";
+		if (flags4 & RF4_BR_GRAV) vp[vn++] = "é‡åŠ›";
+		if ((flags3 & RF3_RES_TELE) && !(r_ptr->flags1 & RF1_UNIQUE)) vp[vn++] = "ãƒ†ãƒ¬ãƒãƒ¼ãƒˆ";
 #else
 		if (flags4 & RF4_BR_LITE)    vp[vn++] = "light";
 		if ((flags4 & RF4_BR_DARK) || (flags3 & RF3_ORC) || (flags3 & RF3_HURT_LITE)) vp[vn++] = "dark";
@@ -2822,7 +2822,7 @@ static void spoil_mon_info(cptr fname)
 		if (vn)
 		{
 #ifdef JP
-			sprintf(buf, "%s¤Ï", wd_che[msex]);
+			sprintf(buf, "%sã¯", wd_che[msex]);
 #else
 			sprintf(buf, "%s", wd_che[msex]);
 #endif
@@ -2830,7 +2830,7 @@ static void spoil_mon_info(cptr fname)
 			for (i = 0; i < vn; i++)
 			{
 #ifdef JP
-				if ( i != 0 ) spoil_out("¤È");
+				if ( i != 0 ) spoil_out("ã¨");
 #else
 				if (!i) spoil_out(" resists ");
 				else if (i < vn-1) spoil_out(", ");
@@ -2839,7 +2839,7 @@ static void spoil_mon_info(cptr fname)
 				spoil_out(vp[i]);
 			}
 #ifdef JP
-			spoil_out("¤ÎÂÑÀ­¤ò»ı¤Ã¤Æ¤¤¤ë¡£");
+			spoil_out("ã®è€æ€§ã‚’æŒã£ã¦ã„ã‚‹ã€‚");
 #else
 			spoil_out(".  ");
 #endif
@@ -2848,11 +2848,11 @@ static void spoil_mon_info(cptr fname)
 		/* Collect non-effects */
 		vn = 0;
 #ifdef JP
-		if (flags3 & (RF3_NO_STUN)) vp[vn++] = "Û¯Û°¤È¤·¤Ê¤¤";
-		if (flags3 & (RF3_NO_FEAR)) vp[vn++] = "¶²Éİ¤ò´¶¤¸¤Ê¤¤";
-		if (flags3 & (RF3_NO_CONF)) vp[vn++] = "º®Íğ¤·¤Ê¤¤";
-		if (flags3 & (RF3_NO_SLEEP)) vp[vn++] = "Ì²¤é¤µ¤ì¤Ê¤¤";
-		if ((flags3 & RF3_RES_TELE) && (r_ptr->flags1 & RF1_UNIQUE)) vp[vn++] = "¥Æ¥ì¥İ¡¼¥È¤µ¤ì¤Ê¤¤";
+		if (flags3 & (RF3_NO_STUN)) vp[vn++] = "æœ¦æœ§ã¨ã—ãªã„";
+		if (flags3 & (RF3_NO_FEAR)) vp[vn++] = "ææ€–ã‚’æ„Ÿã˜ãªã„";
+		if (flags3 & (RF3_NO_CONF)) vp[vn++] = "æ··ä¹±ã—ãªã„";
+		if (flags3 & (RF3_NO_SLEEP)) vp[vn++] = "çœ ã‚‰ã•ã‚Œãªã„";
+		if ((flags3 & RF3_RES_TELE) && (r_ptr->flags1 & RF1_UNIQUE)) vp[vn++] = "ãƒ†ãƒ¬ãƒãƒ¼ãƒˆã•ã‚Œãªã„";
 #else
 		if (flags3 & (RF3_NO_STUN)) vp[vn++] = "stunned";
 		if (flags3 & (RF3_NO_FEAR)) vp[vn++] = "frightened";
@@ -2865,7 +2865,7 @@ static void spoil_mon_info(cptr fname)
 		if (vn)
 		{
 #ifdef JP
-			sprintf(buf, "%s¤Ï", wd_che[msex]);
+			sprintf(buf, "%sã¯", wd_che[msex]);
 #else
 			sprintf(buf, "%s", wd_che[msex]);
 #endif
@@ -2873,7 +2873,7 @@ static void spoil_mon_info(cptr fname)
 			for (i = 0; i < vn; i++)
 			{
 #ifdef JP
-				if ( i != 0 ) spoil_out("¤·¡¢");
+				if ( i != 0 ) spoil_out("ã—ã€");
 #else
 				if (!i) spoil_out(" cannot be ");
 				else if (i < vn-1) spoil_out(", ");
@@ -2882,7 +2882,7 @@ static void spoil_mon_info(cptr fname)
 				spoil_out(vp[i]);
 			}
 #ifdef JP
-			spoil_out("¡£");
+			spoil_out("ã€‚");
 #else
 			spoil_out(".  ");
 #endif
@@ -2890,20 +2890,20 @@ static void spoil_mon_info(cptr fname)
 
 		spoil_out(wd_che[msex]);
 #ifdef JP
-		spoil_out("¤Ï¿¯Æş¼Ô");
-		if (r_ptr->sleep > 200)     spoil_out("¤òÌµ»ë¤·¤¬¤Á¤Ç¤¢¤ë¤¬");
-		else if (r_ptr->sleep > 95) spoil_out("¤ËÂĞ¤·¤Æ¤Û¤È¤ó¤ÉÃí°Õ¤òÊ§¤ï¤Ê¤¤¤¬");
-		else if (r_ptr->sleep > 75) spoil_out("¤ËÂĞ¤·¤Æ¤¢¤Ş¤êÃí°Õ¤òÊ§¤ï¤Ê¤¤¤¬");
-		else if (r_ptr->sleep > 45) spoil_out("¤ò¸«²á¤´¤·¤¬¤Á¤Ç¤¢¤ë¤¬");
-		else if (r_ptr->sleep > 25) spoil_out("¤ò¤Û¤ó¤Î¾¯¤·¤Ï¸«¤Æ¤ª¤ê");
-		else if (r_ptr->sleep > 10) spoil_out("¤ò¤·¤Ğ¤é¤¯¤Ï¸«¤Æ¤ª¤ê");
-		else if (r_ptr->sleep > 5)  spoil_out("¤ò´öÊ¬Ãí°Õ¿¼¤¯¸«¤Æ¤ª¤ê");
-		else if (r_ptr->sleep > 3)  spoil_out("¤òÃí°Õ¿¼¤¯¸«¤Æ¤ª¤ê");
-		else if (r_ptr->sleep > 1)  spoil_out("¤ò¤«¤Ê¤êÃí°Õ¿¼¤¯¸«¤Æ¤ª¤ê");
-		else if (r_ptr->sleep > 0)  spoil_out("¤ò·Ù²ü¤·¤Æ¤ª¤ê");
-		else spoil_out("¤ò¤«¤Ê¤ê·Ù²ü¤·¤Æ¤ª¤ê");
-		spoil_out("¡¢");
-		sprintf(buf, " %d ¥Õ¥£¡¼¥ÈÀè¤«¤é¿¯Æş¼Ô¤Ëµ¤ÉÕ¤¯¤³¤È¤¬¤¢¤ë¡£",
+		spoil_out("ã¯ä¾µå…¥è€…");
+		if (r_ptr->sleep > 200)     spoil_out("ã‚’ç„¡è¦–ã—ãŒã¡ã§ã‚ã‚‹ãŒ");
+		else if (r_ptr->sleep > 95) spoil_out("ã«å¯¾ã—ã¦ã»ã¨ã‚“ã©æ³¨æ„ã‚’æ‰•ã‚ãªã„ãŒ");
+		else if (r_ptr->sleep > 75) spoil_out("ã«å¯¾ã—ã¦ã‚ã¾ã‚Šæ³¨æ„ã‚’æ‰•ã‚ãªã„ãŒ");
+		else if (r_ptr->sleep > 45) spoil_out("ã‚’è¦‹éã”ã—ãŒã¡ã§ã‚ã‚‹ãŒ");
+		else if (r_ptr->sleep > 25) spoil_out("ã‚’ã»ã‚“ã®å°‘ã—ã¯è¦‹ã¦ãŠã‚Š");
+		else if (r_ptr->sleep > 10) spoil_out("ã‚’ã—ã°ã‚‰ãã¯è¦‹ã¦ãŠã‚Š");
+		else if (r_ptr->sleep > 5)  spoil_out("ã‚’å¹¾åˆ†æ³¨æ„æ·±ãè¦‹ã¦ãŠã‚Š");
+		else if (r_ptr->sleep > 3)  spoil_out("ã‚’æ³¨æ„æ·±ãè¦‹ã¦ãŠã‚Š");
+		else if (r_ptr->sleep > 1)  spoil_out("ã‚’ã‹ãªã‚Šæ³¨æ„æ·±ãè¦‹ã¦ãŠã‚Š");
+		else if (r_ptr->sleep > 0)  spoil_out("ã‚’è­¦æˆ’ã—ã¦ãŠã‚Š");
+		else spoil_out("ã‚’ã‹ãªã‚Šè­¦æˆ’ã—ã¦ãŠã‚Š");
+		spoil_out("ã€");
+		sprintf(buf, " %d ãƒ•ã‚£ãƒ¼ãƒˆå…ˆã‹ã‚‰ä¾µå…¥è€…ã«æ°—ä»˜ãã“ã¨ãŒã‚ã‚‹ã€‚",
 			10 * r_ptr->aaf);
 		spoil_out(buf);
 #else
@@ -2936,7 +2936,7 @@ static void spoil_mon_info(cptr fname)
 		if (i)
 		{
 #ifdef JP
-			sprintf(buf, "%s¤Ï", wd_che[msex]);
+			sprintf(buf, "%sã¯", wd_che[msex]);
 #else
 			sprintf(buf, "%s will carry", wd_che[msex]);
 			sin = FALSE;
@@ -2946,7 +2946,7 @@ static void spoil_mon_info(cptr fname)
 			if (i == 1)
 			{
 #ifdef JP
-				spoil_out("1¸Ä¤Î");
+				spoil_out("1å€‹ã®");
 #else
 				spoil_out(" a");
 				sin = TRUE;
@@ -2955,7 +2955,7 @@ static void spoil_mon_info(cptr fname)
 			else if (i == 2)
 			{
 #ifdef JP
-				spoil_out("1¸Ä¤«2¸Ä¤Î");
+				spoil_out("1å€‹ã‹2å€‹ã®");
 #else
 				spoil_out(" one or two");
 #endif
@@ -2963,7 +2963,7 @@ static void spoil_mon_info(cptr fname)
 			else
 			{
 #ifdef JP
-				sprintf(buf, "%u¸Ä¤Ş¤Ç¤Î", i);
+				sprintf(buf, "%uå€‹ã¾ã§ã®", i);
 #else
 				sprintf(buf, " up to %u", i);
 #endif
@@ -2973,7 +2973,7 @@ static void spoil_mon_info(cptr fname)
 			if (flags1 & (RF1_DROP_GREAT))
 			{
 #ifdef JP
-				spoil_out("ÆÃÊÌ¤Ê¥¢¥¤¥Æ¥à");
+				spoil_out("ç‰¹åˆ¥ãªã‚¢ã‚¤ãƒ†ãƒ ");
 #else
 				if (sin) spoil_out("n");
 				spoil_out(" exceptional object");
@@ -2982,7 +2982,7 @@ static void spoil_mon_info(cptr fname)
 			else if (flags1 & (RF1_DROP_GOOD))
 			{
 #ifdef JP
-				spoil_out("¾å¼Á¤Î¥¢¥¤¥Æ¥à");
+				spoil_out("ä¸Šè³ªã®ã‚¢ã‚¤ãƒ†ãƒ ");
 #else
 				spoil_out(" good object");
 #endif
@@ -2990,7 +2990,7 @@ static void spoil_mon_info(cptr fname)
 			else if (flags1 & (RF1_DROP_USEFUL))
 			{
 #ifdef JP
-				spoil_out("¥¢¥¤¥Æ¥à");
+				spoil_out("ã‚¢ã‚¤ãƒ†ãƒ ");
 #else
 				spoil_out(" useful object");
 #endif
@@ -2998,7 +2998,7 @@ static void spoil_mon_info(cptr fname)
 			else if (flags1 & (RF1_ONLY_ITEM))
 			{
 #ifdef JP
-				spoil_out("¥¢¥¤¥Æ¥à");
+				spoil_out("ã‚¢ã‚¤ãƒ†ãƒ ");
 #else
 				spoil_out(" object");
 #endif
@@ -3006,7 +3006,7 @@ static void spoil_mon_info(cptr fname)
 			else if (flags1 & (RF1_ONLY_GOLD))
 			{
 #ifdef JP
-				spoil_out("ºâÊõ");
+				spoil_out("è²¡å®");
 #else
 				spoil_out(" treasure");
 #endif
@@ -3014,7 +3014,7 @@ static void spoil_mon_info(cptr fname)
 			else
 			{
 #ifdef JP
-				spoil_out("¥¢¥¤¥Æ¥à¤äºâÊõ");
+				spoil_out("ã‚¢ã‚¤ãƒ†ãƒ ã‚„è²¡å®");
 #else
 				spoil_out(" object");
 				if (i > 1) spoil_out("s");
@@ -3028,15 +3028,15 @@ static void spoil_mon_info(cptr fname)
 			if (flags1 & (RF1_DROP_CHOSEN))
 			{
 #ifdef JP
-				if(i > 1) spoil_out("¤ò»ı¤Ã¤Æ¤ª¤ê¡¢¤Ê¤ª¤«¤Ä");
-				spoil_out("ÆÃÄê¤Î¥¢¥¤¥Æ¥à");
+				if(i > 1) spoil_out("ã‚’æŒã£ã¦ãŠã‚Šã€ãªãŠã‹ã¤");
+				spoil_out("ç‰¹å®šã®ã‚¢ã‚¤ãƒ†ãƒ ");
 #else
 				spoil_out(", in addition to chosen objects");
 #endif
 			}
 
 #ifdef JP
-			spoil_out("¤ò»ı¤Ã¤Æ¤¤¤ë¤³¤È¤¬¤¢¤ë¡£");
+			spoil_out("ã‚’æŒã£ã¦ã„ã‚‹ã“ã¨ãŒã‚ã‚‹ã€‚");
 #else
 			spoil_out(".  ");
 #endif
@@ -3060,30 +3060,30 @@ static void spoil_mon_info(cptr fname)
 			switch (r_ptr->blow[j].method)
 			{
 #ifdef JP
-				case RBM_HIT:		p = "²¥¤ë"; break;
-				case RBM_TOUCH:		p = "¿¨¤ë"; break;
-				case RBM_PUNCH:		p = "¥Ñ¥ó¥Á¤¹¤ë"; break;
-				case RBM_KICK:		p = "½³¤ë"; break;
-				case RBM_CLAW:		p = "¤Ò¤Ã¤«¤¯"; break;
-				case RBM_BITE:		p = "³ú¤à"; break;
-				case RBM_STING:		p = "»É¤¹"; break;
-				case RBM_SLASH:		p = "»Â¤ë"; break;
-				case RBM_BUTT:		p = "³Ñ¤ÇÆÍ¤¯"; break;
-				case RBM_CRUSH:		p = "ÂÎÅö¤¿¤ê¤¹¤ë"; break;
-				case RBM_ENGULF:	p = "°û¤ß¹ş¤à"; break;
-				case RBM_CHARGE: 	p = "ÀÁµá½ñ¤ò¤è¤³¤¹"; break;
-				case RBM_CRAWL:		p = "ÂÎ¤Î¾å¤òÇç¤¤²ó¤ë"; break;
-				case RBM_DROOL:		p = "¤è¤À¤ì¤ò¤¿¤é¤¹"; break;
-				case RBM_SPIT:		p = "¤Ä¤Ğ¤òÅÇ¤¯"; break;
-				case RBM_EXPLODE:	p = "ÇúÈ¯¤¹¤ë"; break;
-				case RBM_GAZE:		p = "¤Ë¤é¤à"; break;
-				case RBM_WAIL:		p = "µã¤­¶«¤Ö"; break;
-				case RBM_SPORE:		p = "Ë¦»Ò¤òÈô¤Ğ¤¹"; break;
+				case RBM_HIT:		p = "æ®´ã‚‹"; break;
+				case RBM_TOUCH:		p = "è§¦ã‚‹"; break;
+				case RBM_PUNCH:		p = "ãƒ‘ãƒ³ãƒã™ã‚‹"; break;
+				case RBM_KICK:		p = "è¹´ã‚‹"; break;
+				case RBM_CLAW:		p = "ã²ã£ã‹ã"; break;
+				case RBM_BITE:		p = "å™›ã‚€"; break;
+				case RBM_STING:		p = "åˆºã™"; break;
+				case RBM_SLASH:		p = "æ–¬ã‚‹"; break;
+				case RBM_BUTT:		p = "è§’ã§çªã"; break;
+				case RBM_CRUSH:		p = "ä½“å½“ãŸã‚Šã™ã‚‹"; break;
+				case RBM_ENGULF:	p = "é£²ã¿è¾¼ã‚€"; break;
+				case RBM_CHARGE: 	p = "è«‹æ±‚æ›¸ã‚’ã‚ˆã“ã™"; break;
+				case RBM_CRAWL:		p = "ä½“ã®ä¸Šã‚’é€™ã„å›ã‚‹"; break;
+				case RBM_DROOL:		p = "ã‚ˆã ã‚Œã‚’ãŸã‚‰ã™"; break;
+				case RBM_SPIT:		p = "ã¤ã°ã‚’åã"; break;
+				case RBM_EXPLODE:	p = "çˆ†ç™ºã™ã‚‹"; break;
+				case RBM_GAZE:		p = "ã«ã‚‰ã‚€"; break;
+				case RBM_WAIL:		p = "æ³£ãå«ã¶"; break;
+				case RBM_SPORE:		p = "èƒå­ã‚’é£›ã°ã™"; break;
 				case RBM_XXX4:   break;
-				case RBM_BEG:		p = "¶â¤ò¤»¤¬¤à"; break;
-				case RBM_INSULT:	p = "Éî¿«¤¹¤ë"; break;
-				case RBM_MOAN:		p = "¤¦¤á¤¯"; break;
-				case RBM_SHOW:  	p = "²Î¤¦"; break;
+				case RBM_BEG:		p = "é‡‘ã‚’ã›ãŒã‚€"; break;
+				case RBM_INSULT:	p = "ä¾®è¾±ã™ã‚‹"; break;
+				case RBM_MOAN:		p = "ã†ã‚ã"; break;
+				case RBM_SHOW:  	p = "æ­Œã†"; break;
 #else
 				case RBM_HIT:    p = "hit"; break;
 				case RBM_TOUCH:  p = "touch"; break;
@@ -3120,38 +3120,38 @@ static void spoil_mon_info(cptr fname)
 			switch (r_ptr->blow[j].effect)
 			{
 #ifdef JP
-				case RBE_HURT:    	q = "¹¶·â¤¹¤ë"; break;
-				case RBE_POISON:  	q = "ÆÇ¤ò¤¯¤é¤ï¤¹"; break;
-				case RBE_UN_BONUS:	q = "Îô²½¤µ¤»¤ë"; break;
-				case RBE_UN_POWER:	q = "ËâÎÏ¤òµÛ¤¤¼è¤ë"; break;
-				case RBE_EAT_GOLD:	q = "¶â¤òÅğ¤à"; break;
-				case RBE_EAT_ITEM:	q = "¥¢¥¤¥Æ¥à¤òÅğ¤à"; break;
-				case RBE_EAT_FOOD:	q = "¤¢¤Ê¤¿¤Î¿©ÎÁ¤ò¿©¤Ù¤ë"; break;
-				case RBE_EAT_LITE:	q = "ÌÀ¤«¤ê¤òµÛ¼ı¤¹¤ë"; break;
-				case RBE_ACID:    	q = "»À¤òÈô¤Ğ¤¹"; break;
-				case RBE_ELEC:      q = "´¶ÅÅ¤µ¤»¤ë"; break;
+				case RBE_HURT:    	q = "æ”»æ’ƒã™ã‚‹"; break;
+				case RBE_POISON:  	q = "æ¯’ã‚’ãã‚‰ã‚ã™"; break;
+				case RBE_UN_BONUS:	q = "åŠ£åŒ–ã•ã›ã‚‹"; break;
+				case RBE_UN_POWER:	q = "é­”åŠ›ã‚’å¸ã„å–ã‚‹"; break;
+				case RBE_EAT_GOLD:	q = "é‡‘ã‚’ç›—ã‚€"; break;
+				case RBE_EAT_ITEM:	q = "ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç›—ã‚€"; break;
+				case RBE_EAT_FOOD:	q = "ã‚ãªãŸã®é£Ÿæ–™ã‚’é£Ÿã¹ã‚‹"; break;
+				case RBE_EAT_LITE:	q = "æ˜ã‹ã‚Šã‚’å¸åã™ã‚‹"; break;
+				case RBE_ACID:    	q = "é…¸ã‚’é£›ã°ã™"; break;
+				case RBE_ELEC:      q = "æ„Ÿé›»ã•ã›ã‚‹"; break;
 
-				case RBE_FIRE:    	q = "Ç³¤ä¤¹"; break;
-				case RBE_COLD:    	q = "Åà¤é¤»¤ë"; break;
-				case RBE_BLIND:   	q = "ÌÕÌÜ¤Ë¤¹¤ë"; break;
-				case RBE_CONFUSE: 	q = "º®Íğ¤µ¤»¤ë"; break;
-				case RBE_TERRIFY: 	q = "¶²Éİ¤µ¤»¤ë"; break;
-				case RBE_PARALYZE:	q = "Ëãáã¤µ¤»¤ë"; break;
-				case RBE_LOSE_STR:	q = "ÏÓÎÏ¤ò¸º¾¯¤µ¤»¤ë"; break;
-				case RBE_LOSE_INT:	q = "ÃÎÇ½¤ò¸º¾¯¤µ¤»¤ë"; break;
-				case RBE_LOSE_WIS:	q = "¸­¤µ¤ò¸º¾¯¤µ¤»¤ë"; break;
-				case RBE_LOSE_DEX:	q = "´ïÍÑ¤µ¤ò¸º¾¯¤µ¤»¤ë"; break;
-				case RBE_LOSE_CON:	q = "ÂÑµ×ÎÏ¤ò¸º¾¯¤µ¤»¤ë"; break;
-				case RBE_LOSE_CHR:	q = "Ì¥ÎÏ¤ò¸º¾¯¤µ¤»¤ë"; break;
-				case RBE_LOSE_ALL:	q = "Á´¥¹¥Æ¡¼¥¿¥¹¤ò¸º¾¯¤µ¤»¤ë"; break;
-				case RBE_SHATTER:	q = "Ê´ºÕ¤¹¤ë"; break;
-				case RBE_EXP_10:	q = "·Ğ¸³ÃÍ¤ò¸º¾¯(10d6+)¤µ¤»¤ë"; break;
-				case RBE_EXP_20:	q = "·Ğ¸³ÃÍ¤ò¸º¾¯(20d6+)¤µ¤»¤ë"; break;
-				case RBE_EXP_40:	q = "·Ğ¸³ÃÍ¤ò¸º¾¯(40d6+)¤µ¤»¤ë"; break;
-				case RBE_EXP_80:	q = "·Ğ¸³ÃÍ¤ò¸º¾¯(80d6+)¤µ¤»¤ë"; break;
-				case RBE_DISEASE:	q = "ÉÂµ¤¤Ë¤¹¤ë"; break;
-				case RBE_TIME:      q = "»ş´ÖµÕÅ¾¤µ¤»¤ë"; break;
-				case RBE_EXP_VAMP:      q = "À¸Ì¿ÎÏ¤òµÛ¼ı¤¹¤ë"; break;
+				case RBE_FIRE:    	q = "ç‡ƒã‚„ã™"; break;
+				case RBE_COLD:    	q = "å‡ã‚‰ã›ã‚‹"; break;
+				case RBE_BLIND:   	q = "ç›²ç›®ã«ã™ã‚‹"; break;
+				case RBE_CONFUSE: 	q = "æ··ä¹±ã•ã›ã‚‹"; break;
+				case RBE_TERRIFY: 	q = "ææ€–ã•ã›ã‚‹"; break;
+				case RBE_PARALYZE:	q = "éº»ç—ºã•ã›ã‚‹"; break;
+				case RBE_LOSE_STR:	q = "è…•åŠ›ã‚’æ¸›å°‘ã•ã›ã‚‹"; break;
+				case RBE_LOSE_INT:	q = "çŸ¥èƒ½ã‚’æ¸›å°‘ã•ã›ã‚‹"; break;
+				case RBE_LOSE_WIS:	q = "è³¢ã•ã‚’æ¸›å°‘ã•ã›ã‚‹"; break;
+				case RBE_LOSE_DEX:	q = "å™¨ç”¨ã•ã‚’æ¸›å°‘ã•ã›ã‚‹"; break;
+				case RBE_LOSE_CON:	q = "è€ä¹…åŠ›ã‚’æ¸›å°‘ã•ã›ã‚‹"; break;
+				case RBE_LOSE_CHR:	q = "é­…åŠ›ã‚’æ¸›å°‘ã•ã›ã‚‹"; break;
+				case RBE_LOSE_ALL:	q = "å…¨ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’æ¸›å°‘ã•ã›ã‚‹"; break;
+				case RBE_SHATTER:	q = "ç²‰ç •ã™ã‚‹"; break;
+				case RBE_EXP_10:	q = "çµŒé¨“å€¤ã‚’æ¸›å°‘(10d6+)ã•ã›ã‚‹"; break;
+				case RBE_EXP_20:	q = "çµŒé¨“å€¤ã‚’æ¸›å°‘(20d6+)ã•ã›ã‚‹"; break;
+				case RBE_EXP_40:	q = "çµŒé¨“å€¤ã‚’æ¸›å°‘(40d6+)ã•ã›ã‚‹"; break;
+				case RBE_EXP_80:	q = "çµŒé¨“å€¤ã‚’æ¸›å°‘(80d6+)ã•ã›ã‚‹"; break;
+				case RBE_DISEASE:	q = "ç—…æ°—ã«ã™ã‚‹"; break;
+				case RBE_TIME:      q = "æ™‚é–“é€†è»¢ã•ã›ã‚‹"; break;
+				case RBE_EXP_VAMP:      q = "ç”Ÿå‘½åŠ›ã‚’å¸åã™ã‚‹"; break;
 #else
 				case RBE_HURT:          q = "attack"; break;
 				case RBE_POISON:        q = "poison"; break;
@@ -3192,7 +3192,7 @@ static void spoil_mon_info(cptr fname)
 			if (!k)
 			{
 #ifdef JP
-				sprintf(buf, "%s¤Ï", wd_che[msex]);
+				sprintf(buf, "%sã¯", wd_che[msex]);
 #else
 				sprintf(buf, "%s can ", wd_che[msex]);
 #endif
@@ -3201,7 +3201,7 @@ static void spoil_mon_info(cptr fname)
 			else if (k < i-1)
 			{
 #ifdef JP
-				spoil_out("¡¢");
+				spoil_out("ã€");
 #else
 				spoil_out(", ");
 #endif
@@ -3209,7 +3209,7 @@ static void spoil_mon_info(cptr fname)
 			else
 			{
 #ifdef JP
-				spoil_out("¡¢");
+				spoil_out("ã€");
 #else
 				spoil_out(", and ");
 #endif
@@ -3227,7 +3227,7 @@ static void spoil_mon_info(cptr fname)
 						sprintf(buf, "%dd%d ",
 						r_ptr->blow[j].d_dice, r_ptr->blow[j].d_side);
 					spoil_out(buf);
-					spoil_out("¤Î¥À¥á¡¼¥¸¤Ç");
+					spoil_out("ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ã§");
 				}
 				if(q) jverb( p ,jverb_buf, JVERB_TO);
 				else if(k!=i-1) jverb( p ,jverb_buf, JVERB_AND);
@@ -3271,7 +3271,7 @@ static void spoil_mon_info(cptr fname)
 		if (k)
 		{
 #ifdef JP
-			spoil_out("¡£");
+			spoil_out("ã€‚");
 #else
 			spoil_out(".  ");
 #endif
@@ -3279,7 +3279,7 @@ static void spoil_mon_info(cptr fname)
 		else if (flags1 & (RF1_NEVER_BLOW))
 		{
 #ifdef JP
-			sprintf(buf, "%s¤ÏÊªÍıÅª¤Ê¹¶·âÊıË¡¤ò»ı¤¿¤Ê¤¤¡£", wd_che[msex]);
+			sprintf(buf, "%sã¯ç‰©ç†çš„ãªæ”»æ’ƒæ–¹æ³•ã‚’æŒãŸãªã„ã€‚", wd_che[msex]);
 #else
 			sprintf(buf, "%s has no physical attacks.  ", wd_che[msex]);
 #endif
@@ -3332,17 +3332,17 @@ void do_cmd_spoilers(void)
 
 		/* Info */
 #ifdef JP
-		prt("ºî¤ê¤¿¤¤¥¹¥İ¥¤¥é¥Õ¥¡¥¤¥ë¤òÁª¤ó¤Ç²¼¤µ¤¤¡£", 2, 0);
+		prt("ä½œã‚ŠãŸã„ã‚¹ãƒã‚¤ãƒ©ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸ã‚“ã§ä¸‹ã•ã„ã€‚", 2, 0);
 #else
 		prt("Create a spoiler file.", 2, 0);
 #endif
 
 		/* Prompt for a file */
 #ifdef JP
-		prt("(1) ¥¢¥¤¥Æ¥à¥ê¥¹¥È          (obj-desc.spo)", 5, 5);
-		prt("(2) ¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¥ê¥¹¥È  (artifact.spo)", 6, 5);
-		prt("(3) ´Ê°×¥â¥ó¥¹¥¿¡¼¥ê¥¹¥È    (mon-desc.spo)", 7, 5);
-		prt("(4) ¾ÜºÙ¥â¥ó¥¹¥¿¡¼¥ê¥¹¥È    (mon-info.spo)", 8, 5);
+		prt("(1) ã‚¢ã‚¤ãƒ†ãƒ ãƒªã‚¹ãƒˆ          (obj-desc.spo)", 5, 5);
+		prt("(2) ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆãƒªã‚¹ãƒˆ  (artifact.spo)", 6, 5);
+		prt("(3) ç°¡æ˜“ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãƒªã‚¹ãƒˆ    (mon-desc.spo)", 7, 5);
+		prt("(4) è©³ç´°ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãƒªã‚¹ãƒˆ    (mon-info.spo)", 8, 5);
 #else
 		prt("(1) Brief Object Info (obj-desc.spo)", 5, 5);
 		prt("(2) Brief Artifact Info (artifact.spo)", 6, 5);
@@ -3352,7 +3352,7 @@ void do_cmd_spoilers(void)
 
 		/* Prompt */
 #ifdef JP
-		prt("¥³¥Ş¥ó¥É:", 18, 0);
+		prt("ã‚³ãƒãƒ³ãƒ‰:", 18, 0);
 #else
 		prt("Command: ", 12, 0);
 #endif
