@@ -1465,6 +1465,12 @@ static void do_cmd_use_staff_aux(int item)
 				if (r >= 0) break;
 			}
 
+			if (r <= item)
+			{
+				/* アイテム位置のずれを補正 */
+				o_ptr = &inventory[++item];
+			}
+
 			if ((r < 1) && (!p_ptr->blind))	/* failed */
 			{
 #ifdef JP

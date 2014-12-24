@@ -130,15 +130,14 @@ static void wishing_puff_of_smoke(void)
 #endif
 }
 
-/*
- * XAngband: wishing
- * Make an wishing object, ego or artifact when it exists.
- * Return values:
- * 0 - canceled
- * 1 - normal objects
- * 2 - ego items
- * 3 - artifacts
- * -1 - failed
+
+/*!
+ * @brief 願いを実行する
+ * @param prob アーティファクトの生成率
+ * @param art 固定アーティファクトを検索する
+ * @param ego エゴ銘を検索する
+ * @param confirm 願わない場合に確認する
+ * @return アイテムを取得したインベントリ番号。未取得及び床上はINVEN_PACK。取得失敗時は -1。
  */
 s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 {
@@ -202,7 +201,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 			if (!get_check("Do you wish nothing, really?")) continue;
 		}
 #endif
-		return (0);
+		return (INVEN_PACK);
 	}
 
 #ifndef JP
@@ -293,7 +292,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 #else
 		msg_print("What?");
 #endif
-		return (0);
+		return (-1);
 	}
 
 	if ((!art) && (wish_art))
@@ -303,7 +302,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 #else
 		msg_print("You can not wish artifacts!");
 #endif
-		return (0);
+		return (-1);
 	}
 
 	if (cheat_xtra) msg_format("Wishing %s....", buf);
@@ -527,7 +526,7 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 			wishing_puff_of_smoke();
 		}
 
-		return (3);
+		return (INVEN_PACK);
 	}
 
 	/* wished object is found */
@@ -538,12 +537,12 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 #else
 		msg_print("Can not wish ego items.");
 #endif
-		return (0);
+		return (-1);
 	}
 
 	else if ((k_id >= 0) && (k_num == 1))
 	{
-		byte retval = 1;
+		s16b slot;
 		int object_level;
 		object_type forge;
 		q_ptr = &forge;
@@ -581,9 +580,8 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 			else /* Not ok */
 			{
 				wishing_puff_of_smoke();
+				return (INVEN_PACK);
 			}
-
-			retval = 3;
 		}
 
 		/* Random Artifacts */
@@ -603,10 +601,8 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 			else /* Not ok */
 			{
 				wishing_puff_of_smoke();
-				return (3);
+				return (INVEN_PACK);
 			}
-
-			retval = 3;
 		}
 
 		/* Ego items */
@@ -650,10 +646,8 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 			else /* Not ok */
 			{
 				wishing_puff_of_smoke();
-				return (2);
+				return (INVEN_PACK);
 			}
-
-			retval = 2;
 		}
 
 		/* Normal items */
@@ -683,32 +677,28 @@ s16b do_cmd_wishing(int prob, bool art, bool ego, bool confirm)
 
 		if (inven_carry_okay(q_ptr))
 		{
-			s16b slot = inven_carry(q_ptr);
+			slot = inven_carry(q_ptr);
 			object_desc(o_name, q_ptr, OD_NAME_ONLY);
 			msg_format("%c - %s", index_to_label(slot), o_name);
 		}
 		else
 		{
 			/* Drop it */
+			slot = INVEN_PACK;
 			msg_print(_("足元に何かが現れた！", "An object appears at your feet!"));
 			(void)drop_near(q_ptr, 0, py, px);
 		}
 
-		return (retval);
+		return (slot);
 	}
 
 	/* Nothing */
-	else
-	{
 #ifdef JP
 		msg_print("うーん、そんなものは存在しないようだ。");
 #else
 		msg_print("Ummmm, that is not existing.");
 #endif
 		return (-1);
-	}
-
-	return (1);
 }
 
 
