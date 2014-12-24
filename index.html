@@ -15,7 +15,7 @@
 <p><b>ダウンロード</b></p>
 <ul>
 <li><a href="./TinyAngband-1.0.0-win.zip">windows版 TinyAngband</a>
-<li><a href="https://github.com/iks3/tinyangband/tarball/master">ソースコード Tar Ball</a>
+<li><a href="https://github.com/iks3/tinyangband/tarball/master">ソースコード Tar Ball</a> (ビルド方法は<a href="#compile">下記参照</a>)
 <br><br>
 <li><a href="https://github.com/iks3/tinyangband">GitHub リポジトリ</a>
 <br><br>
@@ -47,6 +47,25 @@
 <div>　・lib/xtra/soundフォルダ以下にファイルを置き、sound.cfgを設定する必要があります。</div>
 <div>BGMはmidiやMP3にも対応です。
 <div>　・lib/xtra/musicフォルダ以下にファイルを置き、music.cfgを設定する必要があります。</div>
+
+<a name="compile">
+<p><b>GitHubからのコンパイル方法(GCC編)</b></p>
+<div>1. リポジトリからソースを取得します。</div>
+<div>2. ソースのディレクトリでbootstrapを実行します。</div>
+<div style="font-size:small; font-style:italic;">　% sh ./bootstrap</div>
+<div>3. 生成されたconfigureを実行します。</div>
+<div style="font-size:small; font-style:italic;">　% ./configure</div>
+<div>　 SDL mixierを入れていない場合は、</div>
+<div style="font-size:small; font-style:italic;">　% ./configure --disable-sdl_mixer</div>
+<div>4. Makeます。</div>
+<div style="font-size:small; font-style:italic;">　% make</div>
+<div>5. できたバイナリを実行します。</div>
+<div style="font-size:small; font-style:italic;">　% ./src/tinyangband -- -n0</div>
+<div>　 または、一度コピーして実行します。</div>
+<div style="font-size:small; font-style:italic;">　% cp ./src/tinyangband .</div>
+<div style="font-size:small; font-style:italic;">　% ./tinyangband -- -n0</div>
+<div>※ 起動オプション等は一例です。</div>
+<div>※ この方法の場合、gcc、automake、autoconfが必要です。</div>
 
 <p></p>
 <hr>
