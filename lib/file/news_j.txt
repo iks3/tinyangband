@@ -1,6 +1,6 @@
 
                   ***************************************
-                  **         TinyAngband 1.0.0         **
+                  **         TinyAngband 1.0.1         **
                   ***************************************
           Based on Moria:    Copyright (c) 1985 Robert Alan Koeneke
               and Umoria:    Copyright (c) 1989 James E. Wilson
@@ -14,7 +14,7 @@
                 XAngband:    XAngband DevTeam
              TinyAngband:    XAngband DevTeam
 
-                  URL: http://xangband.sourceforge.jp/tiny/
+                  URL: http://iks3.github.io/tinyangband/
                   BBS: http://jbbs.livedoor.jp/game/16689/
 
          TinyAngband は UNIX/X11, Windows,(Macintosh) で動作しています。

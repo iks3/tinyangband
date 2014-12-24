@@ -1,6 +1,6 @@
 
                   ***************************************
-                  **         TinyAngband 1.0.0         **
+                  **         TinyAngband 1.0.1         **
                   ***************************************
           Based on Moria:    Copyright (c) 1985 Robert Alan Koeneke
               and Umoria:    Copyright (c) 1989 James E. Wilson
@@ -15,7 +15,6 @@
 
              TinyAngband:    XAngband DevTeam
 
-                URL: http://xangband.sourceforge.jp/tiny/eng.html
+                URL: http://iks3.github.io/tinyangband/eng.html
 
             TinyAngband is for UNIX/X11, Windows,(Macintosh) etc.
-            Send bug report to "http://xangband.sourceforge.jp/eng/"
