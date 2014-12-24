@@ -3726,8 +3726,8 @@ void player_birth(void)
 	prt("but with the passage of time he will no doubt regain the power", row++, 10);
 	prt("to overwhelm the world with darkness. ", row++, 10);
 	prt("The Valar, in face of this unforseen situation have decided to", row++, 10);
-	prt("send their armies in in great force.  The great battle in the", row++, 10);
-	prt("offing would doubless throw the Middle-Earth into chaos.", row++, 10);
+	prt("send their armies in great force.  The great battle in the", row++, 10);
+	prt("offing would doubtless throw the Middle-Earth into chaos.", row++, 10);
 	prt(format("Your valar %s, troubled by this, has ordered you in",
 		valar_info[p_ptr->valar_patron].name), row++, 10);
 	prt("secret on a mission to kill Morgoth. You must enter the cave and", row++, 10);
