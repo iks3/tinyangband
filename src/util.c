@@ -3594,9 +3594,9 @@ s16b get_quantity(cptr prompt, int max)
 	{
 		/* Build a prompt */
 #ifdef JP
-		sprintf(tmp, "いくつですか (1-%d): ", max);
+		sprintf(tmp, "いくつですか (1-%d, 'a'全て): ", max);
 #else
-		sprintf(tmp, "Quantity (1-%d): ", max);
+		sprintf(tmp, "Quantity (1-%d, 'a' to all): ", max);
 #endif
 
 

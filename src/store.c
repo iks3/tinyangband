@@ -2027,11 +2027,11 @@ static void store_purchase(void)
 			num = find_inven(o_ptr);
 
 #ifdef JP
-		strnfmt(o_name, sizeof(o_name), "いくつですか？(%s最大 %d個) ",  
+		strnfmt(o_name, sizeof(o_name), "いくつですか？(%s最大 %d個, 'a'全て) ",  
 			(num ? format("現在 %d個，", num) : ""),
 			amt); 
 #else
-		strnfmt(o_name, sizeof(o_name), "%s how many? (%smax %d) ",
+		strnfmt(o_name, sizeof(o_name), "%s how many? (%smax %d, 'a' to all) ",
 			(cur_store_num == STORE_HOME) ? "Take" : "Buy",
 			(num ? format("you have %d, ", num) : ""),
 			amt);
